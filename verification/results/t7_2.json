@@ -1,0 +1,155 @@
+{
+ "criteria": {
+  "T7.2a": {
+   "desc": "Kalman-Bucy: p Pi = G* = -lam + sqrt(lam^2 + 2 Sigma Pi) and p = sigma*^2 (Eq. 4)",
+   "pass": true,
+   "verdict": "PASS",
+   "positive_root": "(-lambda + sqrt(2*Pi*Sigma + lambda**2))/Pi",
+   "pPi_eq_Gstar": {
+    "symbolic": true,
+    "numeric_max_rel": 0.0,
+    "numeric_ok": true,
+    "verdict": "PASS (symbolic)",
+    "pass": true,
+    "residual": null
+   },
+   "p_eq_sigma_star": {
+    "symbolic": true,
+    "numeric_max_rel": 0.0,
+    "numeric_ok": true,
+    "verdict": "PASS (symbolic)",
+    "pass": true,
+    "residual": null
+   },
+   "p_eq_closed_form_at_Gstar": {
+    "symbolic": true,
+    "numeric_max_rel": 0.0,
+    "numeric_ok": true,
+    "verdict": "PASS (symbolic)",
+    "pass": true,
+    "residual": null
+   }
+  },
+  "T7.2b": {
+   "desc": "peak M/F at kappa in {2,3,5,10,20,50,100} matches 1.000,1.036,1.175,1.584,2.432,5.000,9.288 (4 s.f.)",
+   "pass": true,
+   "verdict": "PASS",
+   "rows": [
+    {
+     "kappa": 2,
+     "Pi_0": 50.0,
+     "Pi_star": 0.0,
+     "M": 0.01,
+     "M_over_F": 1.0,
+     "expected": 1.0,
+     "match": true
+    },
+    {
+     "kappa": 3,
+     "Pi_0": 33.333333333333336,
+     "Pi_star": 6.10042339640731,
+     "M": 0.010358983848622454,
+     "M_over_F": 1.0358983848622454,
+     "expected": 1.036,
+     "match": true
+    },
+    {
+     "kappa": 5,
+     "Pi_0": 20.0,
+     "Pi_star": 7.207592200561264,
+     "M": 0.011754446796632413,
+     "M_over_F": 1.1754446796632412,
+     "expected": 1.175,
+     "match": true
+    },
+    {
+     "kappa": 10,
+     "Pi_0": 10.0,
+     "Pi_star": 5.1892763022721535,
+     "M": 0.015835921350012615,
+     "M_over_F": 1.5835921350012616,
+     "expected": 1.584,
+     "match": true
+    },
+    {
+     "kappa": 20,
+     "Pi_0": 5.0,
+     "Pi_star": 3.043821131450053,
+     "M": 0.024319024958195563,
+     "M_over_F": 2.431902495819556,
+     "expected": 2.432,
+     "match": true
+    },
+    {
+     "kappa": 50,
+     "Pi_0": 2.0,
+     "Pi_star": 1.3333333333333333,
+     "M": 0.05000000000000001,
+     "M_over_F": 5.000000000000001,
+     "expected": 5.0,
+     "match": true
+    },
+    {
+     "kappa": 100,
+     "Pi_0": 1.0,
+     "Pi_star": 0.6866954098747667,
+     "M": 0.09287527205297112,
+     "M_over_F": 9.287527205297112,
+     "expected": 9.288,
+     "match": true
+    }
+   ]
+  },
+  "T7.2c": {
+   "desc": "kappa = 50 (Pi_0 = 2): Pi* = 4/3 and M = 0.05 exactly (rational arithmetic)",
+   "pass": true,
+   "verdict": "PASS",
+   "Pi_0": "2",
+   "Pi_star": "4/3",
+   "M": "1/20"
+  },
+  "T7.2d": {
+   "desc": "smallest kappa with M >= 0.05 is 50 (brentq, |err| <= 1e-8; M increasing in kappa)",
+   "pass": true,
+   "verdict": "PASS",
+   "kappa_root": 50.000000000000014,
+   "abs_err": 1.4210854715202004e-14,
+   "monotone": true
+  },
+  "T7.2e": {
+   "desc": "Hill gain: Pi_0=24 max(sigma^2-F) ~ 1.40e-4 (>0, 3 s.f.); Pi_0=26 max <= 1e-15; Pi_0=25 reported",
+   "pass": true,
+   "verdict": "PASS",
+   "hill": {
+    "24.0": {
+     "max_direct": 0.0001400819843757964,
+     "at_Pi_direct": 24.621811380421082,
+     "max_clean": 0.00014008198437579655,
+     "at_Pi_clean": 24.621811380421082
+    },
+    "25.0": {
+     "max_direct": 0.0,
+     "at_Pi_direct": 24.9999995007974,
+     "max_clean": -5.782411509613492e-19,
+     "at_Pi_clean": 24.9999995007974
+    },
+    "26.0": {
+     "max_direct": -1.5612511283791264e-17,
+     "at_Pi_direct": 1e-06,
+     "max_clean": -1.4792898314134614e-17,
+     "at_Pi_clean": 1e-06
+    }
+   }
+  }
+ },
+ "pass": true,
+ "runtime_s": 1.3342044353485107,
+ "lines": [
+  "[PASS] T7.2a: positive root p = (-lambda + sqrt(2*Pi*Sigma + lambda**2))/Pi; pPi==G*: PASS (symbolic); p==2Sigma/(lam+sqrt(..)): PASS (symbolic); p==(2) at G*: PASS (symbolic)",
+  "[PASS] T7.2b: kappa=2: M/F=1.000000 (exp 1.000, ok); kappa=3: M/F=1.035898 (exp 1.036, ok); kappa=5: M/F=1.175445 (exp 1.175, ok); kappa=10: M/F=1.583592 (exp 1.584, ok); kappa=20: M/F=2.431902 (exp 2.432, ok); kappa=50: M/F=5.000000 (exp 5.000, ok); kappa=100: M/F=9.287527 (exp 9.288, ok)",
+  "[PASS] T7.2c: Pi_0 = 2, Pi* = 4/3, M = 1/20",
+  "[PASS] T7.2d: kappa_root = 50.000000000000014 (|err| = 1.42e-14); M increasing: True",
+  "[PASS] T7.2e: Pi_0=24: max direct 1.400820e-04 at Pi=24.622, cancellation-free 1.400820e-04 at Pi=24.622; Pi_0=25: max direct 0.000000e+00 at Pi=25, cancellation-free -5.782412e-19 at Pi=25; Pi_0=26: max direct -1.561251e-17 at Pi=1e-06, cancellation-free -1.479290e-17 at Pi=1e-06",
+  "T7.2 overall: PASS  (1.3s)"
+ ]
+}

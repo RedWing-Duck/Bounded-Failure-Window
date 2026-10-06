@@ -1,0 +1,50 @@
+TASK 4a SPECIFICATION (derived from t4a_discrete.py and results/t4a.json; no new simulation)
+
+True plant. A discrete-time AR(1) state h_(k+1) = phi*h_k + w_k with time step dt = 0.05. phi and q were
+chosen so that the discrete plant samples the continuous worked example (lambda = 1, Sigma = 0.01) exactly:
+phi = exp(-lambda*dt) = 0.951229 and q = Sigma*(1 - phi^2)/lambda = 9.516258e-04. Its stationary variance is
+q/(1 - phi^2) = F = Sigma/lambda = 0.01. The plant was simulated with the true phi and q.
+
+Observation and "per-sample precision". Each sample y_k = h_k + v_k has measurement noise of variance
+var(v) = 1/Pi, where Pi is the grid variable of Task 4a (grid np.logspace(-3, 4, 2001)). That Pi is therefore the
+per-sample precision, Pi_d = 1/r, in T7.1's notation. It is NOT the continuous sensory precision. Continuous
+white sensory noise of intensity 1/Pi_cont gives a per-sample variance 1/(Pi_cont*dt) after averaging over
+one step, so Pi_d = Pi_cont*dt and Pi_cont = Pi_d/dt = 20*Pi_d. The reported Task 4a peak locations
+(Pi_d = 0.718, 0.784, 0.115 for factors 3, 10, 100) correspond to
+Pi_cont = 14.4, 15.7, 2.3.
+
+Filters. Each filter is a fixed-gain filter: predict with the true phi, then update with a constant
+gain K. K is the steady-state Kalman gain of an ASSUMED model: (A) process noise k*q, or (B) measurement
+precision kappa*Pi_d, with the factor in {1, 2, 3, 10, 100}. The steady-state gain depends only on the
+assumed ratio q/r, so A and B give identical filters for equal factors (Task 4a confirmed this).
+
+"Slope ratio". Operationally this is K(eps)/eps with eps = 1e-9, the numerical initial slope dK/dPi_d of
+the gain at Pi_d -> 0, divided by F = 0.01. F is the analytic initial slope of the correctly specified
+filter; its numerical value was 0.01. Analytically the slope of a filter with factor k is k*F, so
+the "ratio" equals the factor (reported: 1, 2, 3, 10, 100).
+Because L = G*dt and Pi_d = Pi_cont*dt, dK/dPi_d = dG/dPi_cont. The slope ratio is therefore exactly the
+continuous over-weighting ratio kappa = (dG/dPi at 0)/F.
+
+Prior or posterior. The reported variance was the POSTERIOR error variance. It is the variance of
+h_k - hhat_k after the update with y_k: V = ((1-K)^2 q + K^2/Pi_d)/(1 - (1-K)^2 phi^2), which equals S_L of T7.1(b).
+The simulation check also measured h_k - hhat_k after the update.
+
+[PASS] T7.3: closed-form (T7.1 a,b + Riccati gain) peaks match reported Task 4a peaks to 3 s.f.
+    k=3: closed form 0.010753 at Pi_d=0.72039 | reported 0.010753 at Pi_d=0.71779 | rel diff +4.24e-07 | ok
+    k=10: closed form 0.022239 at Pi_d=0.78392 | reported 0.022239 at Pi_d=0.78433 | rel diff +2.70e-08 | ok
+    k=100: closed form 0.183735 at Pi_d=0.11485 | reported 0.183735 at Pi_d=0.11521 | rel diff +1.21e-06 | ok
+
+WHY THE RATIO-100 PEAK IS ABOUT TWICE THE CONTINUOUS kappa = 100 PEAK
+(i)   Continuous kappa implied by the 4a mapping: slope/F = 99.999999, so Pi_0 = c/(kappa F) = 1.000000.
+(ii)  Continuous closed form (2), Bayesian-weight gain G = c Pi/(Pi+Pi_0) at that kappa: peak 0.09288 at Pi = 0.6867.
+(iii) Same Bayesian-weight relay discretised at dt = 0.05 (L = dt*G, posterior): peak 0.09864 at Pi_cont = 0.6997.
+(iv)  Continuous closed form (2) with the gain the 4a filter converges to as dt -> 0, the Kalman-Bucy gain of the assumed model G = -lambda + sqrt(lambda^2 + 2*100*Sigma*Pi) (unbounded, no saturation at c): peak 0.17575 at Pi = 2.317.
+(v)   4a filter at dt = 0.05, PRIOR variance: peak 0.16720; POSTERIOR: 0.18373 (reported 0.18373).
+(vi)  4a filter family as dt -> 0 (posterior / prior peak): dt=0.05: 0.18373 / 0.16720 at Pi_cont=2.297; dt=0.01: 0.17740 / 0.17408 at Pi_cont=2.316; dt=0.001: 0.17592 / 0.17558 at Pi_cont=2.316  -> converges to (iv) = 0.17575.
+Total gap (reported - continuous kappa=100): +0.09086. Contributions:
+    gain shape: continuous KB-type gain vs Bayesian-weight gain, same kappa: +0.08288
+    dt on the paper's Bayesian-weight relay (discrete posterior - continuous): +0.00576
+    dt on the 4a gain family (discrete posterior at dt=0.05 - continuous): +0.00798
+    prior vs posterior at dt=0.05 (posterior - prior): +0.01653
+Mapping: exact. The implied continuous kappa is 100.0000, so it contributes nothing.
+Conclusion: the main cause is 'gain shape: continuous KB-type gain vs Bayesian-weight gain, same kappa' (+0.08288 of +0.09086). Gain shape and dt on the 4a family add up to the whole gap (+0.09086). The posterior-vs-prior difference (+0.01653) is itself a finite-dt effect: it shrinks to +0.00033 at dt = 0.001. Task 4a's filters share the paper's initial slope (kappa) but not its gain family. A steady-state Kalman gain under inflated process noise keeps rising with precision instead of saturating at c, so it injects more sensory noise near the peak. The 4a peak heights are therefore not comparable with the paper's Bayesian-weight peaks at the same kappa; only the onset condition (slope ratio > 2) carries over.

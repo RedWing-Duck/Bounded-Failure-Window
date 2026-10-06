@@ -1,0 +1,83 @@
+{
+ "pass": true,
+ "rows": [
+  {
+   "k": 3,
+   "peak_closed": 0.010753492272899508,
+   "peak_Pi_d": 0.7203913774009414,
+   "reported": 0.010753487713983989,
+   "reported_Pi_d": 0.7177942912713615,
+   "match_3sf": true,
+   "rel_diff": 4.239476196765679e-07
+  },
+  {
+   "k": 10,
+   "peak_closed": 0.022239144102520727,
+   "peak_Pi_d": 0.7839230597201936,
+   "reported": 0.022239143501363287,
+   "reported_Pi_d": 0.7843321188819617,
+   "match_3sf": true,
+   "rel_diff": 2.7031501481644682e-08
+  },
+  {
+   "k": 100,
+   "peak_closed": 0.18373476818119625,
+   "peak_Pi_d": 0.11484814292444527,
+   "reported": 0.1837345459958884,
+   "reported_Pi_d": 0.11521260598258075,
+   "match_3sf": true,
+   "rel_diff": 1.2092734473778677e-06
+  }
+ ],
+ "spec": "TASK 4a SPECIFICATION (derived from t4a_discrete.py and results/t4a.json; no new simulation)\n\nTrue plant. A discrete-time AR(1) state h_(k+1) = phi*h_k + w_k with time step dt = 0.05. phi and q were\nchosen so that the discrete plant samples the continuous worked example (lambda = 1, Sigma = 0.01) exactly:\nphi = exp(-lambda*dt) = 0.951229 and q = Sigma*(1 - phi^2)/lambda = 9.516258e-04. Its stationary variance is\nq/(1 - phi^2) = F = Sigma/lambda = 0.01. The plant was simulated with the true phi and q.\n\nObservation and \"per-sample precision\". Each sample y_k = h_k + v_k has measurement noise of variance\nvar(v) = 1/Pi, where Pi is the grid variable of Task 4a (grid np.logspace(-3, 4, 2001)). That Pi is therefore the\nper-sample precision, Pi_d = 1/r, in T7.1's notation. It is NOT the continuous sensory precision. Continuous\nwhite sensory noise of intensity 1/Pi_cont gives a per-sample variance 1/(Pi_cont*dt) after averaging over\none step, so Pi_d = Pi_cont*dt and Pi_cont = Pi_d/dt = 20*Pi_d. The reported Task 4a peak locations\n(Pi_d = 0.718, 0.784, 0.115 for factors 3, 10, 100) correspond to\nPi_cont = 14.4, 15.7, 2.3.\n\nFilters. Each filter is a fixed-gain filter: predict with the true phi, then update with a constant\ngain K. K is the steady-state Kalman gain of an ASSUMED model: (A) process noise k*q, or (B) measurement\nprecision kappa*Pi_d, with the factor in {1, 2, 3, 10, 100}. The steady-state gain depends only on the\nassumed ratio q/r, so A and B give identical filters for equal factors (Task 4a confirmed this).\n\n\"Slope ratio\". Operationally this is K(eps)/eps with eps = 1e-9, the numerical initial slope dK/dPi_d of\nthe gain at Pi_d -> 0, divided by F = 0.01. F is the analytic initial slope of the correctly specified\nfilter; its numerical value was 0.01. Analytically the slope of a filter with factor k is k*F, so\nthe \"ratio\" equals the factor (reported: 1, 2, 3, 10, 100).\nBecause L = G*dt and Pi_d = Pi_cont*dt, dK/dPi_d = dG/dPi_cont. The slope ratio is therefore exactly the\ncontinuous over-weighting ratio kappa = (dG/dPi at 0)/F.\n\nPrior or posterior. The reported variance was the POSTERIOR error variance. It is the variance of\nh_k - hhat_k after the update with y_k: V = ((1-K)^2 q + K^2/Pi_d)/(1 - (1-K)^2 phi^2), which equals S_L of T7.1(b).\nThe simulation check also measured h_k - hhat_k after the update.\n",
+ "explanation": "WHY THE RATIO-100 PEAK IS ABOUT TWICE THE CONTINUOUS kappa = 100 PEAK\n(i)   Continuous kappa implied by the 4a mapping: slope/F = 99.999999, so Pi_0 = c/(kappa F) = 1.000000.\n(ii)  Continuous closed form (2), Bayesian-weight gain G = c Pi/(Pi+Pi_0) at that kappa: peak 0.09288 at Pi = 0.6867.\n(iii) Same Bayesian-weight relay discretised at dt = 0.05 (L = dt*G, posterior): peak 0.09864 at Pi_cont = 0.6997.\n(iv)  Continuous closed form (2) with the gain the 4a filter converges to as dt -> 0, the Kalman-Bucy gain of the assumed model G = -lambda + sqrt(lambda^2 + 2*100*Sigma*Pi) (unbounded, no saturation at c): peak 0.17575 at Pi = 2.317.\n(v)   4a filter at dt = 0.05, PRIOR variance: peak 0.16720; POSTERIOR: 0.18373 (reported 0.18373).\n(vi)  4a filter family as dt -> 0 (posterior / prior peak): dt=0.05: 0.18373 / 0.16720 at Pi_cont=2.297; dt=0.01: 0.17740 / 0.17408 at Pi_cont=2.316; dt=0.001: 0.17592 / 0.17558 at Pi_cont=2.316  -> converges to (iv) = 0.17575.\nTotal gap (reported - continuous kappa=100): +0.09086. Contributions:\n    gain shape: continuous KB-type gain vs Bayesian-weight gain, same kappa: +0.08288\n    dt on the paper's Bayesian-weight relay (discrete posterior - continuous): +0.00576\n    dt on the 4a gain family (discrete posterior at dt=0.05 - continuous): +0.00798\n    prior vs posterior at dt=0.05 (posterior - prior): +0.01653\nMapping: exact. The implied continuous kappa is 100.0000, so it contributes nothing.\nConclusion: the main cause is 'gain shape: continuous KB-type gain vs Bayesian-weight gain, same kappa' (+0.08288 of +0.09086). Gain shape and dt on the 4a family add up to the whole gap (+0.09086). The posterior-vs-prior difference (+0.01653) is itself a finite-dt effect: it shrinks to +0.00033 at dt = 0.001. Task 4a's filters share the paper's initial slope (kappa) but not its gain family. A steady-state Kalman gain under inflated process noise keeps rising with precision instead of saturating at c, so it injects more sensory noise near the peak. The 4a peak heights are therefore not comparable with the paper's Bayesian-weight peaks at the same kappa; only the onset condition (slope ratio > 2) carries over.",
+ "check_lines": [
+  "[PASS] T7.3: closed-form (T7.1 a,b + Riccati gain) peaks match reported Task 4a peaks to 3 s.f.",
+  "    k=3: closed form 0.010753 at Pi_d=0.72039 | reported 0.010753 at Pi_d=0.71779 | rel diff +4.24e-07 | ok",
+  "    k=10: closed form 0.022239 at Pi_d=0.78392 | reported 0.022239 at Pi_d=0.78433 | rel diff +2.70e-08 | ok",
+  "    k=100: closed form 0.183735 at Pi_d=0.11485 | reported 0.183735 at Pi_d=0.11521 | rel diff +1.21e-06 | ok"
+ ],
+ "decomposition": {
+  "kappa_cont": 99.99999894916684,
+  "Pi_0": 1.0000000105083318,
+  "cont_bw": [
+   0.09287527114979713,
+   0.6866888568551133
+  ],
+  "disc_bw_post": 0.09863573306545056,
+  "cont_kb": [
+   0.17575054409656468,
+   2.3165410474774273
+  ],
+  "disc_4a_prior": 0.16720171906414952,
+  "convergence": [
+   {
+    "dt": 0.05,
+    "posterior_peak": 0.18373476818119616,
+    "prior_peak": 0.16720171906414952,
+    "peak_Pi_cont": 2.2969629980905624
+   },
+   {
+    "dt": 0.01,
+    "posterior_peak": 0.1773965021445622,
+    "prior_peak": 0.17408182931829128,
+    "peak_Pi_cont": 2.3156989488037953
+   },
+   {
+    "dt": 0.001,
+    "posterior_peak": 0.1759161806612062,
+    "prior_peak": 0.17558467991113594,
+    "peak_Pi_cont": 2.3164846484856376
+   }
+  ],
+  "contributions": {
+   "gain shape: continuous KB-type gain vs Bayesian-weight gain, same kappa": 0.08287527294676755,
+   "dt on the paper's Bayesian-weight relay (discrete posterior - continuous)": 0.0057604619156534365,
+   "dt on the 4a gain family (discrete posterior at dt=0.05 - continuous)": 0.00798422408463148,
+   "prior vs posterior at dt=0.05 (posterior - prior)": 0.016533049117046644
+  },
+  "total": 0.09085927484609127,
+  "main": "gain shape: continuous KB-type gain vs Bayesian-weight gain, same kappa"
+ },
+ "runtime_s": 0.11639523506164551
+}

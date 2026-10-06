@@ -1,0 +1,42 @@
+{
+ "pass": true,
+ "files": {
+  "fig1_paired.png": {
+   "px": [
+    1410,
+    990
+   ],
+   "dpi": 300,
+   "width_in": 4.7
+  },
+  "fig2_regimes.png": {
+   "px": [
+    1410,
+    990
+   ],
+   "dpi": 300,
+   "width_in": 4.7
+  },
+  "fig3_peak_vs_kappa.png": {
+   "px": [
+    1410,
+    990
+   ],
+   "dpi": 300,
+   "width_in": 4.7
+  }
+ },
+ "inset": {
+  "diff_at_0.01": 1.2490009027033011e-15,
+  "diff_at_1": 1.214007898549253e-09,
+  "diff_at_100": 0.0001794919243112269
+ },
+ "no_titles": true,
+ "titles_found": {
+  "fig1_paired.png": [],
+  "fig2_regimes.png": [],
+  "fig3_peak_vs_kappa.png": []
+ },
+ "M_over_F_at_1000": 86.49372127323043,
+ "runtime_s": 2.188006639480591
+}

@@ -1,0 +1,80 @@
+{
+ "exit_code": 0,
+ "pass": true,
+ "wall_s": 679.1202867031097,
+ "per_script": [
+  {
+   "script": "t1_symbolic",
+   "seconds": 4.7
+  },
+  {
+   "script": "t2_em",
+   "seconds": 50.5
+  },
+  {
+   "script": "t3_paired",
+   "seconds": 135.2
+  },
+  {
+   "script": "t4a_discrete",
+   "seconds": 15.2
+  },
+  {
+   "script": "t4b_colored",
+   "seconds": 182.7
+  },
+  {
+   "script": "t4c_drift",
+   "seconds": 252.2
+  },
+  {
+   "script": "t4d_gains",
+   "seconds": 7.6
+  },
+  {
+   "script": "t4e_fixed_gain",
+   "seconds": 4.0
+  },
+  {
+   "script": "t6_colored_symbolic",
+   "seconds": 5.0
+  },
+  {
+   "script": "t7_discrete_symbolic",
+   "seconds": 5.2
+  },
+  {
+   "script": "t7_continuous_checks",
+   "seconds": 3.2
+  },
+  {
+   "script": "t7_specify_4a",
+   "seconds": 2.0
+  },
+  {
+   "script": "t7_figures",
+   "seconds": 5.5
+  }
+ ],
+ "sum_scripts_s": 673.0,
+ "json_identical": [
+  "t1.json",
+  "t2.json",
+  "t3.json",
+  "t4a.json",
+  "t4b.json",
+  "t4c.json",
+  "t4d.json",
+  "t4e.json",
+  "t6.json",
+  "t7_1.json",
+  "t7_2.json",
+  "t7_3.json",
+  "t7_4.json"
+ ],
+ "json_differ": [],
+ "json_missing": [],
+ "figures_identical": 11,
+ "figures_total": 11,
+ "stderr_tail": ""
+}

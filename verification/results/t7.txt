@@ -1,0 +1,118 @@
+TASK 7 — REVISION CHECKS
+prereg a0d2be2
+
+[PASS] T7.1a: stationary prior variance derived from recursion == (phi^2 L^2 r + q)/(1 - phi^2(1-L)^2)
+    PASS (symbolic); numeric check at 20 rational points: max rel err 0.0e+00
+[PASS] T7.1b: posterior variance S == (1-L)^2 M + L^2 r
+    PASS (symbolic); numeric check at 20 rational points: max rel err 0.0e+00
+[PASS] T7.1c: S - F == (M - F)/phi^2
+    PASS (symbolic); numeric check at 20 rational points: max rel err 0.0e+00
+[PASS] T7.1d: M - F == phi^2 L [L(r(1-phi^2)+q) - 2q] / [(1-phi^2)(1+phi(1-L))(1-phi(1-L))]
+    PASS (symbolic); numeric check at 20 rational points: max rel err 0.0e+00
+[PASS] T7.1e: M > F  <=>  L/(2-L) > F Pi_d (algebraic + 10,000 exact random sets)
+    algebraic identity PASS (symbolic); prefactors positive: True; 10,000 exact rational sets: 0 mismatches (3707 with M > F)
+[PASS] T7.1f: (M+rs)(M+2r) - 2rs(M+r) = M^2 + rM(2-s); hence L*/(2-L*) < F Pi_d / 2
+    difference identity PASS (symbolic); gap identity PASS (symbolic); gap > 0 proven: True; 20,000 float64 sets: max ratio 0.999999319, 0 with ratio >= 1; L* in (a) recovers Riccati M: True
+[PASS] T7.1g: continuum limit: D = dt (G/2 - F Pi) + O(dt^2)  => G > 2 F Pi
+    Δt⁰ term = 0; Δt¹ term = G/2 - Pi*Sigma/lambda (PASS (symbolic)); Δt² term = G**2/4
+[PASS] T7.2a: Kalman-Bucy: p Pi = G* = -lam + sqrt(lam^2 + 2 Sigma Pi) and p = sigma*^2 (Eq. 4)
+    positive root p = (-lambda + sqrt(2*Pi*Sigma + lambda**2))/Pi; pΠ = G*: PASS (symbolic); p = σ*²: PASS (symbolic); p = (2) at G*: PASS (symbolic)
+[PASS] T7.2b: peak M/F at kappa in {2,3,5,10,20,50,100} matches 1.000,1.036,1.175,1.584,2.432,5.000,9.288 (4 s.f.)
+    κ=2: 1.00000; κ=3: 1.03590; κ=5: 1.17544; κ=10: 1.58359; κ=20: 2.43190; κ=50: 5.00000; κ=100: 9.28753
+[PASS] T7.2c: kappa = 50 (Pi_0 = 2): Pi* = 4/3 and M = 0.05 exactly (rational arithmetic)
+    Π₀ = 2, Π* = 4/3, M = 1/20
+[PASS] T7.2d: smallest kappa with M >= 0.05 is 50 (brentq, |err| <= 1e-8; M increasing in kappa)
+    κ = 50.000000000000 (|err| 1.4e-14); M increasing in κ: True
+[PASS] T7.2e: Hill gain: Pi_0=24 max(sigma^2-F) ~ 1.40e-4 (>0, 3 s.f.); Pi_0=26 max <= 1e-15; Pi_0=25 reported
+    Π₀=24: max(σ²−F) = 1.4008e-04 at Π = 24.62; Π₀=25: max(σ²−F) = 0.0000e+00 at Π = 25; Π₀=26: max(σ²−F) = -1.5613e-17 at Π = 1e-06
+[PASS] T7.3: closed-form Task 4a peaks match reported 0.01075, 0.02224, 0.1837 (3 s.f.)
+    k=3: 0.010753 vs 0.010753; k=10: 0.022239 vs 0.022239; k=100: 0.183735 vs 0.183735
+[PASS] T7.4: figures: 300 dpi, 4.7 in wide, no titles
+    fig1_paired.png: 1410×990 px, 300 dpi; fig2_regimes.png: 1410×990 px, 300 dpi; fig3_peak_vs_kappa.png: 1410×990 px, 300 dpi; titles found: 0
+[PASS] T7.5: full run_all.sh (incl. Task 7) completes
+    exit code 0; wall time 679.1 s
+
+Task 7 overall: PASS
+
+T7.1(d) sympy.factor(M − F), verbatim:
+    L*phi**2*(-L*phi**2*r + L*q + L*r - 2*q)/((phi - 1)*(phi + 1)*(L*phi - phi - 1)*(L*phi - phi + 1))
+    LaTeX: \frac{L \phi^{2} \left(- L \phi^{2} r + L q + L r - 2 q\right)}{\left(\phi - 1\right) \left(\phi + 1\right) \left(L \phi - \phi - 1\right) \left(L \phi - \phi + 1\right)}
+T7.1(f) difference (M + rs)(M + 2r) − 2rs(M + r), expanded by SymPy:
+    LaTeX: M^{2} - M r s + 2 M r  =  M^{2} + M r \left(2 - s\right)
+
+TASK 4a SPECIFICATION (derived from t4a_discrete.py and results/t4a.json; no new simulation)
+
+True plant. A discrete-time AR(1) state h_(k+1) = phi*h_k + w_k with time step dt = 0.05. phi and q were
+chosen so that the discrete plant samples the continuous worked example (lambda = 1, Sigma = 0.01) exactly:
+phi = exp(-lambda*dt) = 0.951229 and q = Sigma*(1 - phi^2)/lambda = 9.516258e-04. Its stationary variance is
+q/(1 - phi^2) = F = Sigma/lambda = 0.01. The plant was simulated with the true phi and q.
+
+Observation and "per-sample precision". Each sample y_k = h_k + v_k has measurement noise of variance
+var(v) = 1/Pi, where Pi is the grid variable of Task 4a (grid np.logspace(-3, 4, 2001)). That Pi is therefore the
+per-sample precision, Pi_d = 1/r, in T7.1's notation. It is NOT the continuous sensory precision. Continuous
+white sensory noise of intensity 1/Pi_cont gives a per-sample variance 1/(Pi_cont*dt) after averaging over
+one step, so Pi_d = Pi_cont*dt and Pi_cont = Pi_d/dt = 20*Pi_d. The reported Task 4a peak locations
+(Pi_d = 0.718, 0.784, 0.115 for factors 3, 10, 100) correspond to
+Pi_cont = 14.4, 15.7, 2.3.
+
+Filters. Each filter is a fixed-gain filter: predict with the true phi, then update with a constant
+gain K. K is the steady-state Kalman gain of an ASSUMED model: (A) process noise k*q, or (B) measurement
+precision kappa*Pi_d, with the factor in {1, 2, 3, 10, 100}. The steady-state gain depends only on the
+assumed ratio q/r, so A and B give identical filters for equal factors (Task 4a confirmed this).
+
+"Slope ratio". Operationally this is K(eps)/eps with eps = 1e-9, the numerical initial slope dK/dPi_d of
+the gain at Pi_d -> 0, divided by F = 0.01. F is the analytic initial slope of the correctly specified
+filter; its numerical value was 0.01. Analytically the slope of a filter with factor k is k*F, so
+the "ratio" equals the factor (reported: 1, 2, 3, 10, 100).
+Because L = G*dt and Pi_d = Pi_cont*dt, dK/dPi_d = dG/dPi_cont. The slope ratio is therefore exactly the
+continuous over-weighting ratio kappa = (dG/dPi at 0)/F.
+
+Prior or posterior. The reported variance was the POSTERIOR error variance. It is the variance of
+h_k - hhat_k after the update with y_k: V = ((1-K)^2 q + K^2/Pi_d)/(1 - (1-K)^2 phi^2), which equals S_L of T7.1(b).
+The simulation check also measured h_k - hhat_k after the update.
+
+[PASS] T7.3: closed-form (T7.1 a,b + Riccati gain) peaks match reported Task 4a peaks to 3 s.f.
+    k=3: closed form 0.010753 at Pi_d=0.72039 | reported 0.010753 at Pi_d=0.71779 | rel diff +4.24e-07 | ok
+    k=10: closed form 0.022239 at Pi_d=0.78392 | reported 0.022239 at Pi_d=0.78433 | rel diff +2.70e-08 | ok
+    k=100: closed form 0.183735 at Pi_d=0.11485 | reported 0.183735 at Pi_d=0.11521 | rel diff +1.21e-06 | ok
+
+WHY THE RATIO-100 PEAK IS ABOUT TWICE THE CONTINUOUS kappa = 100 PEAK
+(i)   Continuous kappa implied by the 4a mapping: slope/F = 99.999999, so Pi_0 = c/(kappa F) = 1.000000.
+(ii)  Continuous closed form (2), Bayesian-weight gain G = c Pi/(Pi+Pi_0) at that kappa: peak 0.09288 at Pi = 0.6867.
+(iii) Same Bayesian-weight relay discretised at dt = 0.05 (L = dt*G, posterior): peak 0.09864 at Pi_cont = 0.6997.
+(iv)  Continuous closed form (2) with the gain the 4a filter converges to as dt -> 0, the Kalman-Bucy gain of the assumed model G = -lambda + sqrt(lambda^2 + 2*100*Sigma*Pi) (unbounded, no saturation at c): peak 0.17575 at Pi = 2.317.
+(v)   4a filter at dt = 0.05, PRIOR variance: peak 0.16720; POSTERIOR: 0.18373 (reported 0.18373).
+(vi)  4a filter family as dt -> 0 (posterior / prior peak): dt=0.05: 0.18373 / 0.16720 at Pi_cont=2.297; dt=0.01: 0.17740 / 0.17408 at Pi_cont=2.316; dt=0.001: 0.17592 / 0.17558 at Pi_cont=2.316  -> converges to (iv) = 0.17575.
+Total gap (reported - continuous kappa=100): +0.09086. Contributions:
+    gain shape: continuous KB-type gain vs Bayesian-weight gain, same kappa: +0.08288
+    dt on the paper's Bayesian-weight relay (discrete posterior - continuous): +0.00576
+    dt on the 4a gain family (discrete posterior at dt=0.05 - continuous): +0.00798
+    prior vs posterior at dt=0.05 (posterior - prior): +0.01653
+Mapping: exact. The implied continuous kappa is 100.0000, so it contributes nothing.
+Conclusion: the main cause is 'gain shape: continuous KB-type gain vs Bayesian-weight gain, same kappa' (+0.08288 of +0.09086). Gain shape and dt on the 4a family add up to the whole gap (+0.09086). The posterior-vs-prior difference (+0.01653) is itself a finite-dt effect: it shrinks to +0.00033 at dt = 0.001. Task 4a's filters share the paper's initial slope (kappa) but not its gain family. A steady-state Kalman gain under inflated process noise keeps rising with precision instead of saturating at c, so it injects more sensory noise near the peak. The 4a peak heights are therefore not comparable with the paper's Bayesian-weight peaks at the same kappa; only the onset condition (slope ratio > 2) carries over.
+
+T7.2(b) table (κ, Π₀, Π*, M, M/F):
+       2        50         0 0.010000 1.00000
+       3     33.33    6.1004 0.010359 1.03590
+       5        20    7.2076 0.011754 1.17544
+      10        10    5.1893 0.015836 1.58359
+      20         5    3.0438 0.024319 2.43190
+      50         2    1.3333 0.050000 5.00000
+     100         1    0.6867 0.092875 9.28753
+
+T7.5 runtime of the full run_all.sh in a fresh copy:
+    t1_symbolic                   4.7 s
+    t2_em                        50.5 s
+    t3_paired                   135.2 s
+    t4a_discrete                 15.2 s
+    t4b_colored                 182.7 s
+    t4c_drift                   252.2 s
+    t4d_gains                     7.6 s
+    t4e_fixed_gain                4.0 s
+    t6_colored_symbolic           5.0 s
+    t7_discrete_symbolic          5.2 s
+    t7_continuous_checks          3.2 s
+    t7_specify_4a                 2.0 s
+    t7_figures                    5.5 s
+    total wall time             679.1 s (sum of scripts 673.0 s)
+    regenerated results identical to committed (ignoring runtimes): 13/13 json files; figures byte-identical: 11/11

@@ -13,7 +13,8 @@ print(json.dumps({"python": platform.python_version(), "numpy": numpy.__version_
 EOF
 
 : > results/runtime.tsv
-for s in t1_symbolic t2_em t3_paired t4a_discrete t4b_colored t4c_drift t4d_gains t4e_fixed_gain t6_colored_symbolic; do
+for s in t1_symbolic t2_em t3_paired t4a_discrete t4b_colored t4c_drift t4d_gains t4e_fixed_gain t6_colored_symbolic \
+         t7_discrete_symbolic t7_continuous_checks t7_specify_4a t7_figures; do
   echo "== $s"
   t0=$(date +%s.%N)
   python3 "$s.py" > "results/$s.log"
@@ -25,4 +26,5 @@ done
 
 python3 make_report.py
 python3 t6_report.py      # appends the Task 6 section (make_report.py regenerates the earlier ones)
+python3 t7_report.py      # Task 7 section; T7.5 timing comes from t7_runtime.py, which runs this whole script in a temporary copy
 echo "done: see REPORT.md"
