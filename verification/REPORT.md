@@ -3,7 +3,7 @@
 All numbers below are read from `results/*.json` / `results/runtime.tsv` by `make_report.py`.
 
 - Pre-registration commit: `d21f193f2a50a779e284fc8bc4a1236c67117d05` (PREREG.md unchanged since: **yes**)
-- Results commit (scripts + results this report was generated from): `6457bada93cff220a36492dcfd1a19b6631de043` — **working tree differed from this commit when the report was generated**
+- Results commit (scripts + results this report was generated from): `70ebb55e707d7f600ab4a9ad42e31fa7bfd1dfad`
   (REPORT.md itself is committed in the commit after this one, since a file cannot contain the hash of its own commit.)
 
 ## Pre-registered criteria
@@ -82,7 +82,7 @@ Here "bounded window" means an interior maximum strictly above both ends of the 
 | B | 10 | 0.1 | 10 | yes | yes | 0.784 | 0.02224 | none |
 | B | 100 | 1 | 100 | yes | yes | 0.115 | 0.1837 | (0.00461, 7.29) |
 
-The Prop 4 prediction (a window iff the initial gain slope is more than 2× the correct slope 0.01) holds in all 10 cases. Factor 2 is the exact boundary and gives no window. Miscalibrations A and B give identical filters for equal factors: the steady-state gain depends only on the assumed ratio q/r, so an inflated k·q and an inflated κ·Π are the same error. The two arms are therefore not independent tests. The window survives discretisation but is weaker. With var(v) = 1/Π per sample, factor 3 lifts the peak only to 0.01075 (F = 0.01), and only factor 100 crosses R² = 0.05, on (0.00461, 7.29). Because Π here is a per-sample precision, these locations are not directly comparable with the continuous (1/9, 4). The exact steady-state variances were confirmed by simulation in 30/30 checks (max relative error 0.34%, max |z| 1.74).
+The Prop 4 prediction (a window iff the initial gain slope is more than 2× the correct slope 0.01) holds in all 10 cases. Factor 2 is the exact boundary and gives no window. Miscalibrations A and B give identical filters for equal factors: the steady-state gain depends only on the assumed ratio q/r, so an inflated k·q and an inflated κ·Π are the same error. The two arms are therefore not independent tests. In this parameterisation (var(v) = 1/Π per sample) the excess is small for modest miscalibration: factor 3 lifts the peak only to 0.01075 (F = 0.01), and only factor 100 crosses R² = 0.05, on (0.00461, 7.29). Because Π here is a per-sample precision, these locations are not directly comparable with the continuous (1/9, 4). The exact steady-state variances were confirmed by simulation in 30/30 checks (max relative error 0.34%, max |z| 1.74).
 
 ### 4b Coloured sensory noise
 
@@ -106,7 +106,7 @@ Coloured noise at equal zero-frequency power weakens the window but does not rem
 | sin A=0.1, T=100 | 0.09356 | (0.11, 4.15) | 0.008744 | (142) | 0.006274 | 0.98 |
 | random walk s=0.01 | 0.09435 | (0.11, 4.38) | 0.01053 | none | 0.008006 | 1.59 |
 
-The window **persists**. Its lower edge is unchanged and its upper edge moves out slightly, to at most 4.38 (random walk). This is because a precision-weighted relay passes the drift with gain G/(λ+G), so the drift adds most at high Π. In one sentence: drift does not replace the low-R² window, but it raises the high-precision floor and so pushes the threshold regime into failure. With the sinusoids the floor stays below 0.008, but the R² = 0.008 threshold moves from 83.03 to 133.4–142 for A = 0.1. With the random walk the floor reaches 0.008006 > 0.008, so R² = 0.008 is never met at high precision: the relay tracks the walk. The random-walk number is not stationary. It grows with the averaging horizon (here t ∈ [20, 220]), so a longer run would make the high-precision failure worse.
+The window **persists**. Its lower edge is unchanged and its upper edge moves out slightly, to at most 4.38 (random walk). This is because a precision-weighted relay passes the drift with gain G/(λ+G), so the drift adds most at high Π. In one sentence: drift does not replace the low-R² window, but it raises the high-precision floor and so pushes the threshold regime into failure. With the sinusoids the floor stays below 0.008, but the R² = 0.008 threshold moves from 83.03 to 133.4–142 for A = 0.1. With the random walk the floor reaches 0.008006 > 0.008, so R² = 0.008 is never met anywhere on Π ≤ 1e4: the relay tracks the walk. The margin is small (6e-06) and depends on s. The random-walk number is not stationary. It grows with the averaging horizon (here t ∈ [20, 220]), so a longer run would make the high-precision failure worse.
 
 ### 4d Non-Kalman gains
 
@@ -120,7 +120,7 @@ Prop 4's small-Π claim holds for every gain and every P tested. For tanh and 1 
 
 ### 4e Precision-blind gain
 
-With constant G = G0, dσ²/dΠ = `-G0**2/(2*Pi**2*(G0 + lambda))`, which is negative. The limit as Π → 0 is oo and the limit as Π → ∞ is Sigma/(G0 + lambda). The numerical grid is monotone decreasing for all G0 ∈ {0.1, 0.5, 1, 2}. There is no window (confirmed): this relay fails at low precision instead of inside a bounded band.
+With constant G = G0, dσ²/dΠ = `-G0**2/(2*Pi**2*(G0 + lambda))`, which is negative. The limit as Π → 0 is ∞ and the limit as Π → ∞ is Sigma/(G0 + lambda). The numerical grid is monotone decreasing for all G0 ∈ {0.1, 0.5, 1, 2}. There is no window (confirmed): this relay fails at low precision instead of inside a bounded band.
 
 ## Figures
 
@@ -135,4 +135,19 @@ With constant G = G0, dσ²/dΠ = `-G0**2/(2*Pi**2*(G0 + lambda))`, which is neg
 
 ## Environment and runtime
 
+Python 3.13.16, NumPy 2.5.3, SciPy 1.18.1, SymPy 1.14.0, Matplotlib 3.11.2; Linux-6.18.44-fc-v70-x86_64-with-glibc2.39, 4 CPUs.
+
+| script | wall time (s) |
+|---|---|
+| t1_symbolic | 2.8 |
+| t2_em | 43.0 |
+| t3_paired | 118.4 |
+| t4a_discrete | 13.0 |
+| t4b_colored | 157.5 |
+| t4c_drift | 227.4 |
+| t4d_gains | 5.2 |
+| t4e_fixed_gain | 3.2 |
+| **total** | **570.5** |
+
+No script went over the 5-minute budget, so trajectory counts were never reduced.
 Reproduce with `bash run_all.sh`. Seeds are fixed, so a rerun gives the same numbers on the same library versions.
