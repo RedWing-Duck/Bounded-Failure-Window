@@ -59,16 +59,20 @@ def run_em(specs, seed, ntraj=NTRAJ, dt=DT, t_burn=T_BURN, t_samp=T_SAMP,
     """Simulate many linear relays on common noise.
 
     specs: list of (a, gs, gsim) with  dx = -a x dt + gs dW_s + gsim dW_sim  (+ extras)
-    drive: optional f(t_array, k) -> deterministic/extra additive increment array
-           (ntraj, nstep) multiplied by spec-specific factor spec[3] if present.
+    drive: optional f(chunk_index, n_chunk, ntraj) -> additive increment array
+           (ntraj or 1, n_chunk), multiplied by the spec-specific factor spec[3].
+           It must use its own RNG so the dW_s/dW_sim draws stay common.
     sensory: optional callable(chunk_index, dWs) -> replacement sensory increments
              (used for coloured noise); default is white dW_s.
     Returns batch-mean array of x^2 with shape (len(specs), ntraj * nbatch).
     """
     rng = np.random.default_rng(seed)
-    n_chunk = int(round(t_batch / dt))
-    n_burn = int(round(t_burn / t_batch))
-    n_samp = int(round(t_samp / t_batch))
+    t_chunk = 10.0                      # noise is drawn in 10-time-unit chunks
+    n_chunk = int(round(t_chunk / dt))
+    n_burn = int(round(t_burn / t_chunk))
+    n_samp = int(round(t_samp / t_chunk))
+    per_batch = int(round(t_batch / t_chunk))
+    assert per_batch >= 1 and n_samp % per_batch == 0
     sq = np.sqrt(dt)
     z = [np.zeros((ntraj, 1)) for _ in specs]
     bm = np.empty((len(specs), ntraj, n_samp))
@@ -77,7 +81,7 @@ def run_em(specs, seed, ntraj=NTRAJ, dt=DT, t_burn=T_BURN, t_samp=T_SAMP,
         dWm = rng.standard_normal((ntraj, n_chunk)) * sq
         if sensory is not None:
             dWs = sensory(k, dWs)
-        extra = drive(k, n_chunk, ntraj, rng) if drive is not None else None
+        extra = drive(k, n_chunk, ntraj) if drive is not None else None
         for i, sp in enumerate(specs):
             a, gs, gm = sp[:3]
             u = gs * dWs + gm * dWm
@@ -86,6 +90,7 @@ def run_em(specs, seed, ntraj=NTRAJ, dt=DT, t_burn=T_BURN, t_samp=T_SAMP,
             y, z[i] = ar1(u, 1.0 - a * dt, z[i])
             if k >= n_burn:
                 bm[i, :, k - n_burn] = np.mean(y * y, axis=1)
+    bm = bm.reshape(len(specs), ntraj, n_samp // per_batch, per_batch).mean(-1)
     return bm.reshape(len(specs), -1)
 
 
