@@ -1,0 +1,58 @@
+== Step 1: sensory-noise normalisation in t4b_colored.py (read-only) ==
+make_sensory source:
+    def make_sensory(tau, seed):
+        """Unit OU noise (integrated autocovariance 1), returned as eta*dt increments."""
+        rho = np.exp(-DT / tau)
+        var = 1.0 / (2 * tau)
+        innov = np.sqrt(var * (1 - rho**2))
+        state = {"z": np.random.default_rng(seed).standard_normal((NTRAJ, 1)) * np.sqrt(var) * rho}
+    
+        def sensory(k, dWs):
+            xi = dWs / np.sqrt(DT)                 # reuse the common white draws as OU innovations
+            eta, state["z"] = lfilter([innov], [1.0, -rho], xi, axis=1, zi=state["z"])
+            return eta * DT
+        return sensory
+relay specs line (gs = sensory coefficient, 2nd entry):  specs = [(LAM + g, g / np.sqrt(p), np.sqrt(2 * SIG)) for p, g in zip(GRID, G)]
+common.run_em: u = gs * dWs + gm * dWm, with dWs replaced by the value returned by sensory().
+  tau= 0.01: rho=0.904837418036 (exp(-dt/tau)=0.904837418036), stationary var=50 (1/(2tau)=50), int autocov (continuous 2*var*tau)=1, (discrete sum*dt)=1.00083
+  tau=  0.1: rho=0.990049833749 (exp(-dt/tau)=0.990049833749), stationary var=5 (1/(2tau)=5), int autocov (continuous 2*var*tau)=1, (discrete sum*dt)=1.00001
+  tau=    1: rho=0.999000499833 (exp(-dt/tau)=0.999000499833), stationary var=0.5 (1/(2tau)=0.5), int autocov (continuous 2*var*tau)=1, (discrete sum*dt)=1
+  tau=   10: rho=0.999900005000 (exp(-dt/tau)=0.999900005000), stationary var=0.05 (1/(2tau)=0.05), int autocov (continuous 2*var*tau)=1, (discrete sum*dt)=1
+t4b generates a unit OU process eta_u by exact AR(1) discretisation, rho = exp(-dt/tau), innovation sd = sqrt((1/(2tau))(1-rho^2)), started from its stationary law, so eta_u has stationary variance 1/(2tau) and integrated autocovariance 2*tau*(1/(2tau)) = 1, i.e. d eta_u = -eta_u/tau dt + (1/tau) dW_s. The relay multiplies eta_u*dt by gs = G/sqrt(Pi), so the effective sensory noise is eta = eta_u/sqrt(Pi): stationary variance 1/(2 Pi tau), integrated autocovariance 1/Pi, d eta = -eta/tau dt + (1/(tau sqrt(Pi))) dW_s. This MATCHES the expected normalisation.
+(The discrete sum of the AR(1) autocovariance times dt differs from 1 by O((dt/tau)^2) from discretisation; the continuous-time integral 2*var*tau is exactly 1.)
+
+== Step 2: stationary Lyapunov solution ==
+C_xx = (G**2/2 + G*Pi*Sigma*tau + Pi*Sigma*lambda*tau + Pi*Sigma)/(Pi*(G**2*tau + 2*G*lambda*tau + G + lambda**2*tau + lambda))
+C_xeta = G/(2*Pi*(G*tau + lambda*tau + 1)),  C_etaeta = 1/(2*Pi*tau)
+LaTeX C_xx: \frac{\frac{G^{2}}{2} + G \Pi \Sigma \tau + \Pi \Sigma \lambda \tau + \Pi \Sigma}{\Pi \left(G^{2} \tau + 2 G \lambda \tau + G + \lambda^{2} \tau + \lambda\right)}
+
+== Criteria ==
+[PASS] C1: C_xx == (Sigma + G^2/(2 Pi (1+a tau)))/a -- simplify(diff)==0: True; numeric 20 sets @50 digits: max rel err 0.00e+00 (ok)
+[PASS] C2: lim_{tau->0} C_xx == (Sigma + G^2/(2Pi))/(lambda+G) -- simplify(diff)==0: True; numeric 20 sets @50 digits: max rel err 0.00e+00 (ok); direct tau=0 substitution matches: True
+C3 factorisation as returned by sympy.factor(C_xx - F):
+    -G*(2*G*Pi*Sigma*tau - G*lambda + 2*Pi*Sigma*lambda*tau + 2*Pi*Sigma)/(2*Pi*lambda*(G + lambda)*(G*tau + lambda*tau + 1))
+    LaTeX: - \frac{G \left(2 G \Pi \Sigma \tau - G \lambda + 2 \Pi \Sigma \lambda \tau + 2 \Pi \Sigma\right)}{2 \Pi \lambda \left(G + \lambda\right) \left(G \tau + \lambda \tau + 1\right)}
+[PASS] C3: coloured excess identity; C_xx > F iff G/Pi > 2F(1+a tau) -- C_xx-F == G(lam G/(2Pi(1+a tau)) - Sigma)/(lam a): simplify True, numeric max rel 0.00e+00; bracket*2(1+a tau)/lam == G/Pi - 2F(1+a tau): simplify True, numeric max rel 0.00e+00; multipliers 2(1+a tau)/lam and G/(lam a) proven positive: True
+C4 series: C_xx = Sigma/lambda + (c*(-2*P*Sigma*lambda*tau - 2*P*Sigma + c*lambda)/(2*P**2*lambda**2*(lambda*tau + 1)))*Pi + O(Pi^2)
+    LaTeX: \frac{\Sigma}{\lambda} + \frac{c \left(- 2 P \Sigma \lambda \tau - 2 P \Sigma + c \lambda\right)}{2 P^{2} \lambda^{2} \left(\lambda \tau + 1\right)}\,\Pi + O(\Pi^2)
+    s1 / (c/P - 2F(1+lam tau)) = c/(2*P*lambda*(lambda*tau + 1))  (proven positive: True)
+[PASS] C4: series F + s1 Pi, s1 = c(c lam - 2P Sigma(1+lam tau))/(2P^2 lam^2(1+lam tau)); rise iff c/P > 2F(1+lam tau) -- constant term == F: True; s1 == stated: simplify True, numeric max rel 0.00e+00; sign(s1) == sign(c/P - 2F(1+lam tau)): True
+C5 table (tau | peak here | t4b peak | 3sf match | Pi* here | t4b Pi* | 3sf match | t4b grid reproduced):
+     0.01 | 0.091686 | 0.091686 | True | 0.68303 | 0.68391 | False | True
+      0.1 | 0.082337 | 0.082337 | True | 0.65476 | 0.65426 | False | True
+        1 | 0.043262 | 0.043262 | True | 0.53832 | 0.53920 | False | True
+       10 | 0.013556 | 0.013556 | True | 0.32991 | 0.32980 | True | True
+C5 post-hoc diagnostic (not pre-registered): exact peak from dC_xx/dPi = 0 (sympy.nsolve, 30 digits):
+    tau= 0.01: Pi* = 0.683038 (3 s.f. 0.683), peak = 0.091686; 200,001-pt grid Pi* 0.68303; t4b grid Pi* 0.68391
+    tau=  0.1: Pi* = 0.654753 (3 s.f. 0.655), peak = 0.082337; 200,001-pt grid Pi* 0.65476; t4b grid Pi* 0.65426
+    tau=    1: Pi* = 0.538307 (3 s.f. 0.538), peak = 0.043262; 200,001-pt grid Pi* 0.53832; t4b grid Pi* 0.53920
+    tau=   10: Pi* = 0.329918 (3 s.f. 0.33), peak = 0.013556; 200,001-pt grid Pi* 0.32991; t4b grid Pi* 0.32980
+[FAIL] C5: peaks on 200,001-pt grid match t4b semi-analytic peaks to 3 s.f. (height and location) -- tau=0.01: 0.0917 at 0.683 vs 0.0917 at 0.684; tau=0.1: 0.0823 at 0.655 vs 0.0823 at 0.654; tau=1: 0.0433 at 0.538 vs 0.0433 at 0.539; tau=10: 0.0136 at 0.33 vs 0.0136 at 0.33
+[PASS] C6: sign of numeric slope at Pi->0 matches 'rise iff tau < 49' (P=1) -- tau=48: slope=2.0408e-04 (s1=2.0408e-04); tau=48.9: slope=2.0040e-05 (s1=2.0040e-05); tau=49.1: slope=-1.9960e-05 (s1=-1.9960e-05); tau=50: slope=-1.9608e-04 (s1=-1.9608e-04)
+C6 informational (P=1, grid 1e-4..1e4): tau | max(C_xx)-F | at Pi | sup[G/Pi-2F(1+a tau)] | at Pi | limit Pi->0
+        50 | -1.9798e-08 | 0.0001 | -0.020200 | 0.0001 | -0.020000
+       100 | -5.0495e-07 | 0.0001 | -1.020300 | 0.0001 | -1.020000
+      1000 | -9.4987e-07 | 0.0001 | -19.022100 | 0.0001 | -19.020000
+    d/dPi [G/Pi - 2F(1+a tau)] (Kalman gain) = c*(-2*P*Sigma*tau - lambda)/(lambda*(P + Pi)**2); proven negative for all positive parameters: True
+
+T6 overall: FAIL   runtime 2.1s

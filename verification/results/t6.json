@@ -1,0 +1,191 @@
+{
+ "criteria": {
+  "C1": {
+   "desc": "C_xx == (Sigma + G^2/(2 Pi (1+a tau)))/a",
+   "pass": true,
+   "detail": "simplify(diff)==0: True; numeric 20 sets @50 digits: max rel err 0.00e+00 (ok)"
+  },
+  "C2": {
+   "desc": "lim_{tau->0} C_xx == (Sigma + G^2/(2Pi))/(lambda+G)",
+   "pass": true,
+   "detail": "simplify(diff)==0: True; numeric 20 sets @50 digits: max rel err 0.00e+00 (ok); direct tau=0 substitution matches: True"
+  },
+  "C3": {
+   "desc": "coloured excess identity; C_xx > F iff G/Pi > 2F(1+a tau)",
+   "pass": true,
+   "detail": "C_xx-F == G(lam G/(2Pi(1+a tau)) - Sigma)/(lam a): simplify True, numeric max rel 0.00e+00; bracket*2(1+a tau)/lam == G/Pi - 2F(1+a tau): simplify True, numeric max rel 0.00e+00; multipliers 2(1+a tau)/lam and G/(lam a) proven positive: True"
+  },
+  "C4": {
+   "desc": "series F + s1 Pi, s1 = c(c lam - 2P Sigma(1+lam tau))/(2P^2 lam^2(1+lam tau)); rise iff c/P > 2F(1+lam tau)",
+   "pass": true,
+   "detail": "constant term == F: True; s1 == stated: simplify True, numeric max rel 0.00e+00; sign(s1) == sign(c/P - 2F(1+lam tau)): True"
+  },
+  "C5": {
+   "desc": "peaks on 200,001-pt grid match t4b semi-analytic peaks to 3 s.f. (height and location)",
+   "pass": false,
+   "detail": "tau=0.01: 0.0917 at 0.683 vs 0.0917 at 0.684; tau=0.1: 0.0823 at 0.655 vs 0.0823 at 0.654; tau=1: 0.0433 at 0.538 vs 0.0433 at 0.539; tau=10: 0.0136 at 0.33 vs 0.0136 at 0.33"
+  },
+  "C6": {
+   "desc": "sign of numeric slope at Pi->0 matches 'rise iff tau < 49' (P=1)",
+   "pass": true,
+   "detail": "tau=48: slope=2.0408e-04 (s1=2.0408e-04); tau=48.9: slope=2.0040e-05 (s1=2.0040e-05); tau=49.1: slope=-1.9960e-05 (s1=-1.9960e-05); tau=50: slope=-1.9608e-04 (s1=-1.9608e-04)"
+  }
+ },
+ "pass": false,
+ "runtime_s": 2.056668758392334,
+ "normalisation": "t4b generates a unit OU process eta_u by exact AR(1) discretisation, rho = exp(-dt/tau), innovation sd = sqrt((1/(2tau))(1-rho^2)), started from its stationary law, so eta_u has stationary variance 1/(2tau) and integrated autocovariance 2*tau*(1/(2tau)) = 1, i.e. d eta_u = -eta_u/tau dt + (1/tau) dW_s. The relay multiplies eta_u*dt by gs = G/sqrt(Pi), so the effective sensory noise is eta = eta_u/sqrt(Pi): stationary variance 1/(2 Pi tau), integrated autocovariance 1/Pi, d eta = -eta/tau dt + (1/(tau sqrt(Pi))) dW_s. This MATCHES the expected normalisation.",
+ "normalisation_ok": true,
+ "norm_numbers": {
+  "0.01": {
+   "rho": 0.9048374180359595,
+   "rho_expected": 0.9048374180359595,
+   "innov": 3.0105584774425016,
+   "var_unit": 49.99999999999999,
+   "var_unit_expected": 50.0,
+   "int_autocov_unit_discrete": 1.0008331944775042,
+   "int_autocov_unit_continuous": 0.9999999999999999
+  },
+  "0.1": {
+   "rho": 0.990049833749168,
+   "rho_expected": 0.990049833749168,
+   "innov": 0.31465319554427584,
+   "var_unit": 5.0,
+   "var_unit_expected": 5.0,
+   "int_autocov_unit_discrete": 1.0000083333194387,
+   "int_autocov_unit_continuous": 1.0
+  },
+  "1.0": {
+   "rho": 0.9990004998333749,
+   "rho_expected": 0.999000499833375,
+   "innov": 0.03160697179948532,
+   "var_unit": 0.49999999999994443,
+   "var_unit_expected": 0.5,
+   "int_autocov_unit_discrete": 1.00000008333314,
+   "int_autocov_unit_continuous": 0.9999999999998889
+  },
+  "10.0": {
+   "rho": 0.9999000049998333,
+   "rho_expected": 0.9999000049998333,
+   "innov": 0.0031621195528731623,
+   "var_unit": 0.05,
+   "var_unit_expected": 0.05,
+   "int_autocov_unit_discrete": 1.0000000008333199,
+   "int_autocov_unit_continuous": 1.0
+  }
+ },
+ "Cxx": "(G**2/2 + G*Pi*Sigma*tau + Pi*Sigma*lambda*tau + Pi*Sigma)/(Pi*(G**2*tau + 2*G*lambda*tau + G + lambda**2*tau + lambda))",
+ "Cxx_latex": "\\frac{\\frac{G^{2}}{2} + G \\Pi \\Sigma \\tau + \\Pi \\Sigma \\lambda \\tau + \\Pi \\Sigma}{\\Pi \\left(G^{2} \\tau + 2 G \\lambda \\tau + G + \\lambda^{2} \\tau + \\lambda\\right)}",
+ "C3_factor": "-G*(2*G*Pi*Sigma*tau - G*lambda + 2*Pi*Sigma*lambda*tau + 2*Pi*Sigma)/(2*Pi*lambda*(G + lambda)*(G*tau + lambda*tau + 1))",
+ "C3_factor_latex": "- \\frac{G \\left(2 G \\Pi \\Sigma \\tau - G \\lambda + 2 \\Pi \\Sigma \\lambda \\tau + 2 \\Pi \\Sigma\\right)}{2 \\Pi \\lambda \\left(G + \\lambda\\right) \\left(G \\tau + \\lambda \\tau + 1\\right)}",
+ "C4_s1": "c*(-2*P*Sigma*lambda*tau - 2*P*Sigma + c*lambda)/(2*P**2*lambda**2*(lambda*tau + 1))",
+ "C4_series_latex": "\\frac{\\Sigma}{\\lambda} + \\frac{c \\left(- 2 P \\Sigma \\lambda \\tau - 2 P \\Sigma + c \\lambda\\right)}{2 P^{2} \\lambda^{2} \\left(\\lambda \\tau + 1\\right)}\\,\\Pi + O(\\Pi^2)",
+ "C4_ratio": "c/(2*P*lambda*(lambda*tau + 1))",
+ "c5": [
+  {
+   "tau": 0.01,
+   "peak": 0.09168573035856623,
+   "peak_Pi": 0.6830303473308006,
+   "t4b_peak": 0.09168569698231124,
+   "t4b_peak_Pi": 0.6839116472814293,
+   "match_height": true,
+   "match_loc": false,
+   "t4b_grid_reproduced": true,
+   "exact_peak_Pi": 0.683038046066804,
+   "exact_peak": 0.09168573036116182
+  },
+  {
+   "tau": 0.1,
+   "peak": 0.08233676976237686,
+   "peak_Pi": 0.6547567736142226,
+   "t4b_peak": 0.08233675938830165,
+   "t4b_peak_Pi": 0.6542594436354771,
+   "match_height": true,
+   "match_loc": false,
+   "t4b_grid_reproduced": true,
+   "exact_peak_Pi": 0.6547526474954288,
+   "exact_peak": 0.08233676976310246
+  },
+  {
+   "tau": 1.0,
+   "peak": 0.04326241207254994,
+   "peak_Pi": 0.5383193612785291,
+   "t4b_peak": 0.043262387723437504,
+   "t4b_peak_Pi": 0.5392001446071976,
+   "match_height": true,
+   "match_loc": false,
+   "t4b_grid_reproduced": true,
+   "exact_peak_Pi": 0.5383070530619445,
+   "exact_peak": 0.0432624120771828
+  },
+  {
+   "tau": 10.0,
+   "peak": 0.013555695253783785,
+   "peak_Pi": 0.32991343378886456,
+   "t4b_peak": 0.01355569508381252,
+   "t4b_peak_Pi": 0.3297995054015394,
+   "match_height": true,
+   "match_loc": true,
+   "t4b_grid_reproduced": true,
+   "exact_peak_Pi": 0.32991822716934155,
+   "exact_peak": 0.013555695254061239
+  }
+ ],
+ "c6": [
+  {
+   "tau": 48.0,
+   "numeric_slope": 0.00020408163059225322,
+   "s1": 0.00020408163265306123,
+   "predicted_rise": true,
+   "match": true
+  },
+  {
+   "tau": 48.9,
+   "numeric_slope": 2.004007817238485e-05,
+   "s1": 2.004008016032064e-05,
+   "predicted_rise": true,
+   "match": true
+  },
+  {
+   "tau": 49.1,
+   "numeric_slope": -1.996008181241509e-05,
+   "s1": -1.9960079840319362e-05,
+   "predicted_rise": false,
+   "match": true
+  },
+  {
+   "tau": 50.0,
+   "numeric_slope": -0.00019607843327489426,
+   "s1": -0.000196078431372549,
+   "predicted_rise": false,
+   "match": true
+  }
+ ],
+ "c6_info": [
+  {
+   "tau": 50.0,
+   "max_excess": -1.9798001187920086e-08,
+   "max_excess_Pi": 0.0001,
+   "sup_cond": -0.02019998000199985,
+   "sup_cond_Pi": 0.0001,
+   "cond_limit_Pi0": -0.020000000000000018
+  },
+  {
+   "tau": 100.0,
+   "max_excess": -5.049480055988455e-07,
+   "max_excess_Pi": 0.0001,
+   "sup_cond": -1.0202999700029998,
+   "sup_cond_Pi": 0.0001,
+   "cond_limit_Pi0": -1.02
+  },
+  {
+   "tau": 1000.0,
+   "max_excess": -9.498699590825011e-07,
+   "max_excess_Pi": 0.0001,
+   "sup_cond": -19.022099790021,
+   "sup_cond_Pi": 0.0001,
+   "cond_limit_Pi0": -19.02
+  }
+ ],
+ "dcond": "c*(-2*P*Sigma*tau - lambda)/(lambda*(P + Pi)**2)",
+ "dcond_negative": true
+}

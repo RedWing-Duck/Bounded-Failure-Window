@@ -151,3 +151,60 @@ Python 3.13.16, NumPy 2.5.3, SciPy 1.18.1, SymPy 1.14.0, Matplotlib 3.11.2; Linu
 
 No script went over the 5-minute budget, so trajectory counts were never reduced.
 Reproduce with `bash run_all.sh`. Seeds are fixed, so a rerun gives the same numbers on the same library versions.
+
+## Task 6 — coloured-noise symbolic check
+
+Pre-registration: `824ca06236046b97343fb974d8703370d709c5ac` (`PREREG_t6.md` unchanged since: **yes**). Script: `t6_colored_symbolic.py`; full output: `results/t6_colored.txt`.
+
+**Noise normalisation in t4b.** t4b generates a unit OU process eta_u by exact AR(1) discretisation, rho = exp(-dt/tau), innovation sd = sqrt((1/(2tau))(1-rho^2)), started from its stationary law, so eta_u has stationary variance 1/(2tau) and integrated autocovariance 2*tau*(1/(2tau)) = 1, i.e. d eta_u = -eta_u/tau dt + (1/tau) dW_s. The relay multiplies eta_u*dt by gs = G/sqrt(Pi), so the effective sensory noise is eta = eta_u/sqrt(Pi): stationary variance 1/(2 Pi tau), integrated autocovariance 1/Pi, d eta = -eta/tau dt + (1/(tau sqrt(Pi))) dW_s. This MATCHES the expected normalisation.
+
+**Lyapunov solution.** The stationary covariance of (x, η) gives
+$$ C_{xx} = \frac{\frac{G^{2}}{2} + G \Pi \Sigma \tau + \Pi \Sigma \lambda \tau + \Pi \Sigma}{\Pi \left(G^{2} \tau + 2 G \lambda \tau + G + \lambda^{2} \tau + \lambda\right)} $$
+
+SymPy's factorisation of C_xx − F (C3), verbatim:
+$$ C_{xx} - F = - \frac{G \left(2 G \Pi \Sigma \tau - G \lambda + 2 \Pi \Sigma \lambda \tau + 2 \Pi \Sigma\right)}{2 \Pi \lambda \left(G + \lambda\right) \left(G \tau + \lambda \tau + 1\right)} $$
+
+Small-Π series with the Kalman gain (C4):
+$$ C_{xx} = \frac{\Sigma}{\lambda} + \frac{c \left(- 2 P \Sigma \lambda \tau - 2 P \Sigma + c \lambda\right)}{2 P^{2} \lambda^{2} \left(\lambda \tau + 1\right)}\,\Pi + O(\Pi^2) $$
+
+| ID | criterion | result | measured |
+|---|---|---|---|
+| C1 | C_xx == (Sigma + G^2/(2 Pi (1+a tau)))/a | PASS | simplify(diff)==0: True; numeric 20 sets @50 digits: max rel err 0.00e+00 (ok) |
+| C2 | lim_{tau->0} C_xx == (Sigma + G^2/(2Pi))/(lambda+G) | PASS | simplify(diff)==0: True; numeric 20 sets @50 digits: max rel err 0.00e+00 (ok); direct tau=0 substitution matches: True |
+| C3 | coloured excess identity; C_xx > F iff G/Pi > 2F(1+a tau) | PASS | C_xx-F == G(lam G/(2Pi(1+a tau)) - Sigma)/(lam a): simplify True, numeric max rel 0.00e+00; bracket*2(1+a tau)/lam == G/Pi - 2F(1+a tau): simplify True, numeric max rel 0.00e+00; multipliers 2(1+a tau)/lam and G/(lam a) proven positive: True |
+| C4 | series F + s1 Pi, s1 = c(c lam - 2P Sigma(1+lam tau))/(2P^2 lam^2(1+lam tau)); rise iff c/P > 2F(1+lam tau) | PASS | constant term == F: True; s1 == stated: simplify True, numeric max rel 0.00e+00; sign(s1) == sign(c/P - 2F(1+lam tau)): True |
+| C5 | peaks on 200,001-pt grid match t4b semi-analytic peaks to 3 s.f. (height and location) | FAIL | tau=0.01: 0.0917 at 0.683 vs 0.0917 at 0.684; tau=0.1: 0.0823 at 0.655 vs 0.0823 at 0.654; tau=1: 0.0433 at 0.538 vs 0.0433 at 0.539; tau=10: 0.0136 at 0.33 vs 0.0136 at 0.33 |
+| C6 | sign of numeric slope at Pi->0 matches 'rise iff tau < 49' (P=1) | PASS | tau=48: slope=2.0408e-04 (s1=2.0408e-04); tau=48.9: slope=2.0040e-05 (s1=2.0040e-05); tau=49.1: slope=-1.9960e-05 (s1=-1.9960e-05); tau=50: slope=-1.9608e-04 (s1=-1.9608e-04) |
+
+**Task 6: FAIL**
+
+### C5 detail: peak height and location
+
+| τ | peak (200,001-pt grid) | t4b peak | match | Π* (200,001-pt grid) | t4b Π* | match | exact Π* (nsolve, post hoc) | formula reproduces t4b on t4b's grid |
+|---|---|---|---|---|---|---|---|---|
+| 0.01 | 0.091686 | 0.091686 | yes | 0.68303 | 0.68391 | no | 0.683038 | yes |
+| 0.1 | 0.082337 | 0.082337 | yes | 0.65476 | 0.65426 | no | 0.654753 | yes |
+| 1 | 0.043262 | 0.043262 | yes | 0.53832 | 0.53920 | no | 0.538307 | yes |
+| 10 | 0.013556 | 0.013556 | yes | 0.32991 | 0.32980 | yes | 0.329918 | yes |
+
+C5 fails on 3 peak locations (τ = 0.01: 0.683 vs 0.684, τ = 0.1: 0.655 vs 0.654, τ = 1: 0.538 vs 0.539). All peak heights match. This is the risk named in PREREG_t6.md before the run. t4b located its peaks on a grid with steps of about 0.4 % in Π, which is coarser than 3 significant figures. On t4b's own grid the derived C_xx reproduces t4b's peaks exactly (relative error < 1e-12). A post-hoc exact solve of dC_xx/dΠ = 0 agrees with the fine grid. So the derivation agrees with t4b's formula, and the third significant figure of the t4b peak locations is a grid artefact. The correct values to 3 s.f. are 0.683 (τ = 0.01), 0.655 (τ = 0.1), 0.538 (τ = 1), 0.33 (τ = 10). The criterion was left unchanged and is recorded as FAIL.
+
+### C6 detail: boundary τ = 49 at P = 1
+
+| τ | numeric slope at Π → 0 | s1 from series | predicted rise | sign matches |
+|---|---|---|---|---|
+| 48 | 2.0408e-04 | 2.0408e-04 | yes | yes |
+| 48.9 | 2.0040e-05 | 2.0040e-05 | yes | yes |
+| 49.1 | -1.9960e-05 | -1.9960e-05 | no | yes |
+| 50 | -1.9608e-04 | -1.9608e-04 | no | yes |
+
+Informational: does a peak above F exist for τ > 49 anyway?
+
+| τ | max_Π (C_xx − F) | at Π | sup_Π [G/Π − 2F(1+aτ)] | at Π | limit Π → 0 |
+|---|---|---|---|---|---|
+| 50 | -1.9798e-08 | 0.0001 | -0.020200 | 0.0001 | -0.020000 |
+| 100 | -5.0495e-07 | 0.0001 | -1.020300 | 0.0001 | -1.020000 |
+| 1000 | -9.4987e-07 | 0.0001 | -19.022100 | 0.0001 | -19.020000 |
+
+For τ > 49 no grid point lies above F. Each supremum is reached at the smallest grid Π and approaches its negative Π → 0 limit. This is general for the Kalman gain: d/dΠ [G/Π − 2F(1+aτ)] = `c*(-2*P*Sigma*tau - lambda)/(lambda*(P + Pi)**2)`, which is proven negative for all positive parameters. The condition is therefore largest at Π → 0. For the Kalman gain with coloured noise, the small-Π condition c/P > 2F(1+λτ) is both sufficient and necessary for any excess above F. This is unlike the Hill gain in Task 4d.
+
