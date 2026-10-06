@@ -1,0 +1,15 @@
+phi=0.951229 q=9.5163e-04 F=0.0100; correct initial slope dK/dPi = 0.010000 (= F)
+ mis    f     slope  ratio  pred window   peakPi     peak excess>F     R2=.05 crossings
+   A    1   0.01000   1.00 False  False    0.001  0.01000 [] []
+   A    2   0.02000   2.00 False  False    0.001  0.01000 [] []
+   A    3   0.03000   3.00  True   True    0.718  0.01075 [[0.001, 2.4831331052955705]] []
+   A   10   0.10000  10.00  True   True    0.784  0.02224 [[0.001, 18.92343618644976]] []
+   A  100   1.00000 100.00  True   True    0.115  0.18373 [[0.001, 80.72350302488383]] ['0.00461', '7.29']
+   B    1   0.01000   1.00 False  False    0.001  0.01000 [] []
+   B    2   0.02000   2.00 False  False    0.001  0.01000 [] []
+   B    3   0.03000   3.00  True   True    0.718  0.01075 [[0.001, 2.4831331052955705]] []
+   B   10   0.10000  10.00  True   True    0.784  0.02224 [[0.001, 18.92343618644976]] []
+   B  100   1.00000 100.00  True   True    0.115  0.18373 [[0.001, 80.72350302488383]] ['0.00461', '7.29']
+prediction (window iff slope > 2x correct) agrees in all cases: True
+simulation checks pass: 30 / 30
+runtime 10.3s

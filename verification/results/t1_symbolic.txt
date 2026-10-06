@@ -29,4 +29,4 @@ exact symbolic: sigma^2(1/9)-1/20 = 0, sigma^2(4)-1/20 = 0
 optimal sigma*^2 via G*/Pi: [np.float64(0.009999500049984178), np.float64(0.00995049383620783), np.float64(0.007320508075688772)]  (max |diff| vs (2) at G*: 9.57e-15)
 [PASS] T1.9: worked-example numbers match at stated precision (<=4 s.f.) 
 
-T1 overall: PASS   runtime 1.3s
+T1 overall: PASS   runtime 1.2s

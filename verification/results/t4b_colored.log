@@ -1,0 +1,6 @@
+tau= 0.01: sim peak 0.09205 at 0.687, 0.05-crossings ['0.112', '3.92'] | semi peak 0.09169 at 0.684, crossings ['0.113', '3.9'], window=True | max|z| vs semi 0.85, max rel err 0.51%
+tau=  0.1: sim peak 0.08255 at 0.687, 0.05-crossings ['0.129', '3.16'] | semi peak 0.08234 at 0.654, crossings ['0.13', '3.14'], window=True | max|z| vs semi 0.97, max rel err 0.59%
+tau=    1: sim peak 0.04342 at 0.554, 0.05-crossings [] | semi peak 0.04326 at 0.539, crossings [], window=True | max|z| vs semi 0.95, max rel err 0.62%
+tau=   10: sim peak 0.01368 at 0.346, 0.05-crossings [] | semi peak 0.01356 at 0.33, crossings [], window=True | max|z| vs semi 0.91, max rel err 1.04%
+baseline (white): peak 0.09288 at 0.687, crossings [0.11111110965656099, 4.000002268067769]
+runtime 155.3s

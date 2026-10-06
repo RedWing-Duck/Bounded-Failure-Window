@@ -141,7 +141,7 @@
   }
  },
  "pass": true,
- "runtime_s": 1.3415489196777344,
+ "runtime_s": 1.2306103706359863,
  "latex_numerator": "- 2 P^{3} \\Sigma c - 4 P^{2} \\Pi \\Sigma c + P^{2} c^{2} \\lambda - 2 P \\Pi^{2} \\Sigma c - \\Pi^{2} c^{3} - \\Pi^{2} c^{2} \\lambda",
  "Pi_star": 0.6866954098747667,
  "peak": 0.09287527205297112,

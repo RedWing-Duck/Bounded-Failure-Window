@@ -1,0 +1,7 @@
+('sin', 0.05, 10.0): peak 0.09326 at 0.687; 0.05 crossings ['0.11', '4.05']; 0.008 crossings ['93.1']; sigma2(Pi=100)=0.00780; window=True | max|z| vs semi 1.05, rel 0.59%; semi Pi=1e4: 0.00531
+('sin', 0.05, 100.0): peak 0.09326 at 0.687; 0.05 crossings ['0.11', '4.06']; 0.008 crossings ['93.9']; sigma2(Pi=100)=0.00783; window=True | max|z| vs semi 0.98, rel 0.59%; semi Pi=1e4: 0.00534
+('sin', 0.1, 10.0): peak 0.09352 at 0.687; 0.05 crossings ['0.11', '4.15']; 0.008 crossings []; sigma2(Pi=100)=0.00864; window=True | max|z| vs semi 0.98, rel 0.59%; semi Pi=1e4: 0.00616
+('sin', 0.1, 100.0): peak 0.09356 at 0.687; 0.05 crossings ['0.11', '4.15']; 0.008 crossings []; sigma2(Pi=100)=0.00874; window=True | max|z| vs semi 0.98, rel 0.59%; semi Pi=1e4: 0.00627
+('rw', 0.01, None): peak 0.09435 at 0.702; 0.05 crossings ['0.11', '4.38']; 0.008 crossings []; sigma2(Pi=100)=0.01053; window=True | max|z| vs semi 1.59, rel 0.95%; semi Pi=1e4: 0.00801
+baseline: peak 0.09288 at 0.687, 0.05 [0.11111111111111115, 4.0], 0.008 [83.02769988168512], sigma2(100)=0.00749; H=0.005
+runtime 224.9s

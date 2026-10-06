@@ -1,0 +1,9 @@
+[PASS] T3.1: (a) maximum strictly inside the grid -- argmax at Pi=0.687 (index 19 of 0..42), sim max=0.09259
+[PASS] T3.2: (a) crosses R2=0.05 exactly twice, crossings within 15% of 1/9 and 4 -- crossings=['0.1118', '3.9891']; rel. err = ['+0.58%', '-0.27%']
+[PASS] T3.3b: (b) no point exceeds its Pi=0.01 value by > 3 SE_diff -- max (sim_i - sim_0)/SE = -1.95 at Pi=0.01266
+[PASS] T3.4b: (b) no adjacent rise > 3 SE_diff -- max adjacent rise z = -1.95 between Pi=0.01 and 0.01266
+[PASS] T3.3c: (c) no point exceeds its Pi=0.01 value by > 3 SE_diff -- max (sim_i - sim_0)/SE = -1.95 at Pi=0.01266
+[PASS] T3.4c: (c) no adjacent rise > 3 SE_diff -- max adjacent rise z = -1.95 between Pi=0.01 and 0.01266
+[PASS] T3.5a: (c) <= (a) within noise at every Pi (c-a < 3 SE_diff) -- max z(c-a) = -24.28 at Pi=100 (c-a = -1.65e-04)
+[PASS] T3.5b: (c) <= (b) within noise at every Pi (c-b < 3 SE_diff) -- max z(c-b) = -0.17 at Pi=0.01 (c-b = -5.25e-12)
+H=0.005, F=0.01, M=0.092875 at Pi=0.68670; runtime 115.8s

@@ -1,0 +1,32 @@
+[PASS] T1.1: OU stationary variance - (2) == 0 stat=(G**2/2 + Pi*Sigma)/(Pi*(G + lambda))
+[PASS] T1.1b: lim_{t->inf} of ODE solution with m2(0)=0 equals (2) 
+[PASS] T1.2: F = Sigma/lambda and H = Sigma/(lambda+c) F=Sigma/lambda, H=Sigma/(c + lambda)
+[PASS] T1.3: numerator = -k(Pi)*(A Pi^2+B Pi+C), A,B,C as stated, k>0 k=c, denominator=2*(P + Pi)**2*(P*lambda + Pi*c + Pi*lambda)**2
+Expanded numerator of d sigma^2/dPi (over the denominator 2 \left(P + \Pi\right)^{2} \left(P \lambda + \Pi c + \Pi \lambda\right)^{2}):
+LaTeX: - 2 P^{3} \Sigma c - 4 P^{2} \Pi \Sigma c + P^{2} c^{2} \lambda - 2 P \Pi^{2} \Sigma c - \Pi^{2} c^{3} - \Pi^{2} c^{2} \lambda
+Factored: - c \left(2 P^{3} \Sigma + 4 P^{2} \Pi \Sigma - P^{2} c \lambda + 2 P \Pi^{2} \Sigma + \Pi^{2} c^{2} + \Pi^{2} c \lambda\right)
+[PASS] T1.4: slope at Pi->0 equals c(c lam - 2PSigma)/(2P^2 lam^2) slope0=c*(-2*P*Sigma + c*lambda)/(2*P**2*lambda**2)
+[PASS] T1.4b: slope>0 iff P < c lam/(2 Sigma) slope/(c lam-2P Sigma)=c/(2*P**2*lambda**2)
+[PASS] T1.5: A,B>0; one positive root iff C<0 iff P<c lam/(2 Sigma); derivative +->- (max) positive root=(-4*P**2*Sigma + sqrt(16*P**4*Sigma**2 - P**2*(2*P*Sigma - c*lambda)*(8*P*Sigma + 4*c**2 + 4*c*lambda)))/(4*P*Sigma + 2*c**2 + 2*c*lambda)
+[PASS] T1.6: G* = -lam+sqrt(lam^2+2 Sigma Pi) is stationary min; sigma*^2 = G*/Pi = 2Sigma/(lam+sqrt(..)); d/dPi<0 roots=[-lambda + sqrt(2*Pi*Sigma + lambda**2)]; d2sig/dG2 at G*=1/(Pi*sqrt(2*Pi*Sigma + lambda**2)); dsig*/dPi=-2*Sigma**2/((lambda + sqrt(2*Pi*Sigma + lambda**2))**2*sqrt(2*Pi*Sigma + lambda**2))
+[PASS] T1.6b: second derivative at G* positive on numeric grid 
+[PASS] T1.7: slope at 0 for G=g0 Pi+O(Pi^2) equals g0^2/(2 lam) - Sigma g0/lam^2 slope=(-2*Sigma*g0 + g0**2*lambda)/(2*lambda**2)
+[PASS] T1.8: sigma^2 - F = G(lam G/(2Pi) - Sigma)/(lam(lam+G))  => excess iff G/Pi > 2Sigma/lam 
+
+quantity                           computed     stated  n        tol  res  strict4sf
+peak sigma^2                    0.092875272     0.0929  3   5.00e-05  ok   differs
+Pi* (peak location)              0.68669541      0.687  3   5.00e-04  ok   differs
+R2=0.05 lower crossing           0.11111111   0.111111  4   5.00e-05  ok   ok
+R2=0.05 upper crossing                    4          4  4   5.00e-04  ok   ok
+R2=0.008 threshold                82.670699      82.67  4   5.00e-03  ok   ok
+calibrated Pi=0.01                0.0099995       0.01  3   5.00e-05  ok   ok
+calibrated Pi=1                 0.009950495    0.00995  3   5.00e-06  ok   ok
+calibrated Pi=100                    0.0075     0.0075  2   5.00e-05  ok   ok
+optimal Pi=0.01                   0.0099995       0.01  3   5.00e-05  ok   ok
+optimal Pi=1                   0.0099504938    0.00995  3   5.00e-06  ok   ok
+optimal Pi=100                 0.0073205081    0.00732  3   5.00e-06  ok   differs
+exact symbolic: sigma^2(1/9)-1/20 = 0, sigma^2(4)-1/20 = 0
+optimal sigma*^2 via G*/Pi: [np.float64(0.009999500049984178), np.float64(0.00995049383620783), np.float64(0.007320508075688772)]  (max |diff| vs (2) at G*: 9.57e-15)
+[PASS] T1.9: worked-example numbers match at stated precision (<=4 s.f.) 
+
+T1 overall: PASS   runtime 1.2s

@@ -1,0 +1,5 @@
+tanh  : Prop4 ok 61/61; largest P with initial rise 39.810717055349734; largest P with a peak 39.810717055349734; first P without 50.118723362727245; max #excess intervals 1; max #R2=0.05 intervals 1; peaks without initial rise at P=[]
+exp   : Prop4 ok 61/61; largest P with initial rise 39.810717055349734; largest P with a peak 39.810717055349734; first P without 50.118723362727245; max #excess intervals 1; max #R2=0.05 intervals 1; peaks without initial rise at P=[]
+hill2 : Prop4 ok 61/61; largest P with initial rise None; largest P with a peak 19.952623149688808; first P without 25.11886431509582; max #excess intervals 1; max #R2=0.05 intervals 1; peaks without initial rise at P=['0.01', '0.0126', '0.0158', '0.02', '0.0251', '0.0316', '0.0398', '0.0501', '0.0631', '0.0794', '0.1', '0.126', '0.158', '0.2', '0.251', '0.316', '0.398', '0.501', '0.631', '0.794', '1', '1.26', '1.58', '2', '2.51', '3.16', '3.98', '5.01', '6.31', '7.94', '10', '12.6', '15.8', '20']
+Hill n=2 analytic: excess iff max_Pi G/Pi = c/(2P) > 2Sigma/lam  <=>  P < 25.0
+runtime 2.5s
