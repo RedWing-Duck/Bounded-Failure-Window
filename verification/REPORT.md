@@ -208,3 +208,49 @@ Informational: does a peak above F exist for τ > 49 anyway?
 
 For τ > 49 no grid point lies above F. Each supremum is reached at the smallest grid Π and approaches its negative Π → 0 limit. This is general for the Kalman gain: d/dΠ [G/Π − 2F(1+aτ)] = `c*(-2*P*Sigma*tau - lambda)/(lambda*(P + Pi)**2)`, which is proven negative for all positive parameters. The condition is therefore largest at Π → 0. For the Kalman gain with coloured noise, the small-Π condition c/P > 2F(1+λτ) is both sufficient and necessary for any excess above F. This is unlike the Hill gain in Task 4d.
 
+## Task 7 — revision checks
+
+Pre-registration: `a0d2be2` (`PREREG_t7.md` unchanged since: **yes**). Task 7 scripts and results: `2f9da71` (this section is committed in the commit after it). Full output: `results/t7.txt`; Task 4a specification: `results/t7_4a_spec.txt`.
+
+Notation: the prior precision P is now Π₀; κ = (c/Π₀)/F.
+
+| ID | criterion | result | measured |
+|---|---|---|---|
+| T7.1a | stationary prior variance derived from recursion == (phi^2 L^2 r + q)/(1 - phi^2(1-L)^2) | PASS | PASS (symbolic); numeric check at 20 rational points: max rel err 0.0e+00 |
+| T7.1b | posterior variance S == (1-L)^2 M + L^2 r | PASS | PASS (symbolic); numeric check at 20 rational points: max rel err 0.0e+00 |
+| T7.1c | S - F == (M - F)/phi^2 | PASS | PASS (symbolic); numeric check at 20 rational points: max rel err 0.0e+00 |
+| T7.1d | M - F == phi^2 L [L(r(1-phi^2)+q) - 2q] / [(1-phi^2)(1+phi(1-L))(1-phi(1-L))] | PASS | PASS (symbolic); numeric check at 20 rational points: max rel err 0.0e+00 |
+| T7.1e | M > F  <=>  L/(2-L) > F Pi_d (algebraic + 10,000 exact random sets) | PASS | algebraic identity PASS (symbolic); prefactors positive: True; 10,000 exact rational sets: 0 mismatches (3707 with M > F) |
+| T7.1f | (M+rs)(M+2r) - 2rs(M+r) = M^2 + rM(2-s); hence L*/(2-L*) < F Pi_d / 2 | PASS | difference identity PASS (symbolic); gap identity PASS (symbolic); gap > 0 proven: True; 20,000 float64 sets: max ratio 0.999999319, 0 with ratio >= 1; L* in (a) recovers Riccati M: True |
+| T7.1g | continuum limit: D = dt (G/2 - F Pi) + O(dt^2)  => G > 2 F Pi | PASS | Δt⁰ term = 0; Δt¹ term = G/2 - Pi*Sigma/lambda (PASS (symbolic)); Δt² term = G**2/4 |
+| T7.2a | Kalman-Bucy: p Pi = G* = -lam + sqrt(lam^2 + 2 Sigma Pi) and p = sigma*^2 (Eq. 4) | PASS | positive root p = (-lambda + sqrt(2*Pi*Sigma + lambda**2))/Pi; pΠ = G*: PASS (symbolic); p = σ*²: PASS (symbolic); p = (2) at G*: PASS (symbolic) |
+| T7.2b | peak M/F at kappa in {2,3,5,10,20,50,100} matches 1.000,1.036,1.175,1.584,2.432,5.000,9.288 (4 s.f.) | PASS | κ=2: 1.00000; κ=3: 1.03590; κ=5: 1.17544; κ=10: 1.58359; κ=20: 2.43190; κ=50: 5.00000; κ=100: 9.28753 |
+| T7.2c | kappa = 50 (Pi_0 = 2): Pi* = 4/3 and M = 0.05 exactly (rational arithmetic) | PASS | Π₀ = 2, Π* = 4/3, M = 1/20 |
+| T7.2d | smallest kappa with M >= 0.05 is 50 (brentq, \|err\| <= 1e-8; M increasing in kappa) | PASS | κ = 50.000000000000 (\|err\| 1.4e-14); M increasing in κ: True |
+| T7.2e | Hill gain: Pi_0=24 max(sigma^2-F) ~ 1.40e-4 (>0, 3 s.f.); Pi_0=26 max <= 1e-15; Pi_0=25 reported | PASS | Π₀=24: max(σ²−F) = 1.4008e-04 at Π = 24.62; Π₀=25: max(σ²−F) = 0.0000e+00 at Π = 25; Π₀=26: max(σ²−F) = -1.5613e-17 at Π = 1e-06 |
+| T7.3 | closed-form Task 4a peaks match reported 0.01075, 0.02224, 0.1837 (3 s.f.) | PASS | k=3: 0.010753 vs 0.010753; k=10: 0.022239 vs 0.022239; k=100: 0.183735 vs 0.183735 |
+| T7.4 | figures: 300 dpi, 4.7 in wide, no titles | PASS | fig1_paired.png: 1410×990 px, 300 dpi; fig2_regimes.png: 1410×990 px, 300 dpi; fig3_peak_vs_kappa.png: 1410×990 px, 300 dpi; titles found: 0 |
+| T7.5 | full run_all.sh (incl. Task 7) completes | PASS | exit code 0; wall time 679.1 s |
+
+**Task 7: PASS**
+
+T7.1(d), SymPy's factorisation of M − F (verbatim):
+$$ M_L - F = \frac{L \phi^{2} \left(- L \phi^{2} r + L q + L r - 2 q\right)}{\left(\phi - 1\right) \left(\phi + 1\right) \left(L \phi - \phi - 1\right) \left(L \phi - \phi + 1\right)} $$
+
+T7.1(f), the difference that proves L*/(2−L*) < ½FΠ_d:
+$$ (M + rs)(M + 2r) - 2rs(M + r) = M^{2} - M r s + 2 M r = M^{2} + M r \left(2 - s\right) $$
+
+### Task 4a, specified
+
+The Task 4a grid variable is a per-sample precision, Π_d = 1/var(v). It maps to the continuous precision by Π = Π_d/Δt, with Δt = 0.05. The "slope ratio" is the numerical initial gain slope K(ε)/ε divided by F. That equals the continuous κ exactly, because L = GΔt and Π_d = ΠΔt. The reported variances were posterior. The closed form reproduces all three reported peaks (largest relative difference 1.2e-06).
+
+The ratio-100 peak (0.1837) is 1.98× the continuous κ = 100 peak (0.0929). The mapping is exact: implied κ = 100.0000. Most of the gap, +0.0829 of +0.0909, is a **gain-shape** effect. As Δt → 0 the 4a filter's gain becomes the Kalman–Bucy gain of the assumed model, −λ + sqrt(λ² + 2κΣΠ), whose continuous peak is 0.1758. That gain keeps growing instead of saturating at c. Δt adds the remaining +0.0080. Prior vs posterior (+0.0165) is itself a finite-Δt effect that vanishes as Δt → 0. On the paper's own Bayesian-weight relay, Δt = 0.05 changes the peak by only +0.0058. Only the onset condition (κ > 2) transfers from Task 4a to the paper; the peak heights do not.
+
+### Figures (revision)
+
+- `figures/fig1_paired.png`
+- `figures/fig2_regimes.png`
+- `figures/fig3_peak_vs_kappa.png`
+
+**Runtime (T7.5).** The full `run_all.sh`, Task 7 included, took 679.1 s wall time in a fresh copy (Task 7 scripts: 15.9 s). 13 of 13 regenerated results files matched the committed ones apart from timings, and 11/11 figures were byte-identical.
+
