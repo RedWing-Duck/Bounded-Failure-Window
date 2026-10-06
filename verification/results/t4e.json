@@ -1,0 +1,38 @@
+{
+ "derivative": "-G0**2/(2*Pi**2*(G0 + lambda))",
+ "derivative_negative": true,
+ "limit0": "oo",
+ "limit_inf": "Sigma/(G0 + lambda)",
+ "rows": [
+  {
+   "G0": 0.1,
+   "monotone_dec": true,
+   "v_min_Pi": 45.46363636363636,
+   "v_max_Pi": 0.009091363636363637,
+   "limit_inf": 0.00909090909090909
+  },
+  {
+   "G0": 0.5,
+   "monotone_dec": true,
+   "v_min_Pi": 833.34,
+   "v_max_Pi": 0.006675,
+   "limit_inf": 0.006666666666666666
+  },
+  {
+   "G0": 1.0,
+   "monotone_dec": true,
+   "v_min_Pi": 2500.005,
+   "v_max_Pi": 0.005025,
+   "limit_inf": 0.005
+  },
+  {
+   "G0": 2.0,
+   "monotone_dec": true,
+   "v_min_Pi": 6666.669999999999,
+   "v_max_Pi": 0.0034000000000000002,
+   "limit_inf": 0.003333333333333333
+  }
+ ],
+ "no_window": true,
+ "runtime_s": 0.2117912769317627
+}
