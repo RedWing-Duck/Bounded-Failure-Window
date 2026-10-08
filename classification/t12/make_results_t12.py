@@ -196,7 +196,10 @@ if dg:
           f"{pm['n_min_hist']}), at λΔt in [{g(pm['lam_dt_range'][0])}, {g(pm['lam_dt_range'][1])}] with relative dip "
           f"(F − prior)/F between 10^{g(pm['log10_rel_dip_range'][0], '.0f')} and 10^{g(pm['log10_rel_dip_range'][1], '.0f')}. "
           "The existence claim (A7, proved above) holds; the dips are real but far below any practical tolerance. "
-          f"avg sets missed: {dg['A7_avg_missed']['n_missed']}.", ""]
+          f"avg sets missed: {dg['A7_avg_missed']['n_missed']}. In {dg['A7_prior_class_not_two_rays']['n']} further sets a minimum below F "
+          "was found but the class at (min + F)/2 came out lower ray: their relative dips are "
+          + ", ".join(g(w["rel_dip"]) for w in dg["A7_prior_class_not_two_rays"]["cases"])
+          + ", below the classifier's equality tolerance 1e-40, so R² = (min + F)/2 is treated as equal to F (same cause).", ""]
     ar = dg["A8_regression_actual"]
     T += ["### A8 qualitative regression (attribution: prediction — the prompt's quick-check numbers)", "",
           f"post rises from σ²(0.5, 1) = {g(ar['post_limit_dt0'], '.6g')} to a single maximum {g(ar['post_turns'][0][2], '.6g')} at "

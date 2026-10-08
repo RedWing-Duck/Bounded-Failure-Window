@@ -68,6 +68,24 @@ R["A7_prior_missed"] = {"n_missed": len(rows), "n_found_by_scaled_derivative": s
                         "log10_rel_dip_range": [min((mp.log10(m["rel_dip"]) for r in rows for m in r["mins"]), default=None),
                                                 max((mp.log10(m["rel_dip"]) for r in rows for m in r["mins"]), default=None)],
                         "examples": rows[:5]}
+# sets where a minimum below F was found but the class at (min + F)/2 is not two rays: dip vs the classifier's 1e-40
+wrong = []
+for s in a8["sets"]:
+    if s["fam"] != "D1":
+        continue
+    p = s["p"]
+    F = mp.mpf(p["Sig"]) / mp.mpf(p["lam"])
+    if not (mp.mpf(p["G"]) > 2 * F * mp.mpf(p["Pi"]) and "min" in s["prior"]["kinds"]):
+        continue
+    if min(v for k, v in zip(s["prior"]["kinds"], s["prior"]["values"]) if k == "min") > p["Sig"] / p["lam"] * (1 - 1e-12):
+        A = analyse_dt("D1", "prior", p)
+        m = min(t["value"] for t in A["turns"] if t["kind"] == "min")
+        if m < F:
+            C = classify(A, (m + F) / 2)
+            if C["route_i"] != (1, 1, 0):
+                wrong.append({"p": p, "rel_dip": 1 - m / F, "class_i": name(C["route_i"]), "class_ii": name(C["route_ii"])})
+R["A7_prior_class_not_two_rays"] = {"n": len(wrong), "cases": wrong,
+                                    "all_dips_below_1e-40": all(w["rel_dip"] < mp.mpf("1e-40") for w in wrong)}
 avg_missed = []
 for s in a8["sets"]:
     if s["fam"] != "D1":
