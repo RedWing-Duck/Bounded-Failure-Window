@@ -1,5 +1,5 @@
 Task 8 — Stage 0–1 classification checks
-prereg commit d8fa786; final commit (not yet committed); total runtime 160.7 s
+prereg commit d8fa786; final commit 83b9455; total runtime 160.7 s
 
 [PASS] T8.1 analytic (SymPy 1.14.0)
     (a) [PASS] (simplify) d sigma2/dG - (G^2+2 lam G-2 Sig Pi)/(2 Pi (lam+G)^2) == 0

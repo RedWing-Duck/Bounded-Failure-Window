@@ -1,6 +1,6 @@
 # Task 8 — Stage 0–1 classification checks
 
-Verifies `Stage_0_1_Classification_Results.md` (copied into this directory unchanged). Pre-registration: `PREREG_t8.md`, commit **d8fa786**. Final commit: **(not yet committed)**. Total runtime of `run_all.sh`: **160.7 s** (Python 3.13.16, NumPy 2.5.3, SciPy 1.18.1, SymPy 1.14.0, Matplotlib 3.11.2). Generated from `results/t8.txt` and `results/t8_*.json` by `t8_report.py`.
+Verifies `Stage_0_1_Classification_Results.md` (copied into this directory unchanged). Pre-registration: `PREREG_t8.md`, commit **d8fa786**. Final commit: **83b9455**. Total runtime of `run_all.sh`: **160.7 s** (Python 3.13.16, NumPy 2.5.3, SciPy 1.18.1, SymPy 1.14.0, Matplotlib 3.11.2). Generated from `results/t8.txt` and `results/t8_*.json` by `t8_report.py`.
 
 ## Verdicts
 
@@ -36,7 +36,7 @@ A 200-set run of `t8_no_window.py` (same seed; the first 200 of the 20,000 sets)
 
 ```
 Task 8 — Stage 0–1 classification checks
-prereg commit d8fa786; final commit (not yet committed); total runtime 160.7 s
+prereg commit d8fa786; final commit 83b9455; total runtime 160.7 s
 
 [PASS] T8.1 analytic (SymPy 1.14.0)
     (a) [PASS] (simplify) d sigma2/dG - (G^2+2 lam G-2 Sig Pi)/(2 Pi (lam+G)^2) == 0
