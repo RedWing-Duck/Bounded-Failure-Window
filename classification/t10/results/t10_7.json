@@ -1,0 +1,231 @@
+{
+ "by_kind": {
+  "Pi bayes": {
+   "curves": 1000,
+   "classifications": 100000,
+   "classes": {
+    "Empty": 26919,
+    "All": 26753,
+    "window": 12629,
+    "lower ray": 33699
+   },
+   "predicted": [
+    "All",
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "tp_hist": {
+    "0": 579,
+    "1": 421
+   }
+  },
+  "Pi misspec": {
+   "curves": 1000,
+   "classifications": 100000,
+   "classes": {
+    "window": 18145,
+    "Empty": 43801,
+    "lower ray": 38054
+   },
+   "predicted": [
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "tp_hist": {
+    "0": 566,
+    "1": 434
+   }
+  },
+  "Pi capped": {
+   "curves": 1000,
+   "classifications": 100000,
+   "classes": {
+    "Empty": 25640,
+    "lower ray": 35331,
+    "All": 25719,
+    "window": 13310
+   },
+   "predicted": [
+    "All",
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "tp_hist": {
+    "0": 566,
+    "1": 434
+   }
+  },
+  "Pi blind": {
+   "curves": 500,
+   "classifications": 50000,
+   "classes": {
+    "lower ray": 22493,
+    "All": 27507
+   },
+   "predicted": [
+    "All",
+    "lower ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "tp_hist": {
+    "0": 500
+   }
+  },
+  "Pi hill": {
+   "curves": 2000,
+   "classifications": 200000,
+   "classes": {
+    "All": 49370,
+    "lower ray": 63706,
+    "Empty": 49373,
+    "window": 26242,
+    "(1, 0, 1)": 11309
+   },
+   "predicted": [
+    "(1, 0, 1)",
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "window"
+   ],
+   "flagged": 3,
+   "persisting": 0,
+   "tp_hist": {
+    "0": 1034,
+    "2": 966
+   }
+  },
+  "Pi0 bayes": {
+   "curves": 1000,
+   "classifications": 100000,
+   "classes": {
+    "upper ray": 18670,
+    "Empty": 26725,
+    "All": 24916,
+    "lower ray": 17717,
+    "two rays": 11972
+   },
+   "predicted": [
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "tp_hist": {
+    "0": 421,
+    "1": 579
+   }
+  },
+  "c bayes": {
+   "curves": 1000,
+   "classifications": 100000,
+   "classes": {
+    "upper ray": 32994,
+    "All": 27990,
+    "two rays": 39016
+   },
+   "predicted": [
+    "All",
+    "two rays",
+    "upper ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "tp_hist": {
+    "1": 1000
+   }
+  },
+  "tau ZF relay": {
+   "curves": 625,
+   "classifications": 62500,
+   "classes": {
+    "lower ray": 23193,
+    "All": 19722,
+    "Empty": 19585
+   },
+   "predicted": [
+    "All",
+    "Empty",
+    "lower ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "tp_hist": {
+    "0": 625
+   }
+  },
+  "tau ZF optimal": {
+   "curves": 625,
+   "classifications": 62500,
+   "classes": {
+    "Empty": 34337,
+    "lower ray": 28163
+   },
+   "predicted": [
+    "Empty",
+    "lower ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "tp_hist": {
+    "0": 625
+   }
+  },
+  "tau var relay": {
+   "curves": 625,
+   "classifications": 62500,
+   "classes": {
+    "Empty": 20322,
+    "All": 20425,
+    "upper ray": 21753
+   },
+   "predicted": [
+    "All",
+    "Empty",
+    "upper ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "tp_hist": {
+    "0": 625
+   }
+  },
+  "tau var optimal": {
+   "curves": 625,
+   "classifications": 62500,
+   "classes": {
+    "Empty": 34501,
+    "window": 27999
+   },
+   "predicted": [
+    "Empty",
+    "window"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "tp_hist": {
+    "1": 625
+   }
+  }
+ },
+ "persist": [],
+ "total": 1000000,
+ "flagged": 3,
+ "n_persist": 0,
+ "pass": true,
+ "seconds": 1024.4564819335938
+}

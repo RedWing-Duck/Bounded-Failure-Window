@@ -1,0 +1,6 @@
+equal maxima: [('M2(1-1e-6)', '(0, 0, 2)', '(0, 0, 2)'), ('M2', 'Empty', 'Empty'), ('M2(1+1e-6)', 'Empty', 'Empty')]
+inflection: same TPs True, mismatches 0, route disagreements 0
+plateau: [('F(1-1e-6)', 'lower ray', 'lower ray'), ('F', 'Empty', 'Empty'), ('F(1+1e-6)', 'Empty', 'Empty')]
+pair birth: Pi0_pair = 31.4750497595392; slope(M - m) = 1.5000, slope(x sep) = 0.5000, TPs at +1e-6: 0
+narrow windows: classifier correct in 20/20 curves; a 1e4-point log grid hits 0/55 windows
+T10.5: FAIL {'equal_maxima': True, 'inflection': True, 'plateau': True, 'pair_birth': False, 'narrow': True}

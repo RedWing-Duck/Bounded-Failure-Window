@@ -1,0 +1,12 @@
+every class: 101/101 realized; forbidden blocked 24/24  (75s)
+A1.3 literal k=1: G(1e-12)=1.5e-14, G(1e12)/G(1e11)-1=9.0, classes window/window -> FAIL
+A1.3 supp k=1: G(1e-12)=1.5e-14, G(1e12)/G(1e11)-1=6.0e-10, classes window/window -> PASS
+A1.3 literal k=2: G(1e-12)=1.5e-14, G(1e12)/G(1e11)-1=9.0, classes (0, 0, 2)/(0, 0, 2) -> FAIL
+A1.3 supp k=2: G(1e-12)=1.5e-14, G(1e12)/G(1e11)-1=6.0e-10, classes (0, 0, 2)/(0, 0, 2) -> PASS
+A1.3 literal k=3: G(1e-12)=1.5e-14, G(1e12)/G(1e11)-1=9.0, classes (0, 0, 3)/(0, 0, 3) -> FAIL
+A1.3 supp k=3: G(1e-12)=1.5e-14, G(1e12)/G(1e11)-1=6.0e-10, classes (0, 0, 3)/(0, 0, 3) -> PASS
+A1.3 literal k=4: G(1e-12)=1.5e-14, G(1e12)/G(1e11)-1=9.0, classes (0, 0, 4)/(0, 0, 4) -> FAIL
+A1.3 supp k=4: G(1e-12)=1.5e-14, G(1e12)/G(1e11)-1=6.0e-10, classes (0, 0, 4)/(0, 0, 4) -> PASS
+A1.3 literal k=5: G(1e-12)=1.5e-14, G(1e12)/G(1e11)-1=9.0, classes (0, 0, 5)/(0, 0, 5) -> FAIL
+A1.3 supp k=5: G(1e-12)=1.5e-14, G(1e12)/G(1e11)-1=6.0e-10, classes (0, 0, 5)/(0, 0, 5) -> PASS
+T10.2: FAIL (every True, forbidden True, A1.3 literal False; A1.3 supplementary True)

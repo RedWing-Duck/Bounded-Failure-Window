@@ -1,0 +1,12 @@
+  sets done 85s
+routes: 4000 evaluations, max pairwise rel err 1.01e-14, failures 0, ARE not converged 0
+shape: core failures 0; literal zero-limit passes in 0/1000 (min P/Pmax at 1e+-12: 4.0e-6); supplementary 1000/1000
+classes failures 0; relay failures 0
+MC tau=0.1 relay: 0.00740118 +/- 4.4e-05 vs 0.0073913, z=+0.22
+MC tau=0.1 optimal: 0.00680165 +/- 3.6e-05 vs 0.0067813, z=+0.56
+MC tau=1.0 relay: 0.0100251 +/- 7.1e-05 vs 0.01, z=+0.35
+MC tau=1.0 optimal: 0.00825511 +/- 5.6e-05 vs 0.00833333, z=-1.39
+MC tau=10.0 relay: 0.0119292 +/- 4.6e-05 vs 0.011875, z=+1.18
+MC tau=10.0 optimal: 0.00678939 +/- 1.9e-05 vs 0.0067813, z=+0.42
+regression: [('P(1)', '0.0083333333', True), ('P(0.3)', '0.0079077634', True), ('P(0.01)', '0.003455929', True), ('P(100)', '0.003455929', True)]
+T10.6: FAIL {'routes': True, 'shape': False, 'classes': True, 'relay': True, 'mc': True, 'regression': True}

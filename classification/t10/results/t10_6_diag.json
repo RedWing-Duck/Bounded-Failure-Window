@@ -1,0 +1,6 @@
+{
+ "min_P_over_Pmax": 3.999992632800106e-06,
+ "max_rel_dev_from_asymptote": 0.00038973926859817235,
+ "lower_bound": 4e-06,
+ "conclusion": "criterion error: P/P_max at lam tau = 1e-+12 equals the asymptote 2e-6 (Sigma+lam v)/sqrt(lam Sigma v) >= 4e-6"
+}

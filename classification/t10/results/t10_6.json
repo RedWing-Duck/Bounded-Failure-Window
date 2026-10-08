@@ -1,0 +1,129 @@
+{
+ "routes": {
+  "n": 4000,
+  "max_err": 1.009743816453506e-14,
+  "n_fail": 0,
+  "n_not_converged": 0,
+  "max_steps": 10,
+  "fails": [],
+  "pass": true
+ },
+ "shape": {
+  "n_core_fail": 0,
+  "max_pos_rel_err": 8.807232488124013e-51,
+  "max_sym_rel_err": 4.8660877605366844e-51,
+  "max_peak_rel_err": 0.0,
+  "zero_literal_pass": 0,
+  "min_P_over_Pmax_at_1e12": 3.999992632800106e-06,
+  "zero_supp_pass": 1000,
+  "pass": false,
+  "pass_supplementary": true
+ },
+ "classes": {
+  "n_sets": 1000,
+  "n_fail": 0,
+  "fails": [],
+  "pass": true
+ },
+ "relay": {
+  "n_fail": 0,
+  "fails": [],
+  "pass": true
+ },
+ "mc": {
+  "rows": [
+   {
+    "tau": 0.1,
+    "filter": "relay",
+    "estimate": 0.007401177606367464,
+    "SE": 4.4006295430951125e-05,
+    "formula": 0.007391304347826088,
+    "z": 0.224360138582175,
+    "se_rel": 0.005953792911246328,
+    "pass": true
+   },
+   {
+    "tau": 0.1,
+    "filter": "optimal",
+    "estimate": 0.006801647914436414,
+    "SE": 3.6282613009765524e-05,
+    "formula": 0.006781303314241854,
+    "z": 0.560725882369176,
+    "se_rel": 0.005350389346774397,
+    "pass": true
+   },
+   {
+    "tau": 1.0,
+    "filter": "relay",
+    "estimate": 0.010025098154515272,
+    "SE": 7.075664537676334e-05,
+    "formula": 0.01,
+    "z": 0.3547109162910349,
+    "se_rel": 0.007075664537676334,
+    "pass": true
+   },
+   {
+    "tau": 1.0,
+    "filter": "optimal",
+    "estimate": 0.008255106952002092,
+    "SE": 5.607704582282164e-05,
+    "formula": 0.008333333333333333,
+    "z": -1.3949804270788786,
+    "se_rel": 0.0067292454987385964,
+    "pass": true
+   },
+   {
+    "tau": 10.0,
+    "filter": "relay",
+    "estimate": 0.011929183056266758,
+    "SE": 4.592608435183183e-05,
+    "formula": 0.011875000000000002,
+    "z": 1.179788284402152,
+    "se_rel": 0.003867459734891101,
+    "pass": true
+   },
+   {
+    "tau": 10.0,
+    "filter": "optimal",
+    "estimate": 0.006789392090360099,
+    "SE": 1.903628069912917e-05,
+    "formula": 0.006781303314241854,
+    "z": 0.42491368172644484,
+    "se_rel": 0.002807171397148664,
+    "pass": true
+   }
+  ],
+  "pass": true
+ },
+ "regression": {
+  "rows": [
+   {
+    "q": "P(1)",
+    "computed": 0.008333333333333333,
+    "stated": "0.0083333",
+    "pass": true
+   },
+   {
+    "q": "P(0.3)",
+    "computed": 0.00790776341786484,
+    "stated": "0.0079078",
+    "pass": true
+   },
+   {
+    "q": "P(0.01)",
+    "computed": 0.0034559289681169027,
+    "stated": "0.0034559",
+    "pass": true
+   },
+   {
+    "q": "P(100)",
+    "computed": 0.0034559289681169027,
+    "stated": "0.0034559",
+    "pass": true
+   }
+  ],
+  "pass": true
+ },
+ "pass": false,
+ "seconds": 107.27130722999573
+}

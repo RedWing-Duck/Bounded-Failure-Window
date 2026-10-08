@@ -1,0 +1,12 @@
+Pi bayes: 1000 curves, 100000 classifications, classes {'Empty': 26919, 'All': 26753, 'window': 12629, 'lower ray': 33699}, flagged 0, persisting 0
+Pi misspec: 1000 curves, 100000 classifications, classes {'window': 18145, 'Empty': 43801, 'lower ray': 38054}, flagged 0, persisting 0
+Pi capped: 1000 curves, 100000 classifications, classes {'Empty': 25640, 'lower ray': 35331, 'All': 25719, 'window': 13310}, flagged 0, persisting 0
+Pi blind: 500 curves, 50000 classifications, classes {'lower ray': 22493, 'All': 27507}, flagged 0, persisting 0
+Pi hill: 2000 curves, 200000 classifications, classes {'All': 49370, 'lower ray': 63706, 'Empty': 49373, 'window': 26242, '(1, 0, 1)': 11309}, flagged 3, persisting 0
+Pi0 bayes: 1000 curves, 100000 classifications, classes {'upper ray': 18670, 'Empty': 26725, 'All': 24916, 'lower ray': 17717, 'two rays': 11972}, flagged 0, persisting 0
+c bayes: 1000 curves, 100000 classifications, classes {'upper ray': 32994, 'All': 27990, 'two rays': 39016}, flagged 0, persisting 0
+tau ZF relay: 625 curves, 62500 classifications, classes {'lower ray': 23193, 'All': 19722, 'Empty': 19585}, flagged 0, persisting 0
+tau ZF optimal: 625 curves, 62500 classifications, classes {'Empty': 34337, 'lower ray': 28163}, flagged 0, persisting 0
+tau var relay: 625 curves, 62500 classifications, classes {'Empty': 20322, 'All': 20425, 'upper ray': 21753}, flagged 0, persisting 0
+tau var optimal: 625 curves, 62500 classifications, classes {'Empty': 34501, 'window': 27999}, flagged 0, persisting 0
+T10.7: PASS: 1000000 classifications, flagged 3, persisting 0

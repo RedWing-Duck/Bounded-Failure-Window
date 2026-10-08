@@ -1,0 +1,23 @@
+  census done 3163s
+bayes: 2000 sets, TP histogram {1: 906, 0: 1094}, failures 0
+misspec: 2000 sets, TP histogram {1: 892, 0: 1108}, failures 0
+capped: 2000 sets, TP histogram {0: 1092, 1: 908}, failures 0
+blind: 2000 sets, TP histogram {0: 2000}, failures 0
+hill: 10000 sets, TP histogram {2: 4868, 0: 5132}, failures 0
+targeted bayes: 140 sets, failures 0
+targeted misspec: 140 sets, failures 0
+targeted capped: 140 sets, failures 0
+Hill n=1.5: transitions 2->0 at Pi0 = 30.2430947474 (bisection vs double root rel 4.04e-12)
+Hill n=2: transitions 2->0 at Pi0 = 31.4750497595 (bisection vs double root rel 2.56e-12)
+Hill n=3: transitions 2->0 at Pi0 = 37.8200022316 (bisection vs double root rel 1.07e-12)
+Hill n=4: transitions 2->0 at Pi0 = 44.1796834278 (bisection vs double root rel 6.28e-13)
+Hill n=8: transitions 2->0 at Pi0 = 62.7113145769 (bisection vs double root rel 3.99e-12)
+regression: {'what': 'misspec (1.0, 0.05)', 'Pi': '19.61012293', 'value': '0.01350889359', 'pass': True}
+regression: {'what': 'misspec (0.5, 0.1)', 'Pi': '7.438016529', 'value': '0.03025', 'pass': True}
+regression: {'what': 'Hill n=2 Pi0=5.0', 'min': (mpf('0.33483264111212345729674274031044228903133921388056442'), mpf('0.0099851848899025683669882410185526351202414778704237294')), 'max': (mpf('6.9816500035353478126781474267667697412061568047587251'), mpf('0.024858366083701792277220376088590943977710851913232001')), 'pass': True}
+regression: {'what': 'Hill n=2 Pi0=26.0', 'min': (mpf('10.723303836710295626570374111485207544752753718524353'), mpf('0.0095911074693622153976537436311472119555874784925671953')), 'max': (mpf('25.283151840570579816229003660854958556000068659814765'), mpf('0.0098729776063463116953681234777867994243441837055940215')), 'pass': True}
+regression: {'what': 'Hill n=2 window onset (M = F)', 'Pi0': '25.0', 'expected': 25, 'pass': True}
+exploratory bayes2: TP histogram {0: 1094, 1: 899, 3: 7}; >= 2 maxima in 7 sets
+exploratory hill2: TP histogram {2: 899, 0: 1038, 4: 63}; >= 2 maxima in 63 sets
+proof support: -c*u**3 - 6*c*u**2 + 3*c*u - lambda*u**3 - 7*lambda*u**2 - 3*lambda*u + 3*lambda
+T10.3: PASS {'families': True, 'targeted': True, 'regression': True}

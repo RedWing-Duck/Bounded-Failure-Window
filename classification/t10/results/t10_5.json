@@ -1,0 +1,407 @@
+{
+ "equal_maxima": {
+  "turns": [
+   [
+    67993.60027133572,
+    0.0007778347115583492,
+    "min"
+   ],
+   [
+    10000000.0,
+    0.02,
+    "max"
+   ],
+   [
+    100000000.0,
+    0.0025,
+    "min"
+   ],
+   [
+    1000000000.0,
+    0.02,
+    "max"
+   ]
+  ],
+  "rows": [
+   {
+    "R2": "M2(1-1e-6)",
+    "route_i": "(0, 0, 2)",
+    "route_ii": "(0, 0, 2)",
+    "expected": "(0, 0, 2)",
+    "pass": true
+   },
+   {
+    "R2": "M2",
+    "route_i": "Empty",
+    "route_ii": "Empty",
+    "expected": "Empty",
+    "pass": true
+   },
+   {
+    "R2": "M2(1+1e-6)",
+    "route_i": "Empty",
+    "route_ii": "Empty",
+    "expected": "Empty",
+    "pass": true
+   }
+  ],
+  "pass": true
+ },
+ "inflection": {
+  "tp_inflection": [
+   [
+    67993.60027133572,
+    0.0007778347115583492,
+    "min"
+   ],
+   [
+    10000000.0,
+    0.03,
+    "max"
+   ]
+  ],
+  "tp_smoothed": [
+   [
+    67993.60027133572,
+    0.0007778347115583492,
+    "min"
+   ],
+   [
+    10000000.0,
+    0.03,
+    "max"
+   ]
+  ],
+  "same_turning_points": true,
+  "n_tolerances": 1000,
+  "class_mismatches": 0,
+  "route_disagreements": 0,
+  "pass": true
+ },
+ "plateau": {
+  "turns": 0,
+  "rows": [
+   {
+    "R2": "F(1-1e-6)",
+    "route_i": "lower ray",
+    "route_ii": "lower ray",
+    "expected": "lower ray",
+    "ends": [
+     [
+      null,
+      50.0001000002
+     ]
+    ],
+    "pass": true
+   },
+   {
+    "R2": "F",
+    "route_i": "Empty",
+    "route_ii": "Empty",
+    "expected": "Empty",
+    "ends": [],
+    "pass": true
+   },
+   {
+    "R2": "F(1+1e-6)",
+    "route_i": "Empty",
+    "route_ii": "Empty",
+    "expected": "Empty",
+    "ends": [],
+    "pass": true
+   }
+  ],
+  "c_over_g": 50.0,
+  "pass": true
+ },
+ "pair_birth": {
+  "Pi0_pair": 31.47504975953922,
+  "rows": [
+   {
+    "delta": 1e-06,
+    "M_minus_m": 3.219586857133958e-12,
+    "x_sep": 0.0008401134986548538
+   },
+   {
+    "delta": 1e-07,
+    "M_minus_m": 1.0181218512116645e-13,
+    "x_sep": 0.00026566713765893533
+   },
+   {
+    "delta": 1e-08,
+    "M_minus_m": 3.2195836892870246e-15,
+    "x_sep": 8.401132292611244e-05
+   },
+   {
+    "delta": 1e-09,
+    "M_minus_m": 1.0181217198773988e-16,
+    "x_sep": 2.6566712642983493e-05
+   },
+   {
+    "delta": 1e-10,
+    "M_minus_m": 3.2195826624455944e-18,
+    "x_sep": 8.401131400084112e-06
+   },
+   {
+    "delta": 1e-11,
+    "M_minus_m": 1.0181185715838508e-19,
+    "x_sep": 2.656668525945257e-06
+   },
+   {
+    "delta": 1e-12,
+    "M_minus_m": 3.219483136395991e-21,
+    "x_sep": 8.401044831930759e-07
+   }
+  ],
+  "n_tp_at_plus_1e-6": 0,
+  "monotone": true,
+  "slope_M_minus_m": 1.5000016039369535,
+  "slope_position_sep": 0.500000534277874,
+  "pass": false
+ },
+ "narrow": {
+  "rows": [
+   {
+    "k": 1,
+    "route_i": "window",
+    "route_ii": "window",
+    "widths_rel": [
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 4,
+    "route_i": "(0, 0, 4)",
+    "route_ii": "(0, 0, 4)",
+    "widths_rel": [
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 5,
+    "route_i": "(0, 0, 5)",
+    "route_ii": "(0, 0, 5)",
+    "widths_rel": [
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 3,
+    "route_i": "(0, 0, 3)",
+    "route_ii": "(0, 0, 3)",
+    "widths_rel": [
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 1,
+    "route_i": "window",
+    "route_ii": "window",
+    "widths_rel": [
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 1,
+    "route_i": "window",
+    "route_ii": "window",
+    "widths_rel": [
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 2,
+    "route_i": "(0, 0, 2)",
+    "route_ii": "(0, 0, 2)",
+    "widths_rel": [
+     6.666666655555556e-09,
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 1,
+    "route_i": "window",
+    "route_ii": "window",
+    "widths_rel": [
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 4,
+    "route_i": "(0, 0, 4)",
+    "route_ii": "(0, 0, 4)",
+    "widths_rel": [
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 4,
+    "route_i": "(0, 0, 4)",
+    "route_ii": "(0, 0, 4)",
+    "widths_rel": [
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 5,
+    "route_i": "(0, 0, 5)",
+    "route_ii": "(0, 0, 5)",
+    "widths_rel": [
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 1,
+    "route_i": "window",
+    "route_ii": "window",
+    "widths_rel": [
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 3,
+    "route_i": "(0, 0, 3)",
+    "route_ii": "(0, 0, 3)",
+    "widths_rel": [
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 3,
+    "route_i": "(0, 0, 3)",
+    "route_ii": "(0, 0, 3)",
+    "widths_rel": [
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 2,
+    "route_i": "(0, 0, 2)",
+    "route_ii": "(0, 0, 2)",
+    "widths_rel": [
+     6.666666655555556e-09,
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 3,
+    "route_i": "(0, 0, 3)",
+    "route_ii": "(0, 0, 3)",
+    "widths_rel": [
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 4,
+    "route_i": "(0, 0, 4)",
+    "route_ii": "(0, 0, 4)",
+    "widths_rel": [
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 5,
+    "route_i": "(0, 0, 5)",
+    "route_ii": "(0, 0, 5)",
+    "widths_rel": [
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09,
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 1,
+    "route_i": "window",
+    "route_ii": "window",
+    "widths_rel": [
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   },
+   {
+    "k": 2,
+    "route_i": "(0, 0, 2)",
+    "route_ii": "(0, 0, 2)",
+    "widths_rel": [
+     6.666666655555556e-09,
+     6.666666655555556e-09
+    ],
+    "grid_1e4_windows_found": 0,
+    "pass": true
+   }
+  ],
+  "n_found": 20,
+  "windows_total": 55,
+  "grid_windows_found": 0,
+  "pass": true
+ },
+ "pass": false,
+ "seconds": 63.18395209312439
+}

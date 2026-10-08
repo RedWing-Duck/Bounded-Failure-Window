@@ -1,0 +1,2 @@
+4868 two-TP Hill sets, 77888 tolerances, failing sets 0; band width (rel. F) median 0.000498, min 4.43e-22, max 0.962; fraction with M < F 0.162; lo = m/H {'m': 4868, 'H': 0}, hi = M/F {'M': 787, 'F': 4081}
+T10.4: PASS

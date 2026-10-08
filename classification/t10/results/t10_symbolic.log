@@ -1,0 +1,35 @@
+(a) elasticity lemma
+  [PASS] (simplify) d sigma2/dPi - G N/(2 Pi^2 (lam+G)^2) == 0 for general G(Pi)
+(b) Bayesian-weight
+  [PASS] (simplify) Pi G'/G - (1 - G/c) == 0 for G = c Pi/(Pi+Pi0)
+  [PASS] (simplify) G(Pi(G)) - G == 0 for Pi = Pi0 G/(c - G)
+  [PASS] (simplify) c N + G (G^2 + 2 lam G + 2 Sig Pi0 - lam c) == 0
+(c) misspecified Kalman
+  [FAIL] (none) G(Pi(G)) - G == 0 for Pi = (G^2 + 2 lam' G)/(2 Sig')  SymPy: -G - lambda1 + sqrt(G**2 + 2*G*lambda1 + lambda1**2)
+  [PASS] (simplify) Pi G'/G - (G + 2 lam')/(2 (G + lam')) == 0 (G = misspecified gain)
+  [PASS] (simplify) 2 (G + lam') N / G + [(1+r) G^2 + 4 r lam' G - 2 lam lam' + 4 r lam'^2] == 0
+  [PASS] (simplify) constant term + 2 lam lam' (1 - 2F/F') == 0
+(d) capped
+  [PASS] (simplify) d/dPi sigma2(g Pi, Pi) - g (g lam/2 - Sig)/(lam + g Pi)^2 == 0
+  [PASS] (simplify) sigma2(2 F Pi, Pi) - F == 0 (plateau)
+(e) Hill n = 2
+  [PASS] (simplify) N - t Q(t)/(1 + t^2)^3 == 0 (positive factor t/(1+t^2)^3)
+  [PASS] (simplify) Q - [c t P4(t) - 4 Sig Pi0 (1 + t^2)^2] == 0
+(f) realizability inverse
+  [PASS] (simplify) sigma2(G+, Pi) - v == 0
+  [PASS] (simplify) disc - Pi (Pi v^2 + 2 lam v - 2 Sig) == 0
+  [PASS] (simplify) Pi v^2 + 2 lam v - 2 Sig - Pi (v - sigma*^2)(v + (lam + s)/Pi) == 0
+  [PASS] (simplify) Pi sigma*^2 - G* == 0
+(g) forced lower ray
+  [FAIL] (none) sigma*^2(pi_R) - R^2 == 0  SymPy: R2*(-R2*lambda + 2*Sigma - sqrt(R2**2*lambda**2 - 4*Sigma*(R2*lambda - Sigma)))/(2*(R2*lambda - Sigma))
+(h) matched variance
+  [PASS] (simplify) -tau R_v Ric - [A P^2 + 4(Sig + lam v) P - 4 Sig v] == 0
+  [PASS] (simplify) A(tau) - A(1/(lam^2 tau)) == 0
+  [PASS] (simplify) rationalized P satisfies A P^2 + B P - 4 Sig v = 0
+  [PASS] (simplify) P(A = 0) - Sig v/(Sig + lam v) == 0
+  [PASS] (simplify) (1 - lam tau)^2 - A_R tau == lam^2 tau^2 - (2 lam + A_R) tau + 1
+  [PASS] (simplify) tau_- tau_+ - 1/lam^2 == 0
+  [PASS] (simplify) A_R defined by A P^2 + B P - C = 0 at P = R^2
+  [PASS] (simplify) Lyapunov X11 - (Sig + G^2 v tau/(1 + a tau))/a == 0
+  [PASS] (simplify) Lyapunov X22 - v == 0
+T10.1: FAIL (24/26)

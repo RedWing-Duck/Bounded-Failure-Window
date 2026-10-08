@@ -1,0 +1,2 @@
+c {'radicand': 'G**2 + 2*G*lambda1 + lambda1**2', 'factored': '(G + lambda1)**2', 'after_factoring_radicand': '0', 'reduces': True}
+g {'radicand': '(R2*lambda - 2*Sigma)**2/R2**2', 'with_R2_eq_F_over_1_plus_w': 'Sigma*(-2*w + sqrt(4*w*(w + 1) + 1) - 1)/(2*lambda*w*(w + 1))', 'inner_radicand_factored': '(2*w + 1)**2', 'after_factoring': '0', 'reduces_under_R2_lt_F': True, 'note': 'sqrt((lam R2 - 2 Sig)^2/R2^4) = (2 Sig - lam R2)/R2^2 needs lam R2 < 2 Sig, i.e. R2 < 2F'}
