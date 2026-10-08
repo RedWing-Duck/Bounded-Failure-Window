@@ -1,6 +1,6 @@
 # Task 11 — Stage 4 optimality: results
 
-Verifies `classification/Stage_4_Optimality_Results.md`. Pre-registration `classification/PREREG_t11.md`, commit **5337c2e**; code and results commit **(not yet committed)**. Total measured script runtime **4394 s** on 4 CPUs (Python 3.13.16, mpmath 1.3.0, SymPy 1.14.0).
+Verifies `classification/Stage_4_Optimality_Results.md`. Pre-registration `classification/PREREG_t11.md`, commit **5337c2e**; code and results commit **e4ce89c**. Total measured script runtime **4394 s** on 4 CPUs (Python 3.13.16, mpmath 1.3.0, SymPy 1.14.0).
 
 | Check | Verdict | Counts / worst errors | Runtime (s) |
 |---|---|---|---|
