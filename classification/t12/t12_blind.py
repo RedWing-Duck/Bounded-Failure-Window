@@ -9,8 +9,8 @@ from multiprocessing import Pool
 import mpmath as mp
 import numpy as np
 
-from classify import EQ
-from t12_common import RES, analyse_dt, analyse_sig, name, route_i, route_ii, save_json
+from t12_common import RES, analyse_dt, analyse_sig, name, route_i, route_ii, save_json  # sets sys.path for t10/t11
+from classify import EQ  # noqa: E402
 from t12_sigma import ALLOWED as SIG_ALLOWED
 
 N = int(sys.argv[1]) if len(sys.argv) > 1 else 1000
