@@ -1,6 +1,6 @@
 # Task 12 — completing Stage 2 (Δt and Σ sweeps) with Stage 3/4 checks: results
 
-Pre-registration `classification/PREREG_t12.md`, commit **6e09e88**; code and results commit **(not yet committed)**. Total measured script runtime **8935 s** on 4 CPUs (Python 3.13.16, mpmath 1.3.0, SymPy 1.14.0).
+Pre-registration `classification/PREREG_t12.md`, commit **6e09e88**; code and results commit **82edc1b**. Total measured script runtime **8935 s** on 4 CPUs (Python 3.13.16, mpmath 1.3.0, SymPy 1.14.0).
 
 | Check | Verdict | Counts / worst errors | Runtime (s) |
 |---|---|---|---|
