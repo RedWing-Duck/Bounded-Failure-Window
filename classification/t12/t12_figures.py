@@ -67,8 +67,8 @@ ax.axhline(F, color=MUTED, lw=0.8, ls="--", label=r"$F$")
 ax.axvline(dtE, color=COLS[1], lw=0.9, ls=":", label=r"$\Delta t_E$ (avg crosses $F$)")
 ax.set_xscale("log"); ax.set_yscale("log"); ax.set_xlabel(r"$\Delta t$"); ax.grid(True, color=GRID, lw=0.6)
 ax.set_title("D1, G = 0.5: avg (log scale; the dip below F is about 1e-3 relative)", fontsize=9, loc="left", color=INK)
-ax.legend(frameon=False, fontsize=7.5)
-ins = ax.inset_axes([0.55, 0.45, 0.42, 0.3])
+ax.legend(frameon=False, fontsize=7.5, loc="lower left")
+ins = ax.inset_axes([0.55, 0.5, 0.42, 0.33])
 tz = np.logspace(1.5, 3.5, 300)
 ins.plot(tz, curve("D1", "avg", q, tz) / F - 1, color=COLS[2], lw=1.5)
 ins.axhline(0, color=MUTED, lw=0.6, ls="--"); ins.set_xscale("log"); ins.tick_params(labelsize=6)
@@ -80,7 +80,7 @@ a8 = json.load(open(os.path.join(RES, "t12_a8.json")))
 sets = [s for s in a8["sets"]]
 fig, axs = plt.subplots(1, 2, figsize=(10, 3.8), constrained_layout=True)
 
-k = np.logspace(0.001, 4, 400)
+k = np.logspace(0.0005, 6, 500)
 y = []
 for kk in k:
     G = 2 * kk
@@ -94,7 +94,7 @@ ax.set_xscale("log"); ax.set_yscale("log"); ax.set_xlabel(r"$k = G/(2F\Pi)$"); a
 ax.set_title("D1 excess onset", fontsize=9, loc="left", color=INK); ax.grid(True, color=GRID, lw=0.6)
 ax.legend(frameon=False, fontsize=8)
 ax = axs[1]
-kap = np.logspace(0.001, 4, 400)
+kap = np.logspace(np.log10(2), 6, 500)
 ax.plot(kap, 1 - 2 / kap, color=INK, lw=1.2, label=r"closed form: $1 - 2/\kappa$")
 pts = [(e["kappa"], e["end"] * e["F"] * e["p"]["Pi"] * (2 - e["p"]["c"]) / e["p"]["c"])
        for e in a8["families"]["D2"].get("excess_points", [])]
