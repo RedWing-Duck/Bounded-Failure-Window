@@ -1,0 +1,3 @@
+A9 regression True
+A9 monotone violating sets 0
+A9 sympy {'a': {'result': 'unresolved', 'is_positive': 'None', 'seconds': 4.430737495422363}, 'b': {'result': 'unresolved', 'is_positive': 'None', 'seconds': 6.986758708953857}}

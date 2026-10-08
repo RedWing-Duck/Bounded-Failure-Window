@@ -1,0 +1,15 @@
+census_pass True
+A2_pass True
+A3_pass True
+A4_census_pass True
+A7_pass False
+D1 post {'none': 1093, 'max': 907} {'Empty': 9154, 'lower ray': 8135, 'window': 2711}
+D1 prior {'none': 1521, 'min': 369, 'max-min': 110} {'All': 5594, 'upper ray': 3472, 'Empty': 5993, 'lower ray': 3640, 'two rays': 1309, '(0, 1, 1)': 212}
+D1 avg {'none': 924, 'min': 1070, 'max-min': 6} {'All': 4540, 'upper ray': 3432, 'Empty': 5603, 'lower ray': 3269, 'two rays': 3155, '(0, 1, 1)': 13}
+D2 post {'none': 986, 'max': 778, 'min-max': 167, 'min': 69} {'Empty': 5957, 'lower ray': 3864, 'All': 5693, 'upper ray': 2315, 'window': 1610, 'two rays': 744, '(1, 0, 1)': 151}
+D2 prior {'none': 1670, 'min': 330} {'All': 6741, 'upper ray': 4056, 'Empty': 7011, 'lower ray': 1317, 'two rays': 875}
+D2 avg {'none': 1457, 'min': 543} {'All': 6317, 'upper ray': 4104, 'Empty': 6728, 'lower ray': 1257, 'two rays': 1594}
+D3 post {'none': 1482, 'max': 518} {'Empty': 10058, 'lower ray': 8443, 'window': 1499}
+D3 prior {'none': 1525, 'min': 264, 'max-min': 211} {'All': 6019, 'upper ray': 4488, 'Empty': 6473, 'lower ray': 1638, 'two rays': 1368, '(0, 1, 1)': 436}
+D3 avg {'none': 1146, 'min': 854} {'All': 5101, 'upper ray': 4578, 'Empty': 6037, 'two rays': 2589, 'lower ray': 1695}
+exit 0

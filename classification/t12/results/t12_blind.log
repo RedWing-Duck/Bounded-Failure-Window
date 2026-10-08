@@ -1,0 +1,24 @@
+opt post {'lower ray': 89904, 'Empty': 110096} flagged 0 persisting 0
+opt prior {'All': 65018, 'Empty': 65013, 'upper ray': 69969} flagged 0 persisting 0
+opt avg {'upper ray': 69722, 'All': 65116, 'Empty': 65162} flagged 193 persisting 0
+D1 post {'Empty': 90139, 'lower ray': 79601, 'window': 30260} flagged 0 persisting 0
+D1 prior {'lower ray': 40509, 'Empty': 56055, 'All': 55205, 'two rays': 8923, 'upper ray': 38119, '(0, 1, 1)': 1189} flagged 234 persisting 0
+D1 avg {'Empty': 52935, 'lower ray': 41269, 'All': 49062, 'two rays': 22188, 'upper ray': 34505, '(0, 1, 1)': 41} flagged 0 persisting 0
+D2 post {'All': 60757, 'Empty': 62177, 'lower ray': 38002, 'upper ray': 21031, 'two rays': 5874, 'window': 11506, '(1, 0, 1)': 653} flagged 0 persisting 0
+D2 prior {'All': 68169, 'Empty': 69193, 'upper ray': 39425, 'lower ray': 17060, 'two rays': 6153} flagged 151 persisting 0
+D2 avg {'All': 65752, 'two rays': 11850, 'Empty': 68056, 'lower ray': 13333, 'upper ray': 41009} flagged 22 persisting 0
+D3 post {'Empty': 99585, 'window': 15787, 'lower ray': 84628} flagged 0 persisting 0
+D3 prior {'All': 61449, 'Empty': 62505, 'upper ray': 48247, 'lower ray': 17522, 'two rays': 8220, '(0, 1, 1)': 2057} flagged 234 persisting 0
+D3 avg {'upper ray': 50647, 'Empty': 60856, 'All': 58496, 'lower ray': 13479, 'two rays': 16522} flagged 275 persisting 0
+MI a {'Empty': 65238, 'upper ray': 69680, 'All': 65082} flagged 0 persisting 0
+MI b {'All': 64733, 'Empty': 63892, 'upper ray': 71375} flagged 0 persisting 0
+B2 abs {'upper ray': 90152, 'All': 109848} flagged 0 persisting 0
+B2 rel {'lower ray': 89815, 'All': 110185} flagged 0 persisting 0
+B3 abs {'upper ray': 200000} flagged 0 persisting 0
+B3 rel {'Empty': 89254, 'lower ray': 77576, 'window': 33170} flagged 0 persisting 0
+B4 abs {'upper ray': 200000} flagged 0 persisting 0
+B4 rel {'Empty': 94889, 'lower ray': 82379, 'window': 22732} flagged 0 persisting 0
+B5 abs {'upper ray': 200000} flagged 0 persisting 0
+B5 rel {'Empty': 109910, 'lower ray': 90090} flagged 0 persisting 0
+Part C PASS 4400000
+exit 0

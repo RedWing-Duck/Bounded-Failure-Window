@@ -1,0 +1,552 @@
+{
+ "N": 1000,
+ "by": {
+  "opt post": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "lower ray": 89904,
+    "Empty": 110096
+   },
+   "kinds_hist": {
+    "none": 1000
+   },
+   "allowed": [
+    "Empty",
+    "lower ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 755.2929391860962,
+   "pass": true
+  },
+  "opt prior": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "All": 65018,
+    "Empty": 65013,
+    "upper ray": 69969
+   },
+   "kinds_hist": {
+    "none": 1000
+   },
+   "allowed": [
+    "All",
+    "Empty",
+    "upper ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 728.177921295166,
+   "pass": true
+  },
+  "opt avg": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "upper ray": 69722,
+    "All": 65116,
+    "Empty": 65162
+   },
+   "kinds_hist": {
+    "none": 1000
+   },
+   "allowed": [
+    "All",
+    "Empty",
+    "upper ray"
+   ],
+   "flagged": 193,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 725.8377559185028,
+   "pass": true
+  },
+  "D1 post": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "Empty": 90139,
+    "lower ray": 79601,
+    "window": 30260
+   },
+   "kinds_hist": {
+    "none": 540,
+    "max": 460
+   },
+   "allowed": [
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 167.74987483024597,
+   "pass": true
+  },
+  "D1 prior": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "lower ray": 40509,
+    "Empty": 56055,
+    "All": 55205,
+    "two rays": 8923,
+    "upper ray": 38119,
+    "(0, 1, 1)": 1189
+   },
+   "kinds_hist": {
+    "min": 187,
+    "none": 752,
+    "max-min": 61
+   },
+   "allowed": [
+    "(0, 1, 1)",
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "flagged": 234,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 171.51547622680664,
+   "pass": true
+  },
+  "D1 avg": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "Empty": 52935,
+    "lower ray": 41269,
+    "All": 49062,
+    "two rays": 22188,
+    "upper ray": 34505,
+    "(0, 1, 1)": 41
+   },
+   "kinds_hist": {
+    "min": 573,
+    "none": 425,
+    "max-min": 2
+   },
+   "allowed": [
+    "(0, 1, 1)",
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 202.85787773132324,
+   "pass": true
+  },
+  "D2 post": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "All": 60757,
+    "Empty": 62177,
+    "lower ray": 38002,
+    "upper ray": 21031,
+    "two rays": 5874,
+    "window": 11506,
+    "(1, 0, 1)": 653
+   },
+   "kinds_hist": {
+    "none": 498,
+    "min-max": 93,
+    "max": 377,
+    "min": 32
+   },
+   "allowed": [
+    "(1, 0, 1)",
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray",
+    "window"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 163.95401096343994,
+   "pass": true
+  },
+  "D2 prior": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "All": 68169,
+    "Empty": 69193,
+    "upper ray": 39425,
+    "lower ray": 17060,
+    "two rays": 6153
+   },
+   "kinds_hist": {
+    "none": 821,
+    "min": 179
+   },
+   "allowed": [
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "flagged": 151,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 156.39408016204834,
+   "pass": true
+  },
+  "D2 avg": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "All": 65752,
+    "two rays": 11850,
+    "Empty": 68056,
+    "lower ray": 13333,
+    "upper ray": 41009
+   },
+   "kinds_hist": {
+    "min": 302,
+    "none": 698
+   },
+   "allowed": [
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "flagged": 22,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 185.47415685653687,
+   "pass": true
+  },
+  "D3 post": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "Empty": 99585,
+    "window": 15787,
+    "lower ray": 84628
+   },
+   "kinds_hist": {
+    "max": 257,
+    "none": 743
+   },
+   "allowed": [
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 764.8897864818573,
+   "pass": true
+  },
+  "D3 prior": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "All": 61449,
+    "Empty": 62505,
+    "upper ray": 48247,
+    "lower ray": 17522,
+    "two rays": 8220,
+    "(0, 1, 1)": 2057
+   },
+   "kinds_hist": {
+    "none": 751,
+    "min": 148,
+    "max-min": 101
+   },
+   "allowed": [
+    "(0, 1, 1)",
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "flagged": 234,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 792.9966952800751,
+   "pass": true
+  },
+  "D3 avg": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "upper ray": 50647,
+    "Empty": 60856,
+    "All": 58496,
+    "lower ray": 13479,
+    "two rays": 16522
+   },
+   "kinds_hist": {
+    "none": 579,
+    "min": 421
+   },
+   "allowed": [
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "flagged": 275,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 801.478239774704,
+   "pass": true
+  },
+  "MI a": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "Empty": 65238,
+    "upper ray": 69680,
+    "All": 65082
+   },
+   "kinds_hist": {
+    "none": 1000
+   },
+   "allowed": [
+    "All",
+    "Empty",
+    "upper ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 883.6401913166046,
+   "pass": true
+  },
+  "MI b": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "All": 64733,
+    "Empty": 63892,
+    "upper ray": 71375
+   },
+   "kinds_hist": {
+    "none": 1000
+   },
+   "allowed": [
+    "All",
+    "Empty",
+    "upper ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 893.9480512142181,
+   "pass": true
+  },
+  "B2 abs": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "upper ray": 90152,
+    "All": 109848
+   },
+   "kinds_hist": {
+    "none": 1000
+   },
+   "allowed": [
+    "All",
+    "upper ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 3795.5241181850433,
+   "pass": true
+  },
+  "B2 rel": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "lower ray": 89815,
+    "All": 110185
+   },
+   "kinds_hist": {
+    "none": 1000
+   },
+   "allowed": [
+    "All",
+    "lower ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 88.28779578208923,
+   "pass": true
+  },
+  "B3 abs": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "upper ray": 200000
+   },
+   "kinds_hist": {
+    "none": 1000
+   },
+   "allowed": [
+    "All",
+    "upper ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 1000,
+   "seconds": 225.16433835029602,
+   "pass": true
+  },
+  "B3 rel": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "Empty": 89254,
+    "lower ray": 77576,
+    "window": 33170
+   },
+   "kinds_hist": {
+    "none": 566,
+    "max": 434
+   },
+   "allowed": [
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 270.4849283695221,
+   "pass": true
+  },
+  "B4 abs": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "upper ray": 200000
+   },
+   "kinds_hist": {
+    "none": 1000
+   },
+   "allowed": [
+    "All",
+    "upper ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 1000,
+   "seconds": 213.4233295917511,
+   "pass": true
+  },
+  "B4 rel": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "Empty": 94889,
+    "lower ray": 82379,
+    "window": 22732
+   },
+   "kinds_hist": {
+    "none": 617,
+    "max": 383
+   },
+   "allowed": [
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 253.44148230552673,
+   "pass": true
+  },
+  "B5 abs": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "upper ray": 200000
+   },
+   "kinds_hist": {
+    "none": 1000
+   },
+   "allowed": [
+    "All",
+    "upper ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 1000,
+   "seconds": 214.59390997886658,
+   "pass": true
+  },
+  "B5 rel": {
+   "curves": 1000,
+   "classifications": 200000,
+   "classes": {
+    "Empty": 109910,
+    "lower ray": 90090
+   },
+   "kinds_hist": {
+    "none": 1000
+   },
+   "allowed": [
+    "Empty",
+    "lower ray"
+   ],
+   "flagged": 0,
+   "persisting": 0,
+   "n_limit_fail": 0,
+   "n_no_crit_curves": 0,
+   "seconds": 240.92972254753113,
+   "pass": true
+  }
+ },
+ "persist": [],
+ "total": 4400000,
+ "pass": true,
+ "seconds": 3176.4375257492065
+}

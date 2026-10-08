@@ -1,0 +1,104 @@
+{
+ "A6_regression": {
+  "rows": [
+   {
+    "metric": "post",
+    "dt": 1,
+    "value": "0.00988584509033",
+    "stated": "0.0098858",
+    "pass": true
+   },
+   {
+    "metric": "avg",
+    "dt": 1,
+    "value": "0.00995064713868",
+    "stated": "0.0099506",
+    "pass": true
+   },
+   {
+    "metric": "post",
+    "dt": 10,
+    "value": "0.00909090908936",
+    "stated": "0.0090909",
+    "pass": true
+   },
+   {
+    "metric": "avg",
+    "dt": 10,
+    "value": "0.00995454545456",
+    "stated": "0.0099545",
+    "pass": true
+   },
+   {
+    "metric": "post",
+    "dt": 100,
+    "value": "0.005",
+    "stated": "0.0050000",
+    "pass": true
+   },
+   {
+    "metric": "avg",
+    "dt": 100,
+    "value": "0.009975",
+    "stated": "0.0099750",
+    "pass": true
+   }
+  ],
+  "pass": true
+ },
+ "A6_monotone": {
+  "n_sets": 1000,
+  "n_points": 400000,
+  "lam_dt_range": [
+   1e-08,
+   100000000.0
+  ],
+  "n_violating_sets": 0,
+  "n_violations": {
+   "post": 0,
+   "prior": 0,
+   "avg": 0
+  },
+  "examples": [],
+  "max_lim0_rel": 2.201158291470459e-57,
+  "max_post_at_1e60": 7.956719817371267e-57,
+  "max_prior_avg_rel_at_1e60": 6.223015277861142e-61
+ },
+ "A10": {
+  "n_pairs": 1000,
+  "n_post_dec": 1000,
+  "n_avg_inc": 1000,
+  "max_post_ratio": 0.9999999999964454,
+  "min_avg_ratio": 1.0,
+  "fails": [],
+  "pass": true
+ },
+ "A8_regression": {
+  "post_turns": [
+   [
+    "max",
+    2.4644993159736623,
+    0.204573403877952
+   ]
+  ],
+  "post_at_1": 0.16627751550678618,
+  "post_single_max": true,
+  "max_value_within_2pct_of_0.166": false,
+  "max_at_dt_within_factor_2_of_1": false,
+  "avg_crossings_of_F": [
+   100.0
+  ],
+  "dtE_A2": 100.0,
+  "crossing_within_factor_1.5_of_50": false,
+  "avg_turns": [
+   [
+    "min",
+    200.0,
+    0.0099875
+   ]
+  ],
+  "then_min_below_F_and_returns_from_below": true,
+  "pass": false
+ },
+ "seconds": 145.21974682807922
+}

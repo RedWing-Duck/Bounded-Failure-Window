@@ -1,0 +1,4 @@
+A6 regression True [('post', 1, '0.00988584509033'), ('avg', 1, '0.00995064713868'), ('post', 10, '0.00909090908936'), ('avg', 10, '0.00995454545456'), ('post', 100, '0.005'), ('avg', 100, '0.009975')]
+A6 monotone violations {'post': 0, 'prior': 0, 'avg': 0}
+A10 True
+A8 regression {'post_turns': [('max', mpf('2.4644993159736623788051245546179799793487306218899847'), mpf('0.20457340387795200593488730919544423534798191942886863'))], 'post_at_1': mpf('0.1662775155067861785922543399324975991799053138892468'), 'post_single_max': True, 'max_value_within_2pct_of_0.166': False, 'max_at_dt_within_factor_2_of_1': False, 'avg_crossings_of_F': [mpf('99.999999999999999999961425002993821705582791040569599')], 'dtE_A2': mpf('99.9999999999999999999614250030407216443389165686259'), 'crossing_within_factor_1.5_of_50': False, 'then_min_below_F_and_returns_from_below': True, 'pass': False}

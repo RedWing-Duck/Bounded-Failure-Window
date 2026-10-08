@@ -1,0 +1,13 @@
+{
+ "sympy_limit_again": "0",
+ "series_route_limit": "-c*(2*Pi_0*Sigma*c - 2*Pi_0*Sigma - c*lambda)/(Pi*lambda)",
+ "series_route_minus_formula": "0",
+ "series_route_pass": true,
+ "mp_worst_rel_err": {
+  "dt=1e10": 4.549244652395568e-07,
+  "dt=1e20": 4.549246001524e-17,
+  "dt=1e40": 4.5492460015240004e-37
+ },
+ "mp_pass": true,
+ "attribution": "code: sympy.limit returns 0 for this expression (a SymPy limit failure in the check route); the pre-registered asymptotic is correct (exact series route and mp agree, error O(1/dt))"
+}

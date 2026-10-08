@@ -1,0 +1,75 @@
+A1 shared excess set
+  [PASS] (simplify) P+ solves P+ = (1-L)^2 (a^2 P+ + q) + L^2 r
+  [PASS] (simplify) P+ - F - L(2-L)[L r/(2-L) - F]/(1-(1-L)^2 a^2) == 0 (q = F(1-a^2))
+  [PASS] (simplify) P- - F - a^2 (P+ - F) == 0
+  [PASS] (simplify) avg - F - (P+ - F)(1 - a^2)/(2 lam dt) == 0
+  [PASS] (simplify) time average of e^{-2 lam u} P+ + F(1 - e^{-2 lam u}) over [0, dt) equals the avg formula
+A2 tanh lemma
+  [PASS] (simplify) (1 - e^{-x})/(1 + e^{-x}) - tanh(x/2) == 0
+  [PASS] (simplify) L/(2-L) - tanh(x/2) == 0 for L = 1 - e^{-x}
+  [PASS] (simplify) h'(x) - (x - sinh x)/(2 x^2 cosh^2(x/2)) == 0
+  [record] sinh x - x series (all coefficients positive: x - sinh x < 0 for x > 0): xx**11/39916800 + xx**9/362880 + xx**7/5040 + xx**5/120 + xx**3/6
+  [PASS] (simplify) lim_{x->0} h(x) - 1/2 == 0
+A3 D2 excess set
+  [PASS] (simplify) L/(2-L) - c Pi_d/((2-c) Pi_d + 2 Pi0) == 0
+  [PASS] (simplify) at dt = dt_E: c Pi_d/((2-c) Pi_d + 2 Pi0) - F Pi_d == 0
+A4 D3 exact excess condition
+  [PASS] (simplify) Q(T) (1-phi)^2/phi - [4 phi + s(1-phi)(2(1 - rho phi) - rho(1-phi))] == 0 (so Q(T) < 0 iff s(1-phi)(rho(1+phi) - 2) > 4 phi)
+  [PASS] (simplify) -(2(1 - rho phi) - rho(1 - phi)) - (rho(1 + phi) - 2) == 0
+  [PASS] (simplify) L/(2-L) > phi  <=>  m(1-phi) > 2 phi  (L = m/(1+m)): (L/(2-L) - phi)(2-L)(1+m) - [m(1-phi) - 2 phi] == 0
+  [record] lim_{dt->0} [s(1-phi)(rho(1+phi)-2) - 4 phi]/(2 lam dt) with phi = (u/4)(2 lam dt): rho - u - 2  (> 0 iff rho > 2 + u)
+  [PASS] (simplify) that limit - (rho - 2 - u) == 0
+A5 endpoint limits and first-order coefficients
+  [PASS] (simplify) D1 post: lim dt->0 - sigma^2(G0, Pi) == 0
+  [PASS] (simplify) D1 post: lim dt->oo - 0 == 0
+  [PASS] (simplify) D1 prior: lim dt->0 - sigma^2(G0, Pi) == 0
+  [PASS] (simplify) D1 prior: lim dt->oo - Sigma/lambda == 0
+  [PASS] (simplify) D1 avg: lim dt->0 - sigma^2(G0, Pi) == 0
+  [PASS] (simplify) D1 avg: lim dt->oo - Sigma/lambda == 0
+  [PASS] (simplify) D2 post: lim dt->0 - sigma^2(G0, Pi) == 0
+  [PASS] (simplify) D2 post: lim dt->oo - Sigma*(1 - c)**2/lambda == 0
+  [PASS] (simplify) D2 prior: lim dt->0 - sigma^2(G0, Pi) == 0
+  [PASS] (simplify) D2 prior: lim dt->oo - Sigma/lambda == 0
+  [PASS] (simplify) D2 avg: lim dt->0 - sigma^2(G0, Pi) == 0
+  [PASS] (simplify) D2 avg: lim dt->oo - Sigma/lambda == 0
+  [PASS] (simplify) D1 post: first-order coefficient - (G*(G*lambda/Pi - 2*Sigma)/(2*G + 2*lambda)) == 0
+  [PASS] (simplify) D1 prior: first-order coefficient - (-G*(G*lambda/Pi - 2*Sigma)/(2*G + 2*lambda)) == 0
+  [PASS] (simplify) D1 avg: first-order coefficient - (0) == 0
+  [record] D1 avg second-order coefficient (verbatim): -G**2*(G**2 + 4*G*lambda - 8*Pi*Sigma)/(24*Pi*(G + lambda))
+  [PASS] (simplify) D2 post: first-order coefficient - formula == 0
+  [PASS] (simplify) D2 prior: first-order coefficient - formula == 0
+  [PASS] (simplify) D2 avg: first-order coefficient - formula == 0
+  [FAIL] (none) D2 post at dt->oo: lim dt (P+ - (1-c)^2 F) - c[c + 2(1-c) F Pi0]/Pi == 0
+A6 optimal M-P
+  [PASS] (simplify) DARE: M = a^2 M r/(M + r) + q  <=>  M^2 + M(r(1-a^2) - q) - q r = 0
+  [PASS] (simplify) mu = m/s solves mu^2 + (1 - phi) mu - phi/s = 0 (w = phi/s)
+  [PASS] (assumptions) d mu/d w = 1/sqrt((1-phi)^2 + 4w) > 0: 1/sqrt(4*w + (phi - 1)**2)
+  [PASS] (simplify) d mu/d phi - [1 - (1-phi)/sqrt((1-phi)^2+4w)]/2 == 0
+  [PASS] (simplify) 1 - (1-phi)/sqrt(...) - 4w/(sqrt(...)(sqrt(...) + (1-phi))) == 0 (manifestly > 0)
+  [PASS] (simplify) posterior P+ = r m/(1+m) equals F/(1 + mu) when phi(1+m) = m(m+s)/s... check: F s/(m+s) with m = s mu
+  [PASS] (simplify) with phi from the quadratic, r m/(1+m) = F s/(m+s): (F/phi) m/(1+m) - F s/(m+s) == 0 at phi = m(m+s)/(s(m+1))
+  [PASS] (simplify) d/dy [y/(1-e^{-y})] - (1 - e^{-y} - y e^{-y})/(1-e^{-y})^2 == 0
+  [record] proof: post strictly decreasing (PROVED): phi = F Pi dt and w = phi/s = F Pi dt/(1 - e^{-2 lam dt}) are strictly increasing in dt (e^y > 1 + y); mu increases strictly in both; P+ = F/(1 + mu), so P+ is strictly decreasing.
+  [record] prior and avg (attempt): P- = F - a^2 F mu/(1+mu) and avg = F - F mu/(1+mu) * s/(2 lam dt): a decreasing factor times an increasing one; no sign proof found by this route -> reported as unresolved unless the numerical evidence says otherwise.
+B1-B5 Sigma sweep
+  [PASS] (simplify) sigma^2/F - (1 + g^2/u)/(1 + g) == 0
+  [PASS] (assumptions) d sigma^2/d Sigma = 1/(lam + G) > 0 (absolute, increasing): 1/(G_ + lambda)
+  [PASS] (assumptions) d (sigma^2/F)/d Sigma < 0 (relative, decreasing): -G_**2*lambda/(2*Pi*Sigma_**2*(G_ + lambda))
+  [PASS] (simplify) relative limit at Sigma -> oo: lim sigma^2/F - 1/(1+g) == 0
+  [PASS] (simplify) excess: sigma^2/F - 1 - G(lam G/(2 Pi Sigma) - 1)/(lam + G) == 0 (> 0 iff Sigma < lam G/(2 Pi))
+  [PASS] (simplify) G = -lam + sqrt(lam^2 + 2 rho Sigma Pi) equals lam (w - 1) at w = sqrt(1 + rho u)
+  [PASS] (simplify) sigma^2 Pi/lam - [(w^2-1)/rho + (w-1)^2]/(2w) == 0
+  [PASS] (simplify) d/dw of the absolute form - [(1 + 1/rho)/2 - (1 - 1/rho)/(2 w^2)] == 0
+  [PASS] (simplify) (1 + 1/rho)/2 - (1 - 1/rho)/(2w^2) - [ (w^2 - 1)(1 + 1/rho) + 2/rho ]/(2 w^2) == 0 (manifestly > 0 for w > 1)
+  [PASS] (simplify) sigma^2/F - [(1+rho)w + 1 - rho]/(w(w+1)) == 0
+  [PASS] (simplify) numerator of d/dw (relative) - [-(1+rho)w^2 + 2(rho-1)w + (rho-1)] == 0
+  [PASS] (simplify) numerator at w = 1 - 2(rho - 2) == 0
+  [PASS] (simplify) w_M is a root of the numerator
+  [record] single maximum iff rho > 2: numerator is a downward parabola in w with value 2(rho-2) at w = 1 and vertex at (rho-1)/(1+rho) < 1: one root in (1, oo) iff rho > 2, none otherwise (PROVED).
+  [PASS] (simplify) absolute: sigma^2 - G(G + lam')/(Pi(lam + G)) == 0
+  [PASS] (simplify) d/dG absolute numerator - (G^2 + 2 lam G + lam lam') == 0
+  [PASS] (simplify) relative: sigma^2/F - 2 lam (G + lam')/((G + 2 lam')(G + lam)) == 0
+  [PASS] (simplify) relative derivative numerator - 2 lam (-G^2 - 2 lam' G + lam lam' - 2 lam'^2) == 0
+  [record] single maximum iff lam' < lam/2: numerator -G^2 - 2 lam' G + lam' (lam - 2 lam'): downward parabola, value lam'(lam - 2 lam') at G = 0, vertex at G = -lam' < 0: one positive root iff lam > 2 lam' (PROVED); G increases with Sigma.
+  [PASS] (simplify) rho = 1: relative - 2/(1 + w) == 0
+T12 symbolic: FAIL (66/67)

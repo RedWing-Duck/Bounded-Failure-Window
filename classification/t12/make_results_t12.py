@@ -164,11 +164,12 @@ T += ["## Synthesis-matrix rows", "", "| Sweep | Filter | Metric / convention | 
 cls = lambda f, m: ", ".join(sorted(FAM[f][m]["classes"]))
 T += [f"| Δt (M-P) | optimal | post | lower ray, Empty | Theorem (A6 post) |",
       f"| Δt (M-P) | optimal | prior, avg | All, upper ray, Empty | Numerical result (monotonicity unresolved) |"]
-for f, lab in (("D1", "Proposition (excess set, A2; two rays, A7); other classes Numerical result"),
-               ("D2", "Proposition (excess set, A3); other classes Numerical result"),
-               ("D3", "Proposition (exact excess condition, A4); other classes Numerical result")):
+for f, lab in (("D1", "Proposition (excess set, A2{}); other classes Numerical result"),
+               ("D2", "Proposition (excess set, A3{}); other classes Numerical result"),
+               ("D3", "Proposition (exact excess condition, A4{}); other classes Numerical result")):
     for m in ("post", "prior", "avg"):
-        T.append(f"| Δt (M-P) | {f} | {m} | {cls(f, m)} | {lab} |")
+        extra = "; two rays exist, A7" if (f == "D1" and m != "post") else ""
+        T.append(f"| Δt (M-P) | {f} | {m} | {cls(f, m)} | {lab.format(extra)} |")
 T += ["| Δt (M-I) | optimal | (a), (b) | All, upper ray, Empty | Numerical result (4.10a; unresolved) |",
       "| Σ | B2 (Σ-independent gain) | absolute | All, upper ray | Theorem |",
       "| Σ | B2 | relative | All, lower ray | Theorem |",
@@ -227,7 +228,13 @@ T += ["## Implementation notes and deviations", "",
       "4. **A8 was restarted** a few minutes into its first run to also save the per-set excess end points (for figure H3); "
       "later the census, Σ sweep and blind search were relaunched as one detached chain after the first launch hit the "
       "session's background time limit. No partial results were used.",
-      "5. **A4 membership check:** 201 log-spaced points over λΔt ∈ [1e-20, 1e20] plus midpoints between, and one decade "
+      "5. **Bug fixed (code):** `t12_blind.py` first imported `classify` before `t12_common` had put `t10/` on the path; "
+      "the first chain run of the blind search crashed at import (0.1 s, no results). Import order fixed in commit "
+      "`4189376`, smoke-tested on 2 curves per combo, then run in full. "
+      f"In the full run, {sum(v['flagged'] for v in bl['by'].values()) if bl else 0} flagged float cases were all resolved by the dps-60 re-run.",
+      "6. **Figures** were regenerated after the chain with two layout fixes (H2 legend placement; H3 closed-form curves "
+      "extended to 1e6 and the D2 curve started at κ = 2); data unchanged.",
+      "7. **A4 membership check:** 201 log-spaced points over λΔt ∈ [1e-20, 1e20] plus midpoints between, and one decade "
       "beyond, the classifier's ends; points within 1e-8 (in log10) of an end skipped.", ""]
 T += ["## Figures", "", "`figs/H1_optimal_MP`, `H2_D1_G05`, `H3_onset_maps`, `H4_B3_relative`, `H5_B2_B3_abs_rel` (PNG + PDF).", ""]
 for h in ("H1_optimal_MP", "H2_D1_G05", "H3_onset_maps", "H4_B3_relative", "H5_B2_B3_abs_rel"):
