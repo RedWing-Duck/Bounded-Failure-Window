@@ -1,6 +1,6 @@
 # Task 10 — Stage 3 falsification and completeness: results
 
-Tests `classification/Stage_3_Plan.md` against `classification/Task_10_Stage3_Prompt.md`. Pre-registration `classification/PREREG_t10.md`, commit **da3d826**; code and results commit **(not yet committed)**. Total measured script runtime: **5861 s** on 4 CPUs (Python 3.13.16, mpmath 1.3.0, SymPy 1.14.0).
+Tests `classification/Stage_3_Plan.md` against `classification/Task_10_Stage3_Prompt.md`. Pre-registration `classification/PREREG_t10.md`, commit **da3d826**; code and results commit **cbe96fe**. Total measured script runtime: **5861 s** on 4 CPUs (Python 3.13.16, mpmath 1.3.0, SymPy 1.14.0).
 
 | Check | Verdict | Counts / worst errors | Runtime (s) |
 |---|---|---|---|
