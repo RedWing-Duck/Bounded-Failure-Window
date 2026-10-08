@@ -1,0 +1,942 @@
+{
+ "cases": {
+  "Prop 4.2 P1 (Pi = 500)": {
+   "rows": [
+    {
+     "test": "row R2 <= V_c (interior)",
+     "R2": 0.00275,
+     "expected": "All",
+     "got": "All",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "row V_c<R2<F (interior)",
+     "R2": 0.00775,
+     "expected": "upper ray",
+     "got": "upper ray",
+     "match": true,
+     "components_theta": [
+      [
+       1155.0892182198022,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "row R2 >= F (interior)",
+     "R2": 0.015,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    },
+    {
+     "test": "V_c exact",
+     "R2": 0.0055,
+     "expected": "All",
+     "got": "All",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "V_c x(1-1e-6)",
+     "R2": 0.005499994499999999,
+     "expected": "All",
+     "got": "All",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "V_c x(1+1e-6)",
+     "R2": 0.005500005499999999,
+     "expected": "upper ray",
+     "got": "upper ray",
+     "match": true,
+     "components_theta": [
+      [
+       0.0015714296294242827,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "F exact",
+     "R2": 0.01,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    },
+    {
+     "test": "F x(1-1e-6)",
+     "R2": 0.00999999,
+     "expected": "upper ray",
+     "got": "upper ray",
+     "match": true,
+     "components_theta": [
+      [
+       499998949.98651177,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "F x(1+1e-6)",
+     "R2": 0.01000001,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    }
+   ],
+   "extra": [],
+   "pass": true,
+   "turns": [],
+   "L_minus": 0.0055,
+   "L_plus": 0.01,
+   "approach": [
+    "above",
+    "below"
+   ]
+  },
+  "Prop 4.2 P2 (Pi = 60)": {
+   "rows": [
+    {
+     "test": "row R2 < s*^2 (interior)",
+     "R2": 0.004026997478492772,
+     "expected": "All",
+     "got": "All",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "row s*^2<R2<V_c (interior)",
+     "R2": 0.008610330811826106,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       12.023433023920077
+      ],
+      [
+       239.7339989649372,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "row V_c<=R2<F (interior)",
+     "R2": 0.009583333333333333,
+     "expected": "upper ray",
+     "got": "upper ray",
+     "match": true,
+     "components_theta": [
+      [
+       1265.6886030125088,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "row R2 >= F (interior)",
+     "R2": 0.015,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    },
+    {
+     "test": "sigma*^2 exact",
+     "R2": 0.008053994956985545,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       64.16198487095666
+      ],
+      [
+       64.16198487095666,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "sigma*^2 x(1-1e-6)",
+     "R2": 0.008053986902990588,
+     "expected": "All",
+     "got": "All",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "sigma*^2 x(1+1e-6)",
+     "R2": 0.008054003010980502,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       63.85499208702956
+      ],
+      [
+       64.4702537306936,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "V_c exact",
+     "R2": 0.009166666666666667,
+     "expected": "upper ray",
+     "got": "upper ray",
+     "match": true,
+     "components_theta": [
+      [
+       540.0000000000013,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "V_c x(1-1e-6)",
+     "R2": 0.0091666575,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       0.00014666724428058313
+      ],
+      [
+       539.9919334198744,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "V_c x(1+1e-6)",
+     "R2": 0.009166675833333332,
+     "expected": "upper ray",
+     "got": "upper ray",
+     "match": true,
+     "components_theta": [
+      [
+       540.008066753208,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "F exact",
+     "R2": 0.01,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    },
+    {
+     "test": "F x(1-1e-6)",
+     "R2": 0.00999999,
+     "expected": "upper ray",
+     "got": "upper ray",
+     "match": true,
+     "components_theta": [
+      [
+       59999830.00264999,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "F x(1+1e-6)",
+     "R2": 0.01000001,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    }
+   ],
+   "extra": [
+    {
+     "desc": "at R2 = sigma*^2 the rays meet at 64.16198487 / 64.16198487 (expected 64.16198487)",
+     "pass": true
+    }
+   ],
+   "pass": true,
+   "turns": [
+    [
+     64.16198487095666,
+     0.008053994956985543,
+     "min"
+    ]
+   ],
+   "L_minus": 0.009166666666666667,
+   "L_plus": 0.01,
+   "approach": [
+    "below",
+    "below"
+   ]
+  },
+  "Prop 4.2 P3 (Pi = 1)": {
+   "rows": [
+    {
+     "test": "row R2 < s*^2 (interior)",
+     "R2": 0.004975246918103915,
+     "expected": "All",
+     "got": "All",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "row s*^2<R2<F (interior)",
+     "R2": 0.009975246918103916,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       57.66385535462624
+      ],
+      [
+       343.3262434129366,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "row F<=R2<V_c (interior)",
+     "R2": 0.1325,
+     "expected": "lower ray",
+     "got": "lower ray",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       0.5506221621903182
+      ]
+     ]
+    },
+    {
+     "test": "row R2 >= V_c (interior)",
+     "R2": 0.3825,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    },
+    {
+     "test": "sigma*^2 exact",
+     "R2": 0.00995049383620783,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       99.49752469181105
+      ],
+      [
+       99.49752469181105,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "sigma*^2 x(1-1e-6)",
+     "R2": 0.009950483885713993,
+     "expected": "All",
+     "got": "All",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "sigma*^2 x(1+1e-6)",
+     "R2": 0.009950503786701665,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       98.0856890556392
+      ],
+      [
+       100.94996849511776,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "F exact",
+     "R2": 0.01,
+     "expected": "lower ray",
+     "got": "lower ray",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       48.99999999999952
+      ]
+     ]
+    },
+    {
+     "test": "F x(1-1e-6)",
+     "R2": 0.00999999,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       49.002550257582875
+      ],
+      [
+       999947.9974232621,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "F x(1+1e-6)",
+     "R2": 0.01000001,
+     "expected": "lower ray",
+     "got": "lower ray",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       48.99745025751819
+      ]
+     ]
+    },
+    {
+     "test": "V_c exact",
+     "R2": 0.255,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    },
+    {
+     "test": "V_c x(1-1e-6)",
+     "R2": 0.254999745,
+     "expected": "lower ray",
+     "got": "lower ray",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       6.845643071295907e-07
+      ]
+     ]
+    },
+    {
+     "test": "V_c x(1+1e-6)",
+     "R2": 0.255000255,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    }
+   ],
+   "extra": [
+    {
+     "desc": "at R2 = sigma*^2 the rays meet at 99.49752469 / 99.49752469 (expected 99.49752469)",
+     "pass": true
+    }
+   ],
+   "pass": true,
+   "turns": [
+    [
+     99.49752469181105,
+     0.009950493836207793,
+     "min"
+    ]
+   ],
+   "L_minus": 0.255,
+   "L_plus": 0.01,
+   "approach": [
+    "below",
+    "below"
+   ]
+  },
+  "Prop 4.2 boundary Pi_B (Pi = 50)": {
+   "rows": [
+    {
+     "test": "row R2 < s*^2 (interior)",
+     "R2": 0.004142135623730951,
+     "expected": "All",
+     "got": "All",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "row s*^2<R2<V_c (interior)",
+     "R2": 0.009142135623730951,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       11.877465016876231
+      ],
+      [
+       420.96524745774286,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "row R2 >= F (interior)",
+     "R2": 0.015,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    },
+    {
+     "test": "sigma*^2 exact",
+     "R2": 0.008284271247461903,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       70.71067811865474
+      ],
+      [
+       70.71067811865474,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "sigma*^2 x(1-1e-6)",
+     "R2": 0.008284262963190655,
+     "expected": "All",
+     "got": "All",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "sigma*^2 x(1+1e-6)",
+     "R2": 0.008284279531733149,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       70.3959479262844
+      ],
+      [
+       71.02681542457836,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "F = V_c exact",
+     "R2": 0.01,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    },
+    {
+     "test": "F = V_c x(1-1e-6)",
+     "R2": 0.00999999,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       0.00010000030000163052
+      ],
+      [
+       49999849.994975135,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "F = V_c x(1+1e-6)",
+     "R2": 0.01000001,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    }
+   ],
+   "extra": [
+    {
+     "desc": "V_c = F to 1e-12 relative (0.01 vs 0.01)",
+     "pass": true
+    },
+    {
+     "desc": "at R2 = sigma*^2 the rays meet at 70.71067812 / 70.71067812 (expected 70.71067812)",
+     "pass": true
+    }
+   ],
+   "pass": true,
+   "turns": [
+    [
+     70.71067811865474,
+     0.008284271247461901,
+     "min"
+    ]
+   ],
+   "L_minus": 0.01,
+   "L_plus": 0.01,
+   "approach": [
+    "below",
+    "below"
+   ],
+   "upper_ray_seen": false
+  },
+  "Prop 4.2 boundary Pi_A (Pi = 150)": {
+   "rows": [
+    {
+     "test": "row R2 <= V_c (interior)",
+     "R2": 0.0033333333333333335,
+     "expected": "All",
+     "got": "All",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "row V_c<R2<F (interior)",
+     "R2": 0.008333333333333333,
+     "expected": "upper ray",
+     "got": "upper ray",
+     "match": true,
+     "components_theta": [
+      [
+       534.2329219213253,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "row R2 >= F (interior)",
+     "R2": 0.015,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    },
+    {
+     "test": "V_c exact",
+     "R2": 0.006666666666666667,
+     "expected": "All",
+     "got": "All",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "V_c x(1-1e-6)",
+     "R2": 0.0066666600000000005,
+     "expected": "All",
+     "got": "All",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "V_c x(1+1e-6)",
+     "R2": 0.006666673333333333,
+     "expected": "upper ray",
+     "got": "upper ray",
+     "match": true,
+     "components_theta": [
+      [
+       0.3004506383797955,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "F exact",
+     "R2": 0.01,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    },
+    {
+     "test": "F x(1-1e-6)",
+     "R2": 0.00999999,
+     "expected": "upper ray",
+     "got": "upper ray",
+     "match": true,
+     "components_theta": [
+      [
+       149999649.98927677,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "F x(1+1e-6)",
+     "R2": 0.01000001,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true,
+     "components_theta": []
+    }
+   ],
+   "extra": [
+    {
+     "desc": "c = G* (G* = np.float64(1.0)); no turning point found (0); V_c = sigma*^2 (0.006666666666666667 vs np.float64(0.006666666666666667))",
+     "pass": true
+    }
+   ],
+   "pass": true,
+   "turns": [],
+   "L_minus": 0.006666666666666667,
+   "L_plus": 0.01,
+   "approach": [
+    "above",
+    "below"
+   ]
+  },
+  "Prop 5.2 coupling (Pi = Pi0 = 1)": {
+   "rows": [
+    {
+     "test": "row R2 < s*^2 (interior)",
+     "R2": 0.004975246918103915,
+     "expected": "All",
+     "got": "All",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "row s*^2<R2<F (interior)",
+     "R2": 0.009975246918103916,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       0.005808444863732754
+      ],
+      [
+       0.03409254280868361,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "row R2 >= F (interior)",
+     "R2": 0.015,
+     "expected": "upper ray",
+     "got": "upper ray",
+     "match": true,
+     "components_theta": [
+      [
+       0.2322374841615669,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "sigma*^2 exact",
+     "R2": 0.00995049383620783,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       0.019900987672415694
+      ],
+      [
+       0.019900987672415694,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "sigma*^2 x(1-1e-6)",
+     "R2": 0.009950483885713993,
+     "expected": "All",
+     "got": "All",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "sigma*^2 x(1+1e-6)",
+     "R2": 0.009950503786701665,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       0.01961746560124558
+      ],
+      [
+       0.020184549545544102,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "F exact",
+     "R2": 0.01,
+     "expected": "upper ray",
+     "got": "upper ray",
+     "match": true,
+     "components_theta": [
+      [
+       0.0400000000000003,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "F x(1-1e-6)",
+     "R2": 0.00999999,
+     "expected": "two rays",
+     "got": "two rays",
+     "match": true,
+     "components_theta": [
+      [
+       1e-250,
+       2.0001020102871078e-06
+      ],
+      [
+       0.03999795989798961,
+       1e+250
+      ]
+     ]
+    },
+    {
+     "test": "F x(1+1e-6)",
+     "R2": 0.01000001,
+     "expected": "upper ray",
+     "got": "upper ray",
+     "match": true,
+     "components_theta": [
+      [
+       0.04000203989801047,
+       1e+250
+      ]
+     ]
+    }
+   ],
+   "extra": [
+    {
+     "desc": "R2 = F: upper ray starts at 0.04 (c_F = 0.04)",
+     "pass": true
+    },
+    {
+     "desc": "R2 = 1.5F: upper ray starts at c_R = 0.2322374842 >= c_F",
+     "pass": true
+    },
+    {
+     "desc": "at R2 = sigma*^2 the rays meet at 0.01990098767 / 0.01990098767 (expected 0.01990098767)",
+     "pass": true
+    }
+   ],
+   "pass": true,
+   "turns": [
+    [
+     0.019900987672415694,
+     0.009950493836207795,
+     "min"
+    ]
+   ],
+   "L_minus": 0.01,
+   "L_plus": Infinity,
+   "approach": [
+    "below",
+    "n/a (infinite)"
+   ]
+  }
+ },
+ "pass": true,
+ "n_tests": 62,
+ "n_match": 62
+}

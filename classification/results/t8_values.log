@@ -1,0 +1,19 @@
+  Pi_B                         computed 50  stated 50.0  ok
+  Pi_A                         computed 150  stated 150.0  ok
+Pi = 1 (P3)
+  Pi=1: G*                     computed 0.0099504938  stated 0.00995  ok
+  Pi=1: Pi0*                   computed 99.49752  stated 99.5  ok
+  Pi=1: sigma*^2               computed 0.0099504938  stated 0.00995  ok
+  Pi=1: V_c                    computed 0.255  stated 0.255  ok
+Pi = 60 (P2)
+  Pi=60: Pi0*                  computed 64.161985  stated 64.16  ok
+  Pi=60: sigma*^2              computed 0.008053995  stated 0.008054  ok
+  Pi=60: V_c                   computed 0.0091666667  stated 0.009167  ok
+Pi = 500 (P1)
+  Pi=500: turning points 0, bounded argmin log10 = -5.999999848 -> no interior extremum
+  Pi=500: V_c                  computed 0.0055  stated 0.0055  ok
+Coupling, Pi = Pi0 = 1
+  coupling: c*                 computed 0.019900987  stated 0.0199  ok
+  coupling: sigma*^2           computed 0.0099504938  stated 0.00995  ok
+  coupling: c_F                computed 0.04  stated 0.04  ok
+T8.2: PASS (14/14)

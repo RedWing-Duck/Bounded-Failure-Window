@@ -1,0 +1,92 @@
+{
+ "rows": [
+  {
+   "quantity": "Pi_B",
+   "computed": 50.0,
+   "stated": 50.0,
+   "match": true
+  },
+  {
+   "quantity": "Pi_A",
+   "computed": 150.0,
+   "stated": 150.0,
+   "match": true
+  },
+  {
+   "quantity": "Pi=1: G*",
+   "computed": 0.00995049383620783,
+   "stated": 0.00995,
+   "match": true
+  },
+  {
+   "quantity": "Pi=1: Pi0*",
+   "computed": 99.49752032194728,
+   "stated": 99.5,
+   "match": true
+  },
+  {
+   "quantity": "Pi=1: sigma*^2",
+   "computed": 0.009950493836207795,
+   "stated": 0.00995,
+   "match": true
+  },
+  {
+   "quantity": "Pi=1: V_c",
+   "computed": 0.255,
+   "stated": 0.255,
+   "match": true
+  },
+  {
+   "quantity": "Pi=60: Pi0*",
+   "computed": 64.16198462815842,
+   "stated": 64.16,
+   "match": true
+  },
+  {
+   "quantity": "Pi=60: sigma*^2",
+   "computed": 0.008053994956985543,
+   "stated": 0.008054,
+   "match": true
+  },
+  {
+   "quantity": "Pi=60: V_c",
+   "computed": 0.009166666666666667,
+   "stated": 0.009167,
+   "match": true
+  },
+  {
+   "quantity": "Pi=500: no interior extremum",
+   "computed": {
+    "turning_points": 0,
+    "argmin_log10": -5.999999847736574
+   },
+   "stated": "none",
+   "match": true
+  },
+  {
+   "quantity": "Pi=500: V_c",
+   "computed": 0.0055,
+   "stated": 0.0055,
+   "match": true
+  },
+  {
+   "quantity": "coupling: c*",
+   "computed": 0.0199009865104393,
+   "stated": 0.0199,
+   "match": true
+  },
+  {
+   "quantity": "coupling: sigma*^2",
+   "computed": 0.009950493836207795,
+   "stated": 0.00995,
+   "match": true
+  },
+  {
+   "quantity": "coupling: c_F",
+   "computed": 0.04000000000000036,
+   "stated": 0.04,
+   "match": true
+  }
+ ],
+ "pass": true
+}

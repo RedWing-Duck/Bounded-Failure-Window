@@ -1,0 +1,77 @@
+Prop 4.2 P1 (Pi = 500): turning points [], limits 0.0055 (above) -> 0.01 (below)
+   row R2 <= V_c (interior)   R2 = 0.00275: All        (expected All) ok
+   row V_c<R2<F (interior)    R2 = 0.00775: upper ray  (expected upper ray) ok
+   row R2 >= F (interior)     R2 = 0.015: Empty      (expected Empty) ok
+   V_c exact                  R2 = 0.0055: All        (expected All) ok
+   V_c x(1-1e-6)              R2 = 0.0054999945: All        (expected All) ok
+   V_c x(1+1e-6)              R2 = 0.0055000055: upper ray  (expected upper ray) ok
+   F exact                    R2 = 0.01: Empty      (expected Empty) ok
+   F x(1-1e-6)                R2 = 0.00999999: upper ray  (expected upper ray) ok
+   F x(1+1e-6)                R2 = 0.01000001: Empty      (expected Empty) ok
+Prop 4.2 P2 (Pi = 60): turning points [(64.16198487095666, 0.008053994956985543, 'min')], limits 0.00916667 (below) -> 0.01 (below)
+   row R2 < s*^2 (interior)   R2 = 0.004026997478: All        (expected All) ok
+   row s*^2<R2<V_c (interior) R2 = 0.008610330812: two rays   (expected two rays) ok
+   row V_c<=R2<F (interior)   R2 = 0.009583333333: upper ray  (expected upper ray) ok
+   row R2 >= F (interior)     R2 = 0.015: Empty      (expected Empty) ok
+   sigma*^2 exact             R2 = 0.008053994957: two rays   (expected two rays) ok
+   sigma*^2 x(1-1e-6)         R2 = 0.008053986903: All        (expected All) ok
+   sigma*^2 x(1+1e-6)         R2 = 0.008054003011: two rays   (expected two rays) ok
+   V_c exact                  R2 = 0.009166666667: upper ray  (expected upper ray) ok
+   V_c x(1-1e-6)              R2 = 0.0091666575: two rays   (expected two rays) ok
+   V_c x(1+1e-6)              R2 = 0.009166675833: upper ray  (expected upper ray) ok
+   F exact                    R2 = 0.01: Empty      (expected Empty) ok
+   F x(1-1e-6)                R2 = 0.00999999: upper ray  (expected upper ray) ok
+   F x(1+1e-6)                R2 = 0.01000001: Empty      (expected Empty) ok
+   [ok] at R2 = sigma*^2 the rays meet at 64.16198487 / 64.16198487 (expected 64.16198487)
+Prop 4.2 P3 (Pi = 1): turning points [(99.49752469181105, 0.009950493836207793, 'min')], limits 0.255 (below) -> 0.01 (below)
+   row R2 < s*^2 (interior)   R2 = 0.004975246918: All        (expected All) ok
+   row s*^2<R2<F (interior)   R2 = 0.009975246918: two rays   (expected two rays) ok
+   row F<=R2<V_c (interior)   R2 = 0.1325: lower ray  (expected lower ray) ok
+   row R2 >= V_c (interior)   R2 = 0.3825: Empty      (expected Empty) ok
+   sigma*^2 exact             R2 = 0.009950493836: two rays   (expected two rays) ok
+   sigma*^2 x(1-1e-6)         R2 = 0.009950483886: All        (expected All) ok
+   sigma*^2 x(1+1e-6)         R2 = 0.009950503787: two rays   (expected two rays) ok
+   F exact                    R2 = 0.01: lower ray  (expected lower ray) ok
+   F x(1-1e-6)                R2 = 0.00999999: two rays   (expected two rays) ok
+   F x(1+1e-6)                R2 = 0.01000001: lower ray  (expected lower ray) ok
+   V_c exact                  R2 = 0.255: Empty      (expected Empty) ok
+   V_c x(1-1e-6)              R2 = 0.254999745: lower ray  (expected lower ray) ok
+   V_c x(1+1e-6)              R2 = 0.255000255: Empty      (expected Empty) ok
+   [ok] at R2 = sigma*^2 the rays meet at 99.49752469 / 99.49752469 (expected 99.49752469)
+Prop 4.2 boundary Pi_B (Pi = 50): turning points [(70.71067811865474, 0.008284271247461901, 'min')], limits 0.01 (below) -> 0.01 (below)
+   row R2 < s*^2 (interior)   R2 = 0.004142135624: All        (expected All) ok
+   row s*^2<R2<V_c (interior) R2 = 0.009142135624: two rays   (expected two rays) ok
+   row R2 >= F (interior)     R2 = 0.015: Empty      (expected Empty) ok
+   sigma*^2 exact             R2 = 0.008284271247: two rays   (expected two rays) ok
+   sigma*^2 x(1-1e-6)         R2 = 0.008284262963: All        (expected All) ok
+   sigma*^2 x(1+1e-6)         R2 = 0.008284279532: two rays   (expected two rays) ok
+   F = V_c exact              R2 = 0.01: Empty      (expected Empty) ok
+   F = V_c x(1-1e-6)          R2 = 0.00999999: two rays   (expected two rays) ok
+   F = V_c x(1+1e-6)          R2 = 0.01000001: Empty      (expected Empty) ok
+   [ok] V_c = F to 1e-12 relative (0.01 vs 0.01)
+   [ok] at R2 = sigma*^2 the rays meet at 70.71067812 / 70.71067812 (expected 70.71067812)
+Prop 4.2 boundary Pi_A (Pi = 150): turning points [], limits 0.00666667 (above) -> 0.01 (below)
+   row R2 <= V_c (interior)   R2 = 0.003333333333: All        (expected All) ok
+   row V_c<R2<F (interior)    R2 = 0.008333333333: upper ray  (expected upper ray) ok
+   row R2 >= F (interior)     R2 = 0.015: Empty      (expected Empty) ok
+   V_c exact                  R2 = 0.006666666667: All        (expected All) ok
+   V_c x(1-1e-6)              R2 = 0.00666666: All        (expected All) ok
+   V_c x(1+1e-6)              R2 = 0.006666673333: upper ray  (expected upper ray) ok
+   F exact                    R2 = 0.01: Empty      (expected Empty) ok
+   F x(1-1e-6)                R2 = 0.00999999: upper ray  (expected upper ray) ok
+   F x(1+1e-6)                R2 = 0.01000001: Empty      (expected Empty) ok
+   [ok] c = G* (G* = np.float64(1.0)); no turning point found (0); V_c = sigma*^2 (0.006666666666666667 vs np.float64(0.006666666666666667))
+Prop 5.2 coupling (Pi = Pi0 = 1): turning points [(0.019900987672415694, 0.009950493836207795, 'min')], limits 0.01 (below) -> inf (n/a (infinite))
+   row R2 < s*^2 (interior)   R2 = 0.004975246918: All        (expected All) ok
+   row s*^2<R2<F (interior)   R2 = 0.009975246918: two rays   (expected two rays) ok
+   row R2 >= F (interior)     R2 = 0.015: upper ray  (expected upper ray) ok
+   sigma*^2 exact             R2 = 0.009950493836: two rays   (expected two rays) ok
+   sigma*^2 x(1-1e-6)         R2 = 0.009950483886: All        (expected All) ok
+   sigma*^2 x(1+1e-6)         R2 = 0.009950503787: two rays   (expected two rays) ok
+   F exact                    R2 = 0.01: upper ray  (expected upper ray) ok
+   F x(1-1e-6)                R2 = 0.00999999: two rays   (expected two rays) ok
+   F x(1+1e-6)                R2 = 0.01000001: upper ray  (expected upper ray) ok
+   [ok] R2 = F: upper ray starts at 0.04 (c_F = 0.04)
+   [ok] R2 = 1.5F: upper ray starts at c_R = 0.2322374842 >= c_F
+   [ok] at R2 = sigma*^2 the rays meet at 0.01990098767 / 0.01990098767 (expected 0.01990098767)
+T8.3: PASS (62/62 classes match)

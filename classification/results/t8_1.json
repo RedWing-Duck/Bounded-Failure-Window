@@ -1,0 +1,367 @@
+{
+ "a": [
+  {
+   "desc": "d sigma2/dG - (G^2+2 lam G-2 Sig Pi)/(2 Pi (lam+G)^2) == 0",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "b": [
+  {
+   "desc": "roots are exactly -lam +/- s",
+   "route": "solve",
+   "pass": true
+  },
+  {
+   "desc": "-lam - s < 0",
+   "route": "assumptions",
+   "pass": true
+  },
+  {
+   "desc": "G* - 2 Sig Pi/(lam+s) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "2 Sig Pi/(lam+s) > 0 (so G* > 0: exactly one positive root)",
+   "route": "assumptions",
+   "pass": true
+  },
+  {
+   "desc": "sigma2(G*, Pi) - G*/Pi == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "F - G*/Pi - 2 Sig^2 Pi/(lam (lam+s)^2) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "2 Sig^2 Pi/(lam (lam+s)^2) > 0 (so G*/Pi < F)",
+   "route": "assumptions",
+   "pass": true
+  }
+ ],
+ "c": [
+  {
+   "desc": "sigma2 - F - G (lam G/(2 Pi) - Sig)/(lam (lam+G)) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "zeros of the excess at G = 0 and G = 2 F Pi",
+   "route": "solve",
+   "pass": true,
+   "sympy": "[0, 2*Pi*Sigma/lambda]"
+  }
+ ],
+ "d": [
+  {
+   "desc": "G(Pi0*) - G* == 0 at Pi0* = Pi (c/G* - 1)",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "c - G* - 2 Sig (Pi_A - Pi)/(c+lam+s) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "c + lam + s > 0",
+   "route": "assumptions",
+   "pass": true
+  },
+  {
+   "desc": "c - 2 F Pi - 2 F (Pi_B - Pi) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "Pi_A - Pi_B - c (c+lam)/(2 Sig) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "c (c+lam)/(2 Sig) > 0 (Pi_B < Pi_A)",
+   "route": "assumptions",
+   "pass": true
+  },
+  {
+   "desc": "V_c - F - c (c - 2 F Pi)/(2 Pi (lam+c)) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "c/(2 Pi (lam+c)) > 0 (V_c > F iff c > 2 F Pi)",
+   "route": "assumptions",
+   "pass": true
+  }
+ ],
+ "e": [
+  {
+   "desc": "c* K - G* == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "c* - (Pi+Pi0)(s - lam)/Pi == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "c_F - 2 F (Pi+Pi0) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "sigma2(c_F K, Pi) - F == 0",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "f": [
+  {
+   "desc": "prior, Pi0 -> 0+",
+   "route": "limit",
+   "pass": true,
+   "sympy": "(Sigma + c**2/(2*Pi))/(c + lambda)"
+  },
+  {
+   "desc": "prior, Pi0 -> oo",
+   "route": "limit",
+   "pass": true,
+   "sympy": "Sigma/lambda"
+  },
+  {
+   "desc": "coupling, c -> 0+",
+   "route": "limit",
+   "pass": true,
+   "sympy": "Sigma/lambda"
+  },
+  {
+   "desc": "coupling, c -> oo",
+   "route": "limit",
+   "pass": true,
+   "sympy": "oo"
+  }
+ ],
+ "g": [
+  {
+   "desc": "lim_{Pi0->oo} Pi0^2 d sigma2/dPi0 - c Pi Sig/lam^2 == 0 (sympy: Pi*Sigma*c/lambda**2)",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "c Pi Sig/lam^2 > 0 (F approached from below)",
+   "route": "assumptions",
+   "pass": true
+  },
+  {
+   "desc": "lim_{Pi0->0} d sigma2/dPi0 + c (c^2+2 lam c-2 Sig Pi)/(2 Pi^2 (lam+c)^2) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "c^2+2 lam c-2 Sig Pi - (c - G*)(c+lam+s) == 0 (sign = sign(c - G*))",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "lim_{c->0} d sigma2/dc + K Sig/lam^2 == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "-K Sig/lam^2 < 0 (F approached from below)",
+   "route": "assumptions",
+   "pass": true
+  }
+ ],
+ "h": [
+  {
+   "desc": "Paper 1 structure",
+   "pass": true,
+   "turns": [
+    [
+     0.6866954098747663,
+     0.09287527205297114,
+     "max"
+    ]
+   ],
+   "L_minus": 0.01,
+   "L_plus": 0.005,
+   "approach_minus": "above",
+   "approach_plus": "above",
+   "C4_check": {
+    "first_piece_dir": 1,
+    "last_piece_dir": -1,
+    "sigma2_first_piece_minus_Lminus": 0.02764507513701408,
+    "sigma2_last_piece_minus_Lplus": 0.02996102556722204
+   }
+  },
+  {
+   "desc": "M = 0.09288 at Pi* = 0.6867 (4 s.f.)",
+   "pass": true,
+   "M": 0.09287527205297114,
+   "Pi_star": 0.6866954098747663
+  },
+  {
+   "desc": "four-regime table via the classifier",
+   "pass": true,
+   "rows": [
+    {
+     "R2": 0.005,
+     "expected": "All",
+     "got": "All",
+     "match": true
+    },
+    {
+     "R2": 0.004999995,
+     "expected": "All",
+     "got": "All",
+     "match": true
+    },
+    {
+     "R2": 0.005000005,
+     "expected": "lower ray",
+     "got": "lower ray",
+     "match": true
+    },
+    {
+     "R2": 0.01,
+     "expected": "lower ray",
+     "got": "lower ray",
+     "match": true
+    },
+    {
+     "R2": 0.00999999,
+     "expected": "lower ray",
+     "got": "lower ray",
+     "match": true
+    },
+    {
+     "R2": 0.01000001,
+     "expected": "window",
+     "got": "window",
+     "match": true
+    },
+    {
+     "R2": 0.09287527205297114,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true
+    },
+    {
+     "R2": 0.09287517917769908,
+     "expected": "window",
+     "got": "window",
+     "match": true
+    },
+    {
+     "R2": 0.09287536492824318,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true
+    },
+    {
+     "R2": 0.0025,
+     "expected": "All",
+     "got": "All",
+     "match": true
+    },
+    {
+     "R2": 0.0075,
+     "expected": "lower ray",
+     "got": "lower ray",
+     "match": true
+    },
+    {
+     "R2": 0.051437636026485566,
+     "expected": "window",
+     "got": "window",
+     "match": true
+    },
+    {
+     "R2": 0.1393129080794567,
+     "expected": "Empty",
+     "got": "Empty",
+     "match": true
+    }
+   ]
+  }
+ ],
+ "summary": {
+  "a": true,
+  "b": true,
+  "c": true,
+  "d": true,
+  "e": true,
+  "f": true,
+  "g": true,
+  "h": true
+ },
+ "pass": true,
+ "numeric_only": [],
+ "lines": [
+  "(a) derivative",
+  "  [PASS] (simplify) d sigma2/dG - (G^2+2 lam G-2 Sig Pi)/(2 Pi (lam+G)^2) == 0",
+  "(b) unique positive root, minimum value, below F",
+  "  solve(G^2+2 lam G-2 Sig Pi) = [-lambda - sqrt(2*Pi*Sigma + lambda**2), -lambda + sqrt(2*Pi*Sigma + lambda**2)]",
+  "  [PASS] (solve) roots are exactly -lam +/- s",
+  "  [PASS] (assumptions) -lam - s < 0",
+  "  [PASS] (simplify) G* - 2 Sig Pi/(lam+s) == 0",
+  "  [PASS] (assumptions) 2 Sig Pi/(lam+s) > 0 (so G* > 0: exactly one positive root)",
+  "  [PASS] (simplify) sigma2(G*, Pi) - G*/Pi == 0",
+  "  [PASS] (simplify) F - G*/Pi - 2 Sig^2 Pi/(lam (lam+s)^2) == 0",
+  "  [PASS] (assumptions) 2 Sig^2 Pi/(lam (lam+s)^2) > 0 (so G*/Pi < F)",
+  "(c) excess identity",
+  "  [PASS] (simplify) sigma2 - F - G (lam G/(2 Pi) - Sig)/(lam (lam+G)) == 0",
+  "  [PASS] (solve) zeros: [0, 2*Pi*Sigma/lambda]  (2 F Pi = 2*Pi*Sigma/lambda)",
+  "(d) prior sweep",
+  "  [PASS] (simplify) G(Pi0*) - G* == 0 at Pi0* = Pi (c/G* - 1)",
+  "  [PASS] (simplify) c - G* - 2 Sig (Pi_A - Pi)/(c+lam+s) == 0",
+  "  [PASS] (assumptions) c + lam + s > 0",
+  "  [PASS] (simplify) c - 2 F Pi - 2 F (Pi_B - Pi) == 0",
+  "  [PASS] (simplify) Pi_A - Pi_B - c (c+lam)/(2 Sig) == 0",
+  "  [PASS] (assumptions) c (c+lam)/(2 Sig) > 0 (Pi_B < Pi_A)",
+  "  [PASS] (simplify) V_c - F - c (c - 2 F Pi)/(2 Pi (lam+c)) == 0",
+  "  [PASS] (assumptions) c/(2 Pi (lam+c)) > 0 (V_c > F iff c > 2 F Pi)",
+  "(e) coupling sweep",
+  "  [PASS] (simplify) c* K - G* == 0",
+  "  [PASS] (simplify) c* - (Pi+Pi0)(s - lam)/Pi == 0",
+  "  [PASS] (simplify) c_F - 2 F (Pi+Pi0) == 0",
+  "  [PASS] (simplify) sigma2(c_F K, Pi) - F == 0",
+  "(f) limits",
+  "  [PASS] (limit) prior, Pi0 -> 0+: (Sigma + c**2/(2*Pi))/(c + lambda)",
+  "  [PASS] (limit) prior, Pi0 -> oo: Sigma/lambda",
+  "  [PASS] (limit) coupling, c -> 0+: Sigma/lambda",
+  "  [PASS] (limit) coupling, c -> oo: oo",
+  "(g) approach directions",
+  "  [PASS] (simplify) lim_{Pi0->oo} Pi0^2 d sigma2/dPi0 - c Pi Sig/lam^2 == 0 (sympy: Pi*Sigma*c/lambda**2)",
+  "  [PASS] (assumptions) c Pi Sig/lam^2 > 0 (F approached from below)",
+  "  [PASS] (simplify) lim_{Pi0->0} d sigma2/dPi0 + c (c^2+2 lam c-2 Sig Pi)/(2 Pi^2 (lam+c)^2) == 0",
+  "  [PASS] (simplify) c^2+2 lam c-2 Sig Pi - (c - G*)(c+lam+s) == 0 (sign = sign(c - G*))",
+  "  [PASS] (simplify) lim_{c->0} d sigma2/dc + K Sig/lam^2 == 0",
+  "  [PASS] (assumptions) -K Sig/lam^2 < 0 (F approached from below)",
+  "(h) Paper 1 precision sweep, Pi0 = 1 (kappa = 100)",
+  "  turning points: [(0.6866954098747663, 0.09287527205297114, 'max')]; L- = 0.01 (above), L+ = 0.005 (above)",
+  "  [PASS] sequence (F, M, H), one max, both ends approached from above",
+  "  [PASS] M = 0.0928753 (stated 0.09288), Pi* = 0.686695 (stated 0.6867)",
+  "  C4 check: first piece dir +1, sigma2 - L- = 0.0276; last piece dir -1, sigma2 - L+ = 0.03",
+  "    R2 = 0.005: All (expected All) ok",
+  "    R2 = 0.004999995: All (expected All) ok",
+  "    R2 = 0.005000005: lower ray (expected lower ray) ok",
+  "    R2 = 0.01: lower ray (expected lower ray) ok",
+  "    R2 = 0.00999999: lower ray (expected lower ray) ok",
+  "    R2 = 0.01000001: window (expected window) ok",
+  "    R2 = 0.092875272: Empty (expected Empty) ok",
+  "    R2 = 0.092875179: window (expected window) ok",
+  "    R2 = 0.092875365: Empty (expected Empty) ok",
+  "    R2 = 0.0025: All (expected All) ok",
+  "    R2 = 0.0075: lower ray (expected lower ray) ok",
+  "    R2 = 0.051437636: window (expected window) ok",
+  "    R2 = 0.13931291: Empty (expected Empty) ok",
+  "T8.1: PASS  parts: {'a': True, 'b': True, 'c': True, 'd': True, 'e': True, 'f': True, 'g': True, 'h': True}; numeric-only identities: 0"
+ ]
+}

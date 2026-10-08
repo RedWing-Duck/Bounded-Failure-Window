@@ -1,0 +1,16 @@
+  2000/20000 sets, 16s
+  4000/20000 sets, 31s
+  6000/20000 sets, 46s
+  8000/20000 sets, 62s
+  10000/20000 sets, 78s
+  12000/20000 sets, 94s
+  14000/20000 sets, 109s
+  16000/20000 sets, 124s
+  18000/20000 sets, 140s
+  20000/20000 sets, 156s
+prior (theta = Pi0): 20000 sweeps, 200000 classifications, classes {'Empty': 54278, 'lower ray': 34312, 'two rays': 32242, 'All': 44695, 'upper ray': 34473}, turning points {'1': 11709, '0': 8291}, local maxima 0, windows/mixed 0, limit-check failures 0, flat pieces 0
+coupling (theta = c): 20000 sweeps, 200000 classifications, classes {'upper ray': 68575, 'two rays': 82728, 'All': 48697}, turning points {'1': 20000}, local maxima 0, windows/mixed 0, limit-check failures 0, flat pieces 0
+c tanh(Pi/Pi0): 20000 sweeps, 200000 classifications, classes {'Empty': 54266, 'lower ray': 34309, 'two rays': 32207, 'All': 44614, 'upper ray': 34604}, turning points {'1': 11709, '0': 8291}, local maxima 0, windows/mixed 0, limit-check failures 0, flat pieces 0
+c (1 - exp(-Pi/Pi0)): 20000 sweeps, 200000 classifications, classes {'Empty': 54362, 'lower ray': 34310, 'two rays': 32221, 'All': 44650, 'upper ray': 34457}, turning points {'1': 11709, '0': 8291}, local maxima 0, windows/mixed 0, limit-check failures 0, flat pieces 0
+c Pi^2/(Pi^2 + Pi0^2): 20000 sweeps, 200000 classifications, classes {'Empty': 54414, 'lower ray': 34255, 'two rays': 32246, 'All': 44767, 'upper ray': 34318}, turning points {'1': 11709, '0': 8291}, local maxima 0, windows/mixed 0, limit-check failures 0, flat pieces 0
+T8.4: PASS  20000 parameter sets, 100000 sweeps, 1000000 classifications, 0 windows/mixed; local maxima found: 0

@@ -1,0 +1,107 @@
+{
+ "N": 20000,
+ "stats": {
+  "prior (theta = Pi0)": {
+   "sweeps": 20000,
+   "classifications": 200000,
+   "classes": {
+    "Empty": 54278,
+    "lower ray": 34312,
+    "two rays": 32242,
+    "All": 44695,
+    "upper ray": 34473
+   },
+   "windows_or_mixed": 0,
+   "local_max": 0,
+   "min_gap_max_R2": null,
+   "limit_check_fail": 0,
+   "flat_piece": 0,
+   "turns_hist": {
+    "1": 11709,
+    "0": 8291
+   }
+  },
+  "coupling (theta = c)": {
+   "sweeps": 20000,
+   "classifications": 200000,
+   "classes": {
+    "upper ray": 68575,
+    "two rays": 82728,
+    "All": 48697
+   },
+   "windows_or_mixed": 0,
+   "local_max": 0,
+   "min_gap_max_R2": null,
+   "limit_check_fail": 0,
+   "flat_piece": 0,
+   "turns_hist": {
+    "1": 20000
+   }
+  },
+  "c tanh(Pi/Pi0)": {
+   "sweeps": 20000,
+   "classifications": 200000,
+   "classes": {
+    "Empty": 54266,
+    "lower ray": 34309,
+    "two rays": 32207,
+    "All": 44614,
+    "upper ray": 34604
+   },
+   "windows_or_mixed": 0,
+   "local_max": 0,
+   "min_gap_max_R2": null,
+   "limit_check_fail": 0,
+   "flat_piece": 0,
+   "turns_hist": {
+    "1": 11709,
+    "0": 8291
+   }
+  },
+  "c (1 - exp(-Pi/Pi0))": {
+   "sweeps": 20000,
+   "classifications": 200000,
+   "classes": {
+    "Empty": 54362,
+    "lower ray": 34310,
+    "two rays": 32221,
+    "All": 44650,
+    "upper ray": 34457
+   },
+   "windows_or_mixed": 0,
+   "local_max": 0,
+   "min_gap_max_R2": null,
+   "limit_check_fail": 0,
+   "flat_piece": 0,
+   "turns_hist": {
+    "1": 11709,
+    "0": 8291
+   }
+  },
+  "c Pi^2/(Pi^2 + Pi0^2)": {
+   "sweeps": 20000,
+   "classifications": 200000,
+   "classes": {
+    "Empty": 54414,
+    "lower ray": 34255,
+    "two rays": 32246,
+    "All": 44767,
+    "upper ray": 34318
+   },
+   "windows_or_mixed": 0,
+   "local_max": 0,
+   "min_gap_max_R2": null,
+   "limit_check_fail": 0,
+   "flat_piece": 0,
+   "turns_hist": {
+    "1": 11709,
+    "0": 8291
+   }
+  }
+ },
+ "total_classifications": 1000000,
+ "windows_or_mixed": 0,
+ "bad": [],
+ "pass": true,
+ "seconds": 155.6550691127777
+}
