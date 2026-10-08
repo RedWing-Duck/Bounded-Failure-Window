@@ -1,0 +1,8 @@
+{
+ "n": 1000,
+ "P_decreasing": 1000,
+ "spectra_cross_once": 1000,
+ "fails": [],
+ "pass": true,
+ "seconds": 45.56116843223572
+}

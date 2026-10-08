@@ -33,7 +33,7 @@ rows = [
     ("T11.3 turning points", V(r3["pass_tp"]), f"failures {r3['tp_fail']}", None),
     ("T11.3 limits (bound)", V(r3["pass_limits"]), f"failures {r3['limit_fail']}; applicable ends {r3['limit_applicable']}", None),
     ("T11.3 classes (two routes)", V(r3["pass_classes"]), f"failing classifications {r3['class_fail']} (at β = "
-     + ", ".join(g(e["beta"], ".6g") for e in fail_betas if e["class_fail"]) + ")", None),
+     + ", ".join(g(e["beta"], ".7g") for e in fail_betas if e["class_fail"]) + ")", None),
     ("T11.3 duality", V(r3["duality_pass"]), f"max relative difference {g(r3['duality_max_rel'])}", None),
     ("T11.3 independent routes (ARE, Wiener)", V(r3["routes"]["pass"]), f"{r3['routes']['n']} evaluations, max rel. err "
      f"{g(r3['routes']['max_err'])}", None),

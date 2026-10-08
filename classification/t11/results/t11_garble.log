@@ -1,0 +1,3 @@
+(tau1, tau2) = (0.5, 2.0), dt = 0.0025: autocov z = [np.float64(0.83), np.float64(-0.09), np.float64(-0.69), np.float64(-1.42)]; MSE1 = 0.00992979 +/- 3.6e-05 vs P(tau1) = 0.00988889 (z = +1.14); MSE2 = 0.00961183 vs P(tau2) = 0.00957134; diff = 0.000318 +/- 7.7e-06 -> PASS  (7s)
+(tau1, tau2) = (1.0, 10.0), dt = 0.005: autocov z = [np.float64(0.63), np.float64(-0.01), np.float64(-0.14), np.float64(0.8)]; MSE1 = 0.00976743 +/- 3.4e-05 vs P(tau1) = 0.00980392 (z = -1.07); MSE2 = 0.00673644 vs P(tau2) = 0.0067813; diff = 0.003031 +/- 2.5e-05 -> PASS  (16s)
+T11.2: PASS

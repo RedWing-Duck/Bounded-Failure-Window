@@ -1,0 +1,7 @@
+internal: scalar p vs 2-state KF max rel 2.82e-43, Q vs Van Loan max rel 2.96e-33
+MC Dt = 0.1: (a) 0.00995052 +/- 2.2e-05 vs 0.00995054 (z -0.00); (b) 0.00995502 +/- 2.2e-05 vs 0.00995517 (z -0.01)  (38s)
+MC Dt = 1.0: (a) 0.00997675 +/- 2.5e-05 vs 0.00995428 (z +0.89); (b) 0.0100103 +/- 2.2e-05 vs 0.00998023 (z +1.39)  (42s)
+MC Dt = 5.0: (a) 0.0100124 +/- 4.9e-05 vs 0.00998058 (z +0.64); (b) 0.0100618 +/- 2.3e-05 vs 0.00999806 (z +2.81)  (45s)
+Cor 4.9: violations (a) 0, (b) 0; min ratio P(m dt)/P(dt): (a) 1.0, (b) 1.0
+continuum: 0 non-monotone sets out of 1000; Delta t -> 0 limit P_a/s*^2 - 1 in [2.55e-25, 1.3e-10]
+T11.6: PASS

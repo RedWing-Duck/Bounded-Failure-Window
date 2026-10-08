@@ -1,0 +1,17 @@
+beta = 2.0: corrected classifications 3000, failures 0, classes {'upper ray': 2202, 'Empty': 798}
+beta = 2.05: corrected classifications 3000, failures 0, classes {'upper ray': 2219, 'Empty': 781}
+beta = 2.1: corrected classifications 3000, failures 0, classes {'upper ray': 2207, 'Empty': 793}
+beta = 2.15: corrected classifications 3000, failures 0, classes {'upper ray': 2216, 'Empty': 784}
+beta = 2.2: corrected classifications 3000, failures 0, classes {'upper ray': 2204, 'Empty': 796}
+beta = 2.25: corrected classifications 3000, failures 0, classes {'upper ray': 2189, 'Empty': 811}
+beta = 2.3: corrected classifications 3000, failures 0, classes {'upper ray': 2205, 'Empty': 795}
+beta = 2.35: corrected classifications 3000, failures 0, classes {'upper ray': 2207, 'Empty': 793}
+beta = 2.4: corrected classifications 3000, failures 0, classes {'upper ray': 2227, 'Empty': 773}
+beta = 2.45: corrected classifications 3000, failures 0, classes {'upper ray': 2175, 'Empty': 825}
+beta = 2.5: corrected classifications 3000, failures 0, classes {'Empty': 800, 'upper ray': 2200}
+beta = 2.55: corrected classifications 3000, failures 0, classes {'upper ray': 2196, 'Empty': 804}
+beta = 2.000001: corrected classifications 3000, failures 0, classes {'upper ray': 2198, 'Empty': 802}
+beta = 2.001: corrected classifications 3000, failures 0, classes {'upper ray': 2204, 'Empty': 796}
+beta = 2: P(1e80/lam) = 0.0148842513578996  sigma*^2(lam^2/K) = 0.0148842513578996
+beta = 2: P(1e80/lam) = 0.0084209367174295  sigma*^2(lam^2/K) = 0.0084209367174295
+beta = 2: P(1e80/lam) = 0.135771181398585  sigma*^2(lam^2/K) = 0.135771181398585

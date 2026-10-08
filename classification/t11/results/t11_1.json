@@ -1,0 +1,168 @@
+{
+ "a": [
+  {
+   "desc": "d/dtau log S - [beta/tau - 2 tau w^2/(1 + tau^2 w^2)] == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "2/tau - 2 tau w^2/(1+tau^2 w^2) - 2/(tau (1 + tau^2 w^2)) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "2/(tau (1 + tau^2 w^2)) > 0 (second term < 2/tau)",
+   "route": "assumptions",
+   "pass": true,
+   "expr": "2/(omega**2*tau**3 + tau)"
+  }
+ ],
+ "b": [
+  {
+   "desc": "S_tau1 - S_tau2 - |H_xi(i w)|^2 == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "S_tau1 - S_tau2 - (tau2^2 - tau1^2) w^2/(Pi (1+tau1^2 w^2)(1+tau2^2 w^2)) == 0",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "c": [
+  {
+   "desc": "2C/sqrt(4AC) - sqrt(C/A) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "sqrt(C/A) - sqrt(2 Sig K) tau^(b/2)/|1 - lam tau| == 0 (lam tau < 1)",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "sqrt(C/A) - sqrt(2 Sig K) tau^(b/2)/|1 - lam tau| == 0 (lam tau > 1)",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "2C/(B + sqrt(B^2+4AC)) * (B + sqrt(B^2+4AC)) - 2C == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "B + sqrt(B^2+4AC) - sqrt(4AC) - [B + B^2/(sqrt(B^2+4AC) + sqrt(4AC))] == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "B + B^2/(sqrt(B^2+4AC) + sqrt(4AC)) > 0 (so P <= sqrt(C/A))",
+   "route": "assumptions",
+   "pass": true,
+   "expr": "B_s**2/(2*sqrt(A_s)*sqrt(C_s) + sqrt(4*A_s*C_s + B_s**2)) + B_s"
+  }
+ ],
+ "d": [
+  {
+   "desc": "A(tau) - A(1/(lam^2 tau)) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "v_{b,K}(tau) - v_{2-b,K lam^(2-2b)}(1/(lam^2 tau)) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "P_{b,K}(tau) - P_{2-b,K'}(1/(lam^2 tau)) == 0",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "e": [
+  {
+   "desc": "Var(s(t) - e^{-lam d} s(t-d)) - F(1 - e^{-2 lam d}) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "e^{-2 lam d} s*^2 + F(1 - e^{-2 lam d}) - [F - e^{-2 lam d}(F - s*^2)] == 0",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "f": [
+  {
+   "desc": "d s*^2/dSig - 2(lam sq + lam^2 + Sig Pi)/(sq (lam + sq)^2) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "2(lam sq + lam^2 + Sig Pi)/(sq (lam + sq)^2) > 0 (increasing in Sigma)",
+   "route": "assumptions",
+   "pass": true,
+   "expr": "2*(Pi*Sigma + lambda**2 + lambda*sqrt(2*Pi*Sigma + lambda**2))/((lambda + sqrt(2*Pi*Sigma + lambda**2))**2*sqrt(2*Pi*Sigma + lambda**2))"
+  },
+  {
+   "desc": "d s*^2/dlam + 2 Sig (1 + lam/sq)/(lam + sq)^2 == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "-2 Sig (1 + lam/sq)/(lam + sq)^2 < 0 (decreasing in lambda at fixed Sigma)",
+   "route": "assumptions",
+   "pass": true,
+   "expr": "-2*Sigma/(2*Pi*Sigma + lambda**2 + lambda*sqrt(2*Pi*Sigma + lambda**2))"
+  },
+  {
+   "desc": "2F/(1 + sqrt(1 + 2 F Pi/lam)) - s*^2 at Sigma = F lam == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "d/dlam [2F/(1+rt)] - 2 F^2 Pi/(lam^2 rt (1 + rt)^2) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "2 F^2 Pi/(lam^2 rt (1+rt)^2) > 0 (increasing in lambda at fixed F)",
+   "route": "assumptions",
+   "pass": true,
+   "expr": "2*F**2*Pi/(sqrt(lambda)*(sqrt(lambda) + sqrt(2*F*Pi + lambda))**2*sqrt(2*F*Pi + lambda))"
+  }
+ ],
+ "pass": true,
+ "n": 23,
+ "lines": [
+  "(a) ordering derivative",
+  "  [PASS] (simplify) d/dtau log S - [beta/tau - 2 tau w^2/(1 + tau^2 w^2)] == 0",
+  "  [PASS] (simplify) 2/tau - 2 tau w^2/(1+tau^2 w^2) - 2/(tau (1 + tau^2 w^2)) == 0",
+  "  [PASS] (assumptions) 2/(tau (1 + tau^2 w^2)) > 0 (second term < 2/tau): 2/(omega**2*tau**3 + tau)",
+  "(b) matched zero-frequency garbling",
+  "  [PASS] (simplify) S_tau1 - S_tau2 - |H_xi(i w)|^2 == 0",
+  "  [PASS] (simplify) S_tau1 - S_tau2 - (tau2^2 - tau1^2) w^2/(Pi (1+tau1^2 w^2)(1+tau2^2 w^2)) == 0",
+  "(c) bound P <= sqrt(C/A)",
+  "  [PASS] (simplify) 2C/sqrt(4AC) - sqrt(C/A) == 0",
+  "  [PASS] (simplify) sqrt(C/A) - sqrt(2 Sig K) tau^(b/2)/|1 - lam tau| == 0 (lam tau < 1)",
+  "  [PASS] (simplify) sqrt(C/A) - sqrt(2 Sig K) tau^(b/2)/|1 - lam tau| == 0 (lam tau > 1)",
+  "  [PASS] (simplify) 2C/(B + sqrt(B^2+4AC)) * (B + sqrt(B^2+4AC)) - 2C == 0",
+  "  [PASS] (simplify) B + sqrt(B^2+4AC) - sqrt(4AC) - [B + B^2/(sqrt(B^2+4AC) + sqrt(4AC))] == 0",
+  "  [PASS] (assumptions) B + B^2/(sqrt(B^2+4AC) + sqrt(4AC)) > 0 (so P <= sqrt(C/A)): B_s**2/(2*sqrt(A_s)*sqrt(C_s) + sqrt(4*A_s*C_s + B_s**2)) + B_s",
+  "(d) duality",
+  "  [PASS] (simplify) A(tau) - A(1/(lam^2 tau)) == 0",
+  "  [PASS] (simplify) v_{b,K}(tau) - v_{2-b,K lam^(2-2b)}(1/(lam^2 tau)) == 0",
+  "  [PASS] (simplify) P_{b,K}(tau) - P_{2-b,K'}(1/(lam^2 tau)) == 0",
+  "(e) delay",
+  "  [PASS] (simplify) Var(s(t) - e^{-lam d} s(t-d)) - F(1 - e^{-2 lam d}) == 0",
+  "  [PASS] (simplify) e^{-2 lam d} s*^2 + F(1 - e^{-2 lam d}) - [F - e^{-2 lam d}(F - s*^2)] == 0",
+  "(f) signal-sweep signs",
+  "  [PASS] (simplify) d s*^2/dSig - 2(lam sq + lam^2 + Sig Pi)/(sq (lam + sq)^2) == 0",
+  "  [PASS] (assumptions) 2(lam sq + lam^2 + Sig Pi)/(sq (lam + sq)^2) > 0 (increasing in Sigma): 2*(Pi*Sigma + lambda**2 + lambda*sqrt(2*Pi*Sigma + lambda**2))/((lambda + sqrt(2*Pi*Sigma + lambda**2))**2*sqrt(2*Pi*Sigma + lambda**2))",
+  "  [PASS] (simplify) d s*^2/dlam + 2 Sig (1 + lam/sq)/(lam + sq)^2 == 0",
+  "  [PASS] (assumptions) -2 Sig (1 + lam/sq)/(lam + sq)^2 < 0 (decreasing in lambda at fixed Sigma): -2*Sigma/(2*Pi*Sigma + lambda**2 + lambda*sqrt(2*Pi*Sigma + lambda**2))",
+  "  [PASS] (simplify) 2F/(1 + sqrt(1 + 2 F Pi/lam)) - s*^2 at Sigma = F lam == 0",
+  "  [PASS] (simplify) d/dlam [2F/(1+rt)] - 2 F^2 Pi/(lam^2 rt (1 + rt)^2) == 0",
+  "  [PASS] (assumptions) 2 F^2 Pi/(lam^2 rt (1+rt)^2) > 0 (increasing in lambda at fixed F): 2*F**2*Pi/(sqrt(lambda)*(sqrt(lambda) + sqrt(2*F*Pi + lambda))**2*sqrt(2*F*Pi + lambda))",
+  "T11.1: PASS (23/23)"
+ ]
+}

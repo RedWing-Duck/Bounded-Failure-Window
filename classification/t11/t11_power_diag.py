@@ -20,33 +20,45 @@ for bi in range(len(BETAS)):
         p = {k: float(10.0**rng.uniform(-2, 2)) for k in ("lam", "Sig", "K")}
         sets.setdefault(bi, []).append((p, int(rng.integers(2**63))))
 targets = [bi for bi, b in enumerate(BETAS) if 2 <= b < mp.mpf("2.6")]
-out = {"by_beta": [], "beta2_limit_check": []}
-for bi in targets:
+
+
+def job(args):
+    bi, p, seed = args
     beta = BETAS[bi]
-    agree = bad = 0
-    counts = {}
-    for p, seed in sets[bi]:
-        K, lam, Sig = (mp.mpf(p[k]) for k in ("K", "lam", "Sig"))
-        Lm, Lp, xm, xp = limits_pow(beta, K, lam, Sig)
-        if beta == 2:
-            Lp = sstar(lam, Sig, lam**2 / K)
-            if len(out["beta2_limit_check"]) < 20:
-                out["beta2_limit_check"].append({"P_at_1e80": P_pow(mp.power(10, 80) / lam, beta, K, lam, Sig), "sigma_star_lam2_over_K": Lp})
-        else:
-            xp = max(mp.mpf(80), 50 / (beta - 2)) - mp.log10(lam)
-        A = analyse_with_limits(power_curve(beta, K, lam, Sig), Lm, Lp, xm, xp)
-        r_ = np.random.default_rng(seed)
-        Pref = Lp
-        tols = [Pref * mp.power(10, mp.mpf(float(x))) for x in r_.uniform(-3, float(mp.log10(2)), 7)]
-        tols += [Pref * (1 - mp.mpf("1e-6")), Pref, Pref * (1 + mp.mpf("1e-6"))]
-        for R2 in tols:
-            r = classify(A, R2)
-            ok = r["route_i"] == r["route_ii"] and r["route_i"] in {(0, 1, 0), (0, 0, 0)}
-            agree += int(ok)
-            bad += int(not ok)
-            counts[name(r["route_i"])] = counts.get(name(r["route_i"]), 0) + 1
-    out["by_beta"].append({"beta": beta, "classifications": agree + bad, "failures": bad, "classes": counts})
-    print(f"beta = {mp.nstr(beta, 8)}: corrected classifications {agree + bad}, failures {bad}, classes {counts}", flush=True)
-for x in out["beta2_limit_check"][:3]:
-    print("beta = 2: P(1e80/lam) =", mp.nstr(x["P_at_1e80"], 15), " sigma*^2(lam^2/K) =", mp.nstr(x["sigma_star_lam2_over_K"], 15))
-save_json(out, "t11_3_diag.json")
+    K, lam, Sig = (mp.mpf(p[k]) for k in ("K", "lam", "Sig"))
+    Lm, Lp, xm, xp = limits_pow(beta, K, lam, Sig)
+    chk = None
+    if beta == 2:
+        Lp = sstar(lam, Sig, lam**2 / K)
+        chk = {"P_at_1e80": P_pow(mp.power(10, 80) / lam, beta, K, lam, Sig), "sigma_star_lam2_over_K": Lp}
+    else:
+        xp = max(mp.mpf(80), 50 / (beta - 2)) - mp.log10(lam)
+    A = analyse_with_limits(power_curve(beta, K, lam, Sig), Lm, Lp, xm, xp)
+    r_ = np.random.default_rng(seed)
+    Pref = Lp
+    tols = [Pref * mp.power(10, mp.mpf(float(x))) for x in r_.uniform(-3, float(mp.log10(2)), 7)]
+    tols += [Pref * (1 - mp.mpf("1e-6")), Pref, Pref * (1 + mp.mpf("1e-6"))]
+    res = []
+    for R2 in tols:
+        r = classify(A, R2)
+        res.append((r["route_i"] == r["route_ii"] and r["route_i"] in {(0, 1, 0), (0, 0, 0)}, name(r["route_i"])))
+    return bi, res, chk
+
+
+if __name__ == "__main__":
+    from multiprocessing import Pool
+    jobs = [(bi, p, seed) for bi in targets for p, seed in sets[bi]]
+    with Pool(4) as pool:
+        allres = pool.map(job, jobs, chunksize=10)
+    out = {"by_beta": [], "beta2_limit_check": [c for _, _, c in allres if c is not None][:20]}
+    for bi in targets:
+        rr = [x for b_, res, _ in allres if b_ == bi for x in res]
+        counts = {}
+        for ok, nm in rr:
+            counts[nm] = counts.get(nm, 0) + 1
+        bad = sum(not ok for ok, _ in rr)
+        out["by_beta"].append({"beta": BETAS[bi], "classifications": len(rr), "failures": bad, "classes": counts})
+        print(f"beta = {mp.nstr(BETAS[bi], 8)}: corrected classifications {len(rr)}, failures {bad}, classes {counts}", flush=True)
+    for x in out["beta2_limit_check"][:3]:
+        print("beta = 2: P(1e80/lam) =", mp.nstr(x["P_at_1e80"], 15), " sigma*^2(lam^2/K) =", mp.nstr(x["sigma_star_lam2_over_K"], 15))
+    save_json(out, "t11_3_diag.json")

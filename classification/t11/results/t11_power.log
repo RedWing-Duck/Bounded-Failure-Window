@@ -1,0 +1,10 @@
+  families done 3453s
+  routes done 3460s
+beta=2.0: tp_fail 0, class_fail 522, limit_fail 0, examples [{'R2': mpf('0.057345152429813828761607843471048283772961161837065654'), 'route_i': 'upper ray', 'route_ii': 'Empty'}, {'R2': mpf('0.05589940446484022564223894987049342465386163303144759'), 'route_i': 'upper ray', 'route_ii': 'Empty'}] []
+beta=2.05: tp_fail 0, class_fail 256, limit_fail 0, examples [{'R2': mpf('238.48365340801287750746423190997209422751192208000864'), 'route_i': 'upper ray', 'route_ii': 'Empty'}, {'R2': mpf('125.05796538648417409707220058250294372488450496847623'), 'route_i': 'upper ray', 'route_ii': 'Empty'}] []
+beta=2.1: tp_fail 0, class_fail 22, limit_fail 0, examples [{'R2': mpf('1.0688858092628565785736042789261779454780827609209519'), 'route_i': 'upper ray', 'route_ii': 'Empty'}, {'R2': mpf('3.8695489567657918188306417228230440790111664770005704'), 'route_i': 'upper ray', 'route_ii': 'Empty'}] []
+beta=2.000001: tp_fail 0, class_fail 469, limit_fail 0, examples [{'R2': mpf('33.106347578114800807703130613017614802216475770865393'), 'route_i': 'upper ray', 'route_ii': 'Empty'}, {'R2': mpf('46.913827202954318857392657247960398307355514212438298'), 'route_i': 'upper ray', 'route_ii': 'Empty'}] []
+beta=2.001: tp_fail 0, class_fail 517, limit_fail 0, examples [{'R2': mpf('8.2083778499432818056301904206021999951001593031862499'), 'route_i': 'upper ray', 'route_ii': 'Empty'}, {'R2': mpf('12.115873291410945755838519210924914460802935770581049'), 'route_i': 'upper ray', 'route_ii': 'Empty'}] []
+unimodality histogram (0 < beta < 2): {1: 12900}
+turning points fail 0; classes fail 1786; limits fail 0 (applicable 14898); duality max rel 7.79e-51; routes max err 1.01e-14 fails 0; spectral fails 0
+T11.3: FAIL
