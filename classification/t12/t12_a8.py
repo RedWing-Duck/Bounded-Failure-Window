@@ -182,6 +182,9 @@ def main():
                        "fails": [dict(e, p=r["p"]) for r, e in ((r, r["excess"]) for r in rr if "excess" in r) if not e["pass"]][:20]}
         if fam in ("D1", "D2"):
             errs = [e["rel_err"] for e in ex if "rel_err" in e]
+            F["excess_points"] = [{"p": r["p"], "F": mp.mpf(r["p"]["Sig"]) / mp.mpf(r["p"]["lam"]), "end": r["excess"]["end"],
+                                   **({"G_over_2FPi": r["excess"]["G_over_2FPi"]} if fam == "D1" else {"kappa": r["excess"]["kappa"]})}
+                                  for r in rr if "excess" in r and "end" in r["excess"]]
             F["excess"]["n_nonempty_pred"] = sum(e["pred"] == "lower ray" for e in ex)
             F["excess"]["max_rel_err"] = max(errs) if errs else None
         else:
