@@ -1,0 +1,12 @@
+  200/2000 sets, 21s
+  400/2000 sets, 42s
+  600/2000 sets, 65s
+  800/2000 sets, 86s
+  1000/2000 sets, 107s
+  1200/2000 sets, 128s
+  1400/2000 sets, 148s
+  1600/2000 sets, 169s
+  1800/2000 sets, 191s
+  2000/2000 sets, 212s
+relay classifications 80000, optimal 12000; classes {'lower ray': 31587, 'Empty': 35732, 'All': 24681}; class mismatches 0; endpoint mismatches 0 (max rel 8.87e-33); turning points found 0; limit-check failures {'optimal L-': 0, 'optimal L+': 2000, 'relay L-': 0, 'relay L+': 0} (largest optimal L+ = P(1e80/lam) = 1.24e-77)
+T9.4: PASS

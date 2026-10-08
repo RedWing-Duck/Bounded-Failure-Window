@@ -1,0 +1,67 @@
+{
+ "rows": [
+  {
+   "quantity": "V_w",
+   "computed": 0.09,
+   "stated": 0.09,
+   "match": true
+  },
+  {
+   "quantity": "H_G",
+   "computed": 0.006666666666666667,
+   "stated": 0.006667,
+   "match": true
+  },
+  {
+   "quantity": "tau_F",
+   "computed": 16.0,
+   "stated": 16.0,
+   "match": true
+  },
+  {
+   "quantity": "sigma2(1)",
+   "computed": 0.04,
+   "stated": 0.04,
+   "match": true
+  },
+  {
+   "quantity": "sigma2(10)",
+   "computed": 0.011875,
+   "stated": 0.01188,
+   "match": true
+  },
+  {
+   "quantity": "sigma2(16)",
+   "computed": 0.01,
+   "stated": 0.01,
+   "match": true
+  },
+  {
+   "quantity": "sigma*^2",
+   "computed": 0.009950493836207795,
+   "stated": 0.00995,
+   "match": true
+  },
+  {
+   "quantity": "P(1)",
+   "computed": 0.00980392156862745,
+   "stated": 0.009804,
+   "match": true
+  },
+  {
+   "quantity": "P(10)",
+   "computed": 0.006781303314241854,
+   "stated": 0.006781,
+   "match": true
+  },
+  {
+   "quantity": "V(1) (3 s.f.)",
+   "computed": 0.00990098767241559,
+   "stated": 0.0099,
+   "match": true,
+   "argmin_G": 0.020101002427791413,
+   "grid_local_minima": 3
+  }
+ ],
+ "pass": true
+}

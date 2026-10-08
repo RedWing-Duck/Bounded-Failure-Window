@@ -1,0 +1,209 @@
+{
+ "a": [
+  {
+   "desc": "Var x (Lyapunov) - Lemma 2.1 == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "Var eta (Lyapunov) - 1/(2 Pi tau) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "integral of C_eta over R - 1/Pi == 0 (S_eta(0) = 1/Pi)",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "Fourier transform of C_eta - (1/Pi)/(1 + tau^2 omega^2) == 0",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "b": [
+  {
+   "desc": "sigma2 - F - G(lam G/(2 Pi(1+a tau)) - Sig)/(lam a) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "lam G/(2 Pi(1+a tau)) - Sig - (lam/2)(G/Pi - 2F(1+a tau))/(1+a tau) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "d sigma2/d tau + G^2/(2 Pi (1+a tau)^2) == 0",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "c": [
+  {
+   "desc": "sigma2(tau_R) - R^2 == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "sigma2(tau_F) - F == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "tau_R(R^2 = F) - tau_F == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "a tau_R 2 Pi (a R^2 - Sig) - 2 Pi a (V_w - R^2) == 0",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "d": [
+  {
+   "desc": "-tau^2 R_v Ric - quadratic == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "tau^2 (S^2 - Q R_v) + 2 Sig/Pi == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "tau^2 (2 h S + 2 lam R_v) - b == 0",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "d_literal": {
+  "desc": "literal reading 'tau^2 x Riccati' minus quadratic (informational)",
+  "sympy": "-(2*Pi*Sigma*tau**2 + Pi*tau**2 + 1)*(P**2*Pi*lambda**2*tau**2 - 2*P**2*Pi*lambda*tau + P**2*Pi + 4*P*Pi*Sigma*tau + 2*P*lambda - 2*Sigma)/(Pi*(2*Pi*Sigma*tau**2 + 1))"
+ },
+ "e": [
+  {
+   "desc": "quadratic at P = 4 Sig/(Pi(b + sqrt D)) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "at lam tau = 1: P - (2 Sig/Pi)/b == 0",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "f": [
+  {
+   "desc": "dD/dtau - (32 Sig^2 tau + 16 Sig lam^2 tau/Pi) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "dD/dtau - (8 Sig b - 16 Sig lam (1 - lam tau)/Pi) == 0",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "g": [
+  {
+   "desc": "P(0+) = G*/Pi",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "tau P -> 1/(Pi(1 + sqrt(1 + lam^2/(2 Sig Pi))))",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "relay tau -> 0+: V_w",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "relay tau -> oo: H_G",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "h": [
+  {
+   "desc": "quadratic at P = R^2, tau = tau*_R == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "leading coefficient - lam^2 R^4 == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "discriminant - R^4 Delta == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "constant - (R^2 - G*/Pi)(R^2 + (lam + s)/Pi) == 0",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "i": [
+  {
+   "desc": "lim_{tau->0} sigma2 - (Sig + G^2/(2 Pi))/(lam + G) == 0",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "pass": true,
+ "n_items": 27,
+ "routes": {
+  "simplify": 27
+ },
+ "lines": [
+  "(a) Lemma 2.1, augmented-state Lyapunov route",
+  "  Var x = (G**2 + 2*G*Pi*Sigma*tau + 2*Pi*Sigma*lambda*tau + 2*Pi*Sigma)/(2*Pi*(G + lambda)*(G*tau + lambda*tau + 1))",
+  "  [PASS] (simplify) Var x (Lyapunov) - Lemma 2.1 == 0",
+  "  [PASS] (simplify) Var eta (Lyapunov) - 1/(2 Pi tau) == 0",
+  "  [PASS] (simplify) integral of C_eta over R - 1/Pi == 0 (S_eta(0) = 1/Pi)",
+  "  [PASS] (simplify) Fourier transform of C_eta - (1/Pi)/(1 + tau^2 omega^2) == 0",
+  "(b) excess identity",
+  "  [PASS] (simplify) sigma2 - F - G(lam G/(2 Pi(1+a tau)) - Sig)/(lam a) == 0",
+  "  [PASS] (simplify) lam G/(2 Pi(1+a tau)) - Sig - (lam/2)(G/Pi - 2F(1+a tau))/(1+a tau) == 0",
+  "  [PASS] (simplify) d sigma2/d tau + G^2/(2 Pi (1+a tau)^2) == 0",
+  "(c) tau_R and tau_F",
+  "  [PASS] (simplify) sigma2(tau_R) - R^2 == 0",
+  "  [PASS] (simplify) sigma2(tau_F) - F == 0",
+  "  [PASS] (simplify) tau_R(R^2 = F) - tau_F == 0",
+  "  [PASS] (simplify) a tau_R 2 Pi (a R^2 - Sig) - 2 Pi a (V_w - R^2) == 0",
+  "(d) Riccati expansion",
+  "  [PASS] (simplify) -tau^2 R_v Ric - quadratic == 0",
+  "  [PASS] (simplify) tau^2 (S^2 - Q R_v) + 2 Sig/Pi == 0",
+  "  [PASS] (simplify) tau^2 (2 h S + 2 lam R_v) - b == 0",
+  "  info: tau^2*Ric - quadratic = -(2*Pi*Sigma*tau**2 + Pi*tau**2 + 1)*(P**2*Pi*lambda**2*tau**2 - 2*P**2*Pi*lambda*tau + P**2*Pi + 4*P*Pi*Sigma*tau + 2*P*lambda - 2*Sigma)/(Pi*(2*Pi*Sigma*tau**2 + 1))  (nonzero: the factor -R_v is needed)",
+  "(e) rationalized root",
+  "  [PASS] (simplify) quadratic at P = 4 Sig/(Pi(b + sqrt D)) == 0",
+  "  [PASS] (simplify) at lam tau = 1: P - (2 Sig/Pi)/b == 0",
+  "(f) dD/dtau",
+  "  [PASS] (simplify) dD/dtau - (32 Sig^2 tau + 16 Sig lam^2 tau/Pi) == 0",
+  "  [PASS] (simplify) dD/dtau - (8 Sig b - 16 Sig lam (1 - lam tau)/Pi) == 0",
+  "(g) limits",
+  "  sympy limit: 4*Sigma/(Pi*(sqrt(8*Sigma/Pi + 4*lambda**2/Pi**2) + 2*lambda/Pi))",
+  "  [PASS] (simplify) P(0+) = G*/Pi",
+  "  sympy limit: 2*Sigma/(Pi*(2*Sigma + sqrt(4*Sigma**2 + 2*Sigma*lambda**2/Pi)))",
+  "  [PASS] (simplify) tau P -> 1/(Pi(1 + sqrt(1 + lam^2/(2 Sig Pi))))",
+  "  sympy limit: (G**2/(2*Pi) + Sigma)/(G + lambda)",
+  "  [PASS] (simplify) relay tau -> 0+: V_w",
+  "  sympy limit: Sigma/(G + lambda)",
+  "  [PASS] (simplify) relay tau -> oo: H_G",
+  "(h) tau*_R",
+  "  [PASS] (simplify) quadratic at P = R^2, tau = tau*_R == 0",
+  "  [PASS] (simplify) leading coefficient - lam^2 R^4 == 0",
+  "  [PASS] (simplify) discriminant - R^4 Delta == 0",
+  "  [PASS] (simplify) constant - (R^2 - G*/Pi)(R^2 + (lam + s)/Pi) == 0",
+  "(i) Paper 1 white-noise formula",
+  "  [PASS] (simplify) lim_{tau->0} sigma2 - (Sig + G^2/(2 Pi))/(lam + G) == 0",
+  "T9.1: PASS (27/27); routes {'simplify': 27}"
+ ]
+}

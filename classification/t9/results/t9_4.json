@@ -1,0 +1,27 @@
+{
+ "N": 2000,
+ "stats": {
+  "relay": 80000,
+  "optimal": 12000,
+  "class_mismatch": 0,
+  "endpoint_mismatch": 0,
+  "limit_check_fail": 2000,
+  "turning_points": 0,
+  "classes": {
+   "lower ray": 31587,
+   "Empty": 35732,
+   "All": 24681
+  },
+  "max_endpoint_rel": 8.868780617793105e-33,
+  "limit_check_fail_by": {
+   "optimal L-": 0,
+   "optimal L+": 2000,
+   "relay L-": 0,
+   "relay L+": 0
+  },
+  "optimal_L_plus_max": 1.243665160009895e-77
+ },
+ "bad": [],
+ "pass": true,
+ "seconds": 212.2549910545349
+}

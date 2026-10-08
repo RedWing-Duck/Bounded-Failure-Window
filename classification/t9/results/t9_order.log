@@ -1,0 +1,13 @@
+  200/2000 sets, 20s
+  400/2000 sets, 40s
+  600/2000 sets, 60s
+  800/2000 sets, 81s
+  1000/2000 sets, 101s
+  1200/2000 sets, 121s
+  1400/2000 sets, 142s
+  1600/2000 sets, 162s
+  1800/2000 sets, 182s
+  2000/2000 sets, 203s
+2000 sets x 200 tau = 400000 samples: relay extrema 0, P extrema 0, P > relay 0 (max P/relay 1), V not strictly decreasing 285, V < P 13
+numerical result: min(V - P) = -6.78e-21 at {'lam': 501.6252329469086, 'Sig': 0.01796759314885045, 'Pi': 0.001251151812249199, 'tau': np.float64(1.9935201308061763e-09), 'V': 3.5818758642768494e-05, 'P': 3.58187586427685e-05}; min (V - P)/P = -1.9e-16 at {'lam': 966.942226945416, 'Sig': 0.002155671454647023, 'Pi': 0.005449140944966764, 'tau': np.float64(7.224712658225446e-09), 'V': 2.2293694437601274e-06, 'P': 2.229369443760128e-06, 'lam_tau': np.float64(6.985879746785249e-06), 'G_best': np.float64(1.2128170672094198e-08)}; V - P <= 0 ever: True; sets/tau with >1 local min of sigma2 in G on the grid: 222152
+T9.5: FAIL

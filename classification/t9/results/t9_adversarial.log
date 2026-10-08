@@ -1,0 +1,38 @@
+(a) linear case: 2121 evaluations; rationalized float64 worst rel err 2.95e-16; naive worst inf; naive rel err > 1e-6 for |1 - lam tau| up to 9.999999999998899e-05
+    |1-lam tau| = 0.0e+00: naive inf, rationalized 1.39e-17
+    |1-lam tau| = 1.1e-15: naive 1.00e+00, rationalized 7.89e-18
+    |1-lam tau| = 1.0e-14: naive 1.00e+00, rationalized 5.10e-18
+    |1-lam tau| = 1.0e-13: naive 1.00e+00, rationalized 1.02e-18
+    |1-lam tau| = 1.0e-12: naive 1.00e+00, rationalized 4.48e-17
+    |1-lam tau| = 1.0e-11: naive 1.00e+00, rationalized 1.31e-17
+    |1-lam tau| = 1.0e-10: naive 1.00e+00, rationalized 7.86e-17
+    |1-lam tau| = 1.0e-09: naive 1.00e+00, rationalized 2.59e-17
+    |1-lam tau| = 1.0e-08: naive 1.00e+00, rationalized 1.32e-17
+    |1-lam tau| = 1.0e-07: naive 1.00e+00, rationalized 1.33e-16
+    |1-lam tau| = 1.0e-06: naive 3.46e-03, rationalized 1.14e-16
+    |1-lam tau| = 1.0e-05: naive 6.63e-05, rationalized 2.03e-16
+    |1-lam tau| = 1.0e-04: naive 1.11e-06, rationalized 1.29e-16
+    |1-lam tau| = 1.0e-03: naive 9.42e-09, rationalized 6.62e-18
+    |1-lam tau| = 1.0e-02: naive 1.13e-10, rationalized 8.15e-17
+    |1-lam tau| = 1.0e-01: naive 5.69e-13, rationalized 5.32e-17
+(b) extremes: float64 vs mp worst rel err 1.45e-16 over 12 evaluations; class mismatches 0
+(c) near-critical: 18 tolerances, mismatches 0
+(d) G = 1e-1: ['lower ray', 'lower ray', 'lower ray', 'lower ray']
+(d) G = 1e-2: ['Empty', 'Empty', 'Empty', 'Empty']
+(d) G = 1e-3: ['All', 'Empty', 'Empty', 'Empty']
+(d) G = 1e-4: ['All', 'Empty', 'Empty', 'Empty']
+(d) G = 1e-5: ['All', 'Empty', 'Empty', 'Empty']
+(d) G = 1e-6: ['All', 'All', 'Empty', 'Empty']
+(d) G = 1e-7: ['All', 'All', 'Empty', 'Empty']
+(d) G = 1e-8: ['All', 'All', 'Empty', 'Empty']
+(d) G = 1e-9: ['All', 'All', 'Empty', 'Empty']
+(d) G = 1e-10: ['All', 'All', 'Empty', 'Empty']
+(d) G = 1e-11: ['All', 'All', 'Empty', 'Empty']
+(d) G = 1e-12: ['All', 'All', 'Empty', 'Empty']
+(e) tau = 0.1, relay: MC 0.0798532 +/- 0.00052 (SE 0.65%), formula 0.0791304, z = +1.40 ok
+(e) tau = 0.1, optimal: MC 0.00998716 +/- 7e-05 (SE 0.70%), formula 0.0099401, z = +0.67 ok
+(e) tau = 1.0, relay: MC 0.0401118 +/- 0.00036 (SE 0.91%), formula 0.04, z = +0.31 ok
+(e) tau = 1.0, optimal: MC 0.00976151 +/- 6.7e-05 (SE 0.68%), formula 0.00980392, z = -0.64 ok
+(e) tau = 10.0, relay: MC 0.0119843 +/- 4.7e-05 (SE 0.39%), formula 0.011875, z = +2.34 ok
+(e) tau = 10.0, optimal: MC 0.00681029 +/- 2e-05 (SE 0.30%), formula 0.0067813, z = +1.44 ok
+T9.6: PASS  parts {a: True, b: True, c: True, d: True, e: True}

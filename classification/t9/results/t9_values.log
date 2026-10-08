@@ -1,0 +1,11 @@
+  V_w         computed 0.09           stated 0.09  ok
+  H_G         computed 0.006666666667 stated 0.006667  ok
+  tau_F       computed 16.0           stated 16.0  ok
+  sigma2(1)   computed 0.04           stated 0.04  ok
+  sigma2(10)  computed 0.011875       stated 0.01188  ok
+  sigma2(16)  computed 0.01           stated 0.01  ok
+  sigma*^2    computed 0.009950493836 stated 0.00995  ok
+  P(1)        computed 0.009803921569 stated 0.009804  ok
+  P(10)       computed 0.006781303314 stated 0.006781  ok
+  V(1)        computed 0.009900987672 (G = 0.020101) stated about 0.00990  ok
+T9.3: PASS (10/10)

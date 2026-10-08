@@ -1,0 +1,2 @@
+not strictly decreasing (float64): 285; real in mp: 0; mp relative drop at flagged points in [9.36e-19, 1.41e-15]; lam*tau in [np.float64(1.1489510001873083e-06), np.float64(0.00019563983435170627)]; on the G -> oo limit: 0
+V < P (float64): 13; real in mp: 0; min mp (V - P)/P at flagged points 3.9e-17; lam*tau in [np.float64(1e-06), np.float64(6.985879746785249e-06)]
