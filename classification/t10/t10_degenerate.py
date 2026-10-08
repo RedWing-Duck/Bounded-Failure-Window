@@ -81,10 +81,12 @@ print(f"inflection: same TPs {same_tp}, mismatches {mism}, route disagreements {
 
 # ---------------- plateau (capped, g = 2F)
 q = mpize({"lam": 1.0, "Sig": 0.01, "c": 1.0})
-q["g"] = 2 * F
+# bug fix (documented): F must come from the curve's own (float-derived) parameters, not the decimal 0.01
+Fq = q["Sig"] / q["lam"]
+q["g"] = 2 * Fq
 Ap = analyse(pi_curve("capped", q))
 rows = []
-for lab, R2, want in (("F(1-1e-6)", F * (1 - D6), (1, 0, 0)), ("F", F, (0, 0, 0)), ("F(1+1e-6)", F * (1 + D6), (0, 0, 0))):
+for lab, R2, want in (("F(1-1e-6)", Fq * (1 - D6), (1, 0, 0)), ("F", Fq, (0, 0, 0)), ("F(1+1e-6)", Fq * (1 + D6), (0, 0, 0))):
     r = classify(Ap, R2)
     ok = r["route_i"] == want and r["route_ii"] == want
     if want == (1, 0, 0) and ok:
