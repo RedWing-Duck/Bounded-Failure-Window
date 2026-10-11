@@ -198,6 +198,9 @@ if cmp_:
     T += ["Pre-registered comparison (`compare_repro.py`): " + "; ".join(
         f"Task {k} " + (v["status"] if "status" in v else ("PASS" if v["pass"] else f"FAIL ({v['n_issues']} issues, verdicts identical {v['verdicts_identical']})"))
         for k, v in cmp_["reports"].items()) + ".", ""]
+    cd = L("t13_repro_compare_diag.json")
+    if cd and cd.get("text"):
+        T += ["Diagnosis of the comparison failures (`repro_compare_diag.py`): " + cd["text"] + ".", ""]
     for k, v in cmp_["reports"].items():
         if v.get("issues"):
             T += [f"Task {k} differences: " + "; ".join(json.dumps(i, ensure_ascii=False)[:300] for i in v["issues"][:10]), ""]
