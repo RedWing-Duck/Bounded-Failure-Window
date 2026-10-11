@@ -158,7 +158,7 @@ T += ["## Diagnoses and fixes", "",
       "tests one point ($P_0 = 1$), where $f - R^2$ is below its 1e-40 relative equality tolerance, so it reads Empty; at "
       "$P_0 = 10\\Pi$ the gap is positive in every case, and the failure set is All, as route (i) says. No document change.",
       "8. **C2 row 8, two-stage Bayesian (attribution: document).** $(1,0,1)$ was never observed (0 in 1,000 sets, 0 in 400,000 "
-      "further screened draws, optimiser infimum of $m/F$ equal to 1). Proved impossible post hoc (Theorem 6 addendum, "
+      "further screened draws). Proved impossible post hoc (Theorem 6 addendum, "
       "`t13_audit_classes_diag2.py`); row 8's stated set corrected (change log row 45). The pre-registered verdict stays FAIL.", ""]
 bad_rows = [r for r in rows if not r["pass"]]
 if rows:
