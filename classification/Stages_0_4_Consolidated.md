@@ -1,0 +1,1329 @@
+# Failure-Set Topology in Stationary Linear Filters: Stages 0–4, Consolidated
+
+**John Holder** · Source document for Paper 2 · consolidated by Task 13 · October 2026
+
+This document replaces the six stage documents (`Stage_0_1_Classification_Results.md`, `Stage_2_Tau_Sweep_Results.md`,
+`Stage_3_Falsification_Results.md`, `Stage_4_Optimality_Results.md`, `Stage_2_Completion_Results.md`, and the Stage 3
+plan) as the single source for Paper 2. It follows Roadmap v2 (Stages 0–4) and is self-contained. Every result carries
+one number from a single sequence and exactly one Roadmap Section 12 label; the label line cites the verifying task(s).
+Section 12 lists every result with its label and verification; the change log in Section 13 maps every old number to its
+new one and records every correction.
+
+---
+
+## 1. Notation and conventions
+
+**Model.** A scalar Ornstein–Uhlenbeck signal $s$ ($\dot s = -\lambda s + w_s$, $w_s$ white of intensity $2\Sigma$) is
+corrected toward a noisy observation with a gain $G \ge 0$ that is constant in time. The error $x$ of the constant-gain
+filter (the **relay**) obeys
+$$
+\dot x = -(\lambda + G)\,x + G\,\xi_s + \xi_{\text{sim}},
+$$
+with $\xi_s$ white sensory noise of intensity $1/\Pi$ (precision $\Pi > 0$) and $\xi_{\text{sim}}$ of intensity $2\Sigma$.
+All variances are **actual** stationary error variances, never filter-reported ones. The stationary variance is
+$$
+\sigma^2(G, \Pi) = \frac{\Sigma + G^2/(2\Pi)}{\lambda + G}.
+$$
+
+**Reference quantities.**
+- Floor (no correction): $F = \Sigma/\lambda$.
+- Optimal (Kalman–Bucy) gain $G^\star(\Pi) = -\lambda + \sqrt{\lambda^2 + 2\Sigma\Pi}$ and optimal variance
+  $\sigma_\star^2(\Pi) = G^\star/\Pi = 2\Sigma/(\lambda + \sqrt{\lambda^2 + 2\Sigma\Pi})$.
+- High-precision limit $H = \Sigma/(\lambda + G_\infty)$ for a gain with $G \to G_\infty$ as $\Pi \to \infty$.
+- $u = 2\Sigma\Pi/\lambda^2$ and $g = G/\lambda$ (Sections 6–7). The class letter $u$ and the variable $u$ are
+  distinguished by context.
+
+"Excess" means error above the no-correction floor $F$, not above the optimal (Wiener) error as in adaptive filtering.
+"Relay" means the constant-gain filter, not relay (on–off) feedback.
+
+**C1 (domain).** A swept parameter $\theta$ ranges over an open interval $D = (\theta_-, \theta_+)$,
+$-\infty \le \theta_- < \theta_+ \le \infty$. Endpoints never belong to $D$; behaviour there enters only through limits.
+
+**C2 (regularity).** $\sigma^2$ is continuous on $D$ and **piecewise strictly monotone**: there are finitely many turning
+points $t_1 < \dots < t_n$ in $D$, with $\sigma^2$ strictly monotone on each piece $I_j = (t_{j-1}, t_j)$ ($t_0 = \theta_-$,
+$t_{n+1} = \theta_+$). The endpoint limits $L_\pm = \lim_{\theta \to \theta_\pm}\sigma^2$ exist in $[0, \infty]$.
+
+**C2′ (plateaus).** As C2, but each piece may be strictly monotone or constant.
+
+**C3 (failure set).** For a tolerance $R^2 > 0$, $\mathcal F(R^2) = \{\theta \in D : \sigma^2(\theta) > R^2\}$. The strict
+inequality makes $\mathcal F$ open.
+
+**C4 (approach direction).** At an end, $\sigma^2$ approaches the finite limit $L_\pm$ **from above** if $\sigma^2 > L_\pm$
+on the adjacent piece and **from below** if $\sigma^2 < L_\pm$ there. Under C2 exactly one holds: from above at $\theta_-$
+means the first piece is **increasing**, and from above at $\theta_+$ means the last piece is **decreasing**.
+
+**C5 (class).** Write $\mathcal F(R^2)$ as a disjoint union of open intervals. Its class is the triple $(\ell, u, k)$:
+$\ell = 1$ if some component contains $(\theta_-, \theta_- + \varepsilon)$ (a **lower ray**); $u = 1$ if some component
+contains $(\theta_+ - \varepsilon, \theta_+)$ (an **upper ray**); $k$ is the number of components bounded away from both
+ends (**windows**). If one component is all of $D$ the class is **All**.
+
+| Name | Class |
+|---|---|
+| Empty | $(0,0,0)$ |
+| All | $\mathcal F = D$ |
+| Lower ray (threshold) | $(1,0,0)$ |
+| Upper ray | $(0,1,0)$ |
+| Two rays | $(1,1,0)$, $\mathcal F \ne D$ |
+| Window | $(0,0,1)$ |
+| Multi-window | $(0,0,k)$, $k \ge 2$ |
+| Mixed | $k \ge 1$ and $\ell + u \ge 1$ |
+
+**C6 (critical tolerances).** $\mathcal C = \{L_-, L_+\} \cup \{\sigma^2(t_1), \dots, \sigma^2(t_n)\}$, finite values only
+(under C2′, plateau values as well).
+
+**Two kinds of sweep.** Environment sweeps change the world the filter sees ($\Pi$, correlation time $\tau$, $\Sigma$);
+design sweeps change the filter ($\Pi_0$, $c$). The sampling interval $\Delta t$ is either.
+
+---
+
+## 2. The critical-tolerance theorem
+
+**Proposition 1 (topological realizability).** For every $\ell, u \in \{0,1\}$ and every finite $k \ge 0$ there is a
+continuous piecewise strictly monotone function on $(0,\infty)$ and a tolerance whose failure set has class
+$(\ell, u, k)$; All is realized too. Classes with $k = \infty$ need infinitely many turning points and are excluded by C2.
+
+*Proof.* A piecewise-linear zigzag with $k$ interior peaks of height 2 separated by troughs of height 0, preceded by a
+segment starting at height 2 (if $\ell = 1$) or 0 (if $\ell = 0$), and likewise at the upper end; $R^2 = 1$. For All, any
+function bounded below by 2. $\square$
+
+**Label:** Proposition (proved; T8.5, 21/21 classes).
+
+Reading: topology alone excludes nothing; every restriction below comes from the filtering model.
+
+**Theorem 2 (critical-tolerance theorem).** Assume C1–C6.
+
+(a) *Local constancy.* The class of $\mathcal F(R^2)$ is constant on each connected component of $(0,\infty)\setminus\mathcal C$.
+
+(b) *Rays.* $\ell = 1$ if $R^2 < L_-$ and $\ell = 0$ if $R^2 > L_-$. If $R^2 = L_-$, then $\ell = 1$ iff $\sigma^2$
+approaches $L_-$ from above. The same holds for $u$ with $L_+$.
+
+(c) *Windows.* Each window contains an interior local maximum $t_j$ with $\sigma^2(t_j) > R^2$, and distinct windows
+contain distinct maxima, so $k \le \#\{\text{interior local maxima with value} > R^2\}$, with equality iff each such
+maximum lies in a component that touches neither end and contains no other such maximum.
+
+(d) *Determining data.* The class at every $R^2$ is determined by the ordered sequence
+$(L_-, \sigma^2(t_1), \dots, \sigma^2(t_n), L_+)$ and the two approach directions.
+
+*Proof.* (a) On each piece $I_j$, $\sigma^2$ is a strictly monotone continuous bijection onto the open interval between its
+end values $a_j, b_j$ (turning-point values or endpoint limits). For $R^2 \notin \mathcal C$, $\{\sigma^2 > R^2\} \cap I_j$
+is empty, all of $I_j$, or a one-sided subinterval adjacent to the larger end, decided by the position of $R^2$ relative to
+$a_j, b_j$; adjacent contributions join exactly when $\sigma^2(t_j) > R^2$. All of this is constant on a component of
+$(0,\infty)\setminus\mathcal C$. (b) Near $\theta_-$, $\sigma^2$ is close to $L_-$; if $R^2 = L_-$ the first piece is strictly
+monotone, so $\sigma^2 > L_-$ throughout it iff the approach is from above. (c) A window $(a, b)$ has
+$\sigma^2(a) = \sigma^2(b) = R^2$ and $\sigma^2 > R^2$ inside, so $\sigma^2$ has an interior maximum on $[a,b]$, a turning
+point with value $> R^2$; disjoint windows contain distinct maxima. (d) The construction in (a) uses only the ordered end
+values, and (b) adds the approach directions. $\square$
+
+**Label:** Theorem (proved; T8.1(h), T8.3 62/62 classes; used by every classifier in T9–T13).
+
+Reading: the classification of any sweep reduces to its endpoint limits, approach directions and ordered extremum values.
+
+**Theorem 3 (plateaus).** Under C2′ instead of C2, Theorem 2 holds with three changes: plateau values join the critical
+tolerances; at $R^2$ equal to a plateau value the plateau is excluded from $\mathcal F$, which can split or remove
+components; an end adjacent to a plateau at value $L$ carries a ray iff $R^2 < L$.
+
+*Proof.* As Theorem 2(a)–(b). A constant piece of value $p$ contributes all of the piece if $R^2 < p$ and nothing otherwise,
+which is constant on each interval avoiding $p$. $\square$
+
+**Label:** Theorem (proved; T10.5 plateau check).
+
+**Check against Paper 1.** For the Bayesian-weight gain along $\Pi$ with $\kappa > 2$ (Proposition 7) the sequence is
+$(F, M, H)$, approached from above at both ends; Theorem 2 gives All ($R^2 \le H$), lower ray ($H < R^2 \le F$), window
+($F < R^2 < M$), Empty ($R^2 \ge M$): Paper 1's four regimes, including the equality cases.
+
+---
+
+## 3. The model along precision
+
+**Proposition 4 (excess identity; Paper 1).**
+$$
+\sigma^2 - F = \frac{G\big(\lambda G/(2\Pi) - \Sigma\big)}{\lambda(\lambda + G)},
+\qquad
+\sigma^2 > F \iff G > 2F\Pi.
+$$
+
+**Label:** Proposition (proved in Paper 1; T8.1(c)).
+
+Reading: correction injects noise $G^2/(2\Pi)$ and removes variance $\Sigma G/\lambda$; the relay is worse than no
+correction exactly when injection exceeds removal.
+
+**Lemma 5 (single minimum in the gain).** Fix $\Pi > 0$. On $G \in [0,\infty)$,
+$$
+\frac{\partial\sigma^2}{\partial G} = \frac{G^2 + 2\lambda G - 2\Sigma\Pi}{2\Pi(\lambda + G)^2}.
+$$
+The numerator has exactly one positive root, $G^\star(\Pi)$, so $\sigma^2(\cdot, \Pi)$ is strictly decreasing on
+$[0, G^\star]$ and strictly increasing on $[G^\star, \infty)$, with minimum value $\sigma_\star^2(\Pi) = G^\star/\Pi < F$.
+Moreover $\sigma^2(0, \Pi) = F$, $\sigma^2 \to \infty$ as $G \to \infty$, and $\sigma^2(G, \Pi) \le F \iff 0 \le G \le 2F\Pi$,
+with equality exactly at $G = 0$ and $G = 2F\Pi$.
+
+*Proof.* The numerator of $\partial_G\sigma^2$ is $\tfrac{G}{\Pi}(\lambda + G) - \Sigma - \tfrac{G^2}{2\Pi} =
+\tfrac{1}{2\Pi}(G^2 + 2\lambda G - 2\Sigma\Pi)$, with roots $-\lambda \pm \sqrt{\lambda^2 + 2\Sigma\Pi}$, one of each sign.
+At the root, $G^2 + 2\lambda G = 2\Sigma\Pi$ gives $\sigma^2 = G^\star/\Pi$, and $G^\star/\Pi < F$ because
+$\sqrt{\lambda^2 + 2\Sigma\Pi} > \lambda$. The last statement is Proposition 4. As $G \to \infty$, $\sigma^2 \sim G/(2\Pi)$.
+$\square$
+
+**Label:** Lemma (proved; T8.1(a)–(c)).
+
+**Theorem 6 (window theorem; Paper 1).** Assume $G$ is continuous, $G \to 0$ and $G^2/\Pi \to 0$ as $\Pi \to 0$, and
+$G \to G_\infty \in (0,\infty)$. Then some tolerance fails on a bounded set of precisions away from zero (a window) iff
+$\sup_{\Pi > 0} G(\Pi)/\Pi > 2F$; every $R^2 \in (F, \sup\sigma^2)$ then gives a window. The optimal variance
+$\sigma_\star^2(\Pi)$ decreases strictly from $F$ to $0$, so the optimal filter never windows along $\Pi$: its classes are
+lower ray ($R^2 < F$) and Empty ($R^2 \ge F$).
+
+**Label:** Theorem (proved in Paper 1 and its verification suite; optimal part re-checked T13 C2 row 1).
+
+**Proposition 7 (Bayesian-weight gain along precision).** For $G = c\Pi/(\Pi + \Pi_0)$, with over-weighting ratio
+$\kappa = (c/\Pi_0)/F$: $\sigma^2$ has one turning point, a maximum $M$, iff $\kappa > 2$, and is strictly decreasing
+otherwise. Endpoint limits $F$ (from above iff $\kappa > 2$) and $H = \Sigma/(\lambda + c)$ (from above). Classes: All
+($R^2 \le H$), lower ray ($H < R^2 \le F$), window ($F < R^2 < M$, only if $\kappa > 2$), Empty ($R^2 \ge \max(M, F)$).
+
+*Proof.* By Lemma 51 with $\varepsilon = 1 - G/c$, $N = 0$ reduces to $G^2 + 2\lambda G + 2\Sigma\Pi_0 - \lambda c = 0$,
+which has one positive root iff $\lambda c > 2\Sigma\Pi_0$, i.e. $\kappa > 2$. Near $\Pi = 0$,
+$N \approx \Pi(\lambda c/\Pi_0 - 2\Sigma)$, so the turning point is a maximum. $H$ is approached from above by Lemma 52.
+The classes follow from Theorem 2. $\square$
+
+**Label:** Proposition (proved in Paper 1; reduction T10.3, position error $6\times10^{-31}$; T10.7 and T13 C2 row 2).
+
+Reading: the over-weighting ratio decides the window, and the peak is unique.
+
+---
+
+## 4. Design sweeps
+
+**Theorem 8 (monotone gain sweeps cannot window).** Fix $\Pi$. Let $\theta \mapsto G(\theta)$ be continuous and strictly
+monotone on $D$. Then $\sigma^2(G(\theta), \Pi)$ is strictly monotone or strictly decreasing-then-increasing, so every
+failure set is Empty, All, a lower ray, an upper ray or two rays. No window and no mixed class occur.
+
+*Proof.* Lemma 5's strictly decreasing-then-increasing function composed with a strictly monotone map has at most one
+interior minimum, so it is strictly quasiconvex; its sublevel sets are intervals and their complements in $D$ are at most
+two rays. $\square$
+
+**Label:** Theorem (proved; T8.4, 1,000,000 classifications, 0 windows or mixed classes; T13 C2 rows 10–12).
+
+Reading: windows need a sweep that moves the variance curve itself, as precision does.
+
+### 4.1 Prior precision $\Pi_0$
+
+Fixed $\Pi, c > 0$; $G(\Pi_0) = c\Pi/(\Pi + \Pi_0)$ decreases from $c$ to $0$. Write $V_c = \sigma^2(c, \Pi)$,
+$\Pi_A = c(c + 2\lambda)/(2\Sigma)$ and $\Pi_B = c/(2F) = c\lambda/(2\Sigma)$, so $\Pi_B < \Pi_A$.
+
+**Proposition 9 (prior precision: endpoints and extrema).**
+- $L_- = V_c$ and $L_+ = F$, approached from below.
+- If $c \le G^\star$ (i.e. $\Pi \ge \Pi_A$): $\sigma^2$ increases strictly from $V_c$ (approached from above) to $F$.
+- If $c > G^\star$ ($\Pi < \Pi_A$): one interior extremum, a global minimum at $\Pi_0^\star = \Pi(c/G^\star - 1)$ with value
+  $\sigma_\star^2(\Pi)$; $V_c$ is then approached from below.
+- $V_c > F \iff c > 2F\Pi \iff \Pi < \Pi_B$, and $V_c = F \iff \Pi = \Pi_B$.
+
+*Proof.* Lemma 5 composed with the strictly decreasing map $\Pi_0 \mapsto G$, which passes through $G^\star$ iff
+$c > G^\star$, at $\Pi_0^\star$. Near $\Pi_0 = \infty$, $G \to 0^+$ where $\sigma^2$ decreases in $G$, so $F$ is approached
+from below. $c > G^\star \iff c^2 + 2\lambda c > 2\Sigma\Pi$. $\square$
+
+**Label:** Proposition (proved; T8.1(d),(f),(g), T8.2).
+
+**Proposition 10 (prior precision: classification at every tolerance).**
+
+*Case P1, $\Pi \ge \Pi_A$.* Sequence $(V_c, F)$: All ($R^2 \le V_c$), upper ray ($V_c < R^2 < F$), Empty ($R^2 \ge F$).
+
+*Case P2, $\Pi_B \le \Pi < \Pi_A$.* Sequence $(V_c, \sigma_\star^2, F)$ with $\sigma_\star^2 < V_c \le F$: All
+($R^2 < \sigma_\star^2$); two rays ($R^2 = \sigma_\star^2$, the domain minus $\Pi_0^\star$; and $\sigma_\star^2 < R^2 < V_c$);
+upper ray ($V_c \le R^2 < F$); Empty ($R^2 \ge F$). At $\Pi = \Pi_B$ the upper-ray row is empty.
+
+*Case P3, $\Pi < \Pi_B$.* Sequence $(V_c, \sigma_\star^2, F)$ with $\sigma_\star^2 < F < V_c$: All ($R^2 < \sigma_\star^2$);
+two rays ($\sigma_\star^2 \le R^2 < F$); lower ray ($F \le R^2 < V_c$); Empty ($R^2 \ge V_c$).
+
+*Proof.* Theorem 2 with Proposition 9; $F$ is approached from below, $V_c$ from above in P1 and from below in P2–P3, and the
+minimum value is attained only at $\Pi_0^\star$. $\square$
+
+**Label:** Proposition (proved; T8.3, 62/62 classes including all equality rows; T13 C2 row 10).
+
+**Worked example** ($\lambda = c = 1$, $\Sigma = 0.01$): $\Pi_B = 50$, $\Pi_A = 150$.
+- $\Pi = 1$ (P3): $G^\star = 0.0099504$, $\Pi_0^\star = 99.498$, $\sigma_\star^2 = 0.0099504$, $V_c = 0.255$.
+- $\Pi = 60$ (P2): $\Pi_0^\star = 64.162$, $\sigma_\star^2 = 0.0080540$, $V_c = 0.0091667$.
+- $\Pi = 500$ (P1): monotone from $V_c = 0.0055$ to $F$.
+
+Reading: the best fixed prior at a given precision reproduces the Kalman–Bucy gain; both misweighting directions are worse.
+
+### 4.2 Coupling $c$
+
+Fixed $\Pi, \Pi_0$; $K = \Pi/(\Pi + \Pi_0)$ and $G = cK$ increases from $0$ to $\infty$.
+
+**Proposition 11 (coupling: endpoints and extrema).** $L_- = F$ (from below), $L_+ = \infty$. One interior extremum, a
+global minimum at $c^\star = G^\star(\Pi)/K$ with value $\sigma_\star^2(\Pi)$. $\sigma^2 = F$ again at
+$c_F = 2F(\Pi + \Pi_0)$, and $\sigma^2 > F$ iff $c > c_F$.
+
+*Proof.* Lemma 5 composed with $c \mapsto cK$, which passes through $G^\star$ and $2F\Pi$. $\square$
+
+**Label:** Proposition (proved; T8.1(e)–(g), T8.2).
+
+**Proposition 12 (coupling: classification).** All ($R^2 < \sigma_\star^2$); two rays ($\sigma_\star^2 \le R^2 < F$; at
+$R^2 = \sigma_\star^2$ the domain minus $c^\star$); upper ray ($R^2 \ge F$, equal to $(c_F, \infty)$ at $R^2 = F$). Never
+Empty and never a window.
+
+*Proof.* Theorem 2 with sequence $(F, \sigma_\star^2, \infty)$ and approach to $F$ from below. $\square$
+
+**Label:** Proposition (proved; T8.3; T13 C2 row 11).
+
+**Worked example** ($\lambda = 1$, $\Sigma = 0.01$, $\Pi = \Pi_0 = 1$): $c^\star = 0.019901$, $\sigma_\star^2 = 0.0099504$,
+$c_F = 0.04$.
+
+---
+
+## 5. Correlation-time sweeps
+
+Sensory noise $\eta$ is Ornstein–Uhlenbeck with correlation time $\tau > 0$. Two normalizations are studied, and a
+family that contains both.
+
+### 5.1 Matched zero-frequency power
+
+$C_\eta(u) = e^{-|u|/\tau}/(2\Pi\tau)$ and $S_\eta(\omega) = (1/\Pi)/(1 + \tau^2\omega^2)$, so $S_\eta(0) = 1/\Pi$ for every
+$\tau$. The relay's gain is set by precision alone, so along $\tau$ it is a constant $G > 0$ (with $G = 0$,
+$\sigma^2 \equiv F$); write $a = \lambda + G$.
+
+**Lemma 13 (relay variance).**
+$$
+\sigma^2(\tau) = \frac{1}{a}\left(\Sigma + \frac{G^2}{2\Pi(1 + a\tau)}\right),
+\qquad
+\sigma^2 > F \iff G/\Pi > 2F(1 + a\tau).
+$$
+
+*Proof.* The process-noise part contributes $\Sigma/a$. A first-order filter $1/(s + a)$ driven by OU input of variance
+$v$ and rate $1/\tau$ has output variance $v/(a(a + 1/\tau))$; with $v = G^2/(2\Pi\tau)$ this is $G^2/(2\Pi a(1 + a\tau))$.
+The excess form follows by subtracting $F$. $\square$
+
+**Label:** Lemma (proved; T9.1(a),(b) by an augmented-state Lyapunov route).
+
+**Proposition 14 (relay: endpoints and monotonicity).** $\sigma^2$ is strictly decreasing in $\tau$, from
+$V_w = (\Sigma + G^2/(2\Pi))/(\lambda + G)$ (approached from below) to $H_G = \Sigma/(\lambda + G)$ (approached from above).
+Always $H_G < F$; $V_w > F \iff G > 2F\Pi$.
+
+*Proof.* The only $\tau$-dependence is $1/(1 + a\tau)$. Approach directions follow from C4 for a decreasing function;
+$V_w$ versus $F$ is Lemma 5. $\square$
+
+**Label:** Proposition (proved; T9.1, T9.4).
+
+**Proposition 15 (relay: classification).** All ($R^2 \le H_G$); lower ray $(0, \tau_R)$ ($H_G < R^2 < V_w$); Empty
+($R^2 \ge V_w$), with
+$$
+\tau_R = \frac{1}{a}\left(\frac{G^2}{2\Pi(aR^2 - \Sigma)} - 1\right).
+$$
+At $R^2 = F$: lower ray $(0, \tau_F)$, $\tau_F = (G/(2F\Pi) - 1)/a$, if $G > 2F\Pi$; Empty otherwise.
+
+*Proof.* Theorem 2 with sequence $(V_w, H_G)$; solve Lemma 13 for $\tau$. $\square$
+
+**Label:** Proposition (proved; T9.1(c), T9.4, 80,000 classifications; T13 C2 row 13).
+
+**Worked example** ($\lambda = c = 1$, $\Sigma = 0.01$, $\Pi = \Pi_0 = 1$, so $G = 0.5$): $V_w = 0.09$,
+$H_G = 0.0066667$, $\tau_F = 16$; $\sigma^2(1) = 0.04$, $\sigma^2(10) = 0.011875$, $\sigma^2(16) = 0.01$.
+
+Reading: at matched zero-frequency power, colouring the noise always helps a fixed relay; failure concentrates near the
+white limit.
+
+**Proposition 16 (optimal stationary error).** With measurement differencing ($z = \dot y + y/\tau$), the optimal
+stationary error is the positive root of
+$$
+(1 - \lambda\tau)^2P^2 + \Big(4\Sigma\tau + \frac{2\lambda}{\Pi}\Big)P - \frac{2\Sigma}{\Pi} = 0,
+\qquad
+P(\tau) = \frac{4\Sigma}{\Pi(b + \sqrt D)},\quad b = 4\Sigma\tau + \frac{2\lambda}{\Pi},\quad D = b^2 + \frac{8\Sigma(1-\lambda\tau)^2}{\Pi}.
+$$
+The rationalized form has no singularity at $\lambda\tau = 1$.
+
+*Proof.* $z = hs + v$ with $h = 1/\tau - \lambda$, $v = w_s + w_\eta$, measurement intensity $R_v = 2\Sigma + 1/(\Pi\tau^2)$
+and cross-intensity $2\Sigma$. The steady-state correlated-noise Riccati equation is
+$0 = -2\lambda P + 2\Sigma - (hP + 2\Sigma)^2/R_v$; multiplying by $-\tau^2R_v$ gives the quadratic. Its constant term is
+negative and its leading coefficient non-negative, so it has one positive root. $\square$
+
+**Label:** Proposition (proved; T9.1(d),(e); T9.2 Wiener route to $2\times10^{-17}$; mp ARE route in the T9 diagnosis).
+
+**Theorem 17 (optimal error decreases in $\tau$).** $P$ is strictly decreasing on $(0,\infty)$, with
+$P(0^+) = \sigma_\star^2(\Pi)$ and $P(\tau) \sim 1/\big(\Pi\tau(1 + \sqrt{1 + \lambda^2/(2\Sigma\Pi)})\big) \to 0$.
+
+*Proof.* $b$ increases in $\tau$, and $dD/d\tau = 32\Sigma^2\tau + 16\Sigma\lambda^2\tau/\Pi > 0$, so $b + \sqrt D$
+increases. At $\tau = 0$, $P = 2\Sigma/(\lambda + \sqrt{\lambda^2 + 2\Sigma\Pi})$. For large $\tau$, $b \sim 4\Sigma\tau$ and
+$\sqrt D \sim 4\Sigma\tau\sqrt{1 + \lambda^2/(2\Sigma\Pi)}$. $\square$
+
+**Label:** Theorem (proved; T9.1(f),(g), T9.5). Also a corollary of Theorem 65 via Proposition 70(b).
+
+**Proposition 18 (optimal: classification).** Lower ray $(0, \tau_R^\star)$ for $0 < R^2 < \sigma_\star^2$; Empty for
+$R^2 \ge \sigma_\star^2$, with
+$$
+\tau_R^\star = \frac{2\lambda R^2 - 4\Sigma + \sqrt\Delta}{2\lambda^2R^2},
+\qquad
+\Delta = 16\Sigma^2 - 16\lambda\Sigma R^2 + \frac{8\lambda^2(\Sigma - \lambda R^2)}{\Pi}.
+$$
+The optimal filter never produces All, a window, an upper ray or two rays along $\tau$.
+
+*Proof.* Theorem 2 with Theorem 17. $P = R^2$ in Proposition 16 is a quadratic in $\tau$ with leading coefficient
+$\lambda^2R^4 > 0$ and constant term $R^4 + 2\lambda R^2/\Pi - 2\Sigma/\Pi$, negative iff $R^2 < \sigma_\star^2$. $\square$
+
+**Label:** Proposition (proved; T9.1(h), T9.4; T13 C2 row 14).
+
+**Proposition 19 (best constant-gain relay).** Let $V(\tau) = \inf_{G \ge 0}\sigma^2(G, \tau)$. Then $P \le V$, $V$ is
+strictly decreasing, $V(0^+) = \sigma_\star^2$ and $V(\infty) = 0$.
+
+*Proof.* A constant-gain relay is a causal linear estimator, so $P \le V$. $G = 0$ is never the infimizer
+($\partial_G\sigma^2 = -\Sigma/\lambda^2 < 0$ there). For $\tau_1 < \tau_2$: if the infimum at $\tau_1$ is attained at
+$G_1 > 0$, then $V(\tau_2) \le \sigma^2(G_1, \tau_2) < V(\tau_1)$; if it is approached as $G \to \infty$, its value is
+$1/(2\Pi\tau_1) > 1/(2\Pi\tau_2) \ge V(\tau_2)$. As $\tau \to \infty$, $\sigma^2(G, \tau) \to \Sigma/(\lambda + G)$, whose
+infimum is $0$. $\square$
+
+**Label:** Proposition (proved; T9.5 with the mp diagnosis).
+
+**Proposition 20 (strict gap).** $P(\tau) < V(\tau)$ for every $\tau > 0$.
+
+*Proof.* (i) If a relay with gain $G$ attained $P$, its estimate would equal the conditional mean (uniqueness of the
+$L^2$ projection), so its error $e = s - \hat s$ would be orthogonal to every past observation. (ii) For the relay,
+$\dot e = -ae - G\eta + w_s$, and for $u \ge 0$
+$$
+c(u) = \mathbb E[e(t)\,y(t-u)] = e^{-au}c(0) - \frac{G}{2\Pi\tau}\,\frac{e^{-u/\tau} - e^{-au}}{a - 1/\tau}
+\quad (a \ne 1/\tau),
+$$
+with $-\tfrac{G}{2\Pi\tau}\,u\,e^{-au}$ in place of the last term when $a = 1/\tau$ ($w_s$ after $t - u$ is independent of
+$y(t-u)$). For $G > 0$ the $e^{-u/\tau}$ term (or the $ue^{-au}$ term) is nonzero, so $c \not\equiv 0$; for $G = 0$,
+$c(u) = Fe^{-\lambda u} \not\equiv 0$. So no relay is optimal. (iii) As $G \to \infty$, $\sigma^2 \to \operatorname{Var}\eta =
+1/(2\Pi\tau)$, the error of the estimator $\hat s = y$, which is not optimal either since
+$\mathbb E[(s - y)y] = -\operatorname{Var}\eta \ne 0$. (iv) $\sigma^2(G, \tau)$ is continuous on the compactified range
+$[0, \infty]$, so its minimum $V(\tau)$ is attained there and exceeds $P(\tau)$. $\square$
+
+**Label:** Proposition (proved; T13 A7: symbolic covariance identity and 10,000 sets at 60 digits, 0 failures; T9.5 had
+recorded strictness as a numerical result).
+
+**Worked example** ($\lambda = 1$, $\Sigma = 0.01$, $\Pi = 1$): $\sigma_\star^2 = 0.0099504$; $P(1) = 0.0098039$ (the
+linear case $\lambda\tau = 1$) against $V(1) = 0.0099010$; $P(10) = 0.0067813$. The fixed relay with $G = 0.5$ gives $0.04$
+and $0.011875$; as $\tau \to \infty$ it tends to $H_G = 0.0066667$ while $P \to 0$.
+
+### 5.2 Matched variance
+
+Noise of fixed variance $v$ and varying bandwidth: $C_\eta(u) = v e^{-|u|/\tau}$, $S_\eta(\omega) = 2v\tau/(1 + \tau^2\omega^2)$.
+
+**Proposition 21 (optimal filter at matched variance).** The optimal stationary error is the positive root of
+$$
+A(\tau)P^2 + BP - C = 0,\qquad A = \frac{(1 - \lambda\tau)^2}{\tau},\ B = 4(\Sigma + \lambda v),\ C = 4\Sigma v,
+$$
+i.e. $P = 2C/(B + \sqrt{B^2 + 4AC})$. Consequently: (1) $P$ is strictly decreasing in $A$, so it is unimodal in $\tau$ with
+its maximum at $\tau = 1/\lambda$, $P_{\max} = \Sigma v/(\Sigma + \lambda v)$; (2) $A(\tau) = A(1/(\lambda^2\tau))$, so $P$ is
+symmetric in $\log\tau$ about $1/\lambda$; (3) $P \sim 2\sqrt{\Sigma v\tau}$ as $\tau \to 0$ and
+$P \sim (2/\lambda)\sqrt{\Sigma v/\tau}$ as $\tau \to \infty$; (4) for $0 < R^2 < P_{\max}$ the failure set is the window
+$(\tau_-, \tau_+)$,
+$$
+\tau_\pm = \frac{(2\lambda + A_R) \pm \sqrt{A_R(4\lambda + A_R)}}{2\lambda^2},
+\qquad A_R = \frac{C - BR^2}{R^4},\qquad \tau_-\tau_+ = \frac{1}{\lambda^2},
+$$
+and for $R^2 \ge P_{\max}$ it is Empty.
+
+*Proof.* The correlated-noise Riccati equation of Proposition 16 holds with $w_\eta$ of intensity $2v/\tau$, so
+$R_v = 2\Sigma + 2v/\tau$; multiplying by $-\tau R_v$ gives the quadratic. Its constant term is negative and $B > 0$, so
+there is one positive root, decreasing in $A \ge 0$. Items 1–3 follow from the shape of $A$. For item 4, set $P = R^2$, solve
+for $A$, then solve $\lambda^2\tau^2 - (2\lambda + A_R)\tau + 1 = 0$. $\square$
+
+**Label:** Proposition (proved; T10.6: three routes agree to $1.0\times10^{-14}$, shape exact to $10^{-50}$; T13 C2 row 16).
+
+**Counterexample 22 (analytic; the optimal filter can window).** Paper 1's "the optimal filter never produces a window"
+holds along precision (Theorem 6) and along matched-zero-frequency $\tau$ (Theorem 17), but fails along matched-variance
+$\tau$: by Proposition 21 the optimal failure set is a window for every $0 < R^2 < P_{\max}$.
+
+**Label:** Counterexample (analytic; T10.6).
+
+**Proposition 23 (relay at matched variance).** For fixed $G > 0$,
+$$
+\sigma^2(\tau) = \frac{1}{a}\left(\Sigma + \frac{G^2v\tau}{1 + a\tau}\right),
+$$
+strictly increasing from $H_G$ to $(\Sigma + G^2v/a)/a$ and $\ge P$ throughout. Classes: All ($R^2 \le H_G$), upper ray
+($H_G < R^2 <$ top), Empty ($R^2 \ge$ top).
+
+**Label:** Proposition (proved; T10.6; T13 C2 row 15).
+
+Reading: the same physical change (narrowing the noise bandwidth) gives a monotone optimal filter at matched
+zero-frequency power and a windowed one at matched variance. The normalization is a modelling choice with topological
+consequences.
+
+### 5.3 The power-normalized family
+
+OU noise with $S_{\beta,\tau}(\omega) = K\tau^\beta/(1 + \tau^2\omega^2)$, $\operatorname{Var}\eta = v(\tau) = (K/2)\tau^{\beta-1}$,
+$\tau \in (0,\infty)$, $K > 0$, $\beta \in \mathbb R$. $\beta = 0$ is matched zero-frequency power ($K = 1/\Pi$), $\beta = 1$
+matched variance ($K = 2v$). The optimal error is Proposition 21's root with $v = v(\tau)$.
+
+**Theorem 24 (sharpness of the ordering condition).**
+1. $\beta \le 0$: $S_{\beta,\tau}$ decreases in $\tau$ at every $\omega$; the sweep is causally ordered (information
+   increasing in $\tau$), so $P$ is non-increasing. Optimal classes: lower ray, Empty.
+2. $\beta \ge 2$: $S_{\beta,\tau}$ increases in $\tau$ at every $\omega$; ordered with information decreasing in $\tau$, so
+   $P$ is non-decreasing. Optimal classes: upper ray, Empty.
+3. $0 < \beta < 2$: every pair $\tau_1 \ne \tau_2$ has crossing spectra, $P \to 0$ at both ends while $P > 0$, so for every
+   $0 < R^2 < \max P$ the optimal failure set is bounded away from both ends: a window (exactly one, by Theorem 25).
+
+Hence, in this family: causally ordered $\iff$ $P$ monotone $\iff$ no optimal-filter window $\iff$ $\beta \notin (0, 2)$.
+
+*Proof.* $\partial_\tau\log S = \beta/\tau - 2\tau\omega^2/(1 + \tau^2\omega^2)$, and the second term lies in $[0, 2/\tau)$: it
+is $\le 0$ for every $\omega$ if $\beta \le 0$, $> 0$ if $\beta \ge 2$, and changes sign with $\omega$ if $0 < \beta < 2$.
+Parts 1–2 follow from Proposition 68 and Corollary 66. For part 3, $P \le 2C/\sqrt{4AC} = \sqrt{C/A} =
+\sqrt{2\Sigma K}\,\tau^{\beta/2}/|1 - \lambda\tau|$, which tends to $0$ as $\tau \to 0$ iff $\beta > 0$ and as $\tau \to \infty$ iff
+$\beta < 2$. $\square$
+
+*Limits of $P$ itself where the bound does not vanish.* $\beta < 0$, $\tau \to 0$: $P \to F$; $\beta = 0$, $\tau \to 0$:
+$P \to \sigma_\star^2(1/K)$; $\beta = 2$, $\tau \to \infty$: $P \to \sigma_\star^2(\lambda^2/K)$ (not $F$); $\beta > 2$,
+$\tau \to \infty$: $P \to F$, approached like $\tau^{2-\beta}$.
+
+**Label:** Theorem (proved; T11.3 over 37 values of $\beta$, with the $\beta \ge 2$ limits as corrected in the T11
+diagnosis; T13 C2 rows 17–19).
+
+**Theorem 25 (unimodality for $0 < \beta < 2$).** For $0 < \beta < 2$, $P$ has exactly one turning point, a maximum, so the
+optimal failure set has $k = 1$.
+
+*Proof.* Let $\Phi(\tau, P) = AP^2 + BP - C$, so $\Phi_P = 2AP + B > 0$. With $A' = (\lambda^2\tau^2 - 1)/\tau^2$,
+$A'' = 2/\tau^3$, $v'/v = (\beta - 1)/\tau$ and $v''/v' = (\beta - 2)/\tau$: $\Phi_\tau = A'P^2 - 4v'(\Sigma - \lambda P)$ and
+$\Phi_{\tau\tau} = A''P^2 - 4v''(\Sigma - \lambda P)$. At a critical point $P' = 0$, so $\Phi_\tau = 0$ and
+$P'' = -\Phi_{\tau\tau}/\Phi_P$. For $\beta \ne 1$, substituting $\Sigma - \lambda P = A'P^2/(4v')$,
+$$
+\Phi_{\tau\tau} = P^2\Big(A'' - A'\frac{v''}{v'}\Big) = \frac{P^2\,\big(\beta + (2 - \beta)\lambda^2\tau^2\big)}{\tau^3} > 0,
+$$
+so $P'' < 0$; for $\beta = 1$, $\Phi_\tau = A'P^2$ vanishes only at $\tau = 1/\lambda$, where $A'' > 0$ gives the same sign.
+Every critical point is therefore a strict local maximum. Two strict maxima would enclose an interior minimum, a critical
+point that is not a strict maximum, so there is at most one critical point; there is at least one because $P > 0$ and
+$P \to 0$ at both ends (Theorem 24). $\square$
+
+**Label:** Theorem (proved; T13 A4: symbolic identities and 10,000 curves; T11.3 had recorded it as a numerical result,
+12,900/12,900 curves).
+
+**Proposition 26 (duality).** $P_{\beta, K}(\tau) = P_{2-\beta,\ K\lambda^{2-2\beta}}\big(1/(\lambda^2\tau)\big)$.
+
+*Proof.* $A$ is invariant under $\tau \mapsto 1/(\lambda^2\tau)$, and $(K'/2)x^{1-\beta}$ at $x = 1/(\lambda^2\tau)$ equals
+$(K/2)\tau^{\beta-1}$ when $K' = K\lambda^{2-2\beta}$. $\square$
+
+**Label:** Proposition (proved; T11.1, T11.3 to $8\times10^{-51}$).
+
+Reading: in the natural one-parameter family of coloured noises the information-ordering condition is exactly sharp; the
+two normalizations sit on opposite sides of the boundary.
+
+---
+
+## 6. Sampling interval
+
+**M-P model** (point sampling, matched floor): $x_{k+1} = ax_k + w_k$, $a = e^{-\lambda\Delta t}$,
+$\operatorname{Var}w = q = F(1 - a^2)$; $z_k = x_k + v_k$, $\operatorname{Var}v = r = 1/(\Pi\Delta t)$. Write $s = 1 - a^2$
+and $\varphi = F\Pi\Delta t$. Metrics: posterior $P^+$ at sample times ("post"), prior $P^- = a^2P^+ + q$ ("prior") and
+time average $\bar P = F - (F - P^+)\,s/(2\lambda\Delta t)$ ("avg"). Filters: optimal (steady Kalman); D1, sampled relay,
+$L = 1 - e^{-G\Delta t}$; D2, discrete Bayesian weight, $L = c\Pi\Delta t/(\Pi\Delta t + \Pi_0)$; D3, discrete Kalman
+over-trusting precision by $\rho$. For a fixed gain,
+$$
+P^+ = \frac{(1-L)^2q + L^2r}{1 - (1-L)^2a^2}.
+$$
+**M-I model** (integrate-and-dump): $z_k$ is the average of $dy$ over the $k$-th interval; metrics (a) error at sample
+times and (b) time average, both from Task 11's closed form.
+
+### 6.1 Excess sets
+
+**Lemma 27 (shared excess set).** For any filter on M-P, $P^- - F = a^2(P^+ - F)$ and
+$\bar P - F = (P^+ - F)\,s/(2\lambda\Delta t)$. Hence all three metrics exceed $F$ on the same set, $\{L/(2 - L) > \varphi\}$
+(Paper 1's discrete excess condition).
+
+**Label:** Lemma (proved; T12 symbolic A1).
+
+**Proposition 28 (D1: tanh lemma).** $L/(2 - L) = \tanh(G\Delta t/2)$, so the excess set is $\{G\,h(G\Delta t) > F\Pi\}$ with
+$h(x) = \tanh(x/2)/x$ strictly decreasing from $1/2$. The excess set is the lower ray $(0, \Delta t_E)$ iff $G > 2F\Pi$ (the
+continuous-time condition), and empty otherwise; $\Delta t_E$ solves $\tanh(G\Delta t/2) = F\Pi\Delta t$.
+
+*Proof.* $h'(x) = (x - \sinh x)/(2x^2\cosh^2(x/2)) < 0$ since $\sinh x > x$, and $h \to 1/2$ as $x \to 0$. $\square$
+
+**Label:** Proposition (proved; T12 symbolic A2, 1,000/1,000 sets, $\Delta t_E$ to $10^{-30}$).
+
+Reading: sampling never creates excess that continuous time lacks, and longer intervals remove it.
+
+**Proposition 29 (D2).** The excess set is the lower ray $\Delta t < \Delta t_E = (c - 2F\Pi_0)/((2 - c)F\Pi)$ iff
+$\kappa = c/(F\Pi_0) > 2$, and empty otherwise.
+
+**Label:** Proposition (proved; T12 symbolic A3, 1,000/1,000 sets).
+
+**Proposition 30 (D3).** The excess set is $\{\varphi < 1$ and $s(1 - \varphi)(\rho(1 + \varphi) - 2) > 4\varphi\}$. Its
+small-$\Delta t$ limit gives the onset: excess near $\Delta t = 0$ iff $\rho > 2 + u$, which is the continuous excess
+condition for $G = -\lambda + \sqrt{\lambda^2 + 2\rho\Sigma\Pi}$ ($\sqrt{1 + \rho u} > 1 + u$). Census shape: lower ray or
+Empty.
+
+**Label:** Proposition (proved; T12 symbolic A4, 1,000/1,000 sets, 0 disagreements in 201,514 membership tests).
+The earlier onset "$\rho > 2$" is the condition for excess at *some* precision (Proposition 41); at fixed precision it is
+false (178 of 1,000 census sets have $2 < \rho \le 2 + u$ and no excess near $0$).
+
+**Proposition 31 (endpoint limits).**
+
+| Filter | $\Delta t \to 0$ (all metrics) | $\Delta t \to \infty$ |
+|---|---|---|
+| Optimal | $\sigma_\star^2$ | post $\to 0$; prior, avg $\to F$ from below |
+| D1 | $\sigma^2(G, \Pi)$ | post $\to 0$; prior $\to F$ from below (gap $\propto e^{-2\lambda\Delta t}$); avg $\to F$ from below, like $-F/(2\lambda\Delta t)$ |
+| D2 | $\sigma^2(c\Pi/\Pi_0, \Pi)$ | post $\to (1-c)^2F$, with $\Delta t\,(P^+ - (1-c)^2F) \to c[c + 2(1-c)F\Pi_0]/\Pi$; prior, avg $\to F$ from below |
+| D3 | $\sigma^2(G_\rho, \Pi)$ | post $\to 0$; prior, avg $\to F$ from below |
+
+Here $G_\rho = -\lambda + \sqrt{\lambda^2 + 2\rho\Sigma\Pi}$.
+
+**Label:** Proposition (proved; T12 symbolic A5; the D2 coefficient by the series route after `sympy.limit` failed).
+
+### 6.2 The optimal filter along $\Delta t$
+
+**Theorem 32 (optimal M-P error along $\Delta t$).**
+(a) $P^+$ is strictly decreasing, from $\sigma_\star^2$ to $0$.
+(b) $P^-$ is strictly increasing, from $\sigma_\star^2$ to $F$.
+(c) $\bar P$ is strictly increasing, from $\sigma_\star^2$ to $F$.
+
+*Proof.* Write $x = \lambda\Delta t$, $s = 1 - e^{-2x}$, $s' = 2e^{-2x}$, $r = \lambda/(\Pi x)$.
+
+(a) $P^+ = F/(1 + \mu)$, where $\mu > 0$ solves $\mu^2 + (1 - \varphi)\mu - \varphi/s = 0$ and is strictly increasing in
+$\varphi$ and in $w := \varphi/s$; both increase in $x$ (since $e^y > 1 + y$).
+
+(b) $M = P^-$ is the positive root of $f(M) = M^2 + s(r - F)M - sFr$; $f'(M) = 2M + s(r - F) > 0$ there because the product of
+the roots, $-sFr$, is negative. Implicit differentiation with $r' = -r/x$ gives
+$\operatorname{sign}(dM/dx) = \operatorname{sign} B$, $B = FMs' - (F - M)r(s/x - s')$. On $f = 0$, $sr(F - M) = M(M - sF)$, so
+$B = M[Fs' - (M - sF)(s/x - s')/s]$. Now $f(F) = F^2(1 - s) > 0$ and $f(sF) = -sFr(1 - s) < 0$ give $sF < M < F$, hence
+$0 < M - sF < F(1 - s)$; and $s/x > s'$ since $s - xs' = e^{-2x}(e^{2x} - 1 - 2x) > 0$. So
+$B > (MF/s)[ss' - (1 - s)(s/x - s')] = (MF/s)\,(e^{-2x}/x)\,(2x - 1 + e^{-2x}) > 0$, the last factor being positive because
+$y \mapsto e^{-y} - 1 + y$ vanishes at $0$ and has derivative $1 - e^{-y} > 0$.
+
+(c) By Lemma 27 and (a), $\bar P = F - (F/2)Q$ with $Q = \mu s/((1 + \mu)x)$, so it suffices that $Q$ decreases. With
+$\varphi = wx$ ($w = F\Pi/\lambda$) and $E = 1/x - s'/s > 0$, implicit differentiation of the $\mu$ equation and
+$\varphi/s = \mu(\mu + 1 - \varphi)$ give $(2\mu + 1 - \varphi)\mu' = \varphi\mu/x + \mu(\mu + 1 - \varphi)E$, where
+$2\mu + 1 - \varphi > 0$ and $\mu + 1 - \varphi > 0$. Then $d\ln Q/dx = \mu'/(\mu(1 + \mu)) - E$, and
+$(1 + \mu)(2\mu + 1 - \varphi)E - [w + (\mu + 1 - \varphi)E] = E\mu(2 + 2\mu - \varphi) - w$ with
+$\mu(2 + 2\mu - \varphi) = \varphi(2/s + \mu)$. Hence $d\ln Q/dx < 0 \iff 1 < xE(2/s + \mu) = (1 - xs'/s)(2/s + \mu)$. Since
+$\mu > 0$ and
+$$
+\Big(1 - \frac{xs'}{s}\Big)\frac{2}{s} = 1 + \frac{2e^{-2x}(\sinh 2x - 2x)}{s^2} \ge 1,
+$$
+this holds. The limits are Proposition 31. $\square$
+
+**Label:** Theorem (proved). (a) T12 symbolic A6; (b) and (c) T13 A1, A2: every step symbolic (two identities by a post-hoc
+rewrite route, see Section 12) and 10,000 sets at 100 digits with 0 failures in every link. (c) was a numerical result in
+Task 12 (400,000 points).
+
+**Optimal classes.** post: lower ray or Empty; prior and avg: All ($R^2 < \sigma_\star^2$), upper ray, or Empty ($R^2 \ge F$).
+
+**Proposition 33 (M-P is not a causal-garbling family along $\Delta t$).** In neither direction: by Theorem 65 an ordering
+would move all metrics the same way, but post falls while prior and avg rise (Theorem 32).
+
+**Label:** Proposition (proved; T12 A10, 1,000/1,000 pairs $(\Delta t, 2\Delta t)$).
+
+Reading: each sample carries the signal with noise variance $1/(\Pi\Delta t)$, so longer intervals make every sample more
+precise; but samples get sparser, so the error grows more between them.
+
+**Corollary 34 (integrate-and-dump, nested grids).** If $\Delta t_2 = m\Delta t_1$ for an integer $m$ and the grids are
+aligned, each coarse M-I sample is the average of $m$ fine samples completed by the time it is, a causal garbling. Hence the
+optimal error, pointwise in $t$ and time-averaged, satisfies $P(\Delta t_2) \ge P(\Delta t_1)$ along every chain
+$\Delta t_0, m\Delta t_0, m^2\Delta t_0, \dots$
+
+**Label:** Corollary (proved; T11.6, 0 violations in 9,000 pairs).
+
+**Numerical result 35 (integrate-and-dump on the continuum).** Both M-I metrics are non-decreasing in $\Delta t$ on the
+continuum, including non-nested pairs.
+
+**Label:** Numerical result (T11.6, T12 A9: 400,000 points each; T13 A3: 10,000 sets at 100 digits, 0 violations; no
+symbolic proof found).
+
+### 6.3 Sampled relays
+
+**Proposition 36 (two rays from an over-weighted sampled relay).** Let D1 have $G > 2F\Pi$. Then prior and avg start at
+$\sigma^2(G, \Pi) > F$ and end at $F$ approached from below, so each has an interior minimum below $F$; for $R^2$ between the
+lowest minimum and $F$ the failure set contains a lower and an upper ray: two rays, or $(1,1,k)$ with several minima.
+
+**Label:** Proposition (proved: continuity and Proposition 31; T12 A7 diagnosis).
+
+**How deep the dips are.** avg: $\bar P - F \sim -F/(2\lambda\Delta t)$, a modest dip. prior: the gap is multiplied by
+$e^{-2\lambda\Delta t}$, and Task 12 measured relative dips from $10^{-17}$ down to $10^{-32{,}880{,}317}$. The prior's two
+rays exist mathematically but are practically irrelevant; the avg two rays are real but narrow.
+
+**Worked example** (D1, $G = 0.5$, $\lambda = 1$, $\Sigma = 0.01$, $\Pi = 1$): post rises from $0.09$ to a single maximum
+$0.20457$ at $\Delta t = 2.4645$ and falls to $0$, a window for $R^2 \in (0.09, 0.20457)$; avg crosses $F$ at $\Delta t_E = 100$
+(to 20 digits), dips to $0.0099875$ at $\Delta t = 200$ (a dip of $0.125\%$) and returns to $F$ from below.
+
+**Numerical result 37 (census of sampled relays).** On 2,000 sets per family, every class agreed by both routes:
+
+| Family | Metric | Turning-point shapes | Classes found |
+|---|---|---|---|
+| D1 | post | none, max | Empty, lower ray, window |
+| D1 | prior | none, min, max–min | All, Empty, lower ray, upper ray, two rays, $(0,1,1)$ |
+| D1 | avg | none, min, max–min | All, Empty, lower ray, upper ray, two rays, $(0,1,1)$ |
+| D2 | post | none, max, min, min–max | All, Empty, lower ray, upper ray, two rays, window, $(1,0,1)$ |
+| D2 | prior, avg | none, min | All, Empty, lower ray, upper ray, two rays |
+| D3 | post | none, max | Empty, lower ray, window |
+| D3 | prior | none, min, max–min | All, Empty, lower ray, upper ray, two rays, $(0,1,1)$ |
+| D3 | avg | none, min | All, Empty, lower ray, upper ray, two rays |
+
+**Label:** Numerical result (T12 A8, 6,000 sets × 3 metrics; T12 Part C; T13 C2 rows 24–32).
+
+Natural gains here give two new mixed classes: upper ray + window $(0,1,1)$ (a max–min shape: a hump before the slow return to
+$F$) and lower ray + window $(1,0,1)$ (a min–max shape in D2 post).
+
+**Conjecture 38 (at most two turning points).** Along $\Delta t$, D1–D3 have at most two turning points in every metric.
+
+**Label:** Conjecture (T12 census and T13 C2 rows 24–32: never more than two; no proof, T13 A6).
+
+---
+
+## 7. Process noise (moving floor)
+
+Fix $\lambda$ and $\Pi$; $F = \Sigma/\lambda$ moves with $\Sigma$. Two conventions: **absolute** (fixed $R^2$) and
+**relative** (failure means $\sigma^2 > rF$).
+
+**Lemma 39 (scaling).** $\sigma^2/F = (1 + g^2/u)/(1 + g)$. For a gain that depends on $(\Sigma, \Pi)$ only through $u$, the
+relative-tolerance $\Sigma$ sweep and the precision sweep classify identically in $u$.
+
+**Label:** Lemma (proved; T12 symbolic B1).
+
+**Proposition 40 ($\Sigma$-independent gain).** Absolute: $\sigma^2$ is affine and increasing, from $G^2/(2\Pi(\lambda + G))$
+(approached from above) to $\infty$; classes All, upper ray. Relative: $\sigma^2/F$ decreases from $\infty$ to $1/(1 + g)$;
+classes All, lower ray. Excess set ($r = 1$): $\Sigma < \lambda G/(2\Pi)$.
+
+**Label:** Proposition (proved; T12 B2; T13 C2 rows 35–36).
+
+**Proposition 41 ($\Sigma$-tracking Kalman, over-trust $\rho$).** Let $G = -\lambda + \sqrt{\lambda^2 + 2\rho\Sigma\Pi}$ and
+$w = \sqrt{1 + \rho u}$. Absolute: strictly increasing from $0$, class upper ray. Relative:
+$$
+\frac{\sigma^2}{F} = \frac{(1 + \rho)w + (1 - \rho)}{w(w + 1)},
+$$
+starting at $1$ and tending to $0$, with a single maximum at $w_M = [(\rho - 1) + \sqrt{2\rho(\rho - 1)}]/(1 + \rho)$ iff
+$\rho > 2$, and strictly decreasing otherwise. Classes: $\rho > 2$: lower ray ($r < 1$), window ($1 \le r <$ peak), Empty
+(at or above the peak); $\rho \le 2$: lower ray ($r < 1$), Empty ($r \ge 1$).
+
+*Proof.* Absolute: $\sigma^2\Pi/\lambda = [(w^2 - 1)/\rho + (w - 1)^2]/(2w)$, whose $w$-derivative is
+$[(w^2 - 1)(1 + 1/\rho) + 2/\rho]/(2w^2) > 0$. Relative: the derivative's numerator,
+$-(1 + \rho)w^2 + 2(\rho - 1)w + (\rho - 1)$, is a downward parabola with value $2(\rho - 2)$ at $w = 1$ and vertex at
+$(\rho - 1)/(1 + \rho) < 1$. At $r = 1$ the curve starts at $1$ from above when $\rho > 2$, so the failure set touches no end. $\square$
+
+**Label:** Proposition (proved; T12 B3, 2,000 sets, maximum position to $6\times10^{-31}$; T13 C2 rows 37–38).
+
+**Proposition 42 ($\Sigma$-tracking Kalman, misspecified $\lambda'$).** Let $G = -\lambda' + \sqrt{\lambda'^2 + 2\Sigma\Pi}$.
+Absolute: strictly increasing from $0$, class upper ray. Relative: a single maximum iff $\lambda' < \lambda/2$; classes lower
+ray, window, Empty, or lower ray, Empty.
+
+*Proof.* With $\Sigma = (G^2 + 2\lambda'G)/(2\Pi)$: absolute $\sigma^2 = G(G + \lambda')/(\Pi(\lambda + G))$ with derivative
+numerator $G^2 + 2\lambda G + \lambda\lambda' > 0$; relative $\sigma^2/F = 2\lambda(G + \lambda')/((G + 2\lambda')(G + \lambda))$
+with derivative numerator $2\lambda[-G^2 - 2\lambda'G + \lambda'(\lambda - 2\lambda')]$, a downward parabola with vertex at
+$G = -\lambda' < 0$ and value $\lambda'(\lambda - 2\lambda')$ at $G = 0$. $\square$
+
+**Label:** Proposition (proved; T12 B4, 2,000 sets; T13 C2 rows 39–40).
+
+**Proposition 43 (optimal).** Absolute: increasing from $0$, class upper ray. Relative: $2/(1 + \sqrt{1 + u})$ is decreasing,
+classes lower ray, Empty.
+
+**Label:** Proposition (proved; T12 B5; T13 C2 rows 41–42).
+
+**Proposition 44 (signal sweeps).** $\sigma_\star^2$ is increasing in $\Sigma$, decreasing in $\lambda$ at fixed $\Sigma$, and
+increasing in $\lambda$ at fixed $F$ (since $\sigma_\star^2 = 2F/(1 + \sqrt{1 + 2F\Pi/\lambda})$). So the optimal filter never
+windows along these sweeps either, for an elementary reason rather than an information-ordering one.
+
+**Label:** Proposition (proved; one-line derivatives; T11.1).
+
+Reading: on a moving floor the tolerance convention decides the topology. With absolute tolerances every family is monotone;
+with relative tolerances windows return under the same factor-of-two over-confidence condition as Paper 1 ($\rho > 2$, or
+$\lambda' < \lambda/2$, i.e. $F'/F > 2$). The relative-tolerance optimal filter never windows.
+
+---
+
+## 8. Falsification and completeness
+
+### 8.1 Realizability along precision
+
+**Theorem 45 (gain realizability).** Fix $\lambda, \Sigma > 0$. A function $v : (0,\infty) \to (0,\infty)$ equals
+$\sigma^2(G(\Pi), \Pi)$ for some continuous gain schedule $G \ge 0$ iff $v$ is continuous and $v \ge \sigma_\star^2$
+everywhere. One such gain is the upper-branch inverse $G_+(v, \Pi) = \Pi v + \sqrt{\Pi(\Pi v^2 + 2\lambda v - 2\Sigma)}$.
+
+*Proof.* Necessity is Lemma 5. Sufficiency: $\sigma^2(G, \Pi) = v$ is $G^2 - 2\Pi vG + 2\Pi(\Sigma - \lambda v) = 0$, with roots
+$G_\pm = \Pi v \pm \sqrt{\Pi(\Pi v^2 + 2\lambda v - 2\Sigma)}$; the radicand is $\ge 0$ iff $v \ge \sigma_\star^2$, so
+$G_+(v(\Pi), \Pi)$ is continuous and $G_+ \ge \Pi v > 0$. $\square$
+
+**Label:** Theorem (proved; T10.1 symbolic, T10.2 101/101 constructions).
+
+**Corollary 46 (forced lower ray).** For every continuous gain schedule and every $R^2 < F$, the failure set contains
+$(0, \pi_R)$ with $\pi_R = 2\lambda(F - R^2)/R^4$. Hence $\ell = 1$: at a tolerance tighter than the floor no gain gives
+Empty, a pure window, an upper ray alone, or any class with $\ell = 0$.
+
+*Proof.* $\sigma_\star^2$ decreases strictly from $F$ and equals $R^2$ at $\pi_R$ (solve $\Pi R^4 + 2\lambda R^2 - 2\Sigma = 0$);
+for $\Pi < \pi_R$, $\sigma^2 \ge \sigma_\star^2 > R^2$. $\square$
+
+**Label:** Corollary (proved; T10.1 with the factor-radicand route, T10.2 24/24 forbidden targets blocked).
+
+Reading: "windows need loose tolerances" holds for every gain schedule, with no regularity assumption.
+
+**Corollary 47 (exact class set along precision).** For continuous, piecewise strictly monotone variance curves: for
+$R^2 < F$ the achievable classes are exactly those with $\ell = 1$ (any $u$, any finite $k$, including All); for $R^2 \ge F$
+every class with finite $k$ is achievable.
+
+*Proof.* Impossibility is Corollary 46. Achievability: by Theorem 45 it suffices to build a continuous piecewise-monotone
+$v \ge \sigma_\star^2$ with the target class: for $R^2 < F$, follow $\sigma_\star^2$ on $(0, \pi_R]$ and then a zigzag (in
+$\log\Pi$) with troughs at $R^2$ and peaks above it; for $R^2 \ge F$, troughs at $F$ and peaks above $R^2$, starting above $R^2$
+(for $\ell = 1$) or on $\sigma_\star^2$ (for $\ell = 0$). For All, $v = \sigma_\star^2 + R^2$. $\square$
+
+**Label:** Corollary (proved; T10.2, 101/101 targets realized, 24/24 forbidden targets blocked).
+
+**Corollary 48 (unbounded complexity inside the model).** For every $k \ge 1$ there is a $C^\infty$ gain schedule satisfying
+Paper 1's regularity ($G \to 0$ and $G^2/\Pi \to 0$ as $\Pi \to 0$; $G \to G_\infty \in (0,\infty)$) whose failure set at
+$R^2 = 1.25F$ has exactly $k$ windows.
+
+*Proof.* Take the Bayesian-weight gain $G_B$ with $1 < \kappa < 2$: $v_B = \sigma^2(G_B, \cdot) < F$ everywhere (Proposition 7),
+$G_B > G^\star$ near $0$ (initial slope $\kappa F > F$) and $G_B < G^\star$ for large $\Pi$, so $G_B$ first meets $G^\star$ at some
+$\Pi_c$, where $v_B$ touches $\sigma_\star^2$, and $G_B = G_+(v_B, \cdot)$ on $(0, \Pi_c)$. Add to $v_B$ $k$ disjoint, compactly
+supported $C^\infty$ unimodal bumps inside $(0, \Pi_c)$ with peak $1.5F$, and set $G = G_+(v, \cdot)$ on $(0, \Pi_c)$, $G = G_B$
+beyond. Outside the bumps $G = G_B$, so $G$ is smooth and inherits Paper 1's regularity at both ends; each bump crosses $1.25F$
+exactly twice and $v_B < F$ elsewhere. $\square$
+
+**Label:** Corollary (proved; T10.2 supplementary construction, $k = 1, \dots, 5$, $G(10^{12})/G(10^{11}) - 1 = 6\times10^{-10}$).
+The upper branch alone cannot give a convergent gain: if $v \to H > 0$ then $G_+/\Pi \to 2H$.
+
+**Corollary 49 (what regularity pins).** Under Paper 1's regularity, $L_- = F$ and $L_+ = H = \Sigma/(\lambda + G_\infty)$. So
+$\ell$ is fixed by $R^2$ versus $F$ (plus the approach direction at $R^2 = F$), $u$ by $R^2$ versus $H$, and $k$ is unbounded
+(Corollary 48); since $H < F$, there is never an upper ray at $R^2 \ge F$.
+
+**Label:** Corollary (proved).
+
+Reading: along precision the model rules out exactly one thing, being better than optimal; every further restriction is a
+property of the gain family.
+
+### 8.2 Natural gain families along precision
+
+**Lemma 50 (excess components).** $\{\sigma^2 > F\} = \{G/\Pi > 2F\}$ pointwise. Hence at $R^2 = F$ the failure set is the
+excess set; for $R^2 \ge F$ every failure component lies in an excess component; and if $G/\Pi$ is unimodal or decreasing
+there is at most one window at $R^2 = F$.
+
+**Label:** Lemma (proved; Proposition 4).
+
+**Lemma 51 (elasticity form).** For any differentiable $G(\Pi) > 0$ with elasticity $\varepsilon = \Pi G'/G$,
+$$
+\frac{d\sigma^2}{d\Pi} = \frac{G\,N}{2\Pi^2(\lambda + G)^2},
+\qquad
+N = \varepsilon\,(G^2 + 2\lambda G - 2\Sigma\Pi) - G(\lambda + G).
+$$
+Turning points of $\sigma^2(\Pi)$ are the sign changes of $N$. When $G$ is strictly monotone, $N$ is a function of $G$ alone.
+
+*Proof.* $d\sigma^2/d\Pi = \partial_G\sigma^2\,G' + \partial_\Pi\sigma^2 =
+\frac{(G^2 + 2\lambda G - 2\Sigma\Pi)G'}{2\Pi(\lambda + G)^2} - \frac{G^2}{2\Pi^2(\lambda + G)}$; use $\Pi G' = \varepsilon G$. $\square$
+
+**Label:** Lemma (proved; T10.1(a)).
+
+**Lemma 52 (bounded gains approach $H$ from above).** If $G < G_\infty$ everywhere, then
+$\sigma^2 \ge \Sigma/(\lambda + G) > H$, so $H$ is approached from above and never attained.
+
+**Label:** Lemma (proved).
+
+**Proposition 53 (misspecified Kalman gain).** Let $G = -\lambda' + \sqrt{\lambda'^2 + 2\Sigma'\Pi}$, $F' = \Sigma'/\lambda'$,
+$r = \Sigma/\Sigma'$. If $F' > 2F$, $\sigma^2$ has exactly one turning point, a maximum, at the gain
+$$
+G_M = \frac{-2r\lambda' + \sqrt{4r^2\lambda'^2 + 2(1 + r)\lambda'(\lambda - 2r\lambda')}}{1 + r},
+\qquad \Pi_M = \frac{G_M^2 + 2\lambda'G_M}{2\Sigma'};
+$$
+if $F' \le 2F$ it is strictly decreasing. $L_- = F$ (from above iff $F' > 2F$), $L_+ = 0$. Classes: $F' > 2F$: lower ray
+($0 < R^2 \le F$), window ($F < R^2 < M$), Empty ($R^2 \ge M$); otherwise lower ray ($R^2 < F$), Empty ($R^2 \ge F$). All never
+occurs.
+
+*Proof.* $\Pi(G) = (G^2 + 2\lambda'G)/(2\Sigma')$ and $\varepsilon = (G + 2\lambda')/(2(G + \lambda'))$, so by Lemma 51
+$N = \frac{G}{2(G + \lambda')}q(G)$ with $q(G) = -(1 + r)G^2 - 4r\lambda'G + 2\lambda'(\lambda - 2r\lambda')$, strictly decreasing
+on $G > 0$ with $q(0) > 0$ iff $F' > 2F$. As $\Pi \to \infty$, $G^2/(2\Pi) \to \Sigma'$ while $G \to \infty$, so $\sigma^2 \to 0$; the
+direction at $0$ follows from Lemma 50 since $G/\Pi \to F'$. $\square$
+
+**Label:** Proposition (proved; T10.1 with the factor-radicand route, T10.3 2,000/2,000 sets; T13 C2 row 3).
+
+At over-weighting ratio 100 the peak is $M/F = 17.575$ against $9.2875$ for the Bayesian-weight gain, a ratio of $1.892$
+(Paper 1: "about twice"). The onset matches the Bayesian-weight onset with $\kappa \to F'/F$.
+
+**Proposition 54 (capped gain).** For $G = \min(g\Pi, c)$: on the linear branch
+$d\sigma^2/d\Pi = g(g\lambda/2 - \Sigma)/(\lambda + g\Pi)^2$, of constant sign $g - 2F$; on the capped branch $\sigma^2$ is strictly
+decreasing. So: $g > 2F$, one maximum at the kink $\Pi = c/g$; $g < 2F$, strictly decreasing; $g = 2F$, a plateau
+$\sigma^2 \equiv F$ on $(0, c/g]$, then strictly decreasing (Theorem 3: lower ray for $R^2 < F$, Empty at $R^2 \ge F$). Classes:
+All, lower ray, window, Empty.
+
+**Label:** Proposition (proved; T10.3, T10.5; T13 C2 row 4).
+
+**Proposition 55 (precision-blind gain).** For $G = G_0$, $\sigma^2$ decreases strictly from $\infty$ to $H$. Classes: All
+($R^2 \le H$), lower ray ($R^2 > H$).
+
+**Label:** Proposition (proved; T10.3; T13 C2 row 5).
+
+**Theorem 56 (Hill gain, every real $n > 1$).** Let $G = c\Pi^n/(\Pi^n + \Pi_0^n)$ with $n > 1$, $t = \Pi/\Pi_0$, $T = t^n$, and
+$$
+P_n(T) = -(\lambda + c)T^2 + (n - 1)(c + 2\lambda)T + (2n - 1)\lambda,
+\qquad
+\varphi_n(t) = \frac{t^{n-1}P_n(t^n)}{(1 + t^n)^2}.
+$$
+(a) $\sigma^2$ has either no turning point or exactly two, a minimum followed by a maximum. The pair exists iff
+$\Pi_0 < \Pi_0^{\text{pair}}(n) = c\,\varphi_n(t^*)/(2n\Sigma)$, where $t^*$ is the unique maximizer of $\varphi_n$; at equality
+there is a single degenerate stationary point.
+
+(b) For $n = 2$: $t^{*2} = 2\sqrt3 - 3$ and
+$$
+\Pi_0^{\text{pair}} = \frac{c\,\varphi_*}{4\Sigma},
+\qquad
+\varphi_* = \frac{t^*\big(\lambda(16\sqrt3 - 24) + c(14\sqrt3 - 24)\big)}{16 - 8\sqrt3}.
+$$
+
+*Proof.* With $\varepsilon = n/(1 + T)$, Lemma 51 gives $N(1 + T)^3 = c\,T\,P_n(T) - 2n\Sigma\Pi_0\,t\,(1 + T)^2$, so
+$\operatorname{sign}N = \operatorname{sign}\big(c\varphi_n(t)/(2n) - \Sigma\Pi_0\big)$. As a function of $T$,
+$\varphi_n = T^aP_n(T)/(1 + T)^2$ with $a = (n - 1)/n \in (0, 1)$, and
+$d\varphi_n/dT = T^{a-1}R(T)/(1 + T)^3$ with $R(T) = aP_n(1 + T) + T(1 + T)P_n' - 2TP_n$. Writing
+$P_n = p_2T^2 + p_1T + p_0$ ($p_2 = -(\lambda + c) < 0$, $p_1 = (n - 1)(c + 2\lambda) > 0$, $p_0 = (2n - 1)\lambda > 0$), the
+cubic $R$ has coefficients $ap_0 > 0$, $a(p_0 + p_1) + p_1 - 2p_0$, $(a - 1)p_1 + (a + 2)p_2 < 0$ and $ap_2 < 0$. Whatever the sign
+of the linear coefficient there is exactly one sign change, so by Descartes' rule $R$ has exactly one positive root: $\varphi_n$
+rises from $\varphi_n(0^+) = 0$ to its maximum at $t^*$ and then decreases to $-\infty$. Near $t = 0$,
+$N(1 + T)^3/t = ct^{n-1}P_n - 2n\Sigma\Pi_0(1 + T)^2 \to -2n\Sigma\Pi_0 < 0$. So $N$ is negative throughout, or changes sign
+$-, +, -$: a minimum, then a maximum. For $n = 2$, $R(t^2) = -\tfrac12(t^4 + 6t^2 - 3)((\lambda + c)t^2 + \lambda)$, whose
+positive root is $t^{*2} = 2\sqrt3 - 3$. $\square$
+
+**Label:** Theorem (proved; (b) T10.1(e) and T10 proof support, 961 random sets with 0 root-count disagreements; (a) T13 A5:
+symbolic identities, $\Pi_0^{\text{pair}}(n)$ regression against Task 10's table for $n = 1.5, 2, 3, 4, 8$, 5,000 random sets
+with real $n \in [1.01, 10]$; T10.3 census of 10,000 sets).
+
+At $\lambda = c = 1$, $\Sigma = 0.01$: $\Pi_0^{\text{pair}} = 30.243, 31.475, 37.820, 44.180, 62.711$ for $n = 1.5, 2, 3, 4, 8$.
+
+**Proposition 57 (Hill gain: classification and the mixed class).** Let $H = \Sigma/(\lambda + c)$. $\sigma^2 \to F$ from below
+at $0$ (since $G/\Pi \to 0 < 2F$) and $\to H$ from above at $\infty$ (Lemma 52), and $H < m < F$ when the pair exists, so two
+rays never occur. With the pair and $M > F$ ($\Pi_0 < c\lambda/(4\Sigma)$ for $n = 2$, Paper 1's window onset):
+
+| Tolerance | Class |
+|---|---|
+| $R^2 \le H$ | All |
+| $H < R^2 < m$ | Lower ray |
+| $m \le R^2 < F$ | Lower ray + window $(1,0,1)$ |
+| $F \le R^2 < M$ | Window |
+| $R^2 \ge M$ | Empty |
+
+With the pair and $M \le F$: All ($R^2 \le H$), lower ray ($H < R^2 < m$), $(1,0,1)$ ($m \le R^2 < M$), lower ray
+($M \le R^2 < F$), Empty ($R^2 \ge F$). Without the pair: All, lower ray ($H < R^2 < F$), Empty ($R^2 \ge F$).
+
+**Label:** Proposition (proved, from Theorems 2 and 56; T10.4, 4,868 two-turning-point sets, 77,888 tolerances, 0 mismatches;
+T13 C2 rows 6–7).
+
+The mixed class is practically narrow: the band width $(\min(M, F) - m)/F$ has median $5\times10^{-4}$ (range
+$4\times10^{-22}$ to $0.96$), and in 16% of sets the mixed band exists without any window above $F$.
+
+**Numerical result 58 (two-stage gains).** Sums of two widely separated natural stages produce more than one maximum:
+two-channel Bayesian gains show (max, min, max) in 7 of 2,000 sets, i.e. multi-window failure sets; two-channel Hill gains show
+(min, max, min, max) in 63 of 2,000 sets, i.e. mixed multi-window failure sets. No turning-point bound is known.
+
+**Label:** Numerical result (T10.3 exploratory census; T13 C2 rows 8–9).
+
+### 8.3 Degeneracies
+
+**Corollary 59 (equal-height maxima).** If two interior maxima share the value $M_2$ and are separated by a lower minimum,
+then just below $M_2$ both count in $k$, and at and above $M_2$ both windows are gone: $k$ drops by 2 at one tolerance. The
+class is otherwise unaffected.
+
+*Proof.* Theorem 2(c),(d). $\square$
+
+**Label:** Corollary (proved; T10.5: $k = 2$ just below, Empty at and above, both routes). Families with at most one maximum
+cannot produce this.
+
+**Corollary 60 (degenerate stationary points).** A stationary point that is not a turning point never changes the class, and a
+flat-topped maximum acts as a maximum.
+
+*Proof.* By Theorem 2(d) the class depends only on the ordered turning-point values, the endpoint limits and the approach
+directions. $\square$
+
+**Label:** Corollary (proved; T10.5: 1,000 tolerances, identical classes with and without the inflection).
+
+**Proposition 61 (pair birth).** If a minimum–maximum pair is born at $\theta_0$ through a nondegenerate fold of $N$, then at
+distance $\delta$ from $\theta_0$ the turning-point positions separate like $\delta^{1/2}$ and the values like
+$M - m \sim \delta^{3/2}$; the band of tolerances that sees the pair opens continuously from zero width.
+
+*Proof.* Near the fold $d\sigma^2/d\theta \approx a(x^2 - b\delta)$ in a local coordinate $x$; its roots are $\pm\sqrt{b\delta}$ and
+the value change between them is $\tfrac43a(b\delta)^{3/2}$. $\square$
+
+**Label:** Proposition (proved under nondegeneracy; T10.5 diagnosis, Hill $n = 2$: fitted exponents $1.50007$ (values) and
+$0.50002$ (positions)).
+
+**Numerical result 62 (narrow windows need root-finding).** Windows of relative width $10^{-8}$ were found by the root-finding
+classifier in 20/20 curves (55 windows); a $10^4$-point log grid found none.
+
+**Label:** Numerical result (T10.5).
+
+**Numerical result 63 (blind searches find no unpredicted class).** Randomized searches with tolerances concentrated near every
+critical tolerance found no class outside the predicted sets: $10^6$ classifications over the precision, design and $\tau$
+sweeps; $4.4\times10^6$ over the $\Delta t$ and $\Sigma$ sweeps; and the T13 audit of every synthesis-matrix row.
+
+**Label:** Numerical result (T10.7, T12 Part C, T13 C2).
+
+---
+
+## 9. The optimality theorem
+
+**Scope: observation sweeps.** The signal $s$ is the same stationary OU process for every $\theta$; only the observation
+process $Y_\theta$, jointly stationary with $s$, changes. The optimal filtering error is
+$P(\theta) = \mathbb E[(s(t) - \mathbb E[s(t) \mid Y_\theta(u), u \le t])^2]$.
+
+**Definition 64 (causal garbling).** $\theta_1 \preceq_c \theta_2$ ("$\theta_2$ is causally at least as informative") if there are a
+random element $U$ independent of $(s, Y_{\theta_2})$ and a process $Y'$ with $Y'(u \le t)$ measurable with respect to
+$\mathcal G_t = \sigma(Y_{\theta_2}(u \le t)) \vee \sigma(U)$ for every $t$, such that $(s, Y') \overset{d}{=} (s, Y_{\theta_1})$.
+
+**Label:** Definition (Stage 4).
+
+**Theorem 65 (monotonicity under causal garbling).** If $\theta_1 \preceq_c \theta_2$, then $P(\theta_2) \le P(\theta_1)$.
+
+*Proof.* Equality of joint laws gives $P(\theta_1) = \mathbb E[(s(t) - \mathbb E[s(t) \mid Y'(\le t)])^2]$. Since
+$\sigma(Y'(\le t)) \subseteq \mathcal G_t$, conditioning on the larger $\sigma$-field cannot increase mean-square error, and because
+$U$ is independent of $(s, Y_{\theta_2})$, $\mathbb E[s(t) \mid \mathcal G_t] = \mathbb E[s(t) \mid Y_{\theta_2}(\le t)]$. $\square$
+
+**Label:** Theorem (proved; T11.1, T11.2 Monte Carlo realization of a garbling). The argument is pointwise in $t$, so it also
+holds for cyclostationary observations, and it holds for any square-integrable target measurable with respect to $s$ in place of
+$s(t)$ (used in Theorem 69).
+
+**Corollary 66 (no optimal windows along causal orderings).** If $\theta_1 < \theta_2 \Rightarrow \theta_1 \preceq_c \theta_2$ on the
+whole domain, $P$ is non-increasing and the optimal failure set is Empty, All or a lower ray at every $R^2$; for the reverse
+ordering, Empty, All or an upper ray. Windows, two rays and mixed classes are impossible.
+
+*Proof.* A superlevel set of a non-increasing function is an initial segment; plateaus are allowed by Theorem 3. $\square$
+
+**Label:** Corollary (proved; T11). Strict monotonicity is not needed.
+
+**Corollary 67 (diagnostic).** Along a causally ordered sweep, a failure set with a window, two rays or a mixed class certifies
+that the filter is not optimal. With Theorem 45, the precision-sweep picture is complete: the optimal filter sits on the envelope
+$\sigma_\star^2$ (classes lower ray and Empty), and every curve strictly above it belongs to some miscalibrated gain.
+
+**Label:** Corollary (proved).
+
+Reading: Paper 1's windows and the Hill mixed class are signatures of the filter, not of the environment.
+
+**Proposition 68 (spectral dominance).** Let $y_\theta = s + \eta_\theta$ with $\eta_\theta$ stationary Gaussian, independent of $s$,
+with spectral densities $S_\theta$ (white components in integrated form as constant densities).
+1. If $S_{\theta_1} \ge S_{\theta_2}$ almost everywhere, then $\theta_1 \preceq_c \theta_2$.
+2. Suppose $S_s > 0$. If $Y' = h * y_{\theta_2} + n$, with $h$ causal LTI and $n$ independent, realizes $\theta_1$, then
+   $h = \delta$ and $S_n = S_{\theta_1} - S_{\theta_2} \ge 0$.
+
+*Proof.* 1. Let $\xi$ be stationary Gaussian with density $S_{\theta_1} - S_{\theta_2}$, independent of everything, and
+$Y' = y_{\theta_2} + \xi$. 2. The cross-spectrum of $s$ with $Y'$ is $HS_s$, which must equal $S_s$, so $H \equiv 1$; matching the
+spectra of $Y'$ gives $S_n$. $\square$
+
+**Label:** Proposition (proved; T11.1, T11.3 spectral checks on 25,000 pairs).
+
+**Theorem 69 (non-linear causal garblings add nothing).** In the setting of Proposition 68 with $S_s > 0$ almost everywhere,
+the following are equivalent: (i) $\theta_1 \preceq_c \theta_2$ by some (possibly non-linear) causal garbling; (ii)
+$S_{\theta_1} \ge S_{\theta_2}$ almost everywhere; (iii) $\theta_1 \preceq_c \theta_2$ by adding independent stationary Gaussian noise.
+
+*Proof.* (ii) ⇒ (iii) is Proposition 68(1), and (iii) ⇒ (i) is trivial. For (i) ⇒ (ii): by the proof of Theorem 65 with any
+square-integrable target $Z$ measurable with respect to $s$ in place of $s(t)$,
+$\mathbb E[(Z - \mathbb E[Z \mid Y_{\theta_1}(\le t)])^2] \ge \mathbb E[(Z - \mathbb E[Z \mid Y_{\theta_2}(\le t)])^2]$ for every $t$. As
+$t \to \infty$ the $\sigma$-fields $\sigma(Y_\theta(\le t))$ increase to $\sigma(Y_\theta(\mathbb R))$, so by Lévy's upward theorem both
+sides converge to the two-sided (smoothing) errors, and the inequality survives. Take $Z = \int g(u)s(u)\,du$ with $g$ smooth and
+compactly supported. Because $(s, Y_\theta)$ is jointly Gaussian, the two-sided conditional mean is linear and its error is
+$\int|\hat g(\omega)|^2\,h_\theta(\omega)\,d\omega/2\pi$ with $h_\theta = S_sS_\theta/(S_s + S_\theta)$. So
+$\int|\hat g|^2(h_{\theta_1} - h_{\theta_2}) \ge 0$ for every such $g$; taking $g(u) = \psi(u/L)\cos(\omega_0u)$ with $L \to \infty$
+concentrates $|\hat g|^2$ at $\pm\omega_0$, so $h_{\theta_1} \ge h_{\theta_2}$ at every Lebesgue point. Since
+$x \mapsto S_sx/(S_s + x)$ is strictly increasing where $S_s > 0$ (derivative $S_s^2/(S_s + x)^2$), $S_{\theta_1} \ge S_{\theta_2}$
+almost everywhere. $\square$
+
+**Label:** Theorem (proved; T13 A8: written proof, symbolic check of the monotone map, independent referee pass (Section 12);
+literature status in Section 12). It was Conjecture 4.11 in Stage 4.
+
+Reading: for additive stationary Gaussian noise, causal ordering, pathwise (Blackwell) ordering and pointwise spectral dominance
+coincide; the one-line spectral test of Proposition 68 is exact.
+
+**Proposition 70 (the sweeps studied).**
+- (a) Precision: $S_\Pi = 1/\Pi$ decreases in $\Pi$, so the sweep is ordered (Paper 1's monotone optimal filter recovered).
+- (b) Matched-zero-frequency $\tau$: $S_\tau(\omega) = (1/\Pi)/(1 + \tau^2\omega^2)$ decreases in $\tau$ at every $\omega$, so for
+  $\tau_2 > \tau_1$, $\tau_1 \preceq_c \tau_2$ (information increases with $\tau$). The garbling noise has
+  $$
+  S_\xi(\omega) = \frac{(\tau_2^2 - \tau_1^2)\omega^2}{\Pi(1 + \tau_1^2\omega^2)(1 + \tau_2^2\omega^2)} = |H_\xi(i\omega)|^2,
+  \qquad
+  H_\xi(s) = \sqrt{\frac{\tau_2^2 - \tau_1^2}{\Pi}}\;\frac{s}{(1 + \tau_1s)(1 + \tau_2s)},
+  $$
+  a second-order process (real for $\tau_2 > \tau_1$). Theorem 17's monotonicity follows; its strictness comes from the closed form.
+- (c) Matched-variance $\tau$: $S_\tau = 2v\tau/(1 + \tau^2\omega^2)$; every pair crosses (larger at $\omega = 0$ for the larger $\tau$,
+  larger as $\omega \to \infty$ for the smaller), so by Theorem 69 no two values are causally ordered by any garbling, linear or not.
+
+**Label:** Proposition (proved; T11.1, T11.3; part (c) for all garblings via Theorem 69).
+
+**Proposition 71 (latency).** Observations $y_d(t) = s(t - d) + $ white noise of intensity $1/\Pi$, $d \ge 0$. All values of $d$ are
+pathwise Blackwell-equivalent, yet the optimal filtering error is
+$$
+P(d) = F - e^{-2\lambda d}\big(F - \sigma_\star^2(\Pi)\big),
+$$
+strictly increasing in $d$. Along the latency sweep $d(\theta) = \theta e^{-\theta}$, which rises then falls, the optimal filter has a
+window in $\theta$ for every $R^2 \in (\sigma_\star^2, P(1/e))$; the causal order ($d_1 < d_2 \Rightarrow d_2 \preceq_c d_1$) reverses at
+$\theta = 1$, where the window sits. Classes along $\theta$: All ($R^2 \le \sigma_\star^2$), window, Empty ($R^2 \ge P(1/e)$).
+
+*Proof.* By the OU property $s(t) = e^{-\lambda d}s(t - d) + $ an independent innovation of variance $F(1 - e^{-2\lambda d})$, and
+$s(t - d)$ is filtered with error $\sigma_\star^2$. $P(d(\theta)) > \sigma_\star^2$ for every $\theta > 0$, with limit $\sigma_\star^2$ at both
+ends and a single maximum at $\theta = 1$. $\square$
+
+**Label:** Proposition (proved; T11.4, Monte Carlo $|z| \le 1.91$; T13 C2 row 20). Example ($\lambda = 1$, $\Sigma = 0.01$,
+$\Pi = 1$): $P(0) = 0.0099505$, $P(1/e) = 0.0099763$.
+
+**Counterexample 72 (analytic; pathwise ordering is not enough).** Proposition 71 is a sweep of pathwise Blackwell-equivalent
+experiments along which the optimal filtering error is non-monotone, so "Blackwell ordering (pathwise) implies monotone filtering
+error" is false; Definition 64 must be causal.
+
+**Label:** Counterexample (analytic; T11.4).
+
+**Proposition 73 (ordering is sufficient, not necessary).** Along matched-variance $\tau$ restricted to $(1/\lambda, \infty)$, $P$ is
+strictly decreasing (Proposition 21), yet no two values are causally ordered by any garbling (Proposition 70(c)). So monotone optimal
+error does not require an information ordering.
+
+**Label:** Proposition (proved; T11.5, 1,000/1,000 sets; all garblings via Theorem 69).
+
+**Answer to the Stage 4 question.** Along any causally ordered environment sweep, an optimal filter's failure set is Empty, All or a
+single ray at the less-informative end; every other class certifies a miscalibrated filter (Corollaries 66–67). Ordering is exactly
+sharp in the power-normalized family (Theorem 24) and sufficient but not necessary in general (Proposition 73); causality is
+essential (Counterexample 72); and for additive Gaussian noise the ordering is decided by the spectra alone (Theorem 69).
+
+---
+
+## 10. Final synthesis matrix
+
+"#" is the row number of the Task 13 class audit (C2); "Opt." is what the optimal filter can produce along the same sweep. Classes
+are written E (Empty), A (All), LR (lower ray), UR (upper ray), 2R (two rays), W (window), and triples $(\ell, u, k)$.
+
+| # | Sweep | Kind | Gain family / filter | Endpoint limits (approach) | Extrema | Critical tolerances | Possible classes | Opt. | Conditions | Label | Verified by |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | $\Pi$ | env. | optimal | $F$ (below) → $0$ | none | $F$ | LR, E | LR, E | — | Thm 6 | Paper 1; T13 C2 |
+| 2 | $\Pi$ | env. | Bayesian-weight | $F$ → $H$ (above) | one max iff $\kappa > 2$ | $H, F, M$ | A, LR, W, E | LR, E | $\kappa > 2$ for W | Prop. 7 | Paper 1; T10.3, T10.7; T13 C2 |
+| 3 | $\Pi$ | env. | misspecified Kalman | $F$ → $0$ | one max iff $F' > 2F$ | $F, M$ | LR, W, E | LR, E | $F' > 2F$ | Prop. 53 | T10.3, T10.7; T13 C2 |
+| 4 | $\Pi$ | env. | capped $\min(g\Pi, c)$ | $F$ → $H$ (above) | one max (kink) iff $g > 2F$; plateau at $g = 2F$ | $H, F, M$ | A, LR, W, E | LR, E | $g > 2F$ | Prop. 54 | T10.3, T10.5, T10.7; T13 C2 |
+| 5 | $\Pi$ | env. | precision-blind | $\infty$ → $H$ (above) | none | $H$ | A, LR | LR, E | — | Prop. 55 | T10.3, T10.7; T13 C2 |
+| 6 | $\Pi$ | env. | Hill $n = 2$ | $F$ (below) → $H$ (above) | 0, or min then max | $H, m, M, F$ | A, LR, (1,0,1), W, E | LR, E | pair iff $\Pi_0 < \Pi_0^{\text{pair}}$ | Thm 56, Prop. 57 | T10.3, T10.4, T10.7; T13 C2 |
+| 7 | $\Pi$ | env. | Hill, real $n > 1$ | $F$ (below) → $H$ (above) | 0, or min then max | $H, m, M, F$ | A, LR, (1,0,1), W, E | LR, E | pair iff $\Pi_0 < \Pi_0^{\text{pair}}(n)$ | Thm 56, Prop. 57 | T10.3; T13 A5, C2 |
+| 8 | $\Pi$ | env. | two-stage Bayesian | $F$ → $\Sigma/(\lambda + c_1 + c_2)$ (above) | up to 3 seen | — | A, LR, W, (1,0,1), (0,0,2), E | LR, E | — | Num. 58 | T10.3; T13 C2 |
+| 9 | $\Pi$ | env. | two-stage Hill | $F$ (below) → $\Sigma/(\lambda + c_1 + c_2)$ (above) | up to 4 seen | — | A, LR, (1,0,1), (1,0,2), W, (0,0,2), E | LR, E | — | Num. 58 | T10.3; T13 C2 |
+| — | $\Pi$ | env. | any continuous gain | free above $\sigma_\star^2$ | any finite number | — | $R^2 < F$: exactly the classes with $\ell = 1$; $R^2 \ge F$: all | LR, E | — | Thm 45, Cor. 46–48 | T10.2 |
+| 10 | $\Pi_0$ | design | Bayesian-weight | $V_c$ → $F$ (below) | one min iff $\Pi < \Pi_A$ | $\sigma_\star^2, V_c, F$ | A, 2R, LR, UR, E | n/a | cases P1–P3 | Prop. 10 | T8.3, T10.7; T13 C2 |
+| 11 | $c$ | design | Bayesian-weight | $F$ (below) → $\infty$ | one min | $\sigma_\star^2, F$ | A, 2R, UR | n/a | — | Prop. 12 | T8.3, T10.7; T13 C2 |
+| 12 | $\Pi_0$ (any monotone gain at fixed $\Pi$) | design | e.g. $c\tanh(\Pi/\Pi_0)$, $c(1 - e^{-\Pi/\Pi_0})$, $c\Pi^2/(\Pi^2 + \Pi_0^2)$ | $V_c$ → $F$ (below) | at most one min | — | A, 2R, LR, UR, E; never W or mixed | n/a | — | Thm 8 | T8.4; T13 C2 |
+| 13 | $\tau$ (zero-freq. power) | env. | relay, any precision-only $G > 0$ | $V_w$ (below) → $H_G$ (above) | none | $H_G, V_w$ | A, LR, E | LR, E | LR at $R^2 = F$ iff $G > 2F\Pi$ | Prop. 15 | T9.4, T10.7; T13 C2 |
+| 14 | $\tau$ (zero-freq. power) | env. | optimal | $\sigma_\star^2$ (below) → $0$ | none | $\sigma_\star^2$ | LR, E | LR, E | — | Thm 17, Prop. 18 | T9.4, T10.7; T13 C2 |
+| 15 | $\tau$ (matched variance) | env. | relay, fixed $G > 0$ | $H_G$ → top (below) | none | $H_G$, top | A, UR, E | W, E | — | Prop. 23 | T10.6, T10.7; T13 C2 |
+| 16 | $\tau$ (matched variance) | env. | optimal | $0$ → $0$ | one max at $1/\lambda$ | $P_{\max}$ | W, E | W, E | — | Prop. 21 | T10.6, T10.7; T13 C2 |
+| 17 | $\tau$, power family $\beta \le 0$ | env. | optimal | $F$ ($\beta < 0$) or $\sigma_\star^2(1/K)$ ($\beta = 0$) → $0$ | none | one limit | LR, E | LR, E | ordered (info ↑) | Thm 24 | T11.3; T13 C2 |
+| 18 | $\tau$, power family $0 < \beta < 2$ | env. | optimal | $0$ → $0$ | exactly one max | $\max P$ | W, E | W, E | not ordered | Thm 24, Thm 25 | T11.3; T13 A4, C2 |
+| 19 | $\tau$, power family $\beta \ge 2$ | env. | optimal | $0$ → $\sigma_\star^2(\lambda^2/K)$ ($\beta = 2$) or $F$ ($\beta > 2$) | none | one limit | UR, E | UR, E | ordered (info ↓) | Thm 24 | T11.3 with diagnosis; T13 C2 |
+| 20 | latency $d = \theta e^{-\theta}$ | env. | optimal | $\sigma_\star^2$ (above) → $\sigma_\star^2$ (above) | one max at $\theta = 1$ | $\sigma_\star^2, P(1/e)$ | A, W, E | A, W, E | pathwise-equivalent, causally reversing | Prop. 71 | T11.4; T13 C2 |
+| 21 | $\Delta t$ (M-P) | either | optimal, post | $\sigma_\star^2$ → $0$ | none | $\sigma_\star^2$ | LR, E | LR, E | — | Thm 32(a) | T12; T13 C2 |
+| 22 | $\Delta t$ (M-P) | either | optimal, prior | $\sigma_\star^2$ → $F$ (below) | none | $\sigma_\star^2, F$ | A, UR, E | A, UR, E | — | Thm 32(b) | T12; T13 A1, C2 |
+| 23 | $\Delta t$ (M-P) | either | optimal, avg | $\sigma_\star^2$ → $F$ (below) | none | $\sigma_\star^2, F$ | A, UR, E | A, UR, E | — | Thm 32(c) | T12; T13 A2, C2 |
+| 24 | $\Delta t$ (M-P) | either | D1 sampled relay, post | $\sigma^2(G, \Pi)$ → $0$ | none or one max | limits, max | E, LR, W | — | excess iff $G > 2F\Pi$ | Prop. 28; Num. 37 | T12; T13 C2 |
+| 25 | $\Delta t$ (M-P) | either | D1, prior | $\sigma^2(G, \Pi)$ → $F$ (below) | none, min, max–min | limits, extrema | A, E, LR, UR, 2R, (0,1,1) | — | 2R iff $G > 2F\Pi$ (below the min) | Prop. 36; Num. 37 | T12; T13 C2 |
+| 26 | $\Delta t$ (M-P) | either | D1, avg | $\sigma^2(G, \Pi)$ → $F$ (below) | none, min, max–min | limits, extrema | A, E, LR, UR, 2R, (0,1,1) | — | as row 25 | Prop. 36; Num. 37 | T12; T13 C2 |
+| 27 | $\Delta t$ (M-P) | either | D2 discrete Bayesian, post | $\sigma^2(c\Pi/\Pi_0, \Pi)$ → $(1-c)^2F$ | none, max, min, min–max | limits, extrema | A, E, LR, UR, 2R, W, (1,0,1) | — | excess iff $\kappa > 2$ | Prop. 29; Num. 37 | T12; T13 C2 |
+| 28 | $\Delta t$ (M-P) | either | D2, prior | $\sigma^2(c\Pi/\Pi_0, \Pi)$ → $F$ (below) | none, min | limits, min | A, E, LR, UR, 2R | — | — | Prop. 29; Num. 37 | T12; T13 C2 |
+| 29 | $\Delta t$ (M-P) | either | D2, avg | $\sigma^2(c\Pi/\Pi_0, \Pi)$ → $F$ (below) | none, min | limits, min | A, E, LR, UR, 2R | — | — | Prop. 29; Num. 37 | T12; T13 C2 |
+| 30 | $\Delta t$ (M-P) | either | D3 over-trust $\rho$, post | $\sigma^2(G_\rho, \Pi)$ → $0$ | none or one max | limits, max | E, LR, W | — | excess near 0 iff $\rho > 2 + u$ | Prop. 30; Num. 37 | T12; T13 C2 |
+| 31 | $\Delta t$ (M-P) | either | D3, prior | $\sigma^2(G_\rho, \Pi)$ → $F$ (below) | none, min, max–min | limits, extrema | A, E, LR, UR, 2R, (0,1,1) | — | — | Prop. 30; Num. 37 | T12; T13 C2 |
+| 32 | $\Delta t$ (M-P) | either | D3, avg | $\sigma^2(G_\rho, \Pi)$ → $F$ (below) | none, min | limits, min | A, E, LR, UR, 2R | — | — | Prop. 30; Num. 37 | T12; T13 C2 |
+| 33 | $\Delta t$ (M-I) | either | optimal, (a) | $\sigma_\star^2$ → $F$ | none (numerical) | $\sigma_\star^2, F$ | A, UR, E | A, UR, E | — | Num. 35 | T11.6, T12; T13 A3, C2 |
+| 34 | $\Delta t$ (M-I) | either | optimal, (b) | $\sigma_\star^2$ → $F$ | none (numerical) | $\sigma_\star^2, F$ | A, UR, E | A, UR, E | — | Num. 35 | T11.6, T12; T13 A3, C2 |
+| 35 | $\Sigma$, absolute | env. | $\Sigma$-independent gain | $G^2/(2\Pi(\lambda+G))$ (above) → $\infty$ | none | lower limit | A, UR | UR | — | Prop. 40 | T12; T13 C2 |
+| 36 | $\Sigma$, relative | env. | $\Sigma$-independent gain | $\infty$ → $1/(1+g)$ | none | $1/(1+g)$ | A, LR | LR, E | excess iff $\Sigma < \lambda G/(2\Pi)$ | Prop. 40 | T12; T13 C2 |
+| 37 | $\Sigma$, absolute | env. | $\Sigma$-tracking, over-trust $\rho$ | $0$ → $\infty$ | none | — | UR | UR | — | Prop. 41 | T12; T13 C2 |
+| 38 | $\Sigma$, relative | env. | $\Sigma$-tracking, over-trust $\rho$ | $1$ → $0$ | one max iff $\rho > 2$ | $1$, peak | LR, W, E | LR, E | W iff $\rho > 2$ | Prop. 41 | T12; T13 C2 |
+| 39 | $\Sigma$, absolute | env. | $\Sigma$-tracking, misspecified $\lambda'$ | $0$ → $\infty$ | none | — | UR | UR | — | Prop. 42 | T12; T13 C2 |
+| 40 | $\Sigma$, relative | env. | $\Sigma$-tracking, misspecified $\lambda'$ | $1$ → $0$ | one max iff $\lambda' < \lambda/2$ | $1$, peak | LR, W, E | LR, E | W iff $\lambda' < \lambda/2$ | Prop. 42 | T12; T13 C2 |
+| 41 | $\Sigma$, absolute | env. | optimal | $0$ → $\infty$ | none | — | UR | UR | — | Prop. 43 | T12; T13 C2 |
+| 42 | $\Sigma$, relative | env. | optimal | $1$ → $0$ | none | $1$ | LR, E | LR, E | — | Prop. 43 | T12; T13 C2 |
+
+Rows 1–20 and 35–42 are complete classifications (every class at every tolerance determined, impossibilities proved), except rows
+8–9 (two-stage gains, numerical). Rows 21–23 are complete. Rows 24–34 give proved excess sets and limits; the class lists for
+rows 24–32 and the monotonicity behind rows 33–34 are numerical.
+
+---
+
+## 11. Open problems
+
+1. **Integrate-and-dump monotonicity** (Numerical result 35). *Statement:* both M-I optimal metrics are non-decreasing in
+   $\Delta t$ on the whole continuum. *Evidence:* 0 violations in 400,000 points (Tasks 11, 12) and 10,000 sets at 100 digits
+   (Task 13). *Best partial result:* Corollary 34 (monotone along every nested chain $\Delta t_0 m^j$). The gap is non-nested
+   pairs; the scalar reduction of the two-state Riccati equation gives an implicit derivative whose sign SymPy cannot settle,
+   because $e^{-\lambda\Delta t}$ and $\Delta t$ enter together.
+2. **Turning points of sampled relays** (Conjecture 38). *Statement:* D1–D3 have at most two turning points along $\Delta t$ in every
+   metric. *Evidence:* Task 12's census (6,000 sets × 3 metrics) and the Task 13 audit (9,000 new curves): never more than two.
+   *Best partial result:* proved endpoint asymptotics (Proposition 31) and a single excess component (Propositions 28–30). The
+   fixed-gain $P^+$ mixes two exponential rates with $1/\Delta t$, which defeats the polynomial methods used elsewhere.
+3. **Two-stage gains** (Numerical result 58). *Statement:* a bound on the number of turning points of sums of natural stages.
+   *Evidence:* at most 3 (Bayesian) and 4 (Hill) turning points in 2,000 sets each. *Best partial result:* none beyond Corollary 48
+   (arbitrarily many windows for constructed gains).
+4. **A necessary condition for monotone optimal error.** Ordering is exactly sharp in the power family (Theorem 24) but not
+   necessary in general (Proposition 73). Is there a tidy necessary condition, for instance a one-sided spectral-crossing
+   condition, beyond that family?
+5. **The fixed α–β filter and multivariate models** (Stage 6). The α–β filter is two-state and does not fit the scalar model;
+   the decoupled multivariate case should split into scalar copies, the mixing case is open.
+
+---
+
+## 12. Verification appendix
+
+Verification tasks: T8 (`REPORT.md`, Stage 0–1), T9 (`t9/RESULTS_t9.md`, Stage 2 $\tau$), T10 (`t10/RESULTS_t10.md`, Stage 3),
+T11 (`t11/RESULTS_t11.md`, Stage 4), T12 (`t12/RESULTS_t12.md`, Stage 2 completion), T13 (`t13/RESULTS_t13.md`, this document).
+Pre-registrations: `PREREG_t8.md` … `PREREG_t13.md`. Paper 1's results carry Paper 1's own verification (`verification/`).
+Every failed pre-registered check in T8–T13 stays recorded in its report with a diagnosis; none changed a class or a result
+below except where the change log says so.
+
+| No. | Kind | Result | Verified by |
+|---|---|---|---|
+| 1 | Proposition | topological realizability | T8.5 |
+| 2 | Theorem | critical-tolerance theorem | T8.1, T8.3; T9–T13 classifiers |
+| 3 | Theorem | plateaus | T10.5 |
+| 4 | Proposition | excess identity | Paper 1; T8.1 |
+| 5 | Lemma | single minimum in the gain | T8.1 |
+| 6 | Theorem | window theorem; optimal monotone along $\Pi$ | Paper 1; T13 C2 |
+| 7 | Proposition | Bayesian-weight along $\Pi$ | Paper 1; T10.3, T10.7; T13 C2 |
+| 8 | Theorem | monotone gain sweeps cannot window | T8.4; T13 C2 |
+| 9 | Proposition | prior precision: endpoints, extrema | T8.1, T8.2 |
+| 10 | Proposition | prior precision: classification | T8.3; T13 C2 |
+| 11 | Proposition | coupling: endpoints, extrema | T8.1, T8.2 |
+| 12 | Proposition | coupling: classification | T8.3; T13 C2 |
+| 13 | Lemma | relay variance, zero-frequency $\tau$ | T9.1 |
+| 14 | Proposition | relay endpoints, monotone | T9.1, T9.4 |
+| 15 | Proposition | relay classification | T9.4; T13 C2 |
+| 16 | Proposition | optimal stationary error, zero-frequency $\tau$ | T9.1, T9.2 (Wiener route; ARE route via diagnosis) |
+| 17 | Theorem | optimal decreasing in $\tau$ | T9.1, T9.5 |
+| 18 | Proposition | optimal classification along $\tau$ | T9.4; T13 C2 |
+| 19 | Proposition | best constant-gain relay | T9.5 (with mp diagnosis) |
+| 20 | Proposition | strict gap $P < V$ | T13 A7 |
+| 21 | Proposition | optimal filter at matched variance | T10.6; T13 C2 |
+| 22 | Counterexample | optimal filter windows | T10.6 |
+| 23 | Proposition | relay at matched variance | T10.6; T13 C2 |
+| 24 | Theorem | sharpness in the power family | T11.3 (with diagnosis); T13 C2 |
+| 25 | Theorem | unimodality, $0 < \beta < 2$ | T13 A4; T11.3 (numerical) |
+| 26 | Proposition | duality | T11.1, T11.3 |
+| 27 | Lemma | shared excess set (M-P) | T12 |
+| 28 | Proposition | D1 tanh lemma | T12 |
+| 29 | Proposition | D2 excess set | T12 |
+| 30 | Proposition | D3 excess set, onset $\rho > 2 + u$ | T12 |
+| 31 | Proposition | endpoint limits along $\Delta t$ | T12 (with series-route diagnosis) |
+| 32 | Theorem | optimal M-P along $\Delta t$ | T12 (a); T13 A1, A2 (b), (c) |
+| 33 | Proposition | M-P not a causal-garbling family | T12 |
+| 34 | Corollary | M-I nested grids | T11.6 |
+| 35 | Numerical result | M-I continuum monotone | T11.6, T12, T13 A3 |
+| 36 | Proposition | two rays from over-weighted sampled relay | T12 (with diagnosis) |
+| 37 | Numerical result | census of sampled relays | T12; T13 C2 |
+| 38 | Conjecture | at most two turning points (sampled relays) | T12; T13 A6, C2 |
+| 39 | Lemma | scaling lemma | T12 |
+| 40 | Proposition | $\Sigma$-independent gain | T12; T13 C2 |
+| 41 | Proposition | $\Sigma$-tracking, over-trust $\rho$ | T12; T13 C2 |
+| 42 | Proposition | $\Sigma$-tracking, misspecified $\lambda'$ | T12; T13 C2 |
+| 43 | Proposition | optimal along $\Sigma$ | T12; T13 C2 |
+| 44 | Proposition | signal sweeps | T11.1 |
+| 45 | Theorem | gain realizability | T10.1, T10.2 |
+| 46 | Corollary | forced lower ray | T10.1 (factor-radicand route), T10.2 |
+| 47 | Corollary | exact class set along $\Pi$ | T10.2 |
+| 48 | Corollary | unbounded complexity | T10.2 (supplementary) |
+| 49 | Corollary | what regularity pins | T10 (derivation) |
+| 50 | Lemma | excess components | T8.1 (Proposition 4) |
+| 51 | Lemma | elasticity form | T10.1 |
+| 52 | Lemma | bounded gains approach $H$ from above | T10.3, T10.7 |
+| 53 | Proposition | misspecified Kalman | T10.1, T10.3; T13 C2 |
+| 54 | Proposition | capped gain | T10.3, T10.5; T13 C2 |
+| 55 | Proposition | precision-blind gain | T10.3; T13 C2 |
+| 56 | Theorem | Hill gain, every real $n > 1$ | T10.1, T10.3 ($n = 2$); T13 A5 |
+| 57 | Proposition | Hill classification, mixed class | T10.4; T13 C2 |
+| 58 | Numerical result | two-stage gains | T10.3; T13 C2 |
+| 59 | Corollary | equal-height maxima | T10.5 |
+| 60 | Corollary | degenerate stationary points | T10.5 |
+| 61 | Proposition | pair birth | T10.5 (with diagnosis) |
+| 62 | Numerical result | narrow windows need root-finding | T10.5 |
+| 63 | Numerical result | blind searches | T10.7, T12 Part C, T13 C2 |
+| 64 | Definition | causal garbling | — |
+| 65 | Theorem | monotonicity under causal garbling | T11.1, T11.2 |
+| 66 | Corollary | no optimal windows along causal orderings | T11 |
+| 67 | Corollary | diagnostic | T11 |
+| 68 | Proposition | spectral dominance | T11.1, T11.3 |
+| 69 | Theorem | non-linear causal garblings add nothing | T13 A8 |
+| 70 | Proposition | the sweeps studied | T11.1, T11.3 |
+| 71 | Proposition | latency | T11.4; T13 C2 |
+| 72 | Counterexample | pathwise ordering is not enough | T11.4 |
+| 73 | Proposition | ordering sufficient, not necessary | T11.5 |
+
+**Route notes.** Three Task 8–12 identities reduce to 0 only by documented fallback routes (Task 10: two $\sqrt{x^2} = x$ items,
+reduced by factoring the radicand under the stated sign condition; Task 12: the D2 $O(1/\Delta t)$ coefficient, by the series route
+after `sympy.limit` returned 0). In Task 13, two Part A identities (the sign of $-sFr$ in Theorem 32(b) and the $\sinh$ identity in
+Theorem 32(c)) needed a post-hoc rewrite route (`rewrite(exp)`, explicit positive series); the pre-registered check recorded them as
+route failures.
+
+---
+
+## 13. Change log
+
+### 13.1 Number map
+
+| Old (document) | New |
+|---|---|
+| Prop. 1.1 (Stage 0–1) | Proposition 1 |
+| Thm 1.2 (Stage 0–1) | Theorem 2 |
+| Lemma 3.1 (Stage 0–1; header Lemma, label line "Proposition") | Lemma 5 |
+| Thm 3.2 (Stage 0–1) | Theorem 8 |
+| Props 4.1, 4.2 (Stage 0–1) | Propositions 9, 10 |
+| Props 5.1, 5.2 (Stage 0–1) | Propositions 11, 12 |
+| Lemma 2.1 (Stage 2 $\tau$) | Lemma 13 |
+| Props 2.2, 2.3 (Stage 2 $\tau$) | Propositions 14, 15 |
+| Prop. 3.1 (Stage 2 $\tau$) | Proposition 16 |
+| Thm 3.2′ (Stage 2 $\tau$) | Theorem 17 |
+| Prop. 3.3 (Stage 2 $\tau$) | Proposition 18 |
+| Prop. 3.4 (Stage 2 $\tau$) | Proposition 19 |
+| Num. 3.5 (Stage 2 $\tau$; strict gap) | Proposition 20 (proved, T13 A7) |
+| Thm 3.1 (Stage 3) | Theorem 45 |
+| Cor. 3.2–3.5 (Stage 3) | Corollaries 46–49 |
+| Lemma 3.6, 3.7 (Stage 3) | Lemmas 50, 51 |
+| §4 general fact (Stage 3) | Lemma 52 |
+| §4.1 Bayesian reduction (Stage 3) | proof of Proposition 7 |
+| Prop. 3.8 (Stage 3) | Proposition 53 |
+| §4.3, §4.4 (Stage 3) | Propositions 54, 55 |
+| Prop. 3.9 (Stage 3, Hill $n = 2$) | Theorem 56(b) |
+| Conj. 3.10 (Stage 3, Hill $n \ne 2$) | Theorem 56(a) (proved, T13 A5) |
+| §4.5 Hill classification (Stage 3) | Proposition 57 |
+| §4.6 two-stage (Stage 3) | Numerical result 58 |
+| Cor. 3.11, 3.12 (Stage 3) | Corollaries 59, 60 |
+| Thm 3.13 (Stage 3) | Theorem 3 |
+| Prop. 3.14 (Stage 3) | Proposition 61 |
+| §5 narrow windows (Stage 3) | Numerical result 62 |
+| adversarial question 5 / T10.7 (Stage 3) | Numerical result 63 |
+| Prop. 6.1 (Stage 3) | Proposition 21 |
+| Counterexample in §6 (Stage 3; "Proposition + Counterexample") | Counterexample 22 (split from Proposition 21) |
+| §6 relay at matched variance (Stage 3) | Proposition 23 |
+| Def. 4.1 (Stage 4) | Definition 64 |
+| Thm 4.2 (Stage 4) | Theorem 65 |
+| Cor. 4.3 (Stage 4) | Corollary 66 |
+| Cor. 4.10 (Stage 4; numbered before 4.9) | Corollary 67 |
+| Prop. 4.4 (Stage 4) | Proposition 68 |
+| Conj. 4.11 (Stage 4) | Theorem 69 (proved, T13 A8) |
+| Prop. 4.5 (Stage 4) | Proposition 70 |
+| Thm 4.6 (Stage 4) | Theorem 24 |
+| Num. 4.6a (Stage 4) | Theorem 25 (proved, T13 A4) |
+| Prop. 4.6b (Stage 4) | Proposition 26 |
+| Remark on signal sweeps (Stage 4) | Proposition 44 |
+| Prop. 4.7 (Stage 4; "Proposition + Counterexample") | Proposition 71 and Counterexample 72 |
+| Prop. 4.8 (Stage 4) | Proposition 73 |
+| Cor. 4.9 (Stage 4) | Corollary 34 |
+| Num. 4.10a (Stage 4) | Numerical result 35 |
+| Lemma 2.1 (Stage 2 completion) | Lemma 27 |
+| Props 2.2, 2.3, 2.4 (Stage 2 completion) | Propositions 28, 29, 30 |
+| §A.3 limits table (Stage 2 completion) | Proposition 31 |
+| Prop. 2.6(a), (b) (Stage 2 completion) | Theorem 32(a), (b) |
+| Num. 2.6c (Stage 2 completion) | Theorem 32(c) (proved, T13 A2) |
+| Prop. 2.7 (Stage 2 completion) | Proposition 33 |
+| Num. 2.8 (Stage 2 completion; = Num. 4.10a) | Numerical result 35 |
+| Prop. 2.9 (Stage 2 completion) | Proposition 36 |
+| Num. 2.10 (Stage 2 completion) | Numerical result 37 |
+| Conj. 2.11 (Stage 2 completion) | Conjecture 38 |
+| Lemma 2.12 (Stage 2 completion) | Lemma 39 |
+| Props 2.13–2.16 (Stage 2 completion) | Propositions 40–43 |
+| Paper 1: excess identity, window theorem, Bayesian-weight | Proposition 4, Theorem 6, Proposition 7 |
+
+### 13.2 Corrections applied
+
+| # | Source | Correction | Where |
+|---|---|---|---|
+| 1 | T8 | C4 parenthetical reversed: from above at $\theta_-$ means the first piece is **increasing**, at $\theta_+$ the last piece is **decreasing**. | C4 |
+| 2 | T8 / Stage 0–1 | Lemma 3.1 carried two labels (header Lemma, label line Proposition); now Lemma 5 only. | Lemma 5 |
+| 3 | T9 | Prop. 3.1 proof: the Riccati equation is multiplied by $-\tau^2R_v$, not $\tau^2$. | Proposition 16 |
+| 4 | T9 | Prop. 2.2 approach directions follow from the corrected C4. | Proposition 14 |
+| 5 | T9 | Worked example: $\sigma^2(10) = 0.011875$ exactly (stated as 0.01188 before, a half-unit boundary). | Section 5.1 |
+| 6 | T9 | "$V(1) \approx 0.00990$" made precise: $V(1) = 0.0099010$. | Section 5.1 |
+| 7 | T10 | Corollary 3.4's construction switches to the lower branch beyond an envelope touch point; bumps compactly supported. | Corollary 48 |
+| 8 | T10 | "Hill sextic": $Q$ is a quintic, $tQ$ the sextic (now superseded by the general-$n$ proof). | Theorem 56 |
+| 9 | T10 | Lemma 3.7 holds for any differentiable $G > 0$; monotonicity only reduces $N$ to one variable. | Lemma 51 |
+| 10 | T10 | "Two rays" removed from the Hill predicted set ($\sigma^2 > H$ everywhere). | Proposition 57 |
+| 11 | T10 | Fold exponents: positions $1/2$, values $3/2$. | Proposition 61 |
+| 12 | T11 | Prop. 4.5(c) "not ordered by any garbling" needed Conjecture 4.11; now justified by Theorem 69. | Proposition 70(c) |
+| 13 | T11 | Numbering: Cor. 4.10 appeared before Cor. 4.9; resolved by renumbering. | Corollaries 34, 67 |
+| 14 | T11 | Cor. 4.3's citation of Theorem 3.13 now resolves internally. | Corollary 66 |
+| 15 | T11 | Theorem 4.6: the limits of $P$ itself are stated, including $\beta = 2$: $\sigma_\star^2(\lambda^2/K)$, not $F$. | Theorem 24 |
+| 16 | T11 | Prop. 4.5(b): garbling direction $\tau_2 > \tau_1$ made explicit ($H_\xi$ real only then). | Proposition 70(b) |
+| 17 | T12 | D3 onset at fixed precision is $\rho > 2 + u$, not $\rho > 2$. | Proposition 30 |
+| 18 | T12 | Quick-check values for D1 replaced by the computed ones (maximum $0.20457$ at $\Delta t = 2.4645$; crossing at $\Delta t_E = 100$). | Section 6.3 |
+| 19 | T12 | D2 post $O(1/\Delta t)$ coefficient confirmed by the series route (`sympy.limit` failed). | Proposition 31 |
+| 20 | T13 A1 | Prop. 2.6(b) verified (was "proved, unverified"). | Theorem 32(b) |
+| 21 | T13 A2 | Num. 2.6c proved; label Numerical result → Theorem (part (c)). | Theorem 32(c) |
+| 22 | T13 A4 | Num. 4.6a proved; label → Theorem. | Theorem 25 |
+| 23 | T13 A5 | Conj. 3.10 proved for every real $n > 1$; label → Theorem. | Theorem 56 |
+| 24 | T13 A7 | Strict gap $P < V$ proved; label → Proposition. | Proposition 20 |
+| 25 | T13 A8 | Conj. 4.11 proved for additive stationary Gaussian noise; label → Theorem. | Theorem 69 |
+| 26 | Stage 3 / Stage 4 | Results with two labels ("Proposition + Counterexample", "Numerical result + Conjecture") split or relabelled: Proposition 21 + Counterexample 22; Proposition 71 + Counterexample 72; Conjecture 3.10 is now Theorem 56(a). | Sections 5.2, 8.2, 9 |
+| 27 | Stage 4 | Theorem 65 noted to hold for any target measurable with respect to $s$ (needed by Theorem 69); no change to its statement. | Theorem 65 |
+| 28 | Stage 3 / T13 | Latency sweep classes stated in full (All for $R^2 \le \sigma_\star^2$, window, Empty); Stage 4 gave only the window. | Proposition 71 |
