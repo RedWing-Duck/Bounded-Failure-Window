@@ -182,14 +182,22 @@ T += ["## Independent referee (C4): report and dispositions", "", ref.strip(), "
 T += ["## Reproducibility (Part D)", ""]
 if man:
     tot = sum(man["runtime_s"].values())
-    T += ["Clean checkout: `git worktree` of the repository, replayed with `reproduce_all.sh` (Task 8 and Tasks 9–12 in two "
-          "invocations after a container restart interrupted the first during Task 9; Task 13 separately).",
+    T += ["Clean checkout: `git worktree` of the repository, replayed with `reproduce_all.sh` in four invocations: Task 8; "
+          "Tasks 9–12 (restarted after a container restart interrupted the first run during Task 9; it stopped at Task 10, "
+          "below); Tasks 11–12; Task 13 on the final commit. Task 10's runtime is the sum of its scripts' logged runtimes.",
           "", "| Task | Runtime (s) |", "|---|---|"] + [f"| {k} | {v:.0f} |" for k, v in man["runtime_s"].items()] + [
           "", f"Total measured wall time {tot:.0f} s ({tot / 3600:.1f} h) on {man.get('cpus', '?')} CPUs, sharing them with the Task 13 "
           f"audits; manifest with SHA-256 of {len(man.get('sha256', {}))} output files in `results/repro_manifest.json`. A "
           "reviewer with 4 CPUs and nothing else running should expect the original runtimes (Task 8 161 s, Task 9 631 s, Task "
           "10 5861 s, Task 11 4394 s, Task 12 8935 s, Task 13 as in the table above), about 5.6 h for Tasks 8–12.", ""]
+t10d = L("t13_repro_t10_diag.json")
+if t10d:
+    T += ["**Task 10: FAIL as pre-registered** (the replay stopped with an error, so no report was regenerated). Diagnosis "
+          "(`repro_t10_diag.py`): " + t10d["text"], ""]
 if cmp_:
+    T += ["Pre-registered comparison (`compare_repro.py`): " + "; ".join(
+        f"Task {k} " + (v["status"] if "status" in v else ("PASS" if v["pass"] else f"FAIL ({v['n_issues']} issues, verdicts identical {v['verdicts_identical']})"))
+        for k, v in cmp_["reports"].items()) + ".", ""]
     for k, v in cmp_["reports"].items():
         if v.get("issues"):
             T += [f"Task {k} differences: " + "; ".join(json.dumps(i, ensure_ascii=False)[:300] for i in v["issues"][:10]), ""]
