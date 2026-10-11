@@ -1,0 +1,35 @@
+{
+ "C4": {
+  "items": [
+   {
+    "file": "classification/Appendix_B_Figures.md",
+    "kind": "unresolved number",
+    "match": "[0, 10]",
+    "context": "iecewise strictly monotone curve sigma^2(theta) on theta in [0, 10] (a sum of three Gau",
+    "is_citation": false
+   }
+  ],
+  "citation_hits": 0,
+  "text": "1 flagged item(s); 1 are interval notation in figure descriptions (e.g. 'theta in [0, 10]'), not citations. Attribution: criterion/code — the pre-registered bracket pattern cannot tell an interval from a citation."
+ },
+ "C10": {
+  "matches": 81,
+  "figure_labels": 81,
+  "other": [],
+  "legacy_overlap_note": [
+   "B.1",
+   "B.10",
+   "B.11",
+   "B.12",
+   "B.2",
+   "B.3",
+   "B.4",
+   "B.5",
+   "B.6",
+   "B.7",
+   "B.8",
+   "B.9"
+  ],
+  "text": "81 A–E matches, 81 of them Task 15's figure labels B.1–B.12 (decision 3), 0 other; 0 'Paper 1'. The labels B.1–B.12 coincide in form, and for B.1–B.12 also in text, with the legacy labels B.1–B.12 of the crosswalk, so the pre-registered legacy-label pattern cannot pass once figures are labelled B.n. Attribution: criterion."
+ }
+}
