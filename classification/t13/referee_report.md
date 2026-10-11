@@ -1,7 +1,7 @@
 # Task 13 C4: independent referee report and dispositions
 
 The referee was a separate agent that had not seen the derivation history. It received only
-`Stages_0_4_Consolidated.md` (the draft at commit `0fa61b3`-era, after the C1 fix) and the instruction to report
+`Stages_0_4_Consolidated.md` (the draft as committed at `5ac589c`, after the C1 fix) and the instruction to report
 (a) proof steps it cannot follow or believes wrong, (b) claims stronger than their proofs, (c) missing equality cases.
 Its report is reproduced verbatim below, followed by my disposition of each point.
 
