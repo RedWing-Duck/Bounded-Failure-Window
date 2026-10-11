@@ -1,3 +1,5 @@
+> **Superseded:** `classification/references.bib` is now the author-verified file supplied after Task 14 (no VERIFY notes, 46 DOIs). This page records Task 14's own search.
+
 # Bibliography check (Task 14)
 
 `classification/references.bib` has 53 entries, built by `t14/make_bib.py`. Every field comes from one of three sources:

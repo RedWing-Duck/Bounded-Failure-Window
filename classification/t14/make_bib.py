@@ -1,4 +1,4 @@
-"""Task 14 §6: write classification/references.bib.
+"""Task 14 §6: write classification/references.bib. SUPERSEDED after Task 14 by the author-verified file; running this overwrites it.
 Sources of each field: (P) the Task 14 prompt; (M) the starting-study manuscript's reference list
 (reference/phase1/Holder_2026_Bounded_Failure_Window_Final.pdf, p. 16-17); (S) a web-search result whose link title/URL or a
 fetched publisher page shows the field (evidence in t14/bib_check.md). Fields flagged VERIFY in the prompt and not confirmed by

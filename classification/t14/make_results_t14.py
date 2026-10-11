@@ -153,7 +153,9 @@ def main():
           "script under 2 s each.",
           "- Web: the bibliography search was run by a subagent of this session (37 searches) with an evidence rule. Only link "
           "titles and URLs count; generated summaries do not. doi.org and api.crossref.org were blocked."]
-    open(os.path.join(HERE, "RESULTS_t14.md"), "w").write("\n".join(T) + "\n")
+    add = os.path.join(HERE, "addendum_bib.md")
+    tail = open(add).read() if os.path.exists(add) else ""
+    open(os.path.join(HERE, "RESULTS_t14.md"), "w").write("\n".join(T) + "\n" + tail)
     print("written")
 
 
