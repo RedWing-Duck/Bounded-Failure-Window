@@ -103,6 +103,21 @@ def P_delay(d, lam=M(1), Sig=F001, Pi=M(1)):
     return F - mp.exp(-2 * lam * d) * (F - sstar(Pi, lam, Sig))
 
 
+def d1_small():
+    """G = 0.019 < 2 F Pi = 0.02: D1 avg has a maximum then a minimum below its Delta t -> 0 limit (two rays below that value)."""
+    from t12_common import analyse_dt
+    A = analyse_dt("D1", "avg", {"lam": 1, "Sig": "0.01", "Pi": 1, "G": "0.019"})
+    k = [t["kind"] for t in A["turns"]]
+    return M("0.019") < 2 * F001 and k == ["max", "min"] and A["turns"][1]["value"] < A["L_minus"]
+
+
+def d2_c3():
+    """c = 3: P+ > F on a grid of Delta t and P+ -> 4F."""
+    from t12_common import dt_funcs
+    f, _ = dt_funcs("D2", "post", {"lam": 1, "Sig": "0.01", "Pi": 1, "c": 3, "Pi0": 1})
+    return all(f(M(10)**e) > F001 for e in range(-6, 9)) and abs(f(M(10)**12) / F001 - 4) < M("1e-6")
+
+
 def rec(path, needle):
     """record check: the cited results file contains the needle string."""
     def chk():
@@ -160,8 +175,8 @@ REG = [
     ("0.125", "(a dip of $0.125\\%$)", "formula", lambda: (F001 - D1("min")) / F001 * 100),
     ("6\\times10^{-31}", "maximum position to $6\\times10^{-31}$", "record", rec("t12/RESULTS_t12.md", "max error of the maximum's position 6.05e-31")),
     ("1.25", "failure set at\n$R^2 = 1.25F$", "given", M("1.25")),
-    ("1.5", "with peak $1.5F$", "given", M("1.5")),
-    ("1.25", "each bump crosses $1.25F$", "given", M("1.25")),
+    ("1.5", "peak value $1.5F$ and strictly decreasing", "given", M("1.5")),
+    ("1.25", "so it crosses $1.25F$ exactly twice", "given", M("1.25")),
     ("10^{12}", "$G(10^{12})/G(10^{11}) - 1", "given", M(10)**12),
     ("10^{11}", "$G(10^{12})/G(10^{11}) - 1", "given", M(10)**11),
     ("6\\times10^{-10}", "$G(10^{12})/G(10^{11}) - 1 = 6\\times10^{-10}$", "record", rec("t10/RESULTS_t10.md", "G(1e12)/G(1e11) − 1 = 6e-10")),
@@ -190,6 +205,9 @@ REG = [
     ("0.01", "Example ($\\lambda = 1$, $\\Sigma = 0.01$,", "given", F001),
     ("0.0099505", "$P(0) = 0.0099505$", "formula", lambda: P_delay(M(0))),
     ("0.0099763", "$P(1/e) = 0.0099763$", "formula", lambda: P_delay(1 / mp.e)),
+    ("0.01", "$\\Sigma = 0.01$, $\\Pi = \\Pi_0 = 1$,\n$c = 3$", "record", d2_c3),
+    ("0.019", "(e.g. $G = 0.019$, $\\lambda = 1$", "record", lambda: d1_small()),
+    ("0.01", "(e.g. $G = 0.019$, $\\lambda = 1$, $\\Sigma = 0.01$", "given", F001),
 ]
 TASKFILE = {"8": "REPORT.md", "9": "t9/RESULTS_t9.md", "10": "t10/RESULTS_t10.md", "11": "t11/RESULTS_t11.md",
             "12": "t12/RESULTS_t12.md"}
