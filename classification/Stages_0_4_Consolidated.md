@@ -174,8 +174,9 @@ lower ray ($R^2 < F$) and Empty ($R^2 \ge F$).
 
 **Proposition 7 (Bayesian-weight gain along precision).** For $G = c\Pi/(\Pi + \Pi_0)$, with over-weighting ratio
 $\kappa = (c/\Pi_0)/F$: $\sigma^2$ has one turning point, a maximum $M$, iff $\kappa > 2$, and is strictly decreasing
-otherwise. Endpoint limits $F$ (from above iff $\kappa > 2$) and $H = \Sigma/(\lambda + c)$ (from above). Classes: All
-($R^2 \le H$), lower ray ($H < R^2 \le F$), window ($F < R^2 < M$, only if $\kappa > 2$), Empty ($R^2 \ge \max(M, F)$).
+otherwise. Endpoint limits $F$ (from above iff $\kappa > 2$) and $H = \Sigma/(\lambda + c)$ (from above). Classes: if
+$\kappa > 2$, All ($R^2 \le H$), lower ray ($H < R^2 \le F$), window ($F < R^2 < M$), Empty ($R^2 \ge M$); if $\kappa \le 2$,
+All ($R^2 \le H$), lower ray ($H < R^2 < F$), Empty ($R^2 \ge F$).
 
 *Proof.* By Lemma 51 with $\varepsilon = 1 - G/c$, $N = 0$ reduces to $G^2 + 2\lambda G + 2\Sigma\Pi_0 - \lambda c = 0$,
 which has one positive root iff $\lambda c > 2\Sigma\Pi_0$, i.e. $\kappa > 2$. Near $\Pi = 0$,
@@ -607,11 +608,28 @@ $\Delta t_0, m\Delta t_0, m^2\Delta t_0, \dots$
 
 **Label:** Corollary (proved; T11.6, 0 violations in 9,000 pairs).
 
-**Numerical result 35 (integrate-and-dump on the continuum).** Both M-I metrics are non-decreasing in $\Delta t$ on the
-continuum, including non-nested pairs.
+**Theorem 35 (integrate-and-dump on the continuum).** Both M-I optimal metrics, (a) the error at sample times and (b) the time
+average, are strictly increasing in $\Delta t$ on the whole continuum, including non-nested pairs.
 
-**Label:** Numerical result (T11.6, T12 A9: 400,000 points each; T13 A3: 10,000 sets at 100 digits, 0 violations; no
-symbolic proof found).
+*Proof.* By scaling, $P_a = F\,p(x, u)$ with $x = \lambda\Delta t$ and $u = 2\Sigma\Pi/\lambda^2$, where $p$ is the positive root
+of Task 11's quadratic $a_2p^2 + a_1p + a_0 = 0$ (reduced units $\lambda = \Sigma = 1$). Write $E = e^{-x}$. Clearing
+denominators, the quadratic has leading coefficient $u(1 - E)^2 > 0$ and product of roots
+$2[u(x(1 + E) - 2(1 - E)) + x(1 + E)]/(u(E - 1)) < 0$, because $x(1 + E) - 2(1 - E) = e^{-x}f(x)$ with
+$f(x) = xe^x + x - 2e^x + 2 = \sum_{n \ge 3}(n - 2)x^n/n! > 0$. So there is exactly one positive root, it is simple, and since
+the cleared quadratic equals its leading coefficient at $p = 1$, $p < 1$, i.e. $P_a < F$. Implicit differentiation gives
+$dp/dx = -\partial_x Q/\partial_p Q$ at the root, with $\partial_p Q \ne 0$. The resultant in $p$ of the numerator of
+$\partial_x Q$ (with $dE/dx = -E$) and the cleared quadratic is
+$$
+4u^2x^2(u + 1)^2(E - 1)^4\,(E^2 + 2xE - 1)^2,
+$$
+and on $E = e^{-x}$ the last factor is $-2e^{-x}(\sinh x - x) < 0$; every factor is nonzero for $x, u > 0$. Hence $\partial_x Q$
+never vanishes at the root, $dp/dx$ is continuous and nonzero on the connected set $\{x, u > 0\}$, and one evaluation
+($dp/dx = 0.031263$ at $x = u = 1$) fixes its sign: (a) is strictly increasing. For (b),
+$P_b = P_a\,\phi + F(1 - \phi)$ with $\phi = (1 - E^2)/(2x)$, $\phi' = -E^2(e^{2x} - 1 - 2x)/(2x^2) < 0$, so
+$dP_b/dx = P_a'\phi + (P_a - F)\phi' > 0$. $\square$
+
+**Label:** Theorem (proved; T13 A3: exact resultant and sign steps; 10,000 sets at 100 digits with 0 violations; T11.6, T12
+A9: 400,000 points each). It was Numerical result 2.8 / 4.10a.
 
 ### 6.3 Sampled relays
 
@@ -675,19 +693,20 @@ $$
 \frac{\sigma^2}{F} = \frac{(1 + \rho)w + (1 - \rho)}{w(w + 1)},
 $$
 starting at $1$ and tending to $0$, with a single maximum at $w_M = [(\rho - 1) + \sqrt{2\rho(\rho - 1)}]/(1 + \rho)$ iff
-$\rho > 2$, and strictly decreasing otherwise. Classes: $\rho > 2$: lower ray ($r < 1$), window ($1 \le r <$ peak), Empty
-(at or above the peak); $\rho \le 2$: lower ray ($r < 1$), Empty ($r \ge 1$).
+$\rho > 2$, and strictly decreasing otherwise. Classes: $\rho > 2$: lower ray ($r \le 1$, since the start at $1$ is
+approached from above), window ($1 < r <$ peak), Empty (at or above the peak); $\rho \le 2$: lower ray ($r < 1$), Empty ($r \ge 1$).
 
 *Proof.* Absolute: $\sigma^2\Pi/\lambda = [(w^2 - 1)/\rho + (w - 1)^2]/(2w)$, whose $w$-derivative is
 $[(w^2 - 1)(1 + 1/\rho) + 2/\rho]/(2w^2) > 0$. Relative: the derivative's numerator,
 $-(1 + \rho)w^2 + 2(\rho - 1)w + (\rho - 1)$, is a downward parabola with value $2(\rho - 2)$ at $w = 1$ and vertex at
-$(\rho - 1)/(1 + \rho) < 1$. At $r = 1$ the curve starts at $1$ from above when $\rho > 2$, so the failure set touches no end. $\square$
+$(\rho - 1)/(1 + \rho) < 1$; the classes follow from Theorem 2. $\square$
 
 **Label:** Proposition (proved; T12 B3, 2,000 sets, maximum position to $6\times10^{-31}$; T13 C2 rows 37–38).
 
 **Proposition 42 ($\Sigma$-tracking Kalman, misspecified $\lambda'$).** Let $G = -\lambda' + \sqrt{\lambda'^2 + 2\Sigma\Pi}$.
-Absolute: strictly increasing from $0$, class upper ray. Relative: a single maximum iff $\lambda' < \lambda/2$; classes lower
-ray, window, Empty, or lower ray, Empty.
+Absolute: strictly increasing from $0$, class upper ray. Relative: starts at $1$ and tends to $0$, with a single maximum iff
+$\lambda' < \lambda/2$ and strictly decreasing otherwise. Classes: $\lambda' < \lambda/2$: lower ray ($r \le 1$), window
+($1 < r <$ peak), Empty; otherwise lower ray ($r < 1$), Empty ($r \ge 1$).
 
 *Proof.* With $\Sigma = (G^2 + 2\lambda'G)/(2\Pi)$: absolute $\sigma^2 = G(G + \lambda')/(\Pi(\lambda + G))$ with derivative
 numerator $G^2 + 2\lambda G + \lambda\lambda' > 0$; relative $\sigma^2/F = 2\lambda(G + \lambda')/((G + 2\lambda')(G + \lambda))$
@@ -1097,8 +1116,8 @@ are written E (Empty), A (All), LR (lower ray), UR (upper ray), 2R (two rays), W
 | 30 | $\Delta t$ (M-P) | either | D3 over-trust $\rho$, post | $\sigma^2(G_\rho, \Pi)$ → $0$ | none or one max | limits, max | E, LR, W | — | excess near 0 iff $\rho > 2 + u$ | Prop. 30; Num. 37 | T12; T13 C2 |
 | 31 | $\Delta t$ (M-P) | either | D3, prior | $\sigma^2(G_\rho, \Pi)$ → $F$ (below) | none, min, max–min | limits, extrema | A, E, LR, UR, 2R, (0,1,1) | — | — | Prop. 30; Num. 37 | T12; T13 C2 |
 | 32 | $\Delta t$ (M-P) | either | D3, avg | $\sigma^2(G_\rho, \Pi)$ → $F$ (below) | none, min | limits, min | A, E, LR, UR, 2R | — | — | Prop. 30; Num. 37 | T12; T13 C2 |
-| 33 | $\Delta t$ (M-I) | either | optimal, (a) | $\sigma_\star^2$ → $F$ | none (numerical) | $\sigma_\star^2, F$ | A, UR, E | A, UR, E | — | Num. 35 | T11.6, T12; T13 A3, C2 |
-| 34 | $\Delta t$ (M-I) | either | optimal, (b) | $\sigma_\star^2$ → $F$ | none (numerical) | $\sigma_\star^2, F$ | A, UR, E | A, UR, E | — | Num. 35 | T11.6, T12; T13 A3, C2 |
+| 33 | $\Delta t$ (M-I) | either | optimal, (a) | $\sigma_\star^2$ → $F$ | none | $\sigma_\star^2, F$ | A, UR, E | A, UR, E | — | Thm 35 | T11.6, T12; T13 A3, C2 |
+| 34 | $\Delta t$ (M-I) | either | optimal, (b) | $\sigma_\star^2$ → $F$ | none | $\sigma_\star^2, F$ | A, UR, E | A, UR, E | — | Thm 35 | T11.6, T12; T13 A3, C2 |
 | 35 | $\Sigma$, absolute | env. | $\Sigma$-independent gain | $G^2/(2\Pi(\lambda+G))$ (above) → $\infty$ | none | lower limit | A, UR | UR | — | Prop. 40 | T12; T13 C2 |
 | 36 | $\Sigma$, relative | env. | $\Sigma$-independent gain | $\infty$ → $1/(1+g)$ | none | $1/(1+g)$ | A, LR | LR, E | excess iff $\Sigma < \lambda G/(2\Pi)$ | Prop. 40 | T12; T13 C2 |
 | 37 | $\Sigma$, absolute | env. | $\Sigma$-tracking, over-trust $\rho$ | $0$ → $\infty$ | none | — | UR | UR | — | Prop. 41 | T12; T13 C2 |
@@ -1109,29 +1128,24 @@ are written E (Empty), A (All), LR (lower ray), UR (upper ray), 2R (two rays), W
 | 42 | $\Sigma$, relative | env. | optimal | $1$ → $0$ | none | $1$ | LR, E | LR, E | — | Prop. 43 | T12; T13 C2 |
 
 Rows 1–20 and 35–42 are complete classifications (every class at every tolerance determined, impossibilities proved), except rows
-8–9 (two-stage gains, numerical). Rows 21–23 are complete. Rows 24–34 give proved excess sets and limits; the class lists for
-rows 24–32 and the monotonicity behind rows 33–34 are numerical.
+8–9 (two-stage gains, numerical). Rows 21–23 are complete. Rows 33–34 are complete. Rows 24–32 give proved excess sets and limits; their class lists are
+numerical.
 
 ---
 
 ## 11. Open problems
 
-1. **Integrate-and-dump monotonicity** (Numerical result 35). *Statement:* both M-I optimal metrics are non-decreasing in
-   $\Delta t$ on the whole continuum. *Evidence:* 0 violations in 400,000 points (Tasks 11, 12) and 10,000 sets at 100 digits
-   (Task 13). *Best partial result:* Corollary 34 (monotone along every nested chain $\Delta t_0 m^j$). The gap is non-nested
-   pairs; the scalar reduction of the two-state Riccati equation gives an implicit derivative whose sign SymPy cannot settle,
-   because $e^{-\lambda\Delta t}$ and $\Delta t$ enter together.
-2. **Turning points of sampled relays** (Conjecture 38). *Statement:* D1–D3 have at most two turning points along $\Delta t$ in every
+1. **Turning points of sampled relays** (Conjecture 38). *Statement:* D1–D3 have at most two turning points along $\Delta t$ in every
    metric. *Evidence:* Task 12's census (6,000 sets × 3 metrics) and the Task 13 audit (9,000 new curves): never more than two.
    *Best partial result:* proved endpoint asymptotics (Proposition 31) and a single excess component (Propositions 28–30). The
    fixed-gain $P^+$ mixes two exponential rates with $1/\Delta t$, which defeats the polynomial methods used elsewhere.
-3. **Two-stage gains** (Numerical result 58). *Statement:* a bound on the number of turning points of sums of natural stages.
+2. **Two-stage gains** (Numerical result 58). *Statement:* a bound on the number of turning points of sums of natural stages.
    *Evidence:* at most 3 (Bayesian) and 4 (Hill) turning points in 2,000 sets each. *Best partial result:* none beyond Corollary 48
    (arbitrarily many windows for constructed gains).
-4. **A necessary condition for monotone optimal error.** Ordering is exactly sharp in the power family (Theorem 24) but not
+3. **A necessary condition for monotone optimal error.** Ordering is exactly sharp in the power family (Theorem 24) but not
    necessary in general (Proposition 73). Is there a tidy necessary condition, for instance a one-sided spectral-crossing
    condition, beyond that family?
-5. **The fixed α–β filter and multivariate models** (Stage 6). The α–β filter is two-state and does not fit the scalar model;
+4. **The fixed α–β filter and multivariate models** (Stage 6). The α–β filter is two-state and does not fit the scalar model;
    the decoupled multivariate case should split into scalar copies, the mixing case is open.
 
 ---
@@ -1180,7 +1194,7 @@ below except where the change log says so.
 | 32 | Theorem | optimal M-P along $\Delta t$ | T12 (a); T13 A1, A2 (b), (c) |
 | 33 | Proposition | M-P not a causal-garbling family | T12 |
 | 34 | Corollary | M-I nested grids | T11.6 |
-| 35 | Numerical result | M-I continuum monotone | T11.6, T12, T13 A3 |
+| 35 | Theorem | M-I continuum monotone | T13 A3; T11.6, T12 |
 | 36 | Proposition | two rays from over-weighted sampled relay | T12 (with diagnosis) |
 | 37 | Numerical result | census of sampled relays | T12; T13 C2 |
 | 38 | Conjecture | at most two turning points (sampled relays) | T12; T13 A6, C2 |
@@ -1280,14 +1294,14 @@ route failures.
 | Prop. 4.7 (Stage 4; "Proposition + Counterexample") | Proposition 71 and Counterexample 72 |
 | Prop. 4.8 (Stage 4) | Proposition 73 |
 | Cor. 4.9 (Stage 4) | Corollary 34 |
-| Num. 4.10a (Stage 4) | Numerical result 35 |
+| Num. 4.10a (Stage 4) | Theorem 35 (proved, T13 A3) |
 | Lemma 2.1 (Stage 2 completion) | Lemma 27 |
 | Props 2.2, 2.3, 2.4 (Stage 2 completion) | Propositions 28, 29, 30 |
 | §A.3 limits table (Stage 2 completion) | Proposition 31 |
 | Prop. 2.6(a), (b) (Stage 2 completion) | Theorem 32(a), (b) |
 | Num. 2.6c (Stage 2 completion) | Theorem 32(c) (proved, T13 A2) |
 | Prop. 2.7 (Stage 2 completion) | Proposition 33 |
-| Num. 2.8 (Stage 2 completion; = Num. 4.10a) | Numerical result 35 |
+| Num. 2.8 (Stage 2 completion; = Num. 4.10a) | Theorem 35 (proved, T13 A3) |
 | Prop. 2.9 (Stage 2 completion) | Proposition 36 |
 | Num. 2.10 (Stage 2 completion) | Numerical result 37 |
 | Conj. 2.11 (Stage 2 completion) | Conjecture 38 |
@@ -1324,6 +1338,7 @@ route failures.
 | 23 | T13 A5 | Conj. 3.10 proved for every real $n > 1$; label → Theorem. | Theorem 56 |
 | 24 | T13 A7 | Strict gap $P < V$ proved; label → Proposition. | Proposition 20 |
 | 25 | T13 A8 | Conj. 4.11 proved for additive stationary Gaussian noise; label → Theorem. | Theorem 69 |
+| 29 | T13 A3 | Num. 2.8 / 4.10a (integrate-and-dump monotone) proved; label → Theorem. | Theorem 35 |
 | 26 | Stage 3 / Stage 4 | Results with two labels ("Proposition + Counterexample", "Numerical result + Conjecture") split or relabelled: Proposition 21 + Counterexample 22; Proposition 71 + Counterexample 72; Conjecture 3.10 is now Theorem 56(a). | Sections 5.2, 8.2, 9 |
 | 27 | Stage 4 | Theorem 65 noted to hold for any target measurable with respect to $s$ (needed by Theorem 69); no change to its statement. | Theorem 65 |
 | 28 | Stage 3 / T13 | Latency sweep classes stated in full (All for $R^2 \le \sigma_\star^2$, window, Empty); Stage 4 gave only the window. | Proposition 71 |
