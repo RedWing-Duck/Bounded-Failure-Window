@@ -1,0 +1,29 @@
+{
+ "row": 34,
+ "name": "dt MI b",
+ "stated": [
+  "All",
+  "Empty",
+  "upper ray"
+ ],
+ "curves": 1000,
+ "classifications": 100000,
+ "classes": {
+  "All": 32332,
+  "upper ray": 35464,
+  "Empty": 32204
+ },
+ "kinds_hist": {
+  "none": 1000
+ },
+ "flagged": 0,
+ "persisting": 0,
+ "persist_examples": [],
+ "missing_stated": [],
+ "out_of_set": [],
+ "n_limit_fail": 0,
+ "float_route": true,
+ "max_turning_points": 0,
+ "seconds": 416.22646951675415,
+ "pass": true
+}

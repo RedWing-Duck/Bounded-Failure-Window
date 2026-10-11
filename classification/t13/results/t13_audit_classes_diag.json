@@ -1,0 +1,2968 @@
+{
+ "row12": {
+  "summary": {
+   "n_persisting": 122,
+   "all_R2_exactly_L_minus": true,
+   "any_R2_L_plus": false,
+   "all_monotone_increasing": true,
+   "all_route_i_All_route_ii_Empty": true,
+   "max_rel_gap_at_route_ii_point": 2.4906652783202567e-41,
+   "min_rel_gap_at_P0_eq_10Pi": 0.0021740923016963644,
+   "all_sign_positive_at_10Pi": true,
+   "all_sign_positive_at_route_ii_point": false,
+   "g_hist": {
+    "tanh": 103,
+    "exp": 19,
+    "hill": 0
+   },
+   "distinct_sets": 23
+  },
+  "cases": [
+   {
+    "i": 26,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.0281983756485802e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.064041597355719e-51,
+     "P0=Pi": 0.08495506361333773,
+     "P0=10Pi": 0.41990956361660814
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 80.58116495266849
+   },
+   {
+    "i": 26,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.0281983756485802e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.064041597355719e-51,
+     "P0=Pi": 0.08495506361333773,
+     "P0=10Pi": 0.41990956361660814
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 80.58116495266849
+   },
+   {
+    "i": 26,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.0281983756485802e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.064041597355719e-51,
+     "P0=Pi": 0.08495506361333773,
+     "P0=10Pi": 0.41990956361660814
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 80.58116495266849
+   },
+   {
+    "i": 26,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.0281983756485802e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.064041597355719e-51,
+     "P0=Pi": 0.08495506361333773,
+     "P0=10Pi": 0.41990956361660814
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 80.58116495266849
+   },
+   {
+    "i": 26,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.0281983756485802e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.064041597355719e-51,
+     "P0=Pi": 0.08495506361333773,
+     "P0=10Pi": 0.41990956361660814
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 80.58116495266849
+   },
+   {
+    "i": 39,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.0347669204012946e-49,
+    "rel_gap_dps400": {
+     "x_shift": 4.3681984738632786e-48,
+     "P0=Pi": 0.0005716721336413105,
+     "P0=10Pi": 0.0021740923016963644
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 51.853739569974614
+   },
+   {
+    "i": 39,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.0347669204012946e-49,
+    "rel_gap_dps400": {
+     "x_shift": 4.3681984738632786e-48,
+     "P0=Pi": 0.0005716721336413105,
+     "P0=10Pi": 0.0021740923016963644
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 51.853739569974614
+   },
+   {
+    "i": 39,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.0347669204012946e-49,
+    "rel_gap_dps400": {
+     "x_shift": 4.3681984738632786e-48,
+     "P0=Pi": 0.0005716721336413105,
+     "P0=10Pi": 0.0021740923016963644
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 51.853739569974614
+   },
+   {
+    "i": 39,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.0347669204012946e-49,
+    "rel_gap_dps400": {
+     "x_shift": 4.3681984738632786e-48,
+     "P0=Pi": 0.0005716721336413105,
+     "P0=10Pi": 0.0021740923016963644
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 51.853739569974614
+   },
+   {
+    "i": 39,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.0347669204012946e-49,
+    "rel_gap_dps400": {
+     "x_shift": 4.3681984738632786e-48,
+     "P0=Pi": 0.0005716721336413105,
+     "P0=10Pi": 0.0021740923016963644
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 51.853739569974614
+   },
+   {
+    "i": 101,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 3.616358910397356e-51,
+    "rel_gap_dps400": {
+     "x_shift": 8.467178599343237e-51,
+     "P0=Pi": 0.05822638941679451,
+     "P0=10Pi": 0.2650054413525419
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 57.25499790518415
+   },
+   {
+    "i": 101,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 3.616358910397356e-51,
+    "rel_gap_dps400": {
+     "x_shift": 8.467178599343237e-51,
+     "P0=Pi": 0.05822638941679451,
+     "P0=10Pi": 0.2650054413525419
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 57.25499790518415
+   },
+   {
+    "i": 101,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 3.616358910397356e-51,
+    "rel_gap_dps400": {
+     "x_shift": 8.467178599343237e-51,
+     "P0=Pi": 0.05822638941679451,
+     "P0=10Pi": 0.2650054413525419
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 57.25499790518415
+   },
+   {
+    "i": 101,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 3.616358910397356e-51,
+    "rel_gap_dps400": {
+     "x_shift": 8.467178599343237e-51,
+     "P0=Pi": 0.05822638941679451,
+     "P0=10Pi": 0.2650054413525419
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 57.25499790518415
+   },
+   {
+    "i": 101,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 3.616358910397356e-51,
+    "rel_gap_dps400": {
+     "x_shift": 8.467178599343237e-51,
+     "P0=Pi": 0.05822638941679451,
+     "P0=10Pi": 0.2650054413525419
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 57.25499790518415
+   },
+   {
+    "i": 151,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.6229967113963353e-52,
+    "rel_gap_dps400": {
+     "x_shift": 3.1788401157714397e-52,
+     "P0=Pi": 0.0030557338963294227,
+     "P0=10Pi": 0.011658416026917473
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 77.61030800001113
+   },
+   {
+    "i": 151,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.6229967113963353e-52,
+    "rel_gap_dps400": {
+     "x_shift": 3.1788401157714397e-52,
+     "P0=Pi": 0.0030557338963294227,
+     "P0=10Pi": 0.011658416026917473
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 77.61030800001113
+   },
+   {
+    "i": 151,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.6229967113963353e-52,
+    "rel_gap_dps400": {
+     "x_shift": 3.1788401157714397e-52,
+     "P0=Pi": 0.0030557338963294227,
+     "P0=10Pi": 0.011658416026917473
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 77.61030800001113
+   },
+   {
+    "i": 151,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.6229967113963353e-52,
+    "rel_gap_dps400": {
+     "x_shift": 3.1788401157714397e-52,
+     "P0=Pi": 0.0030557338963294227,
+     "P0=10Pi": 0.011658416026917473
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 77.61030800001113
+   },
+   {
+    "i": 175,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.8805349908704603e-44,
+    "rel_gap_dps400": {
+     "x_shift": 3.2705403413202115e-44,
+     "P0=Pi": 0.07866852252739326,
+     "P0=10Pi": 4.748691375902587
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 49.46338013250817
+   },
+   {
+    "i": 175,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.8805349908704603e-44,
+    "rel_gap_dps400": {
+     "x_shift": 3.2705403413202115e-44,
+     "P0=Pi": 0.07866852252739326,
+     "P0=10Pi": 4.748691375902587
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 49.46338013250817
+   },
+   {
+    "i": 175,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.8805349908704603e-44,
+    "rel_gap_dps400": {
+     "x_shift": 3.2705403413202115e-44,
+     "P0=Pi": 0.07866852252739326,
+     "P0=10Pi": 4.748691375902587
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 49.46338013250817
+   },
+   {
+    "i": 175,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.8805349908704603e-44,
+    "rel_gap_dps400": {
+     "x_shift": 3.2705403413202115e-44,
+     "P0=Pi": 0.07866852252739326,
+     "P0=10Pi": 4.748691375902587
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 49.46338013250817
+   },
+   {
+    "i": 175,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.8805349908704603e-44,
+    "rel_gap_dps400": {
+     "x_shift": 3.2705403413202115e-44,
+     "P0=Pi": 0.07866852252739326,
+     "P0=10Pi": 4.748691375902587
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 49.46338013250817
+   },
+   {
+    "i": 175,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.8805349908704603e-44,
+    "rel_gap_dps400": {
+     "x_shift": 3.2705403413202115e-44,
+     "P0=Pi": 0.07866852252739326,
+     "P0=10Pi": 4.748691375902587
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 49.46338013250817
+   },
+   {
+    "i": 175,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.8805349908704603e-44,
+    "rel_gap_dps400": {
+     "x_shift": 3.2705403413202115e-44,
+     "P0=Pi": 0.07866852252739326,
+     "P0=10Pi": 4.748691375902587
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 49.46338013250817
+   },
+   {
+    "i": 183,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 7.729860203927944e-45,
+    "rel_gap_dps400": {
+     "x_shift": 5.415765429866778e-44,
+     "P0=Pi": 0.09158441379651161,
+     "P0=10Pi": 0.4834665190731958
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 49.6302508455235
+   },
+   {
+    "i": 183,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 7.729860203927944e-45,
+    "rel_gap_dps400": {
+     "x_shift": 5.415765429866778e-44,
+     "P0=Pi": 0.09158441379651161,
+     "P0=10Pi": 0.4834665190731958
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 49.6302508455235
+   },
+   {
+    "i": 183,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 7.729860203927944e-45,
+    "rel_gap_dps400": {
+     "x_shift": 5.415765429866778e-44,
+     "P0=Pi": 0.09158441379651161,
+     "P0=10Pi": 0.4834665190731958
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 49.6302508455235
+   },
+   {
+    "i": 183,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 7.729860203927944e-45,
+    "rel_gap_dps400": {
+     "x_shift": 5.415765429866778e-44,
+     "P0=Pi": 0.09158441379651161,
+     "P0=10Pi": 0.4834665190731958
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 49.6302508455235
+   },
+   {
+    "i": 192,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.3245200337499583e-52,
+    "rel_gap_dps400": {
+     "x_shift": 9.996687830545913e-52,
+     "P0=Pi": 0.15988159688761855,
+     "P0=10Pi": 1.7192981263373328
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 90.3343748193591
+   },
+   {
+    "i": 192,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.3245200337499583e-52,
+    "rel_gap_dps400": {
+     "x_shift": 9.996687830545913e-52,
+     "P0=Pi": 0.15988159688761855,
+     "P0=10Pi": 1.7192981263373328
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 90.3343748193591
+   },
+   {
+    "i": 192,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.3245200337499583e-52,
+    "rel_gap_dps400": {
+     "x_shift": 9.996687830545913e-52,
+     "P0=Pi": 0.15988159688761855,
+     "P0=10Pi": 1.7192981263373328
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 90.3343748193591
+   },
+   {
+    "i": 192,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.3245200337499583e-52,
+    "rel_gap_dps400": {
+     "x_shift": 9.996687830545913e-52,
+     "P0=Pi": 0.15988159688761855,
+     "P0=10Pi": 1.7192981263373328
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 90.3343748193591
+   },
+   {
+    "i": 192,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.3245200337499583e-52,
+    "rel_gap_dps400": {
+     "x_shift": 9.996687830545913e-52,
+     "P0=Pi": 0.15988159688761855,
+     "P0=10Pi": 1.7192981263373328
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 90.3343748193591
+   },
+   {
+    "i": 192,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.3245200337499583e-52,
+    "rel_gap_dps400": {
+     "x_shift": 9.996687830545913e-52,
+     "P0=Pi": 0.15988159688761855,
+     "P0=10Pi": 1.7192981263373328
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 90.3343748193591
+   },
+   {
+    "i": 423,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.909888790460108e-54,
+    "rel_gap_dps400": {
+     "x_shift": 1.889400331040544e-52,
+     "P0=Pi": 0.016716157821119373,
+     "P0=10Pi": 0.07674573156442738
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 58.38930215451488
+   },
+   {
+    "i": 423,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.909888790460108e-54,
+    "rel_gap_dps400": {
+     "x_shift": 1.889400331040544e-52,
+     "P0=Pi": 0.016716157821119373,
+     "P0=10Pi": 0.07674573156442738
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 58.38930215451488
+   },
+   {
+    "i": 534,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.688417105580858e-51,
+    "rel_gap_dps400": {
+     "x_shift": 2.789595168963255e-50,
+     "P0=Pi": 0.20703946568732148,
+     "P0=10Pi": 1.8580116772426496
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 57.25768091432402
+   },
+   {
+    "i": 534,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.688417105580858e-51,
+    "rel_gap_dps400": {
+     "x_shift": 2.789595168963255e-50,
+     "P0=Pi": 0.20703946568732148,
+     "P0=10Pi": 1.8580116772426496
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 57.25768091432402
+   },
+   {
+    "i": 534,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.688417105580858e-51,
+    "rel_gap_dps400": {
+     "x_shift": 2.789595168963255e-50,
+     "P0=Pi": 0.20703946568732148,
+     "P0=10Pi": 1.8580116772426496
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 57.25768091432402
+   },
+   {
+    "i": 534,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.688417105580858e-51,
+    "rel_gap_dps400": {
+     "x_shift": 2.789595168963255e-50,
+     "P0=Pi": 0.20703946568732148,
+     "P0=10Pi": 1.8580116772426496
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 57.25768091432402
+   },
+   {
+    "i": 534,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.688417105580858e-51,
+    "rel_gap_dps400": {
+     "x_shift": 2.789595168963255e-50,
+     "P0=Pi": 0.20703946568732148,
+     "P0=10Pi": 1.8580116772426496
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 57.25768091432402
+   },
+   {
+    "i": 534,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.688417105580858e-51,
+    "rel_gap_dps400": {
+     "x_shift": 2.789595168963255e-50,
+     "P0=Pi": 0.20703946568732148,
+     "P0=10Pi": 1.8580116772426496
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 57.25768091432402
+   },
+   {
+    "i": 534,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.688417105580858e-51,
+    "rel_gap_dps400": {
+     "x_shift": 2.789595168963255e-50,
+     "P0=Pi": 0.20703946568732148,
+     "P0=10Pi": 1.8580116772426496
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 57.25768091432402
+   },
+   {
+    "i": 534,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.688417105580858e-51,
+    "rel_gap_dps400": {
+     "x_shift": 2.789595168963255e-50,
+     "P0=Pi": 0.20703946568732148,
+     "P0=10Pi": 1.8580116772426496
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 57.25768091432402
+   },
+   {
+    "i": 597,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.1460501595381943e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8868216791798092e-51,
+     "P0=Pi": 0.2450850166728107,
+     "P0=10Pi": 7.214710635697323
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 73.92872629859215
+   },
+   {
+    "i": 597,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.1460501595381943e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8868216791798092e-51,
+     "P0=Pi": 0.2450850166728107,
+     "P0=10Pi": 7.214710635697323
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 73.92872629859215
+   },
+   {
+    "i": 597,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.1460501595381943e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8868216791798092e-51,
+     "P0=Pi": 0.2450850166728107,
+     "P0=10Pi": 7.214710635697323
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 73.92872629859215
+   },
+   {
+    "i": 597,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.1460501595381943e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8868216791798092e-51,
+     "P0=Pi": 0.2450850166728107,
+     "P0=10Pi": 7.214710635697323
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 73.92872629859215
+   },
+   {
+    "i": 597,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.1460501595381943e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8868216791798092e-51,
+     "P0=Pi": 0.2450850166728107,
+     "P0=10Pi": 7.214710635697323
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 73.92872629859215
+   },
+   {
+    "i": 597,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.1460501595381943e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8868216791798092e-51,
+     "P0=Pi": 0.2450850166728107,
+     "P0=10Pi": 7.214710635697323
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 73.92872629859215
+   },
+   {
+    "i": 597,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.1460501595381943e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8868216791798092e-51,
+     "P0=Pi": 0.2450850166728107,
+     "P0=10Pi": 7.214710635697323
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 73.92872629859215
+   },
+   {
+    "i": 597,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -2.1460501595381943e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8868216791798092e-51,
+     "P0=Pi": 0.2450850166728107,
+     "P0=10Pi": 7.214710635697323
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 73.92872629859215
+   },
+   {
+    "i": 603,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.4900424143166863e-50,
+    "rel_gap_dps400": {
+     "x_shift": 4.985590856898306e-50,
+     "P0=Pi": 0.008953445946167773,
+     "P0=10Pi": 0.03542190626317671
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 55.46681443476766
+   },
+   {
+    "i": 603,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.4900424143166863e-50,
+    "rel_gap_dps400": {
+     "x_shift": 4.985590856898306e-50,
+     "P0=Pi": 0.008953445946167773,
+     "P0=10Pi": 0.03542190626317671
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 55.46681443476766
+   },
+   {
+    "i": 692,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.201282602740395e-52,
+    "rel_gap_dps400": {
+     "x_shift": 1.2880197972868543e-52,
+     "P0=Pi": 0.03467787883131012,
+     "P0=10Pi": 0.14520357916015603
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 59.59243189690661
+   },
+   {
+    "i": 692,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.201282602740395e-52,
+    "rel_gap_dps400": {
+     "x_shift": 1.2880197972868543e-52,
+     "P0=Pi": 0.03467787883131012,
+     "P0=10Pi": 0.14520357916015603
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 59.59243189690661
+   },
+   {
+    "i": 692,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.201282602740395e-52,
+    "rel_gap_dps400": {
+     "x_shift": 1.2880197972868543e-52,
+     "P0=Pi": 0.03467787883131012,
+     "P0=10Pi": 0.14520357916015603
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 59.59243189690661
+   },
+   {
+    "i": 692,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.201282602740395e-52,
+    "rel_gap_dps400": {
+     "x_shift": 1.2880197972868543e-52,
+     "P0=Pi": 0.03467787883131012,
+     "P0=10Pi": 0.14520357916015603
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 59.59243189690661
+   },
+   {
+    "i": 692,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.201282602740395e-52,
+    "rel_gap_dps400": {
+     "x_shift": 1.2880197972868543e-52,
+     "P0=Pi": 0.03467787883131012,
+     "P0=10Pi": 0.14520357916015603
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 59.59243189690661
+   },
+   {
+    "i": 694,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.8147156562247687e-51,
+    "rel_gap_dps400": {
+     "x_shift": 7.265439191413678e-52,
+     "P0=Pi": 0.3006940674056646,
+     "P0=10Pi": 8.148817381921983
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 60.381951287982545
+   },
+   {
+    "i": 694,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.8147156562247687e-51,
+    "rel_gap_dps400": {
+     "x_shift": 7.265439191413678e-52,
+     "P0=Pi": 0.3006940674056646,
+     "P0=10Pi": 8.148817381921983
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 60.381951287982545
+   },
+   {
+    "i": 694,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.8147156562247687e-51,
+    "rel_gap_dps400": {
+     "x_shift": 7.265439191413678e-52,
+     "P0=Pi": 0.3006940674056646,
+     "P0=10Pi": 8.148817381921983
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 60.381951287982545
+   },
+   {
+    "i": 694,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.8147156562247687e-51,
+    "rel_gap_dps400": {
+     "x_shift": 7.265439191413678e-52,
+     "P0=Pi": 0.3006940674056646,
+     "P0=10Pi": 8.148817381921983
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 60.381951287982545
+   },
+   {
+    "i": 694,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.8147156562247687e-51,
+    "rel_gap_dps400": {
+     "x_shift": 7.265439191413678e-52,
+     "P0=Pi": 0.3006940674056646,
+     "P0=10Pi": 8.148817381921983
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 60.381951287982545
+   },
+   {
+    "i": 694,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.8147156562247687e-51,
+    "rel_gap_dps400": {
+     "x_shift": 7.265439191413678e-52,
+     "P0=Pi": 0.3006940674056646,
+     "P0=10Pi": 8.148817381921983
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 60.381951287982545
+   },
+   {
+    "i": 733,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 5.1154148573411615e-43,
+    "rel_gap_dps400": {
+     "x_shift": 2.8410659089819484e-42,
+     "P0=Pi": 0.06957805541318086,
+     "P0=10Pi": 0.19174222602250912
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 93.92746781686684
+   },
+   {
+    "i": 733,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 5.1154148573411615e-43,
+    "rel_gap_dps400": {
+     "x_shift": 2.8410659089819484e-42,
+     "P0=Pi": 0.06957805541318086,
+     "P0=10Pi": 0.19174222602250912
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 93.92746781686684
+   },
+   {
+    "i": 733,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 5.1154148573411615e-43,
+    "rel_gap_dps400": {
+     "x_shift": 2.8410659089819484e-42,
+     "P0=Pi": 0.06957805541318086,
+     "P0=10Pi": 0.19174222602250912
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 93.92746781686684
+   },
+   {
+    "i": 733,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 5.1154148573411615e-43,
+    "rel_gap_dps400": {
+     "x_shift": 2.8410659089819484e-42,
+     "P0=Pi": 0.06957805541318086,
+     "P0=10Pi": 0.19174222602250912
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 93.92746781686684
+   },
+   {
+    "i": 733,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 5.1154148573411615e-43,
+    "rel_gap_dps400": {
+     "x_shift": 2.8410659089819484e-42,
+     "P0=Pi": 0.06957805541318086,
+     "P0=10Pi": 0.19174222602250912
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 93.92746781686684
+   },
+   {
+    "i": 775,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 5.699973587337036e-40,
+    "rel_gap_dps400": {
+     "x_shift": 2.4906652783202567e-41,
+     "P0=Pi": 0.48257420683153973,
+     "P0=10Pi": 4.016521516842817
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 93.37095702638808
+   },
+   {
+    "i": 775,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 5.699973587337036e-40,
+    "rel_gap_dps400": {
+     "x_shift": 2.4906652783202567e-41,
+     "P0=Pi": 0.48257420683153973,
+     "P0=10Pi": 4.016521516842817
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 93.37095702638808
+   },
+   {
+    "i": 775,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 5.699973587337036e-40,
+    "rel_gap_dps400": {
+     "x_shift": 2.4906652783202567e-41,
+     "P0=Pi": 0.48257420683153973,
+     "P0=10Pi": 4.016521516842817
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 93.37095702638808
+   },
+   {
+    "i": 775,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 5.699973587337036e-40,
+    "rel_gap_dps400": {
+     "x_shift": 2.4906652783202567e-41,
+     "P0=Pi": 0.48257420683153973,
+     "P0=10Pi": 4.016521516842817
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 93.37095702638808
+   },
+   {
+    "i": 775,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 5.699973587337036e-40,
+    "rel_gap_dps400": {
+     "x_shift": 2.4906652783202567e-41,
+     "P0=Pi": 0.48257420683153973,
+     "P0=10Pi": 4.016521516842817
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 93.37095702638808
+   },
+   {
+    "i": 775,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 5.699973587337036e-40,
+    "rel_gap_dps400": {
+     "x_shift": 2.4906652783202567e-41,
+     "P0=Pi": 0.48257420683153973,
+     "P0=10Pi": 4.016521516842817
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 93.37095702638808
+   },
+   {
+    "i": 775,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 5.699973587337036e-40,
+    "rel_gap_dps400": {
+     "x_shift": 2.4906652783202567e-41,
+     "P0=Pi": 0.48257420683153973,
+     "P0=10Pi": 4.016521516842817
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 93.37095702638808
+   },
+   {
+    "i": 814,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -4.090070616587326e-52,
+    "rel_gap_dps400": {
+     "x_shift": 4.426524318434899e-52,
+     "P0=Pi": 0.15085100036358207,
+     "P0=10Pi": 6.086077369074668
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 59.360067310847064
+   },
+   {
+    "i": 814,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -4.090070616587326e-52,
+    "rel_gap_dps400": {
+     "x_shift": 4.426524318434899e-52,
+     "P0=Pi": 0.15085100036358207,
+     "P0=10Pi": 6.086077369074668
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 59.360067310847064
+   },
+   {
+    "i": 814,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -4.090070616587326e-52,
+    "rel_gap_dps400": {
+     "x_shift": 4.426524318434899e-52,
+     "P0=Pi": 0.15085100036358207,
+     "P0=10Pi": 6.086077369074668
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 59.360067310847064
+   },
+   {
+    "i": 814,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -4.090070616587326e-52,
+    "rel_gap_dps400": {
+     "x_shift": 4.426524318434899e-52,
+     "P0=Pi": 0.15085100036358207,
+     "P0=10Pi": 6.086077369074668
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 59.360067310847064
+   },
+   {
+    "i": 814,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -4.090070616587326e-52,
+    "rel_gap_dps400": {
+     "x_shift": 4.426524318434899e-52,
+     "P0=Pi": 0.15085100036358207,
+     "P0=10Pi": 6.086077369074668
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 59.360067310847064
+   },
+   {
+    "i": 814,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -4.090070616587326e-52,
+    "rel_gap_dps400": {
+     "x_shift": 4.426524318434899e-52,
+     "P0=Pi": 0.15085100036358207,
+     "P0=10Pi": 6.086077369074668
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 59.360067310847064
+   },
+   {
+    "i": 814,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -4.090070616587326e-52,
+    "rel_gap_dps400": {
+     "x_shift": 4.426524318434899e-52,
+     "P0=Pi": 0.15085100036358207,
+     "P0=10Pi": 6.086077369074668
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 59.360067310847064
+   },
+   {
+    "i": 814,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -4.090070616587326e-52,
+    "rel_gap_dps400": {
+     "x_shift": 4.426524318434899e-52,
+     "P0=Pi": 0.15085100036358207,
+     "P0=10Pi": 6.086077369074668
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 59.360067310847064
+   },
+   {
+    "i": 814,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -4.090070616587326e-52,
+    "rel_gap_dps400": {
+     "x_shift": 4.426524318434899e-52,
+     "P0=Pi": 0.15085100036358207,
+     "P0=10Pi": 6.086077369074668
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 59.360067310847064
+   },
+   {
+    "i": 841,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -3.0099964563228924e-53,
+    "rel_gap_dps400": {
+     "x_shift": 2.3987723748810122e-52,
+     "P0=Pi": 0.29308773298497864,
+     "P0=10Pi": 6.723673532508429
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 98.732461735518
+   },
+   {
+    "i": 841,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -3.0099964563228924e-53,
+    "rel_gap_dps400": {
+     "x_shift": 2.3987723748810122e-52,
+     "P0=Pi": 0.29308773298497864,
+     "P0=10Pi": 6.723673532508429
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 98.732461735518
+   },
+   {
+    "i": 841,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -3.0099964563228924e-53,
+    "rel_gap_dps400": {
+     "x_shift": 2.3987723748810122e-52,
+     "P0=Pi": 0.29308773298497864,
+     "P0=10Pi": 6.723673532508429
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 98.732461735518
+   },
+   {
+    "i": 841,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -3.0099964563228924e-53,
+    "rel_gap_dps400": {
+     "x_shift": 2.3987723748810122e-52,
+     "P0=Pi": 0.29308773298497864,
+     "P0=10Pi": 6.723673532508429
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 98.732461735518
+   },
+   {
+    "i": 841,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -3.0099964563228924e-53,
+    "rel_gap_dps400": {
+     "x_shift": 2.3987723748810122e-52,
+     "P0=Pi": 0.29308773298497864,
+     "P0=10Pi": 6.723673532508429
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 98.732461735518
+   },
+   {
+    "i": 849,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.7213615444460704e-42,
+    "rel_gap_dps400": {
+     "x_shift": 1.460657339061297e-41,
+     "P0=Pi": 0.035112940917753514,
+     "P0=10Pi": 0.19381194692216297
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 46.331326282776125
+   },
+   {
+    "i": 849,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.7213615444460704e-42,
+    "rel_gap_dps400": {
+     "x_shift": 1.460657339061297e-41,
+     "P0=Pi": 0.035112940917753514,
+     "P0=10Pi": 0.19381194692216297
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 46.331326282776125
+   },
+   {
+    "i": 849,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.7213615444460704e-42,
+    "rel_gap_dps400": {
+     "x_shift": 1.460657339061297e-41,
+     "P0=Pi": 0.035112940917753514,
+     "P0=10Pi": 0.19381194692216297
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 46.331326282776125
+   },
+   {
+    "i": 849,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.7213615444460704e-42,
+    "rel_gap_dps400": {
+     "x_shift": 1.460657339061297e-41,
+     "P0=Pi": 0.035112940917753514,
+     "P0=10Pi": 0.19381194692216297
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 46.331326282776125
+   },
+   {
+    "i": 849,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.7213615444460704e-42,
+    "rel_gap_dps400": {
+     "x_shift": 1.460657339061297e-41,
+     "P0=Pi": 0.035112940917753514,
+     "P0=10Pi": 0.19381194692216297
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 46.331326282776125
+   },
+   {
+    "i": 849,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.7213615444460704e-42,
+    "rel_gap_dps400": {
+     "x_shift": 1.460657339061297e-41,
+     "P0=Pi": 0.035112940917753514,
+     "P0=10Pi": 0.19381194692216297
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 46.331326282776125
+   },
+   {
+    "i": 849,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 4.7213615444460704e-42,
+    "rel_gap_dps400": {
+     "x_shift": 1.460657339061297e-41,
+     "P0=Pi": 0.035112940917753514,
+     "P0=10Pi": 0.19381194692216297
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 46.331326282776125
+   },
+   {
+    "i": 856,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 8.810053933011748e-42,
+    "rel_gap_dps400": {
+     "x_shift": 7.204927985261691e-42,
+     "P0=Pi": 0.4541384372463108,
+     "P0=10Pi": 7.88676185323239
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 94.42335441160772
+   },
+   {
+    "i": 856,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 8.810053933011748e-42,
+    "rel_gap_dps400": {
+     "x_shift": 7.204927985261691e-42,
+     "P0=Pi": 0.4541384372463108,
+     "P0=10Pi": 7.88676185323239
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 94.42335441160772
+   },
+   {
+    "i": 856,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 8.810053933011748e-42,
+    "rel_gap_dps400": {
+     "x_shift": 7.204927985261691e-42,
+     "P0=Pi": 0.4541384372463108,
+     "P0=10Pi": 7.88676185323239
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 94.42335441160772
+   },
+   {
+    "i": 856,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 8.810053933011748e-42,
+    "rel_gap_dps400": {
+     "x_shift": 7.204927985261691e-42,
+     "P0=Pi": 0.4541384372463108,
+     "P0=10Pi": 7.88676185323239
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 94.42335441160772
+   },
+   {
+    "i": 856,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 8.810053933011748e-42,
+    "rel_gap_dps400": {
+     "x_shift": 7.204927985261691e-42,
+     "P0=Pi": 0.4541384372463108,
+     "P0=10Pi": 7.88676185323239
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 94.42335441160772
+   },
+   {
+    "i": 856,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 8.810053933011748e-42,
+    "rel_gap_dps400": {
+     "x_shift": 7.204927985261691e-42,
+     "P0=Pi": 0.4541384372463108,
+     "P0=10Pi": 7.88676185323239
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 94.42335441160772
+   },
+   {
+    "i": 856,
+    "g": "exp",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 8.810053933011748e-42,
+    "rel_gap_dps400": {
+     "x_shift": 7.204927985261691e-42,
+     "P0=Pi": 0.4541384372463108,
+     "P0=10Pi": 7.88676185323239
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 94.42335441160772
+   },
+   {
+    "i": 935,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.0250074922028413e-42,
+    "rel_gap_dps400": {
+     "x_shift": 1.0037579751073984e-42,
+     "P0=Pi": 0.043849984001084814,
+     "P0=10Pi": 0.18938377517411567
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 47.83016925794744
+   },
+   {
+    "i": 935,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.0250074922028413e-42,
+    "rel_gap_dps400": {
+     "x_shift": 1.0037579751073984e-42,
+     "P0=Pi": 0.043849984001084814,
+     "P0=10Pi": 0.18938377517411567
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 47.83016925794744
+   },
+   {
+    "i": 939,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.669315777533277e-50,
+    "rel_gap_dps400": {
+     "x_shift": 5.9126745151583306e-52,
+     "P0=Pi": 0.05276185152888135,
+     "P0=10Pi": 0.23346985184219024
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 84.75930477588635
+   },
+   {
+    "i": 939,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": 1.669315777533277e-50,
+    "rel_gap_dps400": {
+     "x_shift": 5.9126745151583306e-52,
+     "P0=Pi": 0.05276185152888135,
+     "P0=10Pi": 0.23346985184219024
+    },
+    "sign_dps400": {
+     "x_shift": 1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 84.75930477588635
+   },
+   {
+    "i": 984,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.159864925118797e-52,
+    "rel_gap_dps400": {
+     "x_shift": 1.3617541076784832e-51,
+     "P0=Pi": 0.002808264153660772,
+     "P0=10Pi": 0.01070422012248083
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 66.64672982595584
+   },
+   {
+    "i": 984,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.159864925118797e-52,
+    "rel_gap_dps400": {
+     "x_shift": 1.3617541076784832e-51,
+     "P0=Pi": 0.002808264153660772,
+     "P0=10Pi": 0.01070422012248083
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 66.64672982595584
+   },
+   {
+    "i": 984,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.159864925118797e-52,
+    "rel_gap_dps400": {
+     "x_shift": 1.3617541076784832e-51,
+     "P0=Pi": 0.002808264153660772,
+     "P0=10Pi": 0.01070422012248083
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 66.64672982595584
+   },
+   {
+    "i": 994,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.0450143897111888e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8750573907991978e-51,
+     "P0=Pi": 0.14019242988112945,
+     "P0=10Pi": 2.64471449470518
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 97.3283059630006
+   },
+   {
+    "i": 994,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.0450143897111888e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8750573907991978e-51,
+     "P0=Pi": 0.14019242988112945,
+     "P0=10Pi": 2.64471449470518
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 97.3283059630006
+   },
+   {
+    "i": 994,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.0450143897111888e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8750573907991978e-51,
+     "P0=Pi": 0.14019242988112945,
+     "P0=10Pi": 2.64471449470518
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 97.3283059630006
+   },
+   {
+    "i": 994,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.0450143897111888e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8750573907991978e-51,
+     "P0=Pi": 0.14019242988112945,
+     "P0=10Pi": 2.64471449470518
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 97.3283059630006
+   },
+   {
+    "i": 994,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.0450143897111888e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8750573907991978e-51,
+     "P0=Pi": 0.14019242988112945,
+     "P0=10Pi": 2.64471449470518
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 97.3283059630006
+   },
+   {
+    "i": 994,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.0450143897111888e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8750573907991978e-51,
+     "P0=Pi": 0.14019242988112945,
+     "P0=10Pi": 2.64471449470518
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 97.3283059630006
+   },
+   {
+    "i": 994,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.0450143897111888e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8750573907991978e-51,
+     "P0=Pi": 0.14019242988112945,
+     "P0=10Pi": 2.64471449470518
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 97.3283059630006
+   },
+   {
+    "i": 994,
+    "g": "tanh",
+    "route_i": "All",
+    "route_ii": "Empty",
+    "R2_is_Lminus": true,
+    "R2_is_Lplus": false,
+    "n_turns": 0,
+    "dirs": [
+     1
+    ],
+    "gap_at_route_ii_point_dps60": -1.0450143897111888e-51,
+    "rel_gap_dps400": {
+     "x_shift": 1.8750573907991978e-51,
+     "P0=Pi": 0.14019242988112945,
+     "P0=10Pi": 2.64471449470518
+    },
+    "sign_dps400": {
+     "x_shift": -1,
+     "P0=Pi": 1,
+     "P0=10Pi": 1
+    },
+    "Pi_over_shift_point": 97.3283059630006
+   }
+  ]
+ },
+ "row8": {
+  "prereg_distribution": {
+   "draws": 200000,
+   "screen_hits": 0,
+   "confirmed": [],
+   "n_confirmed_101_both_routes": 0,
+   "seconds": 20.706674575805664
+  },
+  "wide_separation_1e6_1e12": {
+   "draws": 200000,
+   "screen_hits": 0,
+   "confirmed": [],
+   "n_confirmed_101_both_routes": 0,
+   "seconds": 21.54472517967224
+  }
+ },
+ "text": "Row 12: 122 persisting cases in 23 sets; R2 exactly L- in all: True; curves monotone increasing: True; f - R2 at the single point route (ii) samples is positive but at most 2.49e-41 relative, below the 1e-40 equality tolerance, so route (ii) reads equality and returns Empty; at P0 = 10 Pi the gap is at least 0.00217 and positive in all (True). The failure set is All (route i). Attribution: code (route ii sample point). Row 8: (1, 0, 1) confirmed by both routes in 0 of the top screened sets under the pre-registered distribution (0 screen hits in 200000 draws) and in 0 with stage separation 1e6-1e12 (0 hits)."
+}

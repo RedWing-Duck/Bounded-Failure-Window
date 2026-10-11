@@ -1,0 +1,40 @@
+{
+ "row": 27,
+ "name": "dt D2 post",
+ "stated": [
+  "(1, 0, 1)",
+  "All",
+  "Empty",
+  "lower ray",
+  "two rays",
+  "upper ray",
+  "window"
+ ],
+ "curves": 1000,
+ "classifications": 100000,
+ "classes": {
+  "All": 30541,
+  "Empty": 30926,
+  "upper ray": 9832,
+  "window": 5918,
+  "lower ray": 19647,
+  "two rays": 2779,
+  "(1, 0, 1)": 357
+ },
+ "kinds_hist": {
+  "max": 381,
+  "none": 503,
+  "min-max": 90,
+  "min": 26
+ },
+ "flagged": 0,
+ "persisting": 0,
+ "persist_examples": [],
+ "missing_stated": [],
+ "out_of_set": [],
+ "n_limit_fail": 0,
+ "float_route": true,
+ "max_turning_points": 2,
+ "seconds": 95.3390862941742,
+ "pass": true
+}

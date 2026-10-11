@@ -1,0 +1,35 @@
+{
+ "A3": [
+  {
+   "desc": "sizes",
+   "route": "record",
+   "pass": true,
+   "text": "quadratic numerator ops 60, derivative numerator ops 169"
+  },
+  {
+   "desc": "resultant(numerator, quadratic) in p",
+   "route": "record",
+   "pass": true,
+   "text": "done in 0 s; factors: 5, ops 20"
+  },
+  {
+   "desc": "factor sign structure (as polynomials in x, E, u)",
+   "route": "record",
+   "pass": true,
+   "text": "[{'factor_ops': 0, 'mult': 2, 'n_terms': 1, 'all_coeffs_same_sign': True}, {'factor_ops': 0, 'mult': 2, 'n_terms': 1, 'all_coeffs_same_sign': True}, {'factor_ops': 1, 'mult': 2, 'n_terms': 2, 'all_coeffs_same_sign': True}, {'factor_ops': 1, 'mult': 4, 'n_terms': 2, 'all_coeffs_same_sign': False}, {'factor_ops': 6, 'mult': 2, 'n_terms': 3, 'all_coeffs_same_sign': False}]"
+  },
+  {
+   "desc": "why not decisive",
+   "route": "record",
+   "pass": true,
+   "text": "E = e^{-x} ties E and x; a polynomial in (x, E, u) with mixed-sign coefficients is not manifestly signed on the curve E = e^{-x}, and the resultant only locates where the derivative can vanish."
+  }
+ ],
+ "outcome": "unresolved",
+ "lines": [
+  "  [record] sizes: quadratic numerator ops 60, derivative numerator ops 169",
+  "  [record] resultant(numerator, quadratic) in p: done in 0 s; factors: 5, ops 20",
+  "  [record] factor sign structure (as polynomials in x, E, u): [{'factor_ops': 0, 'mult': 2, 'n_terms': 1, 'all_coeffs_same_sign': True}, {'factor_ops': 0, 'mult': 2, 'n_terms': 1, 'all_coeffs_same_sign': True}, {'factor_ops': 1, 'mult': 2, 'n_terms': 2, 'all_coeffs_same_sign': True}, {'factor_ops': 1, 'mult': 4, 'n_terms': 2, 'all_coeffs_same_sign': False}, {'factor_ops': 6, 'mult': 2, 'n_terms': 3, 'all_coeffs_same_sign': False}]",
+  "  [record] why not decisive: E = e^{-x} ties E and x; a polynomial in (x, E, u) with mixed-sign coefficients is not manifestly signed on the curve E = e^{-x}, and the resultant only locates where the derivative can vanish."
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "row": 1,
+ "name": "Pi optimal",
+ "stated": [
+  "Empty",
+  "lower ray"
+ ],
+ "curves": 3,
+ "classifications": 300,
+ "classes": {
+  "Empty": 167,
+  "lower ray": 133
+ },
+ "kinds_hist": {
+  "none": 3
+ },
+ "flagged": 0,
+ "persisting": 0,
+ "persist_examples": [],
+ "missing_stated": [],
+ "out_of_set": [],
+ "n_limit_fail": 0,
+ "float_route": true,
+ "max_turning_points": 0,
+ "seconds": 0.28801608085632324,
+ "pass": true
+}

@@ -1,0 +1,34 @@
+{
+ "row": 6,
+ "name": "Pi hill2",
+ "stated": [
+  "(1, 0, 1)",
+  "All",
+  "Empty",
+  "lower ray",
+  "window"
+ ],
+ "curves": 3,
+ "classifications": 300,
+ "classes": {
+  "All": 107,
+  "Empty": 100,
+  "window": 15,
+  "(1, 0, 1)": 6,
+  "lower ray": 72
+ },
+ "kinds_hist": {
+  "min-max": 1,
+  "none": 2
+ },
+ "flagged": 0,
+ "persisting": 0,
+ "persist_examples": [],
+ "missing_stated": [],
+ "out_of_set": [],
+ "n_limit_fail": 0,
+ "float_route": true,
+ "max_turning_points": 2,
+ "seconds": 0.49945783615112305,
+ "pass": true
+}

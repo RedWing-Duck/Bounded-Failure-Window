@@ -1,0 +1,37 @@
+{
+ "row": 8,
+ "name": "Pi bayes2",
+ "stated": [
+  "(0, 0, 2)",
+  "(1, 0, 1)",
+  "All",
+  "Empty",
+  "lower ray",
+  "window"
+ ],
+ "curves": 3,
+ "classifications": 300,
+ "classes": {
+  "window": 84,
+  "Empty": 51,
+  "lower ray": 121,
+  "All": 44
+ },
+ "kinds_hist": {
+  "max": 2,
+  "none": 1
+ },
+ "flagged": 0,
+ "persisting": 0,
+ "persist_examples": [],
+ "missing_stated": [
+  "(0, 0, 2)",
+  "(1, 0, 1)"
+ ],
+ "out_of_set": [],
+ "n_limit_fail": 0,
+ "float_route": true,
+ "max_turning_points": 1,
+ "seconds": 1.0314619541168213,
+ "pass": false
+}

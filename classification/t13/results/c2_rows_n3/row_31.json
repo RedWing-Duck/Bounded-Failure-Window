@@ -1,0 +1,37 @@
+{
+ "row": 31,
+ "name": "dt D3 prior",
+ "stated": [
+  "(0, 1, 1)",
+  "All",
+  "Empty",
+  "lower ray",
+  "two rays",
+  "upper ray"
+ ],
+ "curves": 3,
+ "classifications": 300,
+ "classes": {
+  "All": 94,
+  "Empty": 103,
+  "lower ray": 29,
+  "two rays": 2,
+  "upper ray": 72
+ },
+ "kinds_hist": {
+  "min": 1,
+  "none": 2
+ },
+ "flagged": 2,
+ "persisting": 0,
+ "persist_examples": [],
+ "missing_stated": [
+  "(0, 1, 1)"
+ ],
+ "out_of_set": [],
+ "n_limit_fail": 0,
+ "float_route": true,
+ "max_turning_points": 1,
+ "seconds": 3.01202392578125,
+ "pass": false
+}

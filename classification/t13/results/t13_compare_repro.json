@@ -1,0 +1,50 @@
+{
+ "workdir": "/tmp/claude-0/-home-user/4d8d346c-5319-585d-bb4c-2ac5ca1f24d5/scratchpad/repro",
+ "reports": {
+  "8": {
+   "file": "REPORT.md",
+   "n_issues": 0,
+   "verdicts_identical": true,
+   "issues": [],
+   "pass": true
+  },
+  "9": {
+   "file": "t9/RESULTS_t9.md",
+   "n_issues": 0,
+   "verdicts_identical": true,
+   "issues": [],
+   "pass": true
+  },
+  "10": {
+   "status": "not reproduced"
+  },
+  "11": {
+   "file": "t11/RESULTS_t11.md",
+   "n_issues": 0,
+   "verdicts_identical": true,
+   "issues": [],
+   "pass": true
+  },
+  "12": {
+   "file": "t12/RESULTS_t12.md",
+   "n_issues": 1,
+   "verdicts_identical": true,
+   "issues": [
+    {
+     "kind": "text",
+     "line": 191,
+     "committed": "Results come from separate invocations of the committed scripts (symbolic and A#/A# directly; A# Part B, Part C, diagnosis and figures as one chain). `run_t#sh` reproduces everything in one pass. Runtime per script (s): t#_a# # t#_sigma # t#_diag # t#_figures # t#_blind # t#_symbolic # t#_dt # t#_mi",
+     "reproduced": "Results come from separate invocations of the committed scripts (symbolic and A#/A# directly; A# Part B, Part C, diagnosis and figures as one chain). `run_t#sh` reproduces everything in one pass. Runtime per script (s): t#_symbolic # t#_symbolic_diag # t#_a# # t#_dt # t#_mi # t#_sigma # t#_blind # t"
+    }
+   ],
+   "pass": false
+  }
+ },
+ "completed_tasks": [
+  "8",
+  "9",
+  "11",
+  "12"
+ ],
+ "pass": false
+}

@@ -1,0 +1,34 @@
+{
+ "row": 32,
+ "name": "dt D3 avg",
+ "stated": [
+  "All",
+  "Empty",
+  "lower ray",
+  "two rays",
+  "upper ray"
+ ],
+ "curves": 3,
+ "classifications": 300,
+ "classes": {
+  "Empty": 99,
+  "All": 92,
+  "upper ray": 55,
+  "lower ray": 40,
+  "two rays": 14
+ },
+ "kinds_hist": {
+  "none": 2,
+  "min": 1
+ },
+ "flagged": 3,
+ "persisting": 0,
+ "persist_examples": [],
+ "missing_stated": [],
+ "out_of_set": [],
+ "n_limit_fail": 0,
+ "float_route": true,
+ "max_turning_points": 1,
+ "seconds": 3.4660022258758545,
+ "pass": true
+}

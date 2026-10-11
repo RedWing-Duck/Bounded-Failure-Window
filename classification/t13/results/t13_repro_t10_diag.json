@@ -1,0 +1,20 @@
+{
+ "workdir": "/tmp/claude-0/-home-user/4d8d346c-5319-585d-bb4c-2ac5ca1f24d5/scratchpad/repro",
+ "cause": "t10/run_t10.sh omits t10_realize_diag.py; make_results_t10.py needs its t10_2_diag.json",
+ "realize_diag_rc": 0,
+ "realize_diag_s": 0.20504260063171387,
+ "make_results_rc": 0,
+ "make_results_stderr": "",
+ "issues": [
+  {
+   "kind": "text",
+   "line": 190,
+   "committed": "Results come from separate invocations of the committed scripts (census first, then T#\u2013T# in sequence; T# re-run after bug #; T#, T# and the figures re-run for logs). `run_t#sh` reproduces everything in one go (about # h on # CPUs). Runtime per script (s): t#_symbolic # t#_symbolic_diag # t#_realize",
+   "reproduced": "Results come from separate invocations of the committed scripts (census first, then T#\u2013T# in sequence; T# re-run after bug #; T#, T# and the figures re-run for logs). `run_t#sh` reproduces everything in one go (about # h on # CPUs). Runtime per script (s): t#_symbolic # t#_symbolic_diag # t#_realize"
+  }
+ ],
+ "n_issues": 1,
+ "verdicts_identical": true,
+ "pass_after_fix": false,
+ "text": "Task 10 (attribution: code, Task 10's run script). t10/run_t10.sh omits t10_realize_diag.py; make_results_t10.py needs its t10_2_diag.json. After running it in the clean checkout (0 s), make_results_t10.py exit code 0; comparison with the committed RESULTS_t10.md: 1 issues, verdicts identical True."
+}

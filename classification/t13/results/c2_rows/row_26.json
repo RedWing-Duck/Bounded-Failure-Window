@@ -1,0 +1,37 @@
+{
+ "row": 26,
+ "name": "dt D1 avg",
+ "stated": [
+  "(0, 1, 1)",
+  "All",
+  "Empty",
+  "lower ray",
+  "two rays",
+  "upper ray"
+ ],
+ "curves": 1000,
+ "classifications": 100000,
+ "classes": {
+  "lower ray": 19202,
+  "All": 25167,
+  "Empty": 26233,
+  "two rays": 10635,
+  "upper ray": 18720,
+  "(0, 1, 1)": 43
+ },
+ "kinds_hist": {
+  "min": 541,
+  "none": 455,
+  "max-min": 4
+ },
+ "flagged": 0,
+ "persisting": 0,
+ "persist_examples": [],
+ "missing_stated": [],
+ "out_of_set": [],
+ "n_limit_fail": 0,
+ "float_route": true,
+ "max_turning_points": 2,
+ "seconds": 126.70313143730164,
+ "pass": true
+}

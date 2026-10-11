@@ -1,0 +1,7 @@
+FAIL {'lit': '0.0099504', 'anchor': '(P3): $G^\\star = 0.0099504$', 'kind': 'formula', 'uses': 1, 'computed': '0.0099504938362077953363', 'pass': False}
+FAIL {'lit': '0.0099504', 'anchor': '\\sigma_\\star^2 = 0.0099504$, $V_c = 0.255', 'kind': 'formula', 'uses': 1, 'computed': '0.0099504938362077953363', 'pass': False}
+FAIL {'lit': '0.0099504', 'anchor': 'c^\\star = 0.019901$, $\\sigma_\\star^2 = 0.0099504', 'kind': 'formula', 'uses': 1, 'computed': '0.0099504938362077953363', 'pass': False}
+FAIL {'lit': '0.0099504', 'anchor': '$\\sigma_\\star^2 = 0.0099504$; $P(1) = 0.0098039$', 'kind': 'formula', 'uses': 1, 'computed': '0.0099504938362077953363', 'pass': False}
+FAIL {'lit': '10^{12}', 'anchor': '$G(10^{12})/G(10^{11}) - 1', 'kind': 'given', 'uses': 1, 'pass': False, 'error': 'ValueError("invalid literal for int() with base 10: \'12}\'")'}
+FAIL {'lit': '10^{11}', 'anchor': '$G(10^{12})/G(10^{11}) - 1', 'kind': 'given', 'uses': 1, 'pass': False, 'error': 'ValueError("invalid literal for int() with base 10: \'11}\'")'}
+C1: FAIL; literals 195, registry 78 (42 formulas), ids 117, unmatched 0, failing entries 6, failing ids 0

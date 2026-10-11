@@ -113,7 +113,7 @@ if a6:
           + ", ".join(f"{r['name']}: {r['max_turning_points']}" for r in a6) + "; Task 12: 6,000 sets × 3 metrics, never more than two.", ""]
 
 T += ["## Plain statements", "",
-      "- **Did any result in Stages 0–4 change?** No theorem, proposition or class was overturned. Labels changed where Part A "
+      "- **Did any result in Stages 0–4 change?** No theorem or proposition was overturned; one matrix class list was corrected (row 8, below). Labels changed where Part A "
       "proved something (six items became theorems or propositions; A1 verified). The audit and the referee found document "
       "errors that are now corrected and logged: a truncated worked value (0.0099504 → 0.0099505), D2's unstated requirement "
       "$c < 2$ (with $c = 3$ the excess set is all of $(0,\\infty)$, not a lower ray), the condition column of rows 25–26 "
@@ -123,7 +123,8 @@ T += ["## Plain statements", "",
       "- **Did any class outside the stated sets appear?** " + (
           ("No: the class audit found 0 persisting out-of-set classes and 0 persisting route disagreements in "
            f"{sum(r['classifications'] for r in rows):,} classifications." if c2_pass else
-           "See the C2 section: " + "; ".join(f"row {r['row']} ({r['name']}): out of set {r['out_of_set']}, missing {r['missing_stated']}, persisting {r['persisting']}" for r in rows if not r["pass"]))
+           f"No out-of-set class appeared in {sum(r['classifications'] for r in rows):,} classifications. Two rows failed the "
+           "pre-registered rule for other reasons (diagnoses 7–8): " + "; ".join(f"row {r['row']} ({r['name']}): out of set {r['out_of_set']}, missing {r['missing_stated']}, persisting {r['persisting']}" for r in rows if not r["pass"]))
           if len(rows) == 42 else "C2 incomplete."),
       "- **What remains open?** Conjecture 38 (sampled relays have at most two turning points), Numerical result 58 (two-stage "
       "gains), a necessary condition for monotone optimal error beyond the power family, and Stage 6 (α–β, multivariate). "
@@ -186,10 +187,19 @@ if man:
           "Tasks 9–12 (restarted after a container restart interrupted the first run during Task 9; it stopped at Task 10, "
           "below); Tasks 11–12; Task 13 on the final commit. Task 10's runtime is the sum of its scripts' logged runtimes.",
           "", "| Task | Runtime (s) |", "|---|---|"] + [f"| {k} | {v:.0f} |" for k, v in man["runtime_s"].items()] + [
-          "", f"Total measured wall time {tot:.0f} s ({tot / 3600:.1f} h) on {man.get('cpus', '?')} CPUs, sharing them with the Task 13 "
-          f"audits; manifest with SHA-256 of {len(man.get('sha256', {}))} output files in `results/repro_manifest.json`. A "
+          "", f"Total measured wall time {tot:.0f} s ({tot / 3600:.1f} h) on {man.get('cpus', '?')} CPUs. The Tasks 8–12 replay "
+          "shared the CPUs with this run's Task 13 audits (hence Task 10 at 2.5x and Task 12 at 1.3x the original); the Task 13 "
+          f"replay ran alone; manifest with SHA-256 of {len(man.get('sha256', {}))} output files in `results/repro_manifest.json`. A "
           "reviewer with 4 CPUs and nothing else running should expect the original runtimes (Task 8 161 s, Task 9 631 s, Task "
-          "10 5861 s, Task 11 4394 s, Task 12 8935 s, Task 13 as in the table above), about 5.6 h for Tasks 8–12.", ""]
+          f"10 5861 s, Task 11 4394 s, Task 12 8935 s) plus Task 13's {man['runtime_s'].get('13', 0):.0f} s: about "
+          f"{(161 + 631 + 5861 + 4394 + 8935 + man['runtime_s'].get('13', 0)) / 3600:.1f} h for Tasks 8–13.", ""]
+c13 = L("t13_compare_t13.json")
+if c13:
+    T += [f"**Task 13: {'PASS' if c13['pass'] else 'FAIL'}.** The full Task 13 replay (every script, including the complete "
+          f"42-row C2 audit, on commit 08a63bb in a fresh worktree) gives {c13['n_identical']}/{c13['n_files']} result files "
+          "identical to this run after masking runtimes and paths (`compare_t13.py`); the ten figures' PNG and caption files are "
+          "byte-identical. Files only in this run: " + ", ".join(c13["only_committed"]) + " (records of the first C1 run, the "
+          "N = 3 smoke run and the second Part A numeric invocation, merged in the comparison).", ""]
 t10d = L("t13_repro_t10_diag.json")
 if t10d:
     T += ["**Task 10: FAIL as pre-registered** (the replay stopped with an error, so no report was regenerated). Diagnosis "
@@ -211,6 +221,9 @@ T += ["## Deliverables", "",
       "- `classification/figs_paper2/`: ten figures (PNG + PDF + caption each; `README.md` lists them).",
       "- `classification/reproduce_all.sh`, `t13/compare_repro.py`, `t13/run_t13.sh`.",
       "- `t13/literature_check.md` (queries and sources), `t13/referee_report.md`.", "",
-      "## Provenance", "", "Runtime per script (s): " + ", ".join(f"{k} {v:.0f}" for k, v in sorted(rt.items())) + "."]
+      "## Provenance", "", "This run's results come from separate invocations (Part A numerics in two after a container restart; "
+      "C1 re-run after fixes; diagnoses after the failures). Runtime per script in the single-pass Task 13 replay (s): "
+      + ", ".join(l.replace("\t", " ") for l in open(os.path.join(RES, "repro13_runtime.tsv")).read().split("\n") if l.strip()) + ". "
+      "Commits after 08a63bb (the replay's) change only post-hoc diagnosis, comparison and report-building scripts."]
 open(os.path.join(HERE, "RESULTS_t13.md"), "w").write("\n".join(T) + "\n")
 print("\n".join(T[:24]))

@@ -1,0 +1,76 @@
+A1 Prop. 2.6(b): optimal M-P prior increasing
+  [PASS] (simplify) 1 DARE: M^2 + M(r s - q) - q r - f(M) == 0 (q = sF)
+  [PASS] (simplify) 2 f'(M) - (2M + s(r - F)) == 0
+  [FAIL] (assumptions) 2 product of the roots -sFr < 0 (so f' > 0 at the positive root): -F*k/x + F*k*exp(-2*x)/x
+  [PASS] (simplify) 3 implicit derivative numerator -f_x - [F M s' - (F - M) r (s/x - s')] == 0 (r' = -r/x)
+  [PASS] (simplify) 4 s r (F - M) - M (M - sF) + f(M) == 0
+  [PASS] (simplify) 5 bracket - M[F s' - (M - sF)(s/x - s')/s] - (s/x - s') f/s == 0 (so equal on f = 0)
+  [PASS] (simplify) 6 f(F) - F^2 (1 - s) == 0
+  [PASS] (simplify) 6 f(sF) + s F r (1 - s) == 0
+  [PASS] (simplify) 7 s - x s' - e^{-2x}(e^{2x} - 1 - 2x) == 0
+  [PASS] (check) 7 e^y - 1 - y series has only positive coefficients (from y^2) y**11/39916800 + y**10/3628800 + y**9/362880 + y**8/40320 + y**7/5040 + y**6/720 + y**5/120 + y**4/24 + y**3/6 + y**2/2
+  [PASS] (simplify) 8 s s' - (1 - s)(s/x - s') - [s' - (1 - s) s/x] == 0
+  [PASS] (simplify) 8 s' - (1 - s)s/x - (e^{-2x}/x)(2x - 1 + e^{-2x}) == 0
+  [PASS] (simplify) 8 h(y) = e^{-y} - 1 + y: h(0) == 0
+  [PASS] (simplify) 8 h'(y) - (1 - e^{-y}) == 0 (> 0 for y > 0, so h > 0: 2x > 1 - e^{-2x})
+  [record] chain: dM/dx has the sign of the bracket B = M[F s' - (M - sF)(s/x - s')/s] (f' > 0). With sF < M < F and s/x > s': 0 < M - sF < F(1 - s), so B > (MF/s)[s s' - (1 - s)(s/x - s')] = (MF/s)(e^{-2x}/x)(2x - 1 + e^{-2x}) > 0.
+A2 Num. 2.6c: optimal M-P time average increasing
+  [PASS] (simplify) 1 Pbar - [F - (F - M)(e^{2x} - 1)/(2x)] == 0 (M = a^2 P+ + q)
+  [PASS] (simplify) 1 Pbar - [F - (F/2) Q] == 0, Q = mu s/((1 + mu) x)
+  [PASS] (simplify) 2 Kalman posterior r m/(1+m) equals F s/(s + m): r m (s + m) - F s (1 + m) - r*quad(m) == 0
+  [PASS] (simplify) 2 with m = s mu: F s/(s + m) - F/(1 + mu) == 0
+  [PASS] (simplify) 2 quad(m)|_{m = s mu} - s^2 [mu^2 + (1 - phi) mu - phi/s] == 0 (phi = F/r)
+  [PASS] (simplify) 3 mu (mu + 1 - phi) - phi/s - G(mu) == 0 (so mu + 1 - phi = (phi/s)/mu > 0 on G = 0)
+  [PASS] (simplify) 3 2 + 2 mu - phi - [phi + 2 (mu + 1 - phi)] == 0 (> phi > 0)
+  [PASS] (simplify) 4 G_mu - (2 mu + 1 - phi) == 0
+  [PASS] (simplify) 4 -G_x - [phi mu/x + mu (mu + 1 - phi) E] + E*G(mu) == 0 (E = 1/x - s'/s)
+  [PASS] (simplify) 5 d ln Q/dx - [mu'/(mu (1 + mu)) - E] == 0
+  [PASS] (simplify) 5 (1+mu)(2mu+1-phi)E - [phi/x + (mu+1-phi)E] - [E mu (2 + 2mu - phi) - w] == 0
+  [PASS] (simplify) 5 mu (2 + 2 mu - phi) - phi (2/s + mu) - 2 G(mu) == 0
+  [PASS] (simplify) 6 x E - (1 - x s'/s) == 0
+  [FAIL] (none) 6 (1 - x s'/s)(2/s) - 1 - 2 e^{-2x}(sinh 2x - 2x)/s^2 == 0
+  [PASS] (check) 6 sinh y - y series has only positive (odd) coefficients from y^3 y**13/6227020800 + y**11/39916800 + y**9/362880 + y**7/5040 + y**5/120 + y**3/6
+  [record] chain: On G = 0, d ln Q/dx < 0 <=> w < w x E (2/s + mu) <=> 1 < (1 - x s'/s)(2/s + mu); since mu > 0 and (1 - x s'/s)(2/s) = 1 + 2e^{-2x}(sinh 2x - 2x)/s^2 >= 1, this holds strictly. So Q decreases and Pbar = F - (F/2)Q increases.
+A4 Num. 4.6a: power family unimodal for 0 < beta < 2
+  [PASS] (simplify) 1 A' - (lam^2 tau^2 - 1)/tau^2 == 0
+  [PASS] (simplify) 1 A'' - 2/tau^3 == 0
+  [PASS] (simplify) 1 v'/v - (beta - 1)/tau == 0
+  [PASS] (simplify) 1 v''/v' - (beta - 2)/tau == 0
+  [PASS] (simplify) Phi_tau - [A' P^2 - 4 v'(Sig - lam P)] == 0
+  [PASS] (simplify) Phi_tautau - [A'' P^2 - 4 v''(Sig - lam P)] == 0
+  [PASS] (simplify) Phi_P - (2 A P + B) == 0
+  [PASS] (simplify) 2 Phi_tautau|_{Phi_tau=0} - P^2 [beta + (2 - beta) lam^2 tau^2]/tau^3 == 0 (substitution of Sig - lam P)
+  [PASS] (simplify) 2 Ptt - ratio*Pt - (A'' - A' v''/v')P^2 == 0 (so Ptt equals it wherever Pt = 0)
+  [PASS] (check) implicit second derivative: d^2 Phi/dtau^2 = Phi_tt + 2 Phi_tP P' + Phi_PP P'^2 + Phi_P P'' (so P'' = -Phi_tt/Phi_P at P' = 0) (Derivative(Phi(theta, p(theta)), (p(theta), 2))*Derivative(p(theta), theta) + Subs(Derivative(Phi(theta, _xi), _xi, theta), _xi, p(theta)))*Derivative(p(theta), theta) + Derivative(Phi(theta, p(theta)), p(theta))*Derivative(p(theta), (theta, 2)) + Derivative(p(theta), theta)*Subs(Derivative(Phi(_xi
+  [PASS] (simplify) 3 beta = 1: Phi_tau - A' P^2 == 0
+  [record] chain: 0 < beta < 2: at every critical point P'' = -Phi_tt/Phi_P = -P^2[beta + (2-beta) lam^2 tau^2]/(tau^3 Phi_P) < 0, so every critical point is a strict local maximum; two strict maxima would enclose an interior minimum, a critical point that is not a strict maximum. With P -> 0 at both ends (Theorem 4.6) there is exactly one turning point (k = 1).
+A5 Conj. 3.10: Hill gain, every real n > 1
+  [PASS] (simplify) elasticity eps - n/(1 + T) == 0
+  [PASS] (simplify) 1 N (1+T)^3 - [c T P_n(T) - 2 n Sig Pi0 t (1+T)^2] == 0
+  [PASS] (simplify) 1 n = 2: P_2(t^2) - [-(lam+c)t^4 + (c+2lam)t^2 + 3lam] == 0
+  [PASS] (simplify) 2 dphi/dT - T^{a-1} R(T)/(1+T)^3 == 0
+  [PASS] (simplify) 2 phi_n(t) - t^{n-1} P_n(t^n)/(1+t^n)^2 with T^a = t^{n-1} at a = (n-1)/n == 0
+  R coefficients (a = (n-1)/n): {0: lambda*(n - 1)*(2*n - 1)/n, 1: (2*n - 1)*(c*n - c + lambda*n - 3*lambda)/n, 2: -(4*c*n - 2*c + 5*lambda*n - 3*lambda)/n, 3: -(c + lambda)*(n - 1)/n}
+  [PASS] (assumptions) 3 c0 = a p0 > 0 (n = 1 + e): e*lambda*(2*e + 1)/(e + 1)
+  [PASS] (assumptions) 3 c2 = (a-1)p1 + (a+2)p2 < 0 (n = 1 + e): (-4*c*e - 2*c - 5*e*lambda - 2*lambda)/(e + 1)
+  [PASS] (assumptions) 3 c3 = a p2 < 0 (n = 1 + e): -e*(c + lambda)/(e + 1)
+  [PASS] (simplify) 3 c2 - [(a-1)p1 + (a+2)p2] == 0
+  [record] Descartes: R(T) = c0 + c1 T + c2 T^2 + c3 T^3 with c0 > 0 > c2, c3: exactly one sign change whatever the sign of c1, so exactly one positive root T*; phi_n rises on (0, t*) and falls after (t* = T*^{1/n}).
+  [PASS] (simplify) 4 N(1+T)^3/t - [c t^{n-1} P_n(T) - 2 n Sig Pi0 (1+T)^2] == 0 (t^{n-1} -> 0 for n > 1, so N < 0 near 0)
+  [PASS] (simplify) 5 n = 2: R(t^2) + (t^4 + 6 t^2 - 3)((lam+c) t^2 + lam)/2 == 0
+  [record] consequence: sign N = sign(c phi_n(t)/(2n) - Sig Pi0); phi_n(0+) = 0, unimodal, -> -oo; N < 0 near 0. Hence N is negative throughout (no turning point) or -, +, - (a minimum then a maximum); the pair exists iff Pi0 < Pi0_pair(n) = c phi_n(t*)/(2 n Sig); at equality a degenerate stationary point.
+A7 Num. 3.5 (Stage 2): strict gap P < V along matched-zero-frequency tau
+  [PASS] (simplify) Lyapunov: Var eta - 1/(2 Pi tau) == 0
+  [PASS] (simplify) Lyapunov: Var s - F == 0
+  [PASS] (simplify) Lyapunov: Var e - relay variance (Stage 2 Lemma 2.1) == 0
+  [PASS] (simplify) c(u) - [e^{-au} c(0) - (G/(2 Pi tau))(e^{-u/tau} - e^{-au})/(a - 1/tau)] == 0
+  [record] coefficient of e^{-u/tau}: -G/(2*Pi*(tau*(G + lambda) - 1)) (nonzero for G > 0; a = 1/tau gives the u e^{-au} term -(G/(2 Pi tau)) u e^{-au} by the limit)
+  [PASS] (simplify) a = 1/tau limit of the integral: lim (e^{-u/tau} - e^{-au})/(a - 1/tau) - u e^{-u/tau} == 0
+  [PASS] (simplify) G = 0: c(u) - F e^{-lam u} == 0
+  [PASS] (simplify) G -> oo: lim sigma^2(G, tau) - 1/(2 Pi tau) == 0
+  [PASS] (simplify) series route for that limit: sigma^2(1/g) at g -> 0 - 1/(2 Pi tau) == 0
+  [PASS] (simplify) estimator y: E[(s - y) y] + Var eta == 0 (s, eta independent)
+A8 Conj. 4.11: monotone map in the spectral step
+  [PASS] (simplify) d/dX [S X/(S + X)] - S^2/(S + X)^2 == 0
+  [PASS] (assumptions) S^2/(S + X)^2 > 0: S**2/(S + X)**2
+T13 Part A symbolic: FAIL (66/68) {'A1': False, 'A2': False, 'A4': True, 'A5': True, 'A7': True, 'A8': True}

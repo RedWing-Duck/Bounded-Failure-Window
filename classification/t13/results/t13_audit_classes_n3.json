@@ -1,0 +1,1290 @@
+{
+ "N": 3,
+ "rows": [
+  {
+   "row": 1,
+   "name": "Pi optimal",
+   "stated": [
+    "Empty",
+    "lower ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 167,
+    "lower ray": 133
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 0.28801608085632324,
+   "pass": true
+  },
+  {
+   "row": 2,
+   "name": "Pi bayes",
+   "stated": [
+    "All",
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 82,
+    "All": 76,
+    "lower ray": 110,
+    "window": 32
+   },
+   "kinds_hist": {
+    "none": 2,
+    "max": 1
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 0.43081045150756836,
+   "pass": true
+  },
+  {
+   "row": 3,
+   "name": "Pi misspec",
+   "stated": [
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 136,
+    "lower ray": 114,
+    "window": 50
+   },
+   "kinds_hist": {
+    "none": 1,
+    "max": 2
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 0.6292128562927246,
+   "pass": true
+  },
+  {
+   "row": 4,
+   "name": "Pi capped",
+   "stated": [
+    "All",
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "All": 69,
+    "window": 63,
+    "Empty": 68,
+    "lower ray": 100
+   },
+   "kinds_hist": {
+    "max": 2,
+    "none": 1
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 4.926764965057373,
+   "pass": true
+  },
+  {
+   "row": 5,
+   "name": "Pi blind",
+   "stated": [
+    "All",
+    "lower ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "All": 159,
+    "lower ray": 141
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 8.359097003936768,
+   "pass": true
+  },
+  {
+   "row": 6,
+   "name": "Pi hill2",
+   "stated": [
+    "(1, 0, 1)",
+    "All",
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "All": 107,
+    "Empty": 100,
+    "window": 15,
+    "(1, 0, 1)": 6,
+    "lower ray": 72
+   },
+   "kinds_hist": {
+    "min-max": 1,
+    "none": 2
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 2,
+   "seconds": 0.49945783615112305,
+   "pass": true
+  },
+  {
+   "row": 7,
+   "name": "Pi hilln",
+   "stated": [
+    "(1, 0, 1)",
+    "All",
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 77,
+    "All": 102,
+    "lower ray": 96,
+    "(1, 0, 1)": 14,
+    "window": 11
+   },
+   "kinds_hist": {
+    "none": 2,
+    "min-max": 1
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 2,
+   "seconds": 3.0370774269104004,
+   "pass": true
+  },
+  {
+   "row": 8,
+   "name": "Pi bayes2",
+   "stated": [
+    "(0, 0, 2)",
+    "(1, 0, 1)",
+    "All",
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "window": 84,
+    "Empty": 51,
+    "lower ray": 121,
+    "All": 44
+   },
+   "kinds_hist": {
+    "max": 2,
+    "none": 1
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [
+    "(0, 0, 2)",
+    "(1, 0, 1)"
+   ],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 1.0314619541168213,
+   "pass": false
+  },
+  {
+   "row": 9,
+   "name": "Pi hill2stage",
+   "stated": [
+    "(0, 0, 2)",
+    "(1, 0, 1)",
+    "(1, 0, 2)",
+    "All",
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "lower ray": 132,
+    "Empty": 40,
+    "All": 29,
+    "(1, 0, 1)": 45,
+    "window": 54
+   },
+   "kinds_hist": {
+    "min-max": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [
+    "(0, 0, 2)",
+    "(1, 0, 2)"
+   ],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 2,
+   "seconds": 1.0086920261383057,
+   "pass": false
+  },
+  {
+   "row": 10,
+   "name": "Pi0 bayes",
+   "stated": [
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "All": 94,
+    "Empty": 98,
+    "upper ray": 93,
+    "two rays": 15
+   },
+   "kinds_hist": {
+    "none": 2,
+    "min": 1
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [
+    "lower ray"
+   ],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 0.37728047370910645,
+   "pass": false
+  },
+  {
+   "row": 11,
+   "name": "c bayes",
+   "stated": [
+    "All",
+    "two rays",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "upper ray": 110,
+    "All": 86,
+    "two rays": 104
+   },
+   "kinds_hist": {
+    "min": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 0.39439964294433594,
+   "pass": true
+  },
+  {
+   "row": 12,
+   "name": "Pi0 monotone",
+   "stated": [
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 93,
+    "upper ray": 61,
+    "All": 87,
+    "two rays": 40,
+    "lower ray": 19
+   },
+   "kinds_hist": {
+    "min": 2,
+    "none": 1
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 0.27962732315063477,
+   "pass": true
+  },
+  {
+   "row": 13,
+   "name": "tau ZF relay",
+   "stated": [
+    "All",
+    "Empty",
+    "lower ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 119,
+    "All": 123,
+    "lower ray": 58
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 0.25606322288513184,
+   "pass": true
+  },
+  {
+   "row": 14,
+   "name": "tau ZF optimal",
+   "stated": [
+    "Empty",
+    "lower ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 158,
+    "lower ray": 142
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 0.6587271690368652,
+   "pass": true
+  },
+  {
+   "row": 15,
+   "name": "tau var relay",
+   "stated": [
+    "All",
+    "Empty",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "upper ray": 164,
+    "All": 58,
+    "Empty": 78
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 0.4386601448059082,
+   "pass": true
+  },
+  {
+   "row": 16,
+   "name": "tau var optimal",
+   "stated": [
+    "Empty",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 153,
+    "window": 147
+   },
+   "kinds_hist": {
+    "max": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 0.4751875400543213,
+   "pass": true
+  },
+  {
+   "row": 17,
+   "name": "power beta<=0",
+   "stated": [
+    "Empty",
+    "lower ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 169,
+    "lower ray": 131
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": false,
+   "max_turning_points": 0,
+   "seconds": 2.1492197513580322,
+   "pass": true
+  },
+  {
+   "row": 18,
+   "name": "power 0<beta<2",
+   "stated": [
+    "Empty",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "window": 138,
+    "Empty": 162
+   },
+   "kinds_hist": {
+    "max": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": false,
+   "max_turning_points": 1,
+   "seconds": 3.4265084266662598,
+   "pass": true
+  },
+  {
+   "row": 19,
+   "name": "power beta>=2",
+   "stated": [
+    "Empty",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 161,
+    "upper ray": 139
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": false,
+   "max_turning_points": 0,
+   "seconds": 2.027195692062378,
+   "pass": true
+  },
+  {
+   "row": 20,
+   "name": "delay",
+   "stated": [
+    "All",
+    "Empty",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "All": 112,
+    "Empty": 105,
+    "window": 83
+   },
+   "kinds_hist": {
+    "max": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 0.2810227870941162,
+   "pass": true
+  },
+  {
+   "row": 21,
+   "name": "dt opt post",
+   "stated": [
+    "Empty",
+    "lower ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 163,
+    "lower ray": 137
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 2.868349075317383,
+   "pass": true
+  },
+  {
+   "row": 22,
+   "name": "dt opt prior",
+   "stated": [
+    "All",
+    "Empty",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "All": 99,
+    "Empty": 114,
+    "upper ray": 87
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 2.99212646484375,
+   "pass": true
+  },
+  {
+   "row": 23,
+   "name": "dt opt avg",
+   "stated": [
+    "All",
+    "Empty",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "All": 113,
+    "Empty": 123,
+    "upper ray": 64
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 3.0605995655059814,
+   "pass": true
+  },
+  {
+   "row": 24,
+   "name": "dt D1 post",
+   "stated": [
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "lower ray": 127,
+    "Empty": 130,
+    "window": 43
+   },
+   "kinds_hist": {
+    "none": 2,
+    "max": 1
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 0.7039575576782227,
+   "pass": true
+  },
+  {
+   "row": 25,
+   "name": "dt D1 prior",
+   "stated": [
+    "(0, 1, 1)",
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "lower ray": 64,
+    "All": 89,
+    "Empty": 84,
+    "two rays": 6,
+    "upper ray": 57
+   },
+   "kinds_hist": {
+    "min": 1,
+    "none": 2
+   },
+   "flagged": 6,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [
+    "(0, 1, 1)"
+   ],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 0.8276255130767822,
+   "pass": false
+  },
+  {
+   "row": 26,
+   "name": "dt D1 avg",
+   "stated": [
+    "(0, 1, 1)",
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "lower ray": 46,
+    "All": 86,
+    "Empty": 80,
+    "two rays": 18,
+    "upper ray": 70
+   },
+   "kinds_hist": {
+    "min": 1,
+    "none": 2
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [
+    "(0, 1, 1)"
+   ],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 0.9658174514770508,
+   "pass": false
+  },
+  {
+   "row": 27,
+   "name": "dt D2 post",
+   "stated": [
+    "(1, 0, 1)",
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "All": 109,
+    "Empty": 107,
+    "upper ray": 21,
+    "window": 28,
+    "lower ray": 35
+   },
+   "kinds_hist": {
+    "max": 2,
+    "none": 1
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [
+    "(1, 0, 1)",
+    "two rays"
+   ],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 0.860109806060791,
+   "pass": false
+  },
+  {
+   "row": 28,
+   "name": "dt D2 prior",
+   "stated": [
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "All": 86,
+    "two rays": 25,
+    "Empty": 107,
+    "lower ray": 26,
+    "upper ray": 56
+   },
+   "kinds_hist": {
+    "min": 1,
+    "none": 2
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 0.8395416736602783,
+   "pass": true
+  },
+  {
+   "row": 29,
+   "name": "dt D2 avg",
+   "stated": [
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 93,
+    "All": 81,
+    "upper ray": 71,
+    "two rays": 33,
+    "lower ray": 22
+   },
+   "kinds_hist": {
+    "none": 1,
+    "min": 2
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 0.8696348667144775,
+   "pass": true
+  },
+  {
+   "row": 30,
+   "name": "dt D3 post",
+   "stated": [
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "lower ray": 127,
+    "Empty": 173
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [
+    "window"
+   ],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 3.263632297515869,
+   "pass": false
+  },
+  {
+   "row": 31,
+   "name": "dt D3 prior",
+   "stated": [
+    "(0, 1, 1)",
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "All": 94,
+    "Empty": 103,
+    "lower ray": 29,
+    "two rays": 2,
+    "upper ray": 72
+   },
+   "kinds_hist": {
+    "min": 1,
+    "none": 2
+   },
+   "flagged": 2,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [
+    "(0, 1, 1)"
+   ],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 3.01202392578125,
+   "pass": false
+  },
+  {
+   "row": 32,
+   "name": "dt D3 avg",
+   "stated": [
+    "All",
+    "Empty",
+    "lower ray",
+    "two rays",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 99,
+    "All": 92,
+    "upper ray": 55,
+    "lower ray": 40,
+    "two rays": 14
+   },
+   "kinds_hist": {
+    "none": 2,
+    "min": 1
+   },
+   "flagged": 3,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 3.4660022258758545,
+   "pass": true
+  },
+  {
+   "row": 33,
+   "name": "dt MI a",
+   "stated": [
+    "All",
+    "Empty",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 91,
+    "All": 103,
+    "upper ray": 106
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 2.5555038452148438,
+   "pass": true
+  },
+  {
+   "row": 34,
+   "name": "dt MI b",
+   "stated": [
+    "All",
+    "Empty",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "All": 104,
+    "upper ray": 106,
+    "Empty": 90
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 2.5415754318237305,
+   "pass": true
+  },
+  {
+   "row": 35,
+   "name": "Sigma B2 abs",
+   "stated": [
+    "All",
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "upper ray": 135,
+    "All": 165
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 14.091771602630615,
+   "pass": true
+  },
+  {
+   "row": 36,
+   "name": "Sigma B2 rel",
+   "stated": [
+    "All",
+    "lower ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "All": 178,
+    "lower ray": 122
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 0.5077495574951172,
+   "pass": true
+  },
+  {
+   "row": 37,
+   "name": "Sigma B3 abs",
+   "stated": [
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "upper ray": 300
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 1.0514094829559326,
+   "pass": true
+  },
+  {
+   "row": 38,
+   "name": "Sigma B3 rel",
+   "stated": [
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "window": 126,
+    "Empty": 76,
+    "lower ray": 98
+   },
+   "kinds_hist": {
+    "max": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 1.1449456214904785,
+   "pass": true
+  },
+  {
+   "row": 39,
+   "name": "Sigma B4 abs",
+   "stated": [
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "upper ray": 300
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 0.9164485931396484,
+   "pass": true
+  },
+  {
+   "row": 40,
+   "name": "Sigma B4 rel",
+   "stated": [
+    "Empty",
+    "lower ray",
+    "window"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 114,
+    "window": 71,
+    "lower ray": 115
+   },
+   "kinds_hist": {
+    "max": 2,
+    "none": 1
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 1,
+   "seconds": 1.023223876953125,
+   "pass": true
+  },
+  {
+   "row": 41,
+   "name": "Sigma B5 abs",
+   "stated": [
+    "upper ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "upper ray": 300
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 0.8301119804382324,
+   "pass": true
+  },
+  {
+   "row": 42,
+   "name": "Sigma B5 rel",
+   "stated": [
+    "Empty",
+    "lower ray"
+   ],
+   "curves": 3,
+   "classifications": 300,
+   "classes": {
+    "Empty": 166,
+    "lower ray": 134
+   },
+   "kinds_hist": {
+    "none": 3
+   },
+   "flagged": 0,
+   "persisting": 0,
+   "persist_examples": [],
+   "missing_stated": [],
+   "out_of_set": [],
+   "n_limit_fail": 0,
+   "float_route": true,
+   "max_turning_points": 0,
+   "seconds": 0.9412524700164795,
+   "pass": true
+  }
+ ],
+ "pass": false,
+ "n_pass": 34,
+ "total_classifications": 12600,
+ "seconds": 80.34701871871948
+}

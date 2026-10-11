@@ -1,0 +1,1324 @@
+{
+ "unmatched": [],
+ "ambiguous": [],
+ "entries": [
+  {
+   "lit": "0.01",
+   "anchor": "Worked example** ($\\lambda = c = 1$, $\\Sigma = 0.01$): $\\Pi_B = 50$",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.0099505",
+   "anchor": "(P3): $G^\\star = 0.0099505$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0099504938362077953363",
+   "pass": true
+  },
+  {
+   "lit": "99.498",
+   "anchor": "\\Pi_0^\\star = 99.498",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "99.497524691810389767",
+   "pass": true
+  },
+  {
+   "lit": "0.0099505",
+   "anchor": "\\sigma_\\star^2 = 0.0099505$, $V_c = 0.255",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0099504938362077953363",
+   "pass": true
+  },
+  {
+   "lit": "0.255",
+   "anchor": "$V_c = 0.255$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.255",
+   "pass": true
+  },
+  {
+   "lit": "64.162",
+   "anchor": "\\Pi_0^\\star = 64.162",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "64.161984870956629487",
+   "pass": true
+  },
+  {
+   "lit": "0.0080540",
+   "anchor": "\\sigma_\\star^2 = 0.0080540",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0080539949569855431624",
+   "pass": true
+  },
+  {
+   "lit": "0.0091667",
+   "anchor": "$V_c = 0.0091667$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0091666666666666666667",
+   "pass": true
+  },
+  {
+   "lit": "0.0055",
+   "anchor": "$V_c = 0.0055$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0055",
+   "pass": true
+  },
+  {
+   "lit": "0.01",
+   "anchor": "$\\Sigma = 0.01$, $\\Pi = \\Pi_0 = 1$): $c^\\star",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.019901",
+   "anchor": "c^\\star = 0.019901",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.019900987672415590673",
+   "pass": true
+  },
+  {
+   "lit": "0.0099505",
+   "anchor": "c^\\star = 0.019901$, $\\sigma_\\star^2 = 0.0099505",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0099504938362077953363",
+   "pass": true
+  },
+  {
+   "lit": "0.04",
+   "anchor": "$c_F = 0.04$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.04",
+   "pass": true
+  },
+  {
+   "lit": "0.01",
+   "anchor": "so $G = 0.5$): $V_w",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.5",
+   "anchor": "so $G = 0.5$): $V_w",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.5",
+   "pass": true
+  },
+  {
+   "lit": "0.09",
+   "anchor": "$V_w = 0.09$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.09",
+   "pass": true
+  },
+  {
+   "lit": "0.0066667",
+   "anchor": "$H_G = 0.0066667$, $\\tau_F = 16$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0066666666666666666667",
+   "pass": true
+  },
+  {
+   "lit": "0.04",
+   "anchor": "$\\sigma^2(1) = 0.04$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.04",
+   "pass": true
+  },
+  {
+   "lit": "0.011875",
+   "anchor": "$\\sigma^2(10) = 0.011875$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.011875",
+   "pass": true
+  },
+  {
+   "lit": "0.01",
+   "anchor": "$\\sigma^2(16) = 0.01$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.01",
+   "pass": true
+  },
+  {
+   "lit": "2\\times10^{-17}",
+   "anchor": "Wiener route to $2\\times10^{-17}$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.01",
+   "anchor": "**Worked example** ($\\lambda = 1$, $\\Sigma = 0.01$, $\\Pi = 1$): $\\sigma_\\star^2 ",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.0099505",
+   "anchor": "$\\sigma_\\star^2 = 0.0099505$; $P(1) = 0.0098039$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0099504938362077953363",
+   "pass": true
+  },
+  {
+   "lit": "0.0098039",
+   "anchor": "$P(1) = 0.0098039$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0098039215686274509804",
+   "pass": true
+  },
+  {
+   "lit": "0.0099010",
+   "anchor": "$V(1) = 0.0099010$; $P(10)",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0099009876724155906727",
+   "pass": true
+  },
+  {
+   "lit": "0.0067813",
+   "anchor": "$P(10) = 0.0067813$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0067813033142418535958",
+   "pass": true
+  },
+  {
+   "lit": "0.5",
+   "anchor": "The fixed relay with $G = 0.5$ gives $0.04$",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.04",
+   "anchor": "The fixed relay with $G = 0.5$ gives $0.04$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.04",
+   "pass": true
+  },
+  {
+   "lit": "0.011875",
+   "anchor": "and $0.011875$; as $\\tau \\to \\infty$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.011875",
+   "pass": true
+  },
+  {
+   "lit": "0.0066667",
+   "anchor": "$H_G = 0.0066667$ while $P \\to 0$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0066666666666666666667",
+   "pass": true
+  },
+  {
+   "lit": "1.0\\times10^{-14}",
+   "anchor": "three routes agree to $1.0\\times10^{-14}$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "10^{-50}",
+   "anchor": "shape exact to $10^{-50}$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "8\\times10^{-51}",
+   "anchor": "T11.3 to $8\\times10^{-51}$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "10^{-30}",
+   "anchor": "$\\Delta t_E$ to $10^{-30}$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.031263",
+   "anchor": "($dp/dx = 0.031263$ at $x = u = 1$)",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0312631699693562",
+   "pass": true
+  },
+  {
+   "lit": "10^{-17}",
+   "anchor": "relative dips from $10^{-17}$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "10^{-32{,}880{,}317}",
+   "anchor": "down to $10^{-32{,}880{,}317}$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.5",
+   "anchor": "**Worked example** (D1, $G = 0.5$",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.01",
+   "anchor": "**Worked example** (D1, $G = 0.5$, $\\lambda = 1$, $\\Sigma = 0.01$",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.09",
+   "anchor": "post rises from $0.09$ to a single maximum",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.09",
+   "pass": true
+  },
+  {
+   "lit": "0.20457",
+   "anchor": "single maximum\n$0.20457$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.20457340387795200593",
+   "pass": true
+  },
+  {
+   "lit": "2.4645",
+   "anchor": "at $\\Delta t = 2.4645$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "2.4644993159736623788",
+   "pass": true
+  },
+  {
+   "lit": "0.09",
+   "anchor": "a window for $R^2 \\in (0.09, 0.20457)$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.09",
+   "pass": true
+  },
+  {
+   "lit": "0.20457",
+   "anchor": "a window for $R^2 \\in (0.09, 0.20457)$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.20457340387795200593",
+   "pass": true
+  },
+  {
+   "lit": "0.0099875",
+   "anchor": "dips to $0.0099875$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0099875",
+   "pass": true
+  },
+  {
+   "lit": "0.125",
+   "anchor": "(a dip of $0.125\\%$)",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.125",
+   "pass": true
+  },
+  {
+   "lit": "6\\times10^{-31}",
+   "anchor": "maximum position to $6\\times10^{-31}$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "1.25",
+   "anchor": "failure set at\n$R^2 = 1.25F$",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "1.5",
+   "anchor": "peak value $1.5F$ and strictly decreasing",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "1.25",
+   "anchor": "so it crosses $1.25F$ exactly twice",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "10^{12}",
+   "anchor": "$G(10^{12})/G(10^{11}) - 1",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "10^{11}",
+   "anchor": "$G(10^{12})/G(10^{11}) - 1",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "6\\times10^{-10}",
+   "anchor": "$G(10^{12})/G(10^{11}) - 1 = 6\\times10^{-10}$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.01",
+   "anchor": "($F'/F = \\kappa = 100$, with $\\lambda = \\lambda' = c = 1$, $\\Sigma = 0.01$)",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "17.575",
+   "anchor": "the peak is $M/F = 17.575$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "17.575054410594226726",
+   "pass": true
+  },
+  {
+   "lit": "9.2875",
+   "anchor": "against $9.2875$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "9.287527205297113363",
+   "pass": true
+  },
+  {
+   "lit": "1.892",
+   "anchor": "a ratio of $1.892$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "1.8923287137797396716",
+   "pass": true
+  },
+  {
+   "lit": "1.5",
+   "anchor": "regression against Task 10's table for $n = 1.5, 2, 3, 4, 8$",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "1.01",
+   "anchor": "with real $n \\in [1.01, 10]$",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.01",
+   "anchor": "At $\\lambda = c = 1$, $\\Sigma = 0.01$: $\\Pi_0^{\\text{pair}} = 30.243",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "30.243",
+   "anchor": "$\\Pi_0^{\\text{pair}} = 30.243",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "30.243094747372680631",
+   "pass": true
+  },
+  {
+   "lit": "31.475",
+   "anchor": "= 30.243, 31.475",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "31.475049759539222899",
+   "pass": true
+  },
+  {
+   "lit": "37.820",
+   "anchor": "31.475, 37.820",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "37.820002231631031077",
+   "pass": true
+  },
+  {
+   "lit": "44.180",
+   "anchor": "37.820, 44.180",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "44.179683427817986364",
+   "pass": true
+  },
+  {
+   "lit": "62.711",
+   "anchor": "44.180, 62.711",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "62.711314576868092433",
+   "pass": true
+  },
+  {
+   "lit": "1.5",
+   "anchor": "62.711$ for $n = 1.5, 2, 3, 4, 8$",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "5\\times10^{-4}",
+   "anchor": "has median $5\\times10^{-4}$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "4\\times10^{-22}",
+   "anchor": "$4\\times10^{-22}$ to $0.96$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.96",
+   "anchor": "$4\\times10^{-22}$ to $0.96$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "1.50007",
+   "anchor": "fitted exponents $1.50007$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.50002",
+   "anchor": "$0.50002$ (positions)",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "10^{-8}",
+   "anchor": "Windows of relative width $10^{-8}$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "4.4",
+   "anchor": "$4.4\\times10^6$ over the",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "6\\times10^{-31}",
+   "anchor": "reduction T10.3, position error $6\\times10^{-31}$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "1.91",
+   "anchor": "Monte Carlo $|z| \\le 1.91$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.01",
+   "anchor": "Example ($\\lambda = 1$, $\\Sigma = 0.01$,",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.0099505",
+   "anchor": "$P(0) = 0.0099505$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.0099504938362077953363",
+   "pass": true
+  },
+  {
+   "lit": "0.0099763",
+   "anchor": "$P(1/e) = 0.0099763$",
+   "kind": "formula",
+   "uses": 1,
+   "computed": "0.009976279532085063685",
+   "pass": true
+  },
+  {
+   "lit": "0.01",
+   "anchor": "$\\Sigma = 0.01$, $\\Pi = \\Pi_0 = 1$,\n$c = 3$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.019",
+   "anchor": "(e.g. $G = 0.019$, $\\lambda = 1$",
+   "kind": "record",
+   "uses": 1,
+   "pass": true
+  },
+  {
+   "lit": "0.01",
+   "anchor": "(e.g. $G = 0.019$, $\\lambda = 1$, $\\Sigma = 0.01$",
+   "kind": "given",
+   "uses": 1,
+   "pass": true
+  }
+ ],
+ "ids": [
+  {
+   "kind": "task_id",
+   "lit": "T8.5",
+   "line": 89,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T8.1",
+   "line": 120,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T8.3",
+   "line": 120,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.5",
+   "line": 131,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T8.1",
+   "line": 148,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T8.1",
+   "line": 168,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.3",
+   "line": 198,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.7",
+   "line": 198,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T8.4",
+   "line": 214,
+   "pass": true
+  },
+  {
+   "kind": "section",
+   "lit": "4.1",
+   "line": 218,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T8.1",
+   "line": 234,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T8.2",
+   "line": 234,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T8.3",
+   "line": 250,
+   "pass": true
+  },
+  {
+   "kind": "section",
+   "lit": "4.2",
+   "line": 259,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T8.1",
+   "line": 269,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T8.2",
+   "line": 269,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T8.3",
+   "line": 277,
+   "pass": true
+  },
+  {
+   "kind": "section",
+   "lit": "5.1",
+   "line": 289,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.1",
+   "line": 306,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.1",
+   "line": 315,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.4",
+   "line": 315,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.1",
+   "line": 326,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.4",
+   "line": 326,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.1",
+   "line": 348,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.2",
+   "line": 348,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.1",
+   "line": 357,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.5",
+   "line": 357,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.1",
+   "line": 371,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.4",
+   "line": 371,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.5",
+   "line": 382,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.5",
+   "line": 400,
+   "pass": true
+  },
+  {
+   "kind": "section",
+   "lit": "5.2",
+   "line": 407,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.6",
+   "line": 431,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.6",
+   "line": 437,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.6",
+   "line": 446,
+   "pass": true
+  },
+  {
+   "kind": "section",
+   "lit": "5.3",
+   "line": 452,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.3",
+   "line": 478,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.3",
+   "line": 496,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.1",
+   "line": 504,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.3",
+   "line": 504,
+   "pass": true
+  },
+  {
+   "kind": "section",
+   "lit": "6.1",
+   "line": 525,
+   "pass": true
+  },
+  {
+   "kind": "section",
+   "lit": "6.2",
+   "line": 581,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.6",
+   "line": 636,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.6",
+   "line": 674,
+   "pass": true
+  },
+  {
+   "kind": "old_id",
+   "lit": "2.8",
+   "line": 674,
+   "pass": true
+  },
+  {
+   "kind": "old_id",
+   "lit": "4.10",
+   "line": 674,
+   "pass": true
+  },
+  {
+   "kind": "section",
+   "lit": "6.3",
+   "line": 676,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.1",
+   "line": 774,
+   "pass": true
+  },
+  {
+   "kind": "section",
+   "lit": "8.1",
+   "line": 784,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.1",
+   "line": 794,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.2",
+   "line": 794,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.1",
+   "line": 803,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.2",
+   "line": 803,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.2",
+   "line": 816,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.2",
+   "line": 832,
+   "pass": true
+  },
+  {
+   "kind": "section",
+   "lit": "8.2",
+   "line": 844,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.1",
+   "line": 863,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.1",
+   "line": 885,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.3",
+   "line": 885,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.3",
+   "line": 896,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.5",
+   "line": 896,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.3",
+   "line": 901,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.1",
+   "line": 932,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.3",
+   "line": 934,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.4",
+   "line": 953,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.3",
+   "line": 964,
+   "pass": true
+  },
+  {
+   "kind": "section",
+   "lit": "8.3",
+   "line": 966,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.5",
+   "line": 974,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.5",
+   "line": 983,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.5",
+   "line": 992,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.5",
+   "line": 998,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.7",
+   "line": 1004,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.1",
+   "line": 1026,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.2",
+   "line": 1026,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.1",
+   "line": 1058,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.3",
+   "line": 1058,
+   "pass": true
+  },
+  {
+   "kind": "old_id",
+   "lit": "4.11",
+   "line": 1080,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.1",
+   "line": 1098,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.3",
+   "line": 1098,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.4",
+   "line": 1113,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.4",
+   "line": 1120,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.5",
+   "line": 1126,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.3",
+   "line": 1143,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.7",
+   "line": 1143,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.3",
+   "line": 1144,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.7",
+   "line": 1144,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.3",
+   "line": 1145,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.5",
+   "line": 1145,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.7",
+   "line": 1145,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.3",
+   "line": 1146,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.7",
+   "line": 1146,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.3",
+   "line": 1147,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.4",
+   "line": 1147,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.7",
+   "line": 1147,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.3",
+   "line": 1148,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.3",
+   "line": 1149,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.3",
+   "line": 1150,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.2",
+   "line": 1151,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T8.3",
+   "line": 1152,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.7",
+   "line": 1152,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T8.3",
+   "line": 1153,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.7",
+   "line": 1153,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T8.4",
+   "line": 1154,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.4",
+   "line": 1155,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.7",
+   "line": 1155,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T9.4",
+   "line": 1156,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.7",
+   "line": 1156,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.6",
+   "line": 1157,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.7",
+   "line": 1157,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.6",
+   "line": 1158,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T10.7",
+   "line": 1158,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.3",
+   "line": 1159,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.3",
+   "line": 1160,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.3",
+   "line": 1161,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.4",
+   "line": 1162,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.6",
+   "line": 1175,
+   "pass": true
+  },
+  {
+   "kind": "task_id",
+   "lit": "T11.6",
+   "line": 1176,
+   "pass": true
+  }
+ ],
+ "n_literals": 198,
+ "n_formula": 42,
+ "n_fail_entries": 0,
+ "n_fail_ids": 0,
+ "pass": true
+}

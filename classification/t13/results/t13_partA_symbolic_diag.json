@@ -1,0 +1,29 @@
+{
+ "A1": [
+  {
+   "desc": "2 -sFr + (F k/x) e^{-2x}(e^{2x} - 1) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "2 e^y - 1 series: all coefficients from y^1 positive (so -sFr < 0)",
+   "route": "check",
+   "pass": true,
+   "info": "y**9/362880 + y**8/40320 + y**7/5040 + y**6/720 + y**5/120 + y**4/24 + y**3/6 + y**2/2 + y"
+  }
+ ],
+ "A2": [
+  {
+   "desc": "6 same identity after .rewrite(exp)",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "6 exp form: 2s - 2x s' - s^2 - (1 - 4x e^{-2x} - e^{-4x}) == 0",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "pass": true,
+ "attribution": "criterion/route: both identities hold; the pre-registered routes cannot sign 1 - e^{-2x} or rewrite sinh"
+}

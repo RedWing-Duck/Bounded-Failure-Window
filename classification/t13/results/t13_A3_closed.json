@@ -1,0 +1,62 @@
+{
+ "A3c": [
+  {
+   "desc": "a0 + a1 == 0 (so the quadratic is a2 p^2 + a1 (p - 1) = 0)",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "a1 - 2(1 - E) K/(u x^2) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "a2/a1 - u(1 - E)/(2K) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "K/(1 - E) on E = e^{-x} equals k(x) = (1+u) x coth(x/2) - 2u",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "positive root of a2 p^2 + a1 (p - 1): p = 2/(1 + sqrt(1 + 4 a2/a1)) solves it",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "d/dx [x coth(x/2)] - (sinh x - x)/(2 sinh^2(x/2)) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "sinh y - y > 0 (positive series coefficients), so k is strictly increasing",
+   "route": "check",
+   "pass": true,
+   "info": "y**11/39916800 + y**9/362880 + y**7/5040 + y**5/120 + y**3/6"
+  },
+  {
+   "desc": "lim_{x->0} x coth(x/2) = 2, so k(0+) = 2",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "series route: x coth(x/2) = 2 + x^2/6 + O(x^4)",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "x -> 0: p -> 2/(1 + sqrt(1 + u)) = sigma*^2/F",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "x -> oo: k -> oo (x coth(x/2) >= x), so p -> 1 = F",
+   "route": "check",
+   "pass": true,
+   "info": ""
+  }
+ ],
+ "pass": true
+}

@@ -1,0 +1,157 @@
+{
+ "A3": [
+  {
+   "desc": "1 scaling: general quadratic / reduced quadratic (p = P/F) is free of P",
+   "route": "check",
+   "pass": true,
+   "info": "Sigma**2/lambda**2"
+  },
+  {
+   "desc": "2 quadratic denominator free of p",
+   "route": "check",
+   "pass": true,
+   "info": "u*x**2"
+  },
+  {
+   "desc": "2 derivative numerator denominator free of p",
+   "route": "check",
+   "pass": true,
+   "info": "u*x**3"
+  },
+  {
+   "desc": "2 exact arithmetic (no floats)",
+   "route": "check",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "desc": "2 leading coefficient of the quadratic in p",
+   "route": "record",
+   "pass": true,
+   "text": "u*(E - 1)**2"
+  },
+  {
+   "desc": "2 resultant(numerator, quadratic; p), factored",
+   "route": "record",
+   "pass": true,
+   "text": "4*u**2*x**2*(E - 1)**4*(u + 1)**2*(E**2 + 2*E*x - 1)**2"
+  },
+  {
+   "desc": "2 factor list",
+   "route": "record",
+   "pass": true,
+   "text": "(4, [(u, 2), (x, 2), (u + 1, 2), (E - 1, 4), (E**2 + 2*E*x - 1, 2)])"
+  },
+  {
+   "desc": "3 factors are u, x, E, u + 1, E - 1 (nonzero) and the key factor E^2 + 2xE - 1 (up to constants)",
+   "route": "check",
+   "pass": true,
+   "info": "[(u, 2), (x, 2), (u + 1, 2), (E - 1, 4), (E**2 + 2*E*x - 1, 2)]"
+  },
+  {
+   "desc": "3 key factor on E = e^{-x}: E^2 + 2xE - 1 + 2 e^{-x}(sinh x - x) == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "3 sinh y - y has positive coefficients only (so the key factor is < 0 for x > 0)",
+   "route": "check",
+   "pass": true,
+   "info": "y**13/6227020800 + y**11/39916800 + y**9/362880 + y**7/5040 + y**5/120 + y**3/6"
+  },
+  {
+   "desc": "3 leading coefficient in p nonzero (u(1 - E)/... up to sign)",
+   "route": "check",
+   "pass": true,
+   "info": "u*(E - 1)**2"
+  },
+  {
+   "desc": "4 one positive root of the quadratic at (x, u) = (1, 1)",
+   "route": "check",
+   "pass": true,
+   "info": "1"
+  },
+  {
+   "desc": "4 dp/dx > 0 at (x, u) = (1, 1) (60 digits)",
+   "route": "check",
+   "pass": true,
+   "info": "0.0312631699693562"
+  },
+  {
+   "desc": "5 quadratic numerator at p = 1 (= F), factored",
+   "route": "record",
+   "pass": true,
+   "text": "u*(E - 1)**2"
+  },
+  {
+   "desc": "5 product of the roots a0/a2 (negative => one positive root)",
+   "route": "record",
+   "pass": true,
+   "text": "2*(E*u*x + 2*E*u + E*x + u*x - 2*u + x)/(u*(E - 1))"
+  },
+  {
+   "desc": "5 product numerator - [u(x(1+E) - 2(1-E)) + x(1+E)] == 0",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "5 x(1+E) - 2(1-E) - e^{-x} f(x) == 0 on E = e^{-x}, f = x e^x + x - 2e^x + 2",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "5 f(x) series: coefficients 0 up to x^2, then (n-2)/n! > 0 (so f > 0, product of roots < 0, one positive root)",
+   "route": "check",
+   "pass": true,
+   "info": "x**11/4435200 + x**10/453600 + x**9/51840 + x**8/6720 + x**7/1008 + x**6/180 + x**5/40 + x**4/12 + x**3/6"
+  },
+  {
+   "desc": "5 quadratic numerator at p = F equals its leading coefficient u(E-1)^2 > 0, with value < 0 at p = 0: root in (0, F)",
+   "route": "check",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "desc": "5 d fac/dx - [ -(1 - E^2) + 2xE^2 ]/(2x^2) == 0 (E = e^{-x})",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "5 (1 - E^2) - 2x E^2 = E^2 (e^{2x} - 1 - 2x) on E = e^{-x}",
+   "route": "simplify",
+   "pass": true
+  },
+  {
+   "desc": "5 metric (b)",
+   "route": "record",
+   "pass": true,
+   "text": "P_b = p fac + F(1 - fac); dP_b/dx = p' fac + (p - F) fac' with fac' < 0 (above) and p < F, so dP_b/dx > 0 whenever p' > 0."
+  }
+ ],
+ "pass": true,
+ "lines": [
+  "  [PASS] (check) 1 scaling: general quadratic / reduced quadratic (p = P/F) is free of P Sigma**2/lambda**2",
+  "  [PASS] (check) 2 quadratic denominator free of p u*x**2",
+  "  [PASS] (check) 2 derivative numerator denominator free of p u*x**3",
+  "  [PASS] (check) 2 exact arithmetic (no floats) ",
+  "  [record] 2 leading coefficient of the quadratic in p: u*(E - 1)**2",
+  "  [record] 2 resultant(numerator, quadratic; p), factored: 4*u**2*x**2*(E - 1)**4*(u + 1)**2*(E**2 + 2*E*x - 1)**2",
+  "  [record] 2 factor list: (4, [(u, 2), (x, 2), (u + 1, 2), (E - 1, 4), (E**2 + 2*E*x - 1, 2)])",
+  "  [PASS] (check) 3 factors are u, x, E, u + 1, E - 1 (nonzero) and the key factor E^2 + 2xE - 1 (up to constants) [(u, 2), (x, 2), (u + 1, 2), (E - 1, 4), (E**2 + 2*E*x - 1, 2)]",
+  "  [PASS] (simplify) 3 key factor on E = e^{-x}: E^2 + 2xE - 1 + 2 e^{-x}(sinh x - x) == 0",
+  "  [PASS] (check) 3 sinh y - y has positive coefficients only (so the key factor is < 0 for x > 0) y**13/6227020800 + y**11/39916800 + y**9/362880 + y**7/5040 + y**5/120 + y**3/6",
+  "  [PASS] (check) 3 leading coefficient in p nonzero (u(1 - E)/... up to sign) u*(E - 1)**2",
+  "  [PASS] (check) 4 one positive root of the quadratic at (x, u) = (1, 1) 1",
+  "  [PASS] (check) 4 dp/dx > 0 at (x, u) = (1, 1) (60 digits) 0.0312631699693562",
+  "  [record] 5 quadratic numerator at p = 1 (= F), factored: u*(E - 1)**2",
+  "  [record] 5 product of the roots a0/a2 (negative => one positive root): 2*(E*u*x + 2*E*u + E*x + u*x - 2*u + x)/(u*(E - 1))",
+  "  [PASS] (simplify) 5 product numerator - [u(x(1+E) - 2(1-E)) + x(1+E)] == 0",
+  "  [PASS] (simplify) 5 x(1+E) - 2(1-E) - e^{-x} f(x) == 0 on E = e^{-x}, f = x e^x + x - 2e^x + 2",
+  "  [PASS] (check) 5 f(x) series: coefficients 0 up to x^2, then (n-2)/n! > 0 (so f > 0, product of roots < 0, one positive root) x**11/4435200 + x**10/453600 + x**9/51840 + x**8/6720 + x**7/1008 + x**6/180 + x**5/40 + x**4/12 + x**3/6",
+  "  [PASS] (check) 5 quadratic numerator at p = F equals its leading coefficient u(E-1)^2 > 0, with value < 0 at p = 0: root in (0, F) ",
+  "  [PASS] (simplify) 5 d fac/dx - [ -(1 - E^2) + 2xE^2 ]/(2x^2) == 0 (E = e^{-x})",
+  "  [PASS] (simplify) 5 (1 - E^2) - 2x E^2 = E^2 (e^{2x} - 1 - 2x) on E = e^{-x}",
+  "  [record] 5 metric (b): P_b = p fac + F(1 - fac); dP_b/dx = p' fac + (p - F) fac' with fac' < 0 (above) and p < F, so dP_b/dx > 0 whenever p' > 0.",
+  "A3 completion: all steps verified"
+ ]
+}

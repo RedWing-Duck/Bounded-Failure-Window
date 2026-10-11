@@ -1,0 +1,14 @@
+{
+ "symbolic": {
+  "(1) derivative identity": true,
+  "(2) f <= F iff 2 Pi Sig >= lam G": true,
+  "(3) bracket bound": true,
+  "(4) Bayes stage Pi G' - G": true
+ },
+ "numeric": {
+  "row8_curves_with_min": 6,
+  "row8_min_m_over_F": 1.0057874128546869
+ },
+ "text": "Row 8: proved that f' < 0 wherever f <= F for any positive increasing gain with G/Pi strictly decreasing, which includes every sum of Bayesian stages; so interior minima exceed F and (1, 0, k), k >= 1, cannot occur. SymPy steps: {'(1) derivative identity': True, '(2) f <= F iff 2 Pi Sig >= lam G': True, '(3) bracket bound': True, \"(4) Bayes stage Pi G' - G\": True}; smallest m/F over the 6 row-8 interior minima: 1.0057874128546869. Attribution: document (row 8's stated set wrongly includes (1, 0, 1)). All checks pass: True.",
+ "pass": true
+}

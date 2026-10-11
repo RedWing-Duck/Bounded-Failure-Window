@@ -1,0 +1,1 @@
+{'n_flagged': 277, 'n_still_failing': 0, 'min_x': mpf('26.558710428257736'), 'max_rel': mpf('3.9289191145793564e-133'), 'n_other_fails': 0, 'attribution': "code: the auxiliary cross-check's 1e-80 tolerance exceeded the precision left after the F - M cancellation; with enough digits both forms agree; the pre-registered A2 links had 0 failures"}

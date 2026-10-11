@@ -1,0 +1,102 @@
+{
+ "by_task": {
+  "t8": {
+   "n": 35,
+   "n_pass": 35,
+   "fails": [],
+   "script_pass_flag": true
+  },
+  "t9": {
+   "n": 27,
+   "n_pass": 27,
+   "fails": [],
+   "script_pass_flag": true
+  },
+  "t10": {
+   "n": 26,
+   "n_pass": 26,
+   "fails": [],
+   "script_pass_flag": false
+  },
+  "t11": {
+   "n": 23,
+   "n_pass": 23,
+   "fails": [],
+   "script_pass_flag": true
+  },
+  "t12": {
+   "n": 67,
+   "n_pass": 67,
+   "fails": [],
+   "script_pass_flag": false
+  }
+ },
+ "fallbacks": [
+  {
+   "task": "t10",
+   "item": "G(Pi(G)) - G == 0 for Pi = (G^2 + 2 lam' G)/(2 Sig')",
+   "ok": true,
+   "route": "documented fallback: factor radicand (t10_symbolic_diag)"
+  },
+  {
+   "task": "t10",
+   "item": "sigma*^2(pi_R) - R^2 == 0",
+   "ok": true,
+   "route": "documented fallback: factor radicand (t10_symbolic_diag)"
+  },
+  {
+   "task": "t12",
+   "item": "D2 post at dt->oo: lim dt (P+ - (1-c)^2 F) - c[c + 2(1-c) F Pi0]/Pi == 0",
+   "ok": true,
+   "route": "documented fallback: series route (t12_symbolic_diag)"
+  }
+ ],
+ "runs": [
+  {
+   "script": "./t8_symbolic.py",
+   "returncode": 0,
+   "seconds": 3.00282621383667,
+   "tail": " window (expected window) ok\n    R2 = 0.092875365: Empty (expected Empty) ok\n    R2 = 0.0025: All (expected All) ok\n    R2 = 0.0075: lower ray (expected lower ray) ok\n    R2 = 0.051437636: window (expected window) ok\n    R2 = 0.13931291: Empty (expected Empty) ok\nT8.1: PASS  parts: {'a': True, 'b': True, 'c': True, 'd': True, 'e': True, 'f': True, 'g': True, 'h': True}; numeric-only identities: 0\n"
+  },
+  {
+   "script": "t9/t9_symbolic.py",
+   "returncode": 0,
+   "seconds": 2.693681478500366,
+   "tail": "(h) tau*_R\n  [PASS] (simplify) quadratic at P = R^2, tau = tau*_R == 0\n  [PASS] (simplify) leading coefficient - lam^2 R^4 == 0\n  [PASS] (simplify) discriminant - R^4 Delta == 0\n  [PASS] (simplify) constant - (R^2 - G*/Pi)(R^2 + (lam + s)/Pi) == 0\n(i) Paper 1 white-noise formula\n  [PASS] (simplify) lim_{tau->0} sigma2 - (Sig + G^2/(2 Pi))/(lam + G) == 0\nT9.1: PASS (27/27); routes {'simplify': 27}\n"
+  },
+  {
+   "script": "t10/t10_symbolic.py",
+   "returncode": 0,
+   "seconds": 2.6558902263641357,
+   "tail": "4 Sig v = 0\n  [PASS] (simplify) P(A = 0) - Sig v/(Sig + lam v) == 0\n  [PASS] (simplify) (1 - lam tau)^2 - A_R tau == lam^2 tau^2 - (2 lam + A_R) tau + 1\n  [PASS] (simplify) tau_- tau_+ - 1/lam^2 == 0\n  [PASS] (simplify) A_R defined by A P^2 + B P - C = 0 at P = R^2\n  [PASS] (simplify) Lyapunov X11 - (Sig + G^2 v tau/(1 + a tau))/a == 0\n  [PASS] (simplify) Lyapunov X22 - v == 0\nT10.1: FAIL (24/26)\n"
+  },
+  {
+   "script": "t11/t11_symbolic.py",
+   "returncode": 0,
+   "seconds": 2.49406361579895,
+   "tail": "a**2 + lambda*sqrt(2*Pi*Sigma + lambda**2))\n  [PASS] (simplify) 2F/(1 + sqrt(1 + 2 F Pi/lam)) - s*^2 at Sigma = F lam == 0\n  [PASS] (simplify) d/dlam [2F/(1+rt)] - 2 F^2 Pi/(lam^2 rt (1 + rt)^2) == 0\n  [PASS] (assumptions) 2 F^2 Pi/(lam^2 rt (1+rt)^2) > 0 (increasing in lambda at fixed F): 2*F**2*Pi/(sqrt(lambda)*(sqrt(lambda) + sqrt(2*F*Pi + lambda))**2*sqrt(2*F*Pi + lambda))\nT11.1: PASS (23/23)\n"
+  },
+  {
+   "script": "t12/t12_symbolic.py",
+   "returncode": 0,
+   "seconds": 21.608720064163208,
+   "tail": "ve derivative numerator - 2 lam (-G^2 - 2 lam' G + lam lam' - 2 lam'^2) == 0\n  [record] single maximum iff lam' < lam/2: numerator -G^2 - 2 lam' G + lam' (lam - 2 lam'): downward parabola, value lam'(lam - 2 lam') at G = 0, vertex at G = -lam' < 0: one positive root iff lam > 2 lam' (PROVED); G increases with Sigma.\n  [PASS] (simplify) rho = 1: relative - 2/(1 + w) == 0\nT12 symbolic: FAIL (66/67)\n"
+  },
+  {
+   "script": "t10/t10_symbolic_diag.py",
+   "returncode": 0,
+   "seconds": 0.9198625087738037,
+   "tail": "1)**2', 'after_factoring_radicand': '0', 'reduces': True}\ng {'radicand': '(R2*lambda - 2*Sigma)**2/R2**2', 'with_R2_eq_F_over_1_plus_w': 'Sigma*(-2*w + sqrt(4*w*(w + 1) + 1) - 1)/(2*lambda*w*(w + 1))', 'inner_radicand_factored': '(2*w + 1)**2', 'after_factoring': '0', 'reduces_under_R2_lt_F': True, 'note': 'sqrt((lam R2 - 2 Sig)^2/R2^4) = (2 Sig - lam R2)/R2^2 needs lam R2 < 2 Sig, i.e. R2 < 2F'}\n"
+  },
+  {
+   "script": "t12/t12_symbolic_diag.py",
+   "returncode": 0,
+   "seconds": 4.330556869506836,
+   "tail": "7400550728127825519859'), 'dt=1e20': mpf('4.5492460015240001095598837850555510050101011610501506e-17'), 'dt=1e40': mpf('4.5492460015240002444727543798229597797432368658369811e-37')}, 'mp_pass': True, 'attribution': 'code: sympy.limit returns 0 for this expression (a SymPy limit failure in the check route); the pre-registered asymptotic is correct (exact series route and mp agree, error O(1/dt))'}\n"
+  }
+ ],
+ "n": 178,
+ "n_pass": 178,
+ "pass": true,
+ "seconds": 37.746835470199585
+}

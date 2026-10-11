@@ -1,0 +1,5 @@
+  [PASS] (simplify) 2 -sFr + (F k/x) e^{-2x}(e^{2x} - 1) == 0
+  [PASS] (check) 2 e^y - 1 series: all coefficients from y^1 positive (so -sFr < 0) y**9/362880 + y**8/40320 + y**7/5040 + y**6/720 + y**5/120 + y**4/24 + y**3/6 + y**2/2 + y
+  [PASS] (simplify) 6 same identity after .rewrite(exp)
+  [PASS] (simplify) 6 exp form: 2s - 2x s' - s^2 - (1 - 4x e^{-2x} - e^{-4x}) == 0
+diag: all verified

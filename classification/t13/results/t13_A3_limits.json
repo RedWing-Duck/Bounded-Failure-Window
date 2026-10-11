@@ -1,0 +1,34 @@
+{
+ "A3lim": [
+  {
+   "desc": "quadratic coefficients (reduced units lam = Sig = 1, Pi = u/2, E = e^{-x})",
+   "route": "record",
+   "pass": true,
+   "text": "a2 = (E - 1)**2/x**2; a1 = -2*(E - 1)*(E*u*x + 2*E*u + E*x + u*x - 2*u + x)/(u*x**2); a0 = 2*(E - 1)*(E*u*x + 2*E*u + E*x + u*x - 2*u + x)/(u*x**2)"
+  },
+  {
+   "desc": "x -> oo: p -> 1 (= F)",
+   "route": "none",
+   "pass": false,
+   "sympy_verbatim": "nan"
+  },
+  {
+   "desc": "x -> 0 leading coefficients",
+   "route": "record",
+   "pass": true,
+   "text": "1, 4/u, -4/u"
+  },
+  {
+   "desc": "x -> 0 limits of a2, a1, a0",
+   "route": "record",
+   "pass": true,
+   "text": "[1, 4/u, -4/u]"
+  },
+  {
+   "desc": "x -> 0: p -> 2/(1 + sqrt(1 + u)) (= sigma*^2/F)",
+   "route": "simplify",
+   "pass": true
+  }
+ ],
+ "pass": false
+}

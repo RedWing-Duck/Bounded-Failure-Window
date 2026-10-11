@@ -1,0 +1,73 @@
+{
+ "A4": {
+  "n": 10000,
+  "kinds_hist": {
+   "max": 10000
+  },
+  "n_fail": 0,
+  "examples": [],
+  "pass": true,
+  "max_Phi_tau_rel": 5.879772890471486e-28,
+  "max_closed_vs_direct_rel": 0.0,
+  "seconds": 1648.2910759449005
+ },
+ "A5": {
+  "regression": [
+   {
+    "n": "1.5",
+    "closed_form": 30.24309474737268,
+    "task10": "30.2430947474",
+    "rel": 9.033258364702709e-13,
+    "n_roots": 1,
+    "pass": true
+   },
+   {
+    "n": "2",
+    "closed_form": 31.47504975953922,
+    "task10": "31.4750497595",
+    "rel": 1.2461584341170124e-12,
+    "n_roots": 1,
+    "pass": true
+   },
+   {
+    "n": "3",
+    "closed_form": 37.82000223163103,
+    "task10": "37.8200022316",
+    "rel": 8.204937934111335e-13,
+    "n_roots": 1,
+    "pass": true
+   },
+   {
+    "n": "4",
+    "closed_form": 44.179683427817984,
+    "task10": "44.1796834278",
+    "rel": 4.071184536809926e-13,
+    "n_roots": 1,
+    "pass": true
+   },
+   {
+    "n": "8",
+    "closed_form": 62.71131457686809,
+    "task10": "62.7113145769",
+    "rel": 5.088008042844344e-13,
+    "n_roots": 1,
+    "pass": true
+   }
+  ],
+  "regression_pass": true,
+  "n": 5000,
+  "n_fail": 0,
+  "n_pair_pred": 2469,
+  "examples": [],
+  "pass": true,
+  "seconds": 3222.0259370803833
+ },
+ "A7": {
+  "n": 10000,
+  "n_fail": 0,
+  "min_rel_gap": 8.288712462119975e-16,
+  "examples": [],
+  "pass": true,
+  "seconds": 14.553654193878174
+ }
+}

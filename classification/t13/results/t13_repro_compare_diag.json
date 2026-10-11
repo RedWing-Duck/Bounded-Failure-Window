@@ -1,0 +1,35 @@
+{
+ "reports": {
+  "12": {
+   "n_issues": 1,
+   "verdicts_identical": true,
+   "only_provenance_line": true,
+   "script_names_committed": [
+    [
+     "t12_a8",
+     "t12_sigma",
+     "t12_diag",
+     "t12_figures",
+     "t12_blind",
+     "t12_symbolic",
+     "t12_dt",
+     "t12_mi"
+    ]
+   ],
+   "script_names_reproduced": [
+    [
+     "t12_symbolic",
+     "t12_symbolic_diag",
+     "t12_a8",
+     "t12_dt",
+     "t12_mi",
+     "t12_sigma",
+     "t12_blind",
+     "t12_diag",
+     "t12_figures"
+    ]
+   ]
+  }
+ },
+ "text": "Task 12: 1 difference(s), verdicts identical True, all on the provenance runtime line True (attribution: criterion; the masking covers runtime numbers but not the list of script names, which differs because the original runs were separate invocations)"
+}

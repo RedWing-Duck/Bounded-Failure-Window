@@ -1,0 +1,22 @@
+{
+ "n_results": 73,
+ "n_refs_checked": 158,
+ "errors": {
+  "a": [],
+  "b": [],
+  "c": [],
+  "d": []
+ },
+ "n_errors": 0,
+ "kinds": {
+  "Theorem": 13,
+  "Proposition": 36,
+  "Lemma": 7,
+  "Corollary": 9,
+  "Numerical result": 4,
+  "Conjecture": 1,
+  "Counterexample": 2,
+  "Definition": 1
+ },
+ "pass": true
+}

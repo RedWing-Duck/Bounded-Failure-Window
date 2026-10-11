@@ -1,0 +1,43 @@
+row  1 Pi optimal             PASS classes {'Empty': 55032, 'lower ray': 44968} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 46s
+row  2 Pi bayes               PASS classes {'Empty': 26496, 'All': 26376, 'lower ray': 34375, 'window': 12753} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 578, 'max': 422} 100s
+row  3 Pi misspec             PASS classes {'Empty': 43703, 'lower ray': 38341, 'window': 17956} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 558, 'max': 442} 178s
+row  4 Pi capped              PASS classes {'All': 25801, 'window': 13676, 'Empty': 25867, 'lower ray': 34656} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'max': 439, 'none': 561} 1166s
+row  5 Pi blind               PASS classes {'All': 54821, 'lower ray': 45179} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 2112s
+row  6 Pi hill2               PASS classes {'All': 25135, 'Empty': 25296, 'window': 12644, '(1, 0, 1)': 4722, 'lower ray': 32203} missing [] out [] flagged 10 persisting 0 limit_fail 0 tp {'min-max': 460, 'none': 540} 125s
+row  7 Pi hilln               PASS classes {'Empty': 25105, 'All': 25042, 'lower ray': 30973, '(1, 0, 1)': 5328, 'window': 13552} missing [] out [] flagged 47 persisting 0 limit_fail 0 tp {'none': 519, 'min-max': 467, 'max': 14} 530s
+row  8 Pi bayes2              FAIL classes {'window': 13416, 'Empty': 23419, 'lower ray': 39871, 'All': 23209, '(0, 0, 2)': 85} missing ['(1, 0, 1)'] out [] flagged 0 persisting 0 limit_fail 0 tp {'max': 437, 'none': 557, 'max-min-max': 6} 121s
+row  9 Pi hill2stage          PASS classes {'lower ray': 37902, 'Empty': 21806, 'All': 22372, '(1, 0, 1)': 5140, 'window': 12341, '(0, 0, 2)': 409, '(1, 0, 2)': 30} missing [] out [] flagged 10 persisting 0 limit_fail 0 tp {'min-max': 429, 'min-max-min-max': 44, 'none': 527} 143s
+row 10 Pi0 bayes              PASS classes {'All': 24788, 'Empty': 26866, 'upper ray': 17835, 'two rays': 12104, 'lower ray': 18407} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 405, 'min': 595} 36s
+row 11 c bayes                PASS classes {'upper ray': 32734, 'All': 27282, 'two rays': 39984} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'min': 1000} 37s
+row 12 Pi0 monotone           FAIL classes {'Empty': 26366, 'upper ray': 19071, 'All': 24492, 'two rays': 11837, 'lower ray': 18234} missing [] out [] flagged 439 persisting 122 limit_fail 0 tp {'min': 576, 'none': 424} 48s
+row 13 tau ZF relay           PASS classes {'Empty': 30985, 'All': 31060, 'lower ray': 37955} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 26s
+row 14 tau ZF optimal         PASS classes {'Empty': 55148, 'lower ray': 44852} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 58s
+row 15 tau var relay          PASS classes {'upper ray': 34840, 'All': 32570, 'Empty': 32590} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 24s
+row 16 tau var optimal        PASS classes {'Empty': 54805, 'window': 45195} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'max': 1000} 60s
+row 17 power beta<=0          PASS classes {'Empty': 55034, 'lower ray': 44966} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 369s
+row 18 power 0<beta<2         PASS classes {'window': 44982, 'Empty': 55018} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'max': 1000} 584s
+row 19 power beta>=2          PASS classes {'Empty': 54970, 'upper ray': 45030} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 347s
+row 20 delay                  PASS classes {'All': 41030, 'Empty': 31331, 'window': 27639} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'max': 1000} 40s
+row 21 dt opt post            PASS classes {'Empty': 55022, 'lower ray': 44978} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 435s
+row 22 dt opt prior           PASS classes {'All': 32597, 'Empty': 32955, 'upper ray': 34448} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 441s
+row 23 dt opt avg             PASS classes {'All': 32414, 'Empty': 32799, 'upper ray': 34787} missing [] out [] flagged 65 persisting 0 limit_fail 0 tp {'none': 1000} 445s
+row 24 dt D1 post             PASS classes {'lower ray': 39820, 'Empty': 45422, 'window': 14758} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 548, 'max': 452} 101s
+row 25 dt D1 prior            PASS classes {'lower ray': 20251, 'All': 28529, 'Empty': 28590, 'two rays': 3784, 'upper ray': 18285, '(0, 1, 1)': 561} missing [] out [] flagged 151 persisting 0 limit_fail 0 tp {'min': 178, 'none': 769, 'max-min': 53} 110s
+row 26 dt D1 avg              PASS classes {'lower ray': 19202, 'All': 25167, 'Empty': 26233, 'two rays': 10635, 'upper ray': 18720, '(0, 1, 1)': 43} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'min': 541, 'none': 455, 'max-min': 4} 127s
+row 27 dt D2 post             PASS classes {'All': 30541, 'Empty': 30926, 'upper ray': 9832, 'window': 5918, 'lower ray': 19647, 'two rays': 2779, '(1, 0, 1)': 357} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'max': 381, 'none': 503, 'min-max': 90, 'min': 26} 95s
+row 28 dt D2 prior            PASS classes {'All': 33791, 'two rays': 3411, 'Empty': 34366, 'lower ray': 7670, 'upper ray': 20762} missing [] out [] flagged 72 persisting 0 limit_fail 0 tp {'min': 177, 'none': 823} 91s
+row 29 dt D2 avg              PASS classes {'Empty': 33642, 'All': 32994, 'upper ray': 21377, 'two rays': 5231, 'lower ray': 6756} missing [] out [] flagged 34 persisting 0 limit_fail 0 tp {'none': 714, 'min': 286} 111s
+row 30 dt D3 post             PASS classes {'lower ray': 42560, 'Empty': 49817, 'window': 7623} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 759, 'max': 241} 508s
+row 31 dt D3 prior            PASS classes {'All': 30977, 'Empty': 30846, 'lower ray': 7943, 'two rays': 3670, 'upper ray': 25434, '(0, 1, 1)': 1130} missing [] out [] flagged 85 persisting 0 limit_fail 0 tp {'min': 129, 'none': 766, 'max-min': 105} 501s
+row 32 dt D3 avg              PASS classes {'Empty': 30864, 'All': 29225, 'upper ray': 25835, 'lower ray': 6266, 'two rays': 7810} missing [] out [] flagged 124 persisting 0 limit_fail 0 tp {'none': 606, 'min': 394} 472s
+row 33 dt MI a                PASS classes {'Empty': 32561, 'All': 32141, 'upper ray': 35298} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 421s
+row 34 dt MI b                PASS classes {'All': 32332, 'upper ray': 35464, 'Empty': 32204} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 416s
+row 35 Sigma B2 abs           PASS classes {'upper ray': 45048, 'All': 54952} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 2329s
+row 36 Sigma B2 rel           PASS classes {'All': 55178, 'lower ray': 44822} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 34s
+row 37 Sigma B3 abs           PASS classes {'upper ray': 100000} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 125s
+row 38 Sigma B3 rel           PASS classes {'window': 16814, 'Empty': 44427, 'lower ray': 38759} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'max': 433, 'none': 567} 157s
+row 39 Sigma B4 abs           PASS classes {'upper ray': 100000} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 123s
+row 40 Sigma B4 rel           PASS classes {'Empty': 46072, 'window': 13392, 'lower ray': 40536} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'max': 458, 'none': 542} 154s
+row 41 Sigma B5 abs           PASS classes {'upper ray': 100000} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 137s
+row 42 Sigma B5 rel           PASS classes {'Empty': 54781, 'lower ray': 45219} missing [] out [] flagged 0 persisting 0 limit_fail 0 tp {'none': 1000} 138s
+C2: FAIL (40/42 rows), 4,200,000 classifications

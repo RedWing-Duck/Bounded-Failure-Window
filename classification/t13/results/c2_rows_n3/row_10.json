@@ -1,0 +1,35 @@
+{
+ "row": 10,
+ "name": "Pi0 bayes",
+ "stated": [
+  "All",
+  "Empty",
+  "lower ray",
+  "two rays",
+  "upper ray"
+ ],
+ "curves": 3,
+ "classifications": 300,
+ "classes": {
+  "All": 94,
+  "Empty": 98,
+  "upper ray": 93,
+  "two rays": 15
+ },
+ "kinds_hist": {
+  "none": 2,
+  "min": 1
+ },
+ "flagged": 0,
+ "persisting": 0,
+ "persist_examples": [],
+ "missing_stated": [
+  "lower ray"
+ ],
+ "out_of_set": [],
+ "n_limit_fail": 0,
+ "float_route": true,
+ "max_turning_points": 1,
+ "seconds": 0.37728047370910645,
+ "pass": false
+}
