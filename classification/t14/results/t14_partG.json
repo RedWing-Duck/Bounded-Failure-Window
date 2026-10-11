@@ -1,0 +1,15 @@
+{
+ "G1 normal form": true,
+ "G2 dV/dq": true,
+ "G2 dV/dnu": true,
+ "G3 level-set root q+": true,
+ "G3 level-set root q-": true,
+ "G4 q* solves nu q^2/4 + q - 1 = 0": true,
+ "G4 V(q*) = q*": true,
+ "G4 q* = sigma*^2/F": true,
+ "G5 inverse map reproduces G+": true,
+ "G6 symbolic": true,
+ "G6 numeric 20 rational points (max |diff|)": "1.5558e-61",
+ "G6 numeric pass": true,
+ "pass": true
+}

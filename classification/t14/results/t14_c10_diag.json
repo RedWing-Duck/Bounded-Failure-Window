@@ -1,0 +1,60 @@
+{
+ "items": [
+  {
+   "flag": "classification/t13/t13_audit_numbers.py -> Stages_0_4_Consolidated_v1.md",
+   "how": "module-level DOC (with the Task 14 fallback)",
+   "resolved": "/home/user/bounded-failure-window/classification/archive/Stages_0_4_Consolidated_v1.md",
+   "exists": true
+  },
+  {
+   "flag": "classification/t13/t13_audit_refs.py -> Stages_0_4_Consolidated_v1.md",
+   "how": "module-level DOC (with the Task 14 fallback)",
+   "resolved": "/home/user/bounded-failure-window/classification/archive/Stages_0_4_Consolidated_v1.md",
+   "exists": true
+  },
+  {
+   "flag": "classification/t13/t13_figures_paper2.py -> README.md",
+   "how": "written by the script (output, not an input)",
+   "resolved": "figs_paper2/README.md",
+   "exists": true
+  },
+  {
+   "flag": "classification/t13/t13_regression_symbolic.py -> t10_symbolic.py",
+   "how": "copied from classification/t10/ (SCRIPTS table)",
+   "resolved": "/home/user/bounded-failure-window/classification/t10/t10_symbolic.py",
+   "exists": true
+  },
+  {
+   "flag": "classification/t13/t13_regression_symbolic.py -> t10_symbolic_diag.py",
+   "how": "copied from classification/t10/ (SCRIPTS table)",
+   "resolved": "/home/user/bounded-failure-window/classification/t10/t10_symbolic_diag.py",
+   "exists": true
+  },
+  {
+   "flag": "classification/t13/t13_regression_symbolic.py -> t11_symbolic.py",
+   "how": "copied from classification/t11/ (SCRIPTS table)",
+   "resolved": "/home/user/bounded-failure-window/classification/t11/t11_symbolic.py",
+   "exists": true
+  },
+  {
+   "flag": "classification/t13/t13_regression_symbolic.py -> t12_symbolic.py",
+   "how": "copied from classification/t12/ (SCRIPTS table)",
+   "resolved": "/home/user/bounded-failure-window/classification/t12/t12_symbolic.py",
+   "exists": true
+  },
+  {
+   "flag": "classification/t13/t13_regression_symbolic.py -> t12_symbolic_diag.py",
+   "how": "copied from classification/t12/ (SCRIPTS table)",
+   "resolved": "/home/user/bounded-failure-window/classification/t12/t12_symbolic_diag.py",
+   "exists": true
+  },
+  {
+   "flag": "classification/t13/t13_regression_symbolic.py -> t9_symbolic.py",
+   "how": "copied from classification/t9/ (SCRIPTS table)",
+   "resolved": "/home/user/bounded-failure-window/classification/t9/t9_symbolic.py",
+   "exists": true
+  }
+ ],
+ "all_resolve": true,
+ "text": "9/9 flagged paths resolve when built the way their scripts build them; attribution: code (the dry run's literal resolver), not a missing file."
+}

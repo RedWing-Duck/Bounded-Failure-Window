@@ -1,0 +1,13 @@
+G1 normal form: True
+G2 dV/dq: True
+G2 dV/dnu: True
+G3 level-set root q+: True
+G3 level-set root q-: True
+G4 q* solves nu q^2/4 + q - 1 = 0: True
+G4 V(q*) = q*: True
+G4 q* = sigma*^2/F: True
+G5 inverse map reproduces G+: True
+G6 symbolic: True
+G6 numeric 20 rational points (max |diff|): 1.5558e-61
+G6 numeric pass: True
+Part G: PASS
