@@ -1,0 +1,6 @@
+Figure 6. The power-normalized OU family, S = K tau^beta/(1 + tau^2 omega^2) (Theorems [[power-family-sharpness|n]], [[power-family-unimodal|n]]). lambda = 1, Sigma = 0.01,
+K = 1. Colour: optimal error relative to its supremum over tau, P/sup P (one hue, light to dark). For beta <= 0 the sweep
+is a causal information ordering (information increasing in tau) and P is non-increasing; for beta >= 2 it is ordered the
+other way and P is non-decreasing; for 0 < beta < 2 every pair of spectra crosses, P -> 0 at both ends, and P has exactly
+one turning point (orange), so the optimal failure set is a single window. beta = 0 is matched zero-frequency power,
+beta = 1 matched variance.

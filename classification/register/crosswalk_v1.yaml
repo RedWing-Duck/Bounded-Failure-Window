@@ -1,0 +1,248 @@
+# Verbatim legacy strings of archive/Stages_0_4_Consolidated_v1.md (change log and two remarks).
+# Part of the crosswalk: used only by the paper render ({{legacy:id}} inside paper-only content).
+- id: L001
+  text: Numerical result 2.8 / 4.10a
+  context: body remark
+- id: L002
+  text: Conjecture 4.11
+  context: body remark
+- id: L003
+  text: Prop. 1.1 (Stage 0–1)
+  context: 13.1 old
+- id: L004
+  text: Thm 1.2 (Stage 0–1)
+  context: 13.1 old
+- id: L005
+  text: Lemma 3.1 (Stage 0–1; header Lemma, label line "Proposition")
+  context: 13.1 old
+- id: L006
+  text: Thm 3.2 (Stage 0–1)
+  context: 13.1 old
+- id: L007
+  text: Props 4.1, 4.2 (Stage 0–1)
+  context: 13.1 old
+- id: L008
+  text: Props 5.1, 5.2 (Stage 0–1)
+  context: 13.1 old
+- id: L009
+  text: Lemma 2.1 (Stage 2 $\tau$)
+  context: 13.1 old
+- id: L010
+  text: Props 2.2, 2.3 (Stage 2 $\tau$)
+  context: 13.1 old
+- id: L011
+  text: Prop. 3.1 (Stage 2 $\tau$)
+  context: 13.1 old
+- id: L012
+  text: Thm 3.2′ (Stage 2 $\tau$)
+  context: 13.1 old
+- id: L013
+  text: Prop. 3.3 (Stage 2 $\tau$)
+  context: 13.1 old
+- id: L014
+  text: Prop. 3.4 (Stage 2 $\tau$)
+  context: 13.1 old
+- id: L015
+  text: Num. 3.5 (Stage 2 $\tau$; strict gap)
+  context: 13.1 old
+- id: L016
+  text: Thm 3.1 (Stage 3)
+  context: 13.1 old
+- id: L017
+  text: Cor. 3.2–3.5 (Stage 3)
+  context: 13.1 old
+- id: L018
+  text: Lemma 3.6, 3.7 (Stage 3)
+  context: 13.1 old
+- id: L019
+  text: §4 general fact (Stage 3)
+  context: 13.1 old
+- id: L020
+  text: §4.1 Bayesian reduction (Stage 3)
+  context: 13.1 old
+- id: L021
+  text: Prop. 3.8 (Stage 3)
+  context: 13.1 old
+- id: L022
+  text: §4.3, §4.4 (Stage 3)
+  context: 13.1 old
+- id: L023
+  text: Prop. 3.9 (Stage 3, Hill $n = 2$)
+  context: 13.1 old
+- id: L024
+  text: Conj. 3.10 (Stage 3, Hill $n \ne 2$)
+  context: 13.1 old
+- id: L025
+  text: §4.5 Hill classification (Stage 3)
+  context: 13.1 old
+- id: L026
+  text: §4.6 two-stage (Stage 3)
+  context: 13.1 old
+- id: L027
+  text: Cor. 3.11, 3.12 (Stage 3)
+  context: 13.1 old
+- id: L028
+  text: Thm 3.13 (Stage 3)
+  context: 13.1 old
+- id: L029
+  text: Prop. 3.14 (Stage 3)
+  context: 13.1 old
+- id: L030
+  text: §5 narrow windows (Stage 3)
+  context: 13.1 old
+- id: L031
+  text: adversarial question 5 / T10.7 (Stage 3)
+  context: 13.1 old
+- id: L032
+  text: Prop. 6.1 (Stage 3)
+  context: 13.1 old
+- id: L033
+  text: Counterexample in §6 (Stage 3; "Proposition + Counterexample")
+  context: 13.1 old
+- id: L034
+  text: §6 relay at matched variance (Stage 3)
+  context: 13.1 old
+- id: L035
+  text: Def. 4.1 (Stage 4)
+  context: 13.1 old
+- id: L036
+  text: Thm 4.2 (Stage 4)
+  context: 13.1 old
+- id: L037
+  text: Cor. 4.3 (Stage 4)
+  context: 13.1 old
+- id: L038
+  text: Cor. 4.10 (Stage 4; numbered before 4.9)
+  context: 13.1 old
+- id: L039
+  text: Prop. 4.4 (Stage 4)
+  context: 13.1 old
+- id: L040
+  text: Conj. 4.11 (Stage 4)
+  context: 13.1 old
+- id: L041
+  text: Prop. 4.5 (Stage 4)
+  context: 13.1 old
+- id: L042
+  text: Thm 4.6 (Stage 4)
+  context: 13.1 old
+- id: L043
+  text: Num. 4.6a (Stage 4)
+  context: 13.1 old
+- id: L044
+  text: Prop. 4.6b (Stage 4)
+  context: 13.1 old
+- id: L045
+  text: Remark on signal sweeps (Stage 4)
+  context: 13.1 old
+- id: L046
+  text: Prop. 4.7 (Stage 4; "Proposition + Counterexample")
+  context: 13.1 old
+- id: L047
+  text: Prop. 4.8 (Stage 4)
+  context: 13.1 old
+- id: L048
+  text: Cor. 4.9 (Stage 4)
+  context: 13.1 old
+- id: L049
+  text: Num. 4.10a (Stage 4)
+  context: 13.1 old
+- id: L050
+  text: Lemma 2.1 (Stage 2 completion)
+  context: 13.1 old
+- id: L051
+  text: Props 2.2, 2.3, 2.4 (Stage 2 completion)
+  context: 13.1 old
+- id: L052
+  text: §A.3 limits table (Stage 2 completion)
+  context: 13.1 old
+- id: L053
+  text: Prop. 2.6(a), (b) (Stage 2 completion)
+  context: 13.1 old
+- id: L054
+  text: Num. 2.6c (Stage 2 completion)
+  context: 13.1 old
+- id: L055
+  text: Prop. 2.7 (Stage 2 completion)
+  context: 13.1 old
+- id: L056
+  text: Num. 2.8 (Stage 2 completion; = Num. 4.10a)
+  context: 13.1 old
+- id: L057
+  text: Prop. 2.9 (Stage 2 completion)
+  context: 13.1 old
+- id: L058
+  text: Num. 2.10 (Stage 2 completion)
+  context: 13.1 old
+- id: L059
+  text: Conj. 2.11 (Stage 2 completion)
+  context: 13.1 old
+- id: L060
+  text: Lemma 2.12 (Stage 2 completion)
+  context: 13.1 old
+- id: L061
+  text: Props 2.13–2.16 (Stage 2 completion)
+  context: 13.1 old
+- id: L062
+  text: 'Paper 1: excess identity, window theorem, Bayesian-weight'
+  context: 13.1 old
+- id: L063
+  text: Lemma 3.1
+  context: 13.2 row 2
+- id: L064
+  text: Prop. 3.1
+  context: 13.2 row 3
+- id: L065
+  text: Prop. 2.2
+  context: 13.2 row 4
+- id: L066
+  text: Corollary 3.4
+  context: 13.2 row 7
+- id: L067
+  text: Lemma 3.7
+  context: 13.2 row 9
+- id: L068
+  text: Prop. 4.5(c)
+  context: 13.2 row 12
+- id: L069
+  text: Conjecture 4.11
+  context: 13.2 row 12
+- id: L070
+  text: Cor. 4.10
+  context: 13.2 row 13
+- id: L071
+  text: Cor. 4.9
+  context: 13.2 row 13
+- id: L072
+  text: Cor. 4.3
+  context: 13.2 row 14
+- id: L073
+  text: Theorem 3.13
+  context: 13.2 row 14
+- id: L074
+  text: Theorem 4.6
+  context: 13.2 row 15
+- id: L075
+  text: Prop. 4.5(b)
+  context: 13.2 row 16
+- id: L076
+  text: Prop. 2.6(b)
+  context: 13.2 row 20
+- id: L077
+  text: Num. 2.6c
+  context: 13.2 row 21
+- id: L078
+  text: Num. 4.6a
+  context: 13.2 row 22
+- id: L079
+  text: Conj. 3.10
+  context: 13.2 row 23
+- id: L080
+  text: Conj. 4.11
+  context: 13.2 row 25
+- id: L081
+  text: Num. 2.8 / 4.10a
+  context: 13.2 row 26
+- id: L082
+  text: Conjecture 3.10
+  context: 13.2 row 27

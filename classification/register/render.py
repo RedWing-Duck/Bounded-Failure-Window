@@ -1,0 +1,172 @@
+"""Render key-token sources with numbers from register/results.yaml (Task 14, freeze v1).
+
+Tokens: [[key]] type + number; [[key|n]] number; [[key|t]] type; [[key|a]] abbreviated type + number;
+{{phase1}} ("the starting study (Tasks 1–7)" / "Paper 1"; {{phase1}}'s -> "the starting study's" in the thesis render);
+{{thesis:...}} / {{paper:...}} and <!--thesis-->...<!--/thesis--> / <!--paper-->...<!--/paper--> keep content in one mode;
+{{legacy:id}} (paper only) renders a verbatim string from register/crosswalk_v1.yaml; {{matrix}} renders register/matrix.csv.
+
+Numbering: thesis = the register's thesis_no; paper = 1, 2, 3, ... over headed results (a line starting "**[[key]] ") in
+order of appearance in source/Stages_0_4_Source.md. Mode v1check (used by Task 14 check C4) prints each key's consolidated v1
+number instead ("6+" for the result split from v1's Theorem 6).
+
+Usage:
+  python3 render.py --numbering thesis    # Stages_0_4_Thesis.md, Roadmap_v3.md, figs_thesis/, Appendix_A_Register.md, ../reference/phase1/
+  python3 render.py --numbering paper     # Stages_0_4_Paper2.md
+  python3 render.py --numbering v1check --out FILE
+Exit status 1 if any token fails to resolve."""
+import argparse
+import csv
+import os
+import re
+import sys
+
+import yaml
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+CLS = os.path.dirname(HERE)
+SRC = os.path.join(CLS, "source")
+ABBR = {"Theorem": "Thm", "Proposition": "Prop.", "Corollary": "Cor.", "Numerical result": "Num.", "Lemma": "Lemma",
+        "Definition": "Def.", "Conjecture": "Conj.", "Counterexample": "Counterex."}
+HEADED = re.compile(r"^\*\*\[\[([a-z0-9-]+)\]\] ", re.M)
+
+
+def load():
+    reg = yaml.safe_load(open(os.path.join(HERE, "results.yaml")))
+    leg = {e["id"]: e["text"] for e in yaml.safe_load(open(os.path.join(HERE, "crosswalk_v1.yaml")))}
+    return {e["key"]: e for e in reg}, leg
+
+
+def numbering(mode, reg):
+    if mode == "thesis":
+        return {k: e["thesis_no"] for k, e in reg.items()}
+    heads = HEADED.findall(open(os.path.join(SRC, "Stages_0_4_Source.md")).read())
+    if mode == "paper":
+        return {k: str(i + 1) for i, k in enumerate(heads)}
+    out = {}
+    for k in heads:
+        m = re.match(r"^(\d+)(?: \(main part\))?$", reg[k]["cons_v1"] or "")
+        out[k] = m.group(1) if m else "6+"
+    return out
+
+
+def strip_cond(text, mode):
+    """Remove the other mode's block and inline conditionals (balanced {{ }} scan); keep this mode's content."""
+    other = "paper" if mode == "thesis" else "thesis"
+    keep = "thesis" if mode == "thesis" else "paper"
+    text = re.sub(r"<!--" + other + r"-->\n.*?<!--/" + other + r"-->\n", "", text, flags=re.S)
+    text = re.sub(r"<!--/?" + keep + r"-->\n", "", text)
+    out, i = [], 0
+    while True:
+        j = min([p for p in (text.find("{{thesis:", i), text.find("{{paper:", i)) if p >= 0], default=-1)
+        if j < 0:
+            out.append(text[i:])
+            break
+        out.append(text[i:j])
+        tag = "thesis" if text.startswith("{{thesis:", j) else "paper"
+        k, depth = j + len(tag) + 3, 1
+        while depth:
+            if text.startswith("{{", k):
+                depth, k = depth + 1, k + 2
+            elif text.startswith("}}", k):
+                depth, k = depth - 1, k + 2
+            else:
+                k += 1
+        inner = text[j + len(tag) + 3:k - 2]
+        if tag == keep:
+            out.append(strip_cond(inner, mode))
+        i = k
+    return "".join(out)
+
+
+class Renderer:
+    def __init__(self, mode):
+        self.mode = mode
+        self.reg, self.leg = load()
+        self.num = numbering(mode, self.reg)
+        self.errors = []
+
+    def ref(self, m):
+        key, form = m.group(1), m.group(2) or ""
+        if key not in self.reg:
+            self.errors.append(f"unresolved key {key}")
+            return f"??{key}??"
+        typ = self.reg[key]["type"]
+        if form == "|t":
+            return typ
+        if key not in self.num:
+            self.errors.append(f"no number for {key} in {self.mode} render (not headed)")
+            return f"??{key}??"
+        n = self.num[key]
+        return {"": f"{typ} {n}", "|n": n, "|a": f"{ABBR[typ]} {n}"}[form]
+
+    def inline(self, text):
+        text = strip_cond(text, "thesis" if self.mode == "thesis" else "paper")
+        if self.mode == "thesis" and "{{legacy:" in text:
+            self.errors.append("legacy token outside paper-only content")
+        text = re.sub(r"\{\{legacy:(L\d+)\}\}", lambda m: self.leg[m.group(1)], text)
+        if self.mode == "thesis":   # sentence-initial occurrences are capitalised
+            text = re.sub(r"([.!?]\)?\s+|[.!?]\*\*\s+)\{\{phase1\}\}", lambda m: m.group(1) + "{{Phase1}}", text)
+            text = text.replace("{{Phase1}}'s", "The starting study's").replace("{{Phase1}}", "The starting study (Tasks 1–7)")
+            text = text.replace("{{phase1}}'s", "the starting study's").replace("{{phase1}}", "the starting study (Tasks 1–7)")
+        else:
+            text = text.replace("{{phase1}}", "Paper 1")
+        text = re.sub(r"\[\[([a-z0-9-]+)(\|[nta])?\]\]", self.ref, text)
+        left = re.findall(r"\{\{[^}]*\}\}|\[\[[^\]]*\]\]", text)
+        if left:
+            self.errors.append(f"unrendered tokens {left[:5]}")
+        return text
+
+    def matrix(self):
+        rows = list(csv.reader(open(os.path.join(HERE, "matrix.csv"))))
+        lines = ["| " + " | ".join(rows[0]) + " |", "|" + "---|" * len(rows[0])]
+        lines += ["| " + " | ".join(r) + " |" for r in rows[1:]]
+        return "\n".join(lines)
+
+    def render(self, text):
+        return self.inline(text.replace("{{matrix}}", self.matrix()))
+
+
+def appendix(r):
+    out = ["# Appendix A. Register of results", "",
+           "Rendered from `register/results.yaml` (freeze v1, Task 14). Numbers are thesis numbers: one counter per chapter, shared "
+           "by all result types. Verification task identifiers are listed in `register/tasks.yaml`; earlier labels are in "
+           "`register/crosswalk.md`.", "", "| No. | Type | Result | Key | Verified by | Status |", "|---|---|---|---|---|---|"]
+    for k, e in r.reg.items():
+        vb = ", ".join(e["verified_by"]) or "—"
+        out.append(f"| {e['thesis_no']} | {e['type']} | {e['title']} | `{k}` | {vb} | {e['status']} |")
+    return "\n".join(out) + "\n"
+
+
+def write(path, text):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w") as fh:
+        fh.write(text)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--numbering", choices=["thesis", "paper", "v1check"], required=True)
+    ap.add_argument("--out")
+    a = ap.parse_args()
+    r = Renderer(a.numbering)
+    doc = open(os.path.join(SRC, "Stages_0_4_Source.md")).read()
+    if a.numbering == "thesis":
+        write(os.path.join(CLS, "Stages_0_4_Thesis.md"), r.render(doc))
+        write(os.path.join(CLS, "Roadmap_v3.md"), r.render(open(os.path.join(SRC, "Roadmap_v3_Source.md")).read()))
+        for f in sorted(os.listdir(os.path.join(SRC, "figs"))):
+            write(os.path.join(CLS, "figs_thesis", f), r.render(open(os.path.join(SRC, "figs", f)).read()))
+        write(os.path.join(CLS, "Appendix_A_Register.md"), appendix(r))
+        for f in sorted(os.listdir(os.path.join(SRC, "phase1"))):
+            write(os.path.join(os.path.dirname(CLS), "reference", "phase1", f), r.render(open(os.path.join(SRC, "phase1", f)).read()))
+    elif a.numbering == "paper":
+        write(os.path.join(CLS, "Stages_0_4_Paper2.md"), r.render(doc))
+    else:
+        write(a.out, r.render(doc))
+    for e in r.errors:
+        print("ERROR", e, file=sys.stderr)
+    print(f"{a.numbering}: {len(r.errors)} errors")
+    sys.exit(1 if r.errors else 0)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,5 @@
+Figure 9. Sampled relay D1 (gain 1 - exp(-G dt)) along the sampling interval (Propositions 6.15, 6.18, 6.20; Numerical result 6.21).
+G = 0.5, lambda = 1, Sigma = 0.01, Pi = 1 (G > 2 F Pi, so the excess set is (0, dt_E) with dt_E = 100). Left: the error at
+sample times rises from 0.09 to a single maximum 0.20457 at dt = 2.4645 and falls to 0, a window for R^2 in (0.09, 0.20457).
+Right: the time average, shown as avg/F - 1 on a symmetric-log axis, crosses F at dt_E, dips to 0.0099875 (0.125% below F) at
+dt = 200 and returns to F from below, giving two rays for R^2 between the minimum and F.

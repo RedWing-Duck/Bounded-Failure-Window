@@ -1,0 +1,5 @@
+Figure 5. The same physical change, two normalizations ([[tau-optimal-monotone]], Propositions [[tau-relay-classes|n]], [[matched-variance-optimal|n]], [[matched-variance-relay|n]]). lambda = 1, Sigma = 0.01,
+Pi = 1, relay gain G = 0.5. Left, matched zero-frequency power: relay and optimal error both decrease in tau (relay from
+0.09 to 0.0066667; optimal from sigma*^2 to 0). Right, matched variance v = 0.05: the relay increases while the optimal error
+is unimodal with maximum P_max = Sigma v/(Sigma + lambda v) = 0.008333 at tau = 1/lambda, so every 0 < R^2 < P_max gives an
+optimal-filter window (shaded at R^2 = 0.8 P_max), with tau_- tau_+ = 1/lambda^2.

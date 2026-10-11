@@ -1,0 +1,5 @@
+Figure 1. Stage 1 schematic (Theorem 2.2). A continuous, piecewise strictly monotone curve with endpoint limits L- and L+
+and three interior turning points. Dotted lines: the critical tolerances (endpoint limits and turning-point values). The
+shaded set is the failure set {sigma^2 > R^2} at the dashed tolerance. Right: the class read off in each band between
+critical tolerances; it is constant inside each band and can change only at a critical tolerance. Schematic curve
+(sum of Gaussian bumps and a logistic step), no filtering parameters.

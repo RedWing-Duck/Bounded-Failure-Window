@@ -1,0 +1,5 @@
+Figure 3. Hill gain, n = 2, along precision: phase diagram in (Pi_0, R^2/F) ([[hill-turning-points]], [[hill-classification]]). lambda = c = 1,
+Sigma = 0.01. For Pi_0 < Pi_0^pair = 31.475 the curve has a minimum m then a maximum M (dashed and solid); above it, none.
+Green band: the mixed class lower ray + window (1,0,1) for m <= R^2 < min(M, F); orange: the window for F <= R^2 < M,
+which exists only for Pi_0 < c lambda/(4 Sigma) = 25. High-precision limit H/F = 0.500 lies below the plot. Two rays never
+occur because H < m.

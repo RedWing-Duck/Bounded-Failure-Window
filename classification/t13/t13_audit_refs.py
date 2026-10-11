@@ -10,6 +10,8 @@ import re
 from t13_common import CLS, save_json
 
 DOC = os.path.join(CLS, "Stages_0_4_Consolidated.md")
+if not os.path.exists(DOC):  # moved unchanged by Task 14 (git mv to archive/)
+    DOC = os.path.join(CLS, "archive", "Stages_0_4_Consolidated_v1.md")
 KINDS = ["Theorem", "Proposition", "Lemma", "Corollary", "Numerical result", "Conjecture", "Counterexample", "Definition"]
 ABBR = {"Thm": "Theorem", "Thms": "Theorem", "Theorems": "Theorem", "Prop.": "Proposition", "Props": "Proposition",
         "Props.": "Proposition", "Propositions": "Proposition", "Lemmas": "Lemma", "Cor.": "Corollary",

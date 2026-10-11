@@ -1,0 +1,380 @@
+{
+ "commit": "e5edebf",
+ "n_files": 474,
+ "layout": {
+  "(root)": {
+   "(root)": 1
+  },
+  "classification": {
+   "classification": 28,
+   "classification/figs_paper2": 31,
+   "classification/figures": 1,
+   "classification/results": 14,
+   "classification/t10": 56,
+   "classification/t11": 42,
+   "classification/t12": 46,
+   "classification/t13": 159,
+   "classification/t9": 33
+  },
+  "verification": {
+   "verification": 24,
+   "verification/figures": 11,
+   "verification/results": 28
+  }
+ },
+ "manuscript_candidates_in_history": [],
+ "verification_suite": [
+  "verification/PREREG.md",
+  "verification/PREREG_t6.md",
+  "verification/PREREG_t7.md",
+  "verification/REPORT.md",
+  "verification/results/t1_symbolic.log",
+  "verification/results/t1_symbolic.txt",
+  "verification/results/t2_em.log",
+  "verification/results/t3_paired.log",
+  "verification/results/t4a.json",
+  "verification/results/t4a_discrete.log",
+  "verification/results/t4b.json",
+  "verification/results/t4b_colored.log",
+  "verification/results/t4c.json",
+  "verification/results/t4c_drift.log",
+  "verification/results/t4d.json",
+  "verification/results/t4d_gains.log",
+  "verification/results/t4e.json",
+  "verification/results/t4e_fixed_gain.log",
+  "verification/results/t6_colored.txt",
+  "verification/results/t7_1.json",
+  "verification/results/t7_2.json",
+  "verification/results/t7_3.json",
+  "verification/results/t7_4.json",
+  "verification/results/t7_4a_spec.txt",
+  "verification/results/t7_runtime.json",
+  "verification/t1_symbolic.py",
+  "verification/t2_em.py",
+  "verification/t3_paired.py",
+  "verification/t4a_discrete.py",
+  "verification/t4b_colored.py",
+  "verification/t4c_drift.py",
+  "verification/t4d_gains.py",
+  "verification/t4e_fixed_gain.py",
+  "verification/t6_colored_symbolic.py",
+  "verification/t6_report.py",
+  "verification/t7_common.py",
+  "verification/t7_continuous_checks.py",
+  "verification/t7_discrete_symbolic.py",
+  "verification/t7_figures.py",
+  "verification/t7_report.py",
+  "verification/t7_runtime.py",
+  "verification/t7_specify_4a.py"
+ ],
+ "first_commits": [
+  "d21f193 prereg: verification criteria",
+  "50f1b38 T1: symbolic checks of closed forms, Prop 4 slope and worked example",
+  "cf6c948 T2: Euler-Maruyama check of stationary variance (2), P=1",
+  "5df900b T3: paired miscalibrated/calibrated/optimal comparison, Figures 1a and 1b",
+  "bb755d2 T4a: discrete-time Kalman with miscalibrated process noise / precision",
+  "e6e388c T4b: coloured OU sensory noise; engine batches decoupled from 10-unit noise chunks",
+  "6691bc7 T4d/T4e: non-Kalman gains vs Prop 4; precision-blind constant gain",
+  "6457bad T4c: drifting signal mean (sinusoids and random walk)",
+  "6fc0c89 Report generator and run_all.sh",
+  "70ebb55 Results: full from-scratch rerun via run_all.sh (logs, env, runtimes)",
+  "637d542 REPORT.md: verification report generated from results",
+  "824ca06 prereg: t6 colored-noise symbolic",
+  "0944b81 t6: coloured-noise symbolic check",
+  "a0d2be2 prereg: t7 revision checks",
+  "2f9da71 t7: revision checks and figures",
+  "183cb8f t7: REPORT.md section (cites 2f9da71)"
+ ],
+ "legacy_counts": {
+  "classification/Bounded_Failure_Window_Classification_Roadmap_v2-1.md": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 17
+  },
+  "classification/PREREG_t10.md": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 1
+  },
+  "classification/PREREG_t11.md": {
+   "legacy_regex": 12,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/PREREG_t12.md": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/PREREG_t13.md": {
+   "legacy_regex": 18,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/PREREG_t14.md": {
+   "legacy_regex": 17,
+   "A-E_labels": 0,
+   "Paper 1": 5
+  },
+  "classification/PREREG_t8.md": {
+   "legacy_regex": 3,
+   "A-E_labels": 0,
+   "Paper 1": 3
+  },
+  "classification/PREREG_t9.md": {
+   "legacy_regex": 14,
+   "A-E_labels": 0,
+   "Paper 1": 1
+  },
+  "classification/REPORT.md": {
+   "legacy_regex": 4,
+   "A-E_labels": 0,
+   "Paper 1": 5
+  },
+  "classification/Roadmap_v3.md": {
+   "legacy_regex": 108,
+   "A-E_labels": 0,
+   "Paper 1": 3
+  },
+  "classification/Stage_0_1_Classification_Results.md": {
+   "legacy_regex": 21,
+   "A-E_labels": 0,
+   "Paper 1": 6
+  },
+  "classification/Stage_2_Completion_Results.md": {
+   "legacy_regex": 50,
+   "A-E_labels": 8,
+   "Paper 1": 6
+  },
+  "classification/Stage_2_Tau_Sweep_Results.md": {
+   "legacy_regex": 21,
+   "A-E_labels": 0,
+   "Paper 1": 1
+  },
+  "classification/Stage_3_Falsification_Results.md": {
+   "legacy_regex": 55,
+   "A-E_labels": 0,
+   "Paper 1": 12
+  },
+  "classification/Stage_3_Plan.md": {
+   "legacy_regex": 6,
+   "A-E_labels": 0,
+   "Paper 1": 8
+  },
+  "classification/Stage_4_Optimality_Results.md": {
+   "legacy_regex": 51,
+   "A-E_labels": 0,
+   "Paper 1": 4
+  },
+  "classification/Stages_0_4_Consolidated.md": {
+   "legacy_regex": 408,
+   "A-E_labels": 1,
+   "Paper 1": 24
+  },
+  "classification/Task_10_Stage3_Prompt.md": {
+   "legacy_regex": 2,
+   "A-E_labels": 0,
+   "Paper 1": 3
+  },
+  "classification/figs_paper2/README.md": {
+   "legacy_regex": 11,
+   "A-E_labels": 0,
+   "Paper 1": 1
+  },
+  "classification/figs_paper2/fig01_stage1_schematic.txt": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/figs_paper2/fig02_realizability.txt": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/figs_paper2/fig03_hill_phase.txt": {
+   "legacy_regex": 2,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/figs_paper2/fig05_tau_normalizations.txt": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/figs_paper2/fig07_delay.txt": {
+   "legacy_regex": 2,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/figs_paper2/fig08_optimal_sampling.txt": {
+   "legacy_regex": 2,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/figs_paper2/fig09_sampled_relay.txt": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/figs_paper2/fig10_process_noise.txt": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 1
+  },
+  "classification/results/t8.txt": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 1
+  },
+  "classification/t10/RESULTS_t10.md": {
+   "legacy_regex": 0,
+   "A-E_labels": 0,
+   "Paper 1": 2
+  },
+  "classification/t10/classify.py": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t10/make_results_t10.py": {
+   "legacy_regex": 0,
+   "A-E_labels": 0,
+   "Paper 1": 2
+  },
+  "classification/t11/RESULTS_t11.md": {
+   "legacy_regex": 25,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t11/make_results_t11.py": {
+   "legacy_regex": 25,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t11/t11_delay.py": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t11/t11_garble.py": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t11/t11_notnec.py": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t11/t11_power_diag.py": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t11/t11_sampling.py": {
+   "legacy_regex": 2,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t12/RESULTS_t12.md": {
+   "legacy_regex": 2,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t12/make_results_t12.py": {
+   "legacy_regex": 2,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t13/RESULTS_t13.md": {
+   "legacy_regex": 82,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t13/literature_check.md": {
+   "legacy_regex": 3,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t13/make_results_t13.py": {
+   "legacy_regex": 23,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t13/referee_report.md": {
+   "legacy_regex": 59,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t13/t13_A3_limits.py": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t13/t13_audit_numbers.py": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t13/t13_figures_paper2.py": {
+   "legacy_regex": 14,
+   "A-E_labels": 0,
+   "Paper 1": 1
+  },
+  "classification/t13/t13_partA_symbolic.py": {
+   "legacy_regex": 8,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t8_classify.py": {
+   "legacy_regex": 2,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t8_common.py": {
+   "legacy_regex": 2,
+   "A-E_labels": 0,
+   "Paper 1": 1
+  },
+  "classification/t8_no_window.py": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t8_realize.py": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t8_report.py": {
+   "legacy_regex": 4,
+   "A-E_labels": 0,
+   "Paper 1": 5
+  },
+  "classification/t8_symbolic.py": {
+   "legacy_regex": 1,
+   "A-E_labels": 0,
+   "Paper 1": 4
+  },
+  "classification/t9/RESULTS_t9.md": {
+   "legacy_regex": 8,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t9/make_results_t9.py": {
+   "legacy_regex": 8,
+   "A-E_labels": 0,
+   "Paper 1": 0
+  },
+  "classification/t9/t9_symbolic.py": {
+   "legacy_regex": 3,
+   "A-E_labels": 0,
+   "Paper 1": 2
+  }
+ },
+ "totals": {
+  "legacy_regex": 1098,
+  "A-E_labels": 9,
+  "Paper 1": 119
+ }
+}

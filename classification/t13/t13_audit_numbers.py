@@ -14,6 +14,8 @@ from t13_common import CLS, save_json
 sys.path.insert(0, os.path.join(CLS, "t12"))
 mp.mp.dps = 50
 DOC = os.path.join(CLS, "Stages_0_4_Consolidated.md")
+if not os.path.exists(DOC):  # moved unchanged by Task 14 (git mv to archive/)
+    DOC = os.path.join(CLS, "archive", "Stages_0_4_Consolidated_v1.md")
 PAT = re.compile(r"\d+\.\d+(?:\\times10\^\{-?\d+\})?|\d+\\times10\^\{-?[\d{},]+\}|10\^\{-?[\d{},]+\}")
 M = mp.mpf
 F001 = M("0.01")

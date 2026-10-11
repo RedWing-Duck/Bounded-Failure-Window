@@ -1,0 +1,823 @@
+# Register of results (single source of truth for numbering). Freeze v1, Task 14.
+# thesis_no: chapter.counter, one counter per chapter shared by all types. Keys are permanent.
+# cons_v1: number in archive/Stages_0_4_Consolidated_v1.md (or a note); legacy: earlier labels (crosswalk only).
+- key: topological-realizability
+  thesis_no: '2.1'
+  type: Proposition
+  title: Topological realizability
+  chapter: 2
+  cons_v1: '1'
+  legacy: [B.1]
+  verified_by: [T8.5]
+  status: proved
+  citations: []
+- key: critical-tolerance
+  thesis_no: '2.2'
+  type: Theorem
+  title: Critical-tolerance theorem
+  chapter: 2
+  cons_v1: '2'
+  legacy: [B.2]
+  verified_by: [T8.1, T8.3, T9–T13 classifiers]
+  status: proved
+  citations: [edelsbrunnerharer2010, carr2003, milnor1963, edelsbrunner2002, oudot2015]
+- key: signature
+  thesis_no: '2.3'
+  type: Definition
+  title: Critical-value signature and stratification
+  chapter: 2
+  cons_v1: null
+  legacy: [B.10]
+  verified_by: []
+  status: definition
+  citations: [edelsbrunnerharer2010, carr2003, milnor1963, edelsbrunner2002, oudot2015]
+- key: plateaus
+  thesis_no: '2.4'
+  type: Theorem
+  title: Plateaus (C2′)
+  chapter: 2
+  cons_v1: '3'
+  legacy: [D.18]
+  verified_by: [T10.5]
+  status: proved
+  citations: []
+- key: equal-height-maxima
+  thesis_no: '2.5'
+  type: Corollary
+  title: Equal-height maxima
+  chapter: 2
+  cons_v1: '59'
+  legacy: [D.16]
+  verified_by: [T10.5]
+  status: proved
+  citations: []
+- key: degenerate-points
+  thesis_no: '2.6'
+  type: Corollary
+  title: Degenerate stationary points
+  chapter: 2
+  cons_v1: '60'
+  legacy: [D.17]
+  verified_by: [T10.5]
+  status: proved
+  citations: []
+- key: pair-birth
+  thesis_no: '2.7'
+  type: Proposition
+  title: Pair birth
+  chapter: 2
+  cons_v1: '61'
+  legacy: [D.19]
+  verified_by: [T10.5 (with diagnosis)]
+  status: proved
+  citations: []
+- key: reparameterisation
+  thesis_no: '2.8'
+  type: Corollary
+  title: Reparameterisation (orientation swaps ℓ and u)
+  chapter: 2
+  cons_v1: null
+  legacy: [B.11]
+  verified_by: []
+  status: to-verify
+  citations: []
+- key: structural-stability
+  thesis_no: '2.9'
+  type: Proposition
+  title: Structural stability at a fixed tolerance
+  chapter: 2
+  cons_v1: null
+  legacy: [B.12]
+  verified_by: []
+  status: to-verify
+  citations: [cohensteiner2007]
+- key: stationary-variance
+  thesis_no: '3.1'
+  type: Proposition
+  title: Stationary variance; constant-gain filter equivalence
+  chapter: 3
+  cons_v1: §1 text
+  legacy: [A.1, Paper 1 Prop. 1]
+  verified_by: [T1, T2]
+  status: proved
+  citations: [heffes1966, friedland1967, nishimura1967, griffin1968, sangsukiam1990, ge2016, deyst1968, kurt2025]
+- key: normal-form
+  thesis_no: '3.2'
+  type: Theorem
+  title: Normal form σ²/F = V(ν,q)
+  chapter: 3
+  cons_v1: null
+  legacy: [B.9]
+  verified_by: []
+  status: to-verify
+  citations: [kalata1984]
+- key: excess-identity
+  thesis_no: '3.3'
+  type: Corollary
+  title: Excess identity σ² > F ⇔ q > 2
+  chapter: 3
+  cons_v1: '4'
+  legacy: [A.2, Paper 1 Prop. 2]
+  verified_by: [T1, T8.1]
+  status: proved
+  citations: [heffes1966, friedland1967, nishimura1967, griffin1968, sangsukiam1990, ge2016, deyst1968, kurt2025]
+- key: window-theorem
+  thesis_no: '3.4'
+  type: Theorem
+  title: Window theorem (sup q > 2); optimal monotone along Π
+  chapter: 3
+  cons_v1: 6 (main part)
+  legacy: [A.4, Paper 1 §3.4]
+  verified_by: [T1, T3, T4, T13 C2]
+  status: proved
+  citations: [singh2009, boominathan2022, teunissen2021, crouse2023]
+- key: optimal-envelope
+  thesis_no: '3.5'
+  type: Proposition
+  title: Optimal gain and envelope V⋆ = q⋆
+  chapter: 3
+  cons_v1: in 5–6
+  legacy: [A.3, Paper 1 Prop. 3]
+  verified_by: [T1, T7]
+  status: proved
+  citations: [kalmanbucy1961, kalman1960, andersonmoore1979]
+- key: single-minimum-gain
+  thesis_no: '3.6'
+  type: Lemma
+  title: Single minimum in the gain
+  chapter: 3
+  cons_v1: '5'
+  legacy: [B.3]
+  verified_by: [T8.1]
+  status: proved
+  citations: [kalmanbucy1961, kalman1960, andersonmoore1979]
+- key: elasticity
+  thesis_no: '3.7'
+  type: Lemma
+  title: Elasticity form (path derivative)
+  chapter: 3
+  cons_v1: '51'
+  legacy: [D.7]
+  verified_by: [T10.1]
+  status: proved
+  citations: []
+- key: monotone-gain-sweeps
+  thesis_no: '4.1'
+  type: Theorem
+  title: Monotone gain sweeps cannot window
+  chapter: 4
+  cons_v1: '8'
+  legacy: [B.4]
+  verified_by: [T8.4, T13 C2]
+  status: proved
+  citations: []
+- key: prior-endpoints
+  thesis_no: '4.2'
+  type: Proposition
+  title: 'Prior precision: endpoints and extrema'
+  chapter: 4
+  cons_v1: '9'
+  legacy: [B.5]
+  verified_by: [T8.1, T8.2]
+  status: proved
+  citations: []
+- key: prior-classification
+  thesis_no: '4.3'
+  type: Proposition
+  title: 'Prior precision: classification'
+  chapter: 4
+  cons_v1: '10'
+  legacy: [B.6]
+  verified_by: [T8.3, T13 C2]
+  status: proved
+  citations: []
+- key: coupling-endpoints
+  thesis_no: '4.4'
+  type: Proposition
+  title: 'Coupling: endpoints and extrema'
+  chapter: 4
+  cons_v1: '11'
+  legacy: [B.7]
+  verified_by: [T8.1, T8.2]
+  status: proved
+  citations: []
+- key: coupling-classification
+  thesis_no: '4.5'
+  type: Proposition
+  title: 'Coupling: classification'
+  chapter: 4
+  cons_v1: '12'
+  legacy: [B.8]
+  verified_by: [T8.3, T13 C2]
+  status: proved
+  citations: []
+- key: realizability
+  thesis_no: '5.1'
+  type: Theorem
+  title: Gain realizability
+  chapter: 5
+  cons_v1: '45'
+  legacy: [D.1]
+  verified_by: [T10.1, T10.2]
+  status: proved
+  citations: [hotzskelton1987, hotzskelton1985, collinsskelton1987, xuskelton1992, yasuda1993, skeltonikeda1989]
+- key: forced-lower-ray
+  thesis_no: '5.2'
+  type: Corollary
+  title: Forced lower ray
+  chapter: 5
+  cons_v1: '46'
+  legacy: [D.2]
+  verified_by: [T10.1 (factor-radicand route), T10.2]
+  status: proved
+  citations: []
+- key: exact-class-set
+  thesis_no: '5.3'
+  type: Corollary
+  title: Exact class set along precision
+  chapter: 5
+  cons_v1: '47'
+  legacy: [D.3]
+  verified_by: [T10.2]
+  status: proved
+  citations: []
+- key: unbounded-windows
+  thesis_no: '5.4'
+  type: Corollary
+  title: Unbounded windows for regular gains
+  chapter: 5
+  cons_v1: '48'
+  legacy: [D.4]
+  verified_by: [T10.2 (supplementary)]
+  status: proved
+  citations: []
+- key: regularity-pins
+  thesis_no: '5.5'
+  type: Corollary
+  title: What regularity pins
+  chapter: 5
+  cons_v1: '49'
+  legacy: [D.5]
+  verified_by: [T10 (derivation)]
+  status: proved
+  citations: []
+- key: excess-components
+  thesis_no: '5.6'
+  type: Lemma
+  title: Excess components
+  chapter: 5
+  cons_v1: '50'
+  legacy: [D.6]
+  verified_by: [T8.1 (Proposition 4)]
+  status: proved
+  citations: []
+- key: bounded-gain-limit
+  thesis_no: '5.7'
+  type: Lemma
+  title: Bounded gains approach H from above
+  chapter: 5
+  cons_v1: '52'
+  legacy: [D.25]
+  verified_by: [T10.3, T10.7]
+  status: proved
+  citations: []
+- key: bayesian-weight
+  thesis_no: '5.8'
+  type: Proposition
+  title: Bayesian-weight gain along precision (onset κ > 2; four regimes)
+  chapter: 5
+  cons_v1: '7'
+  legacy: [A.5 + A.6 + D.8, Paper 1 Prop. 4 and Cor.]
+  verified_by: [T1, T3, T7, T10.3, T10.7, T13 C2]
+  status: proved
+  citations: [ernstbanks2002, friston2010]
+- key: misspecified-kalman
+  thesis_no: '5.9'
+  type: Proposition
+  title: Misspecified Kalman gain
+  chapter: 5
+  cons_v1: '53'
+  legacy: [D.9]
+  verified_by: [T10.1, T10.3, T13 C2]
+  status: proved
+  citations: []
+- key: capped-gain
+  thesis_no: '5.10'
+  type: Proposition
+  title: Capped gain
+  chapter: 5
+  cons_v1: '54'
+  legacy: [D.10 + part of A.9]
+  verified_by: [T10.3, T10.5, T13 C2]
+  status: proved
+  citations: []
+- key: precision-blind
+  thesis_no: '5.11'
+  type: Proposition
+  title: Precision-blind gain
+  chapter: 5
+  cons_v1: '55'
+  legacy: [D.11 + part of A.9]
+  verified_by: [T4, T10.3, T13 C2]
+  status: proved
+  citations: []
+- key: hill-turning-points
+  thesis_no: '5.12'
+  type: Theorem
+  title: Hill gain for every real n > 1
+  chapter: 5
+  cons_v1: '56'
+  legacy: [D.12 + D.14 + part of A.9]
+  verified_by: [T4, T7, T10.1, T10.3 ($n = 2$), T13 A5]
+  status: proved
+  citations: [heeger1992, carandiniheeger2012]
+- key: hill-classification
+  thesis_no: '5.13'
+  type: Proposition
+  title: Hill classification and the mixed class
+  chapter: 5
+  cons_v1: '57'
+  legacy: [D.13]
+  verified_by: [T10.4, T13 C2]
+  status: proved
+  citations: [heeger1992, carandiniheeger2012]
+- key: no-mixed-decreasing-ratio
+  thesis_no: '5.14'
+  type: Proposition
+  title: No mixed class when G/Π decreases
+  chapter: 5
+  cons_v1: 6 (addendum)
+  legacy: [D.24]
+  verified_by: ['T13 C2 (row-8 diagnosis, t13_audit_classes_diag2.py)']
+  status: proved
+  citations: []
+- key: two-stage-gains
+  thesis_no: '5.15'
+  type: Numerical result
+  title: Two-stage gains
+  chapter: 5
+  cons_v1: '58'
+  legacy: [D.15]
+  verified_by: [T10.3, T13 C2]
+  status: numerical
+  citations: []
+- key: tau-relay-variance
+  thesis_no: '6.1'
+  type: Lemma
+  title: Relay variance at matched power (with coloured excess condition)
+  chapter: 6
+  cons_v1: '13'
+  legacy: [C.1 + A.7, Paper 1 Prop. 5]
+  verified_by: [T4, T6, T9.1]
+  status: proved
+  citations: [brysonjohansen1965, brysonhenrikson1968, chang2014]
+- key: tau-relay-monotone
+  thesis_no: '6.2'
+  type: Proposition
+  title: Relay monotone in τ
+  chapter: 6
+  cons_v1: '14'
+  legacy: [C.2]
+  verified_by: [T9.1, T9.4]
+  status: proved
+  citations: []
+- key: tau-relay-classes
+  thesis_no: '6.3'
+  type: Proposition
+  title: Relay classification along τ
+  chapter: 6
+  cons_v1: '15'
+  legacy: [C.3]
+  verified_by: [T9.4, T13 C2]
+  status: proved
+  citations: []
+- key: tau-optimal-error
+  thesis_no: '6.4'
+  type: Proposition
+  title: Optimal error along τ (closed form)
+  chapter: 6
+  cons_v1: '16'
+  legacy: [C.4]
+  verified_by: [T9.1, T9.2 (Wiener route; ARE route via diagnosis)]
+  status: proved
+  citations: [brysonjohansen1965, brysonhenrikson1968, chang2014]
+- key: tau-optimal-normal-form
+  thesis_no: '6.5'
+  type: Corollary
+  title: Normalised optimal error P/F
+  chapter: 6
+  cons_v1: null
+  legacy: [C.26]
+  verified_by: []
+  status: to-verify
+  citations: []
+- key: tau-optimal-monotone
+  thesis_no: '6.6'
+  type: Theorem
+  title: Optimal error decreases in τ
+  chapter: 6
+  cons_v1: '17'
+  legacy: [C.5]
+  verified_by: [T9.1, T9.5]
+  status: proved
+  citations: []
+- key: tau-optimal-classes
+  thesis_no: '6.7'
+  type: Proposition
+  title: Optimal classification along τ
+  chapter: 6
+  cons_v1: '18'
+  legacy: [C.6]
+  verified_by: [T9.4, T13 C2]
+  status: proved
+  citations: []
+- key: tau-best-constant-gain
+  thesis_no: '6.8'
+  type: Proposition
+  title: Best constant-gain relay
+  chapter: 6
+  cons_v1: '19'
+  legacy: [C.7]
+  verified_by: [T9.5 (with mp diagnosis)]
+  status: proved
+  citations: []
+- key: tau-strict-gap
+  thesis_no: '6.9'
+  type: Proposition
+  title: Strict gap P < V
+  chapter: 6
+  cons_v1: '20'
+  legacy: [C.8]
+  verified_by: [T13 A7]
+  status: proved
+  citations: []
+- key: matched-variance-optimal
+  thesis_no: '6.10'
+  type: Proposition
+  title: Optimal filter at matched variance
+  chapter: 6
+  cons_v1: '21'
+  legacy: [D.20]
+  verified_by: [T10.6, T13 C2]
+  status: proved
+  citations: [shmaliy2020, ren2021]
+- key: optimal-can-window
+  thesis_no: '6.11'
+  type: Counterexample
+  title: The optimal filter can window
+  chapter: 6
+  cons_v1: '22'
+  legacy: [D.27]
+  verified_by: [T10.6]
+  status: proved
+  citations: []
+- key: matched-variance-relay
+  thesis_no: '6.12'
+  type: Proposition
+  title: Relay at matched variance
+  chapter: 6
+  cons_v1: '23'
+  legacy: [D.21]
+  verified_by: [T10.6, T13 C2]
+  status: proved
+  citations: []
+- key: discrete-excess
+  thesis_no: '6.13'
+  type: Proposition
+  title: Discrete excess condition L/(2 − L) > FΠ_d for 0 ≤ L < 2
+  chapter: 6
+  cons_v1: cited in 27
+  legacy: [A.8, Paper 1 Prop. 6]
+  verified_by: [T4, T7]
+  status: proved
+  citations: [sahomasugi2016]
+- key: shared-excess-set
+  thesis_no: '6.14'
+  type: Lemma
+  title: Shared excess set (M-P)
+  chapter: 6
+  cons_v1: '27'
+  legacy: [C.9]
+  verified_by: [T12]
+  status: proved
+  citations: []
+- key: d1-excess
+  thesis_no: '6.15'
+  type: Proposition
+  title: D1 tanh lemma
+  chapter: 6
+  cons_v1: '28'
+  legacy: [C.10]
+  verified_by: [T12]
+  status: proved
+  citations: []
+- key: d2-excess
+  thesis_no: '6.16'
+  type: Proposition
+  title: D2 excess set (0 < c < 2)
+  chapter: 6
+  cons_v1: '29'
+  legacy: [C.11]
+  verified_by: [T12]
+  status: proved
+  citations: []
+- key: d3-excess
+  thesis_no: '6.17'
+  type: Proposition
+  title: D3 excess set; onset ρ > 2 + u
+  chapter: 6
+  cons_v1: '30'
+  legacy: [C.12 + C.13 (remark)]
+  verified_by: [T12]
+  status: proved
+  citations: []
+- key: dt-endpoint-limits
+  thesis_no: '6.18'
+  type: Proposition
+  title: Endpoint limits along Δt
+  chapter: 6
+  cons_v1: '31'
+  legacy: [C.14]
+  verified_by: [T12 (with series-route diagnosis)]
+  status: proved
+  citations: []
+- key: dt-optimal-mp
+  thesis_no: '6.19'
+  type: Theorem
+  title: 'Optimal M-P along Δt: post ↓; prior ↑; avg ↑'
+  chapter: 6
+  cons_v1: '32'
+  legacy: [C.15 + C.24 + C.16]
+  verified_by: [T12 (a), 'T13 A1, A2 (b), (c)']
+  status: proved
+  citations: [martinezrey2017]
+- key: dt-two-rays
+  thesis_no: '6.20'
+  type: Proposition
+  title: Two rays from an over-weighted sampled relay
+  chapter: 6
+  cons_v1: '36'
+  legacy: [C.17]
+  verified_by: [T12 (with diagnosis)]
+  status: proved
+  citations: []
+- key: dt-relay-census
+  thesis_no: '6.21'
+  type: Numerical result
+  title: Census of sampled relays
+  chapter: 6
+  cons_v1: '37'
+  legacy: [C.18]
+  verified_by: [T12, T13 C2]
+  status: numerical
+  citations: []
+- key: dt-two-turning-points
+  thesis_no: '6.22'
+  type: Conjecture
+  title: At most two turning points (sampled relays)
+  chapter: 6
+  cons_v1: '38'
+  legacy: [C.25]
+  verified_by: [T12, 'T13 A6, C2']
+  status: conjecture
+  citations: []
+- key: sigma-scaling
+  thesis_no: '6.23'
+  type: Lemma
+  title: Σ scaling
+  chapter: 6
+  cons_v1: '39'
+  legacy: [C.19]
+  verified_by: [T12]
+  status: proved
+  citations: []
+- key: sigma-independent-gain
+  thesis_no: '6.24'
+  type: Proposition
+  title: Σ-independent gain
+  chapter: 6
+  cons_v1: '40'
+  legacy: [C.20]
+  verified_by: [T12, T13 C2]
+  status: proved
+  citations: []
+- key: sigma-overtrust
+  thesis_no: '6.25'
+  type: Proposition
+  title: Σ-tracking gain with over-trust ρ
+  chapter: 6
+  cons_v1: '41'
+  legacy: [C.21]
+  verified_by: [T12, T13 C2]
+  status: proved
+  citations: []
+- key: sigma-misspecified-lambda
+  thesis_no: '6.26'
+  type: Proposition
+  title: Σ-tracking gain with misspecified λ′
+  chapter: 6
+  cons_v1: '42'
+  legacy: [C.22]
+  verified_by: [T12, T13 C2]
+  status: proved
+  citations: []
+- key: sigma-optimal
+  thesis_no: '6.27'
+  type: Proposition
+  title: Optimal filter along Σ
+  chapter: 6
+  cons_v1: '43'
+  legacy: [C.23]
+  verified_by: [T12, T13 C2]
+  status: proved
+  citations: []
+- key: signal-sweeps
+  thesis_no: '6.28'
+  type: Proposition
+  title: 'Signal sweeps (Σ and λ): optimal monotone'
+  chapter: 6
+  cons_v1: '44'
+  legacy: [E.10]
+  verified_by: [T11.1]
+  status: proved
+  citations: []
+- key: causal-garbling
+  thesis_no: '7.1'
+  type: Definition
+  title: Causal garbling
+  chapter: 7
+  cons_v1: '64'
+  legacy: [E.1]
+  verified_by: []
+  status: definition
+  citations: [blackwell1951, blackwell1953, greenshtein1996, yuksellinder2012, yukselbasar2013, yukselbasar2024, lecam1964, torgersen1991]
+- key: causal-monotonicity
+  thesis_no: '7.2'
+  type: Theorem
+  title: Monotonicity under causal garbling
+  chapter: 7
+  cons_v1: '65'
+  legacy: [E.2]
+  verified_by: [T11.1, T11.2]
+  status: proved
+  citations: [blackwell1951, blackwell1953, greenshtein1996, yuksellinder2012, yukselbasar2013, yukselbasar2024, lecam1964, torgersen1991]
+- key: no-optimal-windows
+  thesis_no: '7.3'
+  type: Corollary
+  title: No optimal windows along causal orderings
+  chapter: 7
+  cons_v1: '66'
+  legacy: [E.3]
+  verified_by: [T11]
+  status: proved
+  citations: []
+- key: diagnostic
+  thesis_no: '7.4'
+  type: Corollary
+  title: Diagnostic
+  chapter: 7
+  cons_v1: '67'
+  legacy: [E.4]
+  verified_by: [T11]
+  status: proved
+  citations: []
+- key: spectral-dominance
+  thesis_no: '7.5'
+  type: Proposition
+  title: Spectral dominance
+  chapter: 7
+  cons_v1: '68'
+  legacy: [E.5]
+  verified_by: [T11.1, T11.3]
+  status: proved
+  citations: [hansentorgersen1974, torgersen1991, hogeboomburr2021]
+- key: gaussian-orderings-coincide
+  thesis_no: '7.6'
+  type: Theorem
+  title: Causal; pathwise and spectral orderings coincide (Gaussian)
+  chapter: 7
+  cons_v1: '69'
+  legacy: [E.15]
+  verified_by: [T13 A8]
+  status: proved
+  citations: [hansentorgersen1974, torgersen1991, hogeboomburr2021]
+- key: sweeps-ordered
+  thesis_no: '7.7'
+  type: Proposition
+  title: Which studied sweeps are ordered
+  chapter: 7
+  cons_v1: '70'
+  legacy: [E.6]
+  verified_by: [T11.1, T11.3]
+  status: proved
+  citations: []
+- key: power-family-sharpness
+  thesis_no: '7.8'
+  type: Theorem
+  title: Sharpness in the power family
+  chapter: 7
+  cons_v1: '24'
+  legacy: [E.7]
+  verified_by: [T11.3 (with diagnosis), T13 C2]
+  status: proved
+  citations: [shmaliy2020, ren2021]
+- key: power-family-unimodal
+  thesis_no: '7.9'
+  type: Theorem
+  title: Unimodality for 0 < β < 2
+  chapter: 7
+  cons_v1: '25'
+  legacy: [E.8]
+  verified_by: [T13 A4, T11.3 (numerical)]
+  status: proved
+  citations: []
+- key: power-family-duality
+  thesis_no: '7.10'
+  type: Proposition
+  title: Duality
+  chapter: 7
+  cons_v1: '26'
+  legacy: [E.9]
+  verified_by: [T11.1, T11.3]
+  status: proved
+  citations: []
+- key: latency
+  thesis_no: '7.11'
+  type: Proposition
+  title: Latency
+  chapter: 7
+  cons_v1: '71'
+  legacy: [E.11]
+  verified_by: [T11.4, T13 C2]
+  status: proved
+  citations: [barshalom2002, yoder2018]
+- key: pathwise-not-enough
+  thesis_no: '7.12'
+  type: Counterexample
+  title: Pathwise ordering is not enough
+  chapter: 7
+  cons_v1: '72'
+  legacy: [E.17]
+  verified_by: [T11.4]
+  status: proved
+  citations: [barshalom2002, yoder2018]
+- key: ordering-not-necessary
+  thesis_no: '7.13'
+  type: Proposition
+  title: Ordering sufficient; not necessary
+  chapter: 7
+  cons_v1: '73'
+  legacy: [E.12]
+  verified_by: [T11.5]
+  status: proved
+  citations: []
+- key: mi-nested
+  thesis_no: '7.14'
+  type: Corollary
+  title: Integrate-and-dump; nested grids
+  chapter: 7
+  cons_v1: '34'
+  legacy: [E.13]
+  verified_by: [T11.6]
+  status: proved
+  citations: []
+- key: mi-continuum
+  thesis_no: '7.15'
+  type: Theorem
+  title: Integrate-and-dump on the continuum
+  chapter: 7
+  cons_v1: '35'
+  legacy: [E.14]
+  verified_by: [T13 A3, T11.6, T12]
+  status: proved
+  citations: []
+- key: mp-not-ordered
+  thesis_no: '7.16'
+  type: Proposition
+  title: M-P is not a causal-garbling family
+  chapter: 7
+  cons_v1: '33'
+  legacy: [E.16]
+  verified_by: [T12]
+  status: proved
+  citations: [martinezrey2017]
+- key: blind-searches
+  thesis_no: '8.1'
+  type: Numerical result
+  title: Blind searches find no unpredicted class
+  chapter: 8
+  cons_v1: '63'
+  legacy: [D.22 + D.23]
+  verified_by: [T10.7, T12 Part C, T13 C2]
+  status: numerical
+  citations: []
+- key: narrow-windows
+  thesis_no: '8.2'
+  type: Numerical result
+  title: Narrow windows need root-finding
+  chapter: 8
+  cons_v1: '62'
+  legacy: [D.26]
+  verified_by: [T10.5]
+  status: numerical
+  citations: []

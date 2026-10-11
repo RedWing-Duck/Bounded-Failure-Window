@@ -1,0 +1,44 @@
+#,Sweep,Kind,Gain family / filter,Endpoint limits (approach),Extrema,Critical tolerances,Possible classes,Opt.,Conditions,Label,Verified by
+1,$\Pi$,env.,optimal,$F$ (below) → $0$,none,$F$,"LR, E","LR, E",—,[[window-theorem|a]],{{phase1}}; T13 C2
+2,$\Pi$,env.,Bayesian-weight,$F$ → $H$ (above),one max iff $\kappa > 2$,"$H, F, M$","A, LR, W, E","LR, E",$\kappa > 2$ for W,[[bayesian-weight|a]],"{{phase1}}; T10.3, T10.7; T13 C2"
+3,$\Pi$,env.,misspecified Kalman,$F$ → $0$,one max iff $F' > 2F$,"$F, M$","LR, W, E","LR, E",$F' > 2F$,[[misspecified-kalman|a]],"T10.3, T10.7; T13 C2"
+4,$\Pi$,env.,"capped $\min(g\Pi, c)$",$F$ → $H$ (above),one max (kink) iff $g > 2F$; plateau at $g = 2F$,"$H, F, M$","A, LR, W, E","LR, E",$g > 2F$,[[capped-gain|a]],"T10.3, T10.5, T10.7; T13 C2"
+5,$\Pi$,env.,precision-blind,$\infty$ → $H$ (above),none,$H$,"A, LR","LR, E",—,[[precision-blind|a]],"T10.3, T10.7; T13 C2"
+6,$\Pi$,env.,Hill $n = 2$,$F$ (below) → $H$ (above),"0, or min then max","$H, m, M, F$","A, LR, (1,0,1), W, E","LR, E",pair iff $\Pi_0 < \Pi_0^{\text{pair}}$,"[[hill-turning-points|a]], [[hill-classification|a]]","T10.3, T10.4, T10.7; T13 C2"
+7,$\Pi$,env.,"Hill, real $n > 1$",$F$ (below) → $H$ (above),"0, or min then max","$H, m, M, F$","A, LR, (1,0,1), W, E","LR, E",pair iff $\Pi_0 < \Pi_0^{\text{pair}}(n)$,"[[hill-turning-points|a]], [[hill-classification|a]]","T10.3; T13 A5, C2"
+8,$\Pi$,env.,two-stage Bayesian,$F$ → $\Sigma/(\lambda + c_1 + c_2)$ (above),up to 3 seen,—,"A, LR, W, (0,0,2), E","LR, E","no $(1,0,k)$: minima exceed $F$","[[two-stage-gains|a]], [[no-mixed-decreasing-ratio|a]]",T10.3; T13 C2
+9,$\Pi$,env.,two-stage Hill,$F$ (below) → $\Sigma/(\lambda + c_1 + c_2)$ (above),up to 4 seen,—,"A, LR, (1,0,1), (1,0,2), W, (0,0,2), E","LR, E",—,[[two-stage-gains|a]],T10.3; T13 C2
+—,$\Pi$,env.,any continuous gain,free above $\sigma_\star^2$,any finite number,—,$R^2 < F$: exactly the classes with $\ell = 1$; $R^2 \ge F$: all,"LR, E",—,"[[realizability|a]], [[forced-lower-ray|a]]–[[unbounded-windows|n]]",T10.2
+10,$\Pi_0$,design,Bayesian-weight,$V_c$ → $F$ (below),one min iff $\Pi < \Pi_A$,"$\sigma_\star^2, V_c, F$","A, 2R, LR, UR, E",n/a,cases P1–P3,[[prior-classification|a]],"T8.3, T10.7; T13 C2"
+11,$c$,design,Bayesian-weight,$F$ (below) → $\infty$,one min,"$\sigma_\star^2, F$","A, 2R, UR",n/a,—,[[coupling-classification|a]],"T8.3, T10.7; T13 C2"
+12,$\Pi_0$ (any monotone gain at fixed $\Pi$),design,"e.g. $c\tanh(\Pi/\Pi_0)$, $c(1 - e^{-\Pi/\Pi_0})$, $c\Pi^2/(\Pi^2 + \Pi_0^2)$",$V_c$ → $F$ (below),at most one min,—,"A, 2R, LR, UR, E; never W or mixed",n/a,—,[[monotone-gain-sweeps|a]],T8.4; T13 C2
+13,$\tau$ (zero-freq. power),env.,"relay, any precision-only $G > 0$",$V_w$ (below) → $H_G$ (above),none,"$H_G, V_w$","A, LR, E","LR, E",LR at $R^2 = F$ iff $G > 2F\Pi$,[[tau-relay-classes|a]],"T9.4, T10.7; T13 C2"
+14,$\tau$ (zero-freq. power),env.,optimal,$\sigma_\star^2$ (below) → $0$,none,$\sigma_\star^2$,"LR, E","LR, E",—,"[[tau-optimal-monotone|a]], [[tau-optimal-classes|a]]","T9.4, T10.7; T13 C2"
+15,$\tau$ (matched variance),env.,"relay, fixed $G > 0$",$H_G$ → top (below),none,"$H_G$, top","A, UR, E","W, E",—,[[matched-variance-relay|a]],"T10.6, T10.7; T13 C2"
+16,$\tau$ (matched variance),env.,optimal,$0$ → $0$,one max at $1/\lambda$,$P_{\max}$,"W, E","W, E",—,[[matched-variance-optimal|a]],"T10.6, T10.7; T13 C2"
+17,"$\tau$, power family $\beta \le 0$",env.,optimal,$F$ ($\beta < 0$) or $\sigma_\star^2(1/K)$ ($\beta = 0$) → $0$,none,one limit,"LR, E","LR, E",ordered (info ↑),[[power-family-sharpness|a]],T11.3; T13 C2
+18,"$\tau$, power family $0 < \beta < 2$",env.,optimal,$0$ → $0$,exactly one max,$\max P$,"W, E","W, E",not ordered,"[[power-family-sharpness|a]], [[power-family-unimodal|a]]","T11.3; T13 A4, C2"
+19,"$\tau$, power family $\beta \ge 2$",env.,optimal,$0$ → $\sigma_\star^2(\lambda^2/K)$ ($\beta = 2$) or $F$ ($\beta > 2$),none,one limit,"UR, E","UR, E",ordered (info ↓),[[power-family-sharpness|a]],T11.3 with diagnosis; T13 C2
+20,latency $d = \theta e^{-\theta}$,env.,optimal,$\sigma_\star^2$ (above) → $\sigma_\star^2$ (above),one max at $\theta = 1$,"$\sigma_\star^2, P(1/e)$","A, W, E","A, W, E","pathwise-equivalent, causally reversing",[[latency|a]],T11.4; T13 C2
+21,$\Delta t$ (M-P),either,"optimal, post",$\sigma_\star^2$ → $0$,none,$\sigma_\star^2$,"LR, E","LR, E",—,[[dt-optimal-mp|a]](a),T12; T13 C2
+22,$\Delta t$ (M-P),either,"optimal, prior",$\sigma_\star^2$ → $F$ (below),none,"$\sigma_\star^2, F$","A, UR, E","A, UR, E",—,[[dt-optimal-mp|a]](b),"T12; T13 A1, C2"
+23,$\Delta t$ (M-P),either,"optimal, avg",$\sigma_\star^2$ → $F$ (below),none,"$\sigma_\star^2, F$","A, UR, E","A, UR, E",—,[[dt-optimal-mp|a]](c),"T12; T13 A2, C2"
+24,$\Delta t$ (M-P),either,"D1 sampled relay, post","$\sigma^2(G, \Pi)$ → $0$",none or one max,"limits, max","E, LR, W",—,excess iff $G > 2F\Pi$,[[d1-excess|a]]; [[dt-relay-census|a]],T12; T13 C2
+25,$\Delta t$ (M-P),either,"D1, prior","$\sigma^2(G, \Pi)$ → $F$ (below)","none, min, max–min","limits, extrema","A, E, LR, UR, 2R, (0,1,1)",—,2R if $G > 2F\Pi$ ([[dt-two-rays]]),[[dt-two-rays|a]]; [[dt-relay-census|a]],T12; T13 C2
+26,$\Delta t$ (M-P),either,"D1, avg","$\sigma^2(G, \Pi)$ → $F$ (below)","none, min, max–min","limits, extrema","A, E, LR, UR, 2R, (0,1,1)",—,2R if $G > 2F\Pi$ ([[dt-two-rays]]); also seen for $G \le 2F\Pi$ ([[dt-relay-census]]),[[dt-two-rays|a]]; [[dt-relay-census|a]],T12; T13 C2
+27,$\Delta t$ (M-P),either,"D2 discrete Bayesian, post","$\sigma^2(c\Pi/\Pi_0, \Pi)$ → $(1-c)^2F$","none, max, min, min–max","limits, extrema","A, E, LR, UR, 2R, W, (1,0,1)",—,excess iff $\kappa > 2$,[[d2-excess|a]]; [[dt-relay-census|a]],T12; T13 C2
+28,$\Delta t$ (M-P),either,"D2, prior","$\sigma^2(c\Pi/\Pi_0, \Pi)$ → $F$ (below)","none, min","limits, min","A, E, LR, UR, 2R",—,—,[[d2-excess|a]]; [[dt-relay-census|a]],T12; T13 C2
+29,$\Delta t$ (M-P),either,"D2, avg","$\sigma^2(c\Pi/\Pi_0, \Pi)$ → $F$ (below)","none, min","limits, min","A, E, LR, UR, 2R",—,—,[[d2-excess|a]]; [[dt-relay-census|a]],T12; T13 C2
+30,$\Delta t$ (M-P),either,"D3 over-trust $\rho$, post","$\sigma^2(G_\rho, \Pi)$ → $0$",none or one max,"limits, max","E, LR, W",—,excess near 0 iff $\rho > 2 + u$,[[d3-excess|a]]; [[dt-relay-census|a]],T12; T13 C2
+31,$\Delta t$ (M-P),either,"D3, prior","$\sigma^2(G_\rho, \Pi)$ → $F$ (below)","none, min, max–min","limits, extrema","A, E, LR, UR, 2R, (0,1,1)",—,—,[[d3-excess|a]]; [[dt-relay-census|a]],T12; T13 C2
+32,$\Delta t$ (M-P),either,"D3, avg","$\sigma^2(G_\rho, \Pi)$ → $F$ (below)","none, min","limits, min","A, E, LR, UR, 2R",—,—,[[d3-excess|a]]; [[dt-relay-census|a]],T12; T13 C2
+33,$\Delta t$ (M-I),either,"optimal, (a)",$\sigma_\star^2$ → $F$,none,"$\sigma_\star^2, F$","A, UR, E","A, UR, E",—,[[mi-continuum|a]],"T11.6, T12; T13 A3, C2"
+34,$\Delta t$ (M-I),either,"optimal, (b)",$\sigma_\star^2$ → $F$,none,"$\sigma_\star^2, F$","A, UR, E","A, UR, E",—,[[mi-continuum|a]],"T11.6, T12; T13 A3, C2"
+35,"$\Sigma$, absolute",env.,$\Sigma$-independent gain,$G^2/(2\Pi(\lambda+G))$ (above) → $\infty$,none,lower limit,"A, UR",UR,—,[[sigma-independent-gain|a]],T12; T13 C2
+36,"$\Sigma$, relative",env.,$\Sigma$-independent gain,$\infty$ → $1/(1+g)$,none,$1/(1+g)$,"A, LR","LR, E",excess iff $\Sigma < \lambda G/(2\Pi)$,[[sigma-independent-gain|a]],T12; T13 C2
+37,"$\Sigma$, absolute",env.,"$\Sigma$-tracking, over-trust $\rho$",$0$ → $\infty$,none,—,UR,UR,—,[[sigma-overtrust|a]],T12; T13 C2
+38,"$\Sigma$, relative",env.,"$\Sigma$-tracking, over-trust $\rho$",$1$ → $0$,one max iff $\rho > 2$,"$1$, peak","LR, W, E","LR, E",W iff $\rho > 2$,[[sigma-overtrust|a]],T12; T13 C2
+39,"$\Sigma$, absolute",env.,"$\Sigma$-tracking, misspecified $\lambda'$",$0$ → $\infty$,none,—,UR,UR,—,[[sigma-misspecified-lambda|a]],T12; T13 C2
+40,"$\Sigma$, relative",env.,"$\Sigma$-tracking, misspecified $\lambda'$",$1$ → $0$,one max iff $\lambda' < \lambda/2$,"$1$, peak","LR, W, E","LR, E",W iff $\lambda' < \lambda/2$,[[sigma-misspecified-lambda|a]],T12; T13 C2
+41,"$\Sigma$, absolute",env.,optimal,$0$ → $\infty$,none,—,UR,UR,—,[[sigma-optimal|a]],T12; T13 C2
+42,"$\Sigma$, relative",env.,optimal,$1$ → $0$,none,$1$,"LR, E","LR, E",—,[[sigma-optimal|a]],T12; T13 C2

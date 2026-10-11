@@ -1,0 +1,83 @@
+thesis_no,type,key,title,cons_v1,legacy
+2.1,Proposition,topological-realizability,Topological realizability,1,B.1
+2.2,Theorem,critical-tolerance,Critical-tolerance theorem,2,B.2
+2.3,Definition,signature,Critical-value signature and stratification,—,B.10
+2.4,Theorem,plateaus,Plateaus (C2′),3,D.18
+2.5,Corollary,equal-height-maxima,Equal-height maxima,59,D.16
+2.6,Corollary,degenerate-points,Degenerate stationary points,60,D.17
+2.7,Proposition,pair-birth,Pair birth,61,D.19
+2.8,Corollary,reparameterisation,Reparameterisation (orientation swaps ℓ and u),—,B.11
+2.9,Proposition,structural-stability,Structural stability at a fixed tolerance,—,B.12
+3.1,Proposition,stationary-variance,Stationary variance; constant-gain filter equivalence,§1 text,A.1 / Paper 1 Prop. 1
+3.2,Theorem,normal-form,"Normal form σ²/F = V(ν,q)",—,B.9
+3.3,Corollary,excess-identity,Excess identity σ² > F ⇔ q > 2,4,A.2 / Paper 1 Prop. 2
+3.4,Theorem,window-theorem,Window theorem (sup q > 2); optimal monotone along Π,6 (main part),A.4 / Paper 1 §3.4
+3.5,Proposition,optimal-envelope,Optimal gain and envelope V⋆ = q⋆,in 5–6,A.3 / Paper 1 Prop. 3
+3.6,Lemma,single-minimum-gain,Single minimum in the gain,5,B.3
+3.7,Lemma,elasticity,Elasticity form (path derivative),51,D.7
+4.1,Theorem,monotone-gain-sweeps,Monotone gain sweeps cannot window,8,B.4
+4.2,Proposition,prior-endpoints,Prior precision: endpoints and extrema,9,B.5
+4.3,Proposition,prior-classification,Prior precision: classification,10,B.6
+4.4,Proposition,coupling-endpoints,Coupling: endpoints and extrema,11,B.7
+4.5,Proposition,coupling-classification,Coupling: classification,12,B.8
+5.1,Theorem,realizability,Gain realizability,45,D.1
+5.2,Corollary,forced-lower-ray,Forced lower ray,46,D.2
+5.3,Corollary,exact-class-set,Exact class set along precision,47,D.3
+5.4,Corollary,unbounded-windows,Unbounded windows for regular gains,48,D.4
+5.5,Corollary,regularity-pins,What regularity pins,49,D.5
+5.6,Lemma,excess-components,Excess components,50,D.6
+5.7,Lemma,bounded-gain-limit,Bounded gains approach H from above,52,D.25
+5.8,Proposition,bayesian-weight,Bayesian-weight gain along precision (onset κ > 2; four regimes),7,A.5 + A.6 + D.8 / Paper 1 Prop. 4 and Cor.
+5.9,Proposition,misspecified-kalman,Misspecified Kalman gain,53,D.9
+5.10,Proposition,capped-gain,Capped gain,54,D.10 + part of A.9
+5.11,Proposition,precision-blind,Precision-blind gain,55,D.11 + part of A.9
+5.12,Theorem,hill-turning-points,Hill gain for every real n > 1,56,D.12 + D.14 + part of A.9
+5.13,Proposition,hill-classification,Hill classification and the mixed class,57,D.13
+5.14,Proposition,no-mixed-decreasing-ratio,No mixed class when G/Π decreases,6 (addendum),D.24
+5.15,Numerical result,two-stage-gains,Two-stage gains,58,D.15
+6.1,Lemma,tau-relay-variance,Relay variance at matched power (with coloured excess condition),13,C.1 + A.7 / Paper 1 Prop. 5
+6.2,Proposition,tau-relay-monotone,Relay monotone in τ,14,C.2
+6.3,Proposition,tau-relay-classes,Relay classification along τ,15,C.3
+6.4,Proposition,tau-optimal-error,Optimal error along τ (closed form),16,C.4
+6.5,Corollary,tau-optimal-normal-form,Normalised optimal error P/F,—,C.26
+6.6,Theorem,tau-optimal-monotone,Optimal error decreases in τ,17,C.5
+6.7,Proposition,tau-optimal-classes,Optimal classification along τ,18,C.6
+6.8,Proposition,tau-best-constant-gain,Best constant-gain relay,19,C.7
+6.9,Proposition,tau-strict-gap,Strict gap P < V,20,C.8
+6.10,Proposition,matched-variance-optimal,Optimal filter at matched variance,21,D.20
+6.11,Counterexample,optimal-can-window,The optimal filter can window,22,D.27
+6.12,Proposition,matched-variance-relay,Relay at matched variance,23,D.21
+6.13,Proposition,discrete-excess,Discrete excess condition L/(2 − L) > FΠ_d for 0 ≤ L < 2,cited in 27,A.8 / Paper 1 Prop. 6
+6.14,Lemma,shared-excess-set,Shared excess set (M-P),27,C.9
+6.15,Proposition,d1-excess,D1 tanh lemma,28,C.10
+6.16,Proposition,d2-excess,D2 excess set (0 < c < 2),29,C.11
+6.17,Proposition,d3-excess,D3 excess set; onset ρ > 2 + u,30,C.12 + C.13 (remark)
+6.18,Proposition,dt-endpoint-limits,Endpoint limits along Δt,31,C.14
+6.19,Theorem,dt-optimal-mp,Optimal M-P along Δt: post ↓; prior ↑; avg ↑,32,C.15 + C.24 + C.16
+6.20,Proposition,dt-two-rays,Two rays from an over-weighted sampled relay,36,C.17
+6.21,Numerical result,dt-relay-census,Census of sampled relays,37,C.18
+6.22,Conjecture,dt-two-turning-points,At most two turning points (sampled relays),38,C.25
+6.23,Lemma,sigma-scaling,Σ scaling,39,C.19
+6.24,Proposition,sigma-independent-gain,Σ-independent gain,40,C.20
+6.25,Proposition,sigma-overtrust,Σ-tracking gain with over-trust ρ,41,C.21
+6.26,Proposition,sigma-misspecified-lambda,Σ-tracking gain with misspecified λ′,42,C.22
+6.27,Proposition,sigma-optimal,Optimal filter along Σ,43,C.23
+6.28,Proposition,signal-sweeps,Signal sweeps (Σ and λ): optimal monotone,44,E.10
+7.1,Definition,causal-garbling,Causal garbling,64,E.1
+7.2,Theorem,causal-monotonicity,Monotonicity under causal garbling,65,E.2
+7.3,Corollary,no-optimal-windows,No optimal windows along causal orderings,66,E.3
+7.4,Corollary,diagnostic,Diagnostic,67,E.4
+7.5,Proposition,spectral-dominance,Spectral dominance,68,E.5
+7.6,Theorem,gaussian-orderings-coincide,Causal; pathwise and spectral orderings coincide (Gaussian),69,E.15
+7.7,Proposition,sweeps-ordered,Which studied sweeps are ordered,70,E.6
+7.8,Theorem,power-family-sharpness,Sharpness in the power family,24,E.7
+7.9,Theorem,power-family-unimodal,Unimodality for 0 < β < 2,25,E.8
+7.10,Proposition,power-family-duality,Duality,26,E.9
+7.11,Proposition,latency,Latency,71,E.11
+7.12,Counterexample,pathwise-not-enough,Pathwise ordering is not enough,72,E.17
+7.13,Proposition,ordering-not-necessary,Ordering sufficient; not necessary,73,E.12
+7.14,Corollary,mi-nested,Integrate-and-dump; nested grids,34,E.13
+7.15,Theorem,mi-continuum,Integrate-and-dump on the continuum,35,E.14
+7.16,Proposition,mp-not-ordered,M-P is not a causal-garbling family,33,E.16
+8.1,Numerical result,blind-searches,Blind searches find no unpredicted class,63,D.22 + D.23
+8.2,Numerical result,narrow-windows,Narrow windows need root-finding,62,D.26
