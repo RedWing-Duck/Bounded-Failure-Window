@@ -1,0 +1,196 @@
+# Roadmap v3: Classifying Failure-Set Topology in Stationary Linear Filters
+
+**Author:** John Holder · **Status:** Stages 0–4 complete (Paper 2 / minimal thesis); Stages 5–6 planned · Revised
+October 2026 (Task 13)
+
+Roadmap v2 set out a formally specified classification program in seven stages. Stages 0–4 are now complete for scalar
+models and are consolidated in `Stages_0_4_Consolidated.md` (the "consolidated document" below, cited by section and
+result number). This version records what was done, lists what remains open, replaces the Section 14 matrix with the
+final one, and restates Stages 5–6 in light of the results. Notation, terminology and the verification protocol of v2
+(Sections 1, 2, 12, 13) are unchanged; the consolidated document's Section 1 restates them.
+
+---
+
+## 1. Status of Stages 0–4
+
+| Stage | Roadmap v2 question | Status | Where |
+|---|---|---|---|
+| 0 | Define the classification problem | **Complete.** Conventions C1–C6, C2′; class $(\ell, u, k)$ | Consolidated §1 |
+| 1 | General classification theorem | **Complete.** Theorem 2 (critical tolerances), Theorem 3 (plateaus), Proposition 1 (topology excludes nothing) | §2 |
+| 2 | Model classification: $\Pi$, $\Pi_0$, $c$, $\tau$, $\Delta t$, $\Sigma$ | **Complete.** Every scalar sweep of v2 Section 6.2 classified | §3 ($\Pi$), §4 ($\Pi_0$, $c$), §5 ($\tau$, both normalizations, power family), §6 ($\Delta t$), §7 ($\Sigma$) |
+| 3 | Falsification and completeness | **Complete.** Realizability, forced lower ray, unbounded windows, natural families (Hill for every $n > 1$), degeneracies, blind searches | §8 |
+| 4 | The optimality theorem | **Complete.** Theorem 65 (causal garbling ⇒ monotone), Theorem 24 (exact sharpness in the power family), Theorem 69 (non-linear garblings add nothing for additive Gaussian noise), Counterexample 72 (causality essential) | §9 |
+
+Verification: Tasks 8–13 (`REPORT.md`, `t9/`…`t13/RESULTS_t*.md`), all pre-registered; every failed check is recorded with
+its diagnosis. Task 13 verified or closed seven of the eight items left open by Stages 2–4 (consolidated §12–13); one remains a conjecture.
+
+**Answers to the v2 sub-questions.**
+1. *Possible topologies in principle:* all (Proposition 1).
+2. *What determines the topology:* endpoint limits, approach directions and ordered extremum values (Theorem 2).
+3. *Which sweeps and gain families give each topology:* the synthesis matrix below.
+4. *Completeness and complexity:* complete for every family in the matrix except the two-stage gains; arbitrarily many
+   windows are possible for constructed regular gains (Corollary 48); natural families have at most two turning points
+   along precision (Theorem 56).
+5. *Impossible for optimal filters:* along any causally ordered sweep, everything except Empty, All and a single ray at the
+   less-informative end (Corollaries 66–67); along non-ordered sweeps the optimal filter can window (Counterexample 22,
+   Theorem 24, Proposition 71).
+
+---
+
+## 2. Open problems (all items still open after Task 13)
+
+1. **Turning points of sampled relays** (Conjecture 38): at most two turning points along $\Delta t$ for D1–D3 in every
+   metric. Evidence: 6,000 sets × 3 metrics (Task 12) and 9,000 new curves (Task 13 audit), never more than two. Best
+   partial result: proved limits and a single excess component.
+2. **Two-stage gains** (Numerical result 58): a turning-point bound for sums of natural stages (at most 3 and 4 seen).
+3. **A necessary condition for monotone optimal error** beyond the power family (Theorem 24 is sharp there; Proposition 73
+   shows ordering is not necessary in general).
+4. **The α–β filter and multivariate models** (Stage 6).
+
+Closed by Task 13 (now theorems in the consolidated document): optimal M-P prior and time average increasing (Theorem 32),
+integrate-and-dump monotone on the continuum (Theorem 35), power-family unimodality (Theorem 25), Hill gain for every
+$n > 1$ (Theorem 56), strict gap between the optimal filter and the best constant gain along $\tau$ (Proposition 20), and
+non-linear causal garblings (Theorem 69).
+
+---
+
+## 3. Final synthesis matrix (replaces v2 Section 14)
+
+"#" is the row number of the Task 13 class audit (C2); "Opt." is what the optimal filter can produce along the same sweep. Classes
+are written E (Empty), A (All), LR (lower ray), UR (upper ray), 2R (two rays), W (window), and triples $(\ell, u, k)$.
+
+| # | Sweep | Kind | Gain family / filter | Endpoint limits (approach) | Extrema | Critical tolerances | Possible classes | Opt. | Conditions | Label | Verified by |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | $\Pi$ | env. | optimal | $F$ (below) → $0$ | none | $F$ | LR, E | LR, E | — | Thm 6 | Paper 1; T13 C2 |
+| 2 | $\Pi$ | env. | Bayesian-weight | $F$ → $H$ (above) | one max iff $\kappa > 2$ | $H, F, M$ | A, LR, W, E | LR, E | $\kappa > 2$ for W | Prop. 7 | Paper 1; T10.3, T10.7; T13 C2 |
+| 3 | $\Pi$ | env. | misspecified Kalman | $F$ → $0$ | one max iff $F' > 2F$ | $F, M$ | LR, W, E | LR, E | $F' > 2F$ | Prop. 53 | T10.3, T10.7; T13 C2 |
+| 4 | $\Pi$ | env. | capped $\min(g\Pi, c)$ | $F$ → $H$ (above) | one max (kink) iff $g > 2F$; plateau at $g = 2F$ | $H, F, M$ | A, LR, W, E | LR, E | $g > 2F$ | Prop. 54 | T10.3, T10.5, T10.7; T13 C2 |
+| 5 | $\Pi$ | env. | precision-blind | $\infty$ → $H$ (above) | none | $H$ | A, LR | LR, E | — | Prop. 55 | T10.3, T10.7; T13 C2 |
+| 6 | $\Pi$ | env. | Hill $n = 2$ | $F$ (below) → $H$ (above) | 0, or min then max | $H, m, M, F$ | A, LR, (1,0,1), W, E | LR, E | pair iff $\Pi_0 < \Pi_0^{\text{pair}}$ | Thm 56, Prop. 57 | T10.3, T10.4, T10.7; T13 C2 |
+| 7 | $\Pi$ | env. | Hill, real $n > 1$ | $F$ (below) → $H$ (above) | 0, or min then max | $H, m, M, F$ | A, LR, (1,0,1), W, E | LR, E | pair iff $\Pi_0 < \Pi_0^{\text{pair}}(n)$ | Thm 56, Prop. 57 | T10.3; T13 A5, C2 |
+| 8 | $\Pi$ | env. | two-stage Bayesian | $F$ → $\Sigma/(\lambda + c_1 + c_2)$ (above) | up to 3 seen | — | A, LR, W, (1,0,1), (0,0,2), E | LR, E | — | Num. 58 | T10.3; T13 C2 |
+| 9 | $\Pi$ | env. | two-stage Hill | $F$ (below) → $\Sigma/(\lambda + c_1 + c_2)$ (above) | up to 4 seen | — | A, LR, (1,0,1), (1,0,2), W, (0,0,2), E | LR, E | — | Num. 58 | T10.3; T13 C2 |
+| — | $\Pi$ | env. | any continuous gain | free above $\sigma_\star^2$ | any finite number | — | $R^2 < F$: exactly the classes with $\ell = 1$; $R^2 \ge F$: all | LR, E | — | Thm 45, Cor. 46–48 | T10.2 |
+| 10 | $\Pi_0$ | design | Bayesian-weight | $V_c$ → $F$ (below) | one min iff $\Pi < \Pi_A$ | $\sigma_\star^2, V_c, F$ | A, 2R, LR, UR, E | n/a | cases P1–P3 | Prop. 10 | T8.3, T10.7; T13 C2 |
+| 11 | $c$ | design | Bayesian-weight | $F$ (below) → $\infty$ | one min | $\sigma_\star^2, F$ | A, 2R, UR | n/a | — | Prop. 12 | T8.3, T10.7; T13 C2 |
+| 12 | $\Pi_0$ (any monotone gain at fixed $\Pi$) | design | e.g. $c\tanh(\Pi/\Pi_0)$, $c(1 - e^{-\Pi/\Pi_0})$, $c\Pi^2/(\Pi^2 + \Pi_0^2)$ | $V_c$ → $F$ (below) | at most one min | — | A, 2R, LR, UR, E; never W or mixed | n/a | — | Thm 8 | T8.4; T13 C2 |
+| 13 | $\tau$ (zero-freq. power) | env. | relay, any precision-only $G > 0$ | $V_w$ (below) → $H_G$ (above) | none | $H_G, V_w$ | A, LR, E | LR, E | LR at $R^2 = F$ iff $G > 2F\Pi$ | Prop. 15 | T9.4, T10.7; T13 C2 |
+| 14 | $\tau$ (zero-freq. power) | env. | optimal | $\sigma_\star^2$ (below) → $0$ | none | $\sigma_\star^2$ | LR, E | LR, E | — | Thm 17, Prop. 18 | T9.4, T10.7; T13 C2 |
+| 15 | $\tau$ (matched variance) | env. | relay, fixed $G > 0$ | $H_G$ → top (below) | none | $H_G$, top | A, UR, E | W, E | — | Prop. 23 | T10.6, T10.7; T13 C2 |
+| 16 | $\tau$ (matched variance) | env. | optimal | $0$ → $0$ | one max at $1/\lambda$ | $P_{\max}$ | W, E | W, E | — | Prop. 21 | T10.6, T10.7; T13 C2 |
+| 17 | $\tau$, power family $\beta \le 0$ | env. | optimal | $F$ ($\beta < 0$) or $\sigma_\star^2(1/K)$ ($\beta = 0$) → $0$ | none | one limit | LR, E | LR, E | ordered (info ↑) | Thm 24 | T11.3; T13 C2 |
+| 18 | $\tau$, power family $0 < \beta < 2$ | env. | optimal | $0$ → $0$ | exactly one max | $\max P$ | W, E | W, E | not ordered | Thm 24, Thm 25 | T11.3; T13 A4, C2 |
+| 19 | $\tau$, power family $\beta \ge 2$ | env. | optimal | $0$ → $\sigma_\star^2(\lambda^2/K)$ ($\beta = 2$) or $F$ ($\beta > 2$) | none | one limit | UR, E | UR, E | ordered (info ↓) | Thm 24 | T11.3 with diagnosis; T13 C2 |
+| 20 | latency $d = \theta e^{-\theta}$ | env. | optimal | $\sigma_\star^2$ (above) → $\sigma_\star^2$ (above) | one max at $\theta = 1$ | $\sigma_\star^2, P(1/e)$ | A, W, E | A, W, E | pathwise-equivalent, causally reversing | Prop. 71 | T11.4; T13 C2 |
+| 21 | $\Delta t$ (M-P) | either | optimal, post | $\sigma_\star^2$ → $0$ | none | $\sigma_\star^2$ | LR, E | LR, E | — | Thm 32(a) | T12; T13 C2 |
+| 22 | $\Delta t$ (M-P) | either | optimal, prior | $\sigma_\star^2$ → $F$ (below) | none | $\sigma_\star^2, F$ | A, UR, E | A, UR, E | — | Thm 32(b) | T12; T13 A1, C2 |
+| 23 | $\Delta t$ (M-P) | either | optimal, avg | $\sigma_\star^2$ → $F$ (below) | none | $\sigma_\star^2, F$ | A, UR, E | A, UR, E | — | Thm 32(c) | T12; T13 A2, C2 |
+| 24 | $\Delta t$ (M-P) | either | D1 sampled relay, post | $\sigma^2(G, \Pi)$ → $0$ | none or one max | limits, max | E, LR, W | — | excess iff $G > 2F\Pi$ | Prop. 28; Num. 37 | T12; T13 C2 |
+| 25 | $\Delta t$ (M-P) | either | D1, prior | $\sigma^2(G, \Pi)$ → $F$ (below) | none, min, max–min | limits, extrema | A, E, LR, UR, 2R, (0,1,1) | — | 2R iff $G > 2F\Pi$ (below the min) | Prop. 36; Num. 37 | T12; T13 C2 |
+| 26 | $\Delta t$ (M-P) | either | D1, avg | $\sigma^2(G, \Pi)$ → $F$ (below) | none, min, max–min | limits, extrema | A, E, LR, UR, 2R, (0,1,1) | — | as row 25 | Prop. 36; Num. 37 | T12; T13 C2 |
+| 27 | $\Delta t$ (M-P) | either | D2 discrete Bayesian, post | $\sigma^2(c\Pi/\Pi_0, \Pi)$ → $(1-c)^2F$ | none, max, min, min–max | limits, extrema | A, E, LR, UR, 2R, W, (1,0,1) | — | excess iff $\kappa > 2$ | Prop. 29; Num. 37 | T12; T13 C2 |
+| 28 | $\Delta t$ (M-P) | either | D2, prior | $\sigma^2(c\Pi/\Pi_0, \Pi)$ → $F$ (below) | none, min | limits, min | A, E, LR, UR, 2R | — | — | Prop. 29; Num. 37 | T12; T13 C2 |
+| 29 | $\Delta t$ (M-P) | either | D2, avg | $\sigma^2(c\Pi/\Pi_0, \Pi)$ → $F$ (below) | none, min | limits, min | A, E, LR, UR, 2R | — | — | Prop. 29; Num. 37 | T12; T13 C2 |
+| 30 | $\Delta t$ (M-P) | either | D3 over-trust $\rho$, post | $\sigma^2(G_\rho, \Pi)$ → $0$ | none or one max | limits, max | E, LR, W | — | excess near 0 iff $\rho > 2 + u$ | Prop. 30; Num. 37 | T12; T13 C2 |
+| 31 | $\Delta t$ (M-P) | either | D3, prior | $\sigma^2(G_\rho, \Pi)$ → $F$ (below) | none, min, max–min | limits, extrema | A, E, LR, UR, 2R, (0,1,1) | — | — | Prop. 30; Num. 37 | T12; T13 C2 |
+| 32 | $\Delta t$ (M-P) | either | D3, avg | $\sigma^2(G_\rho, \Pi)$ → $F$ (below) | none, min | limits, min | A, E, LR, UR, 2R | — | — | Prop. 30; Num. 37 | T12; T13 C2 |
+| 33 | $\Delta t$ (M-I) | either | optimal, (a) | $\sigma_\star^2$ → $F$ | none | $\sigma_\star^2, F$ | A, UR, E | A, UR, E | — | Thm 35 | T11.6, T12; T13 A3, C2 |
+| 34 | $\Delta t$ (M-I) | either | optimal, (b) | $\sigma_\star^2$ → $F$ | none | $\sigma_\star^2, F$ | A, UR, E | A, UR, E | — | Thm 35 | T11.6, T12; T13 A3, C2 |
+| 35 | $\Sigma$, absolute | env. | $\Sigma$-independent gain | $G^2/(2\Pi(\lambda+G))$ (above) → $\infty$ | none | lower limit | A, UR | UR | — | Prop. 40 | T12; T13 C2 |
+| 36 | $\Sigma$, relative | env. | $\Sigma$-independent gain | $\infty$ → $1/(1+g)$ | none | $1/(1+g)$ | A, LR | LR, E | excess iff $\Sigma < \lambda G/(2\Pi)$ | Prop. 40 | T12; T13 C2 |
+| 37 | $\Sigma$, absolute | env. | $\Sigma$-tracking, over-trust $\rho$ | $0$ → $\infty$ | none | — | UR | UR | — | Prop. 41 | T12; T13 C2 |
+| 38 | $\Sigma$, relative | env. | $\Sigma$-tracking, over-trust $\rho$ | $1$ → $0$ | one max iff $\rho > 2$ | $1$, peak | LR, W, E | LR, E | W iff $\rho > 2$ | Prop. 41 | T12; T13 C2 |
+| 39 | $\Sigma$, absolute | env. | $\Sigma$-tracking, misspecified $\lambda'$ | $0$ → $\infty$ | none | — | UR | UR | — | Prop. 42 | T12; T13 C2 |
+| 40 | $\Sigma$, relative | env. | $\Sigma$-tracking, misspecified $\lambda'$ | $1$ → $0$ | one max iff $\lambda' < \lambda/2$ | $1$, peak | LR, W, E | LR, E | W iff $\lambda' < \lambda/2$ | Prop. 42 | T12; T13 C2 |
+| 41 | $\Sigma$, absolute | env. | optimal | $0$ → $\infty$ | none | — | UR | UR | — | Prop. 43 | T12; T13 C2 |
+| 42 | $\Sigma$, relative | env. | optimal | $1$ → $0$ | none | $1$ | LR, E | LR, E | — | Prop. 43 | T12; T13 C2 |
+
+Rows 1–20 and 35–42 are complete classifications (every class at every tolerance determined, impossibilities proved), except rows
+8–9 (two-stage gains, numerical). Rows 21–23 are complete. Rows 33–34 are complete. Rows 24–32 give proved excess sets and limits; their class lists are
+numerical.
+
+---
+
+## 4. Stage 5: robustness and practical relevance (restated)
+
+Stage 5 asks whether the possible topologies are robust and whether real systems reach them. Stages 0–4 supply its inputs:
+
+- **Hill mixed band.** The lower ray + window class $(1,0,1)$ occurs in a natural family but in a band of median relative
+  width $5\times10^{-4}$ (range $4\times10^{-22}$ to $0.96$); in 16% of sets it exists without any window above $F$
+  (Proposition 57). Question: how far is a realistic Hill-type gain schedule from that band, in tolerance and in $\Pi_0$?
+- **Dip sizes along $\Delta t$.** The sampled relay's time-average dip below $F$ is modest (0.125% in the worked example,
+  $\bar P - F \sim -F/(2\lambda\Delta t)$); the prior dip is multiplied by $e^{-2\lambda\Delta t}$ and measured between
+  $10^{-17}$ and $10^{-32{,}880{,}317}$ (Proposition 36). Two-ray classes along $\Delta t$ are mathematically real but
+  only the time-average ones could matter in practice.
+- **Peak ratio 1.89.** At the same initial over-weighting (ratio 100) the misspecified Kalman gain peaks $1.89$ times higher
+  than the Bayesian-weight gain (Proposition 53): peak height, not onset, separates gain families.
+- **Structural stability.** By Theorem 2 the class is locally constant away from critical tolerances; Proposition 61 gives the
+  fold exponents (positions $\delta^{1/2}$, values $\delta^{3/2}$) for the distance to a classification boundary.
+- **Applied case.** Unchanged from v2: one setting with published gains and specifications (GNSS/INS fix weighting first),
+  asking whether a specification looser than the uncorrected error ever meets a miscalibration large enough to clear it
+  (Corollary 46 shows this is necessary for any window).
+
+## 5. Stage 6: extensions (restated)
+
+- **Fixed α–β filter.** A two-state filter; it does not fit the scalar model and is the first Stage 6 item.
+- **Multivariate.** (1) Decoupled case: simultaneously diagonalizable dynamics, noises and gain split into scalar copies;
+  prove first. (2) Mixing case: search 2×2 systems for windows no single direction predicts. (3) Choose and justify the vector
+  failure criterion (trace, largest eigenvalue, fixed direction).
+- **Discrete time and coloured noise** are now covered for scalar models (Sections 5–6 of the consolidated document);
+  Theorem 69's spectral criterion is the natural starting point for vector-valued noise.
+
+---
+
+## 6. Paper 2 outline
+
+| § | Section | Results (consolidated numbering) | Figures (`figs_paper2/`) |
+|---|---|---|---|
+| 1 | Introduction: Paper 1's window, the question of failure-set topology | Theorem 6, Proposition 7 | — |
+| 2 | Setting and conventions; the class $(\ell, u, k)$ | C1–C6, Proposition 4, Lemma 5 | — |
+| 3 | The critical-tolerance theorem | Proposition 1, Theorems 2, 3 | Fig. 1 |
+| 4 | What the model allows along precision: realizability and the forced lower ray | Theorem 45, Corollaries 46–49 | Fig. 2 |
+| 5 | Natural gain families and the mixed class | Lemmas 50–52, Propositions 53–55, Theorem 56, Proposition 57, Numerical result 58 | Figs 3, 4 |
+| 6 | Design sweeps never window | Theorem 8, Propositions 9–12 | — |
+| 7 | Environment sweeps: correlation time (two normalizations, power family) | Lemma 13 – Proposition 26 | Figs 5, 6 |
+| 8 | Sampling interval | Lemma 27 – Conjecture 38 | Figs 8, 9 |
+| 9 | Process noise and the tolerance convention | Lemma 39 – Proposition 44 | Fig. 10 |
+| 10 | The optimality theorem: causal information orderings | Definition 64 – Proposition 73 | Fig. 7 |
+| 11 | Synthesis matrix, degeneracies and open problems | Corollaries 59–60, Proposition 61, Numerical results 62–63; Section 10–11 of the consolidated document | — |
+| A | Verification (pre-registration, routes, reproduction) | Consolidated §12; `reproduce_all.sh` | — |
+
+---
+
+## 7. Novelty step (v2 Section 15), Task 13
+
+The check was run with web access on 2026-10-11 and is **targeted, not exhaustive**. Queries, sources and relevance are
+recorded in `t13/literature_check.md`; the novelty part is reproduced here.
+
+| # | Query | Sources found (as returned) | Relevance |
+|---|---|---|---|
+| 6 | steady-state filtering error variance exceeds tolerance set of parameters classification bounded failure window | Variance-constrained filtering (Wang, Ho and Liu, IEEE TAC 2003); worst-case variance bounds (Shaked and de Souza 1995); Sayed (IEEE TAC 2001); robust Kalman filtering, least-favourable model, arXiv 1804.06321 | P (design to a variance bound; no classification of exceedance sets along a parameter) |
+| 7 | Kalman filter error variance non-monotone in sampling interval | Kalman filtering with random sampling (MTNS paper, mtns.math.nd.edu/papers/1149_3.pdf); Błachuta and Grygiel, sampled-signal Kalman filtering over sampling periods (ACC 2008); Kalman–Bucy (1961) | P (snippets do not report non-monotonicity) |
+| 8 | mismatched Kalman filter error worse than no filtering over-confident measurement noise covariance | "Kalman filtering with uncertain noise covariances" (Cleveland State, D. Simon); "Recursive performance ranking of Kalman filter with mismatched noise covariances" (IET 2019); arXiv 2511.22034 | P (orders filter-calculated, ideal and true MSE; not failure-set topology) |
+| 9 | Kalman filter colored measurement noise correlation time estimation error non-monotone | Coloured-noise filtering by state augmentation and measurement differencing (Bryson–Henrikson line; NASA 1967 memo; FIG 2003; ISPRS 2014) | P (methods; no study of the error along the correlation time) |
+| 10 | measurement delay optimal filtering error increases latency Kalman Bucy Ornstein Uhlenbeck | Delayed-measurement Kalman–Bucy filtering (IFAC 2014, ACC 2011, Abstr. Appl. Anal.); finite-dimensional suboptimal filters for bounded delays | P (delay adds an error term; nothing on non-monotone delay sweeps or Blackwell equivalence) |
+
+**Finding (novelty, targeted).** None of the ten searches returned work that classifies the topology of
+tolerance-exceedance sets of stationary filtering error along a parameter (rays, windows, mixed classes, critical
+tolerances). Related strands exist: variance-constrained and robust filtering (design to a bound), sensitivity of the
+Kalman filter to mis-specified covariances (filter-calculated versus true error), coloured-noise and delayed-measurement
+filtering (methods), and Blackwell comparison of linear normal experiments (static). No source on a causal Blackwell
+ordering in filtering was found. This is a targeted check, not an exhaustive one; Paper 2 should repeat it with database
+searches (MathSciNet, Scopus) before submission.
+
+## Queries still to run (suggested)
+- "Loewner order spectral density Gaussian process informativeness"; "Blackwell order filtrations" / "nonanticipative Blackwell dominance".
+- "steady-state Kalman filter covariance versus correlation time Gauss-Markov measurement noise".
+- "more measurements worse mis-specified Kalman filter precision", "over-weighting measurements relay worse than open loop".
+
+---
+
+## 8. Order of work
+
+1. Paper 2 from the consolidated document (Sections 1–11 above).
+2. Stage 5 (robustness, applied case) using the inputs of Section 4.
+3. Stage 6 (α–β, multivariate), starting with the decoupled case.
+4. Open problems 1–3 of Section 2 as they become tractable; each needs its own pre-registered task.
