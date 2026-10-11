@@ -12,7 +12,7 @@ print(json.dumps({"python": platform.python_version(), "numpy": numpy.__version_
 PY
 : > results/runtime.tsv
 for s in t13_partA_symbolic t13_partA_symbolic_diag t13_regression_symbolic t13_partA_numeric t13_partA_numeric_diag \
-         t13_A3_attempt t13_A3_proof t13_A3_closed t13_A3_limits t13_audit_numbers t13_audit_refs t13_audit_classes \
+         t13_A3_attempt t13_A3_proof t13_A3_closed t13_A3_limits t13_audit_numbers t13_audit_refs t13_audit_classes t13_audit_classes_diag t13_audit_classes_diag2 \
          t13_figures_paper2; do
   echo "== $s"
   t0=$(date +%s.%N)

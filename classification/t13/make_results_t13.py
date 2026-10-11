@@ -119,7 +119,7 @@ T += ["## Plain statements", "",
       "$c < 2$ (with $c = 3$ the excess set is all of $(0,\\infty)$, not a lower ray), the condition column of rows 25–26 "
       "(\"two rays iff $G > 2F\\Pi$\" is only \"if\"), missing equality rows (optimal prior/avg at $R^2 = \\sigma_\\star^2$; capped "
       "gain at $g = 2F$), and several missing hypotheses (C2 in Proposition 36, continuity in Corollary 66, windows in "
-      "Corollary 59). The class lists of the synthesis matrix did not change.",
+      "Corollary 59). One class list changed: the C2 audit of row 8 (two-stage Bayesian) never observed the stated $(1,0,1)$, and the post-hoc diagnosis proved it impossible (Theorem 6 addendum: for increasing $G$ with $G/\\Pi$ strictly decreasing, every interior minimum exceeds $F$); row 8's set is corrected (change log row 45). The pre-registered C2 verdict for row 8 stays FAIL.",
       "- **Did any class outside the stated sets appear?** " + (
           ("No: the class audit found 0 persisting out-of-set classes and 0 persisting route disagreements in "
            f"{sum(r['classifications'] for r in rows):,} classifications." if c2_pass else
@@ -147,12 +147,19 @@ T += ["## Diagnoses and fixes", "",
       "(`t13_A3_closed.py`, 11/11), which proves monotonicity and both limits directly. `t13_A3_limits.py` (a series attempt at the "
       "limits) is superseded: SymPy's limit route failed at $x \\to \\infty$, which the closed form settles.",
       "5. **C1 first run (attribution: document 4, code 2).** $G^\\star = \\sigma_\\star^2$ at $\\Pi = 1$ is 0.00995049…, stated as 0.0099504 "
-      "(truncated; T8.2 checked 4 s.f.); corrected to 0.0099505 everywhere (change log row 30). The parser mis-read plain "
+      "(truncated; T8.2 checked 4 s.f.); corrected to 0.0099505 everywhere (change log row 29). The parser mis-read plain "
       "`10^{12}` (code); fixed. After the referee fixes the registry was extended to the new literals (three entries) and the "
       "run repeated: PASS.",
       "6. **compare_repro.py (code, before any recorded comparison).** A `|z|` inside a table cell shifted the runtime column, and "
       "reports not yet regenerated in the worktree were compared with themselves; fixed (last-cell masking; only tasks in the "
-      "replay's runtime logs are compared).", ""]
+      "replay's runtime logs are compared).",
+      "7. **C2 row 12, Pi0 monotone (attribution: code).** 122 persisting disagreements in 23 sets, all at $R^2$ exactly $L_-$ on "
+      "increasing curves whose approach to $L_-$ is exponentially flat ($\\tanh$, $\\exp$ shapes). With no split point, route (ii) "
+      "tests one point ($P_0 = 1$), where $f - R^2$ is below its 1e-40 relative equality tolerance, so it reads Empty; at "
+      "$P_0 = 10\\Pi$ the gap is positive in every case, and the failure set is All, as route (i) says. No document change.",
+      "8. **C2 row 8, two-stage Bayesian (attribution: document).** $(1,0,1)$ was never observed (0 in 1,000 sets, 0 in 400,000 "
+      "further screened draws, optimiser infimum of $m/F$ equal to 1). Proved impossible post hoc (Theorem 6 addendum, "
+      "`t13_audit_classes_diag2.py`); row 8's stated set corrected (change log row 45). The pre-registered verdict stays FAIL.", ""]
 bad_rows = [r for r in rows if not r["pass"]]
 if rows:
     T += ["## C2 class audit", "", "| # | Row | Stated | Observed classes | Turning points | Flagged | Persisting | Verdict |",
@@ -164,9 +171,10 @@ if rows:
     if bad_rows:
         T += ["Failing rows: " + "; ".join(f"row {r['row']}: missing {r['missing_stated']}, out of set {r['out_of_set']}, persisting "
               f"{r['persisting']}" for r in bad_rows) + ". Diagnosis in `t13_audit_classes_diag.json` if present and below.", ""]
-    dg = L("t13_audit_classes_diag.json")
-    if dg:
-        T += [dg.get("text", ""), ""]
+    for fn in ("t13_audit_classes_diag.json", "t13_audit_classes_diag2.json"):
+        dg = L(fn)
+        if dg:
+            T += [f"`{fn}`: " + dg.get("text", ""), ""]
 
 ref = open(os.path.join(HERE, "referee_report.md")).read().split("\n", 1)[1]
 T += ["## Independent referee (C4): report and dispositions", "", ref.strip(), ""]
@@ -187,7 +195,7 @@ if cmp_:
             T += [f"Task {k} differences: " + "; ".join(json.dumps(i, ensure_ascii=False)[:300] for i in v["issues"][:10]), ""]
 
 T += ["## Deliverables", "",
-      "- `classification/Stages_0_4_Consolidated.md`: the single source document (73 results, change log of 44 corrections).",
+      "- `classification/Stages_0_4_Consolidated.md`: the single source document (73 results, change log of 45 corrections).",
       "- `classification/Roadmap_v3.md`: status, open problems, final matrix, Stages 5–6, Paper 2 outline, novelty check.",
       "- `classification/figs_paper2/`: ten figures (PNG + PDF + caption each; `README.md` lists them).",
       "- `classification/reproduce_all.sh`, `t13/compare_repro.py`, `t13/run_t13.sh`.",

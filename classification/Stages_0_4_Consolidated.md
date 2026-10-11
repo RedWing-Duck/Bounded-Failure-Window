@@ -173,8 +173,16 @@ $\sup_{\Pi > 0} G(\Pi)/\Pi > 2F$; every $R^2 \in (F, \sup\sigma^2)$ then gives a
 $\sigma^2$ has one interior maximum, as in Proposition 7; $k > 1$ is possible, Corollary 48). The optimal variance
 $\sigma_\star^2(\Pi)$ decreases strictly from $F$ to $0$, so the optimal filter never windows along $\Pi$: its classes are
 lower ray ($R^2 < F$) and Empty ($R^2 \ge F$).
+If moreover $G$ is increasing and $G(\Pi)/\Pi$ is strictly decreasing (e.g. any sum of Bayesian stages
+$c_i\Pi/(\Pi + \Pi_{0,i})$), then $\sigma^2$ is strictly decreasing wherever $\sigma^2 \le F$, so every interior minimum exceeds
+$F$ and no failure set combines a lower ray with a window: the classes $(1,0,k)$, $k \ge 1$, do not occur.
 
-**Label:** Theorem (proved in Paper 1 and its verification suite; optimal part re-checked T13 C2 row 1).
+*Proof of the addendum.* $2\Pi^2(\lambda + G)^2\,d\sigma^2/d\Pi = \Pi G'(2\lambda G + G^2 - 2\Sigma\Pi) - G^2(\lambda + G)$, and
+$\sigma^2 \le F \iff 2\Sigma\Pi \ge \lambda G$. There the bracket is at most $G(\lambda + G)$, so the derivative has the sign of at
+most $G(\lambda + G)(\Pi G' - G) < 0$. For a Bayesian stage, $\Pi G_i' - G_i = -c_i\Pi^2/(\Pi + \Pi_{0,i})^2 < 0$. $\square$
+
+**Label:** Theorem (proved in Paper 1 and its verification suite; optimal part re-checked T13 C2 row 1; addendum proved post hoc
+from the T13 C2 row-8 failure, SymPy steps in `t13_audit_classes_diag2.py`).
 
 **Proposition 7 (Bayesian-weight gain along precision).** For $G = c\Pi/(\Pi + \Pi_0)$, with over-weighting ratio
 $\kappa = (c/\Pi_0)/F$: $\sigma^2$ has one turning point, a maximum $M$, iff $\kappa > 2$, and is strictly decreasing
@@ -950,7 +958,8 @@ $4\times10^{-22}$ to $0.96$), and in 16% of sets the mixed band exists without a
 
 **Numerical result 58 (two-stage gains).** Sums of two widely separated natural stages produce more than one maximum:
 two-channel Bayesian gains show (max, min, max) in 7 of 2,000 sets, i.e. multi-window failure sets; two-channel Hill gains show
-(min, max, min, max) in 63 of 2,000 sets, i.e. mixed multi-window failure sets. No turning-point bound is known.
+(min, max, min, max) in 63 of 2,000 sets, i.e. mixed multi-window failure sets. No turning-point bound is known. For the
+Bayesian sums the windows always lie above $F$ and never join a lower ray (Theorem 6, addendum).
 
 **Label:** Numerical result (T10.3 exploratory census; T13 C2 rows 8–9).
 
@@ -1137,7 +1146,7 @@ are written E (Empty), A (All), LR (lower ray), UR (upper ray), 2R (two rays), W
 | 5 | $\Pi$ | env. | precision-blind | $\infty$ → $H$ (above) | none | $H$ | A, LR | LR, E | — | Prop. 55 | T10.3, T10.7; T13 C2 |
 | 6 | $\Pi$ | env. | Hill $n = 2$ | $F$ (below) → $H$ (above) | 0, or min then max | $H, m, M, F$ | A, LR, (1,0,1), W, E | LR, E | pair iff $\Pi_0 < \Pi_0^{\text{pair}}$ | Thm 56, Prop. 57 | T10.3, T10.4, T10.7; T13 C2 |
 | 7 | $\Pi$ | env. | Hill, real $n > 1$ | $F$ (below) → $H$ (above) | 0, or min then max | $H, m, M, F$ | A, LR, (1,0,1), W, E | LR, E | pair iff $\Pi_0 < \Pi_0^{\text{pair}}(n)$ | Thm 56, Prop. 57 | T10.3; T13 A5, C2 |
-| 8 | $\Pi$ | env. | two-stage Bayesian | $F$ → $\Sigma/(\lambda + c_1 + c_2)$ (above) | up to 3 seen | — | A, LR, W, (1,0,1), (0,0,2), E | LR, E | — | Num. 58 | T10.3; T13 C2 |
+| 8 | $\Pi$ | env. | two-stage Bayesian | $F$ → $\Sigma/(\lambda + c_1 + c_2)$ (above) | up to 3 seen | — | A, LR, W, (0,0,2), E | LR, E | no $(1,0,k)$: minima exceed $F$ | Num. 58, Thm 6 | T10.3; T13 C2 |
 | 9 | $\Pi$ | env. | two-stage Hill | $F$ (below) → $\Sigma/(\lambda + c_1 + c_2)$ (above) | up to 4 seen | — | A, LR, (1,0,1), (1,0,2), W, (0,0,2), E | LR, E | — | Num. 58 | T10.3; T13 C2 |
 | — | $\Pi$ | env. | any continuous gain | free above $\sigma_\star^2$ | any finite number | — | $R^2 < F$: exactly the classes with $\ell = 1$; $R^2 \ge F$: all | LR, E | — | Thm 45, Cor. 46–48 | T10.2 |
 | 10 | $\Pi_0$ | design | Bayesian-weight | $V_c$ → $F$ (below) | one min iff $\Pi < \Pi_A$ | $\sigma_\star^2, V_c, F$ | A, 2R, LR, UR, E | n/a | cases P1–P3 | Prop. 10 | T8.3, T10.7; T13 C2 |
@@ -1414,3 +1423,4 @@ the sampling-interval section, unproved hypotheses and missing equality rows); a
 | 42 | T13 C4 (referee 12) | Proposition 33: the min/sup/mean step made explicit. | Proposition 33 |
 | 43 | T13 C4 (referee 13) | Theorem 69: part (iv) (pathwise Blackwell ordering) added; frequency-localization detail. | Theorem 69 |
 | 44 | T13 C4 (referee 14) | Proposition 54, $g = 2F$: All for $R^2 \le H$ (equality row). | Proposition 54 |
+| 45 | T13 C2 (row 8 failure, diagnosed) | Row 8 (two-stage Bayesian) listed $(1,0,1)$; it cannot occur. Theorem 6 gains an addendum (proved): for increasing $G$ with $G/\Pi$ strictly decreasing, every interior minimum exceeds $F$. Row 8 class set corrected; Numerical result 58 notes it. | Theorem 6, Numerical result 58, Section 10 |
