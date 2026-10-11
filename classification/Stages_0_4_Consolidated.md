@@ -238,7 +238,7 @@ minimum value is attained only at $\Pi_0^\star$. $\square$
 **Label:** Proposition (proved; T8.3, 62/62 classes including all equality rows; T13 C2 row 10).
 
 **Worked example** ($\lambda = c = 1$, $\Sigma = 0.01$): $\Pi_B = 50$, $\Pi_A = 150$.
-- $\Pi = 1$ (P3): $G^\star = 0.0099504$, $\Pi_0^\star = 99.498$, $\sigma_\star^2 = 0.0099504$, $V_c = 0.255$.
+- $\Pi = 1$ (P3): $G^\star = 0.0099505$, $\Pi_0^\star = 99.498$, $\sigma_\star^2 = 0.0099505$, $V_c = 0.255$.
 - $\Pi = 60$ (P2): $\Pi_0^\star = 64.162$, $\sigma_\star^2 = 0.0080540$, $V_c = 0.0091667$.
 - $\Pi = 500$ (P1): monotone from $V_c = 0.0055$ to $F$.
 
@@ -264,7 +264,7 @@ Empty and never a window.
 
 **Label:** Proposition (proved; T8.3; T13 C2 row 11).
 
-**Worked example** ($\lambda = 1$, $\Sigma = 0.01$, $\Pi = \Pi_0 = 1$): $c^\star = 0.019901$, $\sigma_\star^2 = 0.0099504$,
+**Worked example** ($\lambda = 1$, $\Sigma = 0.01$, $\Pi = \Pi_0 = 1$): $c^\star = 0.019901$, $\sigma_\star^2 = 0.0099505$,
 $c_F = 0.04$.
 
 ---
@@ -388,7 +388,7 @@ $[0, \infty]$, so its minimum $V(\tau)$ is attained there and exceeds $P(\tau)$.
 **Label:** Proposition (proved; T13 A7: symbolic covariance identity and 10,000 sets at 60 digits, 0 failures; T9.5 had
 recorded strictness as a numerical result).
 
-**Worked example** ($\lambda = 1$, $\Sigma = 0.01$, $\Pi = 1$): $\sigma_\star^2 = 0.0099504$; $P(1) = 0.0098039$ (the
+**Worked example** ($\lambda = 1$, $\Sigma = 0.01$, $\Pi = 1$): $\sigma_\star^2 = 0.0099505$; $P(1) = 0.0098039$ (the
 linear case $\lambda\tau = 1$) against $V(1) = 0.0099010$; $P(10) = 0.0067813$. The fixed relay with $G = 0.5$ gives $0.04$
 and $0.011875$; as $\tau \to \infty$ it tends to $H_G = 0.0066667$ while $P \to 0$.
 
@@ -834,7 +834,7 @@ direction at $0$ follows from Lemma 50 since $G/\Pi \to F'$. $\square$
 
 **Label:** Proposition (proved; T10.1 with the factor-radicand route, T10.3 2,000/2,000 sets; T13 C2 row 3).
 
-At over-weighting ratio 100 the peak is $M/F = 17.575$ against $9.2875$ for the Bayesian-weight gain, a ratio of $1.892$
+At over-weighting ratio 100 ($F'/F = \kappa = 100$, with $\lambda = \lambda' = c = 1$, $\Sigma = 0.01$) the peak is $M/F = 17.575$ against $9.2875$ for the Bayesian-weight gain, a ratio of $1.892$
 (Paper 1: "about twice"). The onset matches the Bayesian-weight onset with $\kappa \to F'/F$.
 
 **Proposition 54 (capped gain).** For $G = \min(g\Pi, c)$: on the linear branch
@@ -1341,4 +1341,5 @@ route failures.
 | 29 | T13 A3 | Num. 2.8 / 4.10a (integrate-and-dump monotone) proved; label → Theorem. | Theorem 35 |
 | 26 | Stage 3 / Stage 4 | Results with two labels ("Proposition + Counterexample", "Numerical result + Conjecture") split or relabelled: Proposition 21 + Counterexample 22; Proposition 71 + Counterexample 72; Conjecture 3.10 is now Theorem 56(a). | Sections 5.2, 8.2, 9 |
 | 27 | Stage 4 | Theorem 65 noted to hold for any target measurable with respect to $s$ (needed by Theorem 69); no change to its statement. | Theorem 65 |
+| 30 | T13 C1 | Worked examples: $G^\star = \sigma_\star^2 = 0.0099505$ at $\Pi = 1$ (the stage documents truncated it to 0.0099504; T8.2 had checked 4 s.f. only). | Sections 4, 5.1 |
 | 28 | Stage 3 / T13 | Latency sweep classes stated in full (All for $R^2 \le \sigma_\star^2$, window, Empty); Stage 4 gave only the window. | Proposition 71 |
