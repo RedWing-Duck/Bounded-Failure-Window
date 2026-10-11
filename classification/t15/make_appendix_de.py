@@ -101,7 +101,11 @@ def appendix_d(with_t15=False):
     return "\n".join(out)
 
 
-FAILURES_T15 = []   # filled from RESULTS_t15.md after the T15 run (see make_results_t15.py)
+FAILURES_T15 = [  # from RESULTS_t15.md (recorded run on 41d5e43)
+    "C4 [n] rendering: criterion / code — the pre-registered bracket pattern flags the interval '[0, 10]' in the Appendix B "
+    "description of Figure B.1; it is not a citation, and no unresolved citation remains.",
+    "C10 thesis phrase check: criterion — all 81 A–E matches are Task 15's figure labels B.1–B.12, which coincide in form with "
+    "the legacy labels the pattern targets; 0 'Paper 1', no legacy label remains."]
 
 
 def appendix_e():

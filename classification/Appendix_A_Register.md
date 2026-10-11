@@ -11,8 +11,8 @@ Rendered from `register/results.yaml` (freeze v1, Task 14). Numbers are thesis n
 | 2.5 | Corollary | Equal-height maxima | `equal-height-maxima` | T10.5 | proved |
 | 2.6 | Corollary | Degenerate stationary points | `degenerate-points` | T10.5 | proved |
 | 2.7 | Proposition | Pair birth | `pair-birth` | T10.5 (with diagnosis) | proved |
-| 2.8 | Corollary | Reparameterisation (orientation swaps ℓ and u) | `reparameterisation` | — | to-verify |
-| 2.9 | Proposition | Structural stability at a fixed tolerance | `structural-stability` | — | to-verify |
+| 2.8 | Corollary | Reparameterisation (orientation swaps ℓ and u) | `reparameterisation` | T15 C11 | proved |
+| 2.9 | Proposition | Structural stability at a fixed tolerance | `structural-stability` | T15 C12 | proved |
 | 3.1 | Proposition | Stationary variance; constant-gain filter equivalence | `stationary-variance` | T1, T2 | proved |
 | 3.2 | Theorem | Normal form σ²/F = V(ν,q) | `normal-form` | T14 G | proved |
 | 3.3 | Corollary | Excess identity σ² > F ⇔ q > 2 | `excess-identity` | T1, T8.1 | proved |

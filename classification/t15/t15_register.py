@@ -1,6 +1,8 @@
 """Task 15 register updates (Parts A, B, C.1, F.2 pre-run).
 - results.yaml: citations jazwinski1970 -> latency; simon2006 -> tau-relay-variance, stationary-variance (Part A.2);
-  3.2 and 6.5 verified by "T14 G", status proved (Part F.2).
+  3.2 and 6.5 verified by "T14 G", status proved (Part F.2);
+  post-run (planned in PREREG_t15.md): 2.8 verified by "T15 C11" and 2.9 by "T15 C12", status proved, each only if the
+  recorded run (results/t15_partG.json) passed it.
 - references.yaml: the prompt's frozen numbering; first_cited from the thesis draft (first [n] occurrence, by section).
 - figures.yaml: the prompt's fixed B.n mapping.
 Usage: python3 t15_register.py"""
@@ -103,6 +105,9 @@ def first_cited():
 
 def main():
     res = yaml.safe_load(open(os.path.join(REG, "results.yaml")))
+    gp = os.path.join(HERE, "results", "t15_partG.json")
+    G = yaml.safe_load(open(gp)) if os.path.exists(gp) else {}
+    post = {n: f"T15 {c}" for n, c in (("2.8", "C11"), ("2.9", "C12")) if G.get(c, {}).get("pass") is True}
     add = {"latency": ["jazwinski1970"], "tau-relay-variance": ["simon2006"], "stationary-variance": ["simon2006"]}
     for e in res:
         for c in add.get(e["key"], []):
@@ -110,6 +115,8 @@ def main():
                 e["citations"].append(c)
         if e["thesis_no"] in ("3.2", "6.5"):
             e["verified_by"], e["status"] = ["T14 G"], "proved"
+        if e["thesis_no"] in post:
+            e["verified_by"], e["status"] = [post[e["thesis_no"]]], "proved"
     head = "".join(l for l in open(os.path.join(REG, "results.yaml")) if l.startswith("#"))
     with open(os.path.join(REG, "results.yaml"), "w") as fh:
         fh.write(head)

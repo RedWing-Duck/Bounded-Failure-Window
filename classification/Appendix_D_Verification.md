@@ -1,4 +1,4 @@
-# Appendix D. Verification record, Tasks 1–14
+# Appendix D. Verification record, Tasks 1–15
 
 One section per task: the pre-registration and results files, the number of pre-registered checks that passed and failed (read from each report's check table), and every failure with the attribution its report gives. Outcomes are copied from the reports, not re-judged. Every failure stays recorded as a failure.
 
@@ -110,3 +110,11 @@ One section per task: the pre-registration and results files, the number of pre-
 - Failure: C4 paper render reproduces v1: criterion — the register types the excess identity as a Corollary (accepted in Task 15).
 - Failure: C9 bibliography: input / criterion — two entries unattached and DOIs unresolvable from the session; resolved by the Task 15 input (verified bib, attachments).
 - Failure: C10 reproduction: code — the dry-run resolver; all 9 flagged paths resolve as their scripts build them.
+
+## T15
+
+- Pre-registration: `classification/PREREG_t15.md`
+- Results: `classification/RESULTS_t15.md`
+- Checks: 13 with a verdict; 11 pass, 2 fail.
+- Failure: C4 [n] rendering: criterion / code — the pre-registered bracket pattern flags the interval '[0, 10]' in the Appendix B description of Figure B.1; it is not a citation, and no unresolved citation remains.
+- Failure: C10 thesis phrase check: criterion — all 81 A–E matches are Task 15's figure labels B.1–B.12, which coincide in form with the legacy labels the pattern targets; 0 'Paper 1', no legacy label remains.

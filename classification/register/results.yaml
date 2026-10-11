@@ -78,8 +78,8 @@
   chapter: 2
   cons_v1: null
   legacy: [B.11]
-  verified_by: []
-  status: to-verify
+  verified_by: [T15 C11]
+  status: proved
   citations: []
 - key: structural-stability
   thesis_no: '2.9'
@@ -88,8 +88,8 @@
   chapter: 2
   cons_v1: null
   legacy: [B.12]
-  verified_by: []
-  status: to-verify
+  verified_by: [T15 C12]
+  status: proved
   citations: [cohensteiner2007]
 - key: stationary-variance
   thesis_no: '3.1'
