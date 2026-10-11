@@ -827,8 +827,8 @@ $\Pi_c$, where $v_B$ touches $\sigma_\star^2$, and $G_B = G_+(v_B, \cdot)$ on $(
 define $v = v_B + b$ with $b \ge 0$ smooth, equal to $0$ near the interval's ends, such that $v$ is strictly increasing up to a
 peak value $1.5F$ and strictly decreasing after it. This is possible because $v_B$ is smooth and strictly decreasing there
 ($\kappa < 2$, Proposition 8): on the rising flank take $b' > |v_B'|$, on the falling flank $b' \le 0$. Set $v = v_B$ elsewhere,
-$G = G_+(v, \cdot)$ on $(0, \Pi_c)$ and $G = G_B$ beyond. Outside the bump intervals $G = G_B$, so $G$ is smooth and inherits Paper
-1's regularity at both ends; each bump is strictly increasing then strictly decreasing, so it crosses $1.25F$ exactly twice, and
+$G = G_+(v, \cdot)$ on $(0, \Pi_c)$ and $G = G_B$ beyond. Outside the bump intervals $G = G_B$, so $G$ is smooth and inherits
+Paper 1's regularity at both ends; each bump is strictly increasing then strictly decreasing, so it crosses $1.25F$ exactly twice, and
 $v_B < F$ elsewhere. $\square$
 
 **Label:** Corollary (proved; T10.2 supplementary construction, $k = 1, \dots, 5$, $G(10^{12})/G(10^{11}) - 1 = 6\times10^{-10}$).

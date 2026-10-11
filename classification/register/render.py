@@ -23,6 +23,7 @@ import sys
 import yaml
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
 CLS = os.path.dirname(HERE)
 SRC = os.path.join(CLS, "source")
 ABBR = {"Theorem": "Thm", "Proposition": "Prop.", "Corollary": "Cor.", "Numerical result": "Num.", "Lemma": "Lemma",
@@ -39,7 +40,7 @@ def load():
 def numbering(mode, reg):
     if mode == "thesis":
         return {k: e["thesis_no"] for k, e in reg.items()}
-    heads = HEADED.findall(open(os.path.join(SRC, "Stages_0_4_Source.md")).read())
+    heads = HEADED.findall(strip_cond(open(os.path.join(SRC, "Stages_0_4_Source.md")).read(), "paper"))   # paper-visible text only
     if mode == "paper":
         return {k: str(i + 1) for i, k in enumerate(heads)}
     out = {}
@@ -84,6 +85,25 @@ class Renderer:
         self.reg, self.leg = load()
         self.num = numbering(mode, self.reg)
         self.errors = []
+        self.refs = {e["key"]: e["number"] for e in yaml.safe_load(open(os.path.join(HERE, "references.yaml")))}
+        self.figs = {e["key"]: e["label"] for e in yaml.safe_load(open(os.path.join(HERE, "figures.yaml")))}
+
+    def cite(self, m):
+        keys = [k.strip().lstrip("@") for k in m.group(1).split(";")]
+        nums = []
+        for k in keys:
+            if k not in self.refs:
+                self.errors.append(f"unknown citation key {k}")
+                return m.group(0)
+            nums.append(self.refs[k])
+        return "[" + compress(nums) + "]"
+
+    def fig(self, m):
+        key, form = m.group(1), m.group(2) or ""
+        if key not in self.figs:
+            self.errors.append(f"unknown figure key {key}")
+            return m.group(0)
+        return self.figs[key] if form == "|n" else f"Figure {self.figs[key]}"
 
     def ref(self, m):
         key, form = m.group(1), m.group(2) or ""
@@ -111,6 +131,8 @@ class Renderer:
         else:
             text = text.replace("{{phase1}}", "Paper 1")
         text = re.sub(r"\[\[([a-z0-9-]+)(\|[nta])?\]\]", self.ref, text)
+        text = re.sub(r"\[(@[a-z][a-z0-9-]*(?:;\s*@[a-z][a-z0-9-]*)*)\]", self.cite, text)
+        text = re.sub(r"\{\{fig:([a-z0-9-]+)(\|n)?\}\}", self.fig, text)
         left = re.findall(r"\{\{[^}]*\}\}|\[\[[^\]]*\]\]", text)
         if left:
             self.errors.append(f"unrendered tokens {left[:5]}")
@@ -123,6 +145,7 @@ class Renderer:
         return "\n".join(lines)
 
     def render(self, text):
+        text = re.sub(r"\{\{include:([\w./-]+)\}\}", lambda m: open(os.path.join(SRC, m.group(1))).read().rstrip("\n"), text)
         return self.inline(text.replace("{{matrix}}", self.matrix()))
 
 
@@ -135,6 +158,41 @@ def appendix(r):
         vb = ", ".join(e["verified_by"]) or "—"
         out.append(f"| {e['thesis_no']} | {e['type']} | {e['title']} | `{k}` | {vb} | {e['status']} |")
     return "\n".join(out) + "\n"
+
+
+def appendix_c():
+    import bibfmt
+    bib = bibfmt.parse(os.path.join(CLS, "references.bib"))
+    R = yaml.safe_load(open(os.path.join(HERE, "references.yaml")))
+    out = ["# Appendix C. References", "",
+           "Numbered in order of first citation; a number, once assigned, does not change. Rendered from `register/references.yaml` "
+           "and `references.bib`. References [46]–[53] are cited in chapters 5–9, still to be drafted.", ""]
+    for r in R:
+        out += [bibfmt.fmt(r["number"], bib[r["key"]]), ""]
+    return "\n".join(out)
+
+
+def appendix_b(r):
+    F = yaml.safe_load(open(os.path.join(HERE, "figures.yaml")))
+    out = ["# Appendix B. Figures", "",
+           "The images carry no result or figure numbers; the text cites each one as Figure B.n. Rendered from "
+           "`register/figures.yaml`. Images are in `figs_thesis/`.", ""]
+    for e in F:
+        out += [f"**Figure {e['label']}.** " + r.inline(e.get("description", "")), "",
+                f"![Figure {e['label']}](figs_thesis/{e['label']}_{e['key']}.png)", ""]
+    return "\n".join(out)
+
+
+def compress(nums):
+    """Sorted citation numbers; runs of three or more consecutive numbers as n–m."""
+    ns, out, i = sorted(set(nums)), [], 0
+    while i < len(ns):
+        j = i
+        while j + 1 < len(ns) and ns[j + 1] == ns[j] + 1:
+            j += 1
+        out += [f"{ns[i]}–{ns[j]}"] if j - i >= 2 else [str(x) for x in ns[i:j + 1]]
+        i = j + 1
+    return ", ".join(out)
 
 
 def write(path, text):
@@ -153,9 +211,13 @@ def main():
     if a.numbering == "thesis":
         write(os.path.join(CLS, "Stages_0_4_Thesis.md"), r.render(doc))
         write(os.path.join(CLS, "Roadmap_v3.md"), r.render(open(os.path.join(SRC, "Roadmap_v3_Source.md")).read()))
+        figmap = {os.path.basename(e["caption_source"]): f"{e['label']}_{e['key']}.txt"
+                  for e in yaml.safe_load(open(os.path.join(HERE, "figures.yaml"))) if e.get("caption_source")}
         for f in sorted(os.listdir(os.path.join(SRC, "figs"))):
-            write(os.path.join(CLS, "figs_thesis", f), r.render(open(os.path.join(SRC, "figs", f)).read()))
+            write(os.path.join(CLS, "figs_thesis", figmap.get(f, f)), r.render(open(os.path.join(SRC, "figs", f)).read()))
         write(os.path.join(CLS, "Appendix_A_Register.md"), appendix(r))
+        write(os.path.join(CLS, "Appendix_B_Figures.md"), appendix_b(r))
+        write(os.path.join(CLS, "Appendix_C_References.md"), appendix_c())
         for f in sorted(os.listdir(os.path.join(SRC, "phase1"))):
             write(os.path.join(os.path.dirname(CLS), "reference", "phase1", f), r.render(open(os.path.join(SRC, "phase1", f)).read()))
     elif a.numbering == "paper":

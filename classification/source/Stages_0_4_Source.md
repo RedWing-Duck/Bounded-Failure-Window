@@ -134,10 +134,26 @@ which is constant on each interval avoiding $p$. $\square$
 $(F, M, H)$, approached from above at both ends; [[critical-tolerance]] gives All ($R^2 \le H$), lower ray ($H < R^2 \le F$), window
 ($F < R^2 < M$), Empty ($R^2 \ge M$): {{phase1}}'s four regimes, including the equality cases.
 
+<!--thesis-->
+{{include:thesis_only/signature.md}}
+
+<!--/thesis-->
+<!--thesis-->
+{{include:thesis_only/reparameterisation.md}}
+
+<!--/thesis-->
+<!--thesis-->
+{{include:thesis_only/structural-stability.md}}
+
+<!--/thesis-->
 ---
 
 ## 3. The model along precision
 
+<!--thesis-->
+{{include:thesis_only/normal-form.md}}
+
+<!--/thesis-->
 **[[excess-identity]] (excess identity; {{phase1}}).**
 $$
 \sigma^2 - F = \frac{G\big(\lambda G/(2\Pi) - \Sigma\big)}{\lambda(\lambda + G)},
@@ -349,6 +365,10 @@ negative and its leading coefficient non-negative, so it has one positive root. 
 
 **Label:** [[tau-optimal-error|t]] (proved; T9.1(d),(e); T9.2 Wiener route to $2\times10^{-17}$; mp ARE route in the T9 diagnosis).
 
+<!--thesis-->
+{{include:thesis_only/tau-optimal-normal-form.md}}
+
+<!--/thesis-->
 **[[tau-optimal-monotone]] (optimal error decreases in $\tau$).** $P$ is strictly decreasing on $(0,\infty)$, with
 $P(0^+) = \sigma_\star^2(\Pi)$ and $P(\tau) \sim 1/\big(\Pi\tau(1 + \sqrt{1 + \lambda^2/(2\Sigma\Pi)})\big) \to 0$.
 
@@ -827,8 +847,8 @@ $\Pi_c$, where $v_B$ touches $\sigma_\star^2$, and $G_B = G_+(v_B, \cdot)$ on $(
 define $v = v_B + b$ with $b \ge 0$ smooth, equal to $0$ near the interval's ends, such that $v$ is strictly increasing up to a
 peak value $1.5F$ and strictly decreasing after it. This is possible because $v_B$ is smooth and strictly decreasing there
 ($\kappa < 2$, [[bayesian-weight]]): on the rising flank take $b' > |v_B'|$, on the falling flank $b' \le 0$. Set $v = v_B$ elsewhere,
-$G = G_+(v, \cdot)$ on $(0, \Pi_c)$ and $G = G_B$ beyond. Outside the bump intervals $G = G_B$, so $G$ is smooth and inherits Paper
-1's regularity at both ends; each bump is strictly increasing then strictly decreasing, so it crosses $1.25F$ exactly twice, and
+$G = G_+(v, \cdot)$ on $(0, \Pi_c)$ and $G = G_B$ beyond. Outside the bump intervals $G = G_B$, so $G$ is smooth and inherits
+{{phase1}}'s regularity at both ends; each bump is strictly increasing then strictly decreasing, so it crosses $1.25F$ exactly twice, and
 $v_B < F$ elsewhere. $\square$
 
 **Label:** [[unbounded-windows|t]] (proved; T10.2 supplementary construction, $k = 1, \dots, 5$, $G(10^{12})/G(10^{11}) - 1 = 6\times10^{-10}$).
@@ -1256,8 +1276,8 @@ after `sympy.limit` returned 0). In Task 13, two Part A identities (the sign of 
 route failures.
 
 **Literature ([[gaussian-orderings-coincide]]).** The static analogue is classical: for linear normal experiments with known noise, Blackwell
-ordering is equivalent to Loewner ordering of the information matrices (Hansen and Torgersen, *Ann. Statist.* 2 (1974)
-367–373; Torgersen, *Comparison of Statistical Experiments*, 1991). A targeted search (Task 13, `t13/literature_check.md`)
+ordering is equivalent to Loewner ordering of the information matrices {{paper:(Hansen and Torgersen, *Ann. Statist.* 2 (1974)
+367–373; Torgersen, *Comparison of Statistical Experiments*, 1991)}}{{thesis:[@hansentorgersen1974; @torgersen1991]}}. A targeted search (Task 13, `t13/literature_check.md`)
 found no statement for stationary Gaussian processes ordered by spectral density and nothing on a causal garbling order in
 filtering, so [[gaussian-orderings-coincide]] is proved here rather than cited.
 

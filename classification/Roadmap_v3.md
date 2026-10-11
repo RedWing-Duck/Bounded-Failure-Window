@@ -143,18 +143,18 @@ Stage 5 asks whether the possible topologies are robust and whether real systems
 
 ## 6. Paper 2 outline
 
-| § | Section | Results (thesis numbering) | Figures (`figs_paper2/`; thesis captions in `figs_thesis/`) |
+| § | Section | Results (thesis numbering) | Figures (Appendix B; images in `figs_thesis/`) |
 |---|---|---|---|
 | 1 | Introduction: the starting study's window, the question of failure-set topology | Theorem 3.4, Proposition 5.8 | — |
 | 2 | Setting and conventions; the class $(\ell, u, k)$ | C1–C6, Corollary 3.3, Lemma 3.6 | — |
-| 3 | The critical-tolerance theorem | Proposition 2.1, Theorems 2.2, 2.4 | Fig. 1 |
-| 4 | What the model allows along precision: realizability and the forced lower ray | Theorem 5.1, Corollaries 5.2–5.5 | Fig. 2 |
-| 5 | Natural gain families and the mixed class | Lemmas 5.6, 3.7, 5.7, Propositions 5.9–5.11, Theorem 5.12, Proposition 5.13, Proposition 5.14, Numerical result 5.15 | Figs 3, 4 |
+| 3 | The critical-tolerance theorem | Proposition 2.1, Theorems 2.2, 2.4 | Figure B.1 |
+| 4 | What the model allows along precision: realizability and the forced lower ray | Theorem 5.1, Corollaries 5.2–5.5 | Figure B.4 |
+| 5 | Natural gain families and the mixed class | Lemmas 5.6, 3.7, 5.7, Propositions 5.9–5.11, Theorem 5.12, Proposition 5.13, Proposition 5.14, Numerical result 5.15 | Figures B.5, B.6 |
 | 6 | Design sweeps never window | Theorem 4.1, Propositions 4.2–4.5 | — |
-| 7 | Environment sweeps: correlation time (two normalizations, power family) | Lemma 6.1, Propositions 6.2, 6.3, 6.4, Theorem 6.6, Propositions 6.7, 6.8, 6.9, 6.10, Counterexample 6.11, Proposition 6.12, Theorems 7.8, 7.9, Proposition 7.10 | Figs 5, 6 |
-| 8 | Sampling interval | Lemma 6.14, Propositions 6.15, 6.16, 6.17, 6.18, Theorem 6.19, Proposition 7.16, Corollary 7.14, Theorem 7.15, Proposition 6.20, Numerical result 6.21, Conjecture 6.22 | Figs 8, 9 |
-| 9 | Process noise and the tolerance convention | Lemma 6.23, Propositions 6.24, 6.25, 6.26, 6.27, 6.28 | Fig. 10 |
-| 10 | The optimality theorem: causal information orderings | Definition 7.1, Theorem 7.2, Corollaries 7.3, 7.4, Proposition 7.5, Theorem 7.6, Propositions 7.7, 7.11, Counterexample 7.12, Proposition 7.13 | Fig. 7 |
+| 7 | Environment sweeps: correlation time (two normalizations, power family) | Lemma 6.1, Propositions 6.2, 6.3, 6.4, Theorem 6.6, Propositions 6.7, 6.8, 6.9, 6.10, Counterexample 6.11, Proposition 6.12, Theorems 7.8, 7.9, Proposition 7.10 | Figures B.7, B.11 |
+| 8 | Sampling interval | Lemma 6.14, Propositions 6.15, 6.16, 6.17, 6.18, Theorem 6.19, Proposition 7.16, Corollary 7.14, Theorem 7.15, Proposition 6.20, Numerical result 6.21, Conjecture 6.22 | Figures B.8, B.9 |
+| 9 | Process noise and the tolerance convention | Lemma 6.23, Propositions 6.24, 6.25, 6.26, 6.27, 6.28 | Figure B.10 |
+| 10 | The optimality theorem: causal information orderings | Definition 7.1, Theorem 7.2, Corollaries 7.3, 7.4, Proposition 7.5, Theorem 7.6, Propositions 7.7, 7.11, Counterexample 7.12, Proposition 7.13 | Figure B.12 |
 | 11 | Synthesis matrix, degeneracies and open problems | Corollaries 2.5–2.6, Proposition 2.7, Numerical results 8.2, 8.1; Section 10–11 of the consolidated document | — |
 | A | Verification (pre-registration, routes, reproduction) | Consolidated §12; `reproduce_all.sh` | — |
 
@@ -172,13 +172,18 @@ recorded in `t13/literature_check.md`; the novelty part is reproduced here.
 | 8 | mismatched Kalman filter error worse than no filtering over-confident measurement noise covariance | "Kalman filtering with uncertain noise covariances" (Cleveland State, D. Simon); "Recursive performance ranking of Kalman filter with mismatched noise covariances" (IET 2019); arXiv 2511.22034 | P (orders filter-calculated, ideal and true MSE; not failure-set topology) |
 | 9 | Kalman filter colored measurement noise correlation time estimation error non-monotone | Coloured-noise filtering by state augmentation and measurement differencing (Bryson–Henrikson line; NASA 1967 memo; FIG 2003; ISPRS 2014) | P (methods; no study of the error along the correlation time) |
 | 10 | measurement delay optimal filtering error increases latency Kalman Bucy Ornstein Uhlenbeck | Delayed-measurement Kalman–Bucy filtering (IFAC 2014, ACC 2011, Abstr. Appl. Anal.); finite-dimensional suboptimal filters for bounded delays | P (delay adds an error term; nothing on non-monotone delay sweeps or Blackwell equivalence) |
-| 11 | (second search set, cluster 11: comparison of statistical and sequential experiments; query text not supplied to Task 14) | [greenshtein1996], [lecam1964], [torgersen1991], [hansentorgersen1974], [blackwell1951], [blackwell1953] | R (garbling order and monotone optimal performance; static and sequential, not filtering): cited for Theorem 7.2, Proposition 7.5, Theorem 7.6 |
-| 12 | (second search set, cluster 12: information structures in stochastic control and teams; query text not supplied to Task 14) | [yuksellinder2012], [yukselbasar2013], [yukselbasar2024], [hogeboomburr2021] | R (Blackwell ordering of information structures in control): cited for Theorem 7.2, Theorem 7.6 |
-| 13 | (second search set, cluster 13: covariance control and state covariance assignment; query text not supplied to Task 14) | [hotzskelton1985], [hotzskelton1987], [collinsskelton1987], [xuskelton1992], [yasuda1993], [skeltonikeda1989] | P (which covariances a gain can assign): related to Theorem 5.1 |
-| 14 | (second search set, cluster 14: optimal sampling rate for state estimation; query text not supplied to Task 14) | [martinezrey2017] | P (sampling interval and estimation error): related to Theorem 6.19, Proposition 7.16 |
-| 15 | (second search set, cluster 15: state estimation with coloured measurement noise; query text not supplied to Task 14) | [shmaliy2020] | P (methods for coloured noise): related to Proposition 6.10, Theorem 7.8 |
-| 16 | (second search set, cluster 16: divisive normalization; query text not supplied to Task 14) | [heeger1992], [carandiniheeger2012] | P (Hill-type gain shapes in neural computation): related to Theorem 5.12, Proposition 5.13 |
-| 17 | (second search set, cluster 17: persistence, contour trees and Morse theory; query text not supplied to Task 14) | [cohensteiner2007], [edelsbrunnerharer2010], [edelsbrunner2002], [carr2003], [oudot2015], [milnor1963] | P (topology of sublevel and superlevel sets of a function): related to Theorem 2.2, Proposition 2.9 |
+
+| # | Cluster (thesis results) | Searched as | Verdict | Closest prior work | Use in thesis |
+|---|---|---|---|---|---|
+| 11 | Causal information ordering (Def. 7.1, Thm 7.2, Prop. 7.5, Thm 7.6) | comparison of sequential experiments · Blackwell filtration · causal garbling · comparison of information structures · dynamic Blackwell | Close prior: the general principle | [18–24, 49–51]: garbling monotonicity for sequential experiments and control/team costs; no filtering-error version found | Claim only the causal-process definition and the filtering-error monotonicity; cite first |
+| 12 | Delay counterexample (Cex. 7.12) | Blackwell equivalent time shift · filtering versus smoothing information · delayed observations comparison of experiments · latency value of information | No close prior found | Delayed-measurement filtering: [29, 52, 53]; that delay hurts filtering is folklore | Claim as a counterexample about orders on experiments, not as "delay hurts" |
+| 13 | Power-family sharpness (Thm 7.8; Prop. 6.10) | correlation time Kalman non-monotone · fixed variance vs fixed spectral density · colored noise bandwidth estimation error · noise normalization OU | No close prior found | Coloured-noise methods: [27, 28, 45, 46]; no normalisation comparison or exponent threshold found | Claimable |
+| 14 | Realizability (Thm 5.1) | covariance assignment · covariance control · achievable error variance · attainable covariance suboptimal gain · performance envelope Kalman | Known variant | Covariance assignment, matrix state feedback: [14, 15, 41–44] | Claim the scalar filtering attainability and explicit inverse gain as the filtering analogue |
+| 15 | Hill mixed class (Thm 5.12, Prop. 5.13) | sigmoidal gain precision · Hill function gain estimation · divisive normalization precision weighting · neural gain control noise non-monotone | No close prior found | Gain form from divisive normalisation: [16, 17]; no estimation use with a multi-component failure set | Claimable; credit the gain form to [17] |
+| 16 | Sampling interval (Thm 6.19, Prop. 7.16) | sampling period steady-state Kalman error · sampled-data Kalman filter sampling rate · optimal sampling interval estimation · a priori a posteriori error sampling interval · intersample error | Known variant | Sampled-data filtering: [40]; optimal sampling rate with delays: [48] | Remark on which error functional is quoted; state the Δt noise scaling |
+| 17 | The framework (Thm 2.2, Prop. 2.9) | persistent homology superlevel sets · merge tree · Morse theory one-dimensional · excursion set · level crossings · persistence diagram stability | Citation only | Persistence and merge trees: [30–35] | Cite; the fixed-level versus all-levels stability contrast stays a remark |
+
+Second-set priority combination searches: all four returned no prior work. 'No close prior found' describes these searches, not worldwide novelty.
 
 **Finding (novelty, targeted).** None of the ten searches of the first set returned work that classifies the topology of
 tolerance-exceedance sets of stationary filtering error along a parameter (rays, windows, mixed classes, critical
@@ -186,7 +191,7 @@ tolerances). Related strands exist: variance-constrained and robust filtering (d
 Kalman filter to mis-specified covariances (filter-calculated versus true error), coloured-noise and delayed-measurement
 filtering (methods), and Blackwell comparison of linear normal experiments (static).
 
-Garbling-order monotonicity of optimal performance is established for sequential experiments [greenshtein1996] and for stochastic control and teams [yuksellinder2012], [yukselbasar2013], [yukselbasar2024]. Theorem 7.2 is presented as the filtering instance of that principle: a causal garbling of observation processes and its consequence for filtering error. Theorem 7.6 extends the static result for linear normal experiments [hansentorgersen1974] to stationary Gaussian processes.
+Garbling-order monotonicity of optimal performance is established for sequential experiments [20] and for stochastic control and teams [21–23]. Theorem 7.2 is presented as the filtering instance of that principle: a causal garbling of observation processes and its consequence for filtering error. Theorem 7.6 extends the static result for linear normal experiments [24] to stationary Gaussian processes.
 
 This is a targeted check, not an exhaustive one; Paper 2 should repeat it with database
 searches (MathSciNet, Scopus) before submission.

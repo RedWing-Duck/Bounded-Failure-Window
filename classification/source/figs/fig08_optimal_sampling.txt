@@ -1,4 +1,4 @@
-Figure 8. The optimal filter along the sampling interval ([[dt-optimal-mp]], [[mp-not-ordered]]). Point-sampled model M-P,
+{{fig:optimal-sampling}}. The optimal filter along the sampling interval ([[dt-optimal-mp]], [[mp-not-ordered]]). Point-sampled model M-P,
 lambda = 1, Sigma = 0.01, Pi = 1 (per-sample noise variance 1/(Pi dt)). The error at sample times (post) falls strictly from
 sigma*^2 to 0, while the error just before samples (prior) and the time average rise strictly from sigma*^2 to F. Because
 the metrics move in opposite directions, the dt sweep is not a causal information ordering in either direction.

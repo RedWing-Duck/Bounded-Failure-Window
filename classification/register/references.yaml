@@ -1,0 +1,214 @@
+# Reference register (Task 15). Numbers are assigned by first citation in the thesis and frozen; a new reference
+# takes the next free number. Full entries: classification/references.bib; rendered list: Appendix_C_References.md.
+- number: 1
+  key: kalmanbucy1961
+  first_cited: 'draft §1.2 Starting point: a bounded failure window'
+  status: cited
+- number: 2
+  key: ernstbanks2002
+  first_cited: 'draft §1.2 Starting point: a bounded failure window'
+  status: cited
+- number: 3
+  key: friston2010
+  first_cited: 'draft §1.2 Starting point: a bounded failure window'
+  status: cited
+- number: 4
+  key: heffes1966
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 5
+  key: friedland1967
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 6
+  key: nishimura1967
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 7
+  key: griffin1968
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 8
+  key: sangsukiam1990
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 9
+  key: ge2016
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 10
+  key: teunissen2021
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 11
+  key: crouse2023
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 12
+  key: singh2009
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 13
+  key: boominathan2022
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 14
+  key: hotzskelton1987
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 15
+  key: xuskelton1992
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 16
+  key: heeger1992
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 17
+  key: carandiniheeger2012
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 18
+  key: blackwell1951
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 19
+  key: blackwell1953
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 20
+  key: greenshtein1996
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 21
+  key: yuksellinder2012
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 22
+  key: yukselbasar2013
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 23
+  key: yukselbasar2024
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 24
+  key: hansentorgersen1974
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 25
+  key: kalata1984
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 26
+  key: sahomasugi2016
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 27
+  key: brysonjohansen1965
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 28
+  key: brysonhenrikson1968
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 29
+  key: jazwinski1970
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 30
+  key: edelsbrunnerharer2010
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 31
+  key: cohensteiner2007
+  first_cited: draft §1.6 Contributions and relation to prior work
+  status: cited
+- number: 32
+  key: carr2003
+  first_cited: draft §2.3 The critical-tolerance theorem
+  status: cited
+- number: 33
+  key: milnor1963
+  first_cited: draft §2.3 The critical-tolerance theorem
+  status: cited
+- number: 34
+  key: edelsbrunner2002
+  first_cited: draft §2.3 The critical-tolerance theorem
+  status: cited
+- number: 35
+  key: oudot2015
+  first_cited: draft §2.3 The critical-tolerance theorem
+  status: cited
+- number: 36
+  key: deyst1968
+  first_cited: draft §3.1 The model
+  status: cited
+- number: 37
+  key: kurt2025
+  first_cited: draft §3.1 The model
+  status: cited
+- number: 38
+  key: simon2006
+  first_cited: draft §3.1 The model
+  status: cited
+- number: 39
+  key: kalman1960
+  first_cited: draft §3.4 The optimal filter is the lower envelope
+  status: cited
+- number: 40
+  key: andersonmoore1979
+  first_cited: draft §3.4 The optimal filter is the lower envelope
+  status: cited
+- number: 41
+  key: hotzskelton1985
+  first_cited: 'draft §3.6 The inverse map: realizability'
+  status: cited
+- number: 42
+  key: collinsskelton1987
+  first_cited: 'draft §3.6 The inverse map: realizability'
+  status: cited
+- number: 43
+  key: yasuda1993
+  first_cited: 'draft §3.6 The inverse map: realizability'
+  status: cited
+- number: 44
+  key: skeltonikeda1989
+  first_cited: 'draft §3.6 The inverse map: realizability'
+  status: cited
+- number: 45
+  key: chang2014
+  first_cited: draft §3.8 Scope
+  status: cited
+- number: 46
+  key: shmaliy2020
+  first_cited: 'planned: chapters 6–7 (results.yaml attachments)'
+  status: planned
+- number: 47
+  key: ren2021
+  first_cited: 'planned: chapters 6–7 (results.yaml attachments)'
+  status: planned
+- number: 48
+  key: martinezrey2017
+  first_cited: 'planned: chapters 6–7 (results.yaml attachments)'
+  status: planned
+- number: 49
+  key: lecam1964
+  first_cited: 'planned: chapters 6–7 (results.yaml attachments)'
+  status: planned
+- number: 50
+  key: torgersen1991
+  first_cited: 'planned: chapters 6–7 (results.yaml attachments)'
+  status: planned
+- number: 51
+  key: hogeboomburr2021
+  first_cited: 'planned: chapters 6–7 (results.yaml attachments)'
+  status: planned
+- number: 52
+  key: barshalom2002
+  first_cited: 'planned: chapters 6–7 (results.yaml attachments)'
+  status: planned
+- number: 53
+  key: yoder2018
+  first_cited: 'planned: chapters 6–7 (results.yaml attachments)'
+  status: planned

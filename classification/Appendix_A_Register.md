@@ -14,7 +14,7 @@ Rendered from `register/results.yaml` (freeze v1, Task 14). Numbers are thesis n
 | 2.8 | Corollary | Reparameterisation (orientation swaps ℓ and u) | `reparameterisation` | — | to-verify |
 | 2.9 | Proposition | Structural stability at a fixed tolerance | `structural-stability` | — | to-verify |
 | 3.1 | Proposition | Stationary variance; constant-gain filter equivalence | `stationary-variance` | T1, T2 | proved |
-| 3.2 | Theorem | Normal form σ²/F = V(ν,q) | `normal-form` | — | to-verify |
+| 3.2 | Theorem | Normal form σ²/F = V(ν,q) | `normal-form` | T14 G | proved |
 | 3.3 | Corollary | Excess identity σ² > F ⇔ q > 2 | `excess-identity` | T1, T8.1 | proved |
 | 3.4 | Theorem | Window theorem (sup q > 2); optimal monotone along Π | `window-theorem` | T1, T3, T4, T13 C2 | proved |
 | 3.5 | Proposition | Optimal gain and envelope V⋆ = q⋆ | `optimal-envelope` | T1, T7 | proved |
@@ -44,7 +44,7 @@ Rendered from `register/results.yaml` (freeze v1, Task 14). Numbers are thesis n
 | 6.2 | Proposition | Relay monotone in τ | `tau-relay-monotone` | T9.1, T9.4 | proved |
 | 6.3 | Proposition | Relay classification along τ | `tau-relay-classes` | T9.4, T13 C2 | proved |
 | 6.4 | Proposition | Optimal error along τ (closed form) | `tau-optimal-error` | T9.1, T9.2 (Wiener route; ARE route via diagnosis) | proved |
-| 6.5 | Corollary | Normalised optimal error P/F | `tau-optimal-normal-form` | — | to-verify |
+| 6.5 | Corollary | Normalised optimal error P/F | `tau-optimal-normal-form` | T14 G | proved |
 | 6.6 | Theorem | Optimal error decreases in τ | `tau-optimal-monotone` | T9.1, T9.5 | proved |
 | 6.7 | Proposition | Optimal classification along τ | `tau-optimal-classes` | T9.4, T13 C2 | proved |
 | 6.8 | Proposition | Best constant-gain relay | `tau-best-constant-gain` | T9.5 (with mp diagnosis) | proved |

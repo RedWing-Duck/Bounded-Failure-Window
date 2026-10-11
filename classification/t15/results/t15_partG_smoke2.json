@@ -1,0 +1,52 @@
+{
+ "C11X_n8": {
+  "curves": 8,
+  "tolerances": 400,
+  "classifications": 1600,
+  "by_kind": {
+   "smooth-inc": 2,
+   "pl-inc": 2,
+   "smooth-dec": 2,
+   "pl-dec": 2
+  },
+  "turning_points_hist": {
+   "4": 1,
+   "6": 1,
+   "7": 2,
+   "8": 2,
+   "9": 2
+  },
+  "class_mismatches": 0,
+  "signature_mismatches": 0,
+  "route_disagreements": 0,
+  "examples": [],
+  "min_tolerances_per_curve": 50,
+  "seconds": 24.9,
+  "pass": true
+ },
+ "C12_n6": {
+  "curves": 6,
+  "cases": 12,
+  "cases_run": 12,
+  "skipped": [],
+  "by_kind": {
+   "a": 6,
+   "b": 6
+  },
+  "mismatches": 0,
+  "examples": [],
+  "classes_seen": [
+   "(0, 1, 1)",
+   "lower ray",
+   "two rays",
+   "upper ray"
+  ],
+  "crossings_hist": {
+   "1": 8,
+   "2": 2,
+   "3": 2
+  },
+  "seconds": 12.5,
+  "pass": true
+ }
+}

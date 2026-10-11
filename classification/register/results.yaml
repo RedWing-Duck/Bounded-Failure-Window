@@ -100,7 +100,7 @@
   legacy: [A.1, Paper 1 Prop. 1]
   verified_by: [T1, T2]
   status: proved
-  citations: [heffes1966, friedland1967, nishimura1967, griffin1968, sangsukiam1990, ge2016, deyst1968, kurt2025]
+  citations: [heffes1966, friedland1967, nishimura1967, griffin1968, sangsukiam1990, ge2016, deyst1968, kurt2025, simon2006]
 - key: normal-form
   thesis_no: '3.2'
   type: Theorem
@@ -108,8 +108,8 @@
   chapter: 3
   cons_v1: null
   legacy: [B.9]
-  verified_by: []
-  status: to-verify
+  verified_by: [T14 G]
+  status: proved
   citations: [kalata1984]
 - key: excess-identity
   thesis_no: '3.3'
@@ -370,7 +370,7 @@
   legacy: [C.1 + A.7, Paper 1 Prop. 5]
   verified_by: [T4, T6, T9.1]
   status: proved
-  citations: [brysonjohansen1965, brysonhenrikson1968, chang2014]
+  citations: [brysonjohansen1965, brysonhenrikson1968, chang2014, simon2006]
 - key: tau-relay-monotone
   thesis_no: '6.2'
   type: Proposition
@@ -408,8 +408,8 @@
   chapter: 6
   cons_v1: null
   legacy: [C.26]
-  verified_by: []
-  status: to-verify
+  verified_by: [T14 G]
+  status: proved
   citations: []
 - key: tau-optimal-monotone
   thesis_no: '6.6'
@@ -750,7 +750,7 @@
   legacy: [E.11]
   verified_by: [T11.4, T13 C2]
   status: proved
-  citations: [barshalom2002, yoder2018]
+  citations: [barshalom2002, yoder2018, jazwinski1970]
 - key: pathwise-not-enough
   thesis_no: '7.12'
   type: Counterexample

@@ -1,4 +1,4 @@
-# Verification tasks T1-T13. Tasks 1-5 share one pre-registration and one results commit (starting study, Appendix B).
+# Verification tasks T1-T13. Tasks 1-5 share one pre-registration and one results commit (the starting-study manuscript's own Appendix B).
 - task: T1
   prereg_file: verification/PREREG.md
   prereg_commit: d21f193
@@ -29,7 +29,7 @@
   prereg_commit: 824ca06
   results_commit: 0944b81
   report: verification/REPORT.md (Task 6 section)
-  note: results commit read from the git log (not in Appendix B)
+  note: results commit read from the git log (not in the manuscript's Appendix B)
 - task: T7
   prereg_file: verification/PREREG_t7.md
   prereg_commit: a0d2be2

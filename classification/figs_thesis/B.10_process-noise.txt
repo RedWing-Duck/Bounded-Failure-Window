@@ -1,4 +1,4 @@
-Figure 10. The process-noise sweep on a moving floor F = Sigma/lambda (Lemma 6.23, Propositions 6.24-6.27). lambda = Pi = 1.
+Figure B.10. The process-noise sweep on a moving floor F = Sigma/lambda (Lemma 6.23, Propositions 6.24-6.27). lambda = Pi = 1.
 Left, absolute tolerance (fixed R^2): the Sigma-independent gain (G = 1), the Sigma-tracking gain over-trusting precision by
 rho = 10, and the optimal filter are all increasing, so only All or an upper ray occur. Right, relative tolerance
 (failure when sigma^2 > rF): the Sigma-independent gain decreases to 1/(1 + g), the optimal filter decreases as

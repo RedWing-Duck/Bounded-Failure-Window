@@ -133,9 +133,76 @@ which is constant on each interval avoiding $p$. $\square$
 $(F, M, H)$, approached from above at both ends; Theorem 2.2 gives All ($R^2 \le H$), lower ray ($H < R^2 \le F$), window
 ($F < R^2 < M$), Empty ($R^2 \ge M$): the starting study's four regimes, including the equality cases.
 
+*Thesis-only text, imported verbatim from the thesis draft (`t15/input/Thesis_Draft_ch1-4.md`, §2.4, lines 173–179).*
+
+**Definition 2.3.** The *critical-value signature* of a curve satisfying C2 is
+
+```latex
+S(\sigma^2) = \big(L_-,\ \sigma^2(t_1),\ \dots,\ \sigma^2(t_n),\ L_+;\ d_-,\ d_+\big)
+```
+
+where d± ∈ {above, below} are the approach directions. Its **critical-tolerance diagram** is the (θ, R²) half-plane cut by horizontal lines at the values in 𝒞: each band between consecutive lines carries one class, and each line carries its own equality class.
+
+*Thesis-only text, imported verbatim from the thesis draft (`t15/input/Thesis_Draft_ch1-4.md`, §2.7, lines 222–224).*
+
+**Corollary 2.8.** Let φ : D′ → D be a continuous strictly monotone bijection between open intervals, and set σ̃² = σ² ∘ φ. For every R², the failure set 𝓕̃(R²) = φ⁻¹(𝓕(R²)) has the same k. If φ is increasing it has the same (ℓ, u); if φ is decreasing, ℓ and u are exchanged. The signature is preserved, reversed when φ is decreasing.
+
+*Proof.* φ is a homeomorphism, so it maps components to components and preserves being bounded away from both ends. An increasing φ maps neighbourhoods of θ′₋ onto neighbourhoods of θ₋; a decreasing one maps them onto neighbourhoods of θ₊. ∎
+
+*Thesis-only text, imported verbatim from the thesis draft (`t15/input/Thesis_Draft_ch1-4.md`, §2.8, lines 232–251).*
+
+**Proposition 2.9.** Let σ² satisfy C2 and let R² ∉ 𝒞. Then the crossing set {θ : σ²(θ) = R²} is finite, say {x₁, …, x\_m}. Choose disjoint compact intervals Nᵢ ⊂ D, each inside one monotone piece, with xᵢ in the interior of Nᵢ, and set
+
+```latex
+\eta = \inf\big\{\,|\sigma^2(\theta) - R^2| : \theta \in D \setminus \textstyle\bigcup_i \operatorname{int} N_i\big\}
+```
+
+Then η > 0, and every continuous σ̃² on D with
+
+1. sup over D of |σ̃² − σ²| < η, and
+2. σ̃² strictly monotone on each Nᵢ
+
+has failure set 𝓕̃(R²) of the same class as 𝓕(R²).
+
+*Proof.*
+
+- **Finitely many crossings.** Since R² is not a turning-point value, crossings lie inside pieces, at most one per strictly monotone piece.
+- **η > 0.** The function |σ² − R²| is continuous and positive on the closed set K = D \\ ∪ int Nᵢ, which contains no crossing. Near θ± it tends to |L± − R²|, which is positive because L± ∈ 𝒞 when finite (or to ∞). So it is bounded below on the tails, and on the compact remainder.
+- **Signs off the crossings.** On K, condition 1 gives σ̃² − R² the same sign as σ² − R².
+- **One crossing per Nᵢ.** The ends of Nᵢ lie in K, where σ² − R² takes opposite signs; so does σ̃² − R². By condition 2, σ̃² crosses R² exactly once in Nᵢ, in the same direction.
+- **Conclusion.** σ̃² − R² and σ² − R² have the same ordered pattern of positive and negative intervals along D, ends included. Components correspond one to one, and so do the components touching each end. ∎
+
 ---
 
 ## 3. The model along precision
+
+*Thesis-only text, imported verbatim from the thesis draft (`t15/input/Thesis_Draft_ch1-4.md`, §3.2, lines 292–316).*
+
+Two dimensionless numbers carry all the dependence on λ, Σ, Π and G:
+
+```latex
+\nu = \frac{2F\Pi}{\lambda} = \frac{2\Sigma\Pi}{\lambda^2},
+\qquad
+q = \frac{G}{F\Pi}
+```
+
+ν is the signal-to-noise ratio accumulated over one relaxation time 1/λ; q is the gain measured against the floor precision FΠ. In them the variance takes one form.
+
+**Theorem 3.2(a) (normal form).**
+
+```latex
+\frac{\sigma^2}{F} = \mathcal V(\nu, q) = \frac{1 + \nu q^2/4}{1 + \nu q/2}
+```
+
+*Proof.* Divide σ² by F = Σ/λ: σ²/F = (1 + G²/(2ΠΣ))/(1 + G/λ). With G = qFΠ, G/λ = νq/2 and G²/(2ΠΣ) = q²FΠ/(2λ) = νq²/4. ∎
+
+This is Lemma 6.23 in better coordinates: with g = G/λ = νq/2 it reads (1 + g²/ν)/(1 + g). The coordinate q is preferred because the floor crossing and the optimal filter become simple in it (§3.3–3.4). Reducing filter performance to dimensionless indices is not new: Kalata's tracking index \[25\] does it with one parameter for α–β trackers. The contribution here is this two-parameter form for the continuous-time relay, and its use as a map of failure regions. Two partial derivatives are used throughout:
+
+```latex
+\frac{\partial \mathcal V}{\partial q} = \frac{\nu\,(\nu q^2 + 4q - 4)}{2(\nu q + 2)^2},
+\qquad
+\frac{\partial \mathcal V}{\partial \nu} = \frac{q\,(q - 2)}{(\nu q + 2)^2}
+```
 
 **Corollary 3.3 (excess identity; the starting study (Tasks 1–7)).**
 $$
@@ -347,6 +414,18 @@ $0 = -2\lambda P + 2\Sigma - (hP + 2\Sigma)^2/R_v$; multiplying by $-\tau^2R_v$ 
 negative and its leading coefficient non-negative, so it has one positive root. $\square$
 
 **Label:** Proposition (proved; T9.1(d),(e); T9.2 Wiener route to $2\times10^{-17}$; mp ARE route in the T9 diagnosis).
+
+*Thesis-only text, imported verbatim from the thesis draft (`t15/input/Thesis_Draft_ch1-4.md`, §3.8, lines 435–443).*
+
+One extension is immediate. Under matched-power coloured noise, handled by measurement differencing \[27, 28, 45\], Lemma 6.1 becomes a three-coordinate surface with t = λτ:
+
+```latex
+\mathcal V_\tau(\nu, q, t) = \frac{1 + \dfrac{\nu q^2}{4\,\big(1 + t\,(1 + \nu q/2)\big)}}{1 + \nu q/2},
+\qquad
+\frac{P}{F} = \frac{2}{1 + \nu t + \sqrt{(1 + \nu t)^2 + \nu (1 - t)^2}}
+```
+
+The second formula is the optimal filter along τ (Corollary 6.5); at t = 0 both reduce to the white-noise surface and its envelope. Chapter 6 uses them.
 
 **Theorem 6.6 (optimal error decreases in $\tau$).** $P$ is strictly decreasing on $(0,\infty)$, with
 $P(0^+) = \sigma_\star^2(\Pi)$ and $P(\tau) \sim 1/\big(\Pi\tau(1 + \sqrt{1 + \lambda^2/(2\Sigma\Pi)})\big) \to 0$.
@@ -826,8 +905,8 @@ $\Pi_c$, where $v_B$ touches $\sigma_\star^2$, and $G_B = G_+(v_B, \cdot)$ on $(
 define $v = v_B + b$ with $b \ge 0$ smooth, equal to $0$ near the interval's ends, such that $v$ is strictly increasing up to a
 peak value $1.5F$ and strictly decreasing after it. This is possible because $v_B$ is smooth and strictly decreasing there
 ($\kappa < 2$, Proposition 5.8): on the rising flank take $b' > |v_B'|$, on the falling flank $b' \le 0$. Set $v = v_B$ elsewhere,
-$G = G_+(v, \cdot)$ on $(0, \Pi_c)$ and $G = G_B$ beyond. Outside the bump intervals $G = G_B$, so $G$ is smooth and inherits Paper
-1's regularity at both ends; each bump is strictly increasing then strictly decreasing, so it crosses $1.25F$ exactly twice, and
+$G = G_+(v, \cdot)$ on $(0, \Pi_c)$ and $G = G_B$ beyond. Outside the bump intervals $G = G_B$, so $G$ is smooth and inherits
+the starting study's regularity at both ends; each bump is strictly increasing then strictly decreasing, so it crosses $1.25F$ exactly twice, and
 $v_B < F$ elsewhere. $\square$
 
 **Label:** Corollary (proved; T10.2 supplementary construction, $k = 1, \dots, 5$, $G(10^{12})/G(10^{11}) - 1 = 6\times10^{-10}$).
@@ -1299,8 +1378,7 @@ Theorem 6.19(c)) needed a post-hoc rewrite route (`rewrite(exp)`, explicit posit
 route failures.
 
 **Literature (Theorem 7.6).** The static analogue is classical: for linear normal experiments with known noise, Blackwell
-ordering is equivalent to Loewner ordering of the information matrices (Hansen and Torgersen, *Ann. Statist.* 2 (1974)
-367–373; Torgersen, *Comparison of Statistical Experiments*, 1991). A targeted search (Task 13, `t13/literature_check.md`)
+ordering is equivalent to Loewner ordering of the information matrices [24, 50]. A targeted search (Task 13, `t13/literature_check.md`)
 found no statement for stationary Gaussian processes ordered by spectral density and nothing on a causal garbling order in
 filtering, so Theorem 7.6 is proved here rather than cited.
 

@@ -1,6 +1,6 @@
 # Errata to the starting-study manuscript
 
-Manuscript: `Holder_2026_Bounded_Failure_Window_Final.pdf` in this folder (18 pages). Each quote below was checked against the
+Manuscript: `Holder_2026_Bounded_Failure_Window_Final.pdf` in this folder (17 pages). Each quote below was checked against the
 text extracted from it (`pdftotext`) in Task 14; page numbers refer to that PDF. Each entry names the thesis result that states the
 correct version.
 

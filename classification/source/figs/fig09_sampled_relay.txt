@@ -1,4 +1,4 @@
-Figure 9. Sampled relay D1 (gain 1 - exp(-G dt)) along the sampling interval (Propositions [[d1-excess|n]], [[dt-endpoint-limits|n]], [[dt-two-rays|n]]; [[dt-relay-census]]).
+{{fig:sampled-relay}}. Sampled relay D1 (gain 1 - exp(-G dt)) along the sampling interval (Propositions [[d1-excess|n]], [[dt-endpoint-limits|n]], [[dt-two-rays|n]]; [[dt-relay-census]]).
 G = 0.5, lambda = 1, Sigma = 0.01, Pi = 1 (G > 2 F Pi, so the excess set is (0, dt_E) with dt_E = 100). Left: the error at
 sample times rises from 0.09 to a single maximum 0.20457 at dt = 2.4645 and falls to 0, a window for R^2 in (0.09, 0.20457).
 Right: the time average, shown as avg/F - 1 on a symmetric-log axis, crosses F at dt_E, dips to 0.0099875 (0.125% below F) at

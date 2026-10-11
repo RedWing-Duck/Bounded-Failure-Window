@@ -1,0 +1,52 @@
+{
+ "C11_n8": {
+  "curves": 8,
+  "tolerances": 400,
+  "classifications": 1600,
+  "by_kind": {
+   "smooth-inc": 2,
+   "pl-inc": 2,
+   "smooth-dec": 2,
+   "pl-dec": 2
+  },
+  "turning_points_hist": {
+   "1": 2,
+   "2": 6
+  },
+  "class_mismatches": 0,
+  "signature_mismatches": 0,
+  "route_disagreements": 0,
+  "examples": [],
+  "min_tolerances_per_curve": 50,
+  "seconds": 7.5,
+  "pass": true
+ },
+ "8_n8": {
+  "poly": [
+   -1.107810609854583,
+   -1.342805648942408,
+   -0.27600736375822704,
+   2.1725926821642396,
+   0.22854738821870274,
+   0.17632467922344253,
+   0.7475176495347942,
+   -0.41622243794476266,
+   1.628404836264879,
+   2.8430325327811055
+  ],
+  "R2": "4.20894298926",
+  "eta": "0.444631",
+  "amplitude_over_eta": 0.9,
+  "x1": "0.8562459811",
+  "N1": [
+   "0.2544834",
+   "1.4580086"
+  ],
+  "sup_delta_lt_eta": true,
+  "monotone_on_N1": false,
+  "class_before": "upper ray",
+  "class_after": "(0, 1, 4)",
+  "class_after_route_ii": "(0, 1, 4)",
+  "seconds": 1.2
+ }
+}

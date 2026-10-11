@@ -1,4 +1,4 @@
-Figure 7. Causality is essential (Proposition 7.11, Counterexample 7.12). lambda = 1, Sigma = 0.01, Pi = 1. Observations
+Figure B.12. Causality is essential (Proposition 7.11, Counterexample 7.12). lambda = 1, Sigma = 0.01, Pi = 1. Observations
 delayed by d(theta) = theta exp(-theta): every member is a time shift of the same path, so all are pathwise
 Blackwell-equivalent, yet the optimal filtering error P(d) = F - exp(-2 lambda d)(F - sigma*^2) rises then falls, from
 sigma*^2 = 0.0099505 to P(1/e) = 0.0099763 at theta = 1. For sigma*^2 < R^2 < P(1/e) the optimal failure set is a window
