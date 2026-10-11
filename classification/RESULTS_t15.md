@@ -35,7 +35,7 @@
 ## Part G detail
 
 - **C11** used 1000 pre-registered curves with 50 or more tolerances each, every critical value included.
-- **Exploratory C11X** (not pre-registered): Chebyshev series of degree 9–12 with seeds 15301/15302 gave None curves with turning points None. Class mismatches None, signature mismatches None, route disagreements None.
+- **Exploratory C11X** (not pre-registered): Chebyshev series of degree 9–12 with seeds 15301/15302 gave 1000 curves with turning points {'2': 1, '3': 2, '4': 23, '5': 75, '6': 170, '7': 262, '8': 217, '9': 160, '10': 66, '11': 24}. Class mismatches 0, signature mismatches 0, route disagreements 0.
 - **C12:** 1000 cases. Two kinds of perturbation: (a) constant on each Nᵢ; (b) a smooth sum accepted only if strictly monotone on every Nᵢ. The class was unchanged in all cases with sup |δ| < η.
 - **Illustration (not a criterion):** a wiggle of amplitude 0.9η inside N₁, violating only condition 2, changes the class from upper ray to (0, 1, 4) (route ii agrees: (0, 1, 4)); R² = 4.20894298926, η = 0.444631.
 - **Ambiguity in Proposition 2.9, not blocking.** Condition 2 asks for σ̃² strictly monotone on each Nᵢ without naming the direction. Under condition 1 the ends of Nᵢ have opposite signs of σ̃² − R², which forces the direction of σ². Reading used: any strictly monotone σ̃² on Nᵢ. Generator (b) accepts either direction; only the forced one can occur.
@@ -111,7 +111,7 @@ Appendix E gives the full chain, Tasks 1–15.
 
 ### 5. Part G outcomes
 
-- **C11 (Corollary 2.8):** **PASS**, with class mismatches 0 and signature mismatches 0. The exploratory run with more turning points gave None and None.
+- **C11 (Corollary 2.8):** **PASS**, with class mismatches 0 and signature mismatches 0. The exploratory run with more turning points gave 0 and 0.
 - **C12 (Proposition 2.9):** **PASS**, 0 mismatches.
 - **Illustration:** violating only condition 2 changes the class (upper ray → (0, 1, 4)).
 - **Ambiguity:** see Part G detail above. It is not blocking.
@@ -153,5 +153,5 @@ From the register's citation table: the result, the line of its heading in `clas
 ## Provenance
 
 - Pre-registration aa0b914; artifacts 41d5e43; results 48c3088.
-- Runtimes: checks 23 s (C7 reruns the original figure scripts); Part G C11 467.3 s, C12 412.6 s, exploratory C11X None s.
+- Runtimes: checks 23 s (C7 reruns the original figure scripts); Part G C11 467.3 s, C12 412.6 s, exploratory C11X 1525.9 s.
 - Seeds: 15001/15002 (C11), 15101/15102 (C12), 15201 (illustration), 15301/15302 (exploratory).
