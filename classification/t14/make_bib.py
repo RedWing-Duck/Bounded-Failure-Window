@@ -121,9 +121,48 @@ add("milnor1963", "book", author="Milnor, J.", title="Morse Theory", series="Ann
     publisher="Princeton University Press", year="1963")
 
 # Verified by web search (filled from t14/bib_check.md; each value has its evidence URL there). key -> {field: value}
-SEARCH = {}
-# Fields the search confirmed, removing the matching VERIFY item. key -> list of VERIFY items cleared
-CLEARED = {}
+SEARCH = {
+    "kurt2025": {"eprint": "2511.22034", "archiveprefix": "arXiv"},
+    "kalman1960": {"doi": "10.1115/1.3662552"},
+    "jazwinski1970": {"isbn": "978-0-12-381550-7"},
+    "simon2006": {"publisher": "Wiley", "isbn": "978-0-471-70858-2"},
+    "chang2014": {"title": "On {K}alman filter for linear system with colored measurement noise"},
+    "kalata1984": {"title": "The tracking index: a generalized parameter for $\\alpha$-$\\beta$ and $\\alpha$-$\\beta$-$\\gamma$ target trackers", "volume": "20"},
+    "sahomasugi2016": {"title": "$\\alpha$-$\\beta$-$\\gamma$ tracking filters using acceleration measurements", "doi": "10.1186/s40064-016-1960-8"},
+    "barshalom2002": {"title": "Update with out-of-sequence measurements in tracking: exact solution"},
+    "yoder2018": {"title": "Exploring the exponentially decaying merit of an out-of-sequence observation", "doi": "10.3390/s18061947"},
+    "yuksellinder2012": {"doi": "10.1137/100808976"},
+    "lecam1964": {"doi": "10.1214/aoms/1177700372", "number": "4"},
+    "hansentorgersen1974": {"title": "Comparison of linear normal experiments", "doi": "10.1214/aos/1176342672", "number": "2"},
+    "yasuda1993": {"title": "Covariance controllers: a new parametrization of the class of all stabilizing controllers"},
+}
+# Fields removed because they could not be confirmed (the prompt flagged them, or search evidence contradicts them).
+DROP = {"kalman1960": ["journal", "volume", "number", "pages"], "barshalom2002": ["pages"]}
+# VERIFY items replaced after the search. key -> new list of VERIFY items (before the automatic DOI/title items)
+REVERIFY = {
+    "kurt2025": [],
+    "kalman1960": ["journal, volume, issue and pages (J. Basic Eng. 82(1), 35-45 per the prompt; seen only in search summaries)"],
+    "jazwinski1970": ["publisher (Academic Press per catalog summaries; ISBN confirmed via the Elsevier listing) and edition"],
+    "simon2006": ["edition"],
+    "blackwell1951": ["pages (search evidence points to 93-102, not 99-102, but only through summaries)"],
+    "chang2014": ["journal, volume and pages (Journal of Geodesy 88, 1163-1170 per one catalog summary)"],
+    "kalata1984": ["number and pages (174-182 in one index, 174-181 in a reference list)", "DOI (10.1109/TAES.1984.310438 given in the prompt; not confirmed)"],
+    "sahomasugi2016": ["volume and article number (5, 309 per a search summary)"],
+    "barshalom2002": ["pages (prompt 769-778; the IEEE record as quoted in a search summary gives 769-777)", "DOI (probably 10.1109/TAES.2002.1039398; not confirmed)"],
+    "yoder2018": ["full author list"],
+    "yuksellinder2012": ["issue (2, per a search summary)"],
+    "lecam1964": [],
+    "hansentorgersen1974": [],
+    "yasuda1993": ["DOI"],
+    "skeltonikeda1989": ["title and DOI (nothing confirmed by search, including the author pairing and the volume/pages)"],
+    "hotzskelton1985": ["DOI (10.1109/CDC.1985.268547 per a search summary; not confirmed)"],
+    "collinsskelton1987": ["DOI (not found)"],
+    "heffes1966": ["DOI not captured (10.1109/TAC.1966.1098392 appears only in a search summary)"],
+    "brysonjohansen1965": ["title, venue, volume and pages (a search summary gives 'Linear filtering for time-varying systems using measurements containing colored noise', IEEE TAC 10(1), 4-10; not confirmed)"],
+    "brysonhenrikson1968": ["title and venue (a search summary gives 'Estimation using sampled data containing sequentially correlated noise', J. Spacecraft and Rockets 5(6), 662-665; not confirmed)"],
+    "hogeboomburr2021": ["title and DOI (not confirmed by search)"],
+    "shmaliy2020": ["full author list, volume and pages (Shmaliy, Zhao and Ahn, 14(2), 64-71 per a search summary)"],
+}
 
 
 def main():
@@ -131,8 +170,13 @@ def main():
            "% Never add a DOI, page range or author that has not been verified.", ""]
     for key, typ, f, ver in E:
         f = dict(f)
+        if key == "kalata1984":
+            f.pop("doi", None)          # flagged in the prompt and not confirmed
         f.update(SEARCH.get(key, {}))
-        ver = [v for v in ver if v not in CLEARED.get(key, [])]
+        for d in DROP.get(key, []):
+            f.pop(d, None)
+        if key in REVERIFY:
+            ver = list(REVERIFY[key])
         if "title" not in f and not any("title" in v for v in ver):
             ver.insert(0, "title")
         if f.get("doi"):
