@@ -3,3 +3,11 @@
 == t12_symbolic_diag
    3.1s
 == t12_a8
+   3045.2s
+== t12_dt
+   79.0s
+== t12_mi
+   121.9s
+== t12_sigma
+   2912.0s
+== t12_blind

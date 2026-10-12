@@ -1,0 +1,658 @@
+{
+ "summary": {
+  "n_persisting": 45,
+  "sets": [
+   151,
+   192,
+   423,
+   597,
+   814,
+   841,
+   984,
+   994
+  ],
+  "all_route_i_All_route_ii_Empty": true,
+  "all_monotone_increasing_no_tp": true,
+  "max_R2_rel_to_Lminus": 3.172025964956244e-25,
+  "log10_rel_gap_range": [
+   -25.69459287789358,
+   -24.498663266376166
+  ],
+  "all_gaps_positive": false,
+  "g_hist": {
+   "tanh": 45
+  }
+ },
+ "rows": [
+  {
+   "i": 151,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 8.505348474363389e-26,
+   "log10_rel_gap": -25.070307888119284,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 151,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 8.505348474363389e-26,
+   "log10_rel_gap": -25.070307888119284,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 151,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 8.505348474363389e-26,
+   "log10_rel_gap": -25.070307888119284,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 151,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 8.505348474363389e-26,
+   "log10_rel_gap": -25.070307888119284,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 192,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 1.0854887870252743e-25,
+   "log10_rel_gap": -24.9643746583986,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 192,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 1.0854887870252743e-25,
+   "log10_rel_gap": -24.9643746583986,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 192,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 1.0854887870252743e-25,
+   "log10_rel_gap": -24.9643746583986,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 192,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 1.0854887870252743e-25,
+   "log10_rel_gap": -24.9643746583986,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 192,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 1.0854887870252743e-25,
+   "log10_rel_gap": -24.9643746583986,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 192,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 1.0854887870252743e-25,
+   "log10_rel_gap": -24.9643746583986,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 423,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 2.4245283838692703e-25,
+   "log10_rel_gap": -24.615372727248335,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 423,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 2.4245283838692703e-25,
+   "log10_rel_gap": -24.615372727248335,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 597,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 3.172025964956244e-25,
+   "log10_rel_gap": -24.498663266376166,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 597,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 3.172025964956244e-25,
+   "log10_rel_gap": -24.498663266376166,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 597,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 3.172025964956244e-25,
+   "log10_rel_gap": -24.498663266376166,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 597,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 3.172025964956244e-25,
+   "log10_rel_gap": -24.498663266376166,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 597,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 3.172025964956244e-25,
+   "log10_rel_gap": -24.498663266376166,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 597,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 3.172025964956244e-25,
+   "log10_rel_gap": -24.498663266376166,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 597,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 3.172025964956244e-25,
+   "log10_rel_gap": -24.498663266376166,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 597,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 3.172025964956244e-25,
+   "log10_rel_gap": -24.498663266376166,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 814,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 2.020259334637265e-26,
+   "log10_rel_gap": -25.69459287789358,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 814,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 2.020259334637265e-26,
+   "log10_rel_gap": -25.69459287789358,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 814,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 2.020259334637265e-26,
+   "log10_rel_gap": -25.69459287789358,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 814,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 2.020259334637265e-26,
+   "log10_rel_gap": -25.69459287789358,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 814,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 2.020259334637265e-26,
+   "log10_rel_gap": -25.69459287789358,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 814,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 2.020259334637265e-26,
+   "log10_rel_gap": -25.69459287789358,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 814,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 2.020259334637265e-26,
+   "log10_rel_gap": -25.69459287789358,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 814,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 2.020259334637265e-26,
+   "log10_rel_gap": -25.69459287789358,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 814,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 2.020259334637265e-26,
+   "log10_rel_gap": -25.69459287789358,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 841,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 1.2050847094651148e-25,
+   "log10_rel_gap": -24.918982423993487,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 841,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 1.2050847094651148e-25,
+   "log10_rel_gap": -24.918982423993487,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 841,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 1.2050847094651148e-25,
+   "log10_rel_gap": -24.918982423993487,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 841,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 1.2050847094651148e-25,
+   "log10_rel_gap": -24.918982423993487,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 841,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 1.2050847094651148e-25,
+   "log10_rel_gap": -24.918982423993487,
+   "gap_sign": -1,
+   "dps_needed": 400
+  },
+  {
+   "i": 984,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 4.7628262497136017e-26,
+   "log10_rel_gap": -25.322135261479588,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 984,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 4.7628262497136017e-26,
+   "log10_rel_gap": -25.322135261479588,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 984,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 4.7628262497136017e-26,
+   "log10_rel_gap": -25.322135261479588,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 994,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 7.337435173422002e-26,
+   "log10_rel_gap": -25.134455722739148,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 994,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 7.337435173422002e-26,
+   "log10_rel_gap": -25.134455722739148,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 994,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 7.337435173422002e-26,
+   "log10_rel_gap": -25.134455722739148,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 994,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 7.337435173422002e-26,
+   "log10_rel_gap": -25.134455722739148,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 994,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 7.337435173422002e-26,
+   "log10_rel_gap": -25.134455722739148,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 994,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 7.337435173422002e-26,
+   "log10_rel_gap": -25.134455722739148,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 994,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 7.337435173422002e-26,
+   "log10_rel_gap": -25.134455722739148,
+   "gap_sign": 1,
+   "dps_needed": 400
+  },
+  {
+   "i": 994,
+   "g": "tanh",
+   "route_i": "All",
+   "route_ii": "Empty",
+   "n_turns": 0,
+   "dirs": [
+    1
+   ],
+   "R2_rel_to_Lminus": 7.337435173422002e-26,
+   "log10_rel_gap": -25.134455722739148,
+   "gap_sign": 1,
+   "dps_needed": 400
+  }
+ ]
+}

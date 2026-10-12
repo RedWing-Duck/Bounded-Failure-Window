@@ -1,0 +1,1 @@
+{"n_persisting": 45, "sets": [151, 192, 423, 597, 814, 841, 984, 994], "all_route_i_All_route_ii_Empty": true, "all_monotone_increasing_no_tp": true, "max_R2_rel_to_Lminus": 3.172025964956244e-25, "log10_rel_gap_range": [-25.69459287789358, -24.498663266376166], "all_gaps_positive": false, "g_hist": {"tanh": 45}}
