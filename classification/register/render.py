@@ -149,6 +149,39 @@ class Renderer:
         return self.inline(text.replace("{{matrix}}", self.matrix()))
 
 
+def block_span(L, key):
+    """Lines of result `key` in the source: its **[[key]] line through the end of its proof (a line ending in $\\square$ or ∎),
+    or through its statement paragraph if no proof follows before the next result, heading or **Label:** line."""
+    i = next(j for j, l in enumerate(L) if l.startswith(f"**[[{key}]]"))
+    j = i
+    while j + 1 < len(L) and L[j + 1].strip():
+        j += 1
+    k = j + 1
+    while k < len(L) and not L[k].strip():
+        k += 1
+    if k < len(L) and L[k].startswith("*Proof"):
+        e = k
+        while not (L[e].rstrip().endswith("$\\square$") or L[e].rstrip().endswith("∎")):
+            e += 1
+        j = e
+    return i, j
+
+
+def apply_overrides(doc):
+    """Task 17: thesis-only replacements and insertions (register/thesis_overrides.yaml), thesis render only."""
+    L = doc.split("\n")
+    for o in yaml.safe_load(open(os.path.join(HERE, "thesis_overrides.yaml"))):
+        txt = open(os.path.join(SRC, o["file"])).read().rstrip("\n").split("\n")
+        if "replace" in o:
+            i, j = block_span(L, o["replace"])
+            L[i:j + 1] = txt
+        else:
+            i = (L.index(o["insert_before"]) if "insert_before" in o else
+                 next(j for j, l in enumerate(L) if l.startswith(f"**[[{o['insert_before_key']}]]")))
+            L[i:i] = txt + [""]
+    return "\n".join(L)
+
+
 def appendix(r):
     out = ["# Appendix A. Register of results", "",
            "Rendered from `register/results.yaml` (freeze v1, Task 14). Numbers are thesis numbers: one counter per chapter, shared "
@@ -209,7 +242,7 @@ def main():
     r = Renderer(a.numbering)
     doc = open(os.path.join(SRC, "Stages_0_4_Source.md")).read()
     if a.numbering == "thesis":
-        write(os.path.join(CLS, "Stages_0_4_Thesis.md"), r.render(doc))
+        write(os.path.join(CLS, "Stages_0_4_Thesis.md"), r.render(apply_overrides(doc)))
         write(os.path.join(CLS, "Roadmap_v3.md"), r.render(open(os.path.join(SRC, "Roadmap_v3_Source.md")).read()))
         figmap = {os.path.basename(e["caption_source"]): f"{e['label']}_{e['key']}.txt"
                   for e in yaml.safe_load(open(os.path.join(HERE, "figures.yaml"))) if e.get("caption_source")}

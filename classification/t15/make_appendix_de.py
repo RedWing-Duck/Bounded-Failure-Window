@@ -27,6 +27,8 @@ TASKS = [  # task, prereg, results file, how to select its check rows
     ("T12", "classification/PREREG_t12.md", "classification/t12/RESULTS_t12.md", "first"),
     ("T13", "classification/PREREG_t13.md", "classification/t13/RESULTS_t13.md", "first"),
     ("T14", "classification/PREREG_t14.md", "classification/t14/RESULTS_t14.md", "first"),
+    ("T15", "classification/PREREG_t15.md", "classification/RESULTS_t15.md", "first"),
+    ("T16", "classification/PREREG_t16.md", "classification/RESULTS_t16.md", "first"),
 ]
 NOTE = {"T4": "Exploratory by pre-registration (outcomes reported either way; no pass/fail criteria).",
         "T5": "The report itself (`verification/REPORT.md`); no pass/fail criteria."}
@@ -53,6 +55,18 @@ FAILURES = {
             "C9 bibliography: input / criterion — two entries unattached and DOIs unresolvable from the session; resolved by the "
             "Task 15 input (verified bib, attachments).",
             "C10 reproduction: code — the dry-run resolver; all 9 flagged paths resolve as their scripts build them."],
+    "T15": ["C4 [n] rendering: criterion / code — the pre-registered bracket pattern flags the interval '[0, 10]' in the "
+            "Appendix B description of Figure B.1; it is not a citation, and no unresolved citation remains.",
+            "C10 thesis phrase check: criterion — all 81 A–E matches are Task 15's figure labels B.1–B.12, which coincide in form with "
+            "the legacy labels the pattern targets; 0 'Paper 1', no legacy label remains."],
+    # Task 16: the wording of the thesis draft's Appendix D (t17/input/Thesis_Draft_ch1-7.md), attributions as RESULTS_t16.md
+    "T16": ["D1 new proof steps of the thesis draft (2 of 9 items): code — SymPy could not decide a sign and could not denest a "
+            "square root of a square; both items hold (post-hoc diagnosis).",
+            "D2 statements against the repository: document / criterion — four statements differ in content: 3.1 and 3.5 gather "
+            "conclusions the repository states in other results (verified in D1), and the §2.5 table rows for 2.5 and 2.7 left out "
+            "hypotheses (full statements were then added to the thesis).",
+            "D6 legacy labels: criterion / document — three hits, none a legacy label: two figure labels in Appendix E outside the "
+            "exemption window, and a quotation in Appendix D."],
 }
 
 
@@ -76,36 +90,32 @@ def verdict(l):
     return "FAIL" if re.search(r"\bFAIL\b", l) else ("PASS" if re.search(r"\bPASS\b", l) else None)
 
 
-def appendix_d(with_t15=False):
+def appendix_d(with_t17=False):
+    """Appendix D in the thesis draft's layout (Task 17, Part B.4): one paragraph per task, failures as bullets."""
     tasks = list(TASKS)
-    if with_t15:
-        tasks.append(("T15", "classification/PREREG_t15.md", "classification/RESULTS_t15.md", "first"))
-    out = ["# Appendix D. Verification record, Tasks 1–" + ("15" if with_t15 else "14"), "",
-           "One section per task: the pre-registration and results files, the number of pre-registered checks that passed and "
-           "failed (read from each report's check table), and every failure with the attribution its report gives. Outcomes are "
-           "copied from the reports, not re-judged. Every failure stays recorded as a failure.", ""]
+    if with_t17:
+        tasks.append(("T17", "classification/PREREG_t17.md", "classification/RESULTS_t17.md", "first"))
+    last = tasks[-1][0][1:]
+    out = [f"# Appendix D. Verification record, Tasks 1–{last}", "",
+           "For each task: the pre-registration and results files, the pre-registered checks that passed and failed, and every "
+           "failure with the attribution its report gives (criterion, input, code, document or prediction). Outcomes are copied "
+           "from the reports, not re-judged, and every failure stays recorded.", ""]
     for t, pre, res, sel in tasks:
-        out += [f"## {t}", "", f"- Pre-registration: `{pre}`", f"- Results: `{res}`"]
+        head = f"**Task {t[1:]}.** {pre} · {res}."
         if sel is None:
-            out += [f"- Checks: {NOTE[t]}", ""]
+            out += [f"{head} {NOTE[t]}", ""]
             continue
         v = [verdict(l) for l in rows(res, sel)]
         v = [x for x in v if x]
         n_p, n_f = v.count("PASS"), v.count("FAIL")
-        out.append(f"- Checks: {n_p + n_f} with a verdict; {n_p} pass, {n_f} fail.")
-        fl = FAILURES.get(t, [])
-        if with_t15 and t == "T15":
-            fl = FAILURES_T15
-        out += [f"- Failure: {x}" for x in fl] if fl else ["- Failures: none."]
-        out.append("")
+        out += [f"{head} {n_p + n_f} checks with a verdict; {n_p} pass, {n_f} fail.", ""]
+        fl = FAILURES_T17 if t == "T17" else FAILURES.get(t, [])
+        if fl:
+            out += [f"- Failure — {x}" for x in fl] + [""]
     return "\n".join(out)
 
 
-FAILURES_T15 = [  # from RESULTS_t15.md (recorded run on 41d5e43)
-    "C4 [n] rendering: criterion / code — the pre-registered bracket pattern flags the interval '[0, 10]' in the Appendix B "
-    "description of Figure B.1; it is not a citation, and no unresolved citation remains.",
-    "C10 thesis phrase check: criterion — all 81 A–E matches are Task 15's figure labels B.1–B.12, which coincide in form with "
-    "the legacy labels the pattern targets; 0 'Paper 1', no legacy label remains."]
+FAILURES_T17 = []   # filled from RESULTS_t17.md after the T17 run
 
 
 def appendix_e():
@@ -135,15 +145,17 @@ def appendix_e():
            "| T8–T13 at once | clean checkout, manifest | `bash classification/reproduce_all.sh WORKDIR 8 9 10 11 12 13` |",
            "| T14 | register, sources, renders, bibliography check | see the render chain below |",
            "| T15 | figures B.n, appendices, renders, checks | see the render chain below |",
-           "| T16 | register fixes, renders, checks D1–D8 | render chain below, then `python3 t16/t16_checks.py` |", "",
-           "## The T14–T16 render chain", "", "From `classification/`:", "", "```",
+           "| T16 | register fixes, renders, checks D1–D8 | render chain below, then `python3 t16/t16_checks.py` |",
+           "| T17 | thesis-only imports, renders, checks E1–E7 | render chain below, then `python3 t17/t17_checks.py` |", "",
+           "## The T14–T17 render chain", "", "From `classification/`:", "", "```",
            "python3 t14/build_register.py          # register from the T14 table (T14; overwrites T15 metadata, re-apply next line)",
            "python3 t15/t15_register.py            # T15 citations/status, references.yaml, figures.yaml",
            "python3 t16/t16_register.py            # T16 legacy-label prefixes, crosswalk, result 5.6 wording, B.4 Pi_c",
+           "python3 t17/make_thesis_only_t17.py    # T17 thesis-only imports (placed by register/thesis_overrides.yaml)",
            "python3 t15/make_figs_thesis.py        # figures B.1, B.3-B.12 (text-only edits) and B.2",
            "python3 register/render.py --numbering thesis   # Stages_0_4_Thesis.md, Roadmap_v3.md, figs_thesis/*.txt, Appendices A-C, reference/phase1/",
            "python3 register/render.py --numbering paper    # Stages_0_4_Paper2.md",
-           "python3 t15/make_appendix_de.py        # Appendices D and E",
+           "python3 t15/make_appendix_de.py --with-t17   # Appendices D and E",
            "python3 t15/t15_checks.py && python3 t15/t15_partG.py   # Task 15 checks",
            "```", "",
            "The sources were derived once from the Task 14 versions by `t14/make_source.py`, `t14/make_roadmap_source.py` and "
@@ -152,8 +164,7 @@ def appendix_e():
 
 
 def main():
-    with_t15 = "--with-t15" in sys.argv
-    open(os.path.join(CLS, "Appendix_D_Verification.md"), "w").write(appendix_d(with_t15))
+    open(os.path.join(CLS, "Appendix_D_Verification.md"), "w").write(appendix_d("--with-t17" in sys.argv))
     open(os.path.join(CLS, "Appendix_E_Reproduction.md"), "w").write(appendix_e())
     print("appendices D and E written")
 

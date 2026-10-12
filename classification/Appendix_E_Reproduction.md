@@ -23,8 +23,9 @@ All commands run from the repository root unless stated.
 | T14 | register, sources, renders, bibliography check | see the render chain below |
 | T15 | figures B.n, appendices, renders, checks | see the render chain below |
 | T16 | register fixes, renders, checks D1–D8 | render chain below, then `python3 t16/t16_checks.py` |
+| T17 | thesis-only imports, renders, checks E1–E7 | render chain below, then `python3 t17/t17_checks.py` |
 
-## The T14–T16 render chain
+## The T14–T17 render chain
 
 From `classification/`:
 
@@ -32,10 +33,11 @@ From `classification/`:
 python3 t14/build_register.py          # register from the T14 table (T14; overwrites T15 metadata, re-apply next line)
 python3 t15/t15_register.py            # T15 citations/status, references.yaml, figures.yaml
 python3 t16/t16_register.py            # T16 legacy-label prefixes, crosswalk, result 5.6 wording, B.4 Pi_c
+python3 t17/make_thesis_only_t17.py    # T17 thesis-only imports (placed by register/thesis_overrides.yaml)
 python3 t15/make_figs_thesis.py        # figures B.1, B.3-B.12 (text-only edits) and B.2
 python3 register/render.py --numbering thesis   # Stages_0_4_Thesis.md, Roadmap_v3.md, figs_thesis/*.txt, Appendices A-C, reference/phase1/
 python3 register/render.py --numbering paper    # Stages_0_4_Paper2.md
-python3 t15/make_appendix_de.py        # Appendices D and E
+python3 t15/make_appendix_de.py --with-t17   # Appendices D and E
 python3 t15/t15_checks.py && python3 t15/t15_partG.py   # Task 15 checks
 ```
 

@@ -120,12 +120,11 @@ $\sigma^2(t_1) > L_-$, or, with no turning point, iff $L_+ > L_-$). $\square$
 
 Reading: the classification of any sweep reduces to its endpoint limits, approach directions and ordered extremum values.
 
-**Theorem 2.4 (plateaus).** Under C2′ instead of C2, Theorem 2.2 holds with three changes: plateau values join the critical
-tolerances; at $R^2$ equal to a plateau value the plateau is excluded from $\mathcal F$, which can split or remove
-components; an end adjacent to a plateau at value $L$ carries a ray iff $R^2 < L$.
+*Thesis-only text, imported verbatim from the thesis draft (`t17/input/Thesis_Draft_ch1-7.md`, §2.5, lines 211–213; citations written [n]). Task 17.*
 
-*Proof.* As Theorem 2.2(a)–(b). A constant piece of value $p$ contributes all of the piece if $R^2 < p$ and nothing otherwise,
-which is constant on each interval avoiding $p$. $\square$
+**Theorem 2.4 (plateaus).** Under C2′ instead of C2, Theorem 2.2 holds with three changes: plateau values join the critical tolerances; at R² equal to a plateau value the plateau is excluded from 𝓕, which can split or remove components; and an end adjacent to a plateau at value L carries a ray iff R² < L.
+
+*Proof.* As for Theorem 2.2(1)–(2). A constant piece of value p contributes the whole piece to 𝓕 if R² < p and nothing otherwise, which is constant on each interval of tolerances that avoids p. ∎
 
 **Label:** Theorem (proved; T10.5 plateau check).
 
@@ -178,6 +177,20 @@ has failure set 𝓕̃(R²) of the same class as 𝓕(R²).
 
 ## 3. The model along precision
 
+*Thesis-only text, imported verbatim from the thesis draft (`t17/input/Thesis_Draft_ch1-7.md`, §3.1, lines 306–316; citations written [n]). Task 17.*
+
+A scalar error x is corrected toward a noisy signal with a gain G that depends on the observation precision Π:
+
+```latex
+\dot x = -(\lambda + G)\,x + G\,\xi_s + \xi_{\mathrm{sim}},
+\qquad
+\sigma^2 = \frac{\Sigma + G^2/(2\Pi)}{\lambda + G}
+```
+
+**Proposition 3.1 (stationary variance).** Here ξ\_s is white noise of intensity 1/Π and ξ\_sim white noise of intensity 2Σ, and the stationary variance is the formula above. If G → 0 and G²/Π → 0 as Π → 0, σ² tends to the floor F = Σ/λ; if G → G∞ ∈ (0, ∞) as Π → ∞, it tends to the high-precision limit H = Σ/(λ + G∞) < F. So Σ is half the diffusion intensity: without correction the state obeys dx = −λx dt + √(2Σ) dW, whose stationary variance is the floor F = Σ/λ. Under the other common convention, dx = −λx dt + σ dW, every F below reads σ²/(2λ). The equation is exactly the error equation of a constant-gain filter for a hidden Ornstein–Uhlenbeck state, so σ² is an actual error variance, as in the sensitivity analysis of mismatched filters [4–9, 36–38].
+
+*Proof.* The state x is an Ornstein–Uhlenbeck process with rate a = λ + G and noise intensity D = G²/Π + 2Σ, so its stationary variance is D/(2a), which is the formula above. The two limits follow by substitution. ∎
+
 *Thesis-only text, imported verbatim from the thesis draft (`t16/input/Thesis_Draft_ch1-5.md`, §3.2, lines 298–322; refreshed in Task 16 from `t15/input/Thesis_Draft_ch1-4.md`, lines 292–316).*
 
 Two dimensionless numbers carry all the dependence on λ, Σ, Π and G:
@@ -198,7 +211,7 @@ q = \frac{G}{F\Pi}
 
 *Proof.* Divide σ² by F = Σ/λ: σ²/F = (1 + G²/(2ΠΣ))/(1 + G/λ). With G = qFΠ, G/λ = νq/2 and G²/(2ΠΣ) = q²FΠ/(2λ) = νq²/4. ∎
 
-This is Lemma 6.23 in better coordinates: with g = G/λ = νq/2 it reads (1 + g²/ν)/(1 + g). The coordinate q is preferred because the floor crossing and the optimal filter become simple in it (§3.3–3.4). Reducing filter performance to dimensionless indices is not new: Kalata's tracking index \[25\] does it with one parameter for α–β trackers. The contribution here is this two-parameter form for the continuous-time relay, and its use as a map of failure regions. Two partial derivatives are used throughout:
+This is Lemma 6.23 in better coordinates: with g = G/λ = νq/2 it reads (1 + g²/ν)/(1 + g). The coordinate q is preferred because the floor crossing and the optimal filter become simple in it (§3.3–3.4). Reducing filter performance to dimensionless indices is not new: Kalata's tracking index [25] does it with one parameter for α–β trackers. The contribution here is this two-parameter form for the continuous-time relay, and its use as a map of failure regions. Two partial derivatives are used throughout:
 
 ```latex
 \frac{\partial \mathcal V}{\partial q} = \frac{\nu\,(\nu q^2 + 4q - 4)}{2(\nu q + 2)^2},
@@ -218,20 +231,21 @@ $$
 Reading: correction injects noise $G^2/(2\Pi)$ and removes variance $\Sigma G/\lambda$; the relay is worse than no
 correction exactly when injection exceeds removal.
 
-**Lemma 3.6 (single minimum in the gain).** Fix $\Pi > 0$. On $G \in [0,\infty)$,
-$$
-\frac{\partial\sigma^2}{\partial G} = \frac{G^2 + 2\lambda G - 2\Sigma\Pi}{2\Pi(\lambda + G)^2}.
-$$
-The numerator has exactly one positive root, $G^\star(\Pi)$, so $\sigma^2(\cdot, \Pi)$ is strictly decreasing on
-$[0, G^\star]$ and strictly increasing on $[G^\star, \infty)$, with minimum value $\sigma_\star^2(\Pi) = G^\star/\Pi < F$.
-Moreover $\sigma^2(0, \Pi) = F$, $\sigma^2 \to \infty$ as $G \to \infty$, and $\sigma^2(G, \Pi) \le F \iff 0 \le G \le 2F\Pi$,
-with equality exactly at $G = 0$ and $G = 2F\Pi$.
+*Thesis-only text, imported verbatim from the thesis draft (`t17/input/Thesis_Draft_ch1-7.md`, §3.4, lines 382–394; citations written [n]). Task 17.*
 
-*Proof.* The numerator of $\partial_G\sigma^2$ is $\tfrac{G}{\Pi}(\lambda + G) - \Sigma - \tfrac{G^2}{2\Pi} =
-\tfrac{1}{2\Pi}(G^2 + 2\lambda G - 2\Sigma\Pi)$, with roots $-\lambda \pm \sqrt{\lambda^2 + 2\Sigma\Pi}$, one of each sign.
-At the root, $G^2 + 2\lambda G = 2\Sigma\Pi$ gives $\sigma^2 = G^\star/\Pi$, and $G^\star/\Pi < F$ because
-$\sqrt{\lambda^2 + 2\Sigma\Pi} > \lambda$. The last statement is Corollary 3.3. As $G \to \infty$, $\sigma^2 \sim G/(2\Pi)$.
-$\square$
+**Proposition 3.5 (optimal gain).** For this plant the steady-state Riccati equation 0 = 2Σ − 2λp − Πp² gives
+
+```latex
+G^\star(\Pi) = p\,\Pi = -\lambda + \sqrt{\lambda^2 + 2\Sigma\Pi},
+\qquad
+\sigma_\star^2(\Pi) = p = \frac{2\Sigma}{\lambda + \sqrt{\lambda^2 + 2\Sigma\Pi}}
+```
+
+G⋆ also minimises σ² over constant gains, so σ²(Π) ≥ σ⋆²(Π) for every gain. σ⋆² decreases strictly from F as Π grows, so G⋆ = σ⋆²Π < FΠ for every Π > 0. In the coordinates of §3.2, q⋆ = G⋆/(FΠ) and σ⋆²/F = 𝒱⋆ = q⋆.
+
+**Lemma 3.6 (single minimum in the gain).** At fixed Π, σ² is strictly decreasing in G on (0, G⋆) and strictly increasing on (G⋆, ∞).
+
+*Proof of Proposition 3.5 and Lemma 3.6.* The Riccati equation and its positive root give the steady-state Kalman–Bucy filter [1, 39, 40]. Differentiating the formula of Proposition 3.1 in G gives ∂σ²/∂G = (G² + 2λG − 2ΣΠ)/(2Π(λ + G)²), whose only positive zero is G⋆; this is Lemma 3.6, and it gives the minimality in Proposition 3.5. σ⋆² decreases strictly in Π because √(λ² + 2ΣΠ) increases, and it tends to 2Σ/(2λ) = F as Π → 0. Dividing G⋆ by FΠ with ν = 2ΣΠ/λ² gives q⋆ = 2(√(1 + ν) − 1)/ν = 2/(1 + √(1 + ν)). ∎
 
 **Label:** Lemma (proved; T8.1(a)–(c)).
 
@@ -419,7 +433,7 @@ negative and its leading coefficient non-negative, so it has one positive root. 
 
 *Thesis-only text, imported verbatim from the thesis draft (`t15/input/Thesis_Draft_ch1-4.md`, §3.8, lines 435–443).*
 
-One extension is immediate. Under matched-power coloured noise, handled by measurement differencing \[27, 28, 45\], Lemma 6.1 becomes a three-coordinate surface with t = λτ:
+One extension is immediate. Under matched-power coloured noise, handled by measurement differencing [27, 28, 45], Lemma 6.1 becomes a three-coordinate surface with t = λτ:
 
 ```latex
 \mathcal V_\tau(\nu, q, t) = \frac{1 + \dfrac{\nu q^2}{4\,\big(1 + t\,(1 + \nu q/2)\big)}}{1 + \nu q/2},
@@ -605,6 +619,20 @@ $$
 times and (b) time average, both from Task 11's closed form.
 
 ### 6.1 Excess sets
+
+*Thesis-only text, imported verbatim from the thesis draft (`t17/input/Thesis_Draft_ch1-7.md`, §6.3, lines 1014–1024; citations written [n]). Task 17.*
+
+**Proposition 6.13 (discrete excess condition).** For a fixed gain 0 ≤ L < 2, the prior error is
+
+```latex
+P^- = \frac{a^2 L^2 r + q}{1 - a^2(1 - L)^2},
+\qquad
+P^+ - F = \frac{P^- - F}{a^2}
+```
+
+and P⁻ > F iff P⁺ > F iff L/(2 − L) > φ. The steady-state Kalman gain L⋆ satisfies L⋆/(2 − L⋆) < φ/2 for every Δt > 0.
+
+*Proof.* With q = F(1 − a²), the numerator of P⁻ − F is a²L²r + F(1 − a²) − F + Fa²(1 − L)² = a²L(Lr − F(2 − L)), and the denominator is positive for 0 ≤ L < 2; so P⁻ > F iff Lr > F(2 − L), that is L/(2 − L) > F/r = φ. P⁻ = a²P⁺ + q gives P⁺ − F = (P⁻ − F)/a². For the optimal filter, L⋆ = P⁻/(P⁻ + r) with P⁻ < F, so L⋆/(2 − L⋆) = P⁻/(P⁻ + 2r). This is below F/(2r) iff P⁻(2r − F) < 2rF, which holds because P⁻ < F. ∎
 
 **Lemma 6.14 (shared excess set).** For any filter on M-P, $P^- - F = a^2(P^+ - F)$ and
 $\bar P - F = (P^+ - F)\,s/(2\lambda\Delta t)$. Hence all three metrics exceed $F$ on the same set, $\{L/(2 - L) > \varphi\}$
@@ -1047,29 +1075,28 @@ Bayesian sums the windows always lie above $F$ and never join a lower ray (Propo
 
 ### 8.3 Degeneracies
 
-**Corollary 2.5 (equal-height maxima).** If two interior maxima share the value $M_2$, are separated by a lower minimum, and
-just below $M_2$ each lies in a component touching neither end (the equality condition of Theorem 2.2(c)), then just below $M_2$ both count in $k$, and at and above $M_2$ both windows are gone: $k$ drops by 2 at one tolerance. The
-class is otherwise unaffected.
+*Thesis-only text, imported verbatim from the thesis draft (`t17/input/Thesis_Draft_ch1-7.md`, §2.5, lines 215–217; citations written [n]). Task 17.*
 
-*Proof.* Theorem 2.2(c),(d). $\square$
+**Corollary 2.5 (equal-height maxima).** Suppose two interior maxima share the value M₂, are separated by a lower minimum, and just below M₂ each lies in a component touching neither end (the equality condition of Theorem 2.2(3)). Then just below M₂ both count in k, and at and above M₂ both windows are gone: k drops by 2 at one tolerance. The class is otherwise unaffected.
+
+*Proof.* Theorem 2.2(3)–(4). ∎
 
 **Label:** Corollary (proved; T10.5: $k = 2$ just below, Empty at and above, both routes). Families with at most one maximum
 cannot produce this.
 
-**Corollary 2.6 (degenerate stationary points).** A stationary point that is not a turning point never changes the class, and a
-flat-topped maximum acts as a maximum.
+*Thesis-only text, imported verbatim from the thesis draft (`t17/input/Thesis_Draft_ch1-7.md`, §2.5, lines 221–223; citations written [n]). Task 17.*
 
-*Proof.* By Theorem 2.2(d) the class depends only on the ordered turning-point values, the endpoint limits and the approach
-directions. $\square$
+**Corollary 2.6 (degenerate stationary points).** A stationary point that is not a turning point never changes the class, and a flat-topped maximum acts as a maximum.
+
+*Proof.* By Theorem 2.2(4) the class depends only on the ordered turning-point values, the endpoint limits and the approach directions. ∎
 
 **Label:** Corollary (proved; T10.5: 1,000 tolerances, identical classes with and without the inflection).
 
-**Proposition 2.7 (pair birth).** If a minimum–maximum pair is born at $\theta_0$ through a nondegenerate fold of $N$, then at
-distance $\delta$ from $\theta_0$ the turning-point positions separate like $\delta^{1/2}$ and the values like
-$M - m \sim \delta^{3/2}$; the band of tolerances that sees the pair opens continuously from zero width.
+*Thesis-only text, imported verbatim from the thesis draft (`t17/input/Thesis_Draft_ch1-7.md`, §2.5, lines 225–227; citations written [n]). Task 17.*
 
-*Proof.* Near the fold $d\sigma^2/d\theta \approx a(x^2 - b\delta)$ in a local coordinate $x$; its roots are $\pm\sqrt{b\delta}$ and
-the value change between them is $\tfrac43a(b\delta)^{3/2}$. $\square$
+**Proposition 2.7 (pair birth).** Suppose a minimum–maximum pair is born as a family parameter passes δ = 0 through a nondegenerate fold: near the birth point, in a local coordinate x, dσ²/dθ ≈ a(x² − bδ) with a, b ≠ 0. Then for bδ > 0 the turning-point positions separate like δ^(1/2) and the values like M − m \~ δ^(3/2), so the band of tolerances that sees the pair opens continuously from zero width.
+
+*Proof.* The roots of a(x² − bδ) are ±√(bδ), and the change in value between them is (4/3)|a|(bδ)^(3/2). ∎
 
 **Label:** Proposition (proved under nondegeneracy; T10.5 diagnosis, Hill $n = 2$: fitted exponents $1.50007$ (values) and
 $0.50002$ (positions)).

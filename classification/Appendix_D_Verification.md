@@ -1,120 +1,69 @@
-# Appendix D. Verification record, Tasks 1–15
+# Appendix D. Verification record, Tasks 1–16
 
-One section per task: the pre-registration and results files, the number of pre-registered checks that passed and failed (read from each report's check table), and every failure with the attribution its report gives. Outcomes are copied from the reports, not re-judged. Every failure stays recorded as a failure.
+For each task: the pre-registration and results files, the pre-registered checks that passed and failed, and every failure with the attribution its report gives (criterion, input, code, document or prediction). Outcomes are copied from the reports, not re-judged, and every failure stays recorded.
 
-## T1
+**Task 1.** verification/PREREG.md · verification/REPORT.md. 12 checks with a verdict; 12 pass, 0 fail.
 
-- Pre-registration: `verification/PREREG.md`
-- Results: `verification/REPORT.md`
-- Checks: 12 with a verdict; 12 pass, 0 fail.
-- Failures: none.
+**Task 2.** verification/PREREG.md · verification/REPORT.md. 3 checks with a verdict; 3 pass, 0 fail.
 
-## T2
+**Task 3.** verification/PREREG.md · verification/REPORT.md. 8 checks with a verdict; 8 pass, 0 fail.
 
-- Pre-registration: `verification/PREREG.md`
-- Results: `verification/REPORT.md`
-- Checks: 3 with a verdict; 3 pass, 0 fail.
-- Failures: none.
+**Task 4.** verification/PREREG.md · verification/REPORT.md. Exploratory by pre-registration (outcomes reported either way; no pass/fail criteria).
 
-## T3
+**Task 5.** verification/PREREG.md · verification/REPORT.md. The report itself (`verification/REPORT.md`); no pass/fail criteria.
 
-- Pre-registration: `verification/PREREG.md`
-- Results: `verification/REPORT.md`
-- Checks: 8 with a verdict; 8 pass, 0 fail.
-- Failures: none.
+**Task 6.** verification/PREREG_t6.md · verification/REPORT.md. 6 checks with a verdict; 5 pass, 1 fail.
 
-## T4
+- Failure — C5 (peak locations to 3 s.f. against Task 4b): criterion — Task 4b located peaks on a grid of about 0.4 % steps; heights all match, three locations differ in the third figure.
 
-- Pre-registration: `verification/PREREG.md`
-- Results: `verification/REPORT.md`
-- Checks: Exploratory by pre-registration (outcomes reported either way; no pass/fail criteria).
+**Task 7.** verification/PREREG_t7.md · verification/REPORT.md. 15 checks with a verdict; 15 pass, 0 fail.
 
-## T5
+**Task 8.** classification/PREREG_t8.md · classification/REPORT.md. 5 checks with a verdict; 5 pass, 0 fail.
 
-- Pre-registration: `verification/PREREG.md`
-- Results: `verification/REPORT.md`
-- Checks: The report itself (`verification/REPORT.md`); no pass/fail criteria.
+**Task 9.** classification/PREREG_t9.md · classification/t9/RESULTS_t9.md. 7 checks with a verdict; 5 pass, 2 fail.
 
-## T6
+- Failure — T9.2 ARE route: criterion — the regularised ARE converges as √ε with a large prefactor; mp ARE and the closed-form Wiener filter match the document.
+- Failure — T9.5 monotonicity and ordering: criterion — float64 resolution; 0 of 285 and 0 of 13 flags are real at higher precision.
 
-- Pre-registration: `verification/PREREG_t6.md`
-- Results: `verification/REPORT.md`
-- Checks: 6 with a verdict; 5 pass, 1 fail.
-- Failure: C5 (peak locations to 3 s.f. against Task 4b): criterion — Task 4b located peaks on a grid of about 0.4 % steps; heights all match, three locations differ in the third figure.
+**Task 10.** classification/PREREG_t10.md · classification/t10/RESULTS_t10.md. 10 checks with a verdict; 6 pass, 4 fail.
 
-## T7
+- Failure — T10.1 symbolic (2 items): criterion / route — no √(square) handling in the pre-registered SymPy route; identities hold.
+- Failure — T10.2 A1.3 as specified: plan's construction (criterion as pre-registered); the supplementary construction passes.
+- Failure — T10.5 pair birth: criterion.
+- Failure — T10.6 matched-variance τ (zero-limit shape check): criterion.
 
-- Pre-registration: `verification/PREREG_t7.md`
-- Results: `verification/REPORT.md`
-- Checks: 15 with a verdict; 15 pass, 0 fail.
-- Failures: none.
+**Task 11.** classification/PREREG_t11.md · classification/t11/RESULTS_t11.md. 11 checks with a verdict; 10 pass, 1 fail.
 
-## T8
+- Failure — T11.3 classes: criterion — the pre-registered limits/brackets at β ≥ 2.
 
-- Pre-registration: `classification/PREREG_t8.md`
-- Results: `classification/REPORT.md`
-- Checks: 5 with a verdict; 5 pass, 0 fail.
-- Failures: none.
+**Task 12.** classification/PREREG_t12.md · classification/t12/RESULTS_t12.md. 13 checks with a verdict; 10 pass, 3 fail.
 
-## T9
+- Failure — Symbolic A5 (D2 post at Δt → ∞): code — the SymPy check route (`sympy.limit`); the series route confirms.
+- Failure — A7 minimum below F and two rays: criterion — the zero tolerance is too coarse for the prior dip.
+- Failure — A8 qualitative regression: prediction — the prompt's quick-check numbers.
 
-- Pre-registration: `classification/PREREG_t9.md`
-- Results: `classification/t9/RESULTS_t9.md`
-- Checks: 7 with a verdict; 5 pass, 2 fail.
-- Failure: T9.2 ARE route: criterion — the regularised ARE converges as √ε with a large prefactor; mp ARE and the closed-form Wiener filter match the document.
-- Failure: T9.5 monotonicity and ordering: criterion — float64 resolution; 0 of 285 and 0 of 13 flags are real at higher precision.
+**Task 13.** classification/PREREG_t13.md · classification/t13/RESULTS_t13.md. 15 checks with a verdict; 10 pass, 5 fail.
 
-## T10
+- Failure — Part A symbolic (2 of 68 items): criterion / route — identities verified by a post-hoc rewrite route.
+- Failure — A2 numerical (auxiliary cross-check, 277 sets): code — precision loss; all agree at higher precision.
+- Failure — C1 numbers, first run: document (4, a truncated worked value) and code (2, parser); passes after the fixes.
+- Failure — C2 classes, row 8: document — the stated class (1,0,1) cannot occur (proved; class set corrected).
+- Failure — C2 classes, row 12: code — route (ii) sample point below its equality tolerance at an exact limit.
+- Failure — D reproduction, Task 10: code — `run_t10.sh` omits `t10_realize_diag.py`; Task 12: criterion — masking of the provenance runtime list.
 
-- Pre-registration: `classification/PREREG_t10.md`
-- Results: `classification/t10/RESULTS_t10.md`
-- Checks: 10 with a verdict; 6 pass, 4 fail.
-- Failure: T10.1 symbolic (2 items): criterion / route — no √(square) handling in the pre-registered SymPy route; identities hold.
-- Failure: T10.2 A1.3 as specified: plan's construction (criterion as pre-registered); the supplementary construction passes.
-- Failure: T10.5 pair birth: criterion.
-- Failure: T10.6 matched-variance τ (zero-limit shape check): criterion.
+**Task 14.** classification/PREREG_t14.md · classification/t14/RESULTS_t14.md. 11 checks with a verdict; 8 pass, 3 fail.
 
-## T11
+- Failure — C4 paper render reproduces v1: criterion — the register types the excess identity as a Corollary (accepted in Task 15).
+- Failure — C9 bibliography: input / criterion — two entries unattached and DOIs unresolvable from the session; resolved by the Task 15 input (verified bib, attachments).
+- Failure — C10 reproduction: code — the dry-run resolver; all 9 flagged paths resolve as their scripts build them.
 
-- Pre-registration: `classification/PREREG_t11.md`
-- Results: `classification/t11/RESULTS_t11.md`
-- Checks: 11 with a verdict; 10 pass, 1 fail.
-- Failure: T11.3 classes: criterion — the pre-registered limits/brackets at β ≥ 2.
+**Task 15.** classification/PREREG_t15.md · classification/RESULTS_t15.md. 13 checks with a verdict; 11 pass, 2 fail.
 
-## T12
+- Failure — C4 [n] rendering: criterion / code — the pre-registered bracket pattern flags the interval '[0, 10]' in the Appendix B description of Figure B.1; it is not a citation, and no unresolved citation remains.
+- Failure — C10 thesis phrase check: criterion — all 81 A–E matches are Task 15's figure labels B.1–B.12, which coincide in form with the legacy labels the pattern targets; 0 'Paper 1', no legacy label remains.
 
-- Pre-registration: `classification/PREREG_t12.md`
-- Results: `classification/t12/RESULTS_t12.md`
-- Checks: 13 with a verdict; 10 pass, 3 fail.
-- Failure: Symbolic A5 (D2 post at Δt → ∞): code — the SymPy check route (`sympy.limit`); the series route confirms.
-- Failure: A7 minimum below F and two rays: criterion — the zero tolerance is too coarse for the prior dip.
-- Failure: A8 qualitative regression: prediction — the prompt's quick-check numbers.
+**Task 16.** classification/PREREG_t16.md · classification/RESULTS_t16.md. 8 checks with a verdict; 5 pass, 3 fail.
 
-## T13
-
-- Pre-registration: `classification/PREREG_t13.md`
-- Results: `classification/t13/RESULTS_t13.md`
-- Checks: 15 with a verdict; 10 pass, 5 fail.
-- Failure: Part A symbolic (2 of 68 items): criterion / route — identities verified by a post-hoc rewrite route.
-- Failure: A2 numerical (auxiliary cross-check, 277 sets): code — precision loss; all agree at higher precision.
-- Failure: C1 numbers, first run: document (4, a truncated worked value) and code (2, parser); passes after the fixes.
-- Failure: C2 classes, row 8: document — the stated class (1,0,1) cannot occur (proved; class set corrected).
-- Failure: C2 classes, row 12: code — route (ii) sample point below its equality tolerance at an exact limit.
-- Failure: D reproduction, Task 10: code — `run_t10.sh` omits `t10_realize_diag.py`; Task 12: criterion — masking of the provenance runtime list.
-
-## T14
-
-- Pre-registration: `classification/PREREG_t14.md`
-- Results: `classification/t14/RESULTS_t14.md`
-- Checks: 11 with a verdict; 8 pass, 3 fail.
-- Failure: C4 paper render reproduces v1: criterion — the register types the excess identity as a Corollary (accepted in Task 15).
-- Failure: C9 bibliography: input / criterion — two entries unattached and DOIs unresolvable from the session; resolved by the Task 15 input (verified bib, attachments).
-- Failure: C10 reproduction: code — the dry-run resolver; all 9 flagged paths resolve as their scripts build them.
-
-## T15
-
-- Pre-registration: `classification/PREREG_t15.md`
-- Results: `classification/RESULTS_t15.md`
-- Checks: 13 with a verdict; 11 pass, 2 fail.
-- Failure: C4 [n] rendering: criterion / code — the pre-registered bracket pattern flags the interval '[0, 10]' in the Appendix B description of Figure B.1; it is not a citation, and no unresolved citation remains.
-- Failure: C10 thesis phrase check: criterion — all 81 A–E matches are Task 15's figure labels B.1–B.12, which coincide in form with the legacy labels the pattern targets; 0 'Paper 1', no legacy label remains.
+- Failure — D1 new proof steps of the thesis draft (2 of 9 items): code — SymPy could not decide a sign and could not denest a square root of a square; both items hold (post-hoc diagnosis).
+- Failure — D2 statements against the repository: document / criterion — four statements differ in content: 3.1 and 3.5 gather conclusions the repository states in other results (verified in D1), and the §2.5 table rows for 2.5 and 2.7 left out hypotheses (full statements were then added to the thesis).
+- Failure — D6 legacy labels: criterion / document — three hits, none a legacy label: two figure labels in Appendix E outside the exemption window, and a quotation in Appendix D.

@@ -1,0 +1,19 @@
+# Thesis-render overrides (Task 17, Part B.2). Applied by render.py in thesis mode only; source/Stages_0_4_Source.md is unchanged.
+# replace: the source block of result `key` (its **[[key]] line through the end of its proof, or through its statement paragraph
+#          if it has no proof) is replaced by the file; following **Label:** lines and remarks are kept.
+# insert_before: the file is inserted before the first source line equal to the value;
+# insert_before_key: before the **[[key]] line of that result.
+- file: thesis_only/plateaus.md
+  replace: plateaus
+- file: thesis_only/equal-height-maxima.md
+  replace: equal-height-maxima
+- file: thesis_only/degenerate-points.md
+  replace: degenerate-points
+- file: thesis_only/pair-birth.md
+  replace: pair-birth
+- file: thesis_only/stationary-variance.md
+  insert_before: '{{include:thesis_only/normal-form.md}}'
+- file: thesis_only/optimal-envelope.md
+  replace: single-minimum-gain
+- file: thesis_only/discrete-excess.md
+  insert_before_key: shared-excess-set
