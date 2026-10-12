@@ -1,0 +1,55 @@
+{
+ "E1_item3_exact": {
+  "f(F)": "F**2*a2",
+  "text": "f is an upward parabola in M with f(0) = -q r < 0, so its positive root M is below F iff f(F) > 0; f(F) = F^2 a^2 > 0 for every dt > 0. Hence M < F exactly, and the L* bound follows by the recorded sign argument."
+ },
+ "E1_item3_adaptive_precision": {
+  "seed": 17003,
+  "n": 1000,
+  "counterexamples": 0,
+  "max_digits": 35647
+ },
+ "E1_item3_recorded": {
+  "recorded_counterexamples": 102,
+  "examples": [
+   [
+    "8.3293997",
+    "8.3293997",
+    "0.98495151",
+    "65.451848"
+   ],
+   [
+    "0.0033027246",
+    "0.0033027246",
+    "3.7269388e-5",
+    "3.7270777e-5"
+   ],
+   [
+    "0.0006621035",
+    "0.0006621035",
+    "4.3013974e-5",
+    "4.3015825e-5"
+   ]
+  ],
+  "text": "Each printed example has M = F to the printed digits; with a^2 below 1e-50 the difference F - M = O(F a^2) is below the 50-digit working precision. Attribution: code (precision)."
+ },
+ "E3_beta": {
+  "distinct_beta": 129,
+  "range": [
+   -2.0,
+   4.0
+  ],
+  "prereg_t11": "PREREG_t11.md: 'β grid: k/20 for k = −40…80 (exact rationals), plus {0, 2} ± {1e-6, 1e-3}: 129 values'",
+  "text": "T11.3 ran 129 values of beta (its pre-registration says so); '37 values' is in the repository's label of Theorem 7.8 (source/Stages_0_4_Source.md) and was carried into the draft. Attribution: document."
+ },
+ "E4_range": {
+  "hit": [
+   {
+    "ref": "Prop. 6.10–6.12",
+    "number": "6.11",
+    "problem": "type is Counterexample, not Proposition"
+   }
+  ],
+  "text": "§6.7's summary table cites 'Prop. 6.10–6.12'; 6.11 is a Counterexample. The pre-registered rule requires every member of a typed range to have that type. Attribution: document (abbreviation spans a Counterexample)."
+ }
+}

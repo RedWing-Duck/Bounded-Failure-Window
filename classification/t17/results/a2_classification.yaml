@@ -1,0 +1,99 @@
+# Task 17 E2 (A2): draft vs repository statements for 2.4-2.7, 6.1-6.28, 7.1-7.16, read from a2_pairs.md after the recorded run
+# (81e977c). Kinds: a equivalent; b the draft is weaker; c the draft is stronger; d the draft contradicts the repository.
+# Wording, notation, typography (LaTeX vs Unicode) and titles are not differences unless content changes.
+no_difference: ['2.4', '2.6', '6.1', '6.2', '6.3', '6.6', '6.7', '6.8', '6.10', '6.12', '6.14', '6.15', '6.16', '6.17', '6.18',
+                '6.19', '6.20', '6.21', '6.22', '6.24', '6.25', '6.26', '6.28', '7.2', '7.3', '7.4', '7.9', '7.10', '7.13', '7.15']
+differences:
+- result: '2.5'
+  kind: a
+  what: The equality condition is cited as Theorem 2.2(3); the repository writes Theorem 2.2(c). The draft numbers Theorem 2.2's parts (1)-(4), the repository (a)-(d).
+  draft: "(the equality condition of Theorem 2.2(3))"
+  repo: "(the equality condition of Theorem 2.2(c))"
+- result: '2.7'
+  kind: a
+  what: The draft states what "nondegenerate fold" means (in a local coordinate x, dσ²/dθ ≈ a(x² − bδ), a, b ≠ 0) and the side of birth (bδ > 0); the repository says "through a nondegenerate fold of N" at distance δ from θ₀. Same result, written out.
+  draft: "Suppose a minimum–maximum pair is born as a family parameter passes δ = 0 through a nondegenerate fold: near the birth point, in a local coordinate x, dσ²/dθ ≈ a(x² − bδ) with a, b ≠ 0. Then for bδ > 0 the turning-point positions separate like δ^(1/2) and the values like M − m ~ δ^(3/2) …"
+  repo: "If a minimum–maximum pair is born at θ₀ through a nondegenerate fold of N, then at distance δ from θ₀ the turning-point positions separate like δ^{1/2} and the values like M − m ~ δ^{3/2} …"
+- result: '6.4'
+  kind: a
+  what: The draft cites [27, 28, 45] for measurement differencing inside the statement; the repository attaches the same citations in the register.
+  draft: "With measurement differencing [27, 28, 45], z = ẏ + y/τ, …"
+  repo: "With measurement differencing (z = ẏ + y/τ), …"
+- result: '6.5'
+  kind: a
+  what: Same formula. The repository has it inside the thesis-only §3.8 text (no separate labelled statement); the draft states it as Corollary 6.5 with a proof.
+  draft: "With ν = 2ΣΠ/λ² and t = λτ, P/F = 2/(1 + νt + √((1 + νt)² + ν(1 − t)²))"
+  repo: "P/F = 2/(1 + νt + √((1 + νt)² + ν(1 − t)²)) … The second formula is the optimal filter along τ (Corollary 6.5)"
+- result: '6.9'
+  kind: a
+  what: The draft adds the reading "no constant-gain relay is optimal under coloured noise", which is what P < V = inf over G says.
+  draft: "P(τ) < V(τ) for every τ > 0: no constant-gain relay is optimal under coloured noise."
+  repo: "P(τ) < V(τ) for every τ > 0."
+- result: '6.11'
+  kind: a
+  what: The repository's title carries "analytic;" and quotes "the starting study's" claim; content identical.
+  draft: "The statement \"the optimal filter never produces a window\" holds along precision …"
+  repo: "The starting study's \"the optimal filter never produces a window\" holds along precision …"
+- result: '6.13'
+  kind: a
+  what: Restated in the M-P notation of §6.3 (a² for ϕ², P⁻ for M_L, P⁺ for S_L, φ = FΠΔt for FΠ_d, Δt > 0 for Π_d > 0). The draft does not restate S_L = (1 − L)²M_L + L²r (it is §6.3's fixed-gain formula for P⁺) and adds the gain range 0 ≤ L < 2 (the register title has it).
+  draft: "For a fixed gain 0 ≤ L < 2, the prior error is P⁻ = (a²L²r + q)/(1 − a²(1 − L)²), P⁺ − F = (P⁻ − F)/a², and P⁻ > F iff P⁺ > F iff L/(2 − L) > φ. The steady-state Kalman gain L⋆ satisfies L⋆/(2 − L⋆) < φ/2 for every Δt > 0."
+  repo: "M_L = (ϕ²L²r + q)/(1 − ϕ²(1 − L)²), S_L = (1 − L)²M_L + L²r, S_L − F = (M_L − F)/ϕ², and M_L > F ⟺ S_L > F ⟺ L/(2 − L) > FΠ_d. The steady-state Kalman gain L⋆ satisfies L⋆/(2 − L⋆) < ½FΠ_d for every Π_d > 0. (manuscript, Paper 1, Proposition 6, p. 7)"
+- result: '6.23'
+  kind: a
+  what: Title "(Σ scaling)" vs "(scaling)"; statement identical.
+  draft: "Lemma 6.23 (Σ scaling). σ²/F = (1 + g²/u)/(1 + g). …"
+  repo: "Lemma 6.23 (scaling). σ²/F = (1 + g²/u)/(1 + g). …"
+- result: '6.27'
+  kind: a
+  what: The draft names the quantity (σ⋆² increasing; σ⋆²/F = 2/(1 + √(1 + u))); the repository leaves it implicit under the title "optimal".
+  draft: "Absolute: σ⋆² is increasing from 0, class upper ray. Relative: σ⋆²/F = 2/(1 + √(1 + u)) is decreasing, classes lower ray and Empty."
+  repo: "Absolute: increasing from 0, class upper ray. Relative: 2/(1 + √(1 + u)) is decreasing, classes lower ray, Empty."
+- result: '7.1'
+  kind: a
+  what: Same definition; the draft adds an informal gloss after it.
+  draft: "… and (s, Y′) has the same joint law as (s, Y_θ₁). In words: the worse observations can be manufactured from the better ones as they arrive …"
+  repo: "… such that (s, Y′) =d (s, Y_θ₁)."
+- result: '7.5'
+  kind: a
+  what: "white components written as constant densities" vs "white components in integrated form as constant densities"; "realises" vs "realizes".
+  draft: "(white components written as constant densities)"
+  repo: "(white components in integrated form as constant densities)"
+- result: '7.6'
+  kind: a
+  what: Title only ("the orderings coincide for Gaussian noise" vs "non-linear causal garblings add nothing"); the four equivalent conditions are the same.
+  draft: "Theorem 7.6 (the orderings coincide for Gaussian noise). … the following are equivalent: (i) … (iv) …"
+  repo: "Theorem 7.6 (non-linear causal garblings add nothing). … the following are equivalent: (i) … (iv) …"
+- result: '7.7'
+  kind: a
+  what: Title "(which studied sweeps are ordered)" vs "(the sweeps studied)"; the draft drops the parenthesis "(real for τ₂ > τ₁)" after the garbling filter, which is implied by τ₂ > τ₁ in (b).
+  draft: "The garbling noise is the second-order process S_ξ(ω) = … , H_ξ(s) = …"
+  repo: "The garbling noise has S_ξ(ω) = … , H_ξ(s) = …, a second-order process (real for τ₂ > τ₁)."
+- result: '7.8'
+  kind: a
+  what: Title only ("sharpness in the power family" vs "sharpness of the ordering condition").
+  draft: "Theorem 7.8 (sharpness in the power family)."
+  repo: "Theorem 7.8 (sharpness of the ordering condition)."
+- result: '7.11'
+  kind: a
+  what: The draft writes the window band explicitly in the class list (σ⋆² < R² < P(1/e)); the repository gives it in the previous sentence.
+  draft: "The classes along θ are All (R² ≤ σ⋆²), window (σ⋆² < R² < P(1/e)) and Empty (R² ≥ P(1/e))."
+  repo: "Classes along θ: All (R² ≤ σ⋆²), window, Empty (R² ≥ P(1/e))."
+- result: '7.12'
+  kind: a
+  what: The repository's title carries "analytic;"; "not monotone" vs "non-monotone".
+  draft: "Counterexample 7.12 (pathwise ordering is not enough). …"
+  repo: "Counterexample 7.12 (analytic; pathwise ordering is not enough). …"
+- result: '7.14'
+  kind: a
+  what: "the average of the m fine samples completed by the time it is taken" vs "… completed by the time it is" (the repository's sentence is truncated).
+  draft: "each coarse M-I sample is the average of the m fine samples completed by the time it is taken: a causal garbling."
+  repo: "each coarse M-I sample is the average of m fine samples completed by the time it is, a causal garbling."
+- result: '7.16'
+  kind: a
+  what: The repository's statement contains its argument; the draft states "ordered in neither direction" and gives the same argument as a proof.
+  draft: "Along Δt, the point-sampled model is ordered in neither direction."
+  repo: "In neither direction: by Theorem 7.2 an ordering would give a pointwise-in-t inequality … but post falls while prior and avg rise (Theorem 6.19)."
+proofs_added_in_draft:
+  note: Results whose draft carries a proof where the repository source has none (from a2_pairs.md). The prompt names 6.9 and 7.4; 6.9 has a proof in the repository source too.
+  results: ['6.5', '6.13', '6.14', '6.20', '6.23', '7.4', '7.7', '7.14', '7.16']
