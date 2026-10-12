@@ -1,0 +1,28 @@
+{
+ "reduced": {
+  "post": "-(-nu*t*(exp(2*t) - 1)*exp(2*g*t) - 2*(exp(g*t) - 1)**2*exp(2*t*(g + 1)))*exp(-2*g*t)/(nu*t*(exp(2*t*(g + 1)) - 1))",
+  "prior": "(-nu*t*exp(2*g*t) + nu*t*exp(2*t*(g + 1)) + 2*exp(2*g*t) - 4*exp(g*t) + 2)/(nu*t*(exp(2*t*(g + 1)) - 1))",
+  "avg": "-(-2*nu*t**2*(exp(2*t*(g + 1)) - 1)*exp(2*t*(g + 1)) - (exp(2*t) - 1)*(-nu*t*(1 - exp(2*t))*exp(2*g*t) + nu*t*(1 - exp(2*t*(g + 1)))*exp(2*g*t) + 2*(1 - exp(g*t))**2*exp(2*t*(g + 1))))*exp(-2*t*(g + 1))/(2*nu*t**2*(exp(2*t*(g + 1)) - 1))"
+ },
+ "grid": 25,
+ "hist": {
+  "post": {
+   "0": 15,
+   "1": 10
+  },
+  "avg": {
+   "1": 15,
+   "0": 10
+  },
+  "prior": {
+   "1": 15,
+   "0": 10
+  }
+ },
+ "over_two": {
+  "post": [],
+  "avg": [],
+  "prior": []
+ },
+ "seconds": 28.2
+}

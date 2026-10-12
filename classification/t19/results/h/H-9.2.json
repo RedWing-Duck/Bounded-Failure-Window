@@ -1,0 +1,14 @@
+{
+ "n": 2001,
+ "dps": 100,
+ "max_rel_err_eps_1e-40": 3.1361995055529588e-12,
+ "n_over_1e-5": 0,
+ "n_slope_tested": 2001,
+ "slope_range": [
+  0.49999999999971734,
+  0.5000000000001953
+ ],
+ "slope_bad": [],
+ "n_slope_bad": 0,
+ "pass": true
+}

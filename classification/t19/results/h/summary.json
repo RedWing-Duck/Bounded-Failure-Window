@@ -1,0 +1,14 @@
+{
+ "H-6.C5": {
+  "id": "H-6.C5",
+  "pass": true,
+  "seconds": 1.4,
+  "wall_seconds": 1.7
+ },
+ "H-9.2": {
+  "id": "H-9.2",
+  "pass": true,
+  "seconds": 20.2,
+  "wall_seconds": 20.4
+ }
+}
