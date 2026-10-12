@@ -1,4 +1,4 @@
-# Appendix D. Verification record, Tasks 1–16
+# Appendix D. Verification record, Tasks 1–17
 
 For each task: the pre-registration and results files, the pre-registered checks that passed and failed, and every failure with the attribution its report gives (criterion, input, code, document or prediction). Outcomes are copied from the reports, not re-judged, and every failure stays recorded.
 
@@ -67,3 +67,10 @@ For each task: the pre-registration and results files, the pre-registered checks
 - Failure — D1 new proof steps of the thesis draft (2 of 9 items): code — SymPy could not decide a sign and could not denest a square root of a square; both items hold (post-hoc diagnosis).
 - Failure — D2 statements against the repository: document / criterion — four statements differ in content: 3.1 and 3.5 gather conclusions the repository states in other results (verified in D1), and the §2.5 table rows for 2.5 and 2.7 left out hypotheses (full statements were then added to the thesis).
 - Failure — D6 legacy labels: criterion / document — three hits, none a legacy label: two figure labels in Appendix E outside the exemption window, and a quotation in Appendix D.
+
+**Task 17.** classification/PREREG_t17.md · classification/RESULTS_t17.md. 7 checks with a verdict; 3 pass, 4 fail.
+
+- Failure — E1 new proof steps of the thesis draft (2 of 9 items): code / document — the 50-digit test of the optimal prior M < F (Proposition 6.13) cannot resolve it when e^(−2λΔt) < 10⁻⁵⁰ (it holds exactly, f(F) = F²a² > 0); Corollary 7.4's proof as written omits σ⋆² → 0 and Theorem 5.1 (the corollary holds).
+- Failure — E3 numbers (1 of 88): document — "37 values of β" for Theorem 7.8, in the repository's label and the draft; Task 11 ran 129.
+- Failure — E4 cross-references: document — "Prop. 6.10–6.12" spans Counterexample 6.11.
+- Failure — E5 prior-work sentences: document — §7.3 makes [47] an analysis of coloured measurement noise; it studies time-correlated model error (2 sentences undetermined: no abstracts reachable from the session).

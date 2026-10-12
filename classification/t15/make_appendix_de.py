@@ -115,7 +115,14 @@ def appendix_d(with_t17=False):
     return "\n".join(out)
 
 
-FAILURES_T17 = []   # filled from RESULTS_t17.md after the T17 run
+FAILURES_T17 = [  # from RESULTS_t17.md (recorded run on 81e977c)
+    "E1 new proof steps of the thesis draft (2 of 9 items): code / document — the 50-digit test of the optimal prior M < F "
+    "(Proposition 6.13) cannot resolve it when e^(−2λΔt) < 10⁻⁵⁰ (it holds exactly, f(F) = F²a² > 0); Corollary 7.4's proof as "
+    "written omits σ⋆² → 0 and Theorem 5.1 (the corollary holds).",
+    "E3 numbers (1 of 88): document — \"37 values of β\" for Theorem 7.8, in the repository's label and the draft; Task 11 ran 129.",
+    "E4 cross-references: document — \"Prop. 6.10–6.12\" spans Counterexample 6.11.",
+    "E5 prior-work sentences: document — §7.3 makes [47] an analysis of coloured measurement noise; it studies time-correlated "
+    "model error (2 sentences undetermined: no abstracts reachable from the session)."]
 
 
 def appendix_e():

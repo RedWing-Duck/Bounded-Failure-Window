@@ -56,7 +56,7 @@ differences:
   repo: "… such that (s, Y′) =d (s, Y_θ₁)."
 - result: '7.5'
   kind: a
-  what: "white components written as constant densities" vs "white components in integrated form as constant densities"; "realises" vs "realizes".
+  what: '"white components written as constant densities" vs "white components in integrated form as constant densities"; "realises" vs "realizes".'
   draft: "(white components written as constant densities)"
   repo: "(white components in integrated form as constant densities)"
 - result: '7.6'
@@ -86,7 +86,7 @@ differences:
   repo: "Counterexample 7.12 (analytic; pathwise ordering is not enough). …"
 - result: '7.14'
   kind: a
-  what: "the average of the m fine samples completed by the time it is taken" vs "… completed by the time it is" (the repository's sentence is truncated).
+  what: '"the average of the m fine samples completed by the time it is taken" vs "… completed by the time it is" (the repository''s sentence is truncated).'
   draft: "each coarse M-I sample is the average of the m fine samples completed by the time it is taken: a causal garbling."
   repo: "each coarse M-I sample is the average of m fine samples completed by the time it is, a causal garbling."
 - result: '7.16'
