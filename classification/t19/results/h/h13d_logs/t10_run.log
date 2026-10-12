@@ -5,3 +5,26 @@
 == t10_realize
    90.2s
 == t10_census
+   8232.4s
+== t10_mixed
+   3064.5s
+== t10_degenerate
+   74.1s
+== t10_degenerate_diag
+   6.2s
+== t10_tau
+   199.1s
+== t10_tau_diag
+   1.1s
+== t10_blind
+   2279.8s
+== t10_figures
+   8.6s
+Traceback (most recent call last):
+  File "/tmp/claude-0/t19/repro19/classification/t10/make_results_t10.py", line 230, in <module>
+    T += EXTRA()
+         ~~~~~^^
+  File "/tmp/claude-0/t19/repro19/classification/t10/make_results_t10.py", line 57, in EXTRA
+    + ", ".join(f"Π = {g(x['Pi'], '.0e')}: G₊/(2HΠ) = {g(x['G_plus_over_2H_Pi'], '.10f')}" for x in r2d["rows"][::3])
+                                                                                                    ~~~^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable

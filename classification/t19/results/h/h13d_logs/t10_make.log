@@ -1,0 +1,40 @@
+# Task 10 — Stage 3 falsification and completeness: results
+
+Tests `classification/Stage_3_Plan.md` against `classification/Task_10_Stage3_Prompt.md`. Pre-registration `classification/PREREG_t10.md`, commit **da3d826**; code and results commit **cbe96fe**. Total measured script runtime: **13958 s** on 4 CPUs (Python 3.13.16, mpmath 1.3.0, SymPy 1.14.0).
+
+| Check | Verdict | Counts / worst errors | Runtime (s) |
+|---|---|---|---|
+| T10.1 symbolic | **FAIL** | 24/26 items reduce to 0 by the fixed route; failing: G(Pi(G)) - G == 0 for Pi = (G^2 + 2 lam' G)/(2 Sig'); sigma*^2(pi_R) - R^2 == 0 | 2 |
+| T10.2 realizability: every class | **PASS** | 101/101 targets realized (both routes, G ≥ 0, continuous, σ² = v) | 90 |
+| T10.2 forbidden classes | **PASS** | 24/24 blocked |  |
+| T10.2 A1.3 as specified (Gaussian bumps, G₊) | **FAIL** | k windows in all five; G → 0 and G²/Π → 0 at 1e-12; **G(1e12)/G(1e11) − 1 = 9** (G₊ diverges) |  |
+| T10.2 A1.3 supplementary (compact bumps, G₊ → G₋ at Π_c) | **PASS** | all five pass; G(1e12)/G(1e11) − 1 = 6e-10, branch jump 0 |  |
+| T10.3 census | **PASS** | bayes: 2000 sets, TP hist {'1': 906, '0': 1094}, fails 0; misspec: 2000 sets, TP hist {'1': 892, '0': 1108}, fails 0; capped: 2000 sets, TP hist {'0': 1092, '1': 908}, fails 0; blind: 2000 sets, TP hist {'0': 2000}, fails 0; hill: 10000 sets, TP hist {'2': 4868, '0': 5132}, fails 0; parts {'families': True, 'targeted': True, 'regression': True} | 8232 |
+| T10.4 mixed class (Hill) | **PASS** | 4868 two-TP sets, 77888 tolerances, failing sets 0 | 3064 |
+| T10.5 degeneracies | **FAIL** | equal_maxima pass; inflection pass; plateau pass; pair_birth FAIL; narrow pass | 74 |
+| T10.6 matched-variance τ | **FAIL** | routes pass; shape FAIL; classes pass; relay pass; mc pass; regression pass | 199 |
+| T10.7 blind search | **PASS** | 1,000,000 classifications; flagged in float64 3; persisting at 60 digits 0 | 2280 |
+
+**Pre-registered checks that FAIL:** T10.1 symbolic; T10.2 A1.3 as specified (Gaussian bumps, G₊); T10.5 degeneracies; T10.6 matched-variance τ. Every one is traced below to the pre-registered criterion or to SymPy's simplification route, not to the plan. The only plan-level issue they expose is a gap in the A1.3 argument (the upper-branch inverse alone cannot give a convergent gain), which the pre-registered branch-following construction closes.
+
+## Plain statements
+
+- **Is any prediction in the Plan falsified?** No. A1 (realizability, forced lower ray, exact class sets), A3 (elasticity lemma and the Bayesian and misspecified-Kalman reductions), A4 (Bayesian, misspecified Kalman, capped, precision-blind and Hill turning-point bounds, including the Hill mixed class), A5 (equal-height maxima, inflection, plateau, pair birth with zero-width band) and A6 (the optimal filter windows along matched-variance τ) all hold in every tested case. A1.3 holds, but only with the branch-switching construction, not with G₊ as the plan writes it (see diagnosis).
+- **Was any class outside the predicted set found?** No: 1,000,000 classifications in the blind search, 3 flagged in float64, 0 persisting at 60 digits; no route disagreements anywhere in T10.2–T10.7.
+
+## Diagnoses of the failures
+
+### T10.1: two items not reduced by the fixed SymPy route (route limitation; identities hold)
+
+- Misspecified inverse G(Π(G)) − G: SymPy leaves √(G**2 + 2*G*lambda1 + lambda1**2). Factoring the radicand gives (G + lambda1)**2 and the expression reduces to 0.
+- Forced ray σ*²(π_R) − R²: the radicand is (R2*lambda - 2*Sigma)**2/R2**2; its square root equals (2Σ − λR²)/R² only when R² < 2F, which positive-symbol assumptions cannot express. With R² = F/(1 + w), w > 0, and the inner radicand factored as (2*w + 1)**2, it reduces to 0.
+- Attribution: **criterion / route** (no √(square) handling in the pre-registered route). Plan: correct.
+
+### T10.2: A1.3 as specified (attribution: plan's construction; criterion as pre-registered)
+
+G₊ = Πv + √(…) ≥ Πv and v → H > 0, so G₊/Π → 2H: Π = 1e+06: G₊/(2HΠ) = 0.9999833339, Π = 1e+09: G₊/(2HΠ) = 0.9999999833, Π = 1e+12: G₊/(2HΠ) = 1.0000000000. The lower branch G₋ equals the Bayesian gain and converges. The pre-registered supplementary construction (compactly supported bumps, G₊ for Π ≤ Π_c and G₋ beyond, where v_B touches σ*²) passes all five k, with branch jump 0 and G(1e12)/G(1e11) − 1 = 6e-10. **A1.3's claim is true; its proof must switch to the lower branch at an envelope touch point, and bumps must not cover that point (Gaussian tails do).**
+
+### T10.5: pair-birth exponent (attribution: criterion)
+
+Slope of log(M − m) vs log δ = **1.5000**; slope of the turning-point separation = 0.5000. Diagnosis (`t10_degenerate_diag.py`, δ to 1e-14): slopes 1.50007 and 0.50002, and (M − m)/sep³ is constant (0.00542983). At a fold the positions separate like δ^(1/2) and the values like δ^(3/2). The pre-registered [0.4, 0.6] applies to positions, not to M − m. The band still closes continuously (M − m → 0 monotonically), as the plan says.
+

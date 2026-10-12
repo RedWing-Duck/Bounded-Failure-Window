@@ -1,0 +1,14 @@
+{
+ "series_route_limit": "-c*(2*Pi_0*Sigma*c - 2*Pi_0*Sigma - c*lambda)/(Pi*lambda)",
+ "limit_minus_stated_is_0": true,
+ "series_minus_stated_is_0": true,
+ "sequence_worst_rel": {
+  "dt=1e10": "7.73e-7",
+  "dt=1e20": "7.73e-17",
+  "dt=1e40": "7.73e-37"
+ },
+ "sequence_pass": true,
+ "seed": 19003,
+ "sets": 1000,
+ "pass": true
+}

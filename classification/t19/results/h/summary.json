@@ -40,5 +40,17 @@
   "pass": true,
   "seconds": 1.2,
   "wall_seconds": 1.4
+ },
+ "H-11.3": {
+  "id": "H-11.3",
+  "pass": true,
+  "seconds": 7002.7,
+  "wall_seconds": 7002.9
+ },
+ "H-12.A5": {
+  "id": "H-12.A5",
+  "pass": true,
+  "seconds": 1.6,
+  "wall_seconds": 1.8
  }
 }
