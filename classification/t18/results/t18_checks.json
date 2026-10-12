@@ -1,0 +1,924 @@
+{
+ "commit": "f77ab8f",
+ "F1": {
+  "cor_7_4": {
+   "proof": "*Proof.* The first sentence is Corollary 7.3. The precision sweep is ordered (Proposition 7.7(a) below), so by Corollary 7.3 the optimal classes along it are Empty, All or a lower ray; All is excluded because σ⋆² = 2Σ/(λ + √(λ² + 2ΣΠ)) → 0 as Π → ∞ (Proposition 3.5), which leaves the lower ray and Empty. By Theorem 5.1 every continuous curve on or above σ⋆² is the variance of some continuous gain, so every curve strictly above it belongs to a gain other than the optimal one. ∎",
+   "cites_limit": true,
+   "cites_5_1": true,
+   "sympy_limit": "0",
+   "resolved": true
+  },
+  "beta": {
+   "draft": 129,
+   "t11_3_distinct": 129,
+   "resolved": true
+  },
+  "s67_label": {
+   "row": "| τ, matched variance | unimodal: window, Empty | fixed relay increasing: All, upper ray, Empty | Prop. 6.10, Cex. 6.11, Prop. 6.12 |",
+   "refs": [
+    [
+     "Prop.",
+     "6.10"
+    ],
+    [
+     "Cex.",
+     "6.11"
+    ],
+    [
+     "Prop.",
+     "6.12"
+    ]
+   ],
+   "types": {
+    "6.10": "Proposition",
+    "6.11": "Counterexample",
+    "6.12": "Proposition"
+   },
+   "resolved": true
+  },
+  "s47": {
+   "sentences": [
+    "∎\n\nFiltering under coloured measurement noise is standard, by state augmentation or measurement differencing [27, 28, 45, 46], and the effect of mis-specified time-correlated model error on Kalman smoothing has been studied [47].",
+    "Coloured measurement noise is a standard setting for filter design [27, 28, 45, 46], and the effect of mis-specified time-correlated model error on Kalman smoothing has been studied [47].",
+    "- Failure — E5 prior-work sentences: document — §7.3 made [47] an analysis of coloured measurement noise; it studies time-correlated model error (2 sentences undetermined: no abstracts reachable from the session)."
+   ],
+   "resolved": false
+  },
+  "s21": {
+   "sentences": [
+    "It extends to sequential experiments [20] and to the comparison of information structures in stochastic control and teams [22, 23], where observation channels are also treated as design variables [21]."
+   ],
+   "resolved": false
+  },
+  "p613": {
+   "proof_states_it": true,
+   "identity": {
+    "zero": true,
+    "route": "simplify"
+   },
+   "sign": "f is monic (opens upward) with f(0) = -sFr < 0, so its positive root M is below F iff f(F) > 0; f(F) = F^2 a^2 > 0.",
+   "numeric": {
+    "seed": 18001,
+    "n": 1000,
+    "counterexamples": 0,
+    "max_digits": 39399
+   },
+   "resolved": true
+  },
+  "pass": false,
+  "seconds": 6.62
+ },
+ "F2": {
+  "per_task": {
+   "1": {
+    "checks": 12,
+    "pass": 12,
+    "fail": 0,
+    "failed": []
+   },
+   "2": {
+    "checks": 2,
+    "pass": 2,
+    "fail": 0,
+    "failed": []
+   },
+   "3": {
+    "checks": 8,
+    "pass": 8,
+    "fail": 0,
+    "failed": []
+   },
+   "4": {
+    "checks": 0,
+    "pass": 0,
+    "fail": 0,
+    "failed": []
+   },
+   "5": {
+    "checks": 0,
+    "pass": 0,
+    "fail": 0,
+    "failed": []
+   },
+   "6": {
+    "checks": 6,
+    "pass": 5,
+    "fail": 1,
+    "failed": [
+     "C5"
+    ]
+   },
+   "7": {
+    "checks": 15,
+    "pass": 15,
+    "fail": 0,
+    "failed": []
+   },
+   "8": {
+    "checks": 5,
+    "pass": 5,
+    "fail": 0,
+    "failed": []
+   },
+   "9": {
+    "checks": 7,
+    "pass": 5,
+    "fail": 2,
+    "failed": [
+     "T9.2 optimal filter, ARE route (ε = 1e-4…1e-10, √ε extrapolation)",
+     "T9.5 monotonicity and ordering"
+    ]
+   },
+   "10": {
+    "checks": 10,
+    "pass": 6,
+    "fail": 4,
+    "failed": [
+     "T10.1 symbolic",
+     "T10.2 A1.3 as specified (Gaussian bumps, G₊)",
+     "T10.5 degeneracies",
+     "T10.6 matched-variance τ"
+    ]
+   },
+   "11": {
+    "checks": 11,
+    "pass": 10,
+    "fail": 1,
+    "failed": [
+     "T11.3 classes (two routes)"
+    ]
+   },
+   "12": {
+    "checks": 13,
+    "pass": 10,
+    "fail": 3,
+    "failed": [
+     "Symbolic identities and signs (A1–A6, B1–B5)",
+     "A7 minimum below F and two rays (D1, G > 2FΠ)",
+     "A8 qualitative regression (prompt's values)"
+    ]
+   },
+   "13": {
+    "checks": 15,
+    "pass": 10,
+    "fail": 5,
+    "failed": [
+     "Part A symbolic (A1, A2, A4, A5, A7, A8)",
+     "A2 numerical (same sets)",
+     "C1 numbers, first run",
+     "C2 classes (42 rows × 1,000 sets × 100 tolerances)",
+     "D reproduction (Tasks 8–12 reports)"
+    ]
+   },
+   "14": {
+    "checks": 11,
+    "pass": 8,
+    "fail": 3,
+    "failed": [
+     "C4 Paper render reproduces v1",
+     "C9 Bibliography",
+     "C10 Reproduction unaffected"
+    ]
+   },
+   "15": {
+    "checks": 13,
+    "pass": 11,
+    "fail": 2,
+    "failed": [
+     "C4 [n] rendering",
+     "C10 Thesis phrase check"
+    ]
+   },
+   "16": {
+    "checks": 8,
+    "pass": 5,
+    "fail": 3,
+    "failed": [
+     "D1 New proof steps (A1)",
+     "D2 Statements (A2)",
+     "D6 Legacy labels (C.1)"
+    ]
+   },
+   "17": {
+    "checks": 7,
+    "pass": 3,
+    "fail": 4,
+    "failed": [
+     "E1 New proof steps (A1)",
+     "E3 Numbers (A3)",
+     "E4 Cross-references (A4)",
+     "E5 Prior-work sentences (A4)"
+    ]
+   }
+  },
+  "total": 143,
+  "failed": 28,
+  "no_criteria": [
+   4,
+   5
+  ],
+  "counts_match": false,
+  "appendix_d_failures": [
+   "C5 (peak locations to 3 s.f. against Task 4b): criterion — Task 4b located peaks on a grid of about 0.4 % steps; heights all match, three locations differ in the third figure.",
+   "T9.2 ARE route: criterion — the regularised ARE converges as √ε with a large prefactor; mp ARE and the closed-form Wiener filter match the document.",
+   "T9.5 monotonicity and ordering: criterion — float64 resolution; 0 of 285 and 0 of 13 flags are real at higher precision.",
+   "T10.1 symbolic (2 items): criterion / route — no √(square) handling in the pre-registered SymPy route; identities hold.",
+   "T10.2 A1.3 as specified: plan's construction (criterion as pre-registered); the supplementary construction passes.",
+   "T10.5 pair birth: criterion.",
+   "T10.6 matched-variance τ (zero-limit shape check): criterion.",
+   "T11.3 classes: criterion — the pre-registered limits/brackets at β ≥ 2.",
+   "Symbolic A5 (D2 post at Δt → ∞): code — the SymPy check route (`sympy.limit`); the series route confirms.",
+   "A7 minimum below F and two rays: criterion — the zero tolerance is too coarse for the prior dip.",
+   "A8 qualitative regression: prediction — the prompt's quick-check numbers.",
+   "Part A symbolic (2 of 68 items): criterion / route — identities verified by a post-hoc rewrite route.",
+   "A2 numerical (auxiliary cross-check, 277 sets): code — precision loss; all agree at higher precision.",
+   "C1 numbers, first run: document (4, a truncated worked value) and code (2, parser); passes after the fixes.",
+   "C2 classes, row 8: document — the stated class (1,0,1) cannot occur (proved; class set corrected).",
+   "C2 classes, row 12: code — route (ii) sample point below its equality tolerance at an exact limit.",
+   "D reproduction, Task 10: code — `run_t10.sh` omits `t10_realize_diag.py`; Task 12: criterion — masking of the provenance runtime list.",
+   "C4 paper render reproduces v1: criterion — the register types the excess identity as a Corollary (accepted in Task 15).",
+   "C9 bibliography: input / criterion — two entries unattached and DOIs unresolvable from the session; resolved by the Task 15 input (verified bib, attachments).",
+   "C10 reproduction: code — the dry-run resolver; all 9 flagged paths resolve as their scripts build them.",
+   "C4 [n] rendering: criterion / code — the pre-registered bracket pattern flags the interval '[0, 10]' in the Appendix B description of Figure B.1; it is not a citation, and no unresolved citation remains.",
+   "C10 thesis phrase check: criterion — all 81 A–E matches are Task 15's figure labels B.1–B.12, which coincide in form with the legacy labels the pattern targets; 0 'Paper 1', no legacy label remains.",
+   "D1 new proof steps of the thesis draft (2 of 9 items): code — SymPy could not decide a sign and could not denest a square root of a square; both items hold (post-hoc diagnosis).",
+   "D2 statements against the repository: document / criterion — four statements differ in content: 3.1 and 3.5 gather conclusions the repository states in other results (verified in D1), and the §2.5 table rows for 2.5 and 2.7 left out hypotheses (full statements were then added to the thesis).",
+   "D6 legacy labels: criterion / document — three hits, none a legacy label: two figure labels in Appendix E outside the exemption window, and a quotation in Appendix D.",
+   "E1 new proof steps of the thesis draft (2 of 9 items): code / document — the 50-digit test of the optimal prior M < F (Proposition 6.13) cannot resolve it when e^(−2λΔt) < 10⁻⁵⁰ (it holds exactly, f(F) = F²a² > 0); Corollary 7.4's proof as written omits σ⋆² → 0 and Theorem 5.1 (the corollary holds).",
+   "E3 numbers (1 of 88): document — \"37 values of β\" for Theorem 7.8, in the repository's label and the draft; Task 11 ran 129.",
+   "E4 cross-references: document — \"Prop. 6.10–6.12\" spans Counterexample 6.11.",
+   "E5 prior-work sentences: document — §7.3 makes [47] an analysis of coloured measurement noise; it studies time-correlated model error (2 sentences undetermined: no abstracts reachable from the session)."
+  ],
+  "appendix_d_unmapped": [
+   "T10.2 A1.3 as specified: plan's construction (criterion as pre-registered); the supplementary construction passes.",
+   "T10.5 pair birth: criterion.",
+   "T10.6 matched-variance τ (zero-limit shape check): criterion.",
+   "C1 numbers, first run: document (4, a truncated worked value) and code (2, parser); passes after the fixes."
+  ],
+  "note": "pass also needs the manual §8.4 example mapping (results/f2_examples.md)",
+  "seconds": 0.0
+ },
+ "F3": {
+  "persistent_route_disagreements": [
+   {
+    "file": "classification/t13/results/t13_audit_classes.json",
+    "path": "/rows/11/persisting",
+    "value": 122,
+    "name": "Pi0 monotone"
+   }
+  ],
+  "referee_mentions": [
+   {
+    "file": "classification/PREREG_t18.md",
+    "line": 30,
+    "text": "3. **§8.5 and the referee.** `classification/t13/referee_report.md` (Task 13, check C4) is an independent referee report on the"
+   },
+   {
+    "file": "classification/PREREG_t18.md",
+    "line": 32,
+    "text": "   29–31, Theorem 35 and others), with dispositions, recorded in the source's change log as \"T13 C4 (referee 1–12)\". The draft's"
+   },
+   {
+    "file": "classification/PREREG_t18.md",
+    "line": 33,
+    "text": "   §8.5 says the only referee pass is on Theorem 7.6. F3 compares the claim with this record; on the reading in this disclosure"
+   },
+   {
+    "file": "classification/PREREG_t18.md",
+    "line": 77,
+    "text": "- §8.5: every referee or external-review record in the repository (`referee`, `external review`, `independent` in reports,"
+   },
+   {
+    "file": "classification/PREREG_t18.md",
+    "line": 78,
+    "text": "  change logs and `t13/`) is listed; the claim holds if the only one is a referee pass on Theorem 7.6 (Task 13)."
+   },
+   {
+    "file": "classification/PREREG_t18.md",
+    "line": 134,
+    "text": "rather than proof; undetermined citations; results with no external review; rough-draft text; checks that still fail without a"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1081,
+    "text": "**Label:** Theorem (proved; T13 A8: written proof, symbolic check of the monotone map, independent referee pass (Section 12);"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1308,
+    "text": "**Independent referee (T13 C4).** A separate reader who saw only this document raised 14 points (two wrong condition claims in"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1310,
+    "text": "31–44; report verbatim in `t13/referee_report.md`). The referee found no error in Theorems 2, 26, 33, 57 or 70."
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1415,
+    "text": "| 31 | T13 C4 (referee 1) | D2 requires $0 < c < 2$; the $c > 2$ case is a remark with a counterexample to the lower-ray claim. | Section 6, Proposition 30 |"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1416,
+    "text": "| 32 | T13 C4 (referee 2) | Rows 25–26: two rays occur **if** $G > 2F\\Pi$ (Proposition 37), not only then (counterexample $G = 0.019$ for avg). | Section 10, Numerical result 38 |"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1417,
+    "text": "| 33 | T13 C4 (referee 3) | Theorem 6: above $F$ the failure set is $(0,0,k)$, $k \\ge 1$, not necessarily one window. | Theorem 6 |"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1418,
+    "text": "| 34 | T13 C4 (referee 4) | Optimal prior/avg along $\\Delta t$: All for $R^2 \\le \\sigma_\\star^2$ (equality row). | Section 6.2 |"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1419,
+    "text": "| 35 | T13 C4 (referee 5) | Theorem 36: the M-I quadratic printed, closed form $p = 2/(1 + \\sqrt{1 + 2u/k(x)})$ and both limits proved; resultant kept as second route. | Theorem 36 |"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1420,
+    "text": "| 36 | T13 C4 (referee 6) | Proposition 31: proof added, including the cubic term at $\\rho = 2 + u$; census shape moved to Numerical result 38. | Proposition 31 |"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1421,
+    "text": "| 37 | T13 C4 (referee 7) | Proposition 37 assumes C2; Corollary 67 states the general initial-segment conclusion and adds continuity for the class list. | Proposition 37, Corollary 67 |"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1422,
+    "text": "| 38 | T13 C4 (referee 8) | Corollary 49: bumps defined so each is strictly increasing then decreasing. | Corollary 49 |"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1423,
+    "text": "| 39 | T13 C4 (referee 9) | Corollary 60: both maxima must lie in windows. | Corollary 60 |"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1424,
+    "text": "| 40 | T13 C4 (referee 10) | Theorem 2(d): rule at interior critical tolerances stated; approach directions follow from the sequence. | Theorem 2 |"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1425,
+    "text": "| 41 | T13 C4 (referee 11) | Proposition 10 first bullet reworded (only $F$ is always approached from below). | Proposition 10 |"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1426,
+    "text": "| 42 | T13 C4 (referee 12) | Proposition 34: the min/sup/mean step made explicit. | Proposition 34 |"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1427,
+    "text": "| 43 | T13 C4 (referee 13) | Theorem 70: part (iv) (pathwise Blackwell ordering) added; frequency-localization detail. | Theorem 70 |"
+   },
+   {
+    "file": "classification/Stages_0_4_Paper2.md",
+    "line": 1428,
+    "text": "| 44 | T13 C4 (referee 14) | Proposition 55, $g = 2F$: All for $R^2 \\le H$ (equality row). | Proposition 55 |"
+   },
+   {
+    "file": "classification/Stage_3_Plan.md",
+    "line": 5,
+    "text": "Companion to Roadmap v2 (Section 7), `Stage_0_1_Classification_Results.md` and `Stage_2_Tau_Sweep_Results.md`. The aim of Stage 3 is to break the classification before a referee does: bound how comple"
+   },
+   {
+    "file": "classification/PREREG_t13.md",
+    "line": 19,
+    "text": "route, subject to the referee pass). A3 and A6 have no route; they are expected to stay unresolved. These are"
+   },
+   {
+    "file": "classification/PREREG_t13.md",
+    "line": 156,
+    "text": "independent referee (Part C4) raises no unresolved valid objection to it; otherwise unresolved with the partial result."
+   },
+   {
+    "file": "classification/PREREG_t13.md",
+    "line": 257,
+    "text": "### C4 — independent referee"
+   },
+   {
+    "file": "classification/PREREG_t13.md",
+    "line": 287,
+    "text": "hashes); Part A outcome table; the referee report with dispositions; reproducibility results; plain statements"
+   },
+   {
+    "file": "classification/Stages_0_4_Thesis.md",
+    "line": 1172,
+    "text": "**Label:** Theorem (proved; T13 A8: written proof, symbolic check of the monotone map, independent referee pass (Section 12);"
+   },
+   {
+    "file": "classification/Stages_0_4_Thesis.md",
+    "line": 1398,
+    "text": "**Independent referee (T13 C4).** A separate reader who saw only this document raised 14 points (two wrong condition claims in"
+   },
+   {
+    "file": "classification/Stages_0_4_Thesis.md",
+    "line": 1400,
+    "text": "31–44; report verbatim in `t13/referee_report.md`). The referee found no error in Theorems 2.2, 7.9, 6.19, 5.12 or 7.6."
+   },
+   {
+    "file": "classification/Bounded_Failure_Window_Classification_Roadmap_v2-1.md",
+    "line": 206,
+    "text": "This is a formal stage, not a contingency. Its aim is to break the classification before a referee does."
+   },
+   {
+    "file": "classification/t13/RESULTS_t13.md",
+    "line": 14,
+    "text": "| A3 closed form (referee point 5) | **PASS** | a0 = -a1; p = 2/(1 + sqrt(1 + 2u/k)), k = (1+u) x coth(x/2) - 2u increasing |  |"
+   },
+   {
+    "file": "classification/t13/RESULTS_t13.md",
+    "line": 22,
+    "text": "| C4 independent referee | record | 14 points, all valid, all fixed (dispositions below) |  |"
+   },
+   {
+    "file": "classification/t13/RESULTS_t13.md",
+    "line": 33,
+    "text": "| A3 Num. 2.8 / 4.10a, integrate-and-dump monotone | **proved** (exact resultant route completed post hoc; closed form $p = 2/(1 + \\sqrt{1 + 2u/k(x)})$ found in response to the referee) | Theorem 35 |"
+   },
+   {
+    "file": "classification/t13/RESULTS_t13.md",
+    "line": 38,
+    "text": "| A8 Conj. 4.11, non-linear causal garblings | **proved** for additive stationary Gaussian noise (fixed-lag limit + frequency localization; referee found no gap) | Theorem 69 |"
+   },
+   {
+    "file": "classification/t13/RESULTS_t13.md",
+    "line": 44,
+    "text": "- **Did any result in Stages 0–4 change?** No theorem or proposition was overturned; one matrix class list was corrected (row 8, below). Labels changed where Part A proved something (six items became "
+   },
+   {
+    "file": "classification/t13/RESULTS_t13.md",
+    "line": 53,
+    "text": "4. **A3 (attribution: code; outcome completed post hoc).** The pre-registered attempt script leaked floats (Python integer division) and its automatic verdict only checked coefficient signs of polynom"
+   },
+   {
+    "file": "classification/t13/RESULTS_t13.md",
+    "line": 54,
+    "text": "5. **C1 first run (attribution: document 4, code 2).** $G^\\star = \\sigma_\\star^2$ at $\\Pi = 1$ is 0.00995049…, stated as 0.0099504 (truncated; T8.2 checked 4 s.f.); corrected to 0.0099505 everywhere ("
+   },
+   {
+    "file": "classification/t13/RESULTS_t13.md",
+    "line": 112,
+    "text": "## Independent referee (C4): report and dispositions"
+   },
+   {
+    "file": "classification/t13/RESULTS_t13.md",
+    "line": 114,
+    "text": "The referee was a separate agent that had not seen the derivation history. It received only"
+   },
+   {
+    "file": "classification/t13/RESULTS_t13.md",
+    "line": 122,
+    "text": "REFEREE REPORT"
+   },
+   {
+    "file": "classification/t13/RESULTS_t13.md",
+    "line": 194,
+    "text": "| 5 | valid | Theorem 35 rewritten with the quadratic printed. The referee's request led to a shorter proof: $a_0 = -a_1$ exactly, so $p = 2/(1 + \\sqrt{1 + 2u/k(x)})$ with $k(x) = (1+u)x\\coth(x/2) - 2"
+   },
+   {
+    "file": "classification/t13/RESULTS_t13.md",
+    "line": 236,
+    "text": "- `t13/literature_check.md` (queries and sources), `t13/referee_report.md`."
+   },
+   {
+    "file": "classification/t13/referee_report.md",
+    "line": 1,
+    "text": "# Task 13 C4: independent referee report and dispositions"
+   },
+   {
+    "file": "classification/t13/referee_report.md",
+    "line": 3,
+    "text": "The referee was a separate agent that had not seen the derivation history. It received only"
+   },
+   {
+    "file": "classification/t13/referee_report.md",
+    "line": 11,
+    "text": "REFEREE REPORT"
+   },
+   {
+    "file": "classification/t13/referee_report.md",
+    "line": 83,
+    "text": "| 5 | valid | Theorem 35 rewritten with the quadratic printed. The referee's request led to a shorter proof: $a_0 = -a_1$ exactly, so $p = 2/(1 + \\sqrt{1 + 2u/k(x)})$ with $k(x) = (1+u)x\\coth(x/2) - 2"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1101,
+    "text": "**Label:** [[gaussian-orderings-coincide|t]] (proved; T13 A8: written proof, symbolic check of the monotone map, independent referee pass (Section 12);"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1284,
+    "text": "**Independent referee (T13 C4).** A separate reader who saw only this document raised 14 points (two wrong condition claims in"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1286,
+    "text": "31–44; report verbatim in `t13/referee_report.md`). The referee found no error in Theorems [[critical-tolerance|n]], [[power-family-unimodal|n]], [[dt-optimal-mp|n]], [[hill-turning-points|n]] or [[ga"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1402,
+    "text": "| 31 | T13 C4 (referee 1) | D2 requires $0 < c < 2$; the $c > 2$ case is a remark with a counterexample to the lower-ray claim. | Section 6, [[d2-excess]] |"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1403,
+    "text": "| 32 | T13 C4 (referee 2) | Rows 25–26: two rays occur **if** $G > 2F\\Pi$ ([[dt-two-rays]]), not only then (counterexample $G = 0.019$ for avg). | Section 10, [[dt-relay-census]] |"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1404,
+    "text": "| 33 | T13 C4 (referee 3) | [[window-theorem]]: above $F$ the failure set is $(0,0,k)$, $k \\ge 1$, not necessarily one window. | [[window-theorem]] |"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1405,
+    "text": "| 34 | T13 C4 (referee 4) | Optimal prior/avg along $\\Delta t$: All for $R^2 \\le \\sigma_\\star^2$ (equality row). | Section 6.2 |"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1406,
+    "text": "| 35 | T13 C4 (referee 5) | [[mi-continuum]]: the M-I quadratic printed, closed form $p = 2/(1 + \\sqrt{1 + 2u/k(x)})$ and both limits proved; resultant kept as second route. | [[mi-continuum]] |"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1407,
+    "text": "| 36 | T13 C4 (referee 6) | [[d3-excess]]: proof added, including the cubic term at $\\rho = 2 + u$; census shape moved to [[dt-relay-census]]. | [[d3-excess]] |"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1408,
+    "text": "| 37 | T13 C4 (referee 7) | [[dt-two-rays]] assumes C2; [[no-optimal-windows]] states the general initial-segment conclusion and adds continuity for the class list. | [[dt-two-rays]], [[no-optimal-win"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1409,
+    "text": "| 38 | T13 C4 (referee 8) | [[unbounded-windows]]: bumps defined so each is strictly increasing then decreasing. | [[unbounded-windows]] |"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1410,
+    "text": "| 39 | T13 C4 (referee 9) | [[equal-height-maxima]]: both maxima must lie in windows. | [[equal-height-maxima]] |"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1411,
+    "text": "| 40 | T13 C4 (referee 10) | [[critical-tolerance]](d): rule at interior critical tolerances stated; approach directions follow from the sequence. | [[critical-tolerance]] |"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1412,
+    "text": "| 41 | T13 C4 (referee 11) | [[prior-endpoints]] first bullet reworded (only $F$ is always approached from below). | [[prior-endpoints]] |"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1413,
+    "text": "| 42 | T13 C4 (referee 12) | [[mp-not-ordered]]: the min/sup/mean step made explicit. | [[mp-not-ordered]] |"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1414,
+    "text": "| 43 | T13 C4 (referee 13) | [[gaussian-orderings-coincide]]: part (iv) (pathwise Blackwell ordering) added; frequency-localization detail. | [[gaussian-orderings-coincide]] |"
+   },
+   {
+    "file": "classification/source/Stages_0_4_Source.md",
+    "line": 1415,
+    "text": "| 44 | T13 C4 (referee 14) | [[capped-gain]], $g = 2F$: All for $R^2 \\le H$ (equality row). | [[capped-gain]] |"
+   },
+   {
+    "file": "classification/t14/RESULTS_t14.md",
+    "line": 135,
+    "text": "| classification/t13/referee_report.md | 59 | 0 | 0 |"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1081,
+    "text": "**Label:** Theorem (proved; T13 A8: written proof, symbolic check of the monotone map, independent referee pass (Section 12);"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1308,
+    "text": "**Independent referee (T13 C4).** A separate reader who saw only this document raised 14 points (two wrong condition claims in"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1310,
+    "text": "31–44; report verbatim in `t13/referee_report.md`). The referee found no error in Theorems 2, 25, 32, 56 or 69."
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1415,
+    "text": "| 31 | T13 C4 (referee 1) | D2 requires $0 < c < 2$; the $c > 2$ case is a remark with a counterexample to the lower-ray claim. | Section 6, Proposition 29 |"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1416,
+    "text": "| 32 | T13 C4 (referee 2) | Rows 25–26: two rays occur **if** $G > 2F\\Pi$ (Proposition 36), not only then (counterexample $G = 0.019$ for avg). | Section 10, Numerical result 37 |"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1417,
+    "text": "| 33 | T13 C4 (referee 3) | Theorem 6: above $F$ the failure set is $(0,0,k)$, $k \\ge 1$, not necessarily one window. | Theorem 6 |"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1418,
+    "text": "| 34 | T13 C4 (referee 4) | Optimal prior/avg along $\\Delta t$: All for $R^2 \\le \\sigma_\\star^2$ (equality row). | Section 6.2 |"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1419,
+    "text": "| 35 | T13 C4 (referee 5) | Theorem 35: the M-I quadratic printed, closed form $p = 2/(1 + \\sqrt{1 + 2u/k(x)})$ and both limits proved; resultant kept as second route. | Theorem 35 |"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1420,
+    "text": "| 36 | T13 C4 (referee 6) | Proposition 30: proof added, including the cubic term at $\\rho = 2 + u$; census shape moved to Numerical result 37. | Proposition 30 |"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1421,
+    "text": "| 37 | T13 C4 (referee 7) | Proposition 36 assumes C2; Corollary 66 states the general initial-segment conclusion and adds continuity for the class list. | Proposition 36, Corollary 66 |"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1422,
+    "text": "| 38 | T13 C4 (referee 8) | Corollary 48: bumps defined so each is strictly increasing then decreasing. | Corollary 48 |"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1423,
+    "text": "| 39 | T13 C4 (referee 9) | Corollary 59: both maxima must lie in windows. | Corollary 59 |"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1424,
+    "text": "| 40 | T13 C4 (referee 10) | Theorem 2(d): rule at interior critical tolerances stated; approach directions follow from the sequence. | Theorem 2 |"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1425,
+    "text": "| 41 | T13 C4 (referee 11) | Proposition 9 first bullet reworded (only $F$ is always approached from below). | Proposition 9 |"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1426,
+    "text": "| 42 | T13 C4 (referee 12) | Proposition 33: the min/sup/mean step made explicit. | Proposition 33 |"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1427,
+    "text": "| 43 | T13 C4 (referee 13) | Theorem 69: part (iv) (pathwise Blackwell ordering) added; frequency-localization detail. | Theorem 69 |"
+   },
+   {
+    "file": "classification/t14/results/scratch/v1check.md",
+    "line": 1428,
+    "text": "| 44 | T13 C4 (referee 14) | Proposition 54, $g = 2F$: All for $R^2 \\le H$ (equality row). | Proposition 54 |"
+   }
+  ],
+  "files_with_referee_mentions": [
+   "classification/Bounded_Failure_Window_Classification_Roadmap_v2-1.md",
+   "classification/PREREG_t13.md",
+   "classification/PREREG_t18.md",
+   "classification/Stage_3_Plan.md",
+   "classification/Stages_0_4_Paper2.md",
+   "classification/Stages_0_4_Thesis.md",
+   "classification/source/Stages_0_4_Source.md",
+   "classification/t13/RESULTS_t13.md",
+   "classification/t13/referee_report.md",
+   "classification/t14/RESULTS_t14.md",
+   "classification/t14/results/scratch/v1check.md"
+  ],
+  "note": "verdicts for the two claims are manual (results/f3_claims.md)",
+  "seconds": 0.16
+ },
+ "F4": {
+  "peaks": {
+   "bayes_M_over_F": "9.2875272",
+   "kalman_M_over_F": "17.575054",
+   "9.3F": true,
+   "17.6F": true
+  },
+  "median_band": {
+   "value": 0.0004982279337862393,
+   "match_5e-4": true
+  },
+  "narrow": {
+   "source": "**[[narrow-windows]] (narrow windows need root-finding).** Windows of relative width $10^{-8}$ were found by the root-finding\nclassifier in 20/20 curves (55 windows); a $10^4$-point log grid found none."
+  },
+  "dip": {
+   "in_t12": true
+  },
+  "avg_dip": {
+   "avg_200": "0.0099875",
+   "match_0.125%": true
+  },
+  "window_condition_statements": {
+   "bayesian-weight": "**[[bayesian-weight]] (Bayesian-weight gain along precision).** For $G = c\\Pi/(\\Pi + \\Pi_0)$, with over-weighting ratio\n$\\kappa = (c/\\Pi_0)/F$: $\\sigma^2$ has one turning point, a maximum $M$, iff $\\kappa > 2$, and is strictly decreasing\notherwise. Endpoint limits $F$ (from above iff $\\kappa > 2$) and $H = \\Sigma/(\\lambda + c)$ (from above). Classes: if\n$\\kappa > 2$, All ($R^2 \\le H$), lower ray ($H < R^2 \\le F$), window ($F < R^2 < M$), Empty ($R^2 \\ge M$); if $\\kappa \\le 2$,\nAll ($R^2 \\le H$), lower ray ($H < R^2 < F$), Empty ($R^2 \\ge F$).\n\n*Proof.* By [[elasticity]] with $\\varepsilon = 1 -",
+   "misspecified-kalman": "**[[misspecified-kalman]] (misspecified Kalman gain).** Let $G = -\\lambda' + \\sqrt{\\lambda'^2 + 2\\Sigma'\\Pi}$, $F' = \\Sigma'/\\lambda'$,\n$r = \\Sigma/\\Sigma'$. If $F' > 2F$, $\\sigma^2$ has exactly one turning point, a maximum, at the gain\n$$\nG_M = \\frac{-2r\\lambda' + \\sqrt{4r^2\\lambda'^2 + 2(1 + r)\\lambda'(\\lambda - 2r\\lambda')}}{1 + r},\n\\qquad \\Pi_M = \\frac{G_M^2 + 2\\lambda'G_M}{2\\Sigma'};\n$$\nif $F' \\le 2F$ it is strictly decreasing. $L_- = F$ (from above iff $F' > 2F$), $L_+ = 0$. Classes: $F' > 2F$: lower ray\n($0 < R^2 \\le F$), window ($F < R^2 < M$), Empty ($R^2 \\ge M$); otherwise lower ray ",
+   "capped-gain": "**[[capped-gain]] (capped gain).** For $G = \\min(g\\Pi, c)$: on the linear branch\n$d\\sigma^2/d\\Pi = g(g\\lambda/2 - \\Sigma)/(\\lambda + g\\Pi)^2$, of constant sign $g - 2F$; on the capped branch $\\sigma^2$ is strictly\ndecreasing. So: $g > 2F$, one maximum at the kink $\\Pi = c/g$; $g < 2F$, strictly decreasing; $g = 2F$, a plateau\n$\\sigma^2 \\equiv F$ on $(0, c/g]$, then strictly decreasing ([[plateaus]]: All for $R^2 \\le H$, lower ray for $H < R^2 < F$, Empty for $R^2 \\ge F$). Classes:\nAll, lower ray, window, Empty.\n\n**Label:** [[capped-gain|t]] (proved; T10.3, T10.5; T13 C2 row 4).\n",
+   "sigma-overtrust": "**[[sigma-overtrust]] ($\\Sigma$-tracking Kalman, over-trust $\\rho$).** Let $G = -\\lambda + \\sqrt{\\lambda^2 + 2\\rho\\Sigma\\Pi}$ and\n$w = \\sqrt{1 + \\rho u}$. Absolute: strictly increasing from $0$, class upper ray. Relative:\n$$\n\\frac{\\sigma^2}{F} = \\frac{(1 + \\rho)w + (1 - \\rho)}{w(w + 1)},\n$$\nstarting at $1$ and tending to $0$, with a single maximum at $w_M = [(\\rho - 1) + \\sqrt{2\\rho(\\rho - 1)}]/(1 + \\rho)$ iff\n$\\rho > 2$, and strictly decreasing otherwise. Classes: $\\rho > 2$: lower ray ($r \\le 1$, since the start at $1$ is\napproached from above), window ($1 < r <$ peak), Empty (at or above th",
+   "sigma-misspecified-lambda": "**[[sigma-misspecified-lambda]] ($\\Sigma$-tracking Kalman, misspecified $\\lambda'$).** Let $G = -\\lambda' + \\sqrt{\\lambda'^2 + 2\\Sigma\\Pi}$.\nAbsolute: strictly increasing from $0$, class upper ray. Relative: starts at $1$ and tends to $0$, with a single maximum iff\n$\\lambda' < \\lambda/2$ and strictly decreasing otherwise. Classes: $\\lambda' < \\lambda/2$: lower ray ($r \\le 1$), window\n($1 < r <$ peak), Empty; otherwise lower ray ($r < 1$), Empty ($r \\ge 1$).\n\n*Proof.* With $\\Sigma = (G^2 + 2\\lambda'G)/(2\\Pi)$: absolute $\\sigma^2 = G(G + \\lambda')/(\\Pi(\\lambda + G))$ with derivative\nnumerator $G"
+  },
+  "open_problems_source": "## 11. Open problems\n\n1. **Turning points of sampled relays** ([[dt-two-turning-points]]). *Statement:* D1–D3 have at most two turning points along $\\Delta t$ in every\n   metric. *Evidence:* Task 12's census (6,000 sets × 3 metrics) and the Task 13 audit (9,000 new curves): never more than two.\n   *Best partial result:* proved endpoint asymptotics ([[dt-endpoint-limits]]) and a single excess component (Propositions [[d1-excess|n]]–[[d3-excess|n]]). The\n   fixed-gain $P^+$ mixes two exponential rates with $1/\\Delta t$, which defeats the polynomial methods used elsewhere.\n2. **Two-stage gains** ([[two-stage-gains]]). *Statement:* a bound on the number of turning points of sums of natural stages.\n   *Evidence:* at most 3 (Bayesian) and 4 (Hill) turning points in 2,000 sets each. *Best partial result:* none beyond [[unbounded-windows]]\n   (arbitrarily many windows for constructed gains).\n3. **A necessary condition for monotone optimal error.** Ordering is exactly sharp in the power family ([[power-family-sharpness]]) but not\n   necessary in general ([[ordering-not-necessary]]). Is there a tidy necessary condition, for instance a one-sided spectral-crossing\n   condition, beyond that family?\n4. **The fixed α–β filter and multivariate models** (Stage 6). The α–β filter is two-state and does not fit the scalar model;\n   the decoupled multivariate case should split into scalar copies, the mixing case is open.\n\n---\n",
+  "seconds": 0.0
+ },
+ "F5": {
+  "citation_groups": 49,
+  "unresolved": [],
+  "first_order_1_53": true,
+  "first_order": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53
+  ],
+  "excluded_brackets": [
+   {
+    "text": "[0, ∞]",
+    "context": "± = lim σ² as θ → θ± exist in [0, ∞]. - *"
+   },
+   {
+    "text": "[1.01, 10]",
+    "context": "00 random sets with real n in [1.01, 10]. Tas"
+   },
+   {
+    "text": "[0, ∞]",
+    "context": "ous on the compactified range [0, ∞], so "
+   },
+   {
+    "text": "[c + 2(1 − c)FΠ₀]",
+    "context": ", with Δt·(P⁺ − (1 − c)²F) → c[c + 2(1 − c)FΠ₀]/Π; p"
+   },
+   {
+    "text": "[ss′ − (1 − s)(s/x − s′)]",
+    "context": ") − 1 − 2x) > 0. So B > (MF/s)[ss′ − (1 − s)(s/x − s′)] = (M"
+   },
+   {
+    "text": "[w + (μ + 1 − φ)E]",
+    "context": "E, and (1 + μ)(2μ + 1 − φ)E − [w + (μ + 1 − φ)E] = Eμ"
+   },
+   {
+    "text": "[(ρ − 1) + √(2ρ(ρ − 1))]",
+    "context": "ith a single maximum at w_M = [(ρ − 1) + √(2ρ(ρ − 1))]/(1 +"
+   },
+   {
+    "text": "[(w² − 1)/ρ + (w − 1)²]",
+    "context": ".  *Proof.* Absolute: σ²Π/λ = [(w² − 1)/ρ + (w − 1)²]/(2w)"
+   },
+   {
+    "text": "[(w² − 1)(1 + 1/ρ) + 2/ρ]",
+    "context": "]/(2w), whose w-derivative is [(w² − 1)(1 + 1/ρ) + 2/ρ]/(2w²"
+   },
+   {
+    "text": "[−G² − 2λ′G + λ′(λ − 2λ′)]",
+    "context": ", with derivative numerator 2λ[−G² − 2λ′G + λ′(λ − 2λ′)]. Tha"
+   },
+   {
+    "text": "[Z \\mid Y_{\\theta_1}(\\le t)]",
+    "context": "\\mathbb{E}\\big[(Z - \\mathbb{E}[Z \\mid Y_{\\theta_1}(\\le t)])^2\\b"
+   },
+   {
+    "text": "[Z \\mid Y_{\\theta_2}(\\le t)]",
+    "context": "\\mathbb{E}\\big[(Z - \\mathbb{E}[Z \\mid Y_{\\theta_2}(\\le t)])^2\\b"
+   },
+   {
+    "text": "[(1 − E) − (1 − E²)/2]",
+    "context": "ariances q₁₁ = 1 − E², q₁₂ = 2[(1 − E) − (1 − E²)/2] and "
+   },
+   {
+    "text": "[x − 2(1 − E) + (1 − E²)/2]",
+    "context": "− E) − (1 − E²)/2] and q₂₂ = 2[x − 2(1 − E) + (1 − E²)/2] for "
+   },
+   {
+    "text": "[x(1 + E) − 2(1 − E)]",
+    "context": "/a₁ = u(1 − E)/(2K) with K = u[x(1 + E) − 2(1 − E)] + x("
+   },
+   {
+    "text": "[x coth(x/2)]",
+    "context": "coth(x/2) - 2u ```  Since d/dx[x coth(x/2)] = (s"
+   }
+  ],
+  "typed_refs": 451,
+  "typed_bad": [],
+  "untyped_refs": 34,
+  "untyped_bad": [],
+  "figure_refs": 12,
+  "figure_bad": [],
+  "pass": true,
+  "seconds": 0.2,
+  "task_refs": 128,
+  "task_bad": [],
+  "check_refs": 50,
+  "check_bad": []
+ },
+ "F6": {
+  "A": {
+   "draft_records": 82,
+   "render_records": 82,
+   "differences": [
+    {
+     "index": 32,
+     "draft": "5.12 | Theorem | Hill gain for every real n > 1 | hill-turning-points | T4, T7, T10.1, T10.3 (n = 2), T13 A5 | proved",
+     "render": "5.12 | Theorem | Hill gain for every real n > 1 | hill-turning-points | T4, T7, T10.1, T10.3 ($n = 2$), T13 A5 | proved"
+    }
+   ],
+   "intro_draft": "Appendix A — Register of results. Every numbered result with its thesis number, permanent repository key and the tasks that verified it (task identifiers as in Appendix D). Rendered from the repository register, freeze v1; 82 results.",
+   "intro_render": "# Appendix A. Register of results Rendered from register/results.yaml (freeze v1, Task 14). Numbers are thesis numbers: one counter per chapter, shared by all result types. Verification task identifiers are listed in register/tasks.yaml; earlier labels are in register/crosswalk.md."
+  },
+  "C": {
+   "draft_records": 53,
+   "render_records": 53,
+   "differences": [],
+   "intro_draft": "Appendix C — References. Numbered in order of first citation; a number, once assigned, does not change. References [46]–[53] are first cited in chapters 6–7.",
+   "intro_render": "# Appendix C. References Numbered in order of first citation; a number, once assigned, does not change. Rendered from register/references.yaml and references.bib. References [46]–[53] are cited in chapters 5–9, still to be drafted."
+  },
+  "D": {
+   "draft_records": 46,
+   "render_records": 46,
+   "differences": [
+    {
+     "index": 42,
+     "draft": "Failure — E1 new proof steps of the thesis draft (2 of 9 items): code / document — the 50-digit test of the optimal prior P⁻ < F (Proposition 6.13) cannot resolve it when e^(−2λΔt) < 10⁻⁵⁰ (it holds exactly, f(F) = F²a² > 0); Corollary 7.4's proof as written omitted σ⋆² → 0 and Theorem 5.1 (the corollary holds; the proof was completed).",
+     "render": "Failure — E1 new proof steps of the thesis draft (2 of 9 items): code / document — the 50-digit test of the optimal prior M < F (Proposition 6.13) cannot resolve it when e^(−2λΔt) < 10⁻⁵⁰ (it holds exactly, f(F) = F²a² > 0); Corollary 7.4's proof as written omits σ⋆² → 0 and Theorem 5.1 (the corollary holds)."
+    },
+    {
+     "index": 44,
+     "draft": "Failure — E4 cross-references: document — \"Prop. 6.10–6.12\" spanned Counterexample 6.11.",
+     "render": "Failure — E4 cross-references: document — \"Prop. 6.10–6.12\" spans Counterexample 6.11."
+    },
+    {
+     "index": 45,
+     "draft": "Failure — E5 prior-work sentences: document — §7.3 made [47] an analysis of coloured measurement noise; it studies time-correlated model error (2 sentences undetermined: no abstracts reachable from the session).",
+     "render": "Failure — E5 prior-work sentences: document — §7.3 makes [47] an analysis of coloured measurement noise; it studies time-correlated model error (2 sentences undetermined: no abstracts reachable from the session)."
+    }
+   ],
+   "intro_draft": "Appendix D — Verification record, Tasks 1–17. For each task: the pre-registration and results files, the pre-registered checks that passed and failed, and every failure with the attribution its report gives (criterion, input, code, document or prediction). Outcomes are copied from the reports, not re-judged, and every failure stays recorded.",
+   "intro_render": "# Appendix D. Verification record, Tasks 1–17 For each task: the pre-registration and results files, the pre-registered checks that passed and failed, and every failure with the attribution its report gives (criterion, input, code, document or prediction). Outcomes are copied from the reports, not re-judged, and every failure stays recorded."
+  },
+  "pass": false,
+  "seconds": 0.01
+ },
+ "F7": {
+  "hits": [],
+  "pass": true,
+  "seconds": 0.0
+ }
+}
