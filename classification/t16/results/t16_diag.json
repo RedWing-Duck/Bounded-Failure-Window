@@ -1,0 +1,70 @@
+{
+ "D1_item2b": {
+  "recorded": {
+   "roots": [
+    [
+     "-lambda - sqrt(2*Pi*Sigma + lambda**2)",
+     false,
+     true
+    ],
+    [
+     "-lambda + sqrt(2*Pi*Sigma + lambda**2)",
+     false,
+     false
+    ]
+   ],
+   "positive_root_is_Gstar": false,
+   "holds": false
+  },
+  "sympy_is_positive_of_root": "None",
+  "radicand_minus_lambda2": "2*Pi*Sigma",
+  "radicand_minus_lambda2_positive": true,
+  "numeric_n": 1000,
+  "numeric_counterexamples": 0,
+  "other_root_negative": true,
+  "text": "The positive zero of G^2 + 2 lambda G - 2 Sigma Pi is G* = -lambda + sqrt(lambda^2 + 2 Sigma Pi): sqrt(lambda^2 + 2 Sigma Pi) > lambda because 2 Sigma Pi > 0, and the other root is negative. The recorded failure is the code's reliance on SymPy's assumption system, which returns None for this expression. Attribution: code. The claim holds."
+ },
+ "D1_item9": {
+  "recorded_residual": "R2*(R2 + 2*d - sqrt(R2**2 + 4*d*(R2 + d)))/(R2 + sqrt(R2**2 + 4*d*(R2 + d)))",
+  "recorded_numeric_max_abs": 1.3684555315672042e-48,
+  "radicand_factored": "(R2 + 2*d)**2",
+  "sqrt_of_factored": "R2 + 2*d",
+  "sqrt_terms": [
+   "sqrt(lambda**2 + 4*d*lambda**2*(R2 + d)/R2**2)"
+  ],
+  "denested_root": "lambda*(R2 + 2*d)/R2",
+  "denested_root_squared_minus_radicand": "0",
+  "residual_after_sqrt_substitution": "0",
+  "other_routes": [
+   "R2",
+   "2*R2*(R2 + d)/(R2 + sqrt(R2**2 + 4*d*(R2 + d)))"
+  ],
+  "text": "The radicand R2^2 + 4 d (R2 + d) is (R2 + 2d)^2, so its square root is R2 + 2d (all positive) and the recorded residual R2 (R2 + 2d - sqrt(...))/(R2 + sqrt(...)) is 0. The three pre-registered routes do not denest the square root of a square (the Task 10 and Task 13 route failures had the same cause). Attribution: code (route). The identity holds."
+ },
+ "D6": {
+  "hits": [
+   {
+    "file": "classification/Appendix_E_Reproduction.md",
+    "label": "B.4",
+    "context": "refixes, crosswalk, result 5.6 wording, B.4 Pi_c pyth"
+   },
+   {
+    "file": "classification/Appendix_E_Reproduction.md",
+    "label": "B.2",
+    "context": "res B.1, B.3-B.12 (text-only edits) and B.2 python3 r"
+   }
+  ],
+  "paper1": 1,
+  "text": "Three items, none a legacy label: (1) 'Paper 1' inside the T15 C10 failure line of Appendix D (\"0 'Paper 1', no legacy label remains\"), a quotation of the checked phrase written after the T15 run; (2) 'B.4' in the Appendix E render-chain comment added in Task 16 ('... result 5.6 wording, B.4 Pi_c'); (3) 'B.2' in Appendix E's 'figures B.1, B.3-B.12 (text-only edits) and B.2', where 'figures' lies more than 40 characters before the label. (2) and (3) are figure labels outside the exemption window; (1) is the phrase quoted. Attribution: criterion (the exemption rule's 40-character window and its treatment of quotations) and document (wording of two appendix lines). Bare legacy labels in the thesis renders: 0; false hits on 'Figure B.n': 0."
+ },
+ "D7_coverage": {
+  "escaped_citation_groups": {
+   "classification/Stages_0_4_Thesis.md": 2
+  },
+  "text": "T15's bracket pattern, kept by D7, skips groups written \\[n\\] (a preceding backslash). These are real citations in the thesis renders; neither T15 C4 nor D7 tests them. Not a failure of D7 as pre-registered; reported for the author."
+ },
+ "excess_identity_normal_form": {
+  "residual": "0",
+  "text": "Draft §3.3: V - 1 = nu q (q - 2)/(4 + 2 nu q) (post hoc; not in D1's list)."
+ }
+}

@@ -1,0 +1,99 @@
+# Task 16 D2 (A2): differences between the draft's statements (chapters 2-5) and the repository's, read from a2_pairs.md after
+# the recorded run (bc0a72c). Kinds: a equivalent; b the draft is weaker; c the draft is stronger; d the draft contradicts the
+# repository. Wording, notation, ordering and titles are not differences unless they change content. Results not listed here
+# have no difference beyond wording (identical or reworded statements).
+no_difference: ['2.1', '2.8', '2.9', '3.2', '3.7', '4.1', '4.3', '5.1', '5.2', '5.3', '5.5', '5.6', '5.7', '5.8', '5.9', '5.10',
+                '5.12', '5.14', '5.15']
+differences:
+- result: '2.2'
+  kind: a
+  what: Part (1) adds "It can change only when R² crosses or equals a critical tolerance"; part (4) adds "The positions tⱼ are needed only to locate the components"; part (3)'s equality condition is worded "lies in its own component touching neither end".
+  draft: "Hence k is at most the number of interior maxima above R², with equality iff each such maximum lies in its own component touching neither end."
+  repo: "so k ≤ #{interior local maxima with value > R²}, with equality iff each such maximum lies in a component that touches neither end and contains no other such maximum."
+  note: The added sentences restate (a) and (d); "its own component" means "contains no other such maximum".
+- result: '2.3'
+  kind: a
+  what: The draft follows the definition with an example table (the Bayesian-weight bands). The definition itself is identical to the repository's thesis-only text.
+  draft: "Table: R² ≤ H All; H < R² ≤ F Lower ray; F < R² < M Window; R² ≥ M Empty (κ > 2)."
+  repo: "(no table in the definition; the same classes are Proposition 5.8's)"
+- result: '2.4'
+  kind: b
+  what: The draft has no statement of Theorem 2.4; it appears only as a row of the §2.5 table. The row omits that plateau values join the critical tolerances, that a plateau can remove a component, and the ray rule at an end adjacent to a plateau.
+  draft: "Plateau | R² equals a plateau value (C2′) | the plateau leaves the failure set and can split a component | Thm 2.4"
+  repo: "Under C2′ instead of C2, Theorem 2.2 holds with three changes: plateau values join the critical tolerances; at R² equal to a plateau value the plateau is excluded from 𝓕, which can split or remove components; an end adjacent to a plateau at value L carries a ray iff R² < L."
+- result: '2.5'
+  kind: c
+  what: The draft has no statement of Corollary 2.5; its §2.5 table row states the effect without the corollary's hypotheses (the two maxima separated by a lower minimum, each just below M₂ in a component touching neither end). Read as a statement, the row claims k drops by 2 whenever two maxima share a value, which the repository does not claim (it fails, for example, when one of the maxima lies in a ray component).
+  draft: "Equal height | two maxima share a value M₂ | k drops by 2 at the single tolerance M₂ | Cor. 2.5"
+  repo: "If two interior maxima share the value M₂, are separated by a lower minimum, and just below M₂ each lies in a component touching neither end (the equality condition of Theorem 2.2(c)), then just below M₂ both count in k, and at and above M₂ both windows are gone: k drops by 2 at one tolerance. The class is otherwise unaffected."
+  note: A table summary, not a statement; on the strict reading the draft is stronger.
+- result: '2.6'
+  kind: b
+  what: Table row only; it omits "a flat-topped maximum acts as a maximum".
+  draft: "Non-event | a stationary point that is not a turning point | none | Cor. 2.6"
+  repo: "A stationary point that is not a turning point never changes the class, and a flat-topped maximum acts as a maximum."
+- result: '2.7'
+  kind: c
+  what: Table row only; it states the scaling without the hypothesis "through a nondegenerate fold of N".
+  draft: "Pair birth | a family parameter creates a minimum–maximum pair | a new band of tolerances opens from zero width; values separate like δ^(3/2), positions like δ^(1/2) | Prop. 2.7"
+  repo: "If a minimum–maximum pair is born at θ₀ through a nondegenerate fold of N, then at distance δ from θ₀ the turning-point positions separate like δ^{1/2} and the values like M − m ~ δ^{3/2}; the band of tolerances that sees the pair opens continuously from zero width."
+  note: A table summary, not a statement; on the strict reading the draft is stronger (a degenerate fold can give other exponents).
+- result: '3.1'
+  kind: c
+  what: The draft's Proposition 3.1 adds two limits to the variance formula (σ² → F when G → 0 and G²/Π → 0 as Π → 0; σ² → H = Σ/(λ + G∞) < F when G → G∞ ∈ (0, ∞)) and the noise convention. The repository's 3.1 is the model and the formula only; it states the same limits elsewhere (Theorem 3.4's hypotheses and Corollary 5.5, "L₋ = F and L₊ = H").
+  draft: "If G → 0 and G²/Π → 0 as Π → 0, σ² tends to the floor F = Σ/λ; if G → G∞ ∈ (0, ∞) as Π → ∞, it tends to the high-precision limit H = Σ/(λ + G∞) < F."
+  repo: "The stationary variance (Proposition 3.1) is σ²(G, Π) = (Σ + G²/(2Π))/(λ + G)."
+  note: D1 item 1 verifies the added limits. No content is new to the repository; it is moved into 3.1. The repository's Corollary 5.5 proof cites the limits; the draft's Corollary 5.5 proof cites Proposition 3.1 for them.
+- result: '3.3'
+  kind: a
+  what: The draft states the excess identity in normal-form coordinates (𝒱 − 1 = νq(q − 2)/(4 + 2νq), so σ² > F iff q > 2; dimensionally G > 2FΠ); the repository states it dimensionally (σ² − F = G(λG/(2Π) − Σ)/(λ(λ + G))).
+  draft: "𝒱(ν, q) − 1 = νq(q − 2)/(4 + 2νq), so σ² > F if and only if q > 2 … in dimensional form it reads G > 2FΠ."
+  repo: "σ² − F = G(λG/(2Π) − Σ)/(λ(λ + G)),  σ² > F ⟺ G > 2FΠ."
+  note: Equivalent under G = qFΠ, ν = 2ΣΠ/λ² (the normal-form identity checks to 0 post hoc, t16_diag.json).
+- result: '3.4'
+  kind: b
+  what: The repository's statement also gives the optimal filter's classes along Π (lower ray for R² < F, Empty for R² ≥ F) and notes k = 1 for one interior maximum and k > 1 possible; the draft's statement says only that the optimal filter never windows (the classes appear in §3.4's consequences). The window condition sup q > 2 equals the repository's sup G/Π > 2F. The draft adds the table of each family's sup q.
+  draft: "Some tolerance yields a window class iff sup q > 2 along the path; every R² between F and sup σ² then gives class (0, 0, k) with k ≥ 1. The optimal filter never windows along precision, because its error decreases strictly (Proposition 3.5)."
+  repo: "… iff sup_{Π > 0} G(Π)/Π > 2F; every R² ∈ (F, sup σ²) then gives a failure set of class (0,0,k) with k ≥ 1 (a single window when σ² has one interior maximum, as in Proposition 5.8; k > 1 is possible, Corollary 5.4). The optimal variance σ⋆²(Π) decreases strictly from F to 0, so the optimal filter never windows along Π: its classes are lower ray (R² < F) and Empty (R² ≥ F)."
+- result: '3.5'
+  kind: c
+  what: The repository's Proposition 3.5 is the formula pair (G⋆ and σ⋆² = G⋆/Π = 2Σ/(λ + √(λ² + 2ΣΠ))). The draft's statement adds the Riccati equation, minimality over constant gains, strict decrease of σ⋆² from F, G⋆ = σ⋆²Π < FΠ for Π > 0 (strict), and q⋆ = σ⋆²/F. Each addition is in the repository elsewhere, Lemma 3.6 ("minimum value σ⋆²(Π) = G⋆/Π < F", strict) and Theorem 3.4 ("σ⋆² decreases strictly from F to 0").
+  draft: "G⋆ also minimises σ² over constant gains, so σ²(Π) ≥ σ⋆²(Π) for every gain. σ⋆² decreases strictly from F as Π grows, so G⋆ = σ⋆²Π < FΠ for every Π > 0. In the coordinates of §3.2, q⋆ = G⋆/(FΠ) and σ⋆²/F = 𝒱⋆ = q⋆."
+  repo: "Optimal (Kalman–Bucy) gain G⋆(Π) = −λ + √(λ² + 2ΣΠ) and optimal variance σ⋆²(Π) = G⋆/Π = 2Σ/(λ + √(λ² + 2ΣΠ)) (Proposition 3.5)."
+  note: The non-strict "G⋆ = σ⋆²Π ≤ FΠ" named in the prompt is the manuscript's (Paper 1, Proposition 3, p. 4; quoted in RESULTS_t15.md), not the repository's; the repository's Lemma 3.6 is already strict. D1 item 2 verifies the strict bound.
+- result: '3.6'
+  kind: b
+  what: The draft states only the monotonicity on (0, G⋆) and (G⋆, ∞). The repository's statement also gives ∂σ²/∂G (in the draft's proof), the closed intervals [0, G⋆] and [G⋆, ∞), the minimum value σ⋆² = G⋆/Π < F, σ²(0, Π) = F, σ² → ∞, and σ² ≤ F iff 0 ≤ G ≤ 2FΠ.
+  draft: "At fixed Π, σ² is strictly decreasing in G on (0, G⋆) and strictly increasing on (G⋆, ∞)."
+  repo: "… σ²(·, Π) is strictly decreasing on [0, G⋆] and strictly increasing on [G⋆, ∞), with minimum value σ⋆²(Π) = G⋆/Π < F. Moreover σ²(0, Π) = F, σ² → ∞ as G → ∞, and σ²(G, Π) ≤ F ⟺ 0 ≤ G ≤ 2FΠ, with equality exactly at G = 0 and G = 2FΠ."
+  note: The minimum value moved to the draft's Proposition 3.5; σ² ≤ F iff G ≤ 2FΠ is the draft's Corollary 3.3.
+- result: '4.2'
+  kind: a
+  what: The draft adds "There is no interior extremum" in case Π ≥ Π_A (implied by strict increase) and drops the middle step "c > 2FΠ".
+  draft: "V_c > F iff Π < Π_B, and V_c = F iff Π = Π_B."
+  repo: "V_c > F ⟺ c > 2FΠ ⟺ Π < Π_B, and V_c = F ⟺ Π = Π_B."
+- result: '4.4'
+  kind: a
+  what: The draft writes c⋆ and c_F explicitly ((Π + Π₀)(√(λ² + 2ΣΠ) − λ)/Π and 2FΠ/K = 2F(Π + Π₀)); with K = Π/(Π + Π₀) these equal the repository's G⋆/K and 2F(Π + Π₀).
+  draft: "c⋆ = G⋆(Π)/K = (Π + Π₀)(√(λ² + 2ΣΠ) − λ)/Π … c_F = 2FΠ/K = 2F(Π + Π₀)"
+  repo: "c⋆ = G⋆(Π)/K … c_F = 2F(Π + Π₀)"
+- result: '4.5'
+  kind: a
+  what: Same classes. The draft's last row names the upper ray (c_R, ∞), a symbol it does not define (the repository writes no symbol).
+  draft: "R² ≥ F | Upper ray (c_R, ∞), equal to (c_F, ∞) at R² = F"
+  repo: "upper ray (R² ≥ F, equal to (c_F, ∞) at R² = F)"
+- result: '5.4'
+  kind: a
+  what: Title only ("unbounded windows for regular gains" vs "unbounded complexity inside the model"); "the regularity of Theorem 3.4" vs "the starting study's regularity", with the same conditions written out in both.
+  draft: "Corollary 5.4 (unbounded windows for regular gains). For every k ≥ 1 there is a C^∞ gain schedule with the regularity of Theorem 3.4 (…) whose failure set at R² = 1.25F has exactly k windows."
+  repo: "Corollary 5.4 (unbounded complexity inside the model). For every k ≥ 1 there is a C^∞ gain schedule satisfying the starting study's regularity (…) whose failure set at R² = 1.25F has exactly k windows."
+- result: '5.11'
+  kind: a
+  what: The draft writes H = Σ/(λ + G₀) explicitly (the repository's H with G∞ = G₀) and adds a remark after the statement.
+  draft: "σ² decreases strictly from ∞ to H = Σ/(λ + G₀)."
+  repo: "σ² decreases strictly from ∞ to H."
+- result: '5.13'
+  kind: a
+  what: The draft writes "All (R² ≤ H)" in the no-pair case where the repository writes "All"; the onset is called "the window condition of Theorem 3.4" instead of "the starting study's window onset".
+  draft: "Without the pair: All (R² ≤ H), lower ray (H < R² < F), Empty (R² ≥ F)."
+  repo: "Without the pair: All, lower ray (H < R² < F), Empty (R² ≥ F)."

@@ -1,0 +1,1130 @@
+{
+ "commit": "bc0a72c",
+ "D1": {
+  "1 Prop 3.1": {
+   "a_ou_variance": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 0.0,
+    "holds": true
+   },
+   "a_lyapunov": {
+    "solution": "[D/(2*a)]",
+    "holds": true
+   },
+   "b_limit_F": {
+    "value_at_0": "Sigma/lambda",
+    "holds": true,
+    "note": "rational in (G, u) with denominator lambda + G > 0, so continuous at (0, 0)"
+   },
+   "c_limit_H": {
+    "value": "Sigma/(G_inf + lambda)",
+    "holds": true,
+    "note": "w = 1/Pi; continuous at (G_inf, 0)"
+   },
+   "c_H_lt_F": {
+    "F_minus_H": "G_inf*Sigma/(lambda*(G_inf + lambda))",
+    "symbolic_positive": true,
+    "n": 1000,
+    "counterexamples": 0,
+    "holds": true
+   },
+   "holds": true,
+   "seconds": 0.41
+  },
+  "2 Prop 3.5 / Lemma 3.6": {
+   "a_roots": {
+    "roots": [
+     "(-lambda + sqrt(2*Pi*Sigma + lambda**2))/Pi"
+    ],
+    "positive": [
+     "(-lambda + sqrt(2*Pi*Sigma + lambda**2))/Pi"
+    ],
+    "holds": true
+   },
+   "a_Gstar": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 0.0,
+    "holds": true
+   },
+   "a_sstar": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 2.2210495164487187e-46,
+    "holds": true
+   },
+   "a_sigma2_at_Gstar": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 1.6131488112540885e-46,
+    "holds": true
+   },
+   "b_dsigma2_dG": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 8.96831017167883e-44,
+    "holds": true
+   },
+   "b_only_positive_zero": {
+    "roots": [
+     [
+      "-lambda - sqrt(2*Pi*Sigma + lambda**2)",
+      false,
+      true
+     ],
+     [
+      "-lambda + sqrt(2*Pi*Sigma + lambda**2)",
+      false,
+      false
+     ]
+    ],
+    "positive_root_is_Gstar": false,
+    "holds": false
+   },
+   "c_decreasing": {
+    "dsstar_dPi": "-2*Sigma**2/((lambda + sqrt(2*Pi*Sigma + lambda**2))**2*sqrt(2*Pi*Sigma + lambda**2))",
+    "symbolic_negative": true,
+    "n": 1000,
+    "counterexamples": 0,
+    "holds": true
+   },
+   "c_limit_F": {
+    "limit": "Sigma/lambda",
+    "holds": true
+   },
+   "c_Gstar_eq_sstar_Pi": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 2.7369110631344083e-48,
+    "holds": true
+   },
+   "c_sstar_lt_F": {
+    "F_minus_sstar_positive": false,
+    "n": 1000,
+    "counterexamples": 0,
+    "holds": true
+   },
+   "d_qstar_form1": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 0.0,
+    "holds": true
+   },
+   "d_qstar_form2": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 3.100407063706947e-48,
+    "holds": true
+   },
+   "holds": false,
+   "seconds": 1.34
+  },
+  "3 Lemma 3.7": {
+   "total_derivative": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 4.484155085839415e-44,
+    "holds": true
+   },
+   "partial_Pi": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 0.0,
+    "holds": true
+   },
+   "holds": true,
+   "seconds": 1.28
+  },
+  "4 Prop 2.9 remark (numeric part)": {
+   "pairs": 1001,
+   "curves": 153,
+   "rejected_perturbations_or_Ni": 10,
+   "counterexamples": 0,
+   "examples": [],
+   "numeric_holds": true,
+   "note": "the logical review of the remark is recorded in t16/results/d1_item4_review.md (manual, after the run)",
+   "seconds": 1.36
+  },
+  "5 Thm 5.1": {
+   "positive_root_is_sstar": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 2.399287424955562e-46,
+    "holds": true,
+    "roots": [
+     "(-lambda + sqrt(2*Pi*Sigma + lambda**2))/Pi"
+    ]
+   },
+   "holds": true,
+   "seconds": 0.16
+  },
+  "6 Prop 5.8": {
+   "a_elasticity": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 3.383044101433835e-51,
+    "holds": true
+   },
+   "b_N_eliminated": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 4.6418011630759565e-45,
+    "holds": true
+   },
+   "c_root_is_root": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 2.835439861407247e-45,
+    "holds": true
+   },
+   "c_root_below_c": {
+    "(lam+c)^2 - radicand": "2*Pi0*Sigma + c**2 + c*lambda",
+    "positive": true,
+    "holds": true
+   },
+   "c_kappa_equiv": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 1.401298464324817e-45,
+    "holds": true
+   },
+   "c_equivalence_numeric": {
+    "n": 1000,
+    "root_in_(0,c)": 469,
+    "counterexamples": 0,
+    "holds": true
+   },
+   "d_maximum": {
+    "n": 1000,
+    "counterexamples": 0,
+    "examples": [],
+    "holds": true,
+    "note": "sign of N along Pi in [1e-10, 1e10] x Pi0 (401 points): must be (+, -)"
+   },
+   "holds": true,
+   "seconds": 25.35
+  },
+  "7 Prop 5.9": {
+   "inverse": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 9.497705508869567e-44,
+    "holds": true
+   },
+   "elasticity": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 0.0,
+    "holds": true
+   },
+   "N": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 3.6734198463196485e-40,
+    "holds": true
+   },
+   "p_decreasing": {
+    "dp_dG": "2*G*(-Sigma/Sigma_p - 1) - 4*Sigma*lambda_p/Sigma_p",
+    "symbolic_negative": true,
+    "n": 1000,
+    "counterexamples": 0,
+    "holds": true
+   },
+   "p0_identity": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 1.793662034335766e-43,
+    "holds": true
+   },
+   "p0_sign_numeric": {
+    "n": 1000,
+    "counterexamples": 0,
+    "holds": true
+   },
+   "holds": true,
+   "seconds": 0.79
+  },
+  "8 Prop 5.14": {
+   "a_derivative": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 5.739718509874451e-42,
+    "holds": true
+   },
+   "b_sigma2_minus_F": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 7.006492321624085e-46,
+    "holds": true
+   },
+   "b_equivalence_numeric": {
+    "n": 1000,
+    "counterexamples": 0,
+    "holds": true
+   },
+   "c_gap_identity": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 1.8367099231598242e-40,
+    "holds": true
+   },
+   "c_bound_numeric": {
+    "n": 1000,
+    "counterexamples": 0,
+    "examples": [],
+    "holds": true
+   },
+   "d_bayes_stage": {
+    "zero": true,
+    "route": "simplify",
+    "numeric_max_abs": 1.779977773024212e-48,
+    "holds": true
+   },
+   "holds": true,
+   "seconds": 2.09
+  },
+  "9 Cor 5.2": {
+   "sstar_at_piR": {
+    "zero": false,
+    "route": null,
+    "residual": "R2*(R2 + 2*d - sqrt(R2**2 + 4*d*(R2 + d)))/(R2 + sqrt(R2**2 + 4*d*(R2 + d)))",
+    "numeric_max_abs": 1.3684555315672042e-48,
+    "holds": false
+   },
+   "holds": false,
+   "seconds": 0.29
+  },
+  "seconds": 33.07
+ },
+ "D2": {
+  "results": 36,
+  "draft_found": 32,
+  "repo_found": 36,
+  "file": "t16/results/a2_pairs.md",
+  "note": "verdict from a2_classification.yaml (manual reading after the run)",
+  "seconds": 0.07
+ },
+ "D3": {
+  "rows": [
+   {
+    "row": 1,
+    "what": "kappa = 100, R2 = 0.05: lower end of the failure set",
+    "printed": "1/9",
+    "value": true,
+    "source": "formula (exact roots)",
+    "match": true
+   },
+   {
+    "row": 1,
+    "what": "kappa = 100, R2 = 0.05: upper end of the failure set",
+    "printed": "4",
+    "value": true,
+    "source": "formula (exact roots)",
+    "match": true
+   },
+   {
+    "row": 1,
+    "what": "failure set is between the roots (sigma2 > R2 at the midpoint)",
+    "printed": "(1/9, 4)",
+    "value": true,
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 1,
+    "what": "factor 36 = 4/(1/9)",
+    "printed": "36",
+    "value": "36.0",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 2,
+    "what": "Pi0^pair, n = 1.5 (formula)",
+    "printed": "30.243",
+    "value": "30.2430947474",
+    "source": "formula c phi_n(t*)/(2 n Sigma)",
+    "match": true
+   },
+   {
+    "row": 2,
+    "what": "Pi0^pair, n = 1.5 (Task 13 regression)",
+    "printed": "30.243",
+    "value": "30.2430947474",
+    "source": "t13/results/t13_partA_numeric_A4_A5_A7.json A5.regression",
+    "match": true
+   },
+   {
+    "row": 2,
+    "what": "Pi0^pair, n = 2 (formula)",
+    "printed": "31.475",
+    "value": "31.4750497595",
+    "source": "formula c phi_n(t*)/(2 n Sigma)",
+    "match": true
+   },
+   {
+    "row": 2,
+    "what": "Pi0^pair, n = 2 (Task 13 regression)",
+    "printed": "31.475",
+    "value": "31.4750497595",
+    "source": "t13/results/t13_partA_numeric_A4_A5_A7.json A5.regression",
+    "match": true
+   },
+   {
+    "row": 2,
+    "what": "Pi0^pair, n = 3 (formula)",
+    "printed": "37.820",
+    "value": "37.8200022316",
+    "source": "formula c phi_n(t*)/(2 n Sigma)",
+    "match": true
+   },
+   {
+    "row": 2,
+    "what": "Pi0^pair, n = 3 (Task 13 regression)",
+    "printed": "37.820",
+    "value": "37.8200022316",
+    "source": "t13/results/t13_partA_numeric_A4_A5_A7.json A5.regression",
+    "match": true
+   },
+   {
+    "row": 2,
+    "what": "Pi0^pair, n = 4 (formula)",
+    "printed": "44.180",
+    "value": "44.1796834278",
+    "source": "formula c phi_n(t*)/(2 n Sigma)",
+    "match": true
+   },
+   {
+    "row": 2,
+    "what": "Pi0^pair, n = 4 (Task 13 regression)",
+    "printed": "44.180",
+    "value": "44.1796834278",
+    "source": "t13/results/t13_partA_numeric_A4_A5_A7.json A5.regression",
+    "match": true
+   },
+   {
+    "row": 2,
+    "what": "Pi0^pair, n = 8 (formula)",
+    "printed": "62.711",
+    "value": "62.7113145769",
+    "source": "formula c phi_n(t*)/(2 n Sigma)",
+    "match": true
+   },
+   {
+    "row": 2,
+    "what": "Pi0^pair, n = 8 (Task 13 regression)",
+    "printed": "62.711",
+    "value": "62.7113145769",
+    "source": "t13/results/t13_partA_numeric_A4_A5_A7.json A5.regression",
+    "match": true
+   },
+   {
+    "row": 3,
+    "what": "M/F misspecified Kalman (formula)",
+    "printed": "17.575",
+    "value": "17.5750544106",
+    "source": "formula G_M, Pi_M (Prop. 5.9)",
+    "match": true
+   },
+   {
+    "row": 3,
+    "what": "M/F Bayesian weight (formula)",
+    "printed": "9.2875",
+    "value": "9.2875272053",
+    "source": "formula (Prop. 5.8 turning point)",
+    "match": true
+   },
+   {
+    "row": 3,
+    "what": "ratio (formula)",
+    "printed": "1.892",
+    "value": "1.89232871378",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 3,
+    "what": "17.575 (Task 13 audit)",
+    "printed": "17.575",
+    "value": "17.5750544106",
+    "source": "t13/results/t13_audit_numbers.json",
+    "match": true
+   },
+   {
+    "row": 3,
+    "what": "9.2875 (Task 13 audit)",
+    "printed": "9.2875",
+    "value": "9.2875272053",
+    "source": "t13/results/t13_audit_numbers.json",
+    "match": true
+   },
+   {
+    "row": 3,
+    "what": "1.892 (Task 13 audit)",
+    "printed": "1.892",
+    "value": "1.89232871378",
+    "source": "t13/results/t13_audit_numbers.json",
+    "match": true
+   },
+   {
+    "row": 4,
+    "what": "pi_R at R2 = 0.6F",
+    "printed": "222.2",
+    "value": "222.222222222",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 5,
+    "what": "c lambda/(4 Sigma)",
+    "printed": "25",
+    "value": "25.0",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 5,
+    "what": "sup q <= 2 for the Hill gain at Pi0 = 25.0",
+    "printed": "<= 2",
+    "value": true,
+    "source": "grid maximum 2.0",
+    "match": true
+   },
+   {
+    "row": 5,
+    "what": "sup q <= 2 for the Hill gain at Pi0 = 31.475",
+    "printed": "<= 2",
+    "value": true,
+    "source": "grid maximum 1.588562351",
+    "match": true
+   },
+   {
+    "row": 6,
+    "what": "t*^2 = 2 sqrt 3 - 3 (n = 2)",
+    "printed": "2√3 − 3",
+    "value": true,
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "Pi_B",
+    "printed": "50",
+    "value": "50.0",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "Pi_A",
+    "printed": "150",
+    "value": "150.0",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "case at Pi = 1.0",
+    "printed": "P3",
+    "value": true,
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "Pi0* at Pi = 1.0",
+    "printed": "99.498",
+    "value": "99.4975246918",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "sigma*^2 at Pi = 1.0",
+    "printed": "0.0099505",
+    "value": "0.00995049383621",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "V_c at Pi = 1.0",
+    "printed": "0.255",
+    "value": "0.255",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "case at Pi = 60.0",
+    "printed": "P2",
+    "value": true,
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "Pi0* at Pi = 60.0",
+    "printed": "64.162",
+    "value": "64.161984871",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "sigma*^2 at Pi = 60.0",
+    "printed": "0.0080540",
+    "value": "0.00805399495699",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "V_c at Pi = 60.0",
+    "printed": "0.0091667",
+    "value": "0.00916666666667",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "case at Pi = 500.0",
+    "printed": "P1",
+    "value": true,
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "V_c at Pi = 500.0",
+    "printed": "0.0055",
+    "value": "0.0055",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "sigma*^2 below F at Pi = 1",
+    "printed": "0.5%",
+    "value": "0.00495061637922",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "two-ray band width at Pi = 60, relative to F",
+    "printed": "11%",
+    "value": "0.111267170968",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 8,
+    "what": "c*",
+    "printed": "0.019901",
+    "value": "0.0199009876724",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 8,
+    "what": "sigma*^2",
+    "printed": "0.0099505",
+    "value": "0.00995049383621",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 8,
+    "what": "c_F",
+    "printed": "0.04",
+    "value": "0.04",
+    "source": "formula",
+    "match": true
+   },
+   {
+    "row": 9,
+    "what": "mixed band median",
+    "printed": "5 × 10^-4",
+    "value": "0.000498227933786",
+    "source": "t10/results/t10_4.json band_rel_median",
+    "match": true
+   },
+   {
+    "row": 9,
+    "what": "mixed band minimum",
+    "printed": "4 × 10^-22",
+    "value": "4.42721151149e-22",
+    "source": "t10_4.json band_rel_min",
+    "match": true
+   },
+   {
+    "row": 9,
+    "what": "mixed band maximum",
+    "printed": "0.96",
+    "value": "0.961781026043",
+    "source": "t10_4.json band_rel_max",
+    "match": true
+   },
+   {
+    "row": 9,
+    "what": "mixed band with no window above F",
+    "printed": "16%",
+    "value": "0.161668036154",
+    "source": "t10_4.json frac_M_lt_F",
+    "match": true
+   },
+   {
+    "row": 10,
+    "what": "target constructions passed",
+    "printed": "101",
+    "value": "101.0",
+    "source": "t10_2.json every[].pass",
+    "match": true
+   },
+   {
+    "row": 10,
+    "what": "target constructions",
+    "printed": "101",
+    "value": "101.0",
+    "source": "t10_2.json every",
+    "match": true
+   },
+   {
+    "row": 10,
+    "what": "forbidden targets blocked",
+    "printed": "24",
+    "value": "24.0",
+    "source": "t10_2.json forbidden[].blocked",
+    "match": true
+   },
+   {
+    "row": 10,
+    "what": "forbidden targets",
+    "printed": "24",
+    "value": "24.0",
+    "source": "t10_2.json forbidden",
+    "match": true
+   },
+   {
+    "row": 10,
+    "what": "supplementary construction k = 1 to 5, all pass",
+    "printed": "k = 1 to 5",
+    "value": true,
+    "source": "t10_2.json a13_supp",
+    "match": true
+   },
+   {
+    "row": 10,
+    "what": "G(1e12)/G(1e11) - 1",
+    "printed": "6 × 10^-10",
+    "value": "5.9999999996e-10",
+    "source": "t10_2.json a13_supp.ratio_minus_1",
+    "match": true
+   },
+   {
+    "row": 11,
+    "what": "misspecified Kalman sets",
+    "printed": "2000",
+    "value": "2000.0",
+    "source": "t10_3.json families.misspec.n",
+    "match": true
+   },
+   {
+    "row": 11,
+    "what": "misspecified Kalman sets passing",
+    "printed": "2000",
+    "value": "2000.0",
+    "source": "t10_3.json families.misspec n - n_fail",
+    "match": true
+   },
+   {
+    "row": 11,
+    "what": "Hill n = 2 sets with the pair (root-count check)",
+    "printed": "961",
+    "value": "961.0",
+    "source": "t10_3.json families.hill.tp_hist_n2['2']",
+    "match": true
+   },
+   {
+    "row": 11,
+    "what": "root-count disagreements",
+    "printed": "0",
+    "value": "0.0",
+    "source": "t10_3.json exact_count_disagreements",
+    "match": true
+   },
+   {
+    "row": 11,
+    "what": "Task 10 census sets",
+    "printed": "10000",
+    "value": "10000.0",
+    "source": "t10_3.json families.hill.n",
+    "match": true
+   },
+   {
+    "row": 11,
+    "what": "turning-point position error (Bayes)",
+    "printed": "6 × 10^-31",
+    "value": "6.04167987717e-31",
+    "source": "t10_3.json families.bayes.max_pos_rel_err",
+    "match": true
+   },
+   {
+    "row": 11,
+    "what": "two-channel Bayes (max, min, max)",
+    "printed": "7",
+    "value": "7.0",
+    "source": "t10_3.json exploratory.bayes2",
+    "match": true
+   },
+   {
+    "row": 11,
+    "what": "two-channel Bayes sets",
+    "printed": "2000",
+    "value": "2000.0",
+    "source": "t10_3.json exploratory.bayes2.n",
+    "match": true
+   },
+   {
+    "row": 11,
+    "what": "two-channel Hill (min, max, min, max)",
+    "printed": "63",
+    "value": "63.0",
+    "source": "t10_3.json exploratory.hill2",
+    "match": true
+   },
+   {
+    "row": 11,
+    "what": "two-channel Hill sets",
+    "printed": "2000",
+    "value": "2000.0",
+    "source": "t10_3.json exploratory.hill2.n",
+    "match": true
+   },
+   {
+    "row": 12,
+    "what": "Hill sets with two turning points",
+    "printed": "4868",
+    "value": "4868.0",
+    "source": "t10_4.json n_sets",
+    "match": true
+   },
+   {
+    "row": 12,
+    "what": "tolerances tested",
+    "printed": "77888",
+    "value": "77888.0",
+    "source": "t10_4.json n_tests",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "A5 random sets",
+    "printed": "5000",
+    "value": "5000.0",
+    "source": "t13 A5.n",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "n range lower end 1.01",
+    "printed": "1.01",
+    "value": true,
+    "source": "t13/t13_partA_numeric.py (10**uniform(log10 1.01, 1))",
+    "match": true
+   },
+   {
+    "row": 14,
+    "what": "T8.3 classes correct",
+    "printed": "62",
+    "value": "62.0",
+    "source": "results/t8_3.json n_match",
+    "match": true
+   },
+   {
+    "row": 14,
+    "what": "T8.3 classes tested",
+    "printed": "62",
+    "value": "62.0",
+    "source": "results/t8_3.json n_tests",
+    "match": true
+   },
+   {
+    "row": 14,
+    "what": "±10^-6 relative tests",
+    "printed": "10^-6",
+    "value": true,
+    "source": "REPORT.md",
+    "match": true
+   },
+   {
+    "row": 14,
+    "what": "T8.4 sets",
+    "printed": "20000",
+    "value": "20000.0",
+    "source": "results/t8_4.json N",
+    "match": true
+   },
+   {
+    "row": 14,
+    "what": "T8.4 classifications",
+    "printed": "10^6",
+    "value": true,
+    "source": "results/t8_4.json total_classifications",
+    "match": true
+   },
+   {
+    "row": 14,
+    "what": "five sweeps",
+    "printed": "5",
+    "value": "5.0",
+    "source": "t8_no_window.py SWEEPS",
+    "match": true
+   },
+   {
+    "row": 15,
+    "what": "persisting route disagreements, row 12",
+    "printed": "122",
+    "value": "122.0",
+    "source": "t13_audit_classes.json rows[12]",
+    "match": true
+   },
+   {
+    "row": 15,
+    "what": "1,000 fresh sets per design-sweep row (10, 11, 12)",
+    "printed": "1000",
+    "value": true,
+    "source": "t13_audit_classes.json rows 10-12 curves",
+    "match": true
+   },
+   {
+    "row": 16,
+    "what": "T10.7 classifications",
+    "printed": "10^6",
+    "value": true,
+    "source": "t10/results/t10_7.json total",
+    "match": true
+   },
+   {
+    "row": 16,
+    "what": "T12 Part C classifications",
+    "printed": "4.4 × 10^6",
+    "value": "4400000.0",
+    "source": "t12/results/t12_blind.json total",
+    "match": true
+   },
+   {
+    "row": 17,
+    "what": "relative prior dip 10^(-32,880,317)",
+    "printed": "10^-32880317",
+    "value": true,
+    "source": "t12/RESULTS_t12.md",
+    "match": true
+   },
+   {
+    "row": 18,
+    "what": "C11 curves",
+    "printed": "1000",
+    "value": "1000.0",
+    "source": "t15_partG.json C11.curves",
+    "match": true
+   },
+   {
+    "row": 18,
+    "what": "C11 tolerances per curve >= 50",
+    "printed": "50",
+    "value": "50.0",
+    "source": "C11.min_tolerances_per_curve",
+    "match": true
+   },
+   {
+    "row": 18,
+    "what": "C11 classifications",
+    "printed": "200000",
+    "value": "200000.0",
+    "source": "C11.classifications",
+    "match": true
+   },
+   {
+    "row": 18,
+    "what": "C12 perturbations",
+    "printed": "1000",
+    "value": "1000.0",
+    "source": "C12.cases_run",
+    "match": true
+   },
+   {
+    "row": 18,
+    "what": "C12 curves",
+    "printed": "500",
+    "value": "500.0",
+    "source": "C12.curves",
+    "match": true
+   },
+   {
+    "row": 18,
+    "what": "illustration amplitude/eta",
+    "printed": "0.9",
+    "value": "0.9",
+    "source": "ILL.amplitude_over_eta",
+    "match": true
+   },
+   {
+    "row": 18,
+    "what": "illustration upper ray -> (0, 1, 4)",
+    "printed": "upper ray -> (0, 1, 4)",
+    "value": true,
+    "source": "ILL.class_before/after",
+    "match": true
+   }
+  ],
+  "n": 84,
+  "n_match": 84,
+  "mismatches": [],
+  "pass": true,
+  "seconds": 0.26
+ },
+ "D4": {
+  "citation_groups": 30,
+  "unresolved": [],
+  "first_order_1_45": true,
+  "first_order": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45
+  ],
+  "excluded_brackets": [
+   {
+    "text": "[0, ∞]",
+    "context": "± = lim σ² as θ → θ± exist in [0, ∞]. - *"
+   },
+   {
+    "text": "[1.01, 10]",
+    "context": "00 random sets with real n in [1.01, 10]. Tas"
+   }
+  ],
+  "typed_refs": 214,
+  "typed_bad": [],
+  "untyped_refs": 34,
+  "untyped_bad": [],
+  "figure_refs": 6,
+  "figure_bad": [],
+  "pass": true,
+  "seconds": 0.09
+ },
+ "D5": {
+  "root": "56.2046887211502",
+  "script_parameters_as_disclosed": true,
+  "printed": {
+   "register/figures.yaml B.4": [
+    "56.20"
+   ],
+   "Appendix_B_Figures.md": [
+    "56.20"
+   ],
+   "figs_thesis/B.4_realizability.txt": [
+    "56.20"
+   ]
+  },
+  "match": {
+   "register/figures.yaml B.4": true,
+   "Appendix_B_Figures.md": true,
+   "figs_thesis/B.4_realizability.txt": true
+  },
+  "script_grid_value": 56.7,
+  "pass": true,
+  "seconds": 0.01
+ },
+ "D6": {
+  "crosswalk_unprefixed": [],
+  "bare_legacy_labels": [
+   {
+    "file": "classification/Appendix_E_Reproduction.md",
+    "label": "B.4",
+    "context": "refixes, crosswalk, result 5.6 wording, B.4 Pi_c pyth"
+   },
+   {
+    "file": "classification/Appendix_E_Reproduction.md",
+    "label": "B.2",
+    "context": "res B.1, B.3-B.12 (text-only edits) and B.2 python3 r"
+   }
+  ],
+  "false_hits_figure": [],
+  "exempt": {
+   "prefixed": 0,
+   "figure label": 83
+  },
+  "paper1": 1,
+  "files": 20,
+  "pass": false,
+  "seconds": 0.46
+ },
+ "D7": {
+  "baseline_total": 13,
+  "now_total": 13,
+  "per_file_differences": {},
+  "non_citations": [
+   {
+    "file": "classification/Appendix_B_Figures.md",
+    "group": "[0, 10]"
+   },
+   {
+    "file": "classification/Appendix_D_Verification.md",
+    "group": "[0, 10]"
+   }
+  ],
+  "flagged_intervals": [],
+  "other_hits": [],
+  "pass": true,
+  "seconds": 0.38
+ },
+ "D8": {
+  "hits": [],
+  "pass": true,
+  "seconds": 0.09
+ }
+}
