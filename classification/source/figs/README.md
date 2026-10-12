@@ -19,7 +19,7 @@ critical tolerances; it is constant inside each band and can change only at a cr
 {{fig:realizability}}. Realizability along precision ([[realizability]], Corollaries [[forced-lower-ray|n]]-[[unbounded-windows|n]]). lambda = 1, Sigma = 0.01 (F = 0.01). Any
 continuous curve on or above the optimal envelope sigma*^2 is the variance of some continuous gain schedule. Blue: a
 Bayesian-weight base curve (kappa = 1.5, so no excess) with three compactly supported bumps of peak 1.5F placed before the
-envelope touch point Pi_c = 56.7; at R^2 = 1.25F it has exactly three windows. At R^2 = 0.6F < F every gain fails on
+envelope touch point Pi_c = 56.20; at R^2 = 1.25F it has exactly three windows. At R^2 = 0.6F < F every gain fails on
 (0, pi_R) with pi_R = 2 lambda (F - R^2)/R^4 = 222.2 (forced lower ray).
 
 ## {{fig:hill-phase}}

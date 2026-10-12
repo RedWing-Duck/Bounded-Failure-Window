@@ -149,7 +149,7 @@ where d± ∈ {above, below} are the approach directions. Its **critical-toleran
 
 *Proof.* φ is a homeomorphism, so it maps components to components and preserves being bounded away from both ends. An increasing φ maps neighbourhoods of θ′₋ onto neighbourhoods of θ₋; a decreasing one maps them onto neighbourhoods of θ₊. ∎
 
-*Thesis-only text, imported verbatim from the thesis draft (`t15/input/Thesis_Draft_ch1-4.md`, §2.8, lines 232–251).*
+*Thesis-only text, imported verbatim from the thesis draft (`t16/input/Thesis_Draft_ch1-5.md`, §2.8, lines 232–251 and 257; refreshed in Task 16 from `t15/input/Thesis_Draft_ch1-4.md`, lines 232–251, adding the "Direction in condition 2" remark).*
 
 **Proposition 2.9.** Let σ² satisfy C2 and let R² ∉ 𝒞. Then the crossing set {θ : σ²(θ) = R²} is finite, say {x₁, …, x\_m}. Choose disjoint compact intervals Nᵢ ⊂ D, each inside one monotone piece, with xᵢ in the interior of Nᵢ, and set
 
@@ -172,11 +172,13 @@ has failure set 𝓕̃(R²) of the same class as 𝓕(R²).
 - **One crossing per Nᵢ.** The ends of Nᵢ lie in K, where σ² − R² takes opposite signs; so does σ̃² − R². By condition 2, σ̃² crosses R² exactly once in Nᵢ, in the same direction.
 - **Conclusion.** σ̃² − R² and σ² − R² have the same ordered pattern of positive and negative intervals along D, ends included. Components correspond one to one, and so do the components touching each end. ∎
 
+**Direction in condition 2.** Condition 2 names no direction, and none is needed: by condition 1, σ̃² − R² has the same sign as σ² − R² at both ends of Nᵢ, and those signs are opposite, so a strictly monotone σ̃² on Nᵢ is monotone in the same direction as σ².
+
 ---
 
 ## 3. The model along precision
 
-*Thesis-only text, imported verbatim from the thesis draft (`t15/input/Thesis_Draft_ch1-4.md`, §3.2, lines 292–316).*
+*Thesis-only text, imported verbatim from the thesis draft (`t16/input/Thesis_Draft_ch1-5.md`, §3.2, lines 298–322; refreshed in Task 16 from `t15/input/Thesis_Draft_ch1-4.md`, lines 292–316).*
 
 Two dimensionless numbers carry all the dependence on λ, Σ, Π and G:
 
@@ -188,7 +190,7 @@ q = \frac{G}{F\Pi}
 
 ν is the signal-to-noise ratio accumulated over one relaxation time 1/λ; q is the gain measured against the floor precision FΠ. In them the variance takes one form.
 
-**Theorem 3.2(a) (normal form).**
+**Theorem 3.2 (normal form).**
 
 ```latex
 \frac{\sigma^2}{F} = \mathcal V(\nu, q) = \frac{1 + \nu q^2/4}{1 + \nu q/2}

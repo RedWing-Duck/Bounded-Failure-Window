@@ -1,4 +1,4 @@
-*Thesis-only text, imported verbatim from the thesis draft (`t15/input/Thesis_Draft_ch1-4.md`, §3.2, lines 292–316).*
+*Thesis-only text, imported verbatim from the thesis draft (`t16/input/Thesis_Draft_ch1-5.md`, §3.2, lines 298–322; refreshed in Task 16 from `t15/input/Thesis_Draft_ch1-4.md`, lines 292–316).*
 
 Two dimensionless numbers carry all the dependence on λ, Σ, Π and G:
 
@@ -10,7 +10,7 @@ q = \frac{G}{F\Pi}
 
 ν is the signal-to-noise ratio accumulated over one relaxation time 1/λ; q is the gain measured against the floor precision FΠ. In them the variance takes one form.
 
-**Theorem 3.2(a) (normal form).**
+**Theorem 3.2 (normal form).**
 
 ```latex
 \frac{\sigma^2}{F} = \mathcal V(\nu, q) = \frac{1 + \nu q^2/4}{1 + \nu q/2}

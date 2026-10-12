@@ -1366,7 +1366,7 @@ the sampling-interval section, unproved hypotheses and missing equality rows); a
 | Num. 4.10a (Stage 4) | Theorem 36 (proved, T13 A3) |
 | Lemma 2.1 (Stage 2 completion) | Lemma 28 |
 | Props 2.2, 2.3, 2.4 (Stage 2 completion) | Propositions 29, 30, 31 |
-| §A.3 limits table (Stage 2 completion) | Proposition 32 |
+| legacy §A.3 limits table (Stage 2 completion) | Proposition 32 |
 | Prop. 2.6(a), (b) (Stage 2 completion) | Theorem 33(a), (b) |
 | Num. 2.6c (Stage 2 completion) | Theorem 33(c) (proved, T13 A2) |
 | Prop. 2.7 (Stage 2 completion) | Proposition 34 |

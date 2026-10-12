@@ -22,14 +22,16 @@ All commands run from the repository root unless stated.
 | T8–T13 at once | clean checkout, manifest | `bash classification/reproduce_all.sh WORKDIR 8 9 10 11 12 13` |
 | T14 | register, sources, renders, bibliography check | see the render chain below |
 | T15 | figures B.n, appendices, renders, checks | see the render chain below |
+| T16 | register fixes, renders, checks D1–D8 | render chain below, then `python3 t16/t16_checks.py` |
 
-## The T14/T15 render chain
+## The T14–T16 render chain
 
 From `classification/`:
 
 ```
 python3 t14/build_register.py          # register from the T14 table (T14; overwrites T15 metadata, re-apply next line)
 python3 t15/t15_register.py            # T15 citations/status, references.yaml, figures.yaml
+python3 t16/t16_register.py            # T16 legacy-label prefixes, crosswalk, result 5.6 wording, B.4 Pi_c
 python3 t15/make_figs_thesis.py        # figures B.1, B.3-B.12 (text-only edits) and B.2
 python3 register/render.py --numbering thesis   # Stages_0_4_Thesis.md, Roadmap_v3.md, figs_thesis/*.txt, Appendices A-C, reference/phase1/
 python3 register/render.py --numbering paper    # Stages_0_4_Paper2.md

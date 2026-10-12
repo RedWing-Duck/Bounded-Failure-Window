@@ -14,7 +14,7 @@ The images carry no result or figure numbers; the text cites each one as Figure 
 
 ![Figure B.3](figs_thesis/B.3_design-sweeps.png)
 
-**Figure B.4.** sigma^2 against precision Pi (log axis) at lambda = 1, Sigma = 0.01 (F = 0.01): the optimal envelope sigma*^2(Pi) with the region below it shaded as unreachable, a Bayesian-weight base curve (kappa = 1.5) with three compactly supported bumps of peak 1.5F placed before the envelope touch point Pi_c = 56.7, the tolerance R^2 = 1.25F (three windows) and the tolerance R^2 = 0.6F with the forced lower ray (0, pi_R), pi_R = 222.2, marked.
+**Figure B.4.** sigma^2 against precision Pi (log axis) at lambda = 1, Sigma = 0.01 (F = 0.01): the optimal envelope sigma*^2(Pi) with the region below it shaded as unreachable, a Bayesian-weight base curve (kappa = 1.5) with three compactly supported bumps of peak 1.5F placed before the envelope touch point Pi_c = 56.20, the tolerance R^2 = 1.25F (three windows) and the tolerance R^2 = 0.6F with the forced lower ray (0, pi_R), pi_R = 222.2, marked.
 
 ![Figure B.4](figs_thesis/B.4_realizability.png)
 

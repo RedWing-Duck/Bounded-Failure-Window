@@ -30,7 +30,7 @@ Rendered from `register/results.yaml` (freeze v1, Task 14). Numbers are thesis n
 | 5.3 | Corollary | Exact class set along precision | `exact-class-set` | T10.2 | proved |
 | 5.4 | Corollary | Unbounded windows for regular gains | `unbounded-windows` | T10.2 (supplementary) | proved |
 | 5.5 | Corollary | What regularity pins | `regularity-pins` | T10 (derivation) | proved |
-| 5.6 | Lemma | Excess components | `excess-components` | T8.1 (Proposition 4) | proved |
+| 5.6 | Lemma | Excess components | `excess-components` | T8.1 (Corollary 3.3, excess identity) | proved |
 | 5.7 | Lemma | Bounded gains approach H from above | `bounded-gain-limit` | T10.3, T10.7 | proved |
 | 5.8 | Proposition | Bayesian-weight gain along precision (onset κ > 2; four regimes) | `bayesian-weight` | T1, T3, T7, T10.3, T10.7, T13 C2 | proved |
 | 5.9 | Proposition | Misspecified Kalman gain | `misspecified-kalman` | T10.1, T10.3, T13 C2 | proved |
