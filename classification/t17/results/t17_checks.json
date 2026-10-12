@@ -1,0 +1,1174 @@
+{
+ "commit": "81e977c",
+ "E1": {
+  "1 Cor 6.5": {
+   "Pi_b": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 4.50085031980689e-51,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "Pi2_D": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 1.0365736042998336e-50,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "sign": {
+    "text": "Pi > 0, D > 0 and W > 0 (sums of squares and positive terms), so Pi*sqrt(D) = sqrt(Pi^2 D) = sqrt(4 lambda^2 W) = 2 lambda sqrt(W).",
+    "holds": true
+   },
+   "P_over_F": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 4.8327419523602343e-51,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "P_over_F_numeric_raw": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 5.430475665518479e-51,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "t0": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 0.0,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "holds": true,
+   "seconds": 0.82
+  },
+  "2 Lemma 6.1 normal form": {
+   "normal_form": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 7.156901476384149e-51,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "excess_factorisation": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 3.0870399092651507e-45,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "excess_sign": {
+    "text": "sigma^2 - F = (G/a)(G/(2 Pi (1 + a tau)) - F), G/a > 0, so sigma^2 > F iff G/Pi > 2F(1 + a tau), i.e. q = G/(F Pi) > 2(1 + a tau).",
+    "holds": true
+   },
+   "excess_numeric": {
+    "n": 1000,
+    "counterexamples": 0,
+    "examples": [],
+    "holds": true
+   },
+   "holds": true,
+   "seconds": 0.48
+  },
+  "3 Prop 6.13": {
+   "P_minus": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 3.1803511799016766e-50,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "numerator": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 5.473822126268817e-48,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "denominator_sign": {
+    "text": "for 0 <= L < 2, |1 - L| <= 1, so a^2 (1 - L)^2 <= a^2 < 1 when 0 < a < 1.",
+    "holds": true
+   },
+   "excess_equivalence": {
+    "n": 1000,
+    "counterexamples": 0,
+    "examples": [],
+    "holds": true
+   },
+   "P_plus": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 1.6961451696130826e-49,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "Lstar_ratio": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 5.579898298236713e-51,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "Lstar_sign": {
+    "text": "L*/(2 - L*) = M/(M + 2r) < F/(2r) iff M(2r - F) < 2rF; if 2r <= F it holds trivially, otherwise M < F < 2rF/(2r - F). Needs the optimal prior M < F (tested below).",
+    "holds": true
+   },
+   "Lstar_numeric": {
+    "n": 1000,
+    "counterexamples": 102,
+    "examples": [
+     [
+      "8.3293997",
+      "8.3293997",
+      "0.98495151",
+      "65.451848"
+     ],
+     [
+      "0.0033027246",
+      "0.0033027246",
+      "3.7269388e-5",
+      "3.7270777e-5"
+     ],
+     [
+      "0.0006621035",
+      "0.0006621035",
+      "4.3013974e-5",
+      "4.3015825e-5"
+     ]
+    ],
+    "holds": false
+   },
+   "holds": false,
+   "seconds": 0.64
+  },
+  "4 Lemma 6.14": {
+   "identity": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 0.0,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "definition_is_time_average": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 1.1499872932892694e-40,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "holds": true,
+   "seconds": 0.46
+  },
+  "5 Lemma 6.23": {
+   "scaling": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 6.725766711101014e-51,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "same_u_same_ratio": {
+    "n": 1000,
+    "counterexamples": 0,
+    "examples": [],
+    "holds": true
+   },
+   "argument": {
+    "text": "u = 2 Sigma Pi/lambda^2 is a strictly increasing bijection of Sigma (fixed Pi) and of Pi (fixed Sigma); sigma^2/F is a function of u alone, so {sigma^2/F > r} is the same set of u along both sweeps.",
+    "holds": true
+   },
+   "holds": true,
+   "seconds": 0.34
+  },
+  "7 Prop 2.7": {
+   "roots": {
+    "roots": [
+     "-sqrt(w)",
+     "sqrt(w)"
+    ],
+    "holds": true
+   },
+   "change": {
+    "integral": "-4*a*w**(3/2)/3",
+    "zero": true,
+    "route": "simplify",
+    "holds": true
+   },
+   "abs": {
+    "text": "|-(4/3) a w^(3/2)| = (4/3)|a| w^(3/2) for w = b*delta > 0.",
+    "holds": true
+   },
+   "holds": true,
+   "seconds": 0.03
+  },
+  "8 Thm 7.8 bound": {
+   "bound_numeric": {
+    "n": 1000,
+    "counterexamples": 0,
+    "examples": [],
+    "holds": true
+   },
+   "bound_sign": {
+    "text": "B > 0 gives B + sqrt(B^2 + 4AC) > sqrt(4AC) = 2 sqrt(AC), so 2C/(B + sqrt(B^2 + 4AC)) < 2C/(2 sqrt(AC)) = sqrt(C/A).",
+    "holds": true
+   },
+   "C_over_A": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 0.0,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "sqrt_form": {
+    "text": "C/A = 2 Sigma K tau^beta/(1 - lambda tau)^2 > 0 for lambda tau != 1, and (sqrt(2 Sigma K) tau^(beta/2)/|1 - lambda tau|)^2 equals it with both sides positive.",
+    "holds": true
+   },
+   "holds": true,
+   "seconds": 0.23
+  },
+  "9 Prop 7.10": {
+   "A_invariant": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 8.93176007245179e-50,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "v_dual": {
+    "zero": true,
+    "route": "simplify",
+    "fallback_max_rel": 0.0,
+    "fallback_pass": true,
+    "holds": true
+   },
+   "P_identity_numeric": {
+    "n": 1000,
+    "counterexamples": 0,
+    "examples": [],
+    "holds": true
+   },
+   "holds": true,
+   "seconds": 0.44
+  },
+  "6 Cor 7.4": {
+   "note": "logical review after the run: t17/results/e1_item6_review.md"
+  },
+  "seconds": 3.45
+ },
+ "E2": {
+  "results": 48,
+  "draft_found": 48,
+  "repo_found": 48,
+  "draft_proof_repo_none": [
+   "6.5",
+   "6.13",
+   "6.14",
+   "6.20",
+   "6.23",
+   "7.4",
+   "7.7",
+   "7.14",
+   "7.16"
+  ],
+  "note": "verdict from a2_classification.yaml (manual reading after the run)",
+  "seconds": 0.21
+ },
+ "E3": {
+  "rows": [
+   {
+    "row": 1,
+    "what": "V_w",
+    "printed": "0.09",
+    "value": "0.09",
+    "source": "Prop. 6.2",
+    "match": true
+   },
+   {
+    "row": 1,
+    "what": "H_G",
+    "printed": "0.0066667",
+    "value": "0.00666666666667",
+    "source": "Prop. 6.2",
+    "match": true
+   },
+   {
+    "row": 1,
+    "what": "tau_F",
+    "printed": "16",
+    "value": "16.0",
+    "source": "Prop. 6.3",
+    "match": true
+   },
+   {
+    "row": 1,
+    "what": "sigma^2(1)",
+    "printed": "0.04",
+    "value": "0.04",
+    "source": "Lemma 6.1",
+    "match": true
+   },
+   {
+    "row": 1,
+    "what": "sigma^2(10)",
+    "printed": "0.011875",
+    "value": "0.011875",
+    "source": "Lemma 6.1",
+    "match": true
+   },
+   {
+    "row": 1,
+    "what": "sigma^2(16)",
+    "printed": "0.01",
+    "value": "0.01",
+    "source": "Lemma 6.1",
+    "match": true
+   },
+   {
+    "row": 2,
+    "what": "sigma*^2",
+    "printed": "0.0099505",
+    "value": "0.00995049383621",
+    "source": "Prop. 6.4 at tau -> 0",
+    "match": true
+   },
+   {
+    "row": 2,
+    "what": "P(1)",
+    "printed": "0.0098039",
+    "value": "0.00980392156863",
+    "source": "Prop. 6.4",
+    "match": true
+   },
+   {
+    "row": 2,
+    "what": "P(10)",
+    "printed": "0.0067813",
+    "value": "0.00678130331424",
+    "source": "Prop. 6.4",
+    "match": true
+   },
+   {
+    "row": 2,
+    "what": "V(1)",
+    "printed": "0.0099010",
+    "value": "0.00990098767242",
+    "source": "min over G of Lemma 6.1 at tau = 1 (interior minimum vs the G -> infinity limit)",
+    "match": true
+   },
+   {
+    "row": 3,
+    "what": "post at dt -> 0",
+    "printed": "0.09",
+    "value": "0.09",
+    "source": "M-P formula",
+    "match": true
+   },
+   {
+    "row": 3,
+    "what": "post maximum",
+    "printed": "0.20457",
+    "value": "0.204573403878",
+    "source": "M-P formula",
+    "match": true
+   },
+   {
+    "row": 3,
+    "what": "argmax",
+    "printed": "2.4645",
+    "value": "2.46449931597",
+    "source": "M-P formula",
+    "match": true
+   },
+   {
+    "row": 3,
+    "what": "post at dt -> infinity is 0",
+    "printed": "-> 0",
+    "value": true,
+    "source": "M-P formula",
+    "match": true
+   },
+   {
+    "row": 3,
+    "what": "dt_E = 100 to 20 digits",
+    "printed": "100",
+    "value": true,
+    "source": "tanh lemma root 99.99999999999999999996143",
+    "match": true
+   },
+   {
+    "row": 3,
+    "what": "avg at dt = 200",
+    "printed": "0.0099875",
+    "value": "0.0099875",
+    "source": "M-P formula",
+    "match": true
+   },
+   {
+    "row": 3,
+    "what": "dip at dt = 200",
+    "printed": "0.125%",
+    "value": "0.00125",
+    "source": "M-P formula",
+    "match": true
+   },
+   {
+    "row": 3,
+    "what": "avg minimiser (reported; the draft says 'at dt = 200')",
+    "printed": "200",
+    "value": "200.0",
+    "source": "M-P formula",
+    "match": true
+   },
+   {
+    "row": 4,
+    "what": "D2 c = 3: P+ > F at every dt (2,000-point grid)",
+    "printed": "P+ > F",
+    "value": true,
+    "source": "M-P formula",
+    "match": true
+   },
+   {
+    "row": 4,
+    "what": "D2 c = 3: P+ -> 4F",
+    "printed": "4",
+    "value": "4.00000888",
+    "source": "M-P formula at dt = 1e8",
+    "match": true
+   },
+   {
+    "row": 5,
+    "what": "P(0)",
+    "printed": "0.0099505",
+    "value": "0.00995049383621",
+    "source": "Prop. 7.11",
+    "match": true
+   },
+   {
+    "row": 5,
+    "what": "P(1/e)",
+    "printed": "0.0099763",
+    "value": "0.00997627953209",
+    "source": "Prop. 7.11",
+    "match": true
+   },
+   {
+    "row": 6,
+    "what": "G = 0.019 avg: maximum then minimum",
+    "printed": "max, min",
+    "value": true,
+    "source": "sign sequence [1, -1, 1]",
+    "match": true
+   },
+   {
+    "row": 6,
+    "what": "minimum below the starting value",
+    "printed": "below start",
+    "value": true,
+    "source": "M-P formula",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "178 of 1,000 (2 < rho <= 2 + u, no onset)",
+    "printed": "178",
+    "value": "178.0",
+    "source": "t12/RESULTS_t12.md",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "sets per family",
+    "printed": "2000",
+    "value": "2000.0",
+    "source": "t12_a8.json N",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "6,000 sets",
+    "printed": "6000",
+    "value": "6000.0",
+    "source": "t12_a8.json sets",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "x 3 metrics",
+    "printed": "3",
+    "value": "3.0",
+    "source": "t12/RESULTS_t12.md A8 row (metrics listed)",
+    "match": true
+   },
+   {
+    "row": 7,
+    "what": "D3 excess set at R2 = F: lower ray or Empty",
+    "printed": "1000",
+    "value": "1000.0",
+    "source": "t12 A4 shapes",
+    "match": true
+   },
+   {
+    "row": 8,
+    "what": "1,000 tolerances (degenerate point)",
+    "printed": "1000",
+    "value": "1000.0",
+    "source": "t10/RESULTS_t10.md",
+    "match": true
+   },
+   {
+    "row": 8,
+    "what": "exponent (values)",
+    "printed": "1.50007",
+    "value": "1.50007",
+    "source": "t10/RESULTS_t10.md",
+    "match": true
+   },
+   {
+    "row": 8,
+    "what": "exponent (positions)",
+    "printed": "0.50002",
+    "value": "0.50002",
+    "source": "t10/RESULTS_t10.md",
+    "match": true
+   },
+   {
+    "row": 9,
+    "what": "T9.4 classifications",
+    "printed": "80000",
+    "value": "80000.0",
+    "source": "t9 RESULTS",
+    "match": true
+   },
+   {
+    "row": 9,
+    "what": "T9.2 Wiener route agreement",
+    "printed": "2 × 10^-17",
+    "value": "2.1e-17",
+    "source": "t9 RESULTS T9.2 (max of the three)",
+    "match": true
+   },
+   {
+    "row": 9,
+    "what": "T9.5 flags: not strictly decreasing",
+    "printed": "285",
+    "value": "285.0",
+    "source": "t9 RESULTS",
+    "match": true
+   },
+   {
+    "row": 9,
+    "what": "T9.5 flags: V < P",
+    "printed": "13",
+    "value": "13.0",
+    "source": "t9 RESULTS",
+    "match": true
+   },
+   {
+    "row": 9,
+    "what": "T13 A7 sets",
+    "printed": "10000",
+    "value": "10000.0",
+    "source": "t13 RESULTS",
+    "match": true
+   },
+   {
+    "row": 9,
+    "what": "T13 A7 digits",
+    "printed": "60",
+    "value": "60.0",
+    "source": "t13 RESULTS",
+    "match": true
+   },
+   {
+    "row": 9,
+    "what": "T10.6 three routes",
+    "printed": "1.0 × 10^-14",
+    "value": "1.01e-14",
+    "source": "t10 RESULTS",
+    "match": true
+   },
+   {
+    "row": 9,
+    "what": "T10.6 shape exact to 1e-50",
+    "printed": "<= 10^-50",
+    "value": true,
+    "source": "t10_6.json shape.max_pos_rel_err",
+    "match": true
+   },
+   {
+    "row": 10,
+    "what": "A2 D1 sets matching",
+    "printed": "1000",
+    "value": "1000.0",
+    "source": "t12 RESULTS",
+    "match": true
+   },
+   {
+    "row": 10,
+    "what": "A3 D2 sets matching",
+    "printed": "1000",
+    "value": "1000.0",
+    "source": "t12 RESULTS",
+    "match": true
+   },
+   {
+    "row": 10,
+    "what": "A2 dt_E to 1e-30",
+    "printed": "1 × 10^-30",
+    "value": "1.14e-30",
+    "source": "t12",
+    "match": true
+   },
+   {
+    "row": 10,
+    "what": "A4 sets agreeing",
+    "printed": "1000",
+    "value": "1000.0",
+    "source": "t12 RESULTS",
+    "match": true
+   },
+   {
+    "row": 10,
+    "what": "A4 membership tests",
+    "printed": "201514",
+    "value": "201514.0",
+    "source": "t12 RESULTS",
+    "match": true
+   },
+   {
+    "row": 10,
+    "what": "T13 A1 sets",
+    "printed": "10000",
+    "value": "10000.0",
+    "source": "t13 RESULTS",
+    "match": true
+   },
+   {
+    "row": 10,
+    "what": "T13 A1 digits",
+    "printed": "100",
+    "value": "100.0",
+    "source": "t13 RESULTS",
+    "match": true
+   },
+   {
+    "row": 10,
+    "what": "T12 A6 points",
+    "printed": "400000",
+    "value": "400000.0",
+    "source": "t12 RESULTS",
+    "match": true
+   },
+   {
+    "row": 11,
+    "what": "B4 census sets",
+    "printed": "2000",
+    "value": "2000.0",
+    "source": "t12 RESULTS",
+    "match": true
+   },
+   {
+    "row": 11,
+    "what": "maximum's position error",
+    "printed": "6 × 10^-31",
+    "value": "6.05e-31",
+    "source": "t12 RESULTS",
+    "match": true
+   },
+   {
+    "row": 12,
+    "what": "T11.3 spectral pairs",
+    "printed": "25000",
+    "value": "25000.0",
+    "source": "t11 RESULTS",
+    "match": true
+   },
+   {
+    "row": 12,
+    "what": "T11.3 values of beta",
+    "printed": "37",
+    "value": "129.0",
+    "source": "t11_3.json by_beta (distinct beta)",
+    "match": false
+   },
+   {
+    "row": 12,
+    "what": "T13 A4 curves",
+    "printed": "10000",
+    "value": "10000.0",
+    "source": "t13 RESULTS",
+    "match": true
+   },
+   {
+    "row": 12,
+    "what": "T11 unimodality curves",
+    "printed": "12900",
+    "value": "12900.0",
+    "source": "t11 RESULTS",
+    "match": true
+   },
+   {
+    "row": 12,
+    "what": "T11.3 duality",
+    "printed": "8 × 10^-51",
+    "value": "7.79e-51",
+    "source": "t11 RESULTS",
+    "match": true
+   },
+   {
+    "row": 12,
+    "what": "T11.4 Monte Carlo |z|",
+    "printed": "1.91",
+    "value": "1.91",
+    "source": "t11 RESULTS",
+    "match": true
+   },
+   {
+    "row": 12,
+    "what": "T11.5 sets",
+    "printed": "1000",
+    "value": "1000.0",
+    "source": "t11 RESULTS",
+    "match": true
+   },
+   {
+    "row": 12,
+    "what": "T11.6 pairs",
+    "printed": "9000",
+    "value": "9000.0",
+    "source": "t11 RESULTS",
+    "match": true
+   },
+   {
+    "row": 12,
+    "what": "T13 A3 closed form and limits 11 of 11",
+    "printed": "11",
+    "value": "11.0",
+    "source": "t13 RESULTS",
+    "match": true
+   },
+   {
+    "row": 12,
+    "what": "T13 A3 sets",
+    "printed": "10000",
+    "value": "10000.0",
+    "source": "t13 RESULTS",
+    "match": true
+   },
+   {
+    "row": 12,
+    "what": "T11.6 continuum points",
+    "printed": "400000",
+    "value": "400000.0",
+    "source": "t11_6.json",
+    "match": true
+   },
+   {
+    "row": 12,
+    "what": "T12 A9 points",
+    "printed": "400000",
+    "value": "400000.0",
+    "source": "t12 RESULTS",
+    "match": true
+   },
+   {
+    "row": 12,
+    "what": "T12 A10 pairs",
+    "printed": "1000",
+    "value": "1000.0",
+    "source": "t12 RESULTS",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 13 is 'tau ZF relay…'",
+    "printed": "tau ZF relay",
+    "value": true,
+    "source": "row name 'tau ZF relay'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 14 is 'tau ZF optimal…'",
+    "printed": "tau ZF optimal",
+    "value": true,
+    "source": "row name 'tau ZF optimal'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 15 is 'tau var relay…'",
+    "printed": "tau var relay",
+    "value": true,
+    "source": "row name 'tau var relay'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 16 is 'tau var optimal…'",
+    "printed": "tau var optimal",
+    "value": true,
+    "source": "row name 'tau var optimal'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 17 is 'power…'",
+    "printed": "power",
+    "value": true,
+    "source": "row name 'power beta<=0'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 18 is 'power…'",
+    "printed": "power",
+    "value": true,
+    "source": "row name 'power 0<beta<2'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 19 is 'power…'",
+    "printed": "power",
+    "value": true,
+    "source": "row name 'power beta>=2'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 20 is 'delay…'",
+    "printed": "delay",
+    "value": true,
+    "source": "row name 'delay'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 24 is 'dt…'",
+    "printed": "dt",
+    "value": true,
+    "source": "row name 'dt D1 post'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 25 is 'dt…'",
+    "printed": "dt",
+    "value": true,
+    "source": "row name 'dt D1 prior'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 26 is 'dt…'",
+    "printed": "dt",
+    "value": true,
+    "source": "row name 'dt D1 avg'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 27 is 'dt…'",
+    "printed": "dt",
+    "value": true,
+    "source": "row name 'dt D2 post'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 28 is 'dt…'",
+    "printed": "dt",
+    "value": true,
+    "source": "row name 'dt D2 prior'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 29 is 'dt…'",
+    "printed": "dt",
+    "value": true,
+    "source": "row name 'dt D2 avg'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 30 is 'dt…'",
+    "printed": "dt",
+    "value": true,
+    "source": "row name 'dt D3 post'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 31 is 'dt…'",
+    "printed": "dt",
+    "value": true,
+    "source": "row name 'dt D3 prior'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 32 is 'dt…'",
+    "printed": "dt",
+    "value": true,
+    "source": "row name 'dt D3 avg'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 35 is 'Sigma…'",
+    "printed": "Sigma",
+    "value": true,
+    "source": "row name 'Sigma B2 abs'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 36 is 'Sigma…'",
+    "printed": "Sigma",
+    "value": true,
+    "source": "row name 'Sigma B2 rel'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 37 is 'Sigma…'",
+    "printed": "Sigma",
+    "value": true,
+    "source": "row name 'Sigma B3 abs'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 38 is 'Sigma…'",
+    "printed": "Sigma",
+    "value": true,
+    "source": "row name 'Sigma B3 rel'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 39 is 'Sigma…'",
+    "printed": "Sigma",
+    "value": true,
+    "source": "row name 'Sigma B4 abs'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 40 is 'Sigma…'",
+    "printed": "Sigma",
+    "value": true,
+    "source": "row name 'Sigma B4 rel'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 41 is 'Sigma…'",
+    "printed": "Sigma",
+    "value": true,
+    "source": "row name 'Sigma B5 abs'",
+    "match": true
+   },
+   {
+    "row": 13,
+    "what": "audit row 42 is 'Sigma…'",
+    "printed": "Sigma",
+    "value": true,
+    "source": "row name 'Sigma B5 rel'",
+    "match": true
+   }
+  ],
+  "n": 88,
+  "n_match": 87,
+  "mismatches": [
+   {
+    "row": 12,
+    "what": "T11.3 values of beta",
+    "printed": "37",
+    "value": "129.0",
+    "source": "t11_3.json by_beta (distinct beta)",
+    "match": false
+   }
+  ],
+  "pass": false,
+  "seconds": 0.66
+ },
+ "E4": {
+  "citation_groups": 48,
+  "unresolved": [],
+  "first_order_1_53": true,
+  "first_order": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53
+  ],
+  "excluded_brackets": [
+   {
+    "text": "[0, ∞]",
+    "context": "± = lim σ² as θ → θ± exist in [0, ∞]. - *"
+   },
+   {
+    "text": "[1.01, 10]",
+    "context": "00 random sets with real n in [1.01, 10]. Tas"
+   },
+   {
+    "text": "[0, ∞]",
+    "context": "ous on the compactified range [0, ∞], so "
+   },
+   {
+    "text": "[c + 2(1 − c)FΠ₀]",
+    "context": ", with Δt·(P⁺ − (1 − c)²F) → c[c + 2(1 − c)FΠ₀]/Π; p"
+   },
+   {
+    "text": "[ss′ − (1 − s)(s/x − s′)]",
+    "context": ") − 1 − 2x) > 0. So B > (MF/s)[ss′ − (1 − s)(s/x − s′)] = (M"
+   },
+   {
+    "text": "[w + (μ + 1 − φ)E]",
+    "context": "E, and (1 + μ)(2μ + 1 − φ)E − [w + (μ + 1 − φ)E] = Eμ"
+   },
+   {
+    "text": "[(ρ − 1) + √(2ρ(ρ − 1))]",
+    "context": "ith a single maximum at w_M = [(ρ − 1) + √(2ρ(ρ − 1))]/(1 +"
+   },
+   {
+    "text": "[(w² − 1)/ρ + (w − 1)²]",
+    "context": ".  *Proof.* Absolute: σ²Π/λ = [(w² − 1)/ρ + (w − 1)²]/(2w)"
+   },
+   {
+    "text": "[(w² − 1)(1 + 1/ρ) + 2/ρ]",
+    "context": "]/(2w), whose w-derivative is [(w² − 1)(1 + 1/ρ) + 2/ρ]/(2w²"
+   },
+   {
+    "text": "[−G² − 2λ′G + λ′(λ − 2λ′)]",
+    "context": ", with derivative numerator 2λ[−G² − 2λ′G + λ′(λ − 2λ′)]. Tha"
+   },
+   {
+    "text": "[Z \\mid Y_{\\theta_1}(\\le t)]",
+    "context": "\\mathbb{E}\\big[(Z - \\mathbb{E}[Z \\mid Y_{\\theta_1}(\\le t)])^2\\b"
+   },
+   {
+    "text": "[Z \\mid Y_{\\theta_2}(\\le t)]",
+    "context": "\\mathbb{E}\\big[(Z - \\mathbb{E}[Z \\mid Y_{\\theta_2}(\\le t)])^2\\b"
+   },
+   {
+    "text": "[(1 − E) − (1 − E²)/2]",
+    "context": "ariances q₁₁ = 1 − E², q₁₂ = 2[(1 − E) − (1 − E²)/2] and "
+   },
+   {
+    "text": "[x − 2(1 − E) + (1 − E²)/2]",
+    "context": "− E) − (1 − E²)/2] and q₂₂ = 2[x − 2(1 − E) + (1 − E²)/2] for "
+   },
+   {
+    "text": "[x(1 + E) − 2(1 − E)]",
+    "context": "/a₁ = u(1 − E)/(2K) with K = u[x(1 + E) − 2(1 − E)] + x("
+   },
+   {
+    "text": "[x coth(x/2)]",
+    "context": "coth(x/2) - 2u ```  Since d/dx[x coth(x/2)] = (s"
+   }
+  ],
+  "typed_refs": 425,
+  "typed_bad": [
+   {
+    "ref": "Prop. 6.10–6.12",
+    "number": "6.11",
+    "problem": "type is Counterexample, not Proposition"
+   }
+  ],
+  "untyped_refs": 34,
+  "untyped_bad": [],
+  "figure_refs": 12,
+  "figure_bad": [],
+  "pass": false,
+  "seconds": 0.13
+ },
+ "E6": {
+  "escaped_now": {},
+  "baseline_total": 15,
+  "now_total": 17,
+  "added_by_imports": {
+   "stationary-variance.md": 1,
+   "optimal-envelope.md": 1,
+   "plateaus.md": 0,
+   "equal-height-maxima.md": 0,
+   "degenerate-points.md": 0,
+   "pair-birth.md": 0,
+   "discrete-excess.md": 0
+  },
+  "expected_total": 17,
+  "per_file": {
+   "classification/Stages_0_4_Thesis.md": [
+    3,
+    5
+   ]
+  },
+  "pass": true,
+  "seconds": 0.59
+ },
+ "E7": {
+  "flagged": [],
+  "exempt": {
+   "prefixed": 0,
+   "figure label": 85
+  },
+  "paper1": 1,
+  "files": 20,
+  "pass": true,
+  "seconds": 0.07
+ }
+}
