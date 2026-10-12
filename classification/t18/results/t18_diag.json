@@ -1,0 +1,68 @@
+{
+ "F1_s47_chapters_only": {
+  "sentences": [
+   "∎\n\nFiltering under coloured measurement noise is standard, by state augmentation or measurement differencing [27, 28, 45, 46], and the effect of mis-specified time-correlated model error on Kalman smoothing has been studied [47].",
+   "Coloured measurement noise is a standard setting for filter design [27, 28, 45, 46], and the effect of mis-specified time-correlated model error on Kalman smoothing has been studied [47]."
+  ],
+  "all_model_error": true,
+  "n": 2,
+  "text": "Restricted to chapters 1–9, both [47] sentences say 'time-correlated model error'. The recorded failure came from Appendix D's quotation of the Task 17 finding. Attribution: code (scope)."
+ },
+ "F1_s21_remaining": {
+  "lines": [
+   [
+    85,
+    "3. **Optimality.** The power-family threshold (Theorem 7.8), the matched-variance optimal window (Counterexample 6.11) and the delay counterexample (Counterexample 7.12) appear to be new. Theorem 7.2 is presented as a filtering instance of known results: monotonicity of optimal performance under gar"
+   ]
+  ],
+  "text": "§1.6 still says monotonicity under garbling 'extends to sequential experiments [20] and stochastic control and teams [21–23]'. §7.1 was fixed; §1.6 was not. Attribution: document."
+ },
+ "F2_qualified_verdicts": {
+  "rows": [
+   [
+    2,
+    "T2.1c",
+    "PASS (info)"
+   ]
+  ],
+  "recount_total": 144,
+  "per_task": {
+   "1": 12,
+   "2": 3,
+   "3": 8,
+   "4": 0,
+   "5": 0,
+   "6": 6,
+   "7": 15,
+   "8": 5,
+   "9": 7,
+   "10": 10,
+   "11": 11,
+   "12": 13,
+   "13": 15,
+   "14": 11,
+   "15": 13,
+   "16": 8,
+   "17": 7
+  },
+  "text": "Task 2's T2.1c reads 'PASS (info)'; the recorded parser required the cell to equal PASS. With the pre-registered reading ('says PASS'), the total is the sum above. Attribution: code."
+ },
+ "F2_unparsed_attributions": {
+  "T10.2 A1.3 as specified: plan's construction (criterion as pre-registered)": "criterion",
+  "T10.5 pair birth: criterion.": "criterion",
+  "T10.6 matched-variance τ (zero-limit shape check): criterion.": "criterion",
+  "C1 numbers, first run (T13): document (4, a truncated worked value) and code (2, parser)": "document, code",
+  "text": "The automatic mapper looked for an attribution between ':' and ' — '; these four lines end without ' — '. Each names a listed attribution. Attribution of the recorded gap: code."
+ },
+ "F6_A_math_delimiters": {
+  "differences": [
+   {
+    "index": 32,
+    "draft": "5.12 | Theorem | Hill gain for every real n > 1 | hill-turning-points | T4, T7, T10.1, T10.3 (n = 2), T13 A5 | proved",
+    "render": "5.12 | Theorem | Hill gain for every real n > 1 | hill-turning-points | T4, T7, T10.1, T10.3 ($n = 2$), T13 A5 | proved"
+   }
+  ],
+  "same_without_dollars": true,
+  "text": "The only Appendix A difference is '$n = 2$' vs 'n = 2' (math delimiters): formatting the normaliser did not remove. Attribution: code."
+ }
+}
