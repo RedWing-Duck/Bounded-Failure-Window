@@ -10,5 +10,35 @@
   "pass": true,
   "seconds": 20.2,
   "wall_seconds": 20.4
+ },
+ "H-9.5": {
+  "id": "H-9.5",
+  "pass": true,
+  "seconds": 7540.3,
+  "wall_seconds": 7540.4
+ },
+ "H-10.1a": {
+  "id": "H-10.1a",
+  "pass": true,
+  "seconds": 0.3,
+  "wall_seconds": 0.5
+ },
+ "H-10.1b": {
+  "id": "H-10.1b",
+  "pass": true,
+  "seconds": 0.6,
+  "wall_seconds": 0.8
+ },
+ "H-10.5": {
+  "id": "H-10.5",
+  "pass": true,
+  "seconds": 6.6,
+  "wall_seconds": 6.7
+ },
+ "H-10.6": {
+  "id": "H-10.6",
+  "pass": true,
+  "seconds": 1.2,
+  "wall_seconds": 1.4
  }
 }

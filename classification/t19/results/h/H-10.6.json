@@ -1,0 +1,8 @@
+{
+ "sets": 1000,
+ "max_P_over_Pmax_at_1e+-24": "7.796e-10",
+ "max_slope_dev": "0.0007618",
+ "max_asymptote_dev": "0.0003897",
+ "failing_sets": [],
+ "pass": true
+}

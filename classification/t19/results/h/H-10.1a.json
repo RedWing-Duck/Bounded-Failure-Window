@@ -1,0 +1,19 @@
+{
+ "radicands_factored": [
+  "(G + lambda1)**2"
+ ],
+ "Y": "G + lambda1",
+ "Y_positive": true,
+ "residual_after_denesting": {
+  "zero": true,
+  "route": "simplify"
+ },
+ "fallback": {
+  "seed": 19004,
+  "n": 1000,
+  "max_rel": 0.0,
+  "max_digits": 60,
+  "pass": true
+ },
+ "pass": true
+}

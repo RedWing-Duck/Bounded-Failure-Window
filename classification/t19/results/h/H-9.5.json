@@ -1,0 +1,11 @@
+{
+ "sets": 2000,
+ "samples": 400000,
+ "dps": 50,
+ "n_not_decreasing": 0,
+ "n_V_le_P": 0,
+ "n_grid_above": 0,
+ "local_minima_refined": 21633897,
+ "examples": [],
+ "pass": true
+}

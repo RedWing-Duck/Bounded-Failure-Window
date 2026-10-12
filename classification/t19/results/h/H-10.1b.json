@@ -1,0 +1,24 @@
+{
+ "residual_after_substitution": "F*(2*w - sqrt(4*w*(w + 1) + 1) + 1)/((w + 1)*(sqrt(4*w*(w + 1) + 1) + 1))",
+ "radicands": [
+  {
+   "radicand": "(2*w + 1)**2",
+   "Y": "2*w + 1",
+   "Y_squared_equals_radicand": true,
+   "Y_positive": true
+  }
+ ],
+ "two_F_minus_R2_positive": true,
+ "residual_after_denesting": {
+  "zero": true,
+  "route": "simplify"
+ },
+ "fallback": {
+  "seed": 19005,
+  "n": 1000,
+  "max_rel": 1.5949741402711756e-61,
+  "max_digits": 60,
+  "pass": true
+ },
+ "pass": true
+}
