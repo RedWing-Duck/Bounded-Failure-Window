@@ -1,0 +1,46 @@
+{
+ "item_2b": {
+  "derivative_identity": {
+   "zero": true,
+   "route": "simplify"
+  },
+  "G_star_root": {
+   "zero": true,
+   "route": "simplify"
+  },
+  "product_of_roots": "-2*Pi*Sigma",
+  "product_negative": true,
+  "radicand_minus_lam2": "2*Pi*Sigma",
+  "G_star_positive": true,
+  "numeric": {
+   "seed": 19007,
+   "n": 1000,
+   "failures": 0
+  },
+  "holds": true
+ },
+ "item_9": {
+  "radicands": [
+   {
+    "radicand": "(R2 + 2*d)**2",
+    "ratio_to_Y2": "1",
+    "replacement": "R2 + 2*d"
+   }
+  ],
+  "Y": "R2 + 2*d",
+  "Y_positive": true,
+  "residual_after_denesting": {
+   "zero": true,
+   "route": "simplify"
+  },
+  "fallback": {
+   "seed": 19008,
+   "n": 1000,
+   "max_rel": 1.5247532125079575e-61,
+   "max_digits": 60,
+   "pass": true
+  },
+  "holds": true
+ },
+ "pass": true
+}

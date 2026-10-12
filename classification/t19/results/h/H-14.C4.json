@@ -1,0 +1,19 @@
+{
+ "commit": "45b0058",
+ "t14_c4_as_run": {
+  "numbering_mismatches": [],
+  "hunks": 14,
+  "by_category": {
+   "b (split)": 6,
+   "c (rows 25-26)": 1,
+   "other": 7
+  }
+ },
+ "categories": {
+  "d (excess identity type)": 7,
+  "b (split)": 6,
+  "c (rows 25-26)": 1
+ },
+ "other_hunks": [],
+ "pass": true
+}

@@ -1,0 +1,9 @@
+# H-16.D2 manual reading (after the recorded run), from results/h16d2_pairs.md.
+# Kinds (Task 16): (a) equivalent, (b) draft weaker, (c) draft stronger, (d) draft contradicts the repository.
+"3.1":
+  differences: []
+  note: identical apart from the draft's escaped citation brackets (\[4–9, 36–38\] vs [4–9, 36–38]); the thesis render carries the Task 17 thesis-only import of the draft's statement
+"3.5":
+  differences: []
+  note: identical (same text and display formula)
+verdict: PASS (no difference of kind (c) or (d); no content difference at all)

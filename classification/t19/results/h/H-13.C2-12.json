@@ -1,0 +1,85 @@
+{
+ "sets": 1000,
+ "classes": {
+  "Empty": 26366,
+  "upper ray": 19071,
+  "All": 24492,
+  "two rays": 11837,
+  "lower ray": 18234
+ },
+ "flagged": 439,
+ "persisting": 45,
+ "persist_examples": [
+  {
+   "i": 151,
+   "R2": "0.51056254869103954622216",
+   "route_i": "All",
+   "route_ii": "Empty"
+  },
+  {
+   "i": 151,
+   "R2": "0.51056254869103954622216",
+   "route_i": "All",
+   "route_ii": "Empty"
+  },
+  {
+   "i": 151,
+   "R2": "0.51056254869103954622216",
+   "route_i": "All",
+   "route_ii": "Empty"
+  },
+  {
+   "i": 151,
+   "R2": "0.51056254869103954622216",
+   "route_i": "All",
+   "route_ii": "Empty"
+  },
+  {
+   "i": 192,
+   "R2": "0.2325290209449564783235573",
+   "route_i": "All",
+   "route_ii": "Empty"
+  },
+  {
+   "i": 192,
+   "R2": "0.2325290209449564783235573",
+   "route_i": "All",
+   "route_ii": "Empty"
+  },
+  {
+   "i": 192,
+   "R2": "0.2325290209449564783235573",
+   "route_i": "All",
+   "route_ii": "Empty"
+  },
+  {
+   "i": 192,
+   "R2": "0.2325290209449564783235573",
+   "route_i": "All",
+   "route_ii": "Empty"
+  },
+  {
+   "i": 192,
+   "R2": "0.2325290209449564783235573",
+   "route_i": "All",
+   "route_ii": "Empty"
+  },
+  {
+   "i": 192,
+   "R2": "0.2325290209449564783235573",
+   "route_i": "All",
+   "route_ii": "Empty"
+  }
+ ],
+ "stated": [
+  "two rays",
+  "upper ray",
+  "Empty",
+  "lower ray",
+  "All"
+ ],
+ "missing_stated": [],
+ "equality_tolerance": "1e-300",
+ "dps": 400,
+ "pass": false
+}
