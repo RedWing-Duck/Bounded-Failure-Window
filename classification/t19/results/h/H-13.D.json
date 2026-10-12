@@ -1,0 +1,41 @@
+{
+ "commit": "7195070",
+ "workdir": "/tmp/claude-0/t19/repro19",
+ "steps": {
+  "t10_run_script": [
+   1,
+   13959.1
+  ],
+  "t10_realize_diag": [
+   0,
+   0.2
+  ],
+  "t10_make_results": [
+   0,
+   0.1
+  ],
+  "t12_run_script": [
+   0,
+   9636.4
+  ]
+ },
+ "reports": {
+  "10": {
+   "file": "t10/RESULTS_t10.md",
+   "issues_unmasked_provenance": 1,
+   "n_issues": 0,
+   "issues": [],
+   "verdicts_identical": true,
+   "pass": true
+  },
+  "12": {
+   "file": "t12/RESULTS_t12.md",
+   "issues_unmasked_provenance": 1,
+   "n_issues": 0,
+   "issues": [],
+   "verdicts_identical": true,
+   "pass": true
+  }
+ },
+ "pass": true
+}

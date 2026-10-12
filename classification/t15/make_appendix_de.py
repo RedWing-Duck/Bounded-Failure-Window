@@ -119,7 +119,16 @@ def appendix_d(with_t17=False):
     return "\n".join(out)
 
 
-FAILURES_T19 = []  # from RESULTS_t19.md, written after the recorded run (planned change, PREREG_t19.md)
+FAILURES_T19 = [  # from RESULTS_t19.md (recorded run on 8cb8777); planned post-run entry (PREREG_t19.md)
+    "G1 citations: input — Roberts (1959) unreachable from the session; that it states r/(2 − r) cannot be determined from its text "
+    "(secondary sources agree); the §6.3 identity, [29], [40] and both [21] sentences hold.",
+    "G3 chapter 8: code / document — the coverage parser missed two Appendix D lines (both covered); §8.2 interchanges the route "
+    "descriptions; §8.4 lists Task 13 under √(x²) handling, which Task 13's report does not support. Recount 151 / 32 and §8.5 match.",
+    "G4 chapter 9: document — §9.2's c/(FΠ₀) > 4 for the Hill gain holds for n = 2 only.",
+    "G7 sync: criterion / code — the old key remains in ten recorded files of Tasks 14, 15 and 17 (not editable) and in Task 19's "
+    "register script's docstring; 0 in live files; the other three clauses hold.",
+    "H-13.C2-12 C2 row 12 re-check: criterion — 45 persisting cases; the 10⁻³⁰⁰ tolerance is finer than the stored limit's precision "
+    "(about 10⁻²⁵), so the routes compare below what the critical value carries."]
 FAILURES_T18 = [  # from RESULTS_t18.md (recorded run on f77ab8f)
     "F1 Task 17 fixes (2 of 6): code / document — the [47] search included Appendix D's quotation of the old finding (both chapter "
     "sentences now say model error); §1.6 still cites [21–23] for monotonicity under garbling (fixed in §7.1 only).",

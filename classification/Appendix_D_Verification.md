@@ -1,4 +1,4 @@
-# Appendix D. Verification record, Tasks 1–18
+# Appendix D. Verification record, Tasks 1–19
 
 For each task: the pre-registration and results files, the pre-registered checks that passed and failed, and every failure with the attribution its report gives (criterion, input, code, document or prediction). Outcomes are copied from the reports, not re-judged, and every failure stays recorded.
 
@@ -81,3 +81,11 @@ For each task: the pre-registration and results files, the pre-registered checks
 - Failure — F2 chapter 8 counts: code — the recount parser skipped Task 2's 'PASS (info)' row (143); read as pre-registered the total is 144, with 28 failed and Tasks 4 and 5 without criteria.
 - Failure — F3 chapter 8 claims: document — §8.5 names a referee pass on Theorem 7.6 only; Task 13 C4's independent referee read the whole consolidated document (14 points, all fixed).
 - Failure — F6 appendices: code / document — Appendix A differs only in math delimiters; the draft's Appendix D rewords three Task 17 failure lines (tense, P⁻ for M, 'the proof was completed').
+
+**Task 19.** classification/PREREG_t19.md · classification/RESULTS_t19.md. 31 checks with a verdict; 26 pass, 5 fail.
+
+- Failure — G1 citations: input — Roberts (1959) unreachable from the session; that it states r/(2 − r) cannot be determined from its text (secondary sources agree); the §6.3 identity, [29], [40] and both [21] sentences hold.
+- Failure — G3 chapter 8: code / document — the coverage parser missed two Appendix D lines (both covered); §8.2 interchanges the route descriptions; §8.4 lists Task 13 under √(x²) handling, which Task 13's report does not support. Recount 151 / 32 and §8.5 match.
+- Failure — G4 chapter 9: document — §9.2's c/(FΠ₀) > 4 for the Hill gain holds for n = 2 only.
+- Failure — G7 sync: criterion / code — the old key remains in ten recorded files of Tasks 14, 15 and 17 (not editable) and in Task 19's register script's docstring; 0 in live files; the other three clauses hold.
+- Failure — H-13.C2-12 C2 row 12 re-check: criterion — 45 persisting cases; the 10⁻³⁰⁰ tolerance is finer than the stored limit's precision (about 10⁻²⁵), so the routes compare below what the critical value carries.

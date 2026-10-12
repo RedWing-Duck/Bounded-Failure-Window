@@ -11,3 +11,39 @@
 == t12_sigma
    2912.0s
 == t12_blind
+   3339.7s
+== t12_diag
+   104.0s
+== t12_figures
+   14.4s
+# Task 12 — completing Stage 2 (Δt and Σ sweeps) with Stage 3/4 checks: results
+
+Pre-registration `classification/PREREG_t12.md`, commit **6e09e88**; code and results commit **82edc1b**. Total measured script runtime **9635 s** on 4 CPUs (Python 3.13.16, mpmath 1.3.0, SymPy 1.14.0).
+
+| Check | Verdict | Counts / worst errors | Runtime (s) |
+|---|---|---|---|
+| Symbolic identities and signs (A1–A6, B1–B5) | **FAIL** | 66/67 items; failing: D2 post at dt->oo: lim dt (P+ - (1-c)^2 F) - c[c + 2(1-c) F Pi0]/Pi == 0 | 16 |
+| A2 D1 excess set at R² = F (1,000 sets) | **PASS** | 1000/1000 match; non-empty predicted 470; max rel. error of Δt_E 1.14e-30 |  |
+| A3 D2 excess set at R² = F (1,000 sets) | **PASS** | 1000/1000 match; non-empty predicted 183; max rel. error of Δt_E 1.13e-30 |  |
+| A4 D3 excess set vs exact condition (1,000 sets) | **PASS** | 1000/1000 agree; membership disagreements 0 of 201514 test points; onset predicted (ρ > 2 + u) 257, observed 257; shapes {'Empty': 743, 'lower ray': 257} |  |
+| A6 regression (optimal M-P, 5 s.f.) | **PASS** | post(1) = 0.0098858451 (stated 0.0098858); avg(1) = 0.0099506471 (stated 0.0099506); post(10) = 0.0090909091 (stated 0.0090909); avg(10) = 0.0099545455 (stated 0.0099545); post(100) = 0.005 (stated 0.0050000); avg(100) = 0.009975 (stated 0.0099750) |  |
+| A6 numerical monotonicity (record) | record | 400,000 points × 3 metrics, λΔt ∈ [1e-8, 1e8]: violations {'post': 0, 'prior': 0, 'avg': 0}; Δt → 0 max rel. dev. from σ*² 2.2e-57 |  |
+| A7 minimum below F and two rays (D1, G > 2FΠ) | **FAIL** | prior 366/907 (no minimum found 538), avg 907/907 (no minimum found 0) |  |
+| A8 census: route (i) = route (ii) | **PASS** | sets with a disagreement: D1 post 0, D1 prior 0, D1 avg 0, D2 post 0, D2 prior 0, D2 avg 0, D3 post 0, D3 prior 0, D3 avg 0 | 3045 |
+| A8 qualitative regression (prompt's values) | **FAIL** | post single max True, value within 2% of 0.166 False, at Δt within ×2 of 1 False; avg crossing within ×1.5 of 50 False; then min below F, back from below True |  |
+| A9 regression vs Task 11 (1e-12) | **PASS** | max rel. error 8.59e-17 |  |
+| A9 numerical monotonicity (record) | record | 400,000 points × 2 metrics, λΔt ∈ [1e-8, 1e8]: violating sets 0; SymPy sign attempt: (a) unresolved, (b) unresolved | 122 |
+| A10 pairs (Δt, 2Δt) | **PASS** | post(2Δt) < post(Δt) in 1000/1000, avg(2Δt) > avg(Δt) in 1000/1000 | 79 |
+| B2, B3, B5 census (2,000 sets each, both conventions) | **PASS** | B2 abs: 2000/2000; B2 rel: 2000/2000; B3 abs: 2000/2000; B3 rel: 2000/2000; B5 abs: 2000/2000; B5 rel: 2000/2000; max error of the maximum's position 6.05e-31 |  |
+| B4 census (2,000 sets, both conventions) | **PASS** | B4 abs: 2000/2000; B4 rel: 2000/2000; max error of the maximum's position 6.05e-31 | 2912 |
+| Part C blind search (22 combos) | **PASS** | 4,400,000 classifications; flagged 1109; persisting 0 | 3340 |
+
+**Pre-registered checks that FAIL:** Symbolic identities and signs (A1–A6, B1–B5); A7 minimum below F and two rays (D1, G > 2FΠ); A8 qualitative regression (prompt's values). Each is diagnosed below.
+
+## Plain statements
+
+- **Is any prediction falsified?** Yes, two, both disclosed in the pre-registration before the run: (1) the prompt's A4 conjecture "the D3 excess set is non-empty as Δt → 0 iff ρ > 2" is false at fixed Π; the onset is ρ > 2 + u, u = 2ΣΠ/λ² (proved, and confirmed on every census set; counterexamples below); (2) the prompt's A8 quick-check values (post maximum ≈ 0.166 near Δt ≈ 1; avg crossing F near Δt ≈ 50) are wrong: the maximum is 0.20457 at Δt = 2.4645 and the crossing is at Δt_E = 100 exactly (by A1–A2). No theorem or proposition-level claim of the prompt is contradicted otherwise.
+- **Did any class outside the predicted sets appear?** No: Part C found no persisting out-of-set class or route disagreement. The A8 census itself recorded mixed classes (0, 1, 1), (1, 0, 1) (they define the D-family allowed sets in Part C).
+- **Open Stage 2 entries:** monotonicity of the optimal M-P prior and avg along Δt (A6; numerical only); M-I optimal monotonicity along Δt (A9, Numerical result 4.10a; numerical only); exact turning-point counts for the D1–D3 relay families along Δt (census only, no proof); the number of minima of D1 prior/avg (census only).
+
+done: see RESULTS_t12.md
