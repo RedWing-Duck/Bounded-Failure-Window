@@ -89,32 +89,16 @@ function bounded below by 2. $\square$
 
 Reading: topology alone excludes nothing; every restriction below comes from the filtering model.
 
-**Theorem 2.2 (critical-tolerance theorem).** Assume C1–C6.
+*Thesis-only text, imported verbatim from the thesis draft (`t18/input/Thesis_Draft_full.md`, §2.3, lines 158–165; citations written [n]). Task 18.*
 
-(a) *Local constancy.* The class of $\mathcal F(R^2)$ is constant on each connected component of $(0,\infty)\setminus\mathcal C$.
+**Theorem 2.2.** Assume C1–C6.
 
-(b) *Rays.* $\ell = 1$ if $R^2 < L_-$ and $\ell = 0$ if $R^2 > L_-$. If $R^2 = L_-$, then $\ell = 1$ iff $\sigma^2$
-approaches $L_-$ from above. The same holds for $u$ with $L_+$.
+1. **Local constancy.** The class of 𝓕(R²) is constant on each connected component of (0, ∞) \\ 𝒞. It can change only when R² crosses or equals a critical tolerance.
+2. **Rays.** ℓ = 1 if R² < L₋ and ℓ = 0 if R² > L₋. If R² = L₋, then ℓ = 1 iff σ² approaches L₋ from above. The same holds for u with L₊.
+3. **Window components.** Each window component contains an interior local maximum tⱼ with σ²(tⱼ) > R², and distinct components contain distinct maxima. Hence k is at most the number of interior maxima above R², with equality iff each such maximum lies in its own component touching neither end.
+4. **Determining data.** The class of 𝓕(R²), for every R², is determined by the ordered sequence (L₋, σ²(t₁), …, σ²(tₙ), L₊) and the two approach directions. The positions tⱼ are needed only to locate the components.
 
-(c) *Windows.* Each window contains an interior local maximum $t_j$ with $\sigma^2(t_j) > R^2$, and distinct windows
-contain distinct maxima, so $k \le \#\{\text{interior local maxima with value} > R^2\}$, with equality iff each such
-maximum lies in a component that touches neither end and contains no other such maximum.
-
-(d) *Determining data.* The class at every $R^2$ is determined by the ordered sequence
-$(L_-, \sigma^2(t_1), \dots, \sigma^2(t_n), L_+)$ and the two approach directions.
-
-*Proof.* (a) On each piece $I_j$, $\sigma^2$ is a strictly monotone continuous bijection onto the open interval between its
-end values $a_j, b_j$ (turning-point values or endpoint limits). For $R^2 \notin \mathcal C$, $\{\sigma^2 > R^2\} \cap I_j$
-is empty, all of $I_j$, or a one-sided subinterval adjacent to the larger end, decided by the position of $R^2$ relative to
-$a_j, b_j$; adjacent contributions join exactly when $\sigma^2(t_j) > R^2$. All of this is constant on a component of
-$(0,\infty)\setminus\mathcal C$. (b) Near $\theta_-$, $\sigma^2$ is close to $L_-$; if $R^2 = L_-$ the first piece is strictly
-monotone, so $\sigma^2 > L_-$ throughout it iff the approach is from above. (c) A window $(a, b)$ has
-$\sigma^2(a) = \sigma^2(b) = R^2$ and $\sigma^2 > R^2$ inside, so $\sigma^2$ has an interior maximum on $[a,b]$, a turning
-point with value $> R^2$; disjoint windows contain distinct maxima. (d) The construction in (a) uses only the ordered end
-values, and (b) adds the approach directions. At a tolerance equal to an interior turning-point value the same holds: a
-minimum with value $R^2$ is excluded from $\mathcal F$ and splits the component around it, and a maximum with value $R^2$
-contributes nothing. Under C2 the approach directions are themselves determined by the sequence (the first piece rises iff
-$\sigma^2(t_1) > L_-$, or, with no turning point, iff $L_+ > L_-$). $\square$
+*Proof.* (1) On each piece, σ² is a strictly monotone bijection onto the open interval between its end values, all of which lie in 𝒞 or are infinite. For R² ∉ 𝒞, the piece's contribution to 𝓕 is empty, the whole piece, or a one-sided subinterval at its larger end, decided by where R² sits relative to the end values. Adjacent contributions join exactly when the shared turning-point value exceeds R². All of this is constant between critical tolerances. (2) Near θ₋, σ² is close to L₋; at equality the first piece is strictly monotone, so it lies entirely above or entirely below L₋. (3) A window component (a, b) has a, b ∈ D with σ²(a) = σ²(b) = R² and σ² > R² between, so σ² attains an interior maximum there, which is a turning point. Disjoint components contain distinct maxima. (4) The construction in (1) uses only the end values of each piece, and (2) adds the approach directions. ∎
 
 **Label:** Theorem (proved; T8.1(h), T8.3 62/62 classes; used by every classifier in T9–T13).
 
@@ -571,7 +555,7 @@ $\beta < 2$. $\square$
 $P \to \sigma_\star^2(1/K)$; $\beta = 2$, $\tau \to \infty$: $P \to \sigma_\star^2(\lambda^2/K)$ (not $F$); $\beta > 2$,
 $\tau \to \infty$: $P \to F$, approached like $\tau^{2-\beta}$.
 
-**Label:** Theorem (proved; T11.3 over 37 values of $\beta$, with the $\beta \ge 2$ limits as corrected in the T11
+**Label:** Theorem (proved; T11.3 over 129 values of $\beta$ ($\beta = k/20$, $k = -40, \dots, 80$, plus $\{0, 2\} \pm \{10^{-6}, 10^{-3}\}$), with the $\beta \ge 2$ limits as corrected in the T11
 diagnosis; T13 C2 rows 17–19).
 
 **Theorem 7.9 (unimodality for $0 < \beta < 2$).** For $0 < \beta < 2$, $P$ has exactly one turning point, a maximum, so the

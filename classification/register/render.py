@@ -150,21 +150,23 @@ class Renderer:
 
 
 def block_span(L, key):
-    """Lines of result `key` in the source: its **[[key]] line through the end of its proof (a line ending in $\\square$ or ∎),
-    or through its statement paragraph if no proof follows before the next result, heading or **Label:** line."""
+    """Lines of result `key` in the source: its **[[key]] line through the end of its proof (a line ending in $\\square$ or ∎);
+    if no proof comes before the next **Label:** line, result label, heading or rule, through the last statement line before it.
+    (Task 18: statements of several paragraphs, such as Theorem 2.2's, are covered.)"""
     i = next(j for j, l in enumerate(L) if l.startswith(f"**[[{key}]]"))
-    j = i
-    while j + 1 < len(L) and L[j + 1].strip():
-        j += 1
-    k = j + 1
-    while k < len(L) and not L[k].strip():
+    k = i + 1
+    while k < len(L) and not (L[k].startswith("*Proof") or L[k].startswith("**Label:") or L[k].startswith("**[[")
+                              or L[k].startswith("#") or L[k].startswith("---")):
         k += 1
     if k < len(L) and L[k].startswith("*Proof"):
         e = k
         while not (L[e].rstrip().endswith("$\\square$") or L[e].rstrip().endswith("∎")):
             e += 1
-        j = e
-    return i, j
+        return i, e
+    e = k - 1
+    while e > i and not L[e].strip():
+        e -= 1
+    return i, e
 
 
 def apply_overrides(doc):

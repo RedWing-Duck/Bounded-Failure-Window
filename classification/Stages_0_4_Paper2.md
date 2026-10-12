@@ -477,7 +477,7 @@ $\beta < 2$. $\square$
 $P \to \sigma_\star^2(1/K)$; $\beta = 2$, $\tau \to \infty$: $P \to \sigma_\star^2(\lambda^2/K)$ (not $F$); $\beta > 2$,
 $\tau \to \infty$: $P \to F$, approached like $\tau^{2-\beta}$.
 
-**Label:** Theorem (proved; T11.3 over 37 values of $\beta$, with the $\beta \ge 2$ limits as corrected in the T11
+**Label:** Theorem (proved; T11.3 over 129 values of $\beta$ ($\beta = k/20$, $k = -40, \dots, 80$, plus $\{0, 2\} \pm \{10^{-6}, 10^{-3}\}$), with the $\beta \ge 2$ limits as corrected in the T11
 diagnosis; T13 C2 rows 17–19).
 
 **Theorem 26 (unimodality for $0 < \beta < 2$).** For $0 < \beta < 2$, $P$ has exactly one turning point, a maximum, so the
@@ -989,7 +989,7 @@ distance $\delta$ from $\theta_0$ the turning-point positions separate like $\de
 $M - m \sim \delta^{3/2}$; the band of tolerances that sees the pair opens continuously from zero width.
 
 *Proof.* Near the fold $d\sigma^2/d\theta \approx a(x^2 - b\delta)$ in a local coordinate $x$; its roots are $\pm\sqrt{b\delta}$ and
-the value change between them is $\tfrac43a(b\delta)^{3/2}$. $\square$
+the value change between them is $\tfrac43|a|(b\delta)^{3/2}$. $\square$
 
 **Label:** Proposition (proved under nondegeneracy; T10.5 diagnosis, Hill $n = 2$: fitted exponents $1.50007$ (values) and
 $0.50002$ (positions)).

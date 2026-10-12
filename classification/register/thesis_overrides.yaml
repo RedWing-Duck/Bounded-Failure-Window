@@ -17,3 +17,5 @@
   replace: single-minimum-gain
 - file: thesis_only/discrete-excess.md
   insert_before_key: shared-excess-set
+- file: thesis_only/critical-tolerance.md
+  replace: critical-tolerance

@@ -24,8 +24,9 @@ All commands run from the repository root unless stated.
 | T15 | figures B.n, appendices, renders, checks | see the render chain below |
 | T16 | register fixes, renders, checks D1–D8 | render chain below, then `python3 t16/t16_checks.py` |
 | T17 | thesis-only imports, renders, checks E1–E7 | render chain below, then `python3 t17/t17_checks.py` |
+| T18 | record corrections, Theorem 2.2 import, archived thesis, checks F1–F7 | render chain below, then `python3 t18/t18_checks.py` |
 
-## The T14–T17 render chain
+## The T14–T18 render chain
 
 From `classification/`:
 
@@ -34,6 +35,7 @@ python3 t14/build_register.py          # register from the T14 table (T14; overw
 python3 t15/t15_register.py            # T15 citations/status, references.yaml, figures.yaml
 python3 t16/t16_register.py            # T16 legacy-label prefixes, crosswalk, result 5.6 wording, B.4 Pi_c
 python3 t17/make_thesis_only_t17.py    # T17 thesis-only imports (placed by register/thesis_overrides.yaml)
+python3 t18/make_thesis_only_t18.py    # T18 thesis-only Theorem 2.2 (parts (1)-(4))
 python3 t15/make_figs_thesis.py        # figures B.1, B.3-B.12 (text-only edits) and B.2
 python3 register/render.py --numbering thesis   # Stages_0_4_Thesis.md, Roadmap_v3.md, figs_thesis/*.txt, Appendices A-C, reference/phase1/
 python3 register/render.py --numbering paper    # Stages_0_4_Paper2.md
