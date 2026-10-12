@@ -1,0 +1,21 @@
+{
+ "A1_item2_rewrite": {
+  "zero": true,
+  "route": "simplify"
+ },
+ "exp_series_positive": true,
+ "A2_item6_rewrite_exp": {
+  "zero": true,
+  "route": "simplify"
+ },
+ "square_roots_present": 0,
+ "fallback": {
+  "seed": 19006,
+  "n": 1000,
+  "max_digits": 140,
+  "item2_max_rel": 4.382918613144268e-63,
+  "item6_max_rel": 5.967970575569253e-63,
+  "negativity_failures": 0
+ },
+ "pass": true
+}

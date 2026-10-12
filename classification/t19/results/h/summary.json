@@ -52,5 +52,29 @@
   "pass": true,
   "seconds": 1.6,
   "wall_seconds": 1.8
+ },
+ "H-12.A7": {
+  "id": "H-12.A7",
+  "pass": true,
+  "seconds": 75.2,
+  "wall_seconds": 75.5
+ },
+ "H-12.A8": {
+  "id": "H-12.A8",
+  "pass": true,
+  "seconds": 10.6,
+  "wall_seconds": 10.8
+ },
+ "H-13.A-sym": {
+  "id": "H-13.A-sym",
+  "pass": true,
+  "seconds": 0.9,
+  "wall_seconds": 1.1
+ },
+ "H-13.A2": {
+  "id": "H-13.A2",
+  "pass": true,
+  "seconds": 4.8,
+  "wall_seconds": 4.9
  }
 }

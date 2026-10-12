@@ -1,0 +1,9 @@
+{
+ "sets": 10000,
+ "link_failures": 0,
+ "cross_failures": 0,
+ "max_cross_rel": 8.289618863990977e-129,
+ "max_digits": 174,
+ "examples": [],
+ "pass": true
+}

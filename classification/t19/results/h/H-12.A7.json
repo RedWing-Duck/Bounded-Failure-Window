@@ -1,0 +1,20 @@
+{
+ "prior_identity": {
+  "zero": true,
+  "route": "simplify"
+ },
+ "sets": 907,
+ "with_min": 907,
+ "n_min_hist": {
+  "1": 907
+ },
+ "all_dips_positive": true,
+ "all_start_above_F": true,
+ "two_rays_not_All": 907,
+ "log10_deepest_rel_dip_range": [
+  -32880317.0,
+  -0.024029245
+ ],
+ "failures": [],
+ "pass": true
+}
