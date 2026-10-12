@@ -39,7 +39,7 @@ python3 t18/make_thesis_only_t18.py    # T18 thesis-only Theorem 2.2 (parts (1)-
 python3 t15/make_figs_thesis.py        # figures B.1, B.3-B.12 (text-only edits) and B.2
 python3 register/render.py --numbering thesis   # Stages_0_4_Thesis.md, Roadmap_v3.md, figs_thesis/*.txt, Appendices A-C, reference/phase1/
 python3 register/render.py --numbering paper    # Stages_0_4_Paper2.md
-python3 t15/make_appendix_de.py --with-t17   # Appendices D and E
+python3 t15/make_appendix_de.py --with-t18   # Appendices D and E
 python3 t15/t15_checks.py && python3 t15/t15_partG.py   # Task 15 checks
 ```
 

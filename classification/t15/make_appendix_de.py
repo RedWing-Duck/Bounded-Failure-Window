@@ -95,6 +95,8 @@ def appendix_d(with_t17=False):
     tasks = list(TASKS)
     if with_t17:
         tasks.append(("T17", "classification/PREREG_t17.md", "classification/RESULTS_t17.md", "first"))
+    if with_t17 == "t18":
+        tasks.append(("T18", "classification/PREREG_t18.md", "classification/RESULTS_t18.md", "first"))
     last = tasks[-1][0][1:]
     out = [f"# Appendix D. Verification record, Tasks 1–{last}", "",
            "For each task: the pre-registration and results files, the pre-registered checks that passed and failed, and every "
@@ -109,12 +111,21 @@ def appendix_d(with_t17=False):
         v = [x for x in v if x]
         n_p, n_f = v.count("PASS"), v.count("FAIL")
         out += [f"{head} {n_p + n_f} checks with a verdict; {n_p} pass, {n_f} fail.", ""]
-        fl = FAILURES_T17 if t == "T17" else FAILURES.get(t, [])
+        fl = FAILURES_T17 if t == "T17" else (FAILURES_T18 if t == "T18" else FAILURES.get(t, []))
         if fl:
             out += [f"- Failure — {x}" for x in fl] + [""]
     return "\n".join(out)
 
 
+FAILURES_T18 = [  # from RESULTS_t18.md (recorded run on f77ab8f)
+    "F1 Task 17 fixes (2 of 6): code / document — the [47] search included Appendix D's quotation of the old finding (both chapter "
+    "sentences now say model error); §1.6 still cites [21–23] for monotonicity under garbling (fixed in §7.1 only).",
+    "F2 chapter 8 counts: code — the recount parser skipped Task 2's 'PASS (info)' row (143); read as pre-registered the total is "
+    "144, with 28 failed and Tasks 4 and 5 without criteria.",
+    "F3 chapter 8 claims: document — §8.5 names a referee pass on Theorem 7.6 only; Task 13 C4's independent referee read the whole "
+    "consolidated document (14 points, all fixed).",
+    "F6 appendices: code / document — Appendix A differs only in math delimiters; the draft's Appendix D rewords three Task 17 "
+    "failure lines (tense, P⁻ for M, 'the proof was completed')."]
 FAILURES_T17 = [  # from RESULTS_t17.md (recorded run on 81e977c)
     "E1 new proof steps of the thesis draft (2 of 9 items): code / document — the 50-digit test of the optimal prior M < F "
     "(Proposition 6.13) cannot resolve it when e^(−2λΔt) < 10⁻⁵⁰ (it holds exactly, f(F) = F²a² > 0); Corollary 7.4's proof as "
@@ -165,7 +176,7 @@ def appendix_e():
            "python3 t15/make_figs_thesis.py        # figures B.1, B.3-B.12 (text-only edits) and B.2",
            "python3 register/render.py --numbering thesis   # Stages_0_4_Thesis.md, Roadmap_v3.md, figs_thesis/*.txt, Appendices A-C, reference/phase1/",
            "python3 register/render.py --numbering paper    # Stages_0_4_Paper2.md",
-           "python3 t15/make_appendix_de.py --with-t17   # Appendices D and E",
+           "python3 t15/make_appendix_de.py --with-t18   # Appendices D and E",
            "python3 t15/t15_checks.py && python3 t15/t15_partG.py   # Task 15 checks",
            "```", "",
            "The sources were derived once from the Task 14 versions by `t14/make_source.py`, `t14/make_roadmap_source.py` and "
@@ -174,7 +185,8 @@ def appendix_e():
 
 
 def main():
-    open(os.path.join(CLS, "Appendix_D_Verification.md"), "w").write(appendix_d("--with-t17" in sys.argv))
+    flag = "t18" if "--with-t18" in sys.argv else ("--with-t17" in sys.argv)
+    open(os.path.join(CLS, "Appendix_D_Verification.md"), "w").write(appendix_d(flag))
     open(os.path.join(CLS, "Appendix_E_Reproduction.md"), "w").write(appendix_e())
     print("appendices D and E written")
 

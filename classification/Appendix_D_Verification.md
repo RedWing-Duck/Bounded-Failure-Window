@@ -1,4 +1,4 @@
-# Appendix D. Verification record, Tasks 1–17
+# Appendix D. Verification record, Tasks 1–18
 
 For each task: the pre-registration and results files, the pre-registered checks that passed and failed, and every failure with the attribution its report gives (criterion, input, code, document or prediction). Outcomes are copied from the reports, not re-judged, and every failure stays recorded.
 
@@ -74,3 +74,10 @@ For each task: the pre-registration and results files, the pre-registered checks
 - Failure — E3 numbers (1 of 88): document — "37 values of β" for Theorem 7.8, in the repository's label and the draft; Task 11 ran 129.
 - Failure — E4 cross-references: document — "Prop. 6.10–6.12" spans Counterexample 6.11.
 - Failure — E5 prior-work sentences: document — §7.3 makes [47] an analysis of coloured measurement noise; it studies time-correlated model error (2 sentences undetermined: no abstracts reachable from the session).
+
+**Task 18.** classification/PREREG_t18.md · classification/RESULTS_t18.md. 7 checks with a verdict; 3 pass, 4 fail.
+
+- Failure — F1 Task 17 fixes (2 of 6): code / document — the [47] search included Appendix D's quotation of the old finding (both chapter sentences now say model error); §1.6 still cites [21–23] for monotonicity under garbling (fixed in §7.1 only).
+- Failure — F2 chapter 8 counts: code — the recount parser skipped Task 2's 'PASS (info)' row (143); read as pre-registered the total is 144, with 28 failed and Tasks 4 and 5 without criteria.
+- Failure — F3 chapter 8 claims: document — §8.5 names a referee pass on Theorem 7.6 only; Task 13 C4's independent referee read the whole consolidated document (14 points, all fixed).
+- Failure — F6 appendices: code / document — Appendix A differs only in math delimiters; the draft's Appendix D rewords three Task 17 failure lines (tense, P⁻ for M, 'the proof was completed').
