@@ -898,7 +898,9 @@ def H_14_C4():
             elif "6+" in txt or "addendum" in txt or (170 <= i1 + 1 <= 186):
                 cat = "b (split)"
             elif len(old) == len(new) and all(o == n.replace("Corollary", "Proposition") for o, n in zip(old, new)) and \
-                    any(re.search(r"Corollary 4\b|excess", n, re.I) for n in new):
+                    (any(re.search(r"Corollary 4\b|excess", n, re.I) for n in new)
+                     or (all(n.startswith("**Label:**") for n in new)          # a label line: the result it labels is the
+                         and re.search(r"excess", next((l for l in reversed(a[:i1]) if l.startswith("**")), ""), re.I))):
                 cat = "d (excess identity type)"
             else:
                 cat = "other"

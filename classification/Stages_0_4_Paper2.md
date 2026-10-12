@@ -1205,6 +1205,11 @@ numerical.
    condition, beyond that family?
 4. **The fixed α–β filter and multivariate models** (Stage 6). The α–β filter is two-state and does not fit the scalar model;
    the decoupled multivariate case should split into scalar copies, the mixing case is open.
+5. **A gain that tracks correlation time.** Every gain studied along $\tau$ is set by precision alone. How a gain that adapts to $\tau$
+   changes the classes has not been studied.
+6. **Applications.** No application is worked out here. A natural test is a filter with a published specification, for example a
+   navigation filter: its failure set could be computed along a design or environment parameter and compared with the
+   specification's own check.
 
 ---
 

@@ -200,8 +200,8 @@ def appendix_c():
     bib = bibfmt.parse(os.path.join(CLS, "references.bib"))
     R = yaml.safe_load(open(os.path.join(HERE, "references.yaml")))
     out = ["# Appendix C. References", "",
-           "Numbered in order of first citation; a number, once assigned, does not change. Rendered from `register/references.yaml` "
-           "and `references.bib`. References [46]–[53] are cited in chapters 5–9, still to be drafted.", ""]
+           "Numbered in order of first citation; a number, once assigned, does not change. References [46]–[53] are first cited "
+           "in chapters 6–7. Rendered from `register/references.yaml` and `references.bib` (Task 19 wording).", ""]
     for r in R:
         out += [bibfmt.fmt(r["number"], bib[r["key"]]), ""]
     return "\n".join(out)

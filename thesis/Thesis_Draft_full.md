@@ -2,7 +2,7 @@
 
 Thesis draft v0.1 · John Holder · Oct 11, 2026 · @John Holder
 
-**Status.** Chapters 1–7 drafted; chapters 8–9 in rough draft. Results are numbered by chapter: Theorem 3.2 is the second numbered result of chapter 3. Appendix A lists every result with its permanent repository key and its verification. References are cited as bracketed numbers \[n\], assigned in order of first citation and listed in Appendix C. Figures are cited as Figure B.n and collected in Appendix B; the images themselves carry no numbers. Remaining chapters are outlined with the results they will contain.
+**Status.** Chapters 1–9 drafted. Results are numbered by chapter: Theorem 3.2 is the second numbered result of chapter 3. Appendix A lists every result with its permanent repository key and its verification. References are cited as bracketed numbers \[n\], assigned in order of first citation and listed in Appendix C. Figures are cited as Figure B.n and collected in Appendix B; the images themselves carry no numbers.
 
 ## 1. Introduction
 
@@ -82,7 +82,7 @@ The novelty claims rest on targeted literature and patent searches made on 11 Oc
 
 1. **The classification of failure-set topology** for stationary linear filters, including the forced lower ray and each sweep's complete class table. No prior work was found that treats the tolerance-exceedance set itself as the object of study. The neighbouring literature computes actual error under mismatch at given operating points \[4–9\] or designs filters to meet a specification. Related work studies filtering under misspecified models \[10, 11\] and when feedback helps at all \[12, 13\].
 2. **Expressivity of gain families.** Realizability is the scalar filtering analogue of covariance assignment \[14, 15\], which treats state covariance under feedback in multivariable control. The Hill mixed class appears to be new; the gain form itself comes from divisive normalisation \[16, 17\].
-3. **Optimality.** The power-family threshold (Theorem 7.8), the matched-variance optimal window (Counterexample 6.11) and the delay counterexample (Counterexample 7.12) appear to be new. Theorem 7.2 is presented as a filtering instance of known results: monotonicity of optimal performance under garbling orders goes back to Blackwell \[18, 19\] and extends to sequential experiments \[20\] and stochastic control and teams \[21–23\]. What is specific here is the causal garbling of observation processes and its conclusion for filtering error. Theorem 7.6 extends the static characterisation for linear normal experiments \[24\] to stationary Gaussian processes ordered by their spectra; no process version was found.
+3. **Optimality.** The power-family threshold (Theorem 7.8), the matched-variance optimal window (Counterexample 6.11) and the delay counterexample (Counterexample 7.12) appear to be new. Theorem 7.2 is presented as a filtering instance of known results: monotonicity of optimal performance under garbling orders goes back to Blackwell \[18, 19\] and extends to sequential experiments \[20\] and, in stochastic control, where observation channels are themselves design variables \[21\], to the comparison of information structures in control and teams \[22, 23\]. What is specific here is the causal garbling of observation processes and its conclusion for filtering error. Theorem 7.6 extends the static characterisation for linear normal experiments \[24\] to stationary Gaussian processes ordered by their spectra; no process version was found.
 4. **Smaller contributions.** The normal form (dimensionless indices are precedented by Kalata's tracking index \[25\]); the excess threshold G = 2FΠ as an explicit statement; and the observation that, under matched-precision sampling, the post-update error falls with Δt while the prior and time-averaged errors rise.
 
 The constant-gain variance, the Kalman–Bucy steady state \[1\], the discrete variance factor α/(2 − α) \[26\], the coloured-noise methods \[27, 28\] and the delay prediction covariance \[29\] are background. The framework of chapter 2 is the fixed-level reading of zero-dimensional persistence \[30, 31\].
@@ -162,7 +162,7 @@ Every restriction in this thesis therefore comes from the filtering model, never
 3. **Window components.** Each window component contains an interior local maximum tⱼ with σ²(tⱼ) > R², and distinct components contain distinct maxima. Hence k is at most the number of interior maxima above R², with equality iff each such maximum lies in its own component touching neither end.
 4. **Determining data.** The class of 𝓕(R²), for every R², is determined by the ordered sequence (L₋, σ²(t₁), …, σ²(tₙ), L₊) and the two approach directions. The positions tⱼ are needed only to locate the components.
 
-*Proof.* (1) On each piece, σ² is a strictly monotone bijection onto the open interval between its end values, all of which lie in 𝒞 or are infinite. For R² ∉ 𝒞, the piece's contribution to 𝓕 is empty, the whole piece, or a one-sided subinterval at its larger end, decided by where R² sits relative to the end values. Adjacent contributions join exactly when the shared turning-point value exceeds R². All of this is constant between critical tolerances. (2) Near θ₋, σ² is close to L₋; at equality the first piece is strictly monotone, so it lies entirely above or entirely below L₋. (3) A window component (a, b) has a, b ∈ D with σ²(a) = σ²(b) = R² and σ² > R² between, so σ² attains an interior maximum there, which is a turning point. Disjoint components contain distinct maxima. (4) The construction in (1) uses only the end values of each piece, and (2) adds the approach directions. ∎
+*Proof.* (1) On each piece, σ² is a strictly monotone bijection onto the open interval between its end values, all of which lie in 𝒞 or are infinite. For R² ∉ 𝒞, the piece's contribution to 𝓕 is empty, the whole piece, or a one-sided subinterval at its larger end, decided by where R² sits relative to the end values. Adjacent contributions join exactly when the shared turning-point value exceeds R². All of this is constant between critical tolerances. (2) Near θ₋, σ² is close to L₋; at equality the first piece is strictly monotone, so it lies entirely above or entirely below L₋. (3) A window component (a, b) has a, b ∈ D with σ²(a) = σ²(b) = R² and σ² > R² between, so σ² attains an interior maximum there, which is a turning point. Disjoint components contain distinct maxima. (4) The construction in (1) uses only the end values of each piece, and (2) adds the approach directions. At a tolerance equal to an interior turning-point value the same holds: a minimum with value R² is excluded from 𝓕 and splits the component around it, and a maximum with value R² contributes nothing. Under C2 the approach directions are themselves determined by the sequence: the first piece rises iff σ²(t₁) > L₋, or, with no turning point, iff L₊ > L₋. ∎
 
 Applied to the Bayesian-weight gain with κ > 2 (Proposition 5.8), the sequence (F, M, H) with both ends approached from above returns its four regimes, equality cases included.
 
@@ -1023,7 +1023,7 @@ and P⁻ > F iff P⁺ > F iff L/(2 − L) > φ. The steady-state Kalman gain L�
 
 *Proof.* With q = F(1 − a²), the numerator of P⁻ − F is a²L²r + F(1 − a²) − F + Fa²(1 − L)² = a²L(Lr − F(2 − L)), and the denominator is positive for 0 ≤ L < 2; so P⁻ > F iff Lr > F(2 − L), that is L/(2 − L) > F/r = φ. P⁻ = a²P⁺ + q gives P⁺ − F = (P⁻ − F)/a². For the optimal filter, L⋆ = P⁻/(P⁻ + r) with P⁻ < F, so L⋆/(2 − L⋆) = P⁻/(P⁻ + 2r). This is below F/(2r) iff P⁻(2r − F) < 2rF, which holds because P⁻ < F: the optimal prior is the positive root of f(M) = M² + s(r − F)M − sFr, and f(F) = F²a² > 0. ∎
 
-This is the discrete form of the excess identity: L/(2 − L) is the discrete-time variance factor α/(2 − α) of an exponentially weighted average \[26\], and φ = FΠΔt plays the role of FΠ. As in continuous time, the optimal gain sits at most halfway to the excess threshold.
+This is the discrete form of the excess identity: L/(2 − L) is the discrete-time variance factor α/(2 − α) of an exponentially weighted average \[26\] (the average x\_k = (1 − α)x\_(k−1) + αy\_k of white noise of variance v has stationary variance α²v/(1 − (1 − α)²) = αv/(2 − α)), and φ = FΠΔt plays the role of FΠ. As in continuous time, the optimal gain sits at most halfway to the excess threshold.
 
 **Lemma 6.14 (shared excess set).** For any filter on M-P, P⁻ − F = a²(P⁺ − F) and P̄ − F = (P⁺ − F)·s/(2λΔt). Hence all three metrics exceed F on the same set, {L/(2 − L) > φ}.
 
@@ -1333,7 +1333,7 @@ which is strictly increasing in d. Along the latency sweep d(θ) = θe^(−θ), 
 
 In the worked example (λ = 1, Σ = 0.01, Π = 1), P(0) = 0.0099505 and P(1/e) = 0.0099763.
 
-That delay degrades filtering is not new: the prediction covariance of a delayed estimate is classical \[29\], and out-of-sequence and delayed measurements are handled in tracking \[52, 53\]. What the proposition adds is a statement about orders on experiments.
+That delay degrades filtering is not new: the error of a delayed estimate follows from the standard prediction step of the Kalman filter \[29, 40\], and out-of-sequence and delayed measurements are handled in tracking \[52, 53\]. What the proposition adds is a statement about orders on experiments.
 
 **Counterexample 7.12 (pathwise ordering is not enough).** Proposition 7.11 is a sweep of pathwise Blackwell-equivalent experiments along which the optimal filtering error is not monotone. So "Blackwell ordering of whole paths implies monotone filtering error" is false, and Definition 7.1 must be causal.
 
@@ -1413,103 +1413,99 @@ Along any causally ordered sweep, an optimal filter's failure set is Empty, All 
 
 ## 8. Verification
 
-*Rough draft.*
-
-Every result in chapters 2–7 carries a verification line naming the task and check that tested it. This chapter describes how those checks were run, gathers the two numerical results that belong to the method itself, and lists what the checks found wrong. The full record, task by task, is Appendix D.
+Every result in chapters 2–7 ends with a verification line naming the task and the check that tested it. This chapter describes how those checks were run, states the two numerical results that belong to the method rather than to the filters, and sets out what the checks found wrong. Appendix D gives the full record, task by task.
 
 ### 8.1 Protocol
 
-Each verification task followed the same protocol:
+Every verification task followed the same four rules.
 
-1. **Pre-registration.** Every check and its pass criterion were written into a pre-registration file and committed before anything that produces a result was run.
-2. **One recorded run.** The checks ran once, on one recorded commit. Earlier runs during development, if any, are disclosed in the task's report.
-3. **Failures stay failures.** A check that fails is reported as failed, with a diagnosis that attributes it to the criterion, the input, the code, the document under test or a prediction. No criterion and no artifact is changed after the recorded run; a corrected check, if needed, is pre-registered again in a later task.
-4. **Independent routes.** Wherever possible a result is checked by two routes that share no code: a symbolic identity and a numerical evaluation, a closed form and a Riccati solution, root-finding and dense sampling. Values that depend on cancellation are recomputed in extended precision (60 or 100 digits).
+1. **Pre-registration.** Each check and its pass criterion were written into a pre-registration file and committed before anything that produces a result was run.
+2. **One recorded run.** The checks ran once, on one recorded commit. Any earlier runs made during development are disclosed in the task's report.
+3. **Failures stay failures.** A failed check is reported as failed, with a diagnosis attributing it to the criterion, the input, the code, the document under test or a prediction. No criterion or artifact is changed after the recorded run; where a check needed correcting, the corrected version was pre-registered again in a later task.
+4. **Independent routes.** Where possible, a result is checked by two routes that share no code: a symbolic identity and a numerical evaluation, a closed form and a Riccati solution, root-finding and dense sampling. Values that depend on a cancellation are recomputed in extended precision (60 or 100 digits).
 
-Tasks 1–7 verified the starting study; Tasks 8–13 the classification programme; Tasks 14–17 the numbering, the bibliography, the figures and the thesis text itself. Across Tasks 1–17 there were 144 pre-registered checks with a verdict, and 28 of them failed. Tasks 4 and 5 were exploratory by pre-registration and have no pass criteria.
+Tasks 1–7 verified the starting study, Tasks 8–13 the classification programme, and Tasks 14–18 the numbering, the bibliography, the figures and the text of this thesis. Across Tasks 1–18 there were 151 pre-registered checks with a verdict, and 32 of them failed; this count includes Task 2's informational pass, as that task's pre-registration does. Tasks 4 and 5 were exploratory by pre-registration and have no pass criteria.
 
 ### 8.2 Classification by two routes
 
-A class is computed by two routes. Route (i) finds every crossing of R² by root-finding on the monotone pieces between turning points, using the critical values of Theorem 2.2. Route (ii) samples the curve and reads off the components, with an equality tolerance at the critical values. The two must agree, and every disagreement is diagnosed. Sampling alone is not enough:
+Each class is computed by two routes. Route (i) finds every crossing of R² by root-finding on the monotone pieces between turning points, using the critical values of Theorem 2.2. Route (ii) samples the curve and reads off its components, with an equality tolerance at the critical values. The routes must agree, and every disagreement is diagnosed. Sampling alone is not enough:
 
-**Numerical result 8.2 (narrow windows need root-finding).** Windows of relative width 10⁻⁸ were found by the root-finding classifier in 20 of 20 curves (55 windows); a log grid of 10⁴ points found none.
+**Numerical result 8.2 (narrow windows need root-finding).** Windows of relative width 10⁻⁸ were found by the root-finding classifier in 20 of 20 curves (55 windows in all); a logarithmic grid of 10⁴ points found none of them.
 
-So every classification in this thesis rests on route (i), and route (ii) is a cross-check. In the one persistent disagreement, row 12 of the Task 13 audit (§4.1), the fault was in route (ii): a sample point fell below its equality tolerance at an exact limit.
+Every classification in this thesis therefore rests on route (i), and route (ii) serves as a cross-check. There was one persistent disagreement between the routes, row 12 of the Task 13 audit (§4.1), and the fault was in route (ii): a sample point fell below its equality tolerance at an exact limit.
 
 ### 8.3 Blind searches
 
-The class tables of chapters 4–6 claim that certain classes never occur. Those claims were tested by searches that did not know the tables.
+The class tables of chapters 4–6 state that certain classes never occur. Those statements were tested by searches that did not use the tables.
 
 **Numerical result 8.1 (blind searches find no unpredicted class).** Randomised searches, with tolerances concentrated near every critical tolerance, found no class outside the predicted sets: 10⁶ classifications over the precision, design and τ sweeps (Task 10, T10.7); 4.4 × 10⁶ over the Δt and Σ sweeps (Task 12, Part C); and the Task 13 audit of every row of the synthesis matrix (C2).
 
-A blind search cannot prove an impossibility; the proofs do that. What it can do is catch a class table that disagrees with the curves, and the Task 13 audit did so once (§8.4).
+A blind search cannot prove that a class is impossible; the proofs do that. What a search can do is catch a class table that disagrees with the curves, and the Task 13 audit did so once (§8.4).
 
 ### 8.4 What the checks found
 
-The 28 failures fall into five kinds. Most are failures of the check rather than of the mathematics, and each is listed in Appendix D with its diagnosis.
+The 32 failures fall into five kinds by attribution. Each is listed in Appendix D with its diagnosis.
 
 | Attribution | What went wrong | Examples |
 | --- | --- | --- |
-| Criterion | the pre-registered pass rule was wrong or too tight | peak positions to 3 figures from a 0.4% grid (T6); the limits at β ≥ 2 (T11.3); a zero tolerance too coarse for the prior's dip (T12) |
-| Code | the checking route could not do the computation | SymPy cannot denest √(x²) or decide some signs (T10, T13, T16); `sympy.limit` on the D2 coefficient (T12); double precision at a cancellation (T9.5, T13) |
-| Document | the result as written was wrong | a class (1, 0, 1) stated for sums of Bayesian stages that cannot occur (T13); four truncated worked values (T13); in the thesis draft, an incomplete proof, a miscounted number of test values, a mislabelled range and a sentence that claimed more than its source (T17) |
+| Criterion | the pre-registered pass rule was wrong or too tight | peak positions to 3 figures from a 0.4% grid (T6); limits at β ≥ 2 (T11.3); a zero tolerance too coarse for the prior's dip (T12); SymPy routes with no handling of √(x²) (T10, T13); double-precision flags (T9.5) |
+| Code | the checking route could not do the computation | SymPy could not decide a sign or denest √(x²) (T16); a sample point below its equality tolerance (T13); a dry-run path resolver (T14); `sympy.limit` on the D2 coefficient (T12); precision loss at a cancellation (T13, T17) |
+| Document | the result as written was wrong | a class (1, 0, 1) stated for sums of Bayesian stages, which cannot occur (T13); a truncated worked value, in four places (T13); in the thesis draft, an incomplete proof, a miscounted number of test values, a mislabelled range and a sentence that claimed more than its source (T17) |
 | Input | the material given to the check was incomplete | two bibliography entries attached to no result, and DOIs unreachable from the session (T14) |
 | Prediction | a number supplied in advance was wrong | the quick-check values in the Task 12 prompt (T12) |
 
-Every document failure was corrected, and none led to a withdrawn result. The most consequential was the class stated for sums of Bayesian stages: it was wrong, and the failure led to Proposition 5.14, which proves that those sums never give a lower ray with a window. The others were truncated worked values (T13) and, in this thesis's own text, an incomplete proof of Corollary 7.4, a miscount, a mislabelled range and one sentence that overstated a source (T17). Separately, four passages of the starting-study manuscript are corrected by errata, each checked against the manuscript's page (Task 15; reference/phase1/ERRATA.md).
+Every document failure was corrected, and none led to a withdrawn result. The most consequential was the class stated for sums of Bayesian stages. It was wrong, and the failure led to Proposition 5.14, which proves that those sums never give a lower ray with a window. The other document failures were a truncated worked value (T13); in this thesis's own text, an incomplete proof of Corollary 7.4, a miscount, a mislabelled range and one sentence that overstated a source (T17); and then a citation range in §1.6 and the description of the referee pass in §8.5 (T18). Separately, four passages of the starting-study manuscript are corrected by errata, each checked against the manuscript's page (Task 15; reference/phase1/ERRATA.md).
 
 ### 8.5 What verification does not cover
 
-- **Numerical results.** Numerical results 5.15, 6.21, 8.1 and 8.2 are evidence, not proof. So are the class lists of the sampled relays (rows 24–32 of the synthesis matrix), whose excess sets and limits are proved but whose full class sets are not.
-- **The conjecture.** Conjecture 6.22 (at most two turning points for sampled relays) has no proof.
-- **Scope of the checks.** A check tests a statement within the model of §3.1 and its extensions. It does not test whether the model fits a particular application.
-- **Independence.** The checks were written and run within the project. Apart from the independent referee pass on Theorem 7.6 (Task 13), no result has yet had external review.
+- **Numerical results.** Numerical results 5.15, 6.21, 8.1 and 8.2 are evidence, not proof. So are the class lists of the sampled relays (rows 24–32 of the synthesis matrix): their excess sets and limits are proved, but their full class sets are not.
+- **The conjecture.** Conjecture 6.22, that sampled relays have at most two turning points, has no proof.
+- **Scope of the checks.** A check tests a statement within the model of §3.1 and its extensions. It does not test whether that model fits a particular application.
+- **Independence.** The checks were written and run within the project. One independent referee pass was made inside the project: a separate agent read the whole consolidated Stages 0–4 document and raised 14 points, all of which were fixed (Task 13). No result has yet been reviewed outside the project.
 
 ## 9. Discussion and Limits
 
-*Rough draft.*
-
 ### 9.1 What the thesis shows
 
-A filter that must keep its error within a tolerance fails on a set of operating conditions, and that set has a shape. Chapter 2 showed that the shape is fixed by a short list of numbers, the endpoint limits and turning-point values of the variance curve, together with two approach directions. The rest of the thesis computes those numbers for scalar stationary linear filters and reads off the shapes. Two results organise them.
+A filter that must keep its error within a tolerance fails on a set of operating conditions, and that set has a shape. Chapter 2 showed that, along one parameter, the shape is fixed by a short list of numbers: the endpoint limits and turning-point values of the variance curve, together with two approach directions. The rest of the thesis computes those numbers for scalar stationary linear filters and reads off the shapes. Two results organise them.
 
-The first is the normal form (chapter 3). For the white-noise relay every stationary variance is one surface, σ²/F = 𝒱(ν, q), evaluated along a path. The floor crossing is the line q = 2, the optimal filter is the lower envelope, and a sweep or a gain family only chooses the path. Along precision this gives a complete answer (chapter 5): the model forbids only a variance below the optimum, and every further restriction belongs to the gain family.
+The first is the normal form (chapter 3). For the white-noise relay every stationary variance lies on one surface, σ²/F = 𝒱(ν, q), evaluated along a path. The floor crossing is the line q = 2, the optimal filter is the lower envelope, and a sweep or a gain family only chooses the path. Along precision this gives a complete answer (chapter 5): the model itself rules out only a variance below the optimum, and every further restriction comes from the gain family.
 
-The second is information ordering (chapter 7). When one observation process can be built from another causally, the optimal filter on the richer process cannot do worse, so along an ordered sweep the optimal filter never windows. For additive Gaussian noise the ordering is decided by the spectra. It is exactly sharp in the power-normalised family, it is sufficient but not necessary, and it must be causal.
+The second is information ordering (chapter 7). When one observation process can be built causally from another, the optimal filter on the richer process does no worse, so along an ordered sweep the optimal filter never windows. For additive Gaussian noise the ordering is decided by the spectra (Theorem 7.6). The spectral condition is sufficient but not necessary in general, it is sharp within the power-normalised family (Theorem 7.8), and the garbling must be causal.
 
-Together they give a diagnostic. Along an ordered sweep, a window, two rays or a mixed class certifies a miscalibrated filter, not a hostile environment (Corollary 7.4).
+Together the two give a diagnostic. Along an ordered sweep, a window, two rays or a mixed class shows that the filter is miscalibrated; it does not come from the environment (Corollary 7.4).
 
 ### 9.2 How large the effects are
 
-The shapes are exact, but their size varies over many orders of magnitude, and that matters for whether they are seen.
+The shapes are exact, but their sizes span many orders of magnitude, and that decides whether they are seen in practice.
 
-- **Windows need over-weighting by a factor of two.** The window conditions all have the same form: κ > 2 for the Bayesian weight, F′ > 2F for the misspecified Kalman gain, g > 2F for the capped gain, and ρ > 2 or λ′ < λ/2 on a moving floor. Below that threshold the relay never windows.
-- **Peaks can be large.** At over-weighting ratio 100 the peak error is 9.3F for the Bayesian weight and 17.6F for the misspecified Kalman gain (Proposition 5.9).
-- **Some bands are thin.** The Hill mixed band has median relative width 5 × 10⁻⁴ (Proposition 5.13), and windows of relative width 10⁻⁸ occur (Numerical result 8.2). A grid-based specification check would miss them.
-- **Some dips are invisible.** The prior error of an over-weighted sampled relay dips below the floor by relative amounts as small as 10^(−32,880,317) (§6.5): two rays that exist mathematically and have no practical weight. The time-averaged dips are real but modest, 0.125% in the worked example.
+- **Windows need over-weighting by a factor of two.** The window conditions share one form: κ > 2 for the Bayesian weight, F′ > 2F for the misspecified Kalman gain, g > 2F for the capped gain, and ρ > 2 or λ′ < λ/2 on a moving floor. Below that threshold these relays never window. The Hill gain differs: its window class needs sup q > 2, that is c/(FΠ₀) > 4, and below that threshold it can still produce a window component inside the mixed class (Proposition 5.13).
+- **Peaks can be large.** At over-weighting ratio 100 the peak error is 9.3F for the Bayesian weight and 17.6F for the misspecified Kalman gain (Propositions 5.8 and 5.9).
+- **Some bands are thin.** The Hill mixed band has median relative width 5 × 10⁻⁴ (Proposition 5.13), and windows of relative width 10⁻⁸ occur (Numerical result 8.2).
+- **Some dips are negligible.** The prior error of an over-weighted sampled relay dips below the floor by relative amounts as small as 10^(−32,880,317) (§6.5): the two rays exist mathematically but have no practical weight. The time-averaged dips are larger but still modest, 0.125% in the worked example.
 
-So a specification check that relies on a few operating points, or on a grid, can report a filter as compliant when its failure set has a thin window or a narrow band. Classifying the failure set by its critical values, with root-finding, avoids that.
+A specification check based on a few operating points, or on a grid, can therefore report a filter as compliant when its failure set contains a thin window or a narrow band; the grid of Numerical result 8.2 missed every window of width 10⁻⁸. Classifying the failure set by its critical values, with root-finding, avoids that.
 
 ### 9.3 Limits of scope
 
 - **Scalar, stationary, linear.** Every result concerns a scalar state, stationary error and a linear filter. Transients, time-varying gains, non-linear filters and multivariate states are outside the thesis.
-- **The signal model.** The signal is an Ornstein–Uhlenbeck process throughout. The framework of chapter 2 applies to any variance curve, but the closed forms do not.
-- **Gaussian noise for the spectral test.** Theorem 7.6, which makes the spectral test exact, needs additive stationary Gaussian noise. Theorem 7.2 itself does not.
-- **Conventions.** Several statements depend on conventions that are stated where they are used: Σ is half the diffusion intensity (§3.1); point samples carry noise variance 1/(ΠΔt) (§6.3); the tolerance is absolute or relative on a moving floor (§6.6); and the time average is the primary metric along Δt. A different convention can change a result; the sampling result of Theorem 6.19 in particular depends on the noise scaling.
-- **One parameter at a time.** Every sweep varies one parameter. Failure sets in two or more parameters are regions, not intervals, and Theorem 2.2 does not describe them.
+- **The signal model.** The signal is an Ornstein–Uhlenbeck process throughout. The framework of chapter 2 applies to any variance curve; the closed forms do not.
+- **Gaussian noise for the spectral test.** Theorem 7.6, which makes the spectral test exact, needs additive stationary Gaussian noise. Theorem 7.2 does not.
+- **Conventions.** Several statements depend on conventions stated where they are used: Σ is half the diffusion intensity (§3.1); point samples carry noise variance 1/(ΠΔt) (§6.3); the tolerance is absolute, or relative on a moving floor (§6.6); and the time average is the primary metric along Δt. A different convention can change a result; in particular, the sampling result of Theorem 6.19 depends on the noise scaling.
+- **One parameter at a time.** Every sweep varies one parameter. In two or more parameters a failure set is a region rather than a union of intervals, and Theorem 2.2 does not describe it.
 
 ### 9.4 Open problems
 
-1. **Turning points of sampled relays.** Prove Conjecture 6.22: D1–D3 have at most two turning points along Δt in every metric. The census found no exception, but the fixed-gain error mixes two exponential rates with 1/Δt, which defeats the polynomial methods used elsewhere.
-2. **Two-stage gains.** Bound the number of turning points of sums of natural stages (Numerical result 5.15). Corollary 5.4 shows that constructed gains can have arbitrarily many windows; whether natural sums can is open.
-3. **A necessary condition for monotone optimal error.** Ordering is exactly sharp in the power family but not necessary in general (Proposition 7.13). A tidy necessary condition, for instance a one-sided spectral-crossing condition, is not known.
-4. **Two-state and multivariate filters.** The fixed α–β filter has two states and does not fit the scalar model. A decoupled multivariate model should split into scalar copies; the mixing case is open.
-5. **A gain that tracks correlation time.** Every gain studied along τ is set by precision alone. How a gain that adapts to τ changes the classes is not studied.
-6. **Applications.** No application is worked out here. A natural test is a filter with a published specification, for example a navigation filter, where the failure set could be computed along a design or environment parameter and compared with the specification's check.
+1. **Turning points of sampled relays.** Prove Conjecture 6.22: D1–D3 have at most two turning points along Δt in every metric. The census found no exception, but the fixed-gain error mixes two exponential rates with 1/Δt, which the polynomial methods used elsewhere do not handle.
+2. **Two-stage gains.** Bound the number of turning points of sums of natural stages (Numerical result 5.15). In 2,000 random sets per family, at most 3 were seen for Bayesian stages and at most 4 for Hill stages. Corollary 5.4 shows that constructed gains can have arbitrarily many windows; whether sums of natural stages can is open.
+3. **A necessary condition for monotone optimal error.** The ordering condition is sharp in the power family but not necessary in general (Proposition 7.13). A simple necessary condition, for instance a one-sided spectral-crossing condition, is not known.
+4. **Two-state and multivariate filters.** The fixed α–β filter has two states and does not fit the scalar model. A decoupled multivariate model is expected to split into scalar copies; the coupled case is open.
+5. **A gain that tracks correlation time.** Every gain studied along τ is set by precision alone. How a gain that adapts to τ changes the classes has not been studied.
+6. **Applications.** No application is worked out here. A natural test is a filter with a published specification, for example a navigation filter: its failure set could be computed along a design or environment parameter and compared with the specification's own check.
 
 ### 9.5 Closing
 
-The thesis replaces a question asked at one operating point — how large is the error? — with a question about a set: for which conditions does the error exceed the specification, and what shape does that set have? For scalar stationary linear filters the shapes are few and they are decided by a handful of numbers. When the observations are ordered by information, the optimal filter shows only the simplest shapes, so the others point to a miscalibrated filter.
+The thesis replaces a question asked at one operating point, how large is the error, with a question about a set: for which conditions does the error exceed the specification, and what shape does that set have? For scalar stationary linear filters the shapes are few, and a handful of numbers decides which one occurs. When the observations are ordered by information, the optimal filter shows only the simplest shapes, so any other shape points to a miscalibrated filter.
 
 ## Appendices
 
@@ -1678,7 +1674,7 @@ B.12 — Optimal filtering error P(d(θ)) for observations delayed by d(θ) = θ
 
 &#91;25\] Kalata, P. R. (1984). The tracking index: a generalized parameter for α-β and α-β-γ target trackers. IEEE Transactions on Aerospace and Electronic Systems 20(2), 174–182. doi:10.1109/TAES.1984.310438
 
-&#91;26\] Saho, K. & Masugi, M. (2016). α-β-γ tracking filters using acceleration measurements. SpringerPlus 5, 309. doi:10.1186/s40064-016-1960-8
+&#91;26\] Roberts, S. W. (1959). Control chart tests based on geometric moving averages. Technometrics 1(3), 239–250. doi:10.1080/00401706.1959.10489860
 
 &#91;27\] Bryson, A. E. & Johansen, D. E. (1965). Linear filtering for time-varying systems using measurements containing colored noise. IEEE Transactions on Automatic Control 10(1), 4–10. doi:10.1109/TAC.1965.1098063
 
@@ -1734,7 +1730,7 @@ B.12 — Optimal filtering error P(d(θ)) for observations delayed by d(θ) = θ
 
 &#91;53\] Yoder, J. et al. (2018). Exploring the exponentially decaying merit of an out-of-sequence observation. Sensors 18(6), 1947. doi:10.3390/s18061947
 
-**Appendix D — Verification record, Tasks 1–17.** For each task: the pre-registration and results files, the pre-registered checks that passed and failed, and every failure with the attribution its report gives (criterion, input, code, document or prediction). Outcomes are copied from the reports, not re-judged, and every failure stays recorded.
+**Appendix D — Verification record, Tasks 1–18.** For each task: the pre-registration and results files, the pre-registered checks that passed and failed, and every failure with the attribution its report gives (criterion, input, code, document or prediction). Outcomes are copied from the reports, not re-judged, and every failure stays recorded.
 
 **Task 1.** verification/PREREG.md · verification/REPORT.md. 12 checks with a verdict; 12 pass, 0 fail.
 
@@ -1804,10 +1800,17 @@ B.12 — Optimal filtering error P(d(θ)) for observations delayed by d(θ) = θ
 
 **Task 17.** classification/PREREG\_t17.md · classification/RESULTS\_t17.md. 7 checks with a verdict; 3 pass, 4 fail.
 
-- Failure — E1 new proof steps of the thesis draft (2 of 9 items): code / document — the 50-digit test of the optimal prior P⁻ < F (Proposition 6.13) cannot resolve it when e^(−2λΔt) < 10⁻⁵⁰ (it holds exactly, f(F) = F²a² > 0); Corollary 7.4's proof as written omitted σ⋆² → 0 and Theorem 5.1 (the corollary holds; the proof was completed).
+- Failure — E1 new proof steps of the thesis draft (2 of 9 items): code / document — the 50-digit test of the optimal prior M < F (Proposition 6.13) cannot resolve it when e^(−2λΔt) < 10⁻⁵⁰ (it holds exactly, f(F) = F²a² > 0); Corollary 7.4's proof as written omits σ⋆² → 0 and Theorem 5.1 (the corollary holds).
 - Failure — E3 numbers (1 of 88): document — "37 values of β" for Theorem 7.8, in the repository's label and the draft; Task 11 ran 129.
-- Failure — E4 cross-references: document — "Prop. 6.10–6.12" spanned Counterexample 6.11.
-- Failure — E5 prior-work sentences: document — §7.3 made \[47\] an analysis of coloured measurement noise; it studies time-correlated model error (2 sentences undetermined: no abstracts reachable from the session).
+- Failure — E4 cross-references: document — "Prop. 6.10–6.12" spans Counterexample 6.11.
+- Failure — E5 prior-work sentences: document — §7.3 makes \[47\] an analysis of coloured measurement noise; it studies time-correlated model error (2 sentences undetermined: no abstracts reachable from the session).
+
+**Task 18.** classification/PREREG\_t18.md · classification/RESULTS\_t18.md. 7 checks with a verdict; 3 pass, 4 fail.
+
+- Failure — F1 Task 17 fixes (2 of 6): code / document — the \[47\] search included Appendix D's quotation of the old finding (both chapter sentences now say model error); §1.6 still cites \[21–23\] for monotonicity under garbling (fixed in §7.1 only).
+- Failure — F2 chapter 8 counts: code — the recount parser skipped Task 2's 'PASS (info)' row (143); read as pre-registered the total is 144, with 28 failed and Tasks 4 and 5 without criteria.
+- Failure — F3 chapter 8 claims: document — §8.5 names a referee pass on Theorem 7.6 only; Task 13 C4's independent referee read the whole consolidated document (14 points, all fixed).
+- Failure — F6 appendices: code / document — Appendix A differs only in math delimiters; the draft's Appendix D rewords three Task 17 failure lines (tense, P⁻ for M, 'the proof was completed').
 
 **Appendix E — Reproduction.** Environment and the commands that regenerate every numerical result, figure and render.
 

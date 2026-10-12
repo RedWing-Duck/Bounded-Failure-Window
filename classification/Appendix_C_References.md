@@ -1,6 +1,6 @@
 # Appendix C. References
 
-Numbered in order of first citation; a number, once assigned, does not change. Rendered from `register/references.yaml` and `references.bib`. References [46]–[53] are cited in chapters 5–9, still to be drafted.
+Numbered in order of first citation; a number, once assigned, does not change. References [46]–[53] are first cited in chapters 6–7. Rendered from `register/references.yaml` and `references.bib` (Task 19 wording).
 
 [1] Kalman, R. E. & Bucy, R. S. (1961). New results in linear filtering and prediction theory. Journal of Basic Engineering 83(1), 95–108. doi:10.1115/1.3658902
 
@@ -52,7 +52,7 @@ Numbered in order of first citation; a number, once assigned, does not change. R
 
 [25] Kalata, P. R. (1984). The tracking index: a generalized parameter for α-β and α-β-γ target trackers. IEEE Transactions on Aerospace and Electronic Systems 20(2), 174–182. doi:10.1109/TAES.1984.310438
 
-[26] Saho, K. & Masugi, M. (2016). α-β-γ tracking filters using acceleration measurements. SpringerPlus 5, 309. doi:10.1186/s40064-016-1960-8
+[26] Roberts, S. W. (1959). Control chart tests based on geometric moving averages. Technometrics 1(3), 239–250. doi:10.1080/00401706.1959.10489860
 
 [27] Bryson, A. E. & Johansen, D. E. (1965). Linear filtering for time-varying systems using measurements containing colored noise. IEEE Transactions on Automatic Control 10(1), 4–10. doi:10.1109/TAC.1965.1098063
 
