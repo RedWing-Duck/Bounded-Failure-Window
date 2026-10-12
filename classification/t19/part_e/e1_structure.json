@@ -1,0 +1,115 @@
+{
+ "post": {
+  "denominator": "Pi*lambda*x**2*(u**2*w - 1)**2",
+  "n_exponential_terms": 6,
+  "terms": {
+   "u^4 w^1": {
+    "coeff": "-lambda*(2*Pi*Sigma*x**2 + 2*lambda*x - 1)",
+    "deg_x_after_x^4": 6
+   },
+   "u^3 w^1": {
+    "coeff": "2*lambda*(G*x + 2*lambda*x - 1)",
+    "deg_x_after_x^4": 5
+   },
+   "u^2 w^1": {
+    "coeff": "2*G*Pi*Sigma*x**2 - 2*G*lambda*x + 2*Pi*Sigma*lambda*x**2 - 2*lambda**2*x + lambda",
+    "deg_x_after_x^4": 6
+   },
+   "u^2 w^0": {
+    "coeff": "-2*G*Pi*Sigma*x**2 - 2*G*lambda*x - lambda",
+    "deg_x_after_x^4": 6
+   },
+   "u^1 w^0": {
+    "coeff": "2*lambda*(G*x + 1)",
+    "deg_x_after_x^4": 5
+   },
+   "u^0 w^0": {
+    "coeff": "-lambda",
+    "deg_x_after_x^4": 0
+   }
+  },
+  "polya_bound_monomial_count_minus_1": 13
+ },
+ "prior": {
+  "denominator": "Pi*lambda*x**2*(u**2*w - 1)**2",
+  "n_exponential_terms": 6,
+  "terms": {
+   "u^4 w^2": {
+    "coeff": "lambda",
+    "deg_x_after_x^4": 0
+   },
+   "u^3 w^2": {
+    "coeff": "2*lambda*(G*x - 1)",
+    "deg_x_after_x^4": 5
+   },
+   "u^2 w^2": {
+    "coeff": "2*G*Pi*Sigma*x**2 - 2*G*lambda*x + lambda",
+    "deg_x_after_x^4": 6
+   },
+   "u^2 w^1": {
+    "coeff": "-2*G*Pi*Sigma*x**2 - 2*G*lambda*x - 2*Pi*Sigma*lambda*x**2 - 2*lambda**2*x - lambda",
+    "deg_x_after_x^4": 6
+   },
+   "u^1 w^1": {
+    "coeff": "2*lambda*(G*x + 2*lambda*x + 1)",
+    "deg_x_after_x^4": 5
+   },
+   "u^0 w^1": {
+    "coeff": "lambda*(2*Pi*Sigma*x**2 - 2*lambda*x - 1)",
+    "deg_x_after_x^4": 6
+   }
+  },
+  "polya_bound_monomial_count_minus_1": 13
+ },
+ "avg": {
+  "denominator": "2*Pi*lambda**2*x**3*(u**2*w - 1)**2",
+  "n_exponential_terms": 11,
+  "terms": {
+   "u^4 w^2": {
+    "coeff": "-Pi*Sigma*x - 2*lambda",
+    "deg_x_after_x^4": 5
+   },
+   "u^4 w^1": {
+    "coeff": "-2*Pi*Sigma*lambda*x**2 + Pi*Sigma*x - 2*lambda**2*x + 2*lambda",
+    "deg_x_after_x^4": 6
+   },
+   "u^3 w^2": {
+    "coeff": "-2*lambda*(G*x - 2)",
+    "deg_x_after_x^4": 5
+   },
+   "u^3 w^1": {
+    "coeff": "2*lambda*(G*x + 2*lambda*x - 2)",
+    "deg_x_after_x^4": 5
+   },
+   "u^2 w^2": {
+    "coeff": "-2*G*Pi*Sigma*x**2 + 2*G*lambda*x + Pi*Sigma*x - 2*lambda",
+    "deg_x_after_x^4": 6
+   },
+   "u^2 w^1": {
+    "coeff": "4*(G*Pi*Sigma*x**2 + Pi*Sigma*lambda*x**2 + lambda)",
+    "deg_x_after_x^4": 6
+   },
+   "u^2 w^0": {
+    "coeff": "-2*G*Pi*Sigma*x**2 - 2*G*lambda*x - Pi*Sigma*x - 2*lambda",
+    "deg_x_after_x^4": 6
+   },
+   "u^1 w^1": {
+    "coeff": "-2*lambda*(G*x + 2*lambda*x + 2)",
+    "deg_x_after_x^4": 5
+   },
+   "u^1 w^0": {
+    "coeff": "2*lambda*(G*x + 2)",
+    "deg_x_after_x^4": 5
+   },
+   "u^0 w^1": {
+    "coeff": "-2*Pi*Sigma*lambda*x**2 - Pi*Sigma*x + 2*lambda**2*x + 2*lambda",
+    "deg_x_after_x^4": 6
+   },
+   "u^0 w^0": {
+    "coeff": "Pi*Sigma*x - 2*lambda",
+    "deg_x_after_x^4": 5
+   }
+  },
+  "polya_bound_monomial_count_minus_1": 25
+ }
+}

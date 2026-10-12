@@ -1,0 +1,8 @@
+G1  0.17 s
+G2 {'pass': True} 0.78 s
+G3  0.16 s
+G4  0.09 s
+G5 {'pass': True} 0.15 s
+G6 {'pass': True} 0.01 s
+G7 {'pass': False} 0.08 s
+rc=0 wall=1.9
