@@ -109,7 +109,7 @@ def clone(work, name, commit):
 def chain_steps(clsdir):
     """Render-chain commands from that commit's Appendix E (the code block of the render chain), without the Task 15 checks line."""
     t = open(os.path.join(clsdir, "Appendix_E_Reproduction.md")).read()
-    block = t.split("render chain")[1].split("```")[1]
+    block = re.split(r"^## .*render chain$", t, flags=re.M)[1].split("```")[1]
     cmds = []
     for ln in block.split("\n"):
         ln = ln.split("#")[0].strip()
