@@ -18,13 +18,13 @@ The images carry no result or figure numbers; the text cites each one as Figure 
 
 ![Figure B.4](figs_thesis/B.4_realizability.png)
 
-**Figure B.5.** Hill gain with n = 2 at lambda = c = 1, Sigma = 0.01: over the half-saturation Pi_0 (log axis), the turning-point values m/F (dashed) and M/F (solid) as tolerances R^2/F, the band m <= R^2 < min(M, F) shaded as the mixed class lower ray + window and the band F <= R^2 < M shaded as window, with vertical lines at the pair birth Pi_0^pair = 31.475 and the window onset c lambda/(4 Sigma) = 25.
+**Figure B.5.** Peak variance M/F against the initial over-weighting x for the Bayesian-weight gain (x = kappa) and the misspecified Kalman gain (x = F'/F) at lambda = lambda' = c = 1, Sigma = 0.01; both rise from 1 at x = 2, and the end values at x = 100 (9.2875 and 17.575) are annotated.
 
-![Figure B.5](figs_thesis/B.5_hill-phase.png)
+![Figure B.5](figs_thesis/B.5_peak-heights.png)
 
-**Figure B.6.** Peak variance M/F against the initial over-weighting x for the Bayesian-weight gain (x = kappa) and the misspecified Kalman gain (x = F'/F) at lambda = lambda' = c = 1, Sigma = 0.01; both rise from 1 at x = 2, and the end values at x = 100 (9.2875 and 17.575) are annotated.
+**Figure B.6.** Hill gain with n = 2 at lambda = c = 1, Sigma = 0.01: over the half-saturation Pi_0 (log axis), the turning-point values m/F (dashed) and M/F (solid) as tolerances R^2/F, the band m <= R^2 < min(M, F) shaded as the mixed class lower ray + window and the band F <= R^2 < M shaded as window, with vertical lines at the pair birth Pi_0^pair = 31.475 and the window onset c lambda/(4 Sigma) = 25.
 
-![Figure B.6](figs_thesis/B.6_peak-heights.png)
+![Figure B.6](figs_thesis/B.6_hill-phase.png)
 
 **Figure B.7.** Stationary error against correlation time tau (log axes) at lambda = 1, Sigma = 0.01, Pi = 1 for the relay with G = 0.5 and the optimal filter. Left, matched zero-frequency power: both decrease, with F marked. Right, matched variance v = 0.05: the relay increases and the optimal error is unimodal with maximum P_max = 0.008333 at tau = 1/lambda; the optimal-filter failure set at R^2 = 0.8 P_max is shaded.
 

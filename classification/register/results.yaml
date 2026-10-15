@@ -4,7 +4,7 @@
 - key: topological-realizability
   thesis_no: '2.1'
   type: Proposition
-  title: Topological realizability
+  title: Topological realisability
   chapter: 2
   cons_v1: '1'
   legacy: [legacy B.1]
@@ -74,7 +74,7 @@
 - key: reparameterisation
   thesis_no: '2.8'
   type: Corollary
-  title: Reparameterisation (orientation swaps ℓ and u)
+  title: Reparameterisation (orientation swaps ℓ and h)
   chapter: 2
   cons_v1: null
   legacy: [legacy B.11]
@@ -214,7 +214,7 @@
 - key: realizability
   thesis_no: '5.1'
   type: Theorem
-  title: Gain realizability
+  title: Gain realisability
   chapter: 5
   cons_v1: '45'
   legacy: [legacy D.1]
@@ -490,7 +490,7 @@
   legacy: [legacy A.8, Paper 1 Prop. 6]
   verified_by: [T4, T7]
   status: proved
-  citations: [roberts1959]
+  citations: [roberts1959, sahomasugi2016]
 - key: shared-excess-set
   thesis_no: '6.14'
   type: Lemma
@@ -524,7 +524,7 @@
 - key: d3-excess
   thesis_no: '6.17'
   type: Proposition
-  title: D3 excess set; onset ρ > 2 + u
+  title: D3 excess set; onset ρ > 2 + ν
   chapter: 6
   cons_v1: '30'
   legacy: [legacy C.12 + legacy C.13 (remark)]
@@ -544,7 +544,7 @@
 - key: dt-optimal-mp
   thesis_no: '6.19'
   type: Theorem
-  title: 'Optimal M-P along Δt: post ↓; prior ↑; avg ↑'
+  title: 'Optimal M-P along Δt: posterior ↓; prior ↑; averaged ↑'
   chapter: 6
   cons_v1: '32'
   legacy: [legacy C.15 + legacy C.24 + legacy C.16]
@@ -701,6 +701,16 @@
   verified_by: [T13 A8]
   status: proved
   citations: [hansentorgersen1974, torgersen1991, hogeboomburr2021]
+- key: whole-path-garbling
+  thesis_no: 7.6a
+  type: Lemma
+  title: Whole-path garbling (step (iv) ⇒ (ii) of Theorem 7.6)
+  chapter: 7
+  cons_v1: null
+  legacy: []
+  verified_by: []
+  status: to-verify
+  citations: []
 - key: sweeps-ordered
   thesis_no: '7.7'
   type: Proposition
@@ -801,23 +811,23 @@
   verified_by: [T12]
   status: proved
   citations: [martinezrey2017]
-- key: blind-searches
-  thesis_no: '8.1'
-  type: Numerical result
-  title: Blind searches find no unpredicted class
-  chapter: 8
-  cons_v1: '63'
-  legacy: [legacy D.22 + legacy D.23]
-  verified_by: [T10.7, T12 Part C, T13 C2]
-  status: numerical
-  citations: []
 - key: narrow-windows
-  thesis_no: '8.2'
+  thesis_no: '8.1'
   type: Numerical result
   title: Narrow windows need root-finding
   chapter: 8
   cons_v1: '62'
   legacy: [legacy D.26]
   verified_by: [T10.5]
+  status: numerical
+  citations: []
+- key: blind-searches
+  thesis_no: '8.2'
+  type: Numerical result
+  title: Blind searches find no unpredicted class
+  chapter: 8
+  cons_v1: '63'
+  legacy: [legacy D.22 + legacy D.23]
+  verified_by: [T10.7, T12 Part C, T13 C2]
   status: numerical
   citations: []

@@ -26,8 +26,8 @@ FIGS = [("B.1", "stage1-schematic", "fig01_stage1_schematic", "t13/t13_figures_p
         ("B.2", "normal-form-plane", None, "t15/make_fig_B2.py"),
         ("B.3", "design-sweeps", "fig_t8_sweeps", "t8_figures.py"),
         ("B.4", "realizability", "fig02_realizability", "t13/t13_figures_paper2.py"),
-        ("B.5", "hill-phase", "fig03_hill_phase", "t13/t13_figures_paper2.py"),
-        ("B.6", "peak-heights", "fig04_peak_heights", "t13/t13_figures_paper2.py"),
+        ("B.5", "peak-heights", "fig04_peak_heights", "t13/t13_figures_paper2.py"),   # Task 20: B.5 and B.6 swapped
+        ("B.6", "hill-phase", "fig03_hill_phase", "t13/t13_figures_paper2.py"),
         ("B.7", "tau-normalizations", "fig05_tau_normalizations", "t13/t13_figures_paper2.py"),
         ("B.8", "optimal-sampling", "fig08_optimal_sampling", "t13/t13_figures_paper2.py"),
         ("B.9", "sampled-relay", "fig09_sampled_relay", "t13/t13_figures_paper2.py"),
@@ -53,11 +53,11 @@ DESC = {
            "with the region below it shaded as unreachable, a Bayesian-weight base curve (kappa = 1.5) with three compactly "
            "supported bumps of peak 1.5F placed before the envelope touch point Pi_c = 56.7, the tolerance R^2 = 1.25F (three "
            "windows) and the tolerance R^2 = 0.6F with the forced lower ray (0, pi_R), pi_R = 222.2, marked.",
-    "B.5": "Hill gain with n = 2 at lambda = c = 1, Sigma = 0.01: over the half-saturation Pi_0 (log axis), the turning-point "
+    "B.6": "Hill gain with n = 2 at lambda = c = 1, Sigma = 0.01: over the half-saturation Pi_0 (log axis), the turning-point "
            "values m/F (dashed) and M/F (solid) as tolerances R^2/F, the band m <= R^2 < min(M, F) shaded as the mixed class "
            "lower ray + window and the band F <= R^2 < M shaded as window, with vertical lines at the pair birth "
            "Pi_0^pair = 31.475 and the window onset c lambda/(4 Sigma) = 25.",
-    "B.6": "Peak variance M/F against the initial over-weighting x for the Bayesian-weight gain (x = kappa) and the misspecified "
+    "B.5": "Peak variance M/F against the initial over-weighting x for the Bayesian-weight gain (x = kappa) and the misspecified "
            "Kalman gain (x = F'/F) at lambda = lambda' = c = 1, Sigma = 0.01; both rise from 1 at x = 2, and the end values at "
            "x = 100 (9.2875 and 17.575) are annotated.",
     "B.7": "Stationary error against correlation time tau (log axes) at lambda = 1, Sigma = 0.01, Pi = 1 for the relay with "

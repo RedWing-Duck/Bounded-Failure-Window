@@ -24,21 +24,21 @@ envelope touch point Pi_c = 56.20; at R^2 = 1.25F it has exactly three windows. 
 
 ## Figure B.5
 
-![Figure B.5](B.5_hill-phase.png)
+![Figure B.5](B.5_peak-heights.png)
 
-Figure B.5. Hill gain, n = 2, along precision: phase diagram in (Pi_0, R^2/F) (Theorem 5.12, Proposition 5.13). lambda = c = 1,
+Figure B.5. Peak heights along precision: Bayesian-weight versus misspecified Kalman gain (Propositions 5.8 and 5.9).
+lambda = lambda' = c = 1, Sigma = 0.01. Both windows open at the same onset (x = 2: kappa = 2, F'/F = 2), but the
+misspecified Kalman gain peaks higher: at x = 100, M/F = 17.575 against 9.2875, a ratio of 1.892.
+
+## Figure B.6
+
+![Figure B.6](B.6_hill-phase.png)
+
+Figure B.6. Hill gain, n = 2, along precision: phase diagram in (Pi_0, R^2/F) (Theorem 5.12, Proposition 5.13). lambda = c = 1,
 Sigma = 0.01. For Pi_0 < Pi_0^pair = 31.475 the curve has a minimum m then a maximum M (dashed and solid); above it, none.
 Green band: the mixed class lower ray + window (1,0,1) for m <= R^2 < min(M, F); orange: the window for F <= R^2 < M,
 which exists only for Pi_0 < c lambda/(4 Sigma) = 25. High-precision limit H/F = 0.500 lies below the plot. Two rays never
 occur because H < m.
-
-## Figure B.6
-
-![Figure B.6](B.6_peak-heights.png)
-
-Figure B.6. Peak heights along precision: Bayesian-weight versus misspecified Kalman gain (Propositions 5.8 and 5.9).
-lambda = lambda' = c = 1, Sigma = 0.01. Both windows open at the same onset (x = 2: kappa = 2, F'/F = 2), but the
-misspecified Kalman gain peaks higher: at x = 100, M/F = 17.575 against 9.2875, a ratio of 1.892.
 
 ## Figure B.7
 

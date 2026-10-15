@@ -1085,12 +1085,12 @@ cannot produce this.
 **Label:** Proposition (proved under nondegeneracy; T10.5 diagnosis, Hill $n = 2$: fitted exponents $1.50007$ (values) and
 $0.50002$ (positions)).
 
-**Numerical result 8.2 (narrow windows need root-finding).** Windows of relative width $10^{-8}$ were found by the root-finding
+**Numerical result 8.1 (narrow windows need root-finding).** Windows of relative width $10^{-8}$ were found by the root-finding
 classifier in 20/20 curves (55 windows); a $10^4$-point log grid found none.
 
 **Label:** Numerical result (T10.5).
 
-**Numerical result 8.1 (blind searches find no unpredicted class).** Randomized searches with tolerances concentrated near every
+**Numerical result 8.2 (blind searches find no unpredicted class).** Randomized searches with tolerances concentrated near every
 critical tolerance found no class outside the predicted sets: $10^6$ classifications over the precision, design and $\tau$
 sweeps; $4.4\times10^6$ over the $\Delta t$ and $\Sigma$ sweeps; and the T13 audit of every synthesis-matrix row.
 
@@ -1376,8 +1376,8 @@ below except where the change log says so.
 | 2.5 | Corollary | equal-height maxima | T10.5 |
 | 2.6 | Corollary | degenerate stationary points | T10.5 |
 | 2.7 | Proposition | pair birth | T10.5 (with diagnosis) |
-| 8.2 | Numerical result | narrow windows need root-finding | T10.5 |
-| 8.1 | Numerical result | blind searches | T10.7, T12 Part C, T13 C2 |
+| 8.1 | Numerical result | narrow windows need root-finding | T10.5 |
+| 8.2 | Numerical result | blind searches | T10.7, T12 Part C, T13 C2 |
 | 7.1 | Definition | causal garbling | — |
 | 7.2 | Theorem | monotonicity under causal garbling | T11.1, T11.2 |
 | 7.3 | Corollary | no optimal windows along causal orderings | T11 |

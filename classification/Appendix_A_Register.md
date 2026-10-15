@@ -4,14 +4,14 @@ Rendered from `register/results.yaml` (freeze v1, Task 14). Numbers are thesis n
 
 | No. | Type | Result | Key | Verified by | Status |
 |---|---|---|---|---|---|
-| 2.1 | Proposition | Topological realizability | `topological-realizability` | T8.5 | proved |
+| 2.1 | Proposition | Topological realisability | `topological-realizability` | T8.5 | proved |
 | 2.2 | Theorem | Critical-tolerance theorem | `critical-tolerance` | T8.1, T8.3, T9–T13 classifiers | proved |
 | 2.3 | Definition | Critical-value signature and stratification | `signature` | — | definition |
 | 2.4 | Theorem | Plateaus (C2′) | `plateaus` | T10.5 | proved |
 | 2.5 | Corollary | Equal-height maxima | `equal-height-maxima` | T10.5 | proved |
 | 2.6 | Corollary | Degenerate stationary points | `degenerate-points` | T10.5 | proved |
 | 2.7 | Proposition | Pair birth | `pair-birth` | T10.5 (with diagnosis) | proved |
-| 2.8 | Corollary | Reparameterisation (orientation swaps ℓ and u) | `reparameterisation` | T15 C11 | proved |
+| 2.8 | Corollary | Reparameterisation (orientation swaps ℓ and h) | `reparameterisation` | T15 C11 | proved |
 | 2.9 | Proposition | Structural stability at a fixed tolerance | `structural-stability` | T15 C12 | proved |
 | 3.1 | Proposition | Stationary variance; constant-gain filter equivalence | `stationary-variance` | T1, T2 | proved |
 | 3.2 | Theorem | Normal form σ²/F = V(ν,q) | `normal-form` | T14 G | proved |
@@ -25,7 +25,7 @@ Rendered from `register/results.yaml` (freeze v1, Task 14). Numbers are thesis n
 | 4.3 | Proposition | Prior precision: classification | `prior-classification` | T8.3, T13 C2 | proved |
 | 4.4 | Proposition | Coupling: endpoints and extrema | `coupling-endpoints` | T8.1, T8.2 | proved |
 | 4.5 | Proposition | Coupling: classification | `coupling-classification` | T8.3, T13 C2 | proved |
-| 5.1 | Theorem | Gain realizability | `realizability` | T10.1, T10.2 | proved |
+| 5.1 | Theorem | Gain realisability | `realizability` | T10.1, T10.2 | proved |
 | 5.2 | Corollary | Forced lower ray | `forced-lower-ray` | T10.1 (factor-radicand route), T10.2 | proved |
 | 5.3 | Corollary | Exact class set along precision | `exact-class-set` | T10.2 | proved |
 | 5.4 | Corollary | Unbounded windows for regular gains | `unbounded-windows` | T10.2 (supplementary) | proved |
@@ -56,9 +56,9 @@ Rendered from `register/results.yaml` (freeze v1, Task 14). Numbers are thesis n
 | 6.14 | Lemma | Shared excess set (M-P) | `shared-excess-set` | T12 | proved |
 | 6.15 | Proposition | D1 tanh lemma | `d1-excess` | T12 | proved |
 | 6.16 | Proposition | D2 excess set (0 < c < 2) | `d2-excess` | T12 | proved |
-| 6.17 | Proposition | D3 excess set; onset ρ > 2 + u | `d3-excess` | T12 | proved |
+| 6.17 | Proposition | D3 excess set; onset ρ > 2 + ν | `d3-excess` | T12 | proved |
 | 6.18 | Proposition | Endpoint limits along Δt | `dt-endpoint-limits` | T12 (with series-route diagnosis) | proved |
-| 6.19 | Theorem | Optimal M-P along Δt: post ↓; prior ↑; avg ↑ | `dt-optimal-mp` | T12 (a), T13 A1, A2 (b), (c) | proved |
+| 6.19 | Theorem | Optimal M-P along Δt: posterior ↓; prior ↑; averaged ↑ | `dt-optimal-mp` | T12 (a), T13 A1, A2 (b), (c) | proved |
 | 6.20 | Proposition | Two rays from an over-weighted sampled relay | `dt-two-rays` | T12 (with diagnosis) | proved |
 | 6.21 | Numerical result | Census of sampled relays | `dt-relay-census` | T12, T13 C2 | numerical |
 | 6.22 | Conjecture | At most two turning points (sampled relays) | `dt-two-turning-points` | T12, T13 A6, C2 | conjecture |
@@ -74,6 +74,7 @@ Rendered from `register/results.yaml` (freeze v1, Task 14). Numbers are thesis n
 | 7.4 | Corollary | Diagnostic | `diagnostic` | T11 | proved |
 | 7.5 | Proposition | Spectral dominance | `spectral-dominance` | T11.1, T11.3 | proved |
 | 7.6 | Theorem | Causal; pathwise and spectral orderings coincide (Gaussian) | `gaussian-orderings-coincide` | T13 A8 | proved |
+| 7.6a | Lemma | Whole-path garbling (step (iv) ⇒ (ii) of Theorem 7.6) | `whole-path-garbling` | — | to-verify |
 | 7.7 | Proposition | Which studied sweeps are ordered | `sweeps-ordered` | T11.1, T11.3 | proved |
 | 7.8 | Theorem | Sharpness in the power family | `power-family-sharpness` | T11.3 (with diagnosis), T13 C2 | proved |
 | 7.9 | Theorem | Unimodality for 0 < β < 2 | `power-family-unimodal` | T13 A4, T11.3 (numerical) | proved |
@@ -84,5 +85,5 @@ Rendered from `register/results.yaml` (freeze v1, Task 14). Numbers are thesis n
 | 7.14 | Corollary | Integrate-and-dump; nested grids | `mi-nested` | T11.6 | proved |
 | 7.15 | Theorem | Integrate-and-dump on the continuum | `mi-continuum` | T13 A3, T11.6, T12 | proved |
 | 7.16 | Proposition | M-P is not a causal-garbling family | `mp-not-ordered` | T12 | proved |
-| 8.1 | Numerical result | Blind searches find no unpredicted class | `blind-searches` | T10.7, T12 Part C, T13 C2 | numerical |
-| 8.2 | Numerical result | Narrow windows need root-finding | `narrow-windows` | T10.5 | numerical |
+| 8.1 | Numerical result | Narrow windows need root-finding | `narrow-windows` | T10.5 | numerical |
+| 8.2 | Numerical result | Blind searches find no unpredicted class | `blind-searches` | T10.7, T12 Part C, T13 C2 | numerical |

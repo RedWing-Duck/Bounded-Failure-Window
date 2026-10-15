@@ -50,6 +50,7 @@ For each task: the pre-registration and results files, the pre-registered checks
 - Failure — C2 classes, row 8: document — the stated class (1,0,1) cannot occur (proved; class set corrected).
 - Failure — C2 classes, row 12: code — route (ii) sample point below its equality tolerance at an exact limit.
 - Failure — D reproduction, Task 10: code — `run_t10.sh` omits `t10_realize_diag.py`; Task 12: criterion — masking of the provenance runtime list.
+- Recorded — A3 (Theorem 7.15): the pre-registered resultant route, completed post hoc in exact arithmetic (`t13/t13_A3_proof.py`, 22 of 22 checks; the pre-registered attempt `t13_A3_attempt.py` reported 'unresolved'): the resultant of the cleared quadratic and its x-derivative is 4u²x²(u + 1)²(E − 1)⁴(E² + 2xE − 1)², and E² + 2xE − 1 = −2e^(−x)(sinh x − x) < 0 on E = e^(−x), so dp/dx never vanishes.
 
 **Task 14.** classification/PREREG_t14.md · classification/t14/RESULTS_t14.md. 11 checks with a verdict; 8 pass, 3 fail.
 

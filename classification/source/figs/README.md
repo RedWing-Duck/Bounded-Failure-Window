@@ -22,6 +22,14 @@ Bayesian-weight base curve (kappa = 1.5, so no excess) with three compactly supp
 envelope touch point Pi_c = 56.20; at R^2 = 1.25F it has exactly three windows. At R^2 = 0.6F < F every gain fails on
 (0, pi_R) with pi_R = 2 lambda (F - R^2)/R^4 = 222.2 (forced lower ray).
 
+## {{fig:peak-heights}}
+
+![{{fig:peak-heights}}]({{fig:peak-heights|n}}_peak-heights.png)
+
+{{fig:peak-heights}}. Peak heights along precision: Bayesian-weight versus misspecified Kalman gain (Propositions [[bayesian-weight|n]] and [[misspecified-kalman|n]]).
+lambda = lambda' = c = 1, Sigma = 0.01. Both windows open at the same onset (x = 2: kappa = 2, F'/F = 2), but the
+misspecified Kalman gain peaks higher: at x = 100, M/F = 17.575 against 9.2875, a ratio of 1.892.
+
 ## {{fig:hill-phase}}
 
 ![{{fig:hill-phase}}]({{fig:hill-phase|n}}_hill-phase.png)
@@ -31,14 +39,6 @@ Sigma = 0.01. For Pi_0 < Pi_0^pair = 31.475 the curve has a minimum m then a max
 Green band: the mixed class lower ray + window (1,0,1) for m <= R^2 < min(M, F); orange: the window for F <= R^2 < M,
 which exists only for Pi_0 < c lambda/(4 Sigma) = 25. High-precision limit H/F = 0.500 lies below the plot. Two rays never
 occur because H < m.
-
-## {{fig:peak-heights}}
-
-![{{fig:peak-heights}}]({{fig:peak-heights|n}}_peak-heights.png)
-
-{{fig:peak-heights}}. Peak heights along precision: Bayesian-weight versus misspecified Kalman gain (Propositions [[bayesian-weight|n]] and [[misspecified-kalman|n]]).
-lambda = lambda' = c = 1, Sigma = 0.01. Both windows open at the same onset (x = 2: kappa = 2, F'/F = 2), but the
-misspecified Kalman gain peaks higher: at x = 100, M/F = 17.575 against 9.2875, a ratio of 1.892.
 
 ## {{fig:tau-normalizations}}
 

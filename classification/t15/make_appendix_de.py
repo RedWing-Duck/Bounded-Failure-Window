@@ -70,6 +70,12 @@ FAILURES = {
 }
 
 
+# Task 20: non-failure lines, emitted after a task's failure bullets as "- Recorded — …" (not counted as checks or failures)
+NOTES = {
+    "T13": ["A3 (Theorem 7.15): the pre-registered resultant route, completed post hoc in exact arithmetic (`t13/t13_A3_proof.py`, 22 of 22 checks; the pre-registered attempt `t13_A3_attempt.py` reported 'unresolved'): the resultant of the cleared quadratic and its x-derivative is 4u²x²(u + 1)²(E − 1)⁴(E² + 2xE − 1)², and E² + 2xE − 1 = −2e^(−x)(sinh x − x) < 0 on E = e^(−x), so dp/dx never vanishes."],
+}
+
+
 def rows(path, sel):
     L = open(os.path.join(REPO, path)).read().split("\n")
     if sel == "first":
@@ -114,8 +120,9 @@ def appendix_d(with_t17=False):
         n_p, n_f = v.count("PASS"), v.count("FAIL")
         out += [f"{head} {n_p + n_f} checks with a verdict; {n_p} pass, {n_f} fail.", ""]
         fl = {"T17": FAILURES_T17, "T18": FAILURES_T18, "T19": FAILURES_T19}.get(t, FAILURES.get(t, []))
-        if fl:
-            out += [f"- Failure — {x}" for x in fl] + [""]
+        nl = NOTES.get(t, [])
+        if fl or nl:
+            out += [f"- Failure — {x}" for x in fl] + [f"- Recorded — {x}" for x in nl] + [""]
     return "\n".join(out)
 
 
@@ -180,12 +187,15 @@ def appendix_e():
            "| T18 | record corrections, Theorem 2.2 import, archived thesis, checks F1–F7 | render chain below, then "
            "`python3 t18/t18_checks.py` |",
            "| T19 | reference 26, Theorem 2.2 import, open problems 5–6, archived thesis, checks G1–G7 and re-checks H-* | render "
-           "chain below, then `python3 t19/t19_checks.py`, `python3 t19/t19_routes.py` and `python3 t19/h13d_replay.py` |", "",
+           "chain below, then `python3 t19/t19_checks.py`, `python3 t19/t19_routes.py` and `python3 t19/h13d_replay.py` |",
+           "| T20 | register sync with the thesis (titles, 8.1/8.2, Lemma 7.6a, references 54–60, Appendix D note, figures B.5/B.6), "
+           "checks C1–C6 | render chain below, then `python3 t20/t20_checks.py` |", "",
            "## The T14–T19 render chain", "", "From `classification/`:", "", "```",
            "python3 t14/build_register.py          # register from the T14 table (T14; overwrites T15 metadata, re-apply next line)",
            "python3 t15/t15_register.py            # T15 citations/status, references.yaml, figures.yaml",
            "python3 t16/t16_register.py            # T16 legacy-label prefixes, crosswalk, result 5.6 wording, B.4 Pi_c",
            "python3 t19/t19_register.py            # T19 reference 26: key roberts1959 in references.yaml and results.yaml",
+           "python3 t20/t20_register.py            # T20 titles, 8.1/8.2, Lemma 7.6a, references 54-60, crosswalk",
            "python3 t17/make_thesis_only_t17.py    # T17 thesis-only imports (placed by register/thesis_overrides.yaml)",
            "python3 t18/make_thesis_only_t18.py    # T18 thesis-only Theorem 2.2 (parts (1)-(4))",
            "python3 t19/make_thesis_only_t19.py    # T19 Theorem 2.2 with the proof's closing sentences (replaces T18's file)",

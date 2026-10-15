@@ -155,7 +155,7 @@ Stage 5 asks whether the possible topologies are robust and whether real systems
 | 8 | Sampling interval | Lemma 6.14, Propositions 6.15, 6.16, 6.17, 6.18, Theorem 6.19, Proposition 7.16, Corollary 7.14, Theorem 7.15, Proposition 6.20, Numerical result 6.21, Conjecture 6.22 | Figures B.8, B.9 |
 | 9 | Process noise and the tolerance convention | Lemma 6.23, Propositions 6.24, 6.25, 6.26, 6.27, 6.28 | Figure B.10 |
 | 10 | The optimality theorem: causal information orderings | Definition 7.1, Theorem 7.2, Corollaries 7.3, 7.4, Proposition 7.5, Theorem 7.6, Propositions 7.7, 7.11, Counterexample 7.12, Proposition 7.13 | Figure B.12 |
-| 11 | Synthesis matrix, degeneracies and open problems | Corollaries 2.5–2.6, Proposition 2.7, Numerical results 8.2, 8.1; Section 10–11 of the consolidated document | — |
+| 11 | Synthesis matrix, degeneracies and open problems | Corollaries 2.5–2.6, Proposition 2.7, Numerical results 8.1, 8.2; Section 10–11 of the consolidated document | — |
 | A | Verification (pre-registration, routes, reproduction) | Consolidated §12; `reproduce_all.sh` | — |
 
 ---

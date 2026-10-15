@@ -74,6 +74,7 @@ Legacy labels live only here (and, for the paper render of v1's change log, in `
 | 7.4 | `diagnostic` | 67 | legacy E.4 |
 | 7.5 | `spectral-dominance` | 68 | legacy E.5 |
 | 7.6 | `gaussian-orderings-coincide` | 69 | legacy E.15 |
+| 7.6a | `whole-path-garbling` | — |  |
 | 7.7 | `sweeps-ordered` | 70 | legacy E.6 |
 | 7.8 | `power-family-sharpness` | 24 | legacy E.7 |
 | 7.9 | `power-family-unimodal` | 25 | legacy E.8 |
@@ -84,5 +85,5 @@ Legacy labels live only here (and, for the paper render of v1's change log, in `
 | 7.14 | `mi-nested` | 34 | legacy E.13 |
 | 7.15 | `mi-continuum` | 35 | legacy E.14 |
 | 7.16 | `mp-not-ordered` | 33 | legacy E.16 |
-| 8.1 | `blind-searches` | 63 | legacy D.22 + legacy D.23 |
-| 8.2 | `narrow-windows` | 62 | legacy D.26 |
+| 8.1 | `narrow-windows` | 62 | legacy D.26 |
+| 8.2 | `blind-searches` | 63 | legacy D.22 + legacy D.23 |

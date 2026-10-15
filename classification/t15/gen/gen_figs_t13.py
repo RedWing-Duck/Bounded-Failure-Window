@@ -16,7 +16,7 @@ from t13_common import CLS
 
 sys.path.insert(0, os.path.join(CLS, "t12"))
 OUT = os.environ["FIG_OUT"]
-NAMES = {'fig01_stage1_schematic': 'B.1_stage1-schematic', 'fig_t8_sweeps': 'B.3_design-sweeps', 'fig02_realizability': 'B.4_realizability', 'fig03_hill_phase': 'B.5_hill-phase', 'fig04_peak_heights': 'B.6_peak-heights', 'fig05_tau_normalizations': 'B.7_tau-normalizations', 'fig08_optimal_sampling': 'B.8_optimal-sampling', 'fig09_sampled_relay': 'B.9_sampled-relay', 'fig10_process_noise': 'B.10_process-noise', 'fig06_power_family': 'B.11_power-family', 'fig07_delay': 'B.12_delay'}
+NAMES = {'fig01_stage1_schematic': 'B.1_stage1-schematic', 'fig_t8_sweeps': 'B.3_design-sweeps', 'fig02_realizability': 'B.4_realizability', 'fig04_peak_heights': 'B.5_peak-heights', 'fig03_hill_phase': 'B.6_hill-phase', 'fig05_tau_normalizations': 'B.7_tau-normalizations', 'fig08_optimal_sampling': 'B.8_optimal-sampling', 'fig09_sampled_relay': 'B.9_sampled-relay', 'fig10_process_noise': 'B.10_process-noise', 'fig06_power_family': 'B.11_power-family', 'fig07_delay': 'B.12_delay'}
 os.makedirs(OUT, exist_ok=True)
 C1, C2, C3, C4 = "#2a78d6", "#eb6834", "#1baf7a", "#6250d6"
 INK, MUTED, GRID, SURF = "#222222", "#6b6b6b", "#e6e6e6", "#fcfcfb"

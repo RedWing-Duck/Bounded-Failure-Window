@@ -107,3 +107,17 @@ Numbered in order of first citation; a number, once assigned, does not change. R
 [52] Bar-Shalom, Y. (2002). Update with out-of-sequence measurements in tracking: exact solution. IEEE Transactions on Aerospace and Electronic Systems 38(3), 769–777. doi:10.1109/TAES.2002.1039398
 
 [53] Yoder, J. et al. (2018). Exploring the exponentially decaying merit of an out-of-sequence observation. Sensors 18(6), 1947. doi:10.3390/s18061947
+
+[54] Sinopoli, B. et al. (2004). Kalman filtering with intermittent observations. IEEE Transactions on Automatic Control 49(9), 1453–1464. doi:10.1109/TAC.2004.834121
+
+[55] Wu, J. et al. (2018). Kalman filtering over Gilbert–Elliott channels: stability conditions and critical curve. IEEE Transactions on Automatic Control 63(4), 1003–1017. doi:10.1109/TAC.2017.2732821
+
+[56] Jiang, S., Shi, J. & Moura, S. (2026). Mitigating overconfidence in nonlinear Kalman filters via covariance recalibration. Automatica.
+
+[57] Bosov, A., Bosov, S. & Uryupin, I. (2026). Beyond divergence: failure modes of the classical extended Kalman filter in a unified nonlinear tracking model. Mathematics 14(17), 3071. doi:10.3390/math14173071
+
+[58] Gotovos, A. et al. (2013). Active learning for level set estimation. Proceedings of the 23rd International Joint Conference on Artificial Intelligence (IJCAI 2013), 1344–1350.
+
+[59] Tenne, D. & Singh, T. (2002). Characterizing performance of α-β-γ filters. IEEE Transactions on Aerospace and Electronic Systems 38(3), 1072–1087. doi:10.1109/TAES.2002.1039425
+
+[60] Saho, K. & Masugi, M. (2016). α–β–γ tracking filters using acceleration measurements. SpringerPlus 5, 309. doi:10.1186/s40064-016-1960-8
