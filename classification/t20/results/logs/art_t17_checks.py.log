@@ -1,0 +1,14 @@
+E1 1 Cor 6.5 holds
+E1 2 Lemma 6.1 normal form holds
+E1 3 Prop 6.13 DOES NOT HOLD
+E1 4 Lemma 6.14 holds
+E1 5 Lemma 6.23 holds
+E1 7 Prop 2.7 holds
+E1 8 Thm 7.8 bound holds
+E1 9 Prop 7.10 holds
+E1  12.5 s
+E2  0.67 s
+E3 {'pass': False} 1.8 s
+E4 {'pass': False} 0.32 s
+E6 {'pass': False} 1.93 s
+E7 {'pass': True} 0.14 s

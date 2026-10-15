@@ -1,0 +1,17 @@
+D1 1 Prop 3.1 holds
+D1 2 Prop 3.5 / Lemma 3.6 DOES NOT HOLD
+D1 3 Lemma 3.7 holds
+D1 4 Prop 2.9 remark (numeric part) holds
+D1 5 Thm 5.1 holds
+D1 6 Prop 5.8 holds
+D1 7 Prop 5.9 holds
+D1 8 Prop 5.14 holds
+D1 9 Cor 5.2 DOES NOT HOLD
+D1  95.89 s
+D2  0.15 s
+D3 {'pass': True} 0.21 s
+D4 {'pass': True} 0.21 s
+D5 {'pass': True} 0.03 s
+D6 {'pass': False} 1.27 s
+D7 {'pass': False} 0.75 s
+D8 {'pass': True} 0.36 s

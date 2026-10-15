@@ -1,0 +1,7 @@
+F1 {'pass': False} 19.25 s
+F2  0.01 s
+F3  0.37 s
+F4  0.0 s
+F5 {'pass': True} 0.43 s
+F6 {'pass': False} 0.04 s
+F7 {'pass': True} 0.0 s

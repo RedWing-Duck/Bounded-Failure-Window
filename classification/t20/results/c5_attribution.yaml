@@ -1,0 +1,8 @@
+# Task 20 C5(c): attribution of every verdict change between 7855e45 and the artifacts commit b254b32, read from
+# t20/results/c5_diffs.md after the recorded run (PREREG_t20.md causes i-v).
+T15 C1:
+  cause: iii
+  reading: >-
+    "entries" 53 -> 60 and "doi" 46 -> 51 (the seven references [54]-[60], five with a DOI); "unused" lists the six chapter-1
+    references [54]-[59], which are attached to no result and cited by no source token (PREREG_t20.md item 5). The criterion
+    requires exactly 53 entries, 46 DOIs and no unused key.

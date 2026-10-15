@@ -1,0 +1,602 @@
+{
+ "artifacts_commit": "b254b32",
+ "base": "7855e45",
+ "python": "3.13.16",
+ "work": "/tmp/claude-0/-home-user/c3e8ea98-2338-5373-a789-abf1aac6a328/scratchpad/t20run",
+ "C1": {
+  "expected_equals_rendered": true,
+  "unexpected_differences": [],
+  "entries": 83,
+  "keys_unique": true,
+  "thesis_no_unique": true,
+  "row_8.1": "| 8.1 | Numerical result | Narrow windows need root-finding | `narrow-windows` | T10.5 | numerical |",
+  "row_8.2": "| 8.2 | Numerical result | Blind searches find no unpredicted class | `blind-searches` | T10.7, T12 Part C, T13 C2 | numerical |",
+  "row_after_7.6": "| 7.6a | Lemma | Whole-path garbling (step (iv) ⇒ (ii) of Theorem 7.6) | `whole-path-garbling` | — | to-verify |",
+  "pass": true,
+  "seconds": 0.1
+ },
+ "C4": {
+  "a_figures_yaml": true,
+  "b_appendix_B": true,
+  "c_readme": true,
+  "c_roadmap": true,
+  "d_stale_files": [],
+  "e_png_B5_eq_old_B6": true,
+  "e_png_B6_eq_old_B5": true,
+  "e_captions_exist": true,
+  "pass": true,
+  "seconds": 0.0
+ },
+ "C6": {
+  "a_22_of_22": true,
+  "b_totals": {
+   "checks": 182,
+   "pass": 145,
+   "fail": 37,
+   "failure_lines": 38,
+   "recorded_lines": 1
+  },
+  "b_ok": true,
+  "c_render": {
+   "54": {
+    "rendered": "[54] Sinopoli, B. et al. (2004). Kalman filtering with intermittent observations. IEEE Transactions on Automatic Control 49(9), 1453–1464. doi:10.1109/TAC.2004.834121",
+    "prompt": "[54] Sinopoli, B., Schenato, L., Franceschetti, M., Poolla, K., Jordan, M. I. & Sastry, S. S. (2004). Kalman filtering with intermittent observations. IEEE Transactions on Automatic Control 49(9), 1453–1464. doi:10.1109/TAC.2004.834121",
+    "equal": false
+   },
+   "55": {
+    "rendered": "[55] Wu, J. et al. (2018). Kalman filtering over Gilbert–Elliott channels: stability conditions and critical curve. IEEE Transactions on Automatic Control 63(4), 1003–1017. doi:10.1109/TAC.2017.2732821",
+    "prompt": "[55] Wu, J., Shi, G., Anderson, B. D. O. & Johansson, K. H. (2018). Kalman filtering over Gilbert–Elliott channels: stability conditions and critical curve. IEEE Transactions on Automatic Control 63(4), 1003–1017. doi:10.1109/TAC.2017.2732821",
+    "equal": false
+   },
+   "56": {
+    "rendered": "[56] Jiang, S., Shi, J. & Moura, S. (2026). Mitigating overconfidence in nonlinear Kalman filters via covariance recalibration. Automatica.",
+    "prompt": "[56] Jiang, S., Shi, J. & Moura, S. (2026). Mitigating overconfidence in nonlinear Kalman filters via covariance recalibration. Automatica, accepted for publication; volume, pages and DOI not yet assigned. arXiv:2407.05717",
+    "equal": false
+   },
+   "57": {
+    "rendered": "[57] Bosov, A., Bosov, S. & Uryupin, I. (2026). Beyond divergence: failure modes of the classical extended Kalman filter in a unified nonlinear tracking model. Mathematics 14(17), 3071. doi:10.3390/math14173071",
+    "prompt": "[57] Bosov, A., Bosov, S. & Uryupin, I. (2026). Beyond divergence: failure modes of the classical extended Kalman filter in a unified nonlinear tracking model. Mathematics 14(17), 3071. doi:10.3390/math14173071",
+    "equal": true
+   },
+   "58": {
+    "rendered": "[58] Gotovos, A. et al. (2013). Active learning for level set estimation. Proceedings of the 23rd International Joint Conference on Artificial Intelligence (IJCAI 2013), 1344–1350.",
+    "prompt": "[58] Gotovos, A., Casati, N., Hitz, G. & Krause, A. (2013). Active learning for level set estimation. Proceedings of the 23rd International Joint Conference on Artificial Intelligence (IJCAI 2013), 1344–1350. AAAI Press. https://dl.acm.org/doi/10.5555/2540128.2540322 (no DOI)",
+    "equal": false
+   },
+   "59": {
+    "rendered": "[59] Tenne, D. & Singh, T. (2002). Characterizing performance of α-β-γ filters. IEEE Transactions on Aerospace and Electronic Systems 38(3), 1072–1087. doi:10.1109/TAES.2002.1039425",
+    "prompt": "[59] Tenne, D. & Singh, T. (2002). Characterizing performance of α-β-γ filters. IEEE Transactions on Aerospace and Electronic Systems 38(3), 1072–1087. doi:10.1109/TAES.2002.1039425",
+    "equal": true
+   },
+   "60": {
+    "rendered": "[60] Saho, K. & Masugi, M. (2016). α–β–γ tracking filters using acceleration measurements. SpringerPlus 5, 309. doi:10.1186/s40064-016-1960-8",
+    "prompt": "[60] Saho, K. & Masugi, M. (2016). α–β–γ tracking filters using acceleration measurements. SpringerPlus 5, 309. doi:10.1186/s40064-016-1960-8",
+    "equal": true
+   }
+  },
+  "c_render_ok": false,
+  "c_bib_fields": {
+   "sinopoli2004": {
+    "author": true,
+    "year": true,
+    "title": true,
+    "journal": true,
+    "volume": true,
+    "number": true,
+    "pages": true,
+    "doi": true
+   },
+   "wu2018": {
+    "author": true,
+    "year": true,
+    "title": true,
+    "journal": true,
+    "volume": true,
+    "number": true,
+    "pages": true,
+    "doi": true
+   },
+   "jiang2026": {
+    "author": true,
+    "year": true,
+    "title": true,
+    "journal": true,
+    "note": true,
+    "eprint": true
+   },
+   "bosov2026": {
+    "author": true,
+    "year": true,
+    "title": true,
+    "journal": true,
+    "volume": true,
+    "number": true,
+    "pages": true,
+    "doi": true
+   },
+   "gotovos2013": {
+    "author": true,
+    "year": true,
+    "title": true,
+    "booktitle": true,
+    "pages": true,
+    "publisher": true,
+    "url": true
+   },
+   "tenne2002": {
+    "author": true,
+    "year": true,
+    "title": true,
+    "journal": true,
+    "volume": true,
+    "number": true,
+    "pages": true,
+    "doi": true
+   },
+   "sahomasugi2016": {
+    "author": true,
+    "year": true,
+    "title": true,
+    "journal": true,
+    "volume": true,
+    "pages": true,
+    "doi": true
+   }
+  },
+  "c_bib_fields_ok": true,
+  "pass": false,
+  "seconds": 0.0
+ },
+ "C2": {
+  "a_lines_1_53_byte_identical": true,
+  "b_entries_54_60": [
+   "[54] Sinopoli, B. et al. (2004). Kalman filtering with intermittent observations. IEEE Transactions on Automatic Control 49(9), 1453–1464. doi:10.1109/TAC.2004.834121",
+   "[55] Wu, J. et al. (2018). Kalman filtering over Gilbert–Elliott channels: stability conditions and critical curve. IEEE Transactions on Automatic Control 63(4), 1003–1017. doi:10.1109/TAC.2017.2732821",
+   "[56] Jiang, S., Shi, J. & Moura, S. (2026). Mitigating overconfidence in nonlinear Kalman filters via covariance recalibration. Automatica.",
+   "[57] Bosov, A., Bosov, S. & Uryupin, I. (2026). Beyond divergence: failure modes of the classical extended Kalman filter in a unified nonlinear tracking model. Mathematics 14(17), 3071. doi:10.3390/math14173071",
+   "[58] Gotovos, A. et al. (2013). Active learning for level set estimation. Proceedings of the 23rd International Joint Conference on Artificial Intelligence (IJCAI 2013), 1344–1350.",
+   "[59] Tenne, D. & Singh, T. (2002). Characterizing performance of α-β-γ filters. IEEE Transactions on Aerospace and Electronic Systems 38(3), 1072–1087. doi:10.1109/TAES.2002.1039425",
+   "[60] Saho, K. & Masugi, M. (2016). α–β–γ tracking filters using acceleration measurements. SpringerPlus 5, 309. doi:10.1186/s40064-016-1960-8"
+  ],
+  "b_tail_matches_bibfmt": true,
+  "b_register_numbers_keys": true,
+  "c_bibfmt_errors": {},
+  "d_doi": {
+   "54": "10.1109/TAC.2004.834121",
+   "55": "10.1109/TAC.2017.2732821",
+   "56": null,
+   "57": "10.3390/math14173071",
+   "58": null,
+   "59": "10.1109/TAES.2002.1039425",
+   "60": "10.1186/s40064-016-1960-8"
+  },
+  "d_doi_ok": true,
+  "e_6.13_citations": [
+   "roberts1959",
+   "sahomasugi2016"
+  ],
+  "e_cited_by": {
+   "sinopoli2004": [],
+   "wu2018": [],
+   "jiang2026": [],
+   "bosov2026": [],
+   "gotovos2013": [],
+   "tenne2002": [],
+   "sahomasugi2016": [
+    "discrete-excess"
+   ]
+  },
+  "e_ok": true,
+  "f_collision": {
+   "pass1_equals_committed": true,
+   "pass2_equals_pass1": true,
+   "t19_alone_after_changes_nothing": true,
+   "t19_alone_output": "references.yaml: 0 replaced\nresults.yaml: 0 replaced"
+  },
+  "pass": true,
+  "seconds": 1.6
+ },
+ "C5": {
+  "a_chain_base": {
+   "steps": [
+    {
+     "cmd": "python3 t14/build_register.py",
+     "rc": 0,
+     "seconds": 0.1,
+     "last_line": "82 results; 13 tasks"
+    },
+    {
+     "cmd": "python3 t15/t15_register.py",
+     "rc": 0,
+     "seconds": 0.2,
+     "last_line": "first_cited found for 45 of 45; missing []"
+    },
+    {
+     "cmd": "python3 t16/t16_register.py",
+     "rc": 0,
+     "seconds": 0.2,
+     "last_line": "legacy labels prefixed; 5.6 verified_by rewritten; B.4 Pi_c = 56.20"
+    },
+    {
+     "cmd": "python3 t19/t19_register.py",
+     "rc": 0,
+     "seconds": 0.0,
+     "last_line": "results.yaml: 1 replaced"
+    },
+    {
+     "cmd": "python3 t17/make_thesis_only_t17.py",
+     "rc": 0,
+     "seconds": 0.0,
+     "last_line": "7 imports written; 0 existing texts unescaped"
+    },
+    {
+     "cmd": "python3 t18/make_thesis_only_t18.py",
+     "rc": 0,
+     "seconds": 0.0,
+     "last_line": "critical-tolerance.md written"
+    },
+    {
+     "cmd": "python3 t19/make_thesis_only_t19.py",
+     "rc": 0,
+     "seconds": 0.0,
+     "last_line": "critical-tolerance.md written"
+    },
+    {
+     "cmd": "python3 t15/make_figs_thesis.py",
+     "rc": 0,
+     "seconds": 26.0,
+     "last_line": "written: ['B.10_process-noise.pdf', 'B.10_process-noise.png', 'B.10_process-noise.txt', 'B.11_power-family.pdf', 'B.11_power-family.png', 'B.11_power-family.txt', 'B.12_delay.pdf', 'B.12_delay.png', 'B.12_delay.txt', 'B.1_stage1-schematic.pdf', 'B.1_stage1-schematic.png', 'B.1_stage1-schematic.txt',"
+    },
+    {
+     "cmd": "python3 register/render.py --numbering thesis",
+     "rc": 0,
+     "seconds": 0.3,
+     "last_line": "thesis: 0 errors"
+    },
+    {
+     "cmd": "python3 register/render.py --numbering paper",
+     "rc": 0,
+     "seconds": 0.2,
+     "last_line": "paper: 0 errors"
+    },
+    {
+     "cmd": "python3 t15/make_appendix_de.py --with-t19",
+     "rc": 0,
+     "seconds": 0.2,
+     "last_line": "appendices D and E written"
+    }
+   ],
+   "all_rc0": true,
+   "render_0_errors": true,
+   "changed_tracked": [
+    "classification/figs_thesis/B.10_process-noise.pdf",
+    "classification/figs_thesis/B.11_power-family.pdf",
+    "classification/figs_thesis/B.12_delay.pdf",
+    "classification/figs_thesis/B.1_stage1-schematic.pdf",
+    "classification/figs_thesis/B.2_normal-form-plane.pdf",
+    "classification/figs_thesis/B.4_realizability.pdf",
+    "classification/figs_thesis/B.5_hill-phase.pdf",
+    "classification/figs_thesis/B.6_peak-heights.pdf",
+    "classification/figs_thesis/B.7_tau-normalizations.pdf",
+    "classification/figs_thesis/B.8_optimal-sampling.pdf",
+    "classification/figs_thesis/B.9_sampled-relay.pdf",
+    "classification/register/tasks.yaml"
+   ],
+   "unexpected_changes": []
+  },
+  "a_chain_art": {
+   "steps": [
+    {
+     "cmd": "python3 t14/build_register.py",
+     "rc": 0,
+     "seconds": 0.1,
+     "last_line": "82 results; 13 tasks"
+    },
+    {
+     "cmd": "python3 t15/t15_register.py",
+     "rc": 0,
+     "seconds": 0.2,
+     "last_line": "first_cited found for 45 of 45; missing []"
+    },
+    {
+     "cmd": "python3 t16/t16_register.py",
+     "rc": 0,
+     "seconds": 0.2,
+     "last_line": "legacy labels prefixed; 5.6 verified_by rewritten; B.4 Pi_c = 56.20"
+    },
+    {
+     "cmd": "python3 t19/t19_register.py",
+     "rc": 0,
+     "seconds": 0.0,
+     "last_line": "results.yaml: 1 replaced"
+    },
+    {
+     "cmd": "python3 t20/t20_register.py",
+     "rc": 0,
+     "seconds": 0.2,
+     "last_line": "results.yaml: 83 entries; references.yaml: 60 entries; crosswalk.md regenerated"
+    },
+    {
+     "cmd": "python3 t17/make_thesis_only_t17.py",
+     "rc": 0,
+     "seconds": 0.1,
+     "last_line": "7 imports written; 0 existing texts unescaped"
+    },
+    {
+     "cmd": "python3 t18/make_thesis_only_t18.py",
+     "rc": 0,
+     "seconds": 0.1,
+     "last_line": "critical-tolerance.md written"
+    },
+    {
+     "cmd": "python3 t19/make_thesis_only_t19.py",
+     "rc": 0,
+     "seconds": 0.0,
+     "last_line": "critical-tolerance.md written"
+    },
+    {
+     "cmd": "python3 t15/make_figs_thesis.py",
+     "rc": 0,
+     "seconds": 26.7,
+     "last_line": "written: ['B.10_process-noise.pdf', 'B.10_process-noise.png', 'B.10_process-noise.txt', 'B.11_power-family.pdf', 'B.11_power-family.png', 'B.11_power-family.txt', 'B.12_delay.pdf', 'B.12_delay.png', 'B.12_delay.txt', 'B.1_stage1-schematic.pdf', 'B.1_stage1-schematic.png', 'B.1_stage1-schematic.txt',"
+    },
+    {
+     "cmd": "python3 register/render.py --numbering thesis",
+     "rc": 0,
+     "seconds": 0.2,
+     "last_line": "thesis: 0 errors"
+    },
+    {
+     "cmd": "python3 register/render.py --numbering paper",
+     "rc": 0,
+     "seconds": 0.2,
+     "last_line": "paper: 0 errors"
+    },
+    {
+     "cmd": "python3 t15/make_appendix_de.py --with-t19",
+     "rc": 0,
+     "seconds": 0.2,
+     "last_line": "appendices D and E written"
+    }
+   ],
+   "all_rc0": true,
+   "render_0_errors": true,
+   "changed_tracked": [
+    "classification/figs_thesis/B.10_process-noise.pdf",
+    "classification/figs_thesis/B.11_power-family.pdf",
+    "classification/figs_thesis/B.12_delay.pdf",
+    "classification/figs_thesis/B.1_stage1-schematic.pdf",
+    "classification/figs_thesis/B.2_normal-form-plane.pdf",
+    "classification/figs_thesis/B.4_realizability.pdf",
+    "classification/figs_thesis/B.5_peak-heights.pdf",
+    "classification/figs_thesis/B.6_hill-phase.pdf",
+    "classification/figs_thesis/B.7_tau-normalizations.pdf",
+    "classification/figs_thesis/B.8_optimal-sampling.pdf",
+    "classification/figs_thesis/B.9_sampled-relay.pdf",
+    "classification/register/tasks.yaml",
+    "classification/t15/results/cap_new_t13.pkl"
+   ],
+   "unexpected_changes": []
+  },
+  "b_scripts": {
+   "base t15/t15_checks.py": {
+    "cmd": "python3 t15/t15_checks.py",
+    "rc": 0,
+    "seconds": 82.1,
+    "last_line": "H2  {\"pages\": 17, \"bytes\": 462929, \"sha256\": \"9f60625a98c1cdd23c96360e64eb511acba0ee45321dde95980ab6795070eedf\", \"producer\": \"pdfTeX-1.40.25\", \"errata\": {\"E1\": {\"page\": 5, \"found_on_page\": true}, \"E2\": {\"page\": 5, \"found_on_page\": true}, \"E3\": {\"page\": 8, \"found_on_page\": true}, \"E4\": {\"page\": 12, \""
+   },
+   "base t15/t15_partG.py": {
+    "cmd": "python3 t15/t15_partG.py",
+    "rc": 0,
+    "seconds": 1805.6,
+    "last_line": "ILL {\"poly\": [-1.107810609854583, -1.342805648942408, -0.27600736375822704, 2.1725926821642396, 0.22854738821870274, 0.17632467922344253, 0.7475176495347942, -0.41622243794476266, 1.628404836264879, 2.8430325327811055], \"R2\": \"4.20894298926\", \"eta\": \"0.444631\", \"amplitude_over_eta\": 0.9, \"x1\": \"0.85"
+   },
+   "base t16/t16_checks.py": {
+    "cmd": "python3 t16/t16_checks.py",
+    "rc": 0,
+    "seconds": 100.3,
+    "last_line": "D8 {'pass': True} 0.4 s"
+   },
+   "base t17/t17_checks.py": {
+    "cmd": "python3 t17/t17_checks.py",
+    "rc": 0,
+    "seconds": 15.0,
+    "last_line": "E7 {'pass': True} 0.17 s"
+   },
+   "base t18/t18_checks.py": {
+    "cmd": "python3 t18/t18_checks.py",
+    "rc": 0,
+    "seconds": 18.8,
+    "last_line": "F7 {'pass': True} 0.01 s"
+   },
+   "base t19/t19_checks.py": {
+    "cmd": "python3 t19/t19_checks.py",
+    "rc": 0,
+    "seconds": 5.0,
+    "last_line": "G7 {'pass': False} 0.28 s"
+   },
+   "art t15/t15_checks.py": {
+    "cmd": "python3 t15/t15_checks.py",
+    "rc": 0,
+    "seconds": 84.7,
+    "last_line": "H2  {\"pages\": 17, \"bytes\": 462929, \"sha256\": \"9f60625a98c1cdd23c96360e64eb511acba0ee45321dde95980ab6795070eedf\", \"producer\": \"pdfTeX-1.40.25\", \"errata\": {\"E1\": {\"page\": 5, \"found_on_page\": true}, \"E2\": {\"page\": 5, \"found_on_page\": true}, \"E3\": {\"page\": 8, \"found_on_page\": true}, \"E4\": {\"page\": 12, \""
+   },
+   "art t15/t15_partG.py": {
+    "cmd": "python3 t15/t15_partG.py",
+    "rc": 0,
+    "seconds": 1790.5,
+    "last_line": "ILL {\"poly\": [-1.107810609854583, -1.342805648942408, -0.27600736375822704, 2.1725926821642396, 0.22854738821870274, 0.17632467922344253, 0.7475176495347942, -0.41622243794476266, 1.628404836264879, 2.8430325327811055], \"R2\": \"4.20894298926\", \"eta\": \"0.444631\", \"amplitude_over_eta\": 0.9, \"x1\": \"0.85"
+   },
+   "art t16/t16_checks.py": {
+    "cmd": "python3 t16/t16_checks.py",
+    "rc": 0,
+    "seconds": 101.2,
+    "last_line": "D8 {'pass': True} 0.36 s"
+   },
+   "art t17/t17_checks.py": {
+    "cmd": "python3 t17/t17_checks.py",
+    "rc": 0,
+    "seconds": 20.2,
+    "last_line": "E7 {'pass': True} 0.14 s"
+   },
+   "art t18/t18_checks.py": {
+    "cmd": "python3 t18/t18_checks.py",
+    "rc": 0,
+    "seconds": 22.0,
+    "last_line": "F7 {'pass': True} 0.0 s"
+   },
+   "art t19/t19_checks.py": {
+    "cmd": "python3 t19/t19_checks.py",
+    "rc": 0,
+    "seconds": 6.9,
+    "last_line": "G7 {'pass': False} 0.2 s"
+   }
+  },
+  "b_all_rc0": true,
+  "verdicts_base": {
+   "T15 C1": true,
+   "T15 C2": false,
+   "T15 C3": false,
+   "T15 C4": false,
+   "T15 C5": true,
+   "T15 C6": true,
+   "T15 C7": true,
+   "T15 C8": true,
+   "T15 C9": true,
+   "T15 C10": false,
+   "T15 C13": true,
+   "T15 H2": null,
+   "T15 C11": true,
+   "T15 C12": true,
+   "T15 ILL": null,
+   "T15 C11X": true,
+   "T16 D1": null,
+   "T16 D2": null,
+   "T16 D3": true,
+   "T16 D4": true,
+   "T16 D5": true,
+   "T16 D6": false,
+   "T16 D7": false,
+   "T16 D8": true,
+   "T17 E1": null,
+   "T17 E2": null,
+   "T17 E3": false,
+   "T17 E4": false,
+   "T17 E6": false,
+   "T17 E7": true,
+   "T18 F1": false,
+   "T18 F2": null,
+   "T18 F3": null,
+   "T18 F4": null,
+   "T18 F5": true,
+   "T18 F6": false,
+   "T18 F7": true,
+   "T19 G1": null,
+   "T19 G2": true,
+   "T19 G3": null,
+   "T19 G4": null,
+   "T19 G5": true,
+   "T19 G6": false,
+   "T19 G7": false
+  },
+  "verdicts_art": {
+   "T15 C1": false,
+   "T15 C2": false,
+   "T15 C3": false,
+   "T15 C4": false,
+   "T15 C5": true,
+   "T15 C6": true,
+   "T15 C7": true,
+   "T15 C8": true,
+   "T15 C9": true,
+   "T15 C10": false,
+   "T15 C13": true,
+   "T15 H2": null,
+   "T15 C11": true,
+   "T15 C12": true,
+   "T15 ILL": null,
+   "T15 C11X": true,
+   "T16 D1": null,
+   "T16 D2": null,
+   "T16 D3": true,
+   "T16 D4": true,
+   "T16 D5": true,
+   "T16 D6": false,
+   "T16 D7": false,
+   "T16 D8": true,
+   "T17 E1": null,
+   "T17 E2": null,
+   "T17 E3": false,
+   "T17 E4": false,
+   "T17 E6": false,
+   "T17 E7": true,
+   "T18 F1": false,
+   "T18 F2": null,
+   "T18 F3": null,
+   "T18 F4": null,
+   "T18 F5": true,
+   "T18 F6": false,
+   "T18 F7": true,
+   "T19 G1": null,
+   "T19 G2": true,
+   "T19 G3": null,
+   "T19 G4": null,
+   "T19 G5": true,
+   "T19 G6": false,
+   "T19 G7": false
+  },
+  "verdict_changes": [
+   "T15 C1"
+  ],
+  "output_changed_same_verdict": [
+   "T15 C10",
+   "T15 C2",
+   "T15 C3",
+   "T15 C5",
+   "T15 C7",
+   "T15 C9",
+   "T16 D6",
+   "T17 E2",
+   "T17 E7",
+   "T18 F3",
+   "T18 F6",
+   "T19 G3",
+   "T19 G4",
+   "T19 G6",
+   "T19 G7"
+  ],
+  "a_ok": true,
+  "pass": true,
+  "seconds": 1834.9,
+  "unattributed": []
+ },
+ "C3": {
+  "differences": [
+   [
+    "insert",
+    [],
+    [
+     "- Recorded — A3 (Theorem 7.15): the pre-registered resultant route, completed post hoc in exact arithmetic (`t13/t13_A3_proof.py`, 22 of 22 checks; the pre-registered attempt `t13_A3_attempt.py` reported 'unresolved'): the resultant of the cleared quadratic and its x-derivative is 4u²x²(u + 1)²(E − 1)⁴(E² + 2xE − 1)², and E² + 2xE − 1 = −2e^(−x)(sinh x − x) < 0 on E = e^(−x), so dp/dx never vanishes."
+    ]
+   ]
+  ],
+  "only_the_recorded_line": true,
+  "regenerated_equals_committed": true,
+  "totals": {
+   "checks": 182,
+   "pass": 145,
+   "fail": 37,
+   "failure_lines": 38,
+   "recorded_lines": 1
+  },
+  "totals_base": {
+   "checks": 182,
+   "pass": 145,
+   "fail": 37,
+   "failure_lines": 38,
+   "recorded_lines": 0
+  },
+  "pass": true,
+  "seconds": 0.0
+ }
+}
