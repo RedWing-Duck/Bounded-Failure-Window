@@ -1,0 +1,210 @@
+{
+ "artifacts_commit": "28486b5",
+ "pre": "8ea738d",
+ "python": "3.13.16",
+ "pre_chain_ok": true,
+ "K1": {
+  "figures_pre": [
+   "B.10_process-noise",
+   "B.11_power-family",
+   "B.12_delay",
+   "B.1_stage1-schematic",
+   "B.3_design-sweeps",
+   "B.4_realizability",
+   "B.5_peak-heights",
+   "B.6_hill-phase",
+   "B.7_tau-normalizations",
+   "B.8_optimal-sampling",
+   "B.9_sampled-relay"
+  ],
+  "figures_post": [
+   "B.10_process-noise",
+   "B.11_power-family",
+   "B.12_delay",
+   "B.1_stage1-schematic",
+   "B.3_design-sweeps",
+   "B.4_realizability",
+   "B.5_peak-heights",
+   "B.6_hill-phase",
+   "B.7_tau-normalizations",
+   "B.8_optimal-sampling",
+   "B.9_sampled-relay"
+  ],
+  "figures_with_array_differences": [
+   "B.6_hill-phase"
+  ],
+  "pass": false
+ },
+ "K2": {
+  "differences": {
+   "B.10_process-noise": [
+    [
+     [
+      "xlabel",
+      "$u = 2\\Sigma\\Pi/\\lambda^2$ ($\\lambda = \\Pi = 1$)"
+     ],
+     [
+      "xlabel",
+      "$\\nu = 2\\Sigma\\Pi/\\lambda^2$ ($\\lambda = \\Pi = 1$)"
+     ]
+    ],
+    [
+     [
+      "xlabel",
+      "$u = 2\\Sigma\\Pi/\\lambda^2$ ($\\lambda = \\Pi = 1$)"
+     ],
+     [
+      "xlabel",
+      "$\\nu = 2\\Sigma\\Pi/\\lambda^2$ ($\\lambda = \\Pi = 1$)"
+     ]
+    ]
+   ],
+   "B.8_optimal-sampling": [
+    [
+     [
+      "legend",
+      "post (just after a sample)"
+     ],
+     [
+      "legend",
+      "posterior (just after a sample)"
+     ]
+    ]
+   ],
+   "B.9_sampled-relay": [
+    [
+     [
+      "title",
+      "D1, post: a window"
+     ],
+     [
+      "title",
+      "D1, posterior: a window"
+     ]
+    ],
+    [
+     [
+      "legend",
+      "post"
+     ],
+     [
+      "legend",
+      "posterior"
+     ]
+    ],
+    [
+     [
+      "ylabel",
+      "avg$/F - 1$"
+     ],
+     [
+      "ylabel",
+      "averaged$/F - 1$"
+     ]
+    ],
+    [
+     [
+      "legend",
+      "avg$/F - 1$"
+     ],
+     [
+      "legend",
+      "averaged$/F - 1$"
+     ]
+    ]
+   ]
+  },
+  "pass": true
+ },
+ "K3": {
+  "changed_files": [
+   "classification/figs_thesis/B.10_process-noise.pdf",
+   "classification/figs_thesis/B.10_process-noise.png",
+   "classification/figs_thesis/B.8_optimal-sampling.pdf",
+   "classification/figs_thesis/B.8_optimal-sampling.png",
+   "classification/figs_thesis/B.9_sampled-relay.pdf",
+   "classification/figs_thesis/B.9_sampled-relay.png"
+  ],
+  "pngs_changed": [
+   "classification/figs_thesis/B.10_process-noise.png",
+   "classification/figs_thesis/B.8_optimal-sampling.png",
+   "classification/figs_thesis/B.9_sampled-relay.png"
+  ],
+  "other_changed": [
+   "classification/figs_thesis/B.10_process-noise.pdf",
+   "classification/figs_thesis/B.8_optimal-sampling.pdf",
+   "classification/figs_thesis/B.9_sampled-relay.pdf"
+  ],
+  "pass": false
+ },
+ "K4": {
+  "steps": [
+   {
+    "cmd": "python3 t14/build_register.py",
+    "rc": 0,
+    "last_line": "82 results; 13 tasks"
+   },
+   {
+    "cmd": "python3 t15/t15_register.py",
+    "rc": 0,
+    "last_line": "first_cited found for 45 of 45; missing []"
+   },
+   {
+    "cmd": "python3 t16/t16_register.py",
+    "rc": 0,
+    "last_line": "legacy labels prefixed; 5.6 verified_by rewritten; B.4 Pi_c = 56.20"
+   },
+   {
+    "cmd": "python3 t19/t19_register.py",
+    "rc": 0,
+    "last_line": "results.yaml: 1 replaced"
+   },
+   {
+    "cmd": "python3 t20/t20_register.py",
+    "rc": 0,
+    "last_line": "results.yaml: 83 entries; references.yaml: 60 entries; crosswalk.md regenerated"
+   },
+   {
+    "cmd": "python3 t17/make_thesis_only_t17.py",
+    "rc": 0,
+    "last_line": "7 imports written; 0 existing texts unescaped"
+   },
+   {
+    "cmd": "python3 t18/make_thesis_only_t18.py",
+    "rc": 0,
+    "last_line": "critical-tolerance.md written"
+   },
+   {
+    "cmd": "python3 t19/make_thesis_only_t19.py",
+    "rc": 0,
+    "last_line": "critical-tolerance.md written"
+   },
+   {
+    "cmd": "python3 t15/make_figs_thesis.py",
+    "rc": 0,
+    "last_line": "written: ['B.10_process-noise.pdf', 'B.10_process-noise.png', 'B.10_process-noise.txt', 'B.11_power-family.pdf', 'B.11_power-family.png', 'B.11_power-family.txt', 'B.12_delay.pdf', 'B.12_delay.png', '"
+   },
+   {
+    "cmd": "python3 register/render.py --numbering thesis",
+    "rc": 0,
+    "last_line": "thesis: 0 errors"
+   },
+   {
+    "cmd": "python3 register/render.py --numbering paper",
+    "rc": 0,
+    "last_line": "paper: 0 errors"
+   },
+   {
+    "cmd": "python3 t15/make_appendix_de.py --with-t19",
+    "rc": 0,
+    "last_line": "appendices D and E written"
+   }
+  ],
+  "steps_ok": true,
+  "unexpected_changes": [
+   "classification/Appendix_E_Reproduction.md"
+  ],
+  "pass": false
+ },
+ "seconds": 44.2
+}
