@@ -334,7 +334,7 @@ from t12_common import dt_float  # noqa: E402
 pp = {"lam": 1, "Sig": 0.01, "Pi": 1}
 dts = np.logspace(-3, 4, 500)
 fig, ax = plt.subplots(figsize=(6.6, 3.9), constrained_layout=True)
-for met, col, ls, lab in (("post", C1, "-", "post (just after a sample)"), ("prior", C2, "--", "prior (just before a sample)"),
+for met, col, ls, lab in (("post", C1, "-", "posterior (just after a sample)"), ("prior", C2, "--", "prior (just before a sample)"),
                           ("avg", C3, "-.", "time average")):
     f_ = dt_float("opt", met, pp)
     ax.plot(dts, [f_(t) for t in dts], color=col, ls=ls, label=lab)
@@ -356,18 +356,18 @@ post, avg = np.array([fpost(t) for t in ts]), np.array([favg(t) for t in ts])
 Mx, mn = post.max(), avg.min()
 fig, axs = plt.subplots(1, 2, figsize=(10, 3.8), constrained_layout=True)
 ax = axs[0]
-ax.plot(ts, post, color=C1, label="post")
+ax.plot(ts, post, color=C1, label="posterior")
 ax.axhspan(0.09, Mx, color=C1, alpha=0.12, lw=0, label=rf"window band $R^2 \in (0.09, {Mx:.5f})$")
 ax.axhline(F, color=MUTED, lw=0.8, ls=":"); ax.text(ts[-1], F * 1.3, r"$F$", color=MUTED, ha="right")
 ax.axvline(100, color=C2, lw=1.0, ls="--", label=r"$\Delta t_E = 100$")
-ax.set_xscale("log"); ax.set_xlabel(r"$\Delta t$"); ax.set_ylabel("error"); ax.set_title("D1, post: a window")
+ax.set_xscale("log"); ax.set_xlabel(r"$\Delta t$"); ax.set_ylabel("error"); ax.set_title("D1, posterior: a window")
 ax.legend(loc="upper right"); grid_(ax)
 ax = axs[1]
-ax.plot(ts, avg / F - 1, color=C3, label=r"avg$/F - 1$")
+ax.plot(ts, avg / F - 1, color=C3, label=r"averaged$/F - 1$")
 ax.axhspan(mn / F - 1, 0, color=C3, alpha=0.25, lw=0, label=r"two-ray band $R^2 \in (\min, F)$")
 ax.axhline(0, color=MUTED, lw=0.8, ls=":")
 ax.axvline(100, color=C2, lw=1.0, ls="--", label=r"$\Delta t_E = 100$")
-ax.set_xscale("log"); ax.set_yscale("symlog", linthresh=2e-4); ax.set_xlabel(r"$\Delta t$"); ax.set_ylabel(r"avg$/F - 1$")
+ax.set_xscale("log"); ax.set_yscale("symlog", linthresh=2e-4); ax.set_xlabel(r"$\Delta t$"); ax.set_ylabel(r"averaged$/F - 1$")
 ax.set_title("D1, time average: two rays (dip of 0.125%)"); ax.legend(loc="upper right"); grid_(ax)
 save(fig, "fig09_sampled_relay", f"""
 Figure 9. Sampled relay D1 (gain 1 - exp(-G dt)) along the sampling interval (Propositions 28, 31, 36; Numerical result 37).
@@ -387,7 +387,7 @@ for ax, conv, ttl in ((axs[0], "abs", r"absolute tolerance: $\sigma^2$ (every fa
                               ("B5", C3, "-.", "optimal")):
         f_, _, _ = sig_funcs(fam, conv, ps)
         ax.plot(us, [float(f_(mp.mpf(float(u)))) for u in us], color=col, ls=ls, label=lab)
-    ax.set_xscale("log"); ax.set_yscale("log"); ax.set_xlabel(r"$u = 2\Sigma\Pi/\lambda^2$ ($\lambda = \Pi = 1$)")
+    ax.set_xscale("log"); ax.set_yscale("log"); ax.set_xlabel(r"$\nu = 2\Sigma\Pi/\lambda^2$ ($\lambda = \Pi = 1$)")
     ax.set_title(ttl); ax.legend(loc="upper left" if conv == "abs" else "lower left"); grid_(ax)
 axs[1].axhline(1, color=MUTED, lw=0.8, ls=":")
 save(fig, "fig10_process_noise", """

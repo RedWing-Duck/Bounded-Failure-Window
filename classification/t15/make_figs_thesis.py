@@ -19,7 +19,15 @@ import fig_harness  # noqa: E402
 # (old text, new text): text elements carrying result numbers; nothing else changes
 TEXT_EDITS = [('ax2.set_title("class in each band (Theorem 2)", pad=8)', 'ax2.set_title("class in each band", pad=8)'),
               ('label="realized curve with three windows (Corollary 48)")', 'label="realized curve with three windows")'),
-              ('label="the single maximum (Theorem 25)")', 'label="the single maximum")')]
+              ('label="the single maximum (Theorem 25)")', 'label="the single maximum")'),
+              # Task 21 (PREREG_t21.md): thesis wording in B.8, B.9 and B.10
+              ('"post (just after a sample)"', '"posterior (just after a sample)"'),
+              ('ax.plot(ts, post, color=C1, label="post")', 'ax.plot(ts, post, color=C1, label="posterior")'),
+              ('ax.set_title("D1, post: a window")', 'ax.set_title("D1, posterior: a window")'),
+              ('label=r"avg$/F - 1$")', 'label=r"averaged$/F - 1$")'),
+              ('ax.set_ylabel(r"avg$/F - 1$")', 'ax.set_ylabel(r"averaged$/F - 1$")'),
+              (r'ax.set_xlabel(r"$u = 2\Sigma\Pi/\lambda^2$ ($\lambda = \Pi = 1$)")',
+               r'ax.set_xlabel(r"$\nu = 2\Sigma\Pi/\lambda^2$ ($\lambda = \Pi = 1$)")')]
 
 
 def names():
