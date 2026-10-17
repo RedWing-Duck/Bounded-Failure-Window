@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the thesis it verifies (preferred citation below)."
+title: "Bounded-Failure-Window: verification record for 'Shape Classification of Failure-Sets in Stationary Linear Filters'"
+type: software
+authors:
+  - family-names: Holder
+    given-names: John
+version: v1.0-thesis
+date-released: 2026-10-17
+repository-code: "https://github.com/RedWing-Duck/Bounded-Failure-Window"
+license:
+  - MIT
+  - CC-BY-4.0
+keywords:
+  - Kalman filter
+  - failure set
+  - tolerance
+  - Ornstein-Uhlenbeck
+  - critical values
+  - Blackwell ordering
+  - pre-registration
+  - reproducibility
+preferred-citation:
+  type: thesis
+  title: "Shape Classification of Failure-Sets in Stationary Linear Filters"
+  authors:
+    - family-names: Holder
+      given-names: John
+  year: 2026
+  month: 10
+  publisher:
+    name: Zenodo
+  doi: 10.5281/zenodo.23439075
+  url: "https://doi.org/10.5281/zenodo.23439075"

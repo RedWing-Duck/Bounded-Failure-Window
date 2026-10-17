@@ -1,0 +1,21 @@
+Copyright (c) 2026 John Holder
+
+Documents, text, data and figures in this repository are licensed under the
+Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+This covers everything that is not source code, including: the thesis
+(thesis/), the pre-registrations, results and reports (*.md), the register
+(classification/register/*.yaml, *.csv), the sources (classification/source/),
+the rendered documents and appendices, the recorded results (results/
+directories) and all figures (PNG and PDF).
+
+Source code (*.py, *.sh) is licensed under the MIT License; see LICENSE.
+
+Summary:   https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution: Holder, J. (2026). Shape Classification of Failure-Sets in
+Stationary Linear Filters. Zenodo. https://doi.org/10.5281/zenodo.23439075
+
+Third-party works quoted or cited (see classification/Appendix_C_References.md)
+remain under their own terms.
