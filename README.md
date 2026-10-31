@@ -3,10 +3,12 @@
 Verification record and source for the thesis
 
 > Holder, J. (2026). *Shape Classification of Failure-Sets in Stationary Linear Filters: Critical values, gain families and
-> information ordering.* Zenodo. https://doi.org/10.5281/zenodo.23439075
+> information ordering.* Zenodo. https://doi.org/10.5281/zenodo.23755886 (version 1.1)
 
 The published PDF is in [`thesis/Holder_2026_Shape_Classification_of_Failure-Sets.pdf`](thesis/Holder_2026_Shape_Classification_of_Failure-Sets.pdf)
-(sha256 `3484684841e0bc089f4396b47c98cd5f46826cffbe0a3f17a0576c42e58cfcec`). The DOI version is the version of record.
+(Final 1.1, sha256 `d5e9e884c262df1fe6f7f6ed5604887b41f1b1acd0bcbc9805520dac31ca45ea`). The DOI version is the version of record.
+Version 1.0 (https://doi.org/10.5281/zenodo.23439075, sha256 `3484684841e0bc089f4396b47c98cd5f46826cffbe0a3f17a0576c42e58cfcec`) is in
+the history of this file. Version 1.1 changes layout and wording only: no result, number, reference or figure changed.
 
 The thesis classifies the shapes of failure sets (threshold, bounded window, two rays, mixtures) for scalar stationary
 linear filters of an Ornstein–Uhlenbeck signal, as one parameter varies. Every numbered result in it has a permanent key in
@@ -14,7 +16,8 @@ this repository, and every check behind it is recorded here, failures included.
 
 ## Snapshot
 
-The tag **`v1.0-thesis`** marks the state that corresponds to the published thesis:
+The tags **`v1.0-thesis`** (Final 1, commit `94371a3`) and **`v1.1-thesis`** (Final 1.1) mark the states that correspond to the
+published thesis. Both have the same verification record:
 
 - the register, sources, appendices and figures match the published text through **Task 21**. The published figures carry
   Task 21's labels: B.8 to B.10 use "posterior", "averaged" and ν;

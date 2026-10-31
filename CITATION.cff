@@ -5,8 +5,8 @@ type: software
 authors:
   - family-names: Holder
     given-names: John
-version: v1.0-thesis
-date-released: 2026-10-17
+version: v1.1-thesis
+date-released: 2026-10-31
 repository-code: "https://github.com/RedWing-Duck/Bounded-Failure-Window"
 license:
   - MIT
@@ -30,5 +30,5 @@ preferred-citation:
   month: 10
   publisher:
     name: Zenodo
-  doi: 10.5281/zenodo.23439075
-  url: "https://doi.org/10.5281/zenodo.23439075"
+  doi: 10.5281/zenodo.23755886
+  url: "https://doi.org/10.5281/zenodo.23755886"
